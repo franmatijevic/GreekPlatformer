@@ -10,7 +10,7 @@ class_name Character
 @export var ACCELERATION:float=40
 @export var DEACCELERATION:float=70
 
-var direction
+var direction#only horizontal
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():

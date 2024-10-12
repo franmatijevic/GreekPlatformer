@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://de34eq1s83fp8"]
+
+[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_l32d4"]
+[ext_resource type="Script" path="res://src/mainMechanics/arrow.gd" id="1_wrvt8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6suhw"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdweo"]
+radius = 8.0
+
+[node name="Arrow" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_wrvt8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.1)
+texture = ExtResource("1_l32d4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(53, 0)
+shape = SubResource("CircleShape2D_6suhw")
+disabled = true
+
+[node name="DetectWall" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectWall"]
+position = Vector2(53, 0)
+shape = SubResource("CircleShape2D_cdweo")
+
+[connection signal="body_entered" from="DetectWall" to="." method="_on_detect_wall_body_entered"]

@@ -1,5 +1,8 @@
 extends State
 
+func exit():
+	player().direction=0
+
 func update_physics_process(_delta:float):
 	
 	player().direction = Input.get_axis("left", "right")
@@ -8,3 +11,5 @@ func update_physics_process(_delta:float):
 		player().jump()
 	elif Input.is_action_just_released("up"):
 		player().stop_jump()
+	elif Input.is_action_just_released("shoot"):
+		player().shoot()
