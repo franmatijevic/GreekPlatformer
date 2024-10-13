@@ -59,5 +59,8 @@ position = Vector2(140, 6)
 scale = Vector2(1, 0.1)
 texture = ExtResource("1_40qey")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -128)
+
 [connection signal="body_entered" from="DetectFloor" to="." method="_on_detect_floor_body_entered"]
 [connection signal="body_exited" from="DetectFloor" to="." method="_on_detect_floor_body_exited"]

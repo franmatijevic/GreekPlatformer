@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=6 format=4 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
 [ext_resource type="PackedScene" uid="uid://dpk0rlxpn4h88" path="res://src/player/player.tscn" id="2_u6sfn"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_a875u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_361e8"]
 texture = ExtResource("1_w8uqh")
@@ -23,3 +24,11 @@ tile_set = SubResource("TileSet_xr8xv")
 
 [node name="Player" parent="." instance=ExtResource("2_u6sfn")]
 position = Vector2(-321, -232)
+
+[node name="Rock" parent="." instance=ExtResource("3_a875u")]
+position = Vector2(62, -112)
+disable_mode = 2
+collision_layer = 1
+collision_mask = 2
+mass = 100.0
+lock_rotation = false
