@@ -23,8 +23,12 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if(direction):
-		if(direction==-1): facing_direction=false
-		elif(direction==1): facing_direction=true
+		if(direction==-1): 
+			facing_direction=false
+			get_node("../Rock").throwForce = Vector2(-500, -700)
+		elif(direction==1):
+			facing_direction=true
+			get_node("../Rock").throwForce = Vector2(500, -700)
 	
 	
 	if(coyoteBuffer>0):

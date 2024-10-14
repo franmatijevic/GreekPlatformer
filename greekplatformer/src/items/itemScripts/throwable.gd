@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var pickedUp:bool = false
+var throwForce:Vector2
 @onready var player = get_node("../Player")
 
 func _physics_process(delta):
@@ -17,11 +18,13 @@ func _input(event):
 				player.canPickUp = false
 
 	if Input.is_action_just_pressed("drop_item"):
+		linear_velocity = Vector2(0, -10)
 		pickedUp = false
 		player.canPickUp = true
-		if player.get_node("Icon").flip_h == false:
-			apply_impulse(Vector2(), Vector2(90, -10))
-		else:
-			apply_impulse(Vector2(), Vector2(-90, -10))
+	
+	if Input.is_action_just_pressed("throw_item"):
+		pickedUp = false
+		player.canPickUp = true
+		linear_velocity = throwForce
 
 		
