@@ -10,10 +10,11 @@ size = Vector2(127, 128)
 size = Vector2(82, 76)
 
 [node name="RigidBody2D" type="RigidBody2D"]
-collision_layer = 3
-collision_mask = 0
+collision_layer = 4
+collision_mask = 2
 lock_rotation = true
 script = ExtResource("1_nq7h8")
+playerCanJump = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -26,6 +27,9 @@ shape = SubResource("RectangleShape2D_3lx66")
 one_way_collision_margin = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_af1kj")

@@ -5,6 +5,8 @@ extends Character
 const jumpBufferTime:float=0.105
 const coyoteBufferTime:float=0.105
 
+const throw_force:Vector2 = Vector2(500, -700)
+
 var states:Dictionary={ }
 
 var coyoteBuffer:float=0
@@ -14,6 +16,9 @@ var jumped:bool=false
 var canPickUp:bool = true
 
 var facing_direction:bool=true #true desno, false lijevo
+
+var holding_object:Throwable=null
+
 
 func _ready():
 	for i in get_node("States").get_children():
@@ -25,10 +30,8 @@ func _physics_process(delta: float) -> void:
 	if(direction):
 		if(direction==-1): 
 			facing_direction=false
-			get_node("../Rock").throwForce = Vector2(-500, -700)
 		elif(direction==1):
 			facing_direction=true
-			get_node("../Rock").throwForce = Vector2(500, -700)
 	
 	
 	if(coyoteBuffer>0):
@@ -47,7 +50,40 @@ func _process(delta: float) -> void:
 	if(current_state):
 		current_state.update_process(delta)
 
+func pick_up():
+	if(holding_object!=null):
+		return
+	
+	var bodies = get_node("DetectPickup").get_overlapping_bodies()
+	
+	if(bodies.size()==0):
+		return
+	var closest_object = bodies[0]
+	
+	for i in bodies:
+		if(global_position.distance_to(closest_object.global_position)>global_position.distance_to(i.global_position)):
+			closest_object = i
+	
+	holding_object = closest_object
+	
+	set_state("PickUpState")
+
+func throw(throwing_force:Vector2):
+	if(holding_object==null):
+		return
+	
+	var force:Vector2 = throwing_force
+	
+	if(!facing_direction):
+		force.x = -force.x
+	
+	holding_object.be_thrown(force)
+	holding_object = null
+
 func jump():
+	if(holding_object and !holding_object.playerCanJump):
+		return
+	
 	if(is_on_floor()):
 		velocity.y = -JUMP_VELOCITY
 		coyoteBuffer=0
@@ -66,6 +102,8 @@ func stop_jump():
 		velocity.y=0
 
 func shoot():
+	if(holding_object):
+		return
 	set_state("ShootingState")
 
 func set_state(state:String):
