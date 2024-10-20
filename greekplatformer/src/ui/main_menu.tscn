@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://dco3s4m4j7w1o"]
+
+[ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_eabs3"]
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource("1_eabs3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Title" type="Label" parent="."]
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 71.0
+offset_bottom = -49.0
+text = "Greek platformer"
+
+[node name="options" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="main" type="Control" parent="options"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlowContainer" type="FlowContainer" parent="options/main"]
+layout_mode = 0
+offset_left = -32.0
+offset_right = 38.0
+offset_bottom = 101.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="options/main/FlowContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="options/main/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="options/main/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="options/main/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="settings" type="Control" parent="options"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlowContainer" type="FlowContainer" parent="options/settings"]
+layout_mode = 0
+offset_left = -112.0
+offset_right = 110.0
+offset_bottom = 58.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="options/settings/FlowContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="options/settings/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Nema postavljanja, zao mi je"
+
+[node name="BackToMain" type="Button" parent="options/settings/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="playOptions" type="Control" parent="options"]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FlowContainer" type="FlowContainer" parent="options/playOptions"]
+layout_mode = 0
+offset_left = -48.0
+offset_right = 45.0
+offset_bottom = 101.0
+alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="options/playOptions/FlowContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="NewGame" type="Button" parent="options/playOptions/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "New Game"
+
+[node name="continue" type="Button" parent="options/playOptions/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="backToMain" type="Button" parent="options/playOptions/FlowContainer/HFlowContainer"]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="options/settings/FlowContainer/HFlowContainer/BackToMain" to="." method="_on_back_to_main_pressed"]
+[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/backToMain" to="." method="_on_back_to_main_pressed"]

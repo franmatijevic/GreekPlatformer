@@ -13,9 +13,7 @@ func update_physics_process(_delta:float):
 		player().stop_jump()
 	elif Input.is_action_just_released("shoot"):
 		player().shoot()
-	elif Input.is_action_just_pressed("pick_up_item"):
-		player().pick_up()
-	elif Input.is_action_just_pressed("drop_item"):
+	if Input.is_action_just_pressed("pickThrow"):
+		player().pick_or_throw()
+	elif Input.is_action_just_pressed("down"):
 		player().throw( Vector2(0, -10) )
-	elif Input.is_action_just_pressed("throw_item"):
-		player().throw(player().throw_force)

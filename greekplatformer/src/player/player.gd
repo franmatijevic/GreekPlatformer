@@ -1,5 +1,7 @@
 extends Character
 
+class_name Player
+
 @onready var current_state:State=get_node("States/MoveState")
 
 const jumpBufferTime:float=0.105
@@ -79,6 +81,12 @@ func throw(throwing_force:Vector2):
 	
 	holding_object.be_thrown(force)
 	holding_object = null
+
+func pick_or_throw():
+	if(holding_object==null):
+		pick_up()
+	else:
+		throw(throw_force)
 
 func jump():
 	if(holding_object and !holding_object.playerCanJump):
