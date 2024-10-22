@@ -3,6 +3,10 @@ extends Character
 class_name Player
 
 @onready var current_state:State=get_node("States/MoveState")
+@onready var icon: Sprite2D = $Icon
+@onready var marker_2d: Marker2D = $Marker2D
+@onready var collision_shape_2d: CollisionShape2D = $DetectPickup/CollisionShape2D
+
 
 const jumpBufferTime:float=0.105
 const coyoteBufferTime:float=0.105
@@ -32,8 +36,14 @@ func _physics_process(delta: float) -> void:
 	if(direction):
 		if(direction==-1): 
 			facing_direction=false
+			icon.flip_h = true
+			marker_2d.position = Vector2(-56,18)
+			collision_shape_2d.position = Vector2(-63, 25)
 		elif(direction==1):
 			facing_direction=true
+			icon.flip_h = false
+			marker_2d.position = Vector2(6,13)
+			collision_shape_2d.position = Vector2(14, 25)
 	
 	
 	if(coyoteBuffer>0):

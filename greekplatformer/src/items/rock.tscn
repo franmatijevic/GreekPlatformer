@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bajynjcw0ua61"]
 
-[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_nnjah"]
 [ext_resource type="Script" path="res://src/items/itemScripts/throwable.gd" id="1_nq7h8"]
+[ext_resource type="Texture2D" uid="uid://byuldulfb025u" path="res://res/Rock.png" id="2_47si2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lx66"]
-size = Vector2(127, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n4di"]
+radius = 57.85
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af1kj"]
-size = Vector2(82, 76)
+size = Vector2(71, 71)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 4
@@ -18,13 +18,14 @@ script = ExtResource("1_nq7h8")
 playerCanJump = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nnjah")
+position = Vector2(-1, 1.52588e-05)
+scale = Vector2(0.340782, 0.391847)
+texture = ExtResource("2_47si2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_3lx66")
+shape = SubResource("CircleShape2D_1n4di")
 one_way_collision_margin = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -33,4 +34,5 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_af1kj")

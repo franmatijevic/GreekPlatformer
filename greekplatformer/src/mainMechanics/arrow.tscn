@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://de34eq1s83fp8"]
 
-[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_l32d4"]
 [ext_resource type="Script" path="res://src/mainMechanics/arrow.gd" id="1_wrvt8"]
+[ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://res/Arrow.png" id="2_0oq2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6suhw"]
 radius = 6.0
@@ -15,8 +15,9 @@ collision_mask = 2
 script = ExtResource("1_wrvt8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.1)
-texture = ExtResource("1_l32d4")
+position = Vector2(-2, -9.53674e-07)
+scale = Vector2(0.5575, 0.311765)
+texture = ExtResource("2_0oq2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(53, 0)
