@@ -11,7 +11,7 @@ const lowest_angle:float=-PI/3
 var angle:float=highest_angle
 
 var clockwise:bool=true#direction of rotation
-var hold_shoot:bool=false
+var hold_shoot:bool=false#ako drzis shoot gumb
 
 var facing:bool=true
 

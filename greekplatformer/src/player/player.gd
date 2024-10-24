@@ -17,7 +17,6 @@ var states:Dictionary={ }
 
 var coyoteBuffer:float=0
 var jumpBuffer:float=0
-var jumped:bool=false
 
 var canPickUp:bool = true
 

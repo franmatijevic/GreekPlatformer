@@ -10,6 +10,8 @@ class_name Character
 @export var ACCELERATION:float=40
 @export var DEACCELERATION:float=70
 
+var jumped:bool=false
+
 var direction#only horizontal
 
 func _physics_process(delta: float) -> void:
