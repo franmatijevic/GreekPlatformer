@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bahucl7180h7i"]
 
 [ext_resource type="Script" path="res://src/environment/spring.gd" id="1_gr1pd"]
-[ext_resource type="Texture2D" uid="uid://bhip6pjthrnj1" path="res://res/tempSpring.png" id="1_ud24a"]
+[ext_resource type="Texture2D" uid="uid://bhip6pjthrnj1" path="res://src/environment/environmentArt/tempSpring.png" id="1_ud24a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1epjg"]
 size = Vector2(125, 120)
@@ -12,6 +12,7 @@ collision_mask = 5
 script = ExtResource("1_gr1pd")
 
 [node name="TempSpring" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(8, 8)
 texture = ExtResource("1_ud24a")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bajynjcw0ua61"]
 
 [ext_resource type="Script" path="res://src/items/itemScripts/throwable.gd" id="1_nq7h8"]
-[ext_resource type="Texture2D" uid="uid://byuldulfb025u" path="res://res/Rock.png" id="2_47si2"]
+[ext_resource type="Texture2D" uid="uid://byuldulfb025u" path="res://src/items/throwableArt/Rock.png" id="2_47si2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n4di"]
 radius = 57.85

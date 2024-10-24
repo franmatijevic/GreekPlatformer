@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwh7nex1tdeem"
-path="res://.godot/imported/Character.png-a93fecc860b11100c2ada9a65c06a840.ctex"
+uid="uid://bhip6pjthrnj1"
+path="res://.godot/imported/tempSpring.png-24c051ddd464bc96879c95427e6b145d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Character.png"
-dest_files=["res://.godot/imported/Character.png-a93fecc860b11100c2ada9a65c06a840.ctex"]
+source_file="res://src/environment/environmentArt/tempSpring.png"
+dest_files=["res://.godot/imported/tempSpring.png-24c051ddd464bc96879c95427e6b145d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm6rpob4s2nta"
-path="res://.godot/imported/Arrow.png-fa170f533ddd949192c1d2c144bec570.ctex"
+uid="uid://cfbl0e13s3tj0"
+path="res://.godot/imported/BrickFloor4.png-9b4a615d5cef757becff8203aa7b9313.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-fa170f533ddd949192c1d2c144bec570.ctex"]
+source_file="res://src/environment/environmentArt/floor/BrickFloor4.png"
+dest_files=["res://.godot/imported/BrickFloor4.png-9b4a615d5cef757becff8203aa7b9313.ctex"]
 
 [params]
 

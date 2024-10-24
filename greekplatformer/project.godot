@@ -25,7 +25,13 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
 window/size/borderless=true
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+
+[importer_defaults]
+
+texture={
+"compress/mode": 3
+}
 
 [input]
 
@@ -83,5 +89,4 @@ pickThrow={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.777028, 0.377881, 0.00782779, 1)

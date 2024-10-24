@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfbl0e13s3tj0"
-path="res://.godot/imported/BrickFloor4.png-b3b3a29e1f04cefdfbd5082e0fa0f1e0.ctex"
+uid="uid://1rsjsmmc8mcu"
+path="res://.godot/imported/tempFloorTexture.png-42665c1be417333c0f70b3eab535ebda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/BrickFloor4.png"
-dest_files=["res://.godot/imported/BrickFloor4.png-b3b3a29e1f04cefdfbd5082e0fa0f1e0.ctex"]
+source_file="res://src/environment/environmentArt/floor/tempFloorTexture.png"
+dest_files=["res://.godot/imported/tempFloorTexture.png-42665c1be417333c0f70b3eab535ebda.ctex"]
 
 [params]
 

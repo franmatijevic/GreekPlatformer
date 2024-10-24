@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rsjsmmc8mcu"
-path="res://.godot/imported/tempFloorTexture.png-793f98e56fabacdd6774cf419ee7eb92.ctex"
+uid="uid://byuldulfb025u"
+path="res://.godot/imported/Rock.png-baccfda78d560dd16572b8b1913a027d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/tempFloorTexture.png"
-dest_files=["res://.godot/imported/tempFloorTexture.png-793f98e56fabacdd6774cf419ee7eb92.ctex"]
+source_file="res://src/items/throwableArt/Rock.png"
+dest_files=["res://.godot/imported/Rock.png-baccfda78d560dd16572b8b1913a027d.ctex"]
 
 [params]
 

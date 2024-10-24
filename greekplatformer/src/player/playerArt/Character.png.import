@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhip6pjthrnj1"
-path="res://.godot/imported/tempSpring.png-1fc9f5e24105c839fdcc6e7a1ecf7afb.ctex"
+uid="uid://fcugs2bhjgsm"
+path="res://.godot/imported/Character.png-8ceaf05f6e4280eb8ac6ab73b6450152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/tempSpring.png"
-dest_files=["res://.godot/imported/tempSpring.png-1fc9f5e24105c839fdcc6e7a1ecf7afb.ctex"]
+source_file="res://src/player/playerArt/Character.png"
+dest_files=["res://.godot/imported/Character.png-8ceaf05f6e4280eb8ac6ab73b6450152.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
