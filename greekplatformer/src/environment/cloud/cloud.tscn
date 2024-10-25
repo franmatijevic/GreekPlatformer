@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://lirmndsuoa1f"]
+
+[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_fcv8o"]
+[ext_resource type="Script" path="res://src/environment/cloud/cloud.gd" id="1_unqwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocpo7"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6xxh"]
+size = Vector2(128, 10)
+
+[node name="Cloud" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_unqwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ocpo7")
+one_way_collision = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_fcv8o")
+
+[node name="DetectObject" type="Area2D" parent="."]
+position = Vector2(0, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectObject"]
+shape = SubResource("RectangleShape2D_y6xxh")
+
+[connection signal="body_entered" from="DetectObject" to="." method="_on_detect_object_body_entered"]
