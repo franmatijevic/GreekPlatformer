@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+const player_height = 64#PRIVREMENO
+
 @export var time_to_disapear:float=1.0##koliko dugo player moze stajati na platformi prije nego sto nestane
 @export var time_to_reapear:float=10##za koliko sekundi ce se platforma ponovo pojaviti
 
@@ -21,7 +23,7 @@ func _process(delta: float) -> void:
 			disapear()
 	else:
 		for i in $DetectObject.get_overlapping_bodies():
-			if(i.global_position.y<global_position.y):
+			if(i.global_position.y<global_position.y - player_height):
 				if(i is Character and i.velocity.y>=0):
 					start_disapearing()
 				elif(i is Throwable and i.linear_velocity.y>=0):
@@ -31,6 +33,8 @@ func reapear():
 	disapeared=false
 	in_process_of_disapearing=false
 	visible=true
+	
+	create_tween().tween_property(self, "modulate:a", 1, 0.4)
 	get_node("CollisionShape2D").disabled=false
 
 func disapear():
@@ -45,15 +49,7 @@ func start_disapearing():
 	
 	in_process_of_disapearing=true
 	timer = time_to_disapear
-	#tu moze neka animacija npr da se oblak trese prije nego sto nestane
-
-func _on_detect_object_body_entered(body: Node2D) -> void:
-	print("nesto")
-	#start_disapearing()
-	return
-	if(body is Character):
-		if(body.velocity.y>0):
-			start_disapearing()
-	elif(body is Throwable):
-		if(body.linear_velocity>0):
-			start_disapearing()
+	var tween = create_tween()
+	
+	tween.tween_interval(time_to_disapear*0.2)
+	tween.chain().tween_property(self, "modulate:a", 0, time_to_disapear*0.8)

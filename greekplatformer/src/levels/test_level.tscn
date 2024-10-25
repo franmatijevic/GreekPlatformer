@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=6 format=4 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_ng327"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_awdoy"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/items/cloud_platform.tscn" id="4_ca2gx"]
+[ext_resource type="PackedScene" uid="uid://lirmndsuoa1f" path="res://src/environment/cloud/cloud.tscn" id="5_s2el8"]
 
 [node name="testLevel" instance=ExtResource("1_6ssvi")]
 
@@ -29,7 +30,10 @@ position = Vector2(31, -35)
 position = Vector2(399, -37)
 
 [node name="cloud_platform" parent="." index="7" instance=ExtResource("4_ca2gx")]
-position = Vector2(-1195, -428)
+position = Vector2(-1024, -120)
 
-[node name="cloud_platform2" parent="." index="8" instance=ExtResource("4_ca2gx")]
-position = Vector2(-634, -543)
+[node name="Cloud" parent="." index="8" instance=ExtResource("5_s2el8")]
+position = Vector2(-448, -136)
+
+[node name="cloud_platform2" parent="." index="9" instance=ExtResource("4_ca2gx")]
+position = Vector2(-640, -392)
