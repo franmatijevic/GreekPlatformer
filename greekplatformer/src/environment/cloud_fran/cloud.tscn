@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://lirmndsuoa1f"]
 
-[ext_resource type="Script" path="res://src/environment/cloud/cloud.gd" id="1_unqwy"]
-[ext_resource type="Texture2D" uid="uid://b6bfk1tfvdci0" path="res://src/items/platformArt/black-cloud.png" id="3_nh0v6"]
+[ext_resource type="Script" path="res://src/environment/cloud_fran/cloud.gd" id="1_unqwy"]
+[ext_resource type="Texture2D" uid="uid://b6bfk1tfvdci0" path="res://src/environment/platformArt/black-cloud.png" id="3_nh0v6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocpo7"]
 size = Vector2(204, 29.5)

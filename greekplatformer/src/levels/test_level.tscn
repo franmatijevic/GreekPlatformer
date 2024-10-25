@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=4 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=8 format=4 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_ng327"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_awdoy"]
-[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/items/cloud_platform.tscn" id="4_ca2gx"]
-[ext_resource type="PackedScene" uid="uid://lirmndsuoa1f" path="res://src/environment/cloud/cloud.tscn" id="5_s2el8"]
+[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_ca2gx"]
+[ext_resource type="PackedScene" uid="uid://lirmndsuoa1f" path="res://src/environment/cloud_fran/cloud.tscn" id="5_s2el8"]
+[ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="6_efeq7"]
+
+[sub_resource type="Curve2D" id="Curve2D_jg0po"]
+_data = {
+"points": PackedVector2Array(-487.353, 19.0703, 487.353, -19.0703, -382, -459, 0, 0, 0, 0, 192, -755, 0, 0, 0, 0, -992, -923, -660, -180, 660, 180, -382, -459)
+}
+point_count = 4
 
 [node name="testLevel" instance=ExtResource("1_6ssvi")]
 
@@ -16,24 +23,45 @@ position = Vector2(-268, -99)
 
 [node name="Spring" parent="." index="2" instance=ExtResource("2_ng327")]
 position = Vector2(-640, -66)
+max_force = null
 
 [node name="RigidBody2D" parent="." index="3" instance=ExtResource("3_awdoy")]
 position = Vector2(125, -37)
+picking_up_time = null
 
 [node name="RigidBody2D2" parent="." index="4" instance=ExtResource("3_awdoy")]
 position = Vector2(307, -39)
+picking_up_time = null
 
 [node name="RigidBody2D3" parent="." index="5" instance=ExtResource("3_awdoy")]
 position = Vector2(31, -35)
+picking_up_time = null
 
 [node name="RigidBody2D4" parent="." index="6" instance=ExtResource("3_awdoy")]
 position = Vector2(399, -37)
+picking_up_time = null
 
 [node name="cloud_platform" parent="." index="7" instance=ExtResource("4_ca2gx")]
 position = Vector2(-1024, -120)
 
 [node name="Cloud" parent="." index="8" instance=ExtResource("5_s2el8")]
+visible = false
 position = Vector2(-448, -136)
+time_to_disapear = null
+time_to_reapear = null
 
 [node name="cloud_platform2" parent="." index="9" instance=ExtResource("4_ca2gx")]
 position = Vector2(-640, -392)
+
+[node name="Path2D" type="Path2D" parent="." index="10"]
+curve = SubResource("Curve2D_jg0po")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(-382, -459)
+rotation = -0.0391105
+rotates = false
+
+[node name="bird_platform" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("6_efeq7")]
+position = Vector2(-5.11346, 2.80225)
+rotation = 0.0391105
+speed = 0.1

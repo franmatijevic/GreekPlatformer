@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpk0rlxpn4h88"]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_6dh1s"]
+[ext_resource type="Texture2D" uid="uid://fcugs2bhjgsm" path="res://src/player/playerArt/Character.png" id="2_kdb3u"]
+[ext_resource type="Script" path="res://src/player/playerStates/movementState.gd" id="3_i4pt1"]
+[ext_resource type="Script" path="res://src/player/playerStates/pickUpState.gd" id="4_y3xqd"]
+[ext_resource type="Script" path="res://src/player/playerStates/shootingState.gd" id="5_y6klk"]
+[ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="6_i6bi8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulvm"]
+size = Vector2(69, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prcv2"]
+size = Vector2(69, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u68a"]
+size = Vector2(65.75, 128)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_6dh1s")
+gravity = 600.0
+falling_gravity = 900.0
+JUMP_VELOCITY = 400.0
+SPEED = 450.0
+ACCELERATION = 800.0
+DEACCELERATION = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-27.5, 6)
+shape = SubResource("RectangleShape2D_8ulvm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-27.5, 5.80602)
+scale = Vector2(0.770115, 0.868957)
+texture = ExtResource("2_kdb3u")
+
+[node name="States" type="Node" parent="."]
+
+[node name="MoveState" type="Node" parent="States"]
+script = ExtResource("3_i4pt1")
+
+[node name="PickUpState" type="Node" parent="States"]
+script = ExtResource("4_y3xqd")
+
+[node name="ShootingState" type="Node" parent="States"]
+script = ExtResource("5_y6klk")
+
+[node name="DetectFloor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectFloor"]
+position = Vector2(-27.5, 87)
+shape = SubResource("RectangleShape2D_prcv2")
+
+[node name="ArrowIcon" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -68)
+
+[node name="Icon2" type="Sprite2D" parent="ArrowIcon"]
+position = Vector2(134, 23)
+scale = Vector2(0.445, 0.220588)
+texture = ExtResource("6_i6bi8")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(6, 13)
+
+[node name="DetectPickup" type="Area2D" parent="."]
+position = Vector2(-2, 8)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPickup"]
+position = Vector2(15, 26)
+shape = SubResource("RectangleShape2D_3u68a")
+
+[connection signal="body_entered" from="DetectFloor" to="." method="_on_detect_floor_body_entered"]
+[connection signal="body_exited" from="DetectFloor" to="." method="_on_detect_floor_body_exited"]

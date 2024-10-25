@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bfk1tfvdci0"
-path="res://.godot/imported/black-cloud.png-18b4434a01d5c6861bdd04e4761bb89c.ctex"
+uid="uid://duscl0bybd3lk"
+path="res://.godot/imported/bird.png-763c07f10fe928eb084d1b428cd67f50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/items/platformArt/black-cloud.png"
-dest_files=["res://.godot/imported/black-cloud.png-18b4434a01d5c6861bdd04e4761bb89c.ctex"]
+source_file="res://src/environment/platformArt/bird.png"
+dest_files=["res://.godot/imported/bird.png-763c07f10fe928eb084d1b428cd67f50.ctex"]
 
 [params]
 
