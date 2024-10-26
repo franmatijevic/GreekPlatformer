@@ -29,7 +29,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_floor():
-			# Check if the collider is the platform you're interested in
 		if get_last_slide_collision():
 			var collider = get_last_slide_collision().get_collider()
 			if collider is Bird:
@@ -38,9 +37,6 @@ func _physics_process(delta: float) -> void:
 				collider.shape_owner_set_one_way_collision(0, false)
 				print("Standing on bird!")
 			else:
-				currentPlatform = null
-
-func _on_detect_floor_body_exited(body: Node2D) -> void:
-	if currentPlatform == body:
-		currentPlatform.shape_owner_set_one_way_collision(0, true)
-		currentPlatform = null
+				if currentPlatform:
+					currentPlatform.shape_owner_set_one_way_collision(0, true)
+					currentPlatform = null
