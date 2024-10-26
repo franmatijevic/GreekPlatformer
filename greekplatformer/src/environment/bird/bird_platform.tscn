@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbl4ugem5qj5c"]
+[gd_scene load_steps=5 format=3 uid="uid://bbl4ugem5qj5c"]
 
 [ext_resource type="Texture2D" uid="uid://duscl0bybd3lk" path="res://src/environment/platformArt/bird.png" id="1_1hyyh"]
 [ext_resource type="Script" path="res://src/environment/bird/birdPatrol.gd" id="1_ri33u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_de70f"]
-size = Vector2(171.852, 28.1481)
+size = Vector2(198.667, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnxpc"]
+size = Vector2(194.667, 174.667)
 
 [node name="bird_platform" type="StaticBody2D"]
 visibility_layer = 2
@@ -16,6 +19,13 @@ script = ExtResource("1_ri33u")
 texture = ExtResource("1_1hyyh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.76606e-07, 22.963)
+position = Vector2(-0.66666, 36.6667)
 shape = SubResource("RectangleShape2D_de70f")
 one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.33333, -10)
+shape = SubResource("RectangleShape2D_gnxpc")

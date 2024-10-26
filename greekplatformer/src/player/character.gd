@@ -12,6 +12,8 @@ class_name Character
 var jumped: bool = false
 var direction # only horizontal
 
+var currentPlatform: Node2D = null
+
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		if velocity.y > 0:
@@ -25,3 +27,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, DEACCELERATION * delta)
 	
 	move_and_slide()
+	
+	if is_on_floor():
+			# Check if the collider is the platform you're interested in
+		if get_last_slide_collision():
+			var collider = get_last_slide_collision().get_collider()
+			if collider is Bird:
+				currentPlatform = collider
+				velocity = collider.velocity
+				collider.shape_owner_set_one_way_collision(0, false)
+				print("Standing on bird!")
+			else:
+				currentPlatform = null
+
+func _on_detect_floor_body_exited(body: Node2D) -> void:
+	if currentPlatform == body:
+		currentPlatform.shape_owner_set_one_way_collision(0, true)
+		currentPlatform = null
