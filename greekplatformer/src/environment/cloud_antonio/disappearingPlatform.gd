@@ -23,7 +23,7 @@ func _on_area_2d_body_exited(_body):
 	if collisionShape2d.disabled == false and isOnPlatform == true:
 		isOnPlatform = false
 		disappear = true
-		timer.timeout
+		#timer.timeout.emit()
 
 	#timer.wait_time = 5
 	#timer.start()
@@ -34,11 +34,14 @@ func _on_timer_timeout():
 	if isOnPlatform == true or (isOnPlatform == false and disappear == true):
 		disappear = false
 		tween.tween_property(self, "modulate:a", 0, 0.4)
-		collisionShape2d.disabled = true
+		
+		collisionShape2d.set_deferred("disabled", true)#isto kao ovo zakomentirano, samo mora ovak jer inace baca error
+		#collisionShape2d.disabled = true
 		isOnPlatform = false
 		
 		timer.wait_time = reapear_time #ponovno ponavljanje
 		timer.start()
 	else:
 		tween.tween_property(self, "modulate:a", 1, 0.4)
-		collisionShape2d.disabled = false
+		#collisionShape2d.disabled = false
+		collisionShape2d.set_deferred("disabled", false)

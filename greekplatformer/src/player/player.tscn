@@ -11,7 +11,7 @@
 size = Vector2(69, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prcv2"]
-size = Vector2(69, 20)
+size = Vector2(70, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u68a"]
 size = Vector2(65.75, 128)
@@ -29,8 +29,6 @@ DEACCELERATION = 1000.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-27.5, 6)
 shape = SubResource("RectangleShape2D_8ulvm")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-27.5, 5.80602)
@@ -53,7 +51,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectFloor"]
-position = Vector2(-27.5, 87)
+position = Vector2(-27, 89)
 shape = SubResource("RectangleShape2D_prcv2")
 
 [node name="ArrowIcon" type="Node2D" parent="."]

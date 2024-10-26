@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=11 format=4 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_ng327"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_ca2gx"]
 [ext_resource type="PackedScene" uid="uid://lirmndsuoa1f" path="res://src/environment/cloud_fran/cloud.tscn" id="5_s2el8"]
 [ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="6_efeq7"]
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="7_gbrey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12rt8"]
+size = Vector2(2688, 1152)
 
 [sub_resource type="Curve2D" id="Curve2D_jg0po"]
 _data = {
@@ -13,55 +17,80 @@ _data = {
 }
 point_count = 4
 
-[node name="testLevel" instance=ExtResource("1_6ssvi")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghay1"]
+size = Vector2(2688, 1152)
+
+[node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
+current_room = NodePath("Room")
 
 [node name="TileMapLayer" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD6/wAAAgAAAAAAAAD7/wAAAgAAAAAAAAD8/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAP//AQAAAAAAAAAGAP//AQAAAAAAAAAHAP7/AQAAAAAAAAD5/wAAAgAAAAAAAAD4/wAAAgAAAAAAAAD3/wAAAgAAAAAAAAD2/wAAAgAAAAAAAAD1/wAAAgAAAAAAAAD0/wAAAgAAAAAAAAAEAP//AQAAAAAAAAAEAP7/AQAAAAAAAAAEAP3/AQAAAAAAAAAEAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAEAPr/AQAAAAAAAADz/wAAAgAAAAAAAADy/wAAAQAAAAAAAADx/wAAAQAAAAAAAADw/wAAAQAAAAAAAAD1////AgAAAAAAAAD0//7/AgAAAAAAAADz//7/AgAAAAAAAADy//7/AQAAAAAAAADx//7/AQAAAAAAAADx////AQAAAAAAAADy////AQAAAAAAAADz////AgAAAAAAAAD0////AgAAAAAAAADw//7/AQAAAAAAAADw////AQAAAAAAAADw//3/AQAAAAAAAADw//z/AQAAAAAAAADw//v/AQAAAAAAAADw//r/AQAAAAAAAADw//n/AQAAAAAAAADw//j/AQAAAAAAAAD5//3/AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD6/wAAAgAAAAAAAAD7/wAAAgAAAAAAAAD8/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAP//AQAAAAAAAAD5/wAAAgAAAAAAAAD4/wAAAgAAAAAAAAD3/wAAAgAAAAAAAAD2/wAAAgAAAAAAAAD1/wAAAgAAAAAAAAD0/wAAAgAAAAAAAAAEAP//AQAAAAAAAAAEAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAEAPr/AQAAAAAAAADz/wAAAgAAAAAAAADy/wAAAQAAAAAAAADx/wAAAQAAAAAAAADw/wAAAQAAAAAAAAD1////AgAAAAAAAAD0//7/AgAAAAAAAADz//7/AgAAAAAAAADy//7/AQAAAAAAAADx//7/AQAAAAAAAADx////AQAAAAAAAADy////AQAAAAAAAADz////AgAAAAAAAAD0////AgAAAAAAAADw//7/AQAAAAAAAADw////AQAAAAAAAADw//3/AQAAAAAAAADw//z/AQAAAAAAAADw//v/AQAAAAAAAADw//r/AQAAAAAAAADw//n/AQAAAAAAAADw//j/AQAAAAAAAAD5//3/AgAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAZAP//AQAAAAAAAAAZAP7/AQAAAAAAAAA=")
 
 [node name="Player" parent="." index="1"]
 position = Vector2(-268, -99)
 
-[node name="Spring" parent="." index="2" instance=ExtResource("2_ng327")]
-position = Vector2(-640, -66)
+[node name="Room" parent="." index="3" instance=ExtResource("7_gbrey")]
+position = Vector2(-704, -536)
+
+[node name="RoomSize" parent="Room" index="0"]
+position = Vector2(0, 88)
+shape = SubResource("RectangleShape2D_12rt8")
+
+[node name="Respawn" parent="Room" index="1"]
+position = Vector2(-1056, 160)
+
+[node name="Spring" parent="Room/Objects" index="0" instance=ExtResource("2_ng327")]
+position = Vector2(64, 470)
 max_force = null
 
-[node name="RigidBody2D" parent="." index="3" instance=ExtResource("3_awdoy")]
-position = Vector2(125, -37)
-picking_up_time = null
+[node name="RigidBody2D" parent="Room/Objects" index="1" instance=ExtResource("3_awdoy")]
+position = Vector2(829, 499)
 
-[node name="RigidBody2D2" parent="." index="4" instance=ExtResource("3_awdoy")]
-position = Vector2(307, -39)
-picking_up_time = null
+[node name="RigidBody2D2" parent="Room/Objects" index="2" instance=ExtResource("3_awdoy")]
+position = Vector2(1011, 497)
 
-[node name="RigidBody2D3" parent="." index="5" instance=ExtResource("3_awdoy")]
-position = Vector2(31, -35)
-picking_up_time = null
+[node name="RigidBody2D3" parent="Room/Objects" index="3" instance=ExtResource("3_awdoy")]
+position = Vector2(512, 296)
 
-[node name="RigidBody2D4" parent="." index="6" instance=ExtResource("3_awdoy")]
-position = Vector2(399, -37)
-picking_up_time = null
+[node name="RigidBody2D4" parent="Room/Objects" index="4" instance=ExtResource("3_awdoy")]
+position = Vector2(1103, 499)
 
-[node name="cloud_platform" parent="." index="7" instance=ExtResource("4_ca2gx")]
-position = Vector2(-1024, -120)
+[node name="cloud_platform" parent="Room/Objects" index="5" instance=ExtResource("4_ca2gx")]
+position = Vector2(-320, 416)
 
-[node name="Cloud" parent="." index="8" instance=ExtResource("5_s2el8")]
-visible = false
-position = Vector2(-448, -136)
+[node name="Cloud" parent="Room/Objects" index="6" instance=ExtResource("5_s2el8")]
+position = Vector2(256, 400)
 time_to_disapear = null
 time_to_reapear = null
 
-[node name="cloud_platform2" parent="." index="9" instance=ExtResource("4_ca2gx")]
-position = Vector2(-640, -392)
+[node name="cloud_platform2" parent="Room/Objects" index="7" instance=ExtResource("4_ca2gx")]
+position = Vector2(64, 144)
 
-[node name="Path2D" type="Path2D" parent="." index="10"]
+[node name="Path2D" type="Path2D" parent="Room/Objects" index="8"]
+position = Vector2(704, 536)
 curve = SubResource("Curve2D_jg0po")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Room/Objects/Path2D" index="0"]
 position = Vector2(-382, -459)
 rotation = -0.0391105
 rotates = false
 
-[node name="bird_platform" parent="Path2D/PathFollow2D" index="0" instance=ExtResource("6_efeq7")]
+[node name="bird_platform" parent="Room/Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("6_efeq7")]
 position = Vector2(-5.11346, 2.80225)
 rotation = 0.0391105
 speed = 0.1
+
+[node name="Room2" parent="." index="4" instance=ExtResource("7_gbrey")]
+
+[node name="RoomSize" parent="Room2" index="0"]
+position = Vector2(1984, -448)
+shape = SubResource("RectangleShape2D_ghay1")
+
+[node name="Respawn" parent="Room2" index="1"]
+position = Vector2(872, -120)
+
+[node name="RigidBody2D" parent="Room2/Objects" index="0" instance=ExtResource("3_awdoy")]
+position = Vector2(1152, -944)
+
+[editable path="Room"]
+[editable path="Room2"]

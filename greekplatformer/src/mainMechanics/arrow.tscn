@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://de34eq1s83fp8"]
+[gd_scene load_steps=6 format=3 uid="uid://de34eq1s83fp8"]
 
 [ext_resource type="Script" path="res://src/mainMechanics/arrow.gd" id="1_wrvt8"]
 [ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="2_0oq2x"]
@@ -6,12 +6,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6suhw"]
 radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cdweo"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ahio"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi31y"]
+size = Vector2(104, 3.5)
 
 [node name="Arrow" type="CharacterBody2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_wrvt8")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -25,11 +29,23 @@ shape = SubResource("CircleShape2D_6suhw")
 disabled = true
 
 [node name="DetectWall" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectWall"]
-position = Vector2(53, 0)
-shape = SubResource("CircleShape2D_cdweo")
+position = Vector2(49, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8ahio")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_oi31y")
+disabled = true
+one_way_collision = true
 
 [connection signal="body_entered" from="DetectWall" to="." method="_on_detect_wall_body_entered"]
+[connection signal="body_exited" from="DetectWall" to="." method="_on_detect_wall_body_exited"]

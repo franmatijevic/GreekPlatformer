@@ -12,7 +12,7 @@ var player = null#get_node("../Player")
 
 func _physics_process(_delta):
 	if pickedUp:
-		self.position = player.get_node("Marker2D").global_position
+		self.global_position = player.get_node("Marker2D").global_position
 
 func be_picked_up(charact:Character):
 	pickedUp = true
