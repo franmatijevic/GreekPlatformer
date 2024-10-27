@@ -1,11 +1,17 @@
 extends Node2D
 
-#PAUSE SECTION
-var paused: bool = false
-
 @export var current_room:Area2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
 
+@warning_ignore("unused_signal")
+signal toggle_paused(paused: bool)
+var game_paused: bool = false:
+	get:
+		return game_paused
+	set(value):
+		game_paused = value
+		get_tree().paused = game_paused
+		emit_signal("toggle_paused", game_paused)
 
 var new_next_level
 var prev_room
@@ -18,10 +24,9 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
 		if(get_node("Camera").block==false):
 			restart()
-	#PAUSE SECTION
 	if Input.is_action_pressed("pause"):
-		pauseMenu()
-		
+		if(get_node("Camera").block==false):
+			game_paused = !game_paused
 
 func restart():
 	get_node("BlackScreen/Control").modulate.a=1
@@ -38,6 +43,7 @@ func restart():
 
 func _ready() -> void:
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func next_level():
 	prev_room = current_room
@@ -58,15 +64,3 @@ func _on_room_transition_end_transition() -> void:
 	for i in prev_room.get_node("Objects").get_children():
 		if(get_node("Player").holding_object != i):
 			i.call_deferred("queue_free")
-			
-			
-#PAUSE SECTION
-
-func pauseMenu():
-	if paused:
-		canvas_layer_pause.hide()
-		get_tree().paused = false
-	else:
-		canvas_layer_pause.show()
-		get_tree().paused = true
-	paused = !paused

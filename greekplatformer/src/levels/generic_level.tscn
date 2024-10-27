@@ -37,7 +37,7 @@ sources/1 = SubResource("TileSetAtlasSource_mhlja")
 sources/2 = SubResource("TileSetAtlasSource_g5160")
 
 [node name="genericLevel" type="Node2D"]
-process_mode = 1
+process_mode = 3
 script = ExtResource("1_qp3oh")
 
 [node name="BlackScreen" type="CanvasLayer" parent="."]
