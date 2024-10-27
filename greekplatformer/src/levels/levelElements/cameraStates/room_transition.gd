@@ -1,5 +1,6 @@
 extends State
 
+signal end_transition
 
 var time:float
 
@@ -23,5 +24,8 @@ func update_physics_process(delta:float):
 		player().set_state("FollowPlayer")
 
 func exit():
+	#player().get_parent().current_room.get_node("Wall/CollisionShape2D").set_deferred("disabled", false)
+	
 	player().player.process_mode=Node.PROCESS_MODE_INHERIT
 	player().get_parent().current_room.pause_all_objects(false)
+	end_transition.emit()

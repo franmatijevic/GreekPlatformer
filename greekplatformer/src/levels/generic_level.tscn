@@ -30,7 +30,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_xr8xv"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_361e8")
 sources/1 = SubResource("TileSetAtlasSource_mhlja")
 sources/2 = SubResource("TileSetAtlasSource_g5160")
@@ -38,6 +38,27 @@ sources/2 = SubResource("TileSetAtlasSource_g5160")
 [node name="genericLevel" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_qp3oh")
+
+[node name="BlackScreen" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="BlackScreen"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="BlackScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_xr8xv")
@@ -62,3 +83,5 @@ script = ExtResource("6_ourqe")
 
 [node name="RoomTransition" type="Node" parent="Camera/States"]
 script = ExtResource("8_qapjt")
+
+[connection signal="end_transition" from="Camera/States/RoomTransition" to="." method="_on_room_transition_end_transition"]

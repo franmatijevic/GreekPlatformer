@@ -57,20 +57,20 @@ func _process(delta: float) -> void:
 func pick_up():
 	if holding_object != null:
 		return
-
+	
+	
 	var bodies = get_node("DetectPickup").get_overlapping_bodies()
-
 	if bodies.size() == 0:
 		return
 
 	var closest_object = bodies[0]
 
 	for i in bodies:
+		#if(get_parent().current_room != i.get_parent().get_parent()):#provjerava da ne moze kroz zid uzeti predmet iz druge sobe
 		if global_position.distance_to(closest_object.global_position) > global_position.distance_to(i.global_position):
 			closest_object = i
 
 	holding_object = closest_object
-
 	set_state("PickUpState")
 
 func throw(throwing_force: Vector2):

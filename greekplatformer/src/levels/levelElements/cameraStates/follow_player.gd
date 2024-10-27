@@ -5,6 +5,7 @@ extends State
 @export var max_player_velocity:float=300
 
 func enter():
+	player().block=false
 	var room = player().get_parent().current_room.get_node("RoomSize")#ovo je collisionShape2D scene Room
 	var camera = player().get_node("Camera2D")
 	
@@ -14,7 +15,8 @@ func enter():
 	camera.set_limit(SIDE_TOP, room.global_position.y - room.shape.size.y/2)
 	camera.set_limit(SIDE_BOTTOM, room.global_position.y + room.shape.size.y/2)
 
-
+func exit():
+	player().block=true
 
 
 func update_physics_process(delta:float):

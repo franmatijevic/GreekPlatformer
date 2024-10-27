@@ -3,15 +3,24 @@
 [ext_resource type="Script" path="res://src/levels/levelElements/room.gd" id="1_n7djr"]
 
 [node name="Room" type="Area2D"]
+process_mode = 1
 collision_layer = 0
 script = ExtResource("1_n7djr")
 
 [node name="RoomSize" type="CollisionShape2D" parent="."]
 
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
 [node name="Respawn" type="Marker2D" parent="."]
 
 [node name="Objects" type="Node2D" parent="."]
-process_mode = 1
+process_mode = 4
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -5,7 +5,12 @@ extends Node2D
 
 var states: Dictionary = {}
 
+var block:bool=false#blokirat ce pauziranje i resetiranje sobe dok traje tranzicija sobe
+
 func _ready():
+	global_position=player.global_position
+	$Camera2D.reset_smoothing()
+	
 	for i in get_node("States").get_children():
 		states[i.name.to_lower()] = i
 	if current_state:

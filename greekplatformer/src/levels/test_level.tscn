@@ -23,10 +23,10 @@ size = Vector2(2688, 1152)
 [node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
 current_room = NodePath("Room")
 
-[node name="TileMapLayer" parent="." index="0"]
+[node name="TileMapLayer" parent="." index="1"]
 tile_map_data = PackedByteArray("AAD6/wAAAgAAAAAAAAD7/wAAAgAAAAAAAAD8/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAP//AQAAAAAAAAD5/wAAAgAAAAAAAAD4/wAAAgAAAAAAAAD3/wAAAgAAAAAAAAD2/wAAAgAAAAAAAAD1/wAAAgAAAAAAAAD0/wAAAgAAAAAAAAAEAP//AQAAAAAAAAAEAPz/AQAAAAAAAAAEAPv/AQAAAAAAAAAEAPr/AQAAAAAAAADz/wAAAgAAAAAAAADy/wAAAQAAAAAAAADx/wAAAQAAAAAAAADw/wAAAQAAAAAAAAD1////AgAAAAAAAAD0//7/AgAAAAAAAADz//7/AgAAAAAAAADy//7/AQAAAAAAAADx//7/AQAAAAAAAADx////AQAAAAAAAADy////AQAAAAAAAADz////AgAAAAAAAAD0////AgAAAAAAAADw//7/AQAAAAAAAADw////AQAAAAAAAADw//3/AQAAAAAAAADw//z/AQAAAAAAAADw//v/AQAAAAAAAADw//r/AQAAAAAAAADw//n/AQAAAAAAAADw//j/AQAAAAAAAAD5//3/AgAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAZAP//AQAAAAAAAAAZAP7/AQAAAAAAAAA=")
 
-[node name="Player" parent="." index="1"]
+[node name="Player" parent="." index="2"]
 position = Vector2(-268, -99)
 
 [node name="Room" parent="." index="3" instance=ExtResource("7_gbrey")]
@@ -36,7 +36,7 @@ position = Vector2(-704, -536)
 position = Vector2(0, 88)
 shape = SubResource("RectangleShape2D_12rt8")
 
-[node name="Respawn" parent="Room" index="1"]
+[node name="Respawn" parent="Room" index="2"]
 position = Vector2(-1056, 160)
 
 [node name="Spring" parent="Room/Objects" index="0" instance=ExtResource("2_ng327")]
@@ -86,7 +86,7 @@ speed = 0.1
 position = Vector2(1984, -448)
 shape = SubResource("RectangleShape2D_ghay1")
 
-[node name="Respawn" parent="Room2" index="1"]
+[node name="Respawn" parent="Room2" index="2"]
 position = Vector2(872, -120)
 
 [node name="RigidBody2D" parent="Room2/Objects" index="0" instance=ExtResource("3_awdoy")]
