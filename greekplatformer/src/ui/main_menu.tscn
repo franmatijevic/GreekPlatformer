@@ -130,6 +130,7 @@ texture_pressed = ExtResource("14_opw2a")
 texture_hover = ExtResource("15_ds08j")
 
 [node name="Continue" type="TextureButton" parent="options/playOptions/FlowContainer/HFlowContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("16_eev0j")
 texture_pressed = ExtResource("17_rus5j")

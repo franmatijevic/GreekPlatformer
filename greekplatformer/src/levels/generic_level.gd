@@ -1,6 +1,11 @@
 extends Node2D
 
+#PAUSE SECTION
+var paused: bool = false
+
 @export var current_room:Area2D
+@onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
+
 
 var new_next_level
 var prev_room
@@ -13,6 +18,10 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
 		if(get_node("Camera").block==false):
 			restart()
+	#PAUSE SECTION
+	if Input.is_action_pressed("pause"):
+		pauseMenu()
+		
 
 func restart():
 	get_node("BlackScreen/Control").modulate.a=1
@@ -49,3 +58,15 @@ func _on_room_transition_end_transition() -> void:
 	for i in prev_room.get_node("Objects").get_children():
 		if(get_node("Player").holding_object != i):
 			i.call_deferred("queue_free")
+			
+			
+#PAUSE SECTION
+
+func pauseMenu():
+	if paused:
+		canvas_layer_pause.hide()
+		get_tree().paused = false
+	else:
+		canvas_layer_pause.show()
+		get_tree().paused = true
+	paused = !paused

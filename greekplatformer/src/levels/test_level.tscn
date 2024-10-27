@@ -53,6 +53,7 @@ position = Vector2(1011, 497)
 position = Vector2(512, 296)
 
 [node name="RigidBody2D4" parent="Room/Objects" index="4" instance=ExtResource("3_awdoy")]
+process_mode = 3
 position = Vector2(1103, 499)
 
 [node name="cloud_platform" parent="Room/Objects" index="5" instance=ExtResource("4_ca2gx")]
