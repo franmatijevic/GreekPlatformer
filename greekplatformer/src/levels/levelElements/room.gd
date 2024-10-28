@@ -24,5 +24,7 @@ func _on_body_exited(_body: Node2D) -> void:
 	if(get_parent().new_next_level==self):
 		return
 	
+	set_collision_mask_value(1,false)
+	
 	$Wall.set_collision_layer_value(2, true)
 	get_parent().next_level()

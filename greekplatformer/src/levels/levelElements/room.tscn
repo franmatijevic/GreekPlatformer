@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://61v4j5x18v7w"]
+[gd_scene load_steps=3 format=3 uid="uid://61v4j5x18v7w"]
 
 [ext_resource type="Script" path="res://src/levels/levelElements/room.gd" id="1_n7djr"]
+[ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="2_2wk3n"]
 
 [node name="Room" type="Area2D"]
 process_mode = 1
 collision_layer = 0
 script = ExtResource("1_n7djr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_2wk3n")
 
 [node name="RoomSize" type="CollisionShape2D" parent="."]
 

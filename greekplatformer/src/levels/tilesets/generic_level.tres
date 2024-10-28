@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://c8ru2teb6u7t2"]
+
+[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_5mbpb"]
+[ext_resource type="Texture2D" uid="uid://1rsjsmmc8mcu" path="res://src/environment/environmentArt/floor/tempFloorTexture.png" id="2_j42ys"]
+[ext_resource type="Texture2D" uid="uid://cfbl0e13s3tj0" path="res://src/environment/environmentArt/floor/BrickFloor4.png" id="3_tiylf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_361e8"]
+texture = ExtResource("1_5mbpb")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlja"]
+texture = ExtResource("2_j42ys")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g5160"]
+texture = ExtResource("3_tiylf")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[resource]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_361e8")
+sources/1 = SubResource("TileSetAtlasSource_mhlja")
+sources/2 = SubResource("TileSetAtlasSource_g5160")

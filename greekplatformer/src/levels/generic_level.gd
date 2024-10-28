@@ -5,6 +5,15 @@ extends Node2D
 
 @warning_ignore("unused_signal")
 signal toggle_paused(paused: bool)
+
+
+var current_room_file
+var new_next_level
+var prev_room
+
+var current_room_position
+var holding_object:Throwable=null
+
 var game_paused: bool = false:
 	get:
 		return game_paused
@@ -13,18 +22,11 @@ var game_paused: bool = false:
 		get_tree().paused = game_paused
 		emit_signal("toggle_paused", game_paused)
 
-var new_next_level
-var prev_room
-
-var original_object_positions=[]
-
-var holding_object:Throwable=null
-
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
 		if(get_node("Camera").block==false):
 			restart()
-	if Input.is_action_pressed("pause"):
+	if Input.is_action_just_pressed("pause"):
 		if(get_node("Camera").block==false):
 			game_paused = !game_paused
 
@@ -38,21 +40,24 @@ func restart():
 	holding_object=null
 	get_node("Player").holding_object=null
 	
-	#for i in original_object_positions:
-	#	pass
+	current_room.queue_free()
+	current_room = current_room_file.instantiate()
+	add_child(current_room)
+	current_room.global_position = current_room_position
 
 func _ready() -> void:
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	current_room_file = load(current_room.scene_file_path)
+	current_room_position= current_room.global_position
 
 func next_level():
 	prev_room = current_room
 	current_room=new_next_level
 	holding_object=get_node("Player").holding_object
 	
-	#original_object_positions.clear()
-	#for i in current_room.get_node("Objects").get_children():
-	#	original_object_positions.
+	current_room_position= current_room.global_position
+	current_room_file = load(current_room.scene_file_path)
 	
 	get_node("Camera").set_state("RoomTransition")
 

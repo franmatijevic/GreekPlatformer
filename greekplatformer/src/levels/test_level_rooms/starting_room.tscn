@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=4 uid="uid://bv6crjirceehq"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_v1w17"]
+[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="2_ns463"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_qnncy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0vdt"]
+size = Vector2(1920, 1080)
+
+[node name="StartingRoom" instance=ExtResource("1_v1w17")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD6/wIAAgAAAAAAAAD7/wIAAgAAAAAAAAD8/wIAAgAAAAAAAAD9/wIAAgAAAAAAAAD+/wIAAgAAAAAAAAD//wIAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAD+/wEAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAAAAgAAAAAAAAD6/wEAAgAAAAAAAAD6/wAAAgAAAAAAAAD6////AgAAAAAAAAD6//7/AgAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(192, -160)
+shape = SubResource("RectangleShape2D_k0vdt")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-512, 128)
+
+[node name="cloud_platform" parent="Objects" index="0" instance=ExtResource("2_ns463")]
+position = Vector2(232, 126)
+
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("3_qnncy")]
+position = Vector2(-136, 48)

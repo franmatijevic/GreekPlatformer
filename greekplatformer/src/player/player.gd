@@ -66,7 +66,6 @@ func pick_up():
 	var closest_object = bodies[0]
 
 	for i in bodies:
-		#if(get_parent().current_room != i.get_parent().get_parent()):#provjerava da ne moze kroz zid uzeti predmet iz druge sobe
 		if global_position.distance_to(closest_object.global_position) > global_position.distance_to(i.global_position):
 			closest_object = i
 
@@ -92,7 +91,7 @@ func pick_or_throw():
 		throw(throw_force)
 
 func jump():
-	if holding_object and !holding_object.playerCanJump:
+	if holding_object:
 		return
 
 	if is_on_floor():

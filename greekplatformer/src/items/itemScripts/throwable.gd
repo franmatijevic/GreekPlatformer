@@ -6,7 +6,6 @@ var pickedUp:bool = false
 var throwForce:Vector2
 
 @export var picking_up_time:float=0.2
-@export var playerCanJump:bool=false
 
 var player = null#get_node("../Player")
 

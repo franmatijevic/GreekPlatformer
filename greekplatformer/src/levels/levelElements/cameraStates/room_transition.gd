@@ -16,6 +16,8 @@ func enter():
 	camera.set_limit(SIDE_RIGHT, room.global_position.x + room.shape.size.x/2)
 	camera.set_limit(SIDE_TOP, room.global_position.y - room.shape.size.y/2)
 	camera.set_limit(SIDE_BOTTOM, room.global_position.y + room.shape.size.y/2)
+	
+
 
 func update_physics_process(delta:float):
 	if time>0:
@@ -25,6 +27,7 @@ func update_physics_process(delta:float):
 
 func exit():
 	#player().get_parent().current_room.get_node("Wall/CollisionShape2D").set_deferred("disabled", false)
+	
 	
 	player().player.process_mode=Node.PROCESS_MODE_PAUSABLE
 	player().get_parent().current_room.pause_all_objects(false)
