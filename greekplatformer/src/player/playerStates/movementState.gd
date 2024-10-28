@@ -1,5 +1,8 @@
 extends State
 
+func enter():
+	player().set_collision_layer_value(1, true)
+
 func exit():
 	player().direction=0
 

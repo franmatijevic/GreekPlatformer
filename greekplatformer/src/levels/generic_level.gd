@@ -33,17 +33,20 @@ func _input(_event: InputEvent) -> void:
 func restart():
 	get_node("BlackScreen/Control").modulate.a=1
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
-	get_node("Player").global_position = current_room.get_node("Respawn").global_position
 	
 	if(holding_object):
 		holding_object.queue_free()
 	holding_object=null
 	get_node("Player").holding_object=null
 	
+	
 	current_room.queue_free()
 	current_room = current_room_file.instantiate()
 	add_child(current_room)
 	current_room.global_position = current_room_position
+	
+	get_node("Player").global_position = current_room.get_node("Respawn").global_position
+	get_node("Player").set_state("MoveState")
 
 func _ready() -> void:
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)

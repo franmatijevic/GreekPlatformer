@@ -116,6 +116,9 @@ func shoot():
 		return
 	set_state("ShootingState")
 
+func death():
+	set_state("DeadState")
+
 func set_state(state: String):
 	current_state.exit()
 	current_state = states[state.to_lower()]

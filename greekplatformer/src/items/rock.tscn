@@ -16,7 +16,6 @@ can_sleep = false
 lock_rotation = true
 linear_damp_mode = 1
 script = ExtResource("1_nq7h8")
-playerCanJump = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 1.52588e-05)

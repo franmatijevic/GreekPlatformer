@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy8dahgd1g1jr"]
+
+[ext_resource type="Script" path="res://src/environment/spikes/spike.gd" id="1_f4iid"]
+[ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="1_rg6sr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gdda"]
+radius = 13.0384
+
+[node name="Spike" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_f4iid")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-2, 77)
+rotation = -1.5708
+texture = ExtResource("1_rg6sr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7gdda")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

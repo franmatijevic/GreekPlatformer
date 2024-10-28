@@ -17,25 +17,9 @@ func _physics_process(_delta):
 func be_picked_up(charact:Character):
 	pickedUp = true
 	player = charact
+	freeze=true
 
 func be_thrown(force:Vector2):
+	freeze=false
 	pickedUp = false
 	linear_velocity = force
-
-#func _input(_event):
-	#if Input.is_action_just_pressed("pick_up_item") and 1==0:
-		#var bodies = $Area2D.get_overlapping_bodies()
-		#for body in bodies:
-			#if body.name == "Player" and player.canPickUp == true:
-				#pickedUp = true
-				#player.canPickUp = false
-#
-	#if Input.is_action_just_pressed("drop_item") and pickedUp == true and 1==0:
-		#linear_velocity = Vector2(0, -10)
-		#pickedUp = false
-		#player.canPickUp = true
-	#
-	#if Input.is_action_just_pressed("throw_item") and pickedUp == true and 1 == 0:
-		#pickedUp = false
-		#player.canPickUp = true
-		#linear_velocity = throwForce
