@@ -2,9 +2,13 @@ extends CharacterBody2D
 
 class_name Character
 
-@export var gravity: float = 100
-@export var falling_gravity: float = 150
-@export var JUMP_VELOCITY: float = 300
+@export var jump_height: float
+@export var jump_time_to_peak: float
+@export var jump_time_to_descent: float
+
+@onready var gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+@onready var falling_gravity: float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+@onready var JUMP_VELOCITY: float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @export var SPEED: float = 100
 @export var ACCELERATION: float = 40
 @export var DEACCELERATION: float = 70
