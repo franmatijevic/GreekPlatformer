@@ -1,6 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv001k4gc8bu8"]
+[gd_scene load_steps=39 format=3 uid="uid://cv001k4gc8bu8"]
 
 [ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="1_wmr8m"]
+
+[sub_resource type="SystemFont" id="SystemFont_y54tb"]
+font_names = PackedStringArray("Bell MT")
+font_weight = 575
+
+[sub_resource type="SystemFont" id="SystemFont_lpgyk"]
+font_names = PackedStringArray("Bell MT")
+font_weight = 600
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j42k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f475h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6y60k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m71nj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tx6mh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qpwx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g87f7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5uj4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvxjm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkjbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36x4f"]
+
+[sub_resource type="SystemFont" id="SystemFont_xbat3"]
+font_names = PackedStringArray("Bell MT")
+font_weight = 550
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdjvg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ut1sl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cb16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1coty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4o1iu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sb8t1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22cks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esqgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68ve3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmyns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4uyh"]
+
+[sub_resource type="SystemFont" id="SystemFont_fdjkd"]
+font_names = PackedStringArray("Bell MT")
+font_weight = 550
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhtfh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf246"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvgb2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q4kt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4vlb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pypi6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7e86p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fti5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnsoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ch7cf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7n8j"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -11,6 +93,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wmr8m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.258824)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -29,28 +117,92 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -307.5
-offset_top = -224.5
-offset_right = 307.5
-offset_bottom = 224.5
+offset_left = -102.0
+offset_top = -192.0
+offset_right = 102.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="PausedLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "PAUSE"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_y54tb")
+theme_override_font_sizes/font_size = 53
+text = "PAUSED"
 horizontal_alignment = 1
+
+[node name="Seperator" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="Panel/VBoxContainer"]
+layout_mode = 2
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.654232, 0.654232, 0.654232, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_lpgyk")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4j42k")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_f475h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6y60k")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_m71nj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tx6mh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_3qpwx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g87f7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5uj4m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cvxjm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dkjbb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_36x4f")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_xbat3")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sdjvg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ut1sl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6cb16")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1coty")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4o1iu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_sb8t1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_22cks")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_esqgo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_68ve3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmyns")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a4uyh")
 text = "Restart"
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_fdjkd")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhtfh")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cf246")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fvgb2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2q4kt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h4vlb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pypi6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7e86p")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fti5v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnsoh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ch7cf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7n8j")
 text = "Quit"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
