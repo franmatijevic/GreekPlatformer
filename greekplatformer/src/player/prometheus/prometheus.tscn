@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://djhrg1dr3rm7p"]
+
+[ext_resource type="PackedScene" uid="uid://dpk0rlxpn4h88" path="res://src/player/player.tscn" id="1_62uey"]
+[ext_resource type="Script" path="res://src/player/prometheus/prometheus.gd" id="2_2j8tk"]
+
+[node name="Player" instance=ExtResource("1_62uey")]
+script = ExtResource("2_2j8tk")

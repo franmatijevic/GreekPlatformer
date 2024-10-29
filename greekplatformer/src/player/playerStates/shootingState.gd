@@ -57,5 +57,5 @@ func shoot():
 	else: arrow = Arrow.new_arrow(PI - angle)
 	
 	arrow.global_position=icon.global_position
-	player().get_parent().add_child(arrow)
+	player().get_parent().current_room.get_node("Objects").add_child(arrow)
 	player().set_state("MoveState")

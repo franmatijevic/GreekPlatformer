@@ -34,6 +34,8 @@ func restart():
 	get_node("BlackScreen/Control").modulate.a=1
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 	
+	current_room.process_mode=Node.PROCESS_MODE_DISABLED
+	
 	if(holding_object):
 		holding_object.queue_free()
 	holding_object=null
@@ -69,6 +71,7 @@ func _on_room_transition_end_transition() -> void:
 	if prev_room == null:
 		return
 	
-	for i in prev_room.get_node("Objects").get_children():
-		if(get_node("Player").holding_object != i):
-			i.call_deferred("queue_free")
+	prev_room.get_node("Objects").queue_free()
+	#for i in prev_room.get_node("Objects").get_children():
+	#	if(get_node("Player").holding_object != i):
+	#		i.call_deferred("queue_free")

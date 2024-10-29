@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=13 format=3 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Script" path="res://src/levels/generic_level.gd" id="1_qp3oh"]
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
 [ext_resource type="Texture2D" uid="uid://1rsjsmmc8mcu" path="res://src/environment/environmentArt/floor/tempFloorTexture.png" id="2_av4ri"]
-[ext_resource type="PackedScene" uid="uid://dpk0rlxpn4h88" path="res://src/player/player.tscn" id="2_u6sfn"]
 [ext_resource type="Texture2D" uid="uid://cfbl0e13s3tj0" path="res://src/environment/environmentArt/floor/BrickFloor4.png" id="3_qfqkm"]
 [ext_resource type="Script" path="res://src/levels/levelElements/camera.gd" id="5_sveee"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/follow_player.gd" id="6_ourqe"]
@@ -64,14 +63,10 @@ color = Color(0, 0, 0, 1)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_xr8xv")
 
-[node name="Player" parent="." instance=ExtResource("2_u6sfn")]
-process_mode = 1
-position = Vector2(-592, -200)
-
 [node name="Camera" type="Node2D" parent="." node_paths=PackedStringArray("player", "current_state")]
 position = Vector2(-592, -192)
 script = ExtResource("5_sveee")
-player = NodePath("../Player")
+player = NodePath("")
 current_state = NodePath("States/FollowPlayer")
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
