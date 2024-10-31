@@ -18,11 +18,11 @@ func pause_all_objects(togle:bool):
 	get_node("Objects").process_mode = mode
 
 func _on_body_entered(_body: Node2D) -> void:
-	
 	get_parent().new_next_level=self
 
 func _on_body_exited(_body: Node2D) -> void:
 	if(get_parent().new_next_level==self):
+		get_parent().new_next_level = get_parent().current_room
 		return
 	
 	set_collision_mask_value(1,false)

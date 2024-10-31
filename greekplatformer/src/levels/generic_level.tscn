@@ -63,10 +63,9 @@ color = Color(0, 0, 0, 1)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_xr8xv")
 
-[node name="Camera" type="Node2D" parent="." node_paths=PackedStringArray("player", "current_state")]
+[node name="Camera" type="Node2D" parent="." node_paths=PackedStringArray("current_state")]
 position = Vector2(-592, -192)
 script = ExtResource("5_sveee")
-player = NodePath("")
 current_state = NodePath("States/FollowPlayer")
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]

@@ -31,10 +31,16 @@ func _input(_event: InputEvent) -> void:
 			game_paused = !game_paused
 
 func restart():
+	if(current_room != new_next_level):
+		return
+	
 	get_node("BlackScreen/Control").modulate.a=1
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 	
 	current_room.process_mode=Node.PROCESS_MODE_DISABLED
+	if(new_next_level != current_room):
+		new_next_level = null
+		#new_next_level.process_mode=Node.PROCESS_MODE_DISABLED
 	
 	if(holding_object):
 		holding_object.queue_free()
@@ -62,6 +68,7 @@ func next_level():
 	holding_object=get_node("Player").holding_object
 	
 	current_room_position= current_room.global_position
+	
 	current_room_file = load(current_room.scene_file_path)
 	
 	get_node("Camera").set_state("RoomTransition")
@@ -71,7 +78,7 @@ func _on_room_transition_end_transition() -> void:
 	if prev_room == null:
 		return
 	
-	prev_room.get_node("Objects").queue_free()
-	#for i in prev_room.get_node("Objects").get_children():
-	#	if(get_node("Player").holding_object != i):
-	#		i.call_deferred("queue_free")
+	#prev_room.get_node("Objects").queue_free()
+	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object
+		if(get_node("Player").holding_object != i):
+			i.call_deferred("queue_free")
