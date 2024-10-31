@@ -117,7 +117,8 @@ func shoot():
 	set_state("ShootingState")
 
 func death():
-	set_state("DeadState")
+	if(current_state.name!="DeadState"):
+		set_state("DeadState")
 
 func set_state(state: String):
 	current_state.exit()

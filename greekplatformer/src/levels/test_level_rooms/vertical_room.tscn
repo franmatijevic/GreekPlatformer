@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://d3kiai8a1qj4t"]
+[gd_scene load_steps=10 format=4 uid="uid://d3kiai8a1qj4t"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_x35cq"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_naw4u"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="3_6puxy"]
 [ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="4_vod8t"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_215sh"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="6_l0qss"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="7_bgvo3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcfft"]
 size = Vector2(1920, 2160)
@@ -50,3 +52,9 @@ rotation = -0.610726
 
 [node name="RigidBody2D" parent="Objects" index="5" instance=ExtResource("5_215sh")]
 position = Vector2(408, 784)
+
+[node name="PressurePlate" parent="Objects" index="6" instance=ExtResource("6_l0qss")]
+position = Vector2(-512, 952)
+
+[node name="Spike" parent="Objects" index="7" instance=ExtResource("7_bgvo3")]
+position = Vector2(192, 912)

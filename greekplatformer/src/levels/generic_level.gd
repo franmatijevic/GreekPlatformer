@@ -33,9 +33,8 @@ func _input(_event: InputEvent) -> void:
 func restart():
 	if(current_room != new_next_level):
 		return
-	
 	get_node("BlackScreen/Control").modulate.a=1
-	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
+	get_node("Player").global_position = current_room.get_node("Respawn").global_position
 	
 	current_room.process_mode=Node.PROCESS_MODE_DISABLED
 	if(new_next_level != current_room):
@@ -53,8 +52,8 @@ func restart():
 	add_child(current_room)
 	current_room.global_position = current_room_position
 	
-	get_node("Player").global_position = current_room.get_node("Respawn").global_position
 	get_node("Player").set_state("MoveState")
+	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
 func _ready() -> void:
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
