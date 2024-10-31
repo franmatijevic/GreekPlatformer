@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://src/player/playerStates/dead_state.gd" id="6_v8jiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulvm"]
-size = Vector2(69, 184)
+size = Vector2(78, 232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prcv2"]
-size = Vector2(70, 24)
+size = Vector2(48, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u68a"]
 size = Vector2(65.75, 128)
@@ -28,12 +28,12 @@ ACCELERATION = 2000.0
 DEACCELERATION = 2000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-27.5, 6)
+position = Vector2(-23, -18)
 shape = SubResource("RectangleShape2D_8ulvm")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-27.5, 5.80602)
-scale = Vector2(0.770115, 0.868957)
+position = Vector2(-18.5, -18.5896)
+scale = Vector2(0.977012, 1.10241)
 texture = ExtResource("2_kdb3u")
 
 [node name="States" type="Node" parent="."]
@@ -55,7 +55,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectFloor"]
-position = Vector2(-27, 89)
+position = Vector2(-38, 87.5)
 shape = SubResource("RectangleShape2D_prcv2")
 
 [node name="ArrowIcon" type="Node2D" parent="."]
@@ -68,7 +68,7 @@ scale = Vector2(0.445, 0.220588)
 texture = ExtResource("6_i6bi8")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(6, 13)
+position = Vector2(18, -4)
 
 [node name="DetectPickup" type="Area2D" parent="."]
 position = Vector2(-2, 8)

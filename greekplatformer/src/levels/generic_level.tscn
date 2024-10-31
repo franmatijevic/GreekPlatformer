@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=11 format=3 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Script" path="res://src/levels/generic_level.gd" id="1_qp3oh"]
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
-[ext_resource type="Texture2D" uid="uid://1rsjsmmc8mcu" path="res://src/environment/environmentArt/floor/tempFloorTexture.png" id="2_av4ri"]
 [ext_resource type="Texture2D" uid="uid://cfbl0e13s3tj0" path="res://src/environment/environmentArt/floor/BrickFloor4.png" id="3_qfqkm"]
 [ext_resource type="Script" path="res://src/levels/levelElements/camera.gd" id="5_sveee"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/follow_player.gd" id="6_ourqe"]
@@ -11,12 +10,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_361e8"]
 texture = ExtResource("1_w8uqh")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlja"]
-texture = ExtResource("2_av4ri")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
@@ -32,7 +25,6 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_361e8")
-sources/1 = SubResource("TileSetAtlasSource_mhlja")
 sources/2 = SubResource("TileSetAtlasSource_g5160")
 
 [node name="genericLevel" type="Node2D"]

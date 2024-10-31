@@ -30,12 +30,12 @@ func _physics_process(delta: float) -> void:
 		if direction == -1:
 			facing_direction = false
 			icon.flip_h = true
-			marker_2d.position = Vector2(-56, 18)
+			marker_2d.position = Vector2(-56, -4)
 			collision_shape_2d.position = Vector2(-63, 25)
 		elif direction == 1:
 			facing_direction = true
 			icon.flip_h = false
-			marker_2d.position = Vector2(6, 13)
+			marker_2d.position = Vector2(18, -4)
 			collision_shape_2d.position = Vector2(14, 25)
 
 	if coyoteBuffer > 0:

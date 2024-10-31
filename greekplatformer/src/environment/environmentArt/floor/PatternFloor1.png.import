@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rsjsmmc8mcu"
-path="res://.godot/imported/tempFloorTexture.png-42665c1be417333c0f70b3eab535ebda.ctex"
+uid="uid://dd5qfyy5csq6r"
+path="res://.godot/imported/PatternFloor1.png-2959feb9e6421378417df0473e74c80a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/environmentArt/floor/tempFloorTexture.png"
-dest_files=["res://.godot/imported/tempFloorTexture.png-42665c1be417333c0f70b3eab535ebda.ctex"]
+source_file="res://src/environment/environmentArt/floor/PatternFloor1.png"
+dest_files=["res://.godot/imported/PatternFloor1.png-2959feb9e6421378417df0473e74c80a.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
