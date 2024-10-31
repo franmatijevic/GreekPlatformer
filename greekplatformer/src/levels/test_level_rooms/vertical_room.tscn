@@ -51,10 +51,22 @@ rotation = -0.610726
 [node name="bird_platform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_vod8t")]
 
 [node name="RigidBody2D" parent="Objects" index="5" instance=ExtResource("5_215sh")]
-position = Vector2(408, 784)
+position = Vector2(168, 784)
 
-[node name="PressurePlate" parent="Objects" index="6" instance=ExtResource("6_l0qss")]
-position = Vector2(-512, 952)
+[node name="PressurePlate" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("6_l0qss")]
+position = Vector2(672, 952)
+connectedTo = [NodePath("../Spike"), NodePath("../Spike2"), NodePath("../Spike3")]
 
 [node name="Spike" parent="Objects" index="7" instance=ExtResource("7_bgvo3")]
-position = Vector2(192, 912)
+position = Vector2(560, 936)
+rotation = 0.507891
+
+[node name="Spike2" parent="Objects" index="8" instance=ExtResource("7_bgvo3")]
+position = Vector2(832, 808)
+rotation = -1.5708
+distance = 128.0
+
+[node name="Spike3" parent="Objects" index="9" instance=ExtResource("7_bgvo3")]
+position = Vector2(784, 920)
+rotation = -0.760964
+distance = 120.0

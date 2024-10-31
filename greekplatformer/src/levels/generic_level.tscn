@@ -31,6 +31,11 @@ sources/2 = SubResource("TileSetAtlasSource_g5160")
 process_mode = 3
 script = ExtResource("1_qp3oh")
 
+[node name="Timer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 0.1
+one_shot = true
+
 [node name="BlackScreen" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="BlackScreen"]
@@ -77,4 +82,5 @@ visible = false
 
 [node name="PauseMenu" parent="CanvasLayerPause" instance=ExtResource("7_5ljx5")]
 
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="end_transition" from="Camera/States/RoomTransition" to="." method="_on_room_transition_end_transition"]

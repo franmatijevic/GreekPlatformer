@@ -52,6 +52,7 @@ func restart():
 	add_child(current_room)
 	current_room.global_position = current_room_position
 	
+	$Timer.start(0.1)
 	get_node("Player").set_state("MoveState")
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
@@ -60,6 +61,8 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	current_room_file = load(current_room.scene_file_path)
 	current_room_position= current_room.global_position
+	
+	current_room.pause_all_objects(false)
 
 func next_level():
 	prev_room = current_room
@@ -81,3 +84,7 @@ func _on_room_transition_end_transition() -> void:
 	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object
 		if(get_node("Player").holding_object != i):
 			i.call_deferred("queue_free")
+
+
+func _on_timer_timeout() -> void:
+	current_room.pause_all_objects(false)
