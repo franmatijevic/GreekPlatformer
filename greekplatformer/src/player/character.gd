@@ -15,6 +15,8 @@ class_name Character
 
 @export var Max_falling_speed:float=2300
 
+var currentPlatform: Node2D = null
+
 var jumped: bool = false
 var direction # only horizontal
 
@@ -25,6 +27,14 @@ func _physics_process(delta: float) -> void:
 			if(velocity.y>Max_falling_speed):
 				velocity.y=Max_falling_speed
 		else:
+			if get_last_slide_collision():
+				var collider = get_last_slide_collision().get_collider()
+				if collider is Bird:
+					currentPlatform = collider
+					velocity = collider.velocity
+					collider.shape_owner_set_one_way_collision(0, false)
+				else:
+					currentPlatform = null
 			velocity.y += gravity * delta
 
 	if direction:
@@ -33,4 +43,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, DEACCELERATION * delta)
 	
 	move_and_slide()
+	
+func _on_detect_floor_body_exited(body: Node2D) -> void:
+	if currentPlatform == body:
+		currentPlatform.shape_owner_set_one_way_collision(0, true)
+		currentPlatform = null
 	
