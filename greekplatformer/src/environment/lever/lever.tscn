@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb47qwqitaccv"]
+
+[ext_resource type="Script" path="res://src/environment/lever/lever.gd" id="1_0doe8"]
+[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_aup3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxktm"]
+size = Vector2(96, 70)
+
+[node name="Lever" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_0doe8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_vxktm")
+
+[node name="Pixel1x1" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(96, 42)
+texture = ExtResource("1_aup3f")
+
+[node name="Handle" type="Node2D" parent="."]
+rotation = -0.785398
+
+[node name="Pixel1x2" type="Sprite2D" parent="Handle"]
+position = Vector2(0, -40.5)
+scale = Vector2(15, 81)
+texture = ExtResource("1_aup3f")
+
+[node name="Point" type="Marker2D" parent="Handle"]
+position = Vector2(-0.707108, -72.832)

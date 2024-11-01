@@ -26,7 +26,7 @@ position = Vector2(11555, -2574)
 shape = SubResource("RectangleShape2D_g23c0")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(135, 638)
+position = Vector2(135, 704)
 
 [node name="Objects" parent="." index="4"]
 position = Vector2(441, 231)
@@ -85,6 +85,7 @@ curve = SubResource("Curve2D_ldngd")
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
 position = Vector2(1628, -783)
 rotation = 0.279462
+rotates = false
 
 [node name="bird_platform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_y2lgs")]
 speed = 0.15

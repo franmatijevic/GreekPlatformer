@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpk0rlxpn4h88"]
+[gd_scene load_steps=12 format=3 uid="uid://dpk0rlxpn4h88"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_6dh1s"]
 [ext_resource type="Texture2D" uid="uid://fcugs2bhjgsm" path="res://src/player/playerArt/Character.png" id="2_kdb3u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/player/playerStates/shootingState.gd" id="5_y6klk"]
 [ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="6_i6bi8"]
 [ext_resource type="Script" path="res://src/player/playerStates/dead_state.gd" id="6_v8jiw"]
+[ext_resource type="Script" path="res://src/player/playerStates/interact_state.gd" id="7_tjjen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulvm"]
 size = Vector2(78, 232)
@@ -18,6 +19,7 @@ size = Vector2(48, 21)
 size = Vector2(65.75, 128)
 
 [node name="Player" type="CharacterBody2D"]
+process_mode = 1
 collision_mask = 2
 script = ExtResource("1_6dh1s")
 jump_height = 192.0
@@ -49,6 +51,9 @@ script = ExtResource("5_y6klk")
 
 [node name="DeadState" type="Node" parent="States"]
 script = ExtResource("6_v8jiw")
+
+[node name="InteractState" type="Node" parent="States"]
+script = ExtResource("7_tjjen")
 
 [node name="DetectFloor" type="Area2D" parent="."]
 collision_layer = 0

@@ -34,6 +34,7 @@ func restart():
 	if(current_room != new_next_level):
 		return
 	get_node("BlackScreen/Control").modulate.a=1
+	get_node("Player").velocity = Vector2.ZERO
 	get_node("Player").global_position = current_room.get_node("Respawn").global_position
 	
 	current_room.process_mode=Node.PROCESS_MODE_DISABLED
@@ -51,6 +52,10 @@ func restart():
 	current_room = current_room_file.instantiate()
 	add_child(current_room)
 	current_room.global_position = current_room_position
+	
+	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
+	get_node("Camera/Camera2D").reset_smoothing()
+	get_node("Camera/Camera2D").force_update_scroll()
 	
 	$Timer.start(0.1)
 	get_node("Player").set_state("MoveState")

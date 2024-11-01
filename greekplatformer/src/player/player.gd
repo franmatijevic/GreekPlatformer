@@ -17,7 +17,7 @@ var coyoteBuffer: float = 0
 var jumpBuffer: float = 0
 var canPickUp: bool = true
 var facing_direction: bool = true  # true is right, false is left
-var holding_object: Throwable = null
+var holding_object = null
 
 func _ready():
 	for i in get_node("States").get_children():
@@ -68,9 +68,12 @@ func pick_up():
 	for i in bodies:
 		if global_position.distance_to(closest_object.global_position) > global_position.distance_to(i.global_position):
 			closest_object = i
-
+	
 	holding_object = closest_object
-	set_state("PickUpState")
+	if(closest_object is Throwable):
+		set_state("PickUpState")
+	else:
+		set_state("InteractState")
 
 func throw(throwing_force: Vector2):
 	if holding_object == null:

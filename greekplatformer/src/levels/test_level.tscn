@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
-[ext_resource type="PackedScene" uid="uid://d3kiai8a1qj4t" path="res://src/levels/test_level_rooms/vertical_room.tscn" id="3_6pd0a"]
+[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/levels/test_level_rooms/simpleTrap.tscn" id="4_eep83"]
 
 [node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
 current_room = NodePath("StartingRoom")
@@ -12,9 +12,10 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(-464, 64)
+process_mode = 0
+position = Vector2(1048, -24)
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
 
-[node name="VerticalRoom" parent="." index="6" instance=ExtResource("3_6pd0a")]
-position = Vector2(2112, -696)
+[node name="Room" parent="." index="7" instance=ExtResource("4_eep83")]
+position = Vector2(3712, 128)

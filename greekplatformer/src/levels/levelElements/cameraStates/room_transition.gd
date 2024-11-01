@@ -9,7 +9,6 @@ func enter():
 	player().player.process_mode=Node.PROCESS_MODE_DISABLED
 	player().get_parent().current_room.pause_all_objects(true)
 	
-	
 	var room = player().get_parent().current_room.get_node("RoomSize")#ovo je collisionShape2D scene Room
 	var camera = player().get_node("Camera2D")
 	camera.set_limit(SIDE_LEFT, room.global_position.x - room.shape.size.x/2)
@@ -17,17 +16,20 @@ func enter():
 	camera.set_limit(SIDE_TOP, room.global_position.y - room.shape.size.y/2)
 	camera.set_limit(SIDE_BOTTOM, room.global_position.y + room.shape.size.y/2)
 	
-
+	camera.set_rotation_smoothing_speed(5)
 
 func update_physics_process(delta:float):
 	if time>0:
 		time-=delta
+		#var sp = player().get_node("Camera2D").get_rotation_smoothing_speed()+delta*100
+		#player().get_node("Camera2D").set_rotation_smoothing_speed(sp)
 	else:
 		player().set_state("FollowPlayer")
 
 func exit():
 	#player().get_parent().current_room.get_node("Wall/CollisionShape2D").set_deferred("disabled", false)
-	
+	#player().get_node("Camera2D").position_smoothing_enabled=false
+	#player().get_node("Camera2D").set_rotation_smoothing_speed(1000)
 	
 	player().player.process_mode=Node.PROCESS_MODE_PAUSABLE
 	player().get_parent().current_room.pause_all_objects(false)

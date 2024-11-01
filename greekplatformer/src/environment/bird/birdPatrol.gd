@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends AnimatableBody2D
 
 class_name Bird
 
@@ -6,16 +6,14 @@ class_name Bird
 
 @export var speed: float = 0.5
 
-var currentVelocity: float
 var previous_position: Vector2
-var velocity: Vector2 = Vector2.ZERO
-
+ 
 func _physics_process(delta):
-	currentVelocity = speed * delta
-	pathFollow.progress_ratio += currentVelocity
+	previous_position = pathFollow.global_position
+	
+	pathFollow.progress_ratio += speed * delta
 	if pathFollow.progress_ratio == 1:
 		pathFollow.progress_ratio = 0
 	
-	velocity = (pathFollow.global_position - previous_position) * 1.2 / delta #dobij brzinu platforme pomocu trenutne i prethodne pozicije
-	previous_position = pathFollow.global_position
+	get_node("BirdSprite").rotation= previous_position.angle_to_point(global_position) 
 	

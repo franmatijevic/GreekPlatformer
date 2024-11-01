@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxiqo4sifn21q"]
+
+[ext_resource type="Script" path="res://src/environment/blockDoor/block_door.gd" id="1_qaqi8"]
+[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_wy2k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nts8c"]
+size = Vector2(128, 128)
+
+[node name="BlockDoor" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 5
+sync_to_physics = false
+script = ExtResource("1_qaqi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nts8c")
+
+[node name="Pixel1x1" type="Sprite2D" parent="."]
+scale = Vector2(128, 128)
+texture = ExtResource("1_wy2k2")

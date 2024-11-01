@@ -31,5 +31,3 @@ func _on_detect_something_body_entered(_body: Node2D) -> void:
 
 func _on_detect_something_body_exited(_body: Node2D) -> void:
 	count=count-1
-	#if(count==0):
-	#	do_action(false)
