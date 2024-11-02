@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8ke8wwbtj02s"]
+
+[ext_resource type="Script" path="res://src/environment/breaking_platfrom/breaking_platfrom.gd" id="1_iu3iv"]
+[ext_resource type="Texture2D" uid="uid://psvx8b5x46t8" path="res://src/environment/platformArt/BreakingPlatformSheet.png" id="1_wkg4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbd0t"]
+size = Vector2(127, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra1dp"]
+size = Vector2(118, 38)
+
+[sub_resource type="Animation" id="Animation_h5l44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xfanb"]
+resource_name = "brokenž"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_oav2h"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gena5"]
+_data = {
+"RESET": SubResource("Animation_h5l44"),
+"broken": SubResource("Animation_xfanb"),
+"idle": SubResource("Animation_oav2h")
+}
+
+[node name="BreakingPlatform" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_iu3iv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkg4i")
+hframes = 3
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_mbd0t")
+
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ra1dp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gena5")
+}
+
+[connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]

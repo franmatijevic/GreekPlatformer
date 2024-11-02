@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://bv6crjirceehq"]
+[gd_scene load_steps=8 format=4 uid="uid://bv6crjirceehq"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_v1w17"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="2_ns463"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_qnncy"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="4_aojxv"]
 [ext_resource type="PackedScene" uid="uid://cb47qwqitaccv" path="res://src/environment/lever/lever.tscn" id="5_0n8vm"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="6_j46f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0vdt"]
 size = Vector2(1920, 1080)
@@ -34,3 +35,9 @@ distance = 500.0
 [node name="Lever" parent="Objects" index="3" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_0n8vm")]
 position = Vector2(-352, 232)
 connectedTo = [NodePath("../Spike")]
+
+[node name="BreakingPlatform" parent="Objects" index="4" instance=ExtResource("6_j46f3")]
+position = Vector2(915, -154)
+
+[node name="BreakingPlatform2" parent="Objects" index="5" instance=ExtResource("6_j46f3")]
+position = Vector2(337, -306)

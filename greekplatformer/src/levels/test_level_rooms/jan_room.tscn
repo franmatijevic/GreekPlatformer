@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cn01avtfnwuto"]
+[gd_scene load_steps=10 format=4 uid="uid://cn01avtfnwuto"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_al6uh"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="2_m21ar"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="3_gjf0o"]
 [ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="4_y2lgs"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="6_5ufsq"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="7_uomiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g23c0"]
 size = Vector2(23130, 7258)
@@ -138,3 +139,6 @@ position = Vector2(2513, -281)
 [node name="PressurePlate" parent="Objects" index="32" node_paths=PackedStringArray("connectedTo") instance=ExtResource("6_5ufsq")]
 position = Vector2(4417, -2535)
 connectedTo = [NodePath("../Spike8"), NodePath("../Spike9")]
+
+[node name="BreakingPlatform" parent="Objects" index="33" instance=ExtResource("7_uomiw")]
+position = Vector2(61, 545)
