@@ -10,7 +10,7 @@ class_name Player
 const jumpBufferTime: float = 0.105
 const coyoteBufferTime: float = 0.105
 
-const throw_force: Vector2 = Vector2(500, -700)
+const throw_force: Vector2 = Vector2(800, -700)
 
 var states: Dictionary = {}
 var coyoteBuffer: float = 0

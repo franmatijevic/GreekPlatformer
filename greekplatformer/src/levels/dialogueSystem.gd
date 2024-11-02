@@ -12,12 +12,12 @@ func _input(event):
 	if areaActive and event.is_action_pressed("ui_accept"):
 		SignalBus.emit_signal("display_dialogue", dialogueKey)
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	areaActive = true
 	if oneTime:
 		SignalBus.emit_signal("display_dialogue", dialogueKey)
 
-func _on_area_exited(area):
+func _on_area_exited(_area):
 	areaActive = false
 
 func _on_dialogue_finished():

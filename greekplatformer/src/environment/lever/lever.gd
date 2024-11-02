@@ -13,7 +13,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
-	if(activating and !other_direction):
+	if(activating):
 		$Handle.rotation_degrees+=90.0/use_time * delta
 		if($Handle.rotation_degrees>45):
 			$Handle.rotation_degrees = 45
@@ -31,14 +31,13 @@ func _physics_process(delta: float) -> void:
 			set_physics_process(false)
 
 func player_interaction():
-	#if(!one_shot and other_direction):
-	
-	
-	activating=true
+	if(one_shot and other_direction):
+		return
+	activating=!other_direction
 	set_physics_process(true)
 
 func stop_player_interaction():
-	activating=false
+	activating=!activating
 
 func do_action(togle:bool):
 	for i in connectedTo:

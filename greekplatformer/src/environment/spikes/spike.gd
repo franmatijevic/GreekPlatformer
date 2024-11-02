@@ -28,12 +28,9 @@ func _physics_process(delta: float) -> void:
 			global_position = global_position.move_toward(normal_position, speed*delta)
 
 func action(togle:bool):
-	if(togle==true):
-		if(!normal_position):
+	if(!normal_position):
 			normal_position = global_position
 			new_position = global_position + Vector2(sin(rotation), -cos(rotation))*distance
-	elif(togle==false):
-		pass
 	
 	target=togle
 	set_physics_process(true)

@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 				else:
 					currentPlatform = null
 			velocity.y += gravity * delta
-
+	
 	if direction:
 		velocity.x = move_toward(velocity.x, SPEED * direction, ACCELERATION * delta)
 	else:

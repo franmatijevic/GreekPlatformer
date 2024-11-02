@@ -25,7 +25,7 @@ position = Vector2(1048, -24)
 position = Vector2(-79, 0)
 
 [node name="Room" parent="." index="7" instance=ExtResource("4_eep83")]
-position = Vector2(3712, 128)
+position = Vector2(3632, 256)
 
 [node name="DialogueAreaZeus" parent="." index="8" instance=ExtResource("5_s3s67")]
 process_mode = 0
