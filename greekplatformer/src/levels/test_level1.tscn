@@ -11,7 +11,7 @@ current_room = NodePath("JanRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_bcidw")]
-position = Vector2(-269, 96)
+position = Vector2(-319, 68)
 
 [node name="JanRoom" parent="." index="5" instance=ExtResource("3_5uidm")]
 position = Vector2(-558, -711)

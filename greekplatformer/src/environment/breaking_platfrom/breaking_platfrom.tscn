@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://psvx8b5x46t8" path="res://src/environment/platformArt/BreakingPlatformSheet.png" id="1_wkg4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbd0t"]
-size = Vector2(127, 36)
+size = Vector2(146, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra1dp"]
-size = Vector2(118, 38)
+size = Vector2(136, 38)
 
 [sub_resource type="Animation" id="Animation_h5l44"]
 length = 0.001
@@ -68,18 +68,20 @@ collision_layer = 2
 script = ExtResource("1_iu3iv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.5, 0)
+scale = Vector2(1.14844, 1)
 texture = ExtResource("1_wkg4i")
 hframes = 3
 vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -3)
+position = Vector2(9, -3)
 shape = SubResource("RectangleShape2D_mbd0t")
 
 [node name="Detect" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
-position = Vector2(0, -6)
+position = Vector2(9, -6)
 shape = SubResource("RectangleShape2D_ra1dp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
