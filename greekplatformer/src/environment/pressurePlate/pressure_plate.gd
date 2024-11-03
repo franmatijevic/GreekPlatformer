@@ -1,6 +1,8 @@
 extends StaticBody2D
 
+@export var start_deactivating:float=0.3
 @export var connectedTo:Array[Node2D] = []
+
 
 var count:int=0
 var plate_speed:float=5
@@ -8,7 +10,7 @@ var time=-99
 
 func _physics_process(delta: float) -> void:
 	if(count>0):
-		time=0.3
+		time=start_deactivating
 		$Plate.position.y = move_toward($Plate.position.y, 10, plate_speed)
 	else:
 		if(time>0):

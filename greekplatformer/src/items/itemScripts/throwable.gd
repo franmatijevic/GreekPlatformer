@@ -20,6 +20,7 @@ func be_picked_up(charact:Character):
 	freeze=true
 
 func be_thrown(force:Vector2):
-	freeze=false
+	set_deferred("freeze", false)
+	#freeze=false
 	pickedUp = false
 	linear_velocity = force

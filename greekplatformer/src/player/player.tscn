@@ -94,3 +94,4 @@ shape = SubResource("RectangleShape2D_8ulvm")
 
 [connection signal="body_entered" from="DetectFloor" to="." method="_on_detect_floor_body_entered"]
 [connection signal="body_exited" from="DetectFloor" to="." method="_on_detect_floor_body_exited"]
+[connection signal="body_entered" from="DetectPickup" to="." method="_on_detect_pickup_body_entered"]

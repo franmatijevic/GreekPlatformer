@@ -9,15 +9,19 @@ class_name Player
 
 const jumpBufferTime: float = 0.105
 const coyoteBufferTime: float = 0.105
+const pickUpBufferTime:float =0.105
 
 const throw_force: Vector2 = Vector2(800, -700)
 
 var states: Dictionary = {}
 var coyoteBuffer: float = 0
 var jumpBuffer: float = 0
+var pickUpBuffer:float = 0
 var canPickUp: bool = true
 var facing_direction: bool = true  # true is right, false is left
 var holding_object = null
+
+var dead:bool=false
 
 func _ready():
 	for i in get_node("States").get_children():
@@ -40,7 +44,10 @@ func _physics_process(delta: float) -> void:
 
 	if coyoteBuffer > 0:
 		coyoteBuffer -= delta
-
+	
+	if pickUpBuffer>0:
+		pickUpBuffer -= delta
+	
 	if jumpBuffer > 0:
 		if is_on_floor():
 			jump()
@@ -61,6 +68,7 @@ func pick_up():
 	
 	var bodies = get_node("DetectPickup").get_overlapping_bodies()
 	if bodies.size() == 0:
+		pickUpBuffer=pickUpBufferTime
 		return
 
 	var closest_object = bodies[0]
@@ -133,3 +141,8 @@ func _on_detect_floor_body_entered(_body: Node2D) -> void:
 
 func _on_detect_floor_body_exited(_body: Node2D) -> void:
 	coyoteBuffer = coyoteBufferTime
+
+
+func _on_detect_pickup_body_entered(_body: Node2D) -> void:
+	if(pickUpBuffer>0):
+		pick_up()

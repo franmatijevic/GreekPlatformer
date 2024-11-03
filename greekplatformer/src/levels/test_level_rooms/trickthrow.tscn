@@ -1,0 +1,191 @@
+[gd_scene load_steps=18 format=4 uid="uid://msbx403o64vi"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_5d1eh"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_m8lqd"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="3_8nrhj"]
+[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_gwsra"]
+[ext_resource type="PackedScene" uid="uid://cb47qwqitaccv" path="res://src/environment/lever/lever.tscn" id="5_xvs57"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="6_fm4d8"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="7_5dy1d"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="8_f6kg0"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="9_awdc3"]
+[ext_resource type="Texture2D" uid="uid://dd5qfyy5csq6r" path="res://src/environment/environmentArt/floor/PatternFloor1.png" id="10_ekwrk"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="11_o2wut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vohw"]
+size = Vector2(1920, 2488)
+
+[sub_resource type="Curve2D" id="Curve2D_wx80i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_bxsqs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -128, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_d3mik"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 896, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wqpec"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -256)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsel"]
+size = Vector2(1240, 106)
+
+[node name="Room" instance=ExtResource("1_5d1eh")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD/////BAAAAAAAAAD+//7/BAAAAAAAAAD9//3/BAAAAAAAAAD9//7/BQAAAAAAAAD9////BQAAAAAAAAD+////BQAAAAAAAAD9/wAABAAAAAAAAFALAAEABQAAAAAAAAALAAAABQAAAAAAAAALAP//BQAAAAAAAAALAP7/BQAAAAAAAAALAP3/BQAAAAAAAAALAPz/BQAAAAAAAAALAPv/BQAAAAAAAAAFAAEABQAAAAAAAAAGAP3/BQAAAAAAAAAGAPz/BQAAAAAAAAAFAPv/BAAAAAAAADAAAAcABgAAAAAAAAD//wcABgAAAAAAAAD+/wcABgAAAAAAAAD9/wcABgAAAAAAAAAFAPr/BQAAAAAAAAAFAPn/BQAAAAAAAAAFAPj/BQAAAAAAAAAFAPf/BQAAAAAAAAD8//z/BQAAAAAAAAD8//v/BQAAAAAAAAD8//r/BQAAAAAAAAD8//n/BQAAAAAAAAD8//j/BQAAAAAAAAD8//f/BQAAAAAAAAD8//b/BQAAAAAAAAD///T/BQAAAAAAAAD+//T/BQAAAAAAAAD9//T/BQAAAAAAAAD8//X/BQAAAAAAAAD+//X/BQAAAAAAAAD9//X/BQAAAAAAAAADAPT/BQAAAAAAAAABAPT/BQAAAAAAAAAAAPT/BQAAAAAAAAAAAPX/BQAAAAAAAAD///X/BQAAAAAAAAALAPr/BQAAAAAAAAALAPn/BQAAAAAAAAALAPj/BQAAAAAAAAALAPf/BQAAAAAAAAALAPb/BQAAAAAAAAABAPX/BQAAAAAAAAADAPX/BQAAAAAAAAAEAPX/BQAAAAAAAAAFAPX/BQAAAAAAAAAGAPX/BQAAAAAAAAAHAPX/BQAAAAAAAAAIAPX/BQAAAAAAAAAJAPX/BQAAAAAAAAAKAPX/BQAAAAAAAAALAPX/BQAAAAAAAAAEAPT/BQAAAAAAAAAFAPT/BQAAAAAAAAAGAPT/BQAAAAAAAAAHAPT/BQAAAAAAAAAIAPT/BQAAAAAAAAAJAPT/BQAAAAAAAAAKAPT/BQAAAAAAAAALAPT/BQAAAAAAAAAFAPb/BQAAAAAAAAAGAPb/BQAAAAAAAAAGAPf/BQAAAAAAAAAGAPj/BQAAAAAAAAAGAPn/BQAAAAAAAAAGAPr/BQAAAAAAAAAGAPv/BQAAAAAAAAAHAP3/BQAAAAAAAAAHAPz/BQAAAAAAAAAHAPv/BQAAAAAAAAAHAPr/BQAAAAAAAAAHAPn/BQAAAAAAAAAHAPj/BQAAAAAAAAAHAPf/BQAAAAAAAAAHAPb/BQAAAAAAAAAIAPb/BQAAAAAAAAAIAPf/BQAAAAAAAAAIAPj/BQAAAAAAAAAIAPn/BQAAAAAAAAAIAPr/BQAAAAAAAAAIAPv/BQAAAAAAAAAIAPz/BQAAAAAAAAAIAP3/BQAAAAAAAAAJAP3/BQAAAAAAAAAKAP3/BQAAAAAAAAAKAPz/BQAAAAAAAAAKAPv/BQAAAAAAAAAKAPr/BQAAAAAAAAAKAPn/BQAAAAAAAAAKAPj/BQAAAAAAAAAKAPf/BQAAAAAAAAAKAPb/BQAAAAAAAAAJAPb/BQAAAAAAAAAJAPf/BQAAAAAAAAAJAPj/BQAAAAAAAAAJAPn/BQAAAAAAAAAJAPr/BQAAAAAAAAAJAPv/BQAAAAAAAAAJAPz/BQAAAAAAAAALAAcABQAAAAAAAAALAAQABQAAAAAAAAALAAMABQAAAAAAAAALAAIABQAAAAAAAAD8//3/BQAAAAAAAAD8//7/BQAAAAAAAAD8////BQAAAAAAAAD8/wAABQAAAAAAAAD8/wEABQAAAAAAAAD8/wIABQAAAAAAAAD8/wMABQAAAAAAAAD8/wcABgAAAAAAAAD8//T/BQAAAAAAAAABAAoABQAAAAAAAAACAAoABQAAAAAAAAADAAoABQAAAAAAAAAEAAoABQAAAAAAAAAFAAoABQAAAAAAAAAGAAoABQAAAAAAAAAHAAoABQAAAAAAAAAIAAoABQAAAAAAAAAJAAoABQAAAAAAAAAKAAoABQAAAAAAAAALAAkABQAAAAAAAAAAAAkABQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(512, -260)
+shape = SubResource("RectangleShape2D_2vohw")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-256, 768)
+
+[node name="Spring" parent="Objects" index="0" instance=ExtResource("2_m8lqd")]
+position = Vector2(-120, -208)
+rotation = 0.785398
+max_force = 2000.0
+side_force = 1500.0
+
+[node name="BreakingPlatform" parent="Objects" index="1" instance=ExtResource("3_8nrhj")]
+position = Vector2(1288, 216)
+
+[node name="cloud_platform2" parent="Objects" index="2" instance=ExtResource("4_gwsra")]
+position = Vector2(1080, 408)
+
+[node name="Spring3" parent="Objects" index="3" instance=ExtResource("2_m8lqd")]
+position = Vector2(704, 64)
+
+[node name="Spring2" parent="Objects" index="4" instance=ExtResource("2_m8lqd")]
+position = Vector2(704, -320)
+rotation = -1.5708
+side_force = 1500.0
+
+[node name="cloud_platform3" parent="Objects" index="5" instance=ExtResource("4_gwsra")]
+position = Vector2(864, 584)
+
+[node name="Lever" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_xvs57")]
+position = Vector2(1386, 40)
+rotation = -1.5708
+one_shot = true
+use_time = 0.08
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor"), NodePath("../Path2D2/PathFollow2D/BlockDoor")]
+
+[node name="Path2D" type="Path2D" parent="Objects" index="7"]
+position = Vector2(704, 192)
+curve = SubResource("Curve2D_wx80i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("6_fm4d8")]
+speed = 500.0
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="8"]
+position = Vector2(320, -1344)
+curve = SubResource("Curve2D_bxsqs")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("6_fm4d8")]
+speed = 85.0
+
+[node name="PressurePlate" parent="Objects" index="9" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_5dy1d")]
+position = Vector2(-248, -920)
+start_deactivating = 1.0
+connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor"), NodePath("../Path2D4/PathFollow2D/BlockDoor")]
+
+[node name="RigidBody2D" parent="Objects" index="10" instance=ExtResource("8_f6kg0")]
+position = Vector2(312, -1456)
+
+[node name="Spike" parent="Objects" index="11" instance=ExtResource("9_awdc3")]
+position = Vector2(-272, -384)
+rotation = 0.785398
+
+[node name="Spike2" parent="Objects" index="12" instance=ExtResource("9_awdc3")]
+position = Vector2(-32, -91)
+rotation = 1.22173
+
+[node name="Path2D3" type="Path2D" parent="Objects" index="13"]
+position = Vector2(320, 960)
+curve = SubResource("Curve2D_d3mik")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D3" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("6_fm4d8")]
+scale = Vector2(3, 1)
+
+[node name="PatternFloor1" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="1"]
+position = Vector2(-128, 0)
+texture = ExtResource("10_ekwrk")
+
+[node name="PatternFloor2" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="2"]
+position = Vector2(128, 0)
+texture = ExtResource("10_ekwrk")
+
+[node name="PatternFloor3" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="3"]
+texture = ExtResource("10_ekwrk")
+
+[node name="Spike3" parent="Objects" index="14" instance=ExtResource("9_awdc3")]
+position = Vector2(600, -704)
+rotation = -1.5708
+
+[node name="Spike4" parent="Objects" index="15" instance=ExtResource("9_awdc3")]
+position = Vector2(600, -840)
+rotation = -1.5708
+
+[node name="Spike5" parent="Objects" index="16" instance=ExtResource("9_awdc3")]
+position = Vector2(600, -960)
+rotation = -1.5708
+
+[node name="Spike6" parent="Objects" index="17" instance=ExtResource("9_awdc3")]
+position = Vector2(600, -1088)
+rotation = -1.5708
+
+[node name="Spike7" parent="Objects" index="18" instance=ExtResource("9_awdc3")]
+position = Vector2(600, -1216)
+rotation = -1.5708
+
+[node name="Spike8" parent="Objects" index="19" instance=ExtResource("9_awdc3")]
+position = Vector2(-200, -320)
+rotation = 0.785398
+
+[node name="BreakingPlatform2" parent="Objects" index="20" instance=ExtResource("3_8nrhj")]
+position = Vector2(632, 735)
+
+[node name="Path2D4" type="Path2D" parent="Objects" index="21"]
+position = Vector2(1472, 768)
+curve = SubResource("Curve2D_wqpec")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D4" index="0"]
+rotation = -1.5708
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("6_fm4d8")]
+scale = Vector2(2, 1)
+speed = 40.0
+
+[node name="DeathPit" parent="Objects" index="22" instance=ExtResource("11_o2wut")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(780, 1107)
+shape = SubResource("RectangleShape2D_cmsel")

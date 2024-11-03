@@ -8,7 +8,7 @@ const charge:float=0.1
 var total_force:Vector2=Vector2.DOWN
 
 func _ready() -> void:
-	total_force = Vector2(sin(rotation), -cos(rotation))*max_force#sin i cos su tako poslozeni jer se uracunava defaultno rotiranje za 90 stupnjeva obrnuto od kazaljke na satu
+	total_force = Vector2(sin(rotation), -cos(rotation))*max_force#sin i cos su tako poslozeni jer se uracunava defaultno rotiranje za 90 stupnjeva u smjeru kazaljke na satu
 	#side_force = -abs(sin(rotation)*side_force)
 	total_force.y -= abs(pow(sin(rotation),3)*side_force)
 

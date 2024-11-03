@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
-[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/levels/test_level_rooms/simpleTrap.tscn" id="4_eep83"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="5_s3s67"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="6_dpx1i"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="7_k2amy"]
+[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="8_nq8xc"]
 [ext_resource type="Texture2D" uid="uid://dyyf3tuc8r1nv" path="res://src/dialogue/dialogueArt/tmp_dialogue.png" id="8_s7jtu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
@@ -19,15 +19,12 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(1048, -24)
+position = Vector2(856, 104)
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
 position = Vector2(-79, 0)
 
-[node name="Room" parent="." index="7" instance=ExtResource("4_eep83")]
-position = Vector2(3632, 256)
-
-[node name="DialogueAreaZeus" parent="." index="8" instance=ExtResource("5_s3s67")]
+[node name="DialogueAreaZeus" parent="." index="7" instance=ExtResource("5_s3s67")]
 process_mode = 0
 dialogueKey = "Zeus"
 oneTime = true
@@ -36,7 +33,7 @@ oneTime = true
 position = Vector2(-266, -25)
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("6_dpx1i")]
+[node name="DialoguePlayer" parent="." index="8" instance=ExtResource("6_dpx1i")]
 process_mode = 1
 layer = 0
 scale = Vector2(15.815, 15.815)
@@ -59,5 +56,8 @@ scale = Vector2(0.05, 0.05)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 90
 autowrap_mode = 2
+
+[node name="Room2" parent="." index="9" instance=ExtResource("8_nq8xc")]
+position = Vector2(1584, -640)
 
 [editable path="DialogueAreaZeus"]
