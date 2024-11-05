@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c8ru2teb6u7t2"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://c8ru2teb6u7t2"]
 
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_5mbpb"]
+[ext_resource type="Texture2D" uid="uid://x8724e8aejgu" path="res://src/environment/environmentArt/floor/OlimpTile.png" id="2_gbkim"]
 [ext_resource type="Texture2D" uid="uid://dd5qfyy5csq6r" path="res://src/environment/environmentArt/floor/PatternFloor1.png" id="3_aupt0"]
 [ext_resource type="Texture2D" uid="uid://cfbl0e13s3tj0" path="res://src/environment/environmentArt/floor/BrickFloor4.png" id="3_tiylf"]
 [ext_resource type="Texture2D" uid="uid://di0ss16asdj7m" path="res://src/levels/tilesets/trokut.png" id="4_lx2lk"]
@@ -24,6 +25,11 @@ texture = ExtResource("3_tiylf")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tmfm"]
+texture = ExtResource("2_gbkim")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdals"]
 texture = ExtResource("4_lx2lk")
@@ -80,3 +86,4 @@ sources/4 = SubResource("TileSetAtlasSource_kdals")
 sources/5 = SubResource("TileSetAtlasSource_qe0cr")
 sources/6 = SubResource("TileSetAtlasSource_ekwhx")
 sources/11 = SubResource("TileSetAtlasSource_kh6w6")
+sources/3 = SubResource("TileSetAtlasSource_5tmfm")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqxl2umwlcci"]
+
+[ext_resource type="Texture2D" uid="uid://cu7ykk0n17wuc" path="res://src/dialogue/dialogueArt/speechBubble.png" id="1_gnu7y"]
+[ext_resource type="FontFile" uid="uid://b8fbkmojt0wl2" path="res://src/dialogue/fonts/DalekPinpointBold.ttf" id="2_722lt"]
+
+[node name="SpeechBubble" type="Node2D"]
+scale = Vector2(0.35, 0.35)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 460.0
+offset_top = -511.429
+offset_right = 2380.0
+offset_bottom = 568.571
+texture = ExtResource("1_gnu7y")
+
+[node name="Label" type="Label" parent="."]
+z_index = 100
+offset_left = 758.0
+offset_top = -169.429
+offset_right = 2058.0
+offset_bottom = 230.571
+theme_override_fonts/font = ExtResource("2_722lt")
+theme_override_font_sizes/font_size = 108
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,20 @@
+{
+	"lvl_1_1": [
+		{"speaker": "Zeus", "text": "Zaustavi se!", "action": "none"},
+		{"speaker": "Zeus", "text": "Oh... Ti si Prometeje", "action": "move_to", "parameters": {"targetPosition": [-99, 111]}},
+		{"speaker": "Zeus", "text": "A što to radiš?", "action": "none"},
+		{"speaker": "Zeus", "text": "Nije valjda da mi ideš činiti nešto iza leđa?", "action": "none"},
+		{"speaker": "Zeus", "text": "Je li?", "action": "none"},
+		{"speaker": "Prometej", "text": "Zeuse, dopusti mi da odnesem vatru ljudima!", "action": "none"},
+		{"speaker": "Prometej", "text": "Smrzavaju se bez njene topline.", "action": "none"},
+		{"speaker": "Prometej", "text": "Ne mogu dozvoliti da moja stvorenja pate-", "action": "none"},
+		{"speaker": "Zeus", "text": "Nipošto!!!", "action": "none"},
+		{"speaker": "Zeus", "text": "Znaš da su me prevarili Prometeje.", "action": "none"},
+		{"speaker": "Zeus", "text": "Sad moraju platiti kaznu.", "action": "none"},
+		{"speaker": "Zeus", "text": "Nemoj ni slučajno pomisliti da me upitaš takvo nešto ponovno!", "action": "none"},
+		{"speaker": "Zeus", "text": "A sada zbogom!", "action": "none"},
+		{"speaker": "Zeus", "text": "Odnosno...", "action": "none"},
+		{"speaker": "Zeus", "text": "Szeusom.", "action": "exit"},
+		{"speaker": "Prometej", "text": "Čini se da ću morati uzeti stvari u svoje ruke...", "action": "none"},
+	]
+}

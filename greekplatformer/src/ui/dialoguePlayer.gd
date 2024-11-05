@@ -1,19 +1,27 @@
-extends CanvasLayer
+extends Node2D
 
 @export_file("*json") var sceneTextFile: String
+@export var speechBubbleScene: PackedScene
+@onready var speechBubbleLayer: CanvasLayer = $"../DialogueLayer"
 
 var sceneText = {}
 var selectedText = []
 var inProgress = false
+var activeSpeaker = ""
+var speechBubbles = {}
+var speakerMarkers = {}
 
-@onready var background = $Background
-@onready var textLabel = $TextLabel
+signal npc_enter
+signal npc_exit
+signal perform_action(action: String, params: Dictionary)
 
 func _ready():
-	background.visible = false
 	sceneText = load_scene_text()
 	SignalBus.connect("display_dialogue", Callable(self, "on_display_dialogue"))
-
+	
+	speakerMarkers["Zeus"] = $"../Zeus/ZeusDialogueMarker"
+	speakerMarkers["Prometej"] = $"../Player/PlayerDialogueMarker"
+	
 func load_scene_text():
 	if FileAccess.file_exists(sceneTextFile):
 		var file = FileAccess.open(sceneTextFile, FileAccess.READ)
@@ -21,28 +29,68 @@ func load_scene_text():
 		testJSONConv.parse(file.get_as_text())
 		return testJSONConv.get_data()
 
-func show_text():
-	textLabel.text = selectedText.pop_front()
+func show_text(text):
+	for bubble in speechBubbles.values():
+		bubble.visible = false
+	
+	if not speechBubbles.has(activeSpeaker):
+		print("Stvoren novi!")
+		var newBubble = speechBubbleScene.instantiate()
+		speechBubbleLayer.add_child(newBubble)
+		
+		newBubble.get_node("Label").text = text
+		if speakerMarkers.has(activeSpeaker):
+			newBubble.position = speakerMarkers[activeSpeaker].global_position
+		
+		speechBubbles[activeSpeaker] = newBubble
+	else:
+		speechBubbles[activeSpeaker].get_node("Label").text = text
+		speechBubbles[activeSpeaker].visible = true
 
+	
+func create_speaker_label(speaker_name):
+	var newLabel = Label.new()
+	newLabel.text = ""
+	newLabel.theme = preload("res://src/dialogue/dialogueArt/speechBubble.png")
+	add_child(newLabel)
+	
+	if speakerMarkers.has(speaker_name):
+		newLabel.position = speakerMarkers[speaker_name].position + Vector2(0, -50)
+		
+	return newLabel
+	
 func next_line():
 	if selectedText.size() > 0:
-		show_text()
+		var line = selectedText.pop_front()
+		handle_line(line)
 	else:
 		finish()
 
+func handle_line(line):
+	activeSpeaker = line["speaker"]
+	
+	show_text(line["text"])
+	
+	if line.has("action") and line["action"] != "none":
+		var params = {}
+		if line.has("parameters"):
+			params = line["parameters"]
+		SignalBus.emit_signal("perform_action", line["action"], params)
+
 func finish():
-	textLabel.text = ""
-	background.visible = false
+	for bubble in speechBubbles.values():
+		bubble.visible = false
 	inProgress = false
 	get_tree().paused = false
 	SignalBus.emit_signal("dialogue_finished")
-
+	SignalBus.emit_signal("npc_exit")
+	
 func on_display_dialogue(textKey):
 	if inProgress:
 		next_line()
 	else:
+		SignalBus.emit_signal("npc_enter")
 		get_tree().paused = true
-		background.visible = true
 		inProgress = true
 		selectedText = sceneText[textKey].duplicate()
-		show_text()
+		next_line()
