@@ -5,21 +5,39 @@
 [ext_resource type="Texture2D" uid="uid://di0ss16asdj7m" path="res://src/levels/tilesets/trokut.png" id="2_wcmlp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgit7"]
-size = Vector2(108, 3.5)
+size = Vector2(108, 5)
 
-[node name="PressurePlate" type="StaticBody2D"]
+[node name="PressurePlate" type="AnimatableBody2D"]
 collision_layer = 2
 collision_mask = 5
+sync_to_physics = false
 script = ExtResource("1_6bx41")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-96, 0, 96, 0, 64, -32, -64, -32)
 
-[node name="Plate" type="StaticBody2D" parent="."]
+[node name="Trokut" type="Sprite2D" parent="."]
+position = Vector2(80, -16)
+scale = Vector2(0.032, 0.032)
+texture = ExtResource("2_wcmlp")
+
+[node name="Trokut2" type="Sprite2D" parent="."]
+position = Vector2(-80, -16)
+rotation = 3.14159
+scale = Vector2(0.032, -0.032)
+texture = ExtResource("2_wcmlp")
+
+[node name="Pixel1x1" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(128, 32)
+texture = ExtResource("2_quip0")
+
+[node name="Plate" type="AnimatableBody2D" parent="."]
 collision_layer = 2
 collision_mask = 5
+sync_to_physics = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plate"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Plate"]
 position = Vector2(0, -32)
 polygon = PackedVector2Array(64, 0, -64, 0, -54, -10, 54, -10)
 
@@ -35,7 +53,8 @@ texture = ExtResource("2_wcmlp")
 
 [node name="Trokut4" type="Sprite2D" parent="Plate"]
 position = Vector2(-59, -37)
-scale = Vector2(-0.01, 0.01)
+rotation = 3.14159
+scale = Vector2(0.01, -0.01)
 texture = ExtResource("2_wcmlp")
 
 [node name="detectSomething" type="Area2D" parent="Plate"]
@@ -44,23 +63,8 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/detectSomething"]
-position = Vector2(0, -18.25)
+position = Vector2(0, -20.5)
 shape = SubResource("RectangleShape2D_hgit7")
-
-[node name="Trokut" type="Sprite2D" parent="."]
-position = Vector2(80, -16)
-scale = Vector2(0.032, 0.032)
-texture = ExtResource("2_wcmlp")
-
-[node name="Trokut2" type="Sprite2D" parent="."]
-position = Vector2(-80, -16)
-scale = Vector2(-0.032, 0.032)
-texture = ExtResource("2_wcmlp")
-
-[node name="Pixel1x1" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
-scale = Vector2(128, 32)
-texture = ExtResource("2_quip0")
 
 [connection signal="body_entered" from="Plate/detectSomething" to="." method="_on_detect_something_body_entered"]
 [connection signal="body_exited" from="Plate/detectSomething" to="." method="_on_detect_something_body_exited"]

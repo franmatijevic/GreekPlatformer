@@ -6,11 +6,14 @@ extends Area2D
 const charge:float=0.1
 
 var total_force:Vector2=Vector2.DOWN
+var kept_force:Vector2=Vector2.DOWN
 
 func _ready() -> void:
 	total_force = Vector2(sin(rotation), -cos(rotation))*max_force#sin i cos su tako poslozeni jer se uracunava defaultno rotiranje za 90 stupnjeva u smjeru kazaljke na satu
-	#side_force = -abs(sin(rotation)*side_force)
 	total_force.y -= abs(pow(sin(rotation),3)*side_force)
+	#kept_force = Vector2(pow(abs(cos(rotation)),2), abs(sin(rotation))).normalized()
+	kept_force = Vector2(pow(abs(cos(rotation)),4), 0).normalized()
+	kept_force = Vector2(abs(cos(rotation)), 0).normalized()
 
 func _on_body_entered(body: Node2D) -> void:
 	if($Timer.time_left>0):
@@ -26,9 +29,20 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:#odbacivanje tijela iz opruge
 	for i in get_overlapping_bodies():
 		if(i is Character):
-			i.velocity=total_force
+			i.velocity=kept_force * i.velocity  + total_force
 			#i.velocity.y = -max_force
 			i.jumped=false
 		elif(i is Throwable):
-			#i.linear_velocity.y = -max_force
-			i.linear_velocity = total_force
+			#var current = i.linear_velocity.normalized()
+			#var springRotation = Vector2(sin(rotation), -cos(rotation))
+			#var angle1 = (current - springRotation).angle()
+			#var angle2 = (current + springRotation).angle()
+			#var angle = -min(angle1, angle2)
+			#springRotation.x= springRotation.x*cos(angle) - springRotation.y*sin(angle)
+			#springRotation.y=springRotation.x*sin(angle) + springRotation.y*cos(angle)
+			
+			#i.linear_velocity = springRotation * i.linear_velocity.length() + total_force
+			
+			
+			
+			i.linear_velocity = kept_force * i.linear_velocity  + total_force

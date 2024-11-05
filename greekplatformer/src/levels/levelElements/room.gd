@@ -1,5 +1,10 @@
 extends Area2D
 
+@export var rightOffset:int=0##offset kamere; desni dio sobe koji se nece vidjeti
+@export var leftOffset:int=0##offset kamere; lijevi dio sobe koji se nece vidjeti
+@export var upOffset:int=0##offset kamere; gornji dio sobe koji se nece vidjeti
+@export var downOffset:int=0##offset kamere; donji dio sobe koji se nece vidjeti
+
 func _ready() -> void:
 	var room = $RoomSize.shape.size
 	$Wall/CollisionPolygon2D.polygon[0] = Vector2(-room.x, -room.y)/2

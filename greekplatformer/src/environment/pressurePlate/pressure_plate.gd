@@ -11,11 +11,11 @@ var time=-99
 func _physics_process(delta: float) -> void:
 	if(count>0):
 		time=start_deactivating
-		$Plate.position.y = move_toward($Plate.position.y, 10, plate_speed)
+		$Plate.position.y = move_toward($Plate.position.y, 13, plate_speed)
 	else:
 		if(time>0):
 			time-=delta
-			$Plate.position.y = move_toward($Plate.position.y, 10, plate_speed)
+			$Plate.position.y = move_toward($Plate.position.y, 13, plate_speed)
 		else:
 			if(time>-3):
 				do_action(false)

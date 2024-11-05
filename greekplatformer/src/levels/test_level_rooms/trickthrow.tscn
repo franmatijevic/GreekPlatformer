@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://msbx403o64vi"]
+[gd_scene load_steps=19 format=4 uid="uid://msbx403o64vi"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_5d1eh"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_m8lqd"]
@@ -11,9 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="9_awdc3"]
 [ext_resource type="Texture2D" uid="uid://dd5qfyy5csq6r" path="res://src/environment/environmentArt/floor/PatternFloor1.png" id="10_ekwrk"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="11_o2wut"]
+[ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="12_pksjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vohw"]
-size = Vector2(1920, 2488)
+size = Vector2(1920, 2680)
 
 [sub_resource type="Curve2D" id="Curve2D_wx80i"]
 _data = {
@@ -40,15 +41,17 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsel"]
-size = Vector2(1240, 106)
+size = Vector2(1240, 245)
 
 [node name="Room" instance=ExtResource("1_5d1eh")]
+upOffset = 256
+downOffset = 128
 
 [node name="TileMapLayer" parent="." index="0"]
 tile_map_data = PackedByteArray("AAD/////BAAAAAAAAAD+//7/BAAAAAAAAAD9//3/BAAAAAAAAAD9//7/BQAAAAAAAAD9////BQAAAAAAAAD+////BQAAAAAAAAD9/wAABAAAAAAAAFALAAEABQAAAAAAAAALAAAABQAAAAAAAAALAP//BQAAAAAAAAALAP7/BQAAAAAAAAALAP3/BQAAAAAAAAALAPz/BQAAAAAAAAALAPv/BQAAAAAAAAAFAAEABQAAAAAAAAAGAP3/BQAAAAAAAAAGAPz/BQAAAAAAAAAFAPv/BAAAAAAAADAAAAcABgAAAAAAAAD//wcABgAAAAAAAAD+/wcABgAAAAAAAAD9/wcABgAAAAAAAAAFAPr/BQAAAAAAAAAFAPn/BQAAAAAAAAAFAPj/BQAAAAAAAAAFAPf/BQAAAAAAAAD8//z/BQAAAAAAAAD8//v/BQAAAAAAAAD8//r/BQAAAAAAAAD8//n/BQAAAAAAAAD8//j/BQAAAAAAAAD8//f/BQAAAAAAAAD8//b/BQAAAAAAAAD///T/BQAAAAAAAAD+//T/BQAAAAAAAAD9//T/BQAAAAAAAAD8//X/BQAAAAAAAAD+//X/BQAAAAAAAAD9//X/BQAAAAAAAAADAPT/BQAAAAAAAAABAPT/BQAAAAAAAAAAAPT/BQAAAAAAAAAAAPX/BQAAAAAAAAD///X/BQAAAAAAAAALAPr/BQAAAAAAAAALAPn/BQAAAAAAAAALAPj/BQAAAAAAAAALAPf/BQAAAAAAAAALAPb/BQAAAAAAAAABAPX/BQAAAAAAAAADAPX/BQAAAAAAAAAEAPX/BQAAAAAAAAAFAPX/BQAAAAAAAAAGAPX/BQAAAAAAAAAHAPX/BQAAAAAAAAAIAPX/BQAAAAAAAAAJAPX/BQAAAAAAAAAKAPX/BQAAAAAAAAALAPX/BQAAAAAAAAAEAPT/BQAAAAAAAAAFAPT/BQAAAAAAAAAGAPT/BQAAAAAAAAAHAPT/BQAAAAAAAAAIAPT/BQAAAAAAAAAJAPT/BQAAAAAAAAAKAPT/BQAAAAAAAAALAPT/BQAAAAAAAAAFAPb/BQAAAAAAAAAGAPb/BQAAAAAAAAAGAPf/BQAAAAAAAAAGAPj/BQAAAAAAAAAGAPn/BQAAAAAAAAAGAPr/BQAAAAAAAAAGAPv/BQAAAAAAAAAHAP3/BQAAAAAAAAAHAPz/BQAAAAAAAAAHAPv/BQAAAAAAAAAHAPr/BQAAAAAAAAAHAPn/BQAAAAAAAAAHAPj/BQAAAAAAAAAHAPf/BQAAAAAAAAAHAPb/BQAAAAAAAAAIAPb/BQAAAAAAAAAIAPf/BQAAAAAAAAAIAPj/BQAAAAAAAAAIAPn/BQAAAAAAAAAIAPr/BQAAAAAAAAAIAPv/BQAAAAAAAAAIAPz/BQAAAAAAAAAIAP3/BQAAAAAAAAAJAP3/BQAAAAAAAAAKAP3/BQAAAAAAAAAKAPz/BQAAAAAAAAAKAPv/BQAAAAAAAAAKAPr/BQAAAAAAAAAKAPn/BQAAAAAAAAAKAPj/BQAAAAAAAAAKAPf/BQAAAAAAAAAKAPb/BQAAAAAAAAAJAPb/BQAAAAAAAAAJAPf/BQAAAAAAAAAJAPj/BQAAAAAAAAAJAPn/BQAAAAAAAAAJAPr/BQAAAAAAAAAJAPv/BQAAAAAAAAAJAPz/BQAAAAAAAAALAAcABQAAAAAAAAALAAQABQAAAAAAAAALAAMABQAAAAAAAAALAAIABQAAAAAAAAD8//3/BQAAAAAAAAD8//7/BQAAAAAAAAD8////BQAAAAAAAAD8/wAABQAAAAAAAAD8/wEABQAAAAAAAAD8/wIABQAAAAAAAAD8/wMABQAAAAAAAAD8/wcABgAAAAAAAAD8//T/BQAAAAAAAAABAAoABQAAAAAAAAACAAoABQAAAAAAAAADAAoABQAAAAAAAAAEAAoABQAAAAAAAAAFAAoABQAAAAAAAAAGAAoABQAAAAAAAAAHAAoABQAAAAAAAAAIAAoABQAAAAAAAAAJAAoABQAAAAAAAAAKAAoABQAAAAAAAAALAAkABQAAAAAAAAAAAAkABQAAAAAAAAA=")
 
 [node name="RoomSize" parent="." index="1"]
-position = Vector2(512, -260)
+position = Vector2(512, -196)
 shape = SubResource("RectangleShape2D_2vohw")
 
 [node name="Respawn" parent="." index="3"]
@@ -144,34 +147,14 @@ texture = ExtResource("10_ekwrk")
 [node name="PatternFloor3" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="3"]
 texture = ExtResource("10_ekwrk")
 
-[node name="Spike3" parent="Objects" index="14" instance=ExtResource("9_awdc3")]
-position = Vector2(600, -704)
-rotation = -1.5708
-
-[node name="Spike4" parent="Objects" index="15" instance=ExtResource("9_awdc3")]
-position = Vector2(600, -840)
-rotation = -1.5708
-
-[node name="Spike5" parent="Objects" index="16" instance=ExtResource("9_awdc3")]
-position = Vector2(600, -960)
-rotation = -1.5708
-
-[node name="Spike6" parent="Objects" index="17" instance=ExtResource("9_awdc3")]
-position = Vector2(600, -1088)
-rotation = -1.5708
-
-[node name="Spike7" parent="Objects" index="18" instance=ExtResource("9_awdc3")]
-position = Vector2(600, -1216)
-rotation = -1.5708
-
-[node name="Spike8" parent="Objects" index="19" instance=ExtResource("9_awdc3")]
+[node name="Spike8" parent="Objects" index="14" instance=ExtResource("9_awdc3")]
 position = Vector2(-200, -320)
 rotation = 0.785398
 
-[node name="BreakingPlatform2" parent="Objects" index="20" instance=ExtResource("3_8nrhj")]
+[node name="BreakingPlatform2" parent="Objects" index="15" instance=ExtResource("3_8nrhj")]
 position = Vector2(632, 735)
 
-[node name="Path2D4" type="Path2D" parent="Objects" index="21"]
+[node name="Path2D4" type="Path2D" parent="Objects" index="16"]
 position = Vector2(1472, 768)
 curve = SubResource("Curve2D_wqpec")
 
@@ -184,8 +167,16 @@ loop = false
 scale = Vector2(2, 1)
 speed = 40.0
 
-[node name="DeathPit" parent="Objects" index="22" instance=ExtResource("11_o2wut")]
+[node name="DeathPit" parent="Objects" index="17" instance=ExtResource("11_o2wut")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
-position = Vector2(780, 1107)
+position = Vector2(784, 1098.5)
 shape = SubResource("RectangleShape2D_cmsel")
+
+[node name="WideSpikes" parent="Objects" index="18" instance=ExtResource("12_pksjy")]
+position = Vector2(624, -877)
+rotation = -1.5708
+
+[node name="WideSpikes2" parent="Objects" index="19" instance=ExtResource("12_pksjy")]
+position = Vector2(624, -1296)
+rotation = -1.5708

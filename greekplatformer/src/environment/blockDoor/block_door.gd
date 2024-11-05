@@ -3,8 +3,10 @@ extends AnimatableBody2D
 @onready var path = $".."
 
 @export var speed:float = 100
+#@export var loop:bool = false
 
-var activated:bool=false
+
+@export var activated:bool=false
 
 func _ready() -> void:
 	set_physics_process(false)
