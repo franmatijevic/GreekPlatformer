@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="4_8nr8u"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="5_gruuc"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="6_pav88"]
+[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="8_0n21w"]
 [ext_resource type="PackedScene" uid="uid://ce5li6vdurv2g" path="res://src/levels/finalLevels/roomsLevel1/scene_1.tscn" id="8_5f6q4"]
-[ext_resource type="Texture2D" uid="uid://lfpu2iolx3it" path="res://src/environment/NPCs/NPCArt/zeusGlava.png" id="8_lcgiv"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="9_6bubv"]
 [ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="9_kjp2t"]
 
@@ -55,7 +55,7 @@ z_index = 0
 position = Vector2(-533, -792)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
-texture = ExtResource("8_lcgiv")
+texture = ExtResource("8_0n21w")
 script = ExtResource("9_6bubv")
 entryPosition = Vector2(-301, -800)
 exitPosition = Vector2(-704, -800)

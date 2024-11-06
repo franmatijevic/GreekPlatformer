@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfpu2iolx3it"
-path="res://.godot/imported/zeusGlava.png-039cbe4c2bf3b385cb29d3e998502f50.ctex"
+uid="uid://cdho3tefu3l4p"
+path="res://.godot/imported/zeusGlavaOblak.png-24406cc49e9b240efe7c7de8b4f4da64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/NPCs/NPCArt/zeusGlava.png"
-dest_files=["res://.godot/imported/zeusGlava.png-039cbe4c2bf3b385cb29d3e998502f50.ctex"]
+source_file="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblak.png"
+dest_files=["res://.godot/imported/zeusGlavaOblak.png-24406cc49e9b240efe7c7de8b4f4da64.ctex"]
 
 [params]
 
