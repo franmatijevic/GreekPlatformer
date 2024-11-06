@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj5hnkidodqeq"]
+
+[ext_resource type="Script" path="res://src/levels/levelElements/room.gd" id="1_natfj"]
+[ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="3_xq04m"]
+[ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="4_hmp0w"]
+[ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="4_vbwwx"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="5_2htdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwhc"]
+size = Vector2(3562.75, 1959)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj54c"]
+size = Vector2(3636, 65)
+
+[node name="Room" type="Area2D"]
+process_mode = 1
+z_index = 100
+collision_layer = 0
+script = ExtResource("1_natfj")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_xq04m")
+
+[node name="RoomSize" type="CollisionShape2D" parent="."]
+position = Vector2(4212, -162.5)
+shape = SubResource("RectangleShape2D_7lwhc")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(2556, 34)
+
+[node name="DeathPit" parent="." instance=ExtResource("5_2htdw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPit"]
+position = Vector2(4204, 618)
+shape = SubResource("RectangleShape2D_cj54c")
+
+[node name="Objects" type="Node2D" parent="."]
+process_mode = 4
+
+[node name="Platforms" type="Node" parent="Objects"]
+
+[node name="NormalPlatform1" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(1700, 702)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform2" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(1962, 497)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform3" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(2295, 405)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform4" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(3051, 200)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform5" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(3435, 134)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform6" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(3435, 134)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform7" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(3895, 134)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform8" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(4136, 4)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform9" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(4289, -194)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform10" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(4602, -329)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform11" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5482, -488)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform12" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5765, -624)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform13" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5443, -780)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform14" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5748, -901)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform15" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5456, -1036)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform16" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
+position = Vector2(5749, -1130)
+scale = Vector2(1.72, 1.72)
+
+[node name="LongPlatform1" parent="Objects/Platforms" instance=ExtResource("4_hmp0w")]
+position = Vector2(2549, 199)
+scale = Vector2(1.76, 1.76)
+
+[node name="LongPlatform2" parent="Objects/Platforms" instance=ExtResource("4_hmp0w")]
+position = Vector2(5126, -329)
+scale = Vector2(1.76, 1.76)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

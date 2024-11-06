@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=3 uid="uid://cntqlyusl0bno"]
+
+[ext_resource type="Script" path="res://src/levels/levelElements/room.gd" id="1_g3q1e"]
+[ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="2_eh0gg"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="3_woatf"]
+[ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="4_slwjx"]
+[ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="5_1f8r5"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="5_phsv0"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="7_1inek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwhc"]
+size = Vector2(3562.75, 1959)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj54c"]
+size = Vector2(3209, 65)
+
+[node name="Room" type="Area2D"]
+process_mode = 1
+z_index = 100
+collision_layer = 0
+script = ExtResource("1_g3q1e")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_eh0gg")
+
+[node name="RoomSize" type="CollisionShape2D" parent="."]
+position = Vector2(7304, -2048)
+shape = SubResource("RectangleShape2D_7lwhc")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(5706, -1373)
+
+[node name="DeathPit" parent="." instance=ExtResource("3_woatf")]
+position = Vector2(478, -1266)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPit"]
+position = Vector2(7039.5, 618)
+shape = SubResource("RectangleShape2D_cj54c")
+
+[node name="Objects" type="Node2D" parent="."]
+process_mode = 4
+
+[node name="Platforms" type="Node" parent="Objects"]
+
+[node name="NormalPlatform15" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(5456, -1036)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform16" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(5749, -1130)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform17" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(5749, -1130)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform18" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6475, -1223)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform19" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6475, -1386)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform20" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6475, -1386)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform21" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(8179, -1674)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform22" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(8476, -1773)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform23" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(8167, -2183)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform24" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(7822, -2186)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform25" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(7479, -2230)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform27" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6859, -2223)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform29" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6526, -2312)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform30" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6526, -2513)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform31" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(6419, -2681)
+scale = Vector2(1.72, 1.72)
+
+[node name="NormalPlatform32" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(5471, -3023)
+scale = Vector2(1.72, 1.72)
+
+[node name="BreakingPlatform" parent="Objects/Platforms" instance=ExtResource("5_phsv0")]
+position = Vector2(6094, -1218)
+
+[node name="BreakingPlatform2" parent="Objects/Platforms" instance=ExtResource("5_phsv0")]
+position = Vector2(6799, -1453)
+
+[node name="BreakingPlatform3" parent="Objects/Platforms" instance=ExtResource("5_phsv0")]
+position = Vector2(7112, -1535)
+
+[node name="BreakingPlatform4" parent="Objects/Platforms" instance=ExtResource("5_phsv0")]
+position = Vector2(7112, -1535)
+
+[node name="LongPlatform" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(7475, -1609)
+
+[node name="LongPlatform2" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(7604, -1609)
+
+[node name="LongPlatform3" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(7736, -1609)
+
+[node name="LongPlatform4" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(7870, -1609)
+
+[node name="LongPlatform5" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(7870, -1609)
+
+[node name="LongPlatform6" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(6278, -2724)
+rotation = 0.40575
+
+[node name="LongPlatform7" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(6125, -2790)
+rotation = 0.429504
+
+[node name="LongPlatform8" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(5971, -2862)
+rotation = 0.48088
+
+[node name="LongPlatform9" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(5824, -2939)
+rotation = 0.518141
+
+[node name="LongPlatform10" parent="Objects/Platforms" instance=ExtResource("5_1f8r5")]
+position = Vector2(5658, -3002)
+rotation = 0.324352
+
+[node name="Spring" parent="Objects/Platforms" instance=ExtResource("7_1inek")]
+position = Vector2(8478, -1854)
+max_force = 2000.0
+extra_force_multiplier = 0.0
+
+[node name="Spring2" parent="Objects/Platforms" instance=ExtResource("7_1inek")]
+position = Vector2(7119, -1295)
+extra_force_multiplier = 0.3
+
+[node name="NormalPlatform28" parent="Objects/Platforms" instance=ExtResource("4_slwjx")]
+position = Vector2(7117, -1214)
+scale = Vector2(1.72, 1.72)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

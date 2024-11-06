@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=15 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_c5rsu"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_gr02m"]
+[ext_resource type="Texture2D" uid="uid://ckpb2gx5h311f" path="res://src/environment/environmentArt/olimp.png" id="2_r1swl"]
+[ext_resource type="Texture2D" uid="uid://cbn4vcflc2dsc" path="res://src/environment/environmentArt/planinaPozadina.png" id="3_qykho"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="4_8nr8u"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="5_gruuc"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="6_pav88"]
@@ -9,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ce5li6vdurv2g" path="res://src/levels/finalLevels/roomsLevel1/scene_1.tscn" id="8_5f6q4"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="9_6bubv"]
 [ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="9_kjp2t"]
+[ext_resource type="PackedScene" uid="uid://bj5hnkidodqeq" path="res://src/levels/finalLevels/roomsLevel1/scene_2.tscn" id="10_jg6un"]
+[ext_resource type="PackedScene" uid="uid://cntqlyusl0bno" path="res://src/levels/finalLevels/roomsLevel1/scene_3.tscn" id="11_idnj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -22,17 +26,33 @@ visible = false
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
-[node name="Player" parent="." index="4" instance=ExtResource("2_gr02m")]
+[node name="Camera2D" parent="Camera" index="0"]
+zoom = Vector2(0.705, 0.705)
+
+[node name="Olimp" type="Sprite2D" parent="." index="4"]
+position = Vector2(888, 75)
+scale = Vector2(0.848261, 0.848261)
+texture = ExtResource("2_r1swl")
+
+[node name="PlaninaPozadina" type="Sprite2D" parent="." index="5"]
+position = Vector2(6665, -1984)
+scale = Vector2(5.36, 5.36)
+texture = ExtResource("3_qykho")
+
+[node name="Player" parent="." index="6" instance=ExtResource("2_gr02m")]
 z_index = 1
-position = Vector2(480, 797)
+position = Vector2(172, 733)
+jump_height = 220.0
+jump_time_to_peak = 0.37
+jump_time_to_descent = 0.26
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
-position = Vector2(110, -158)
+position = Vector2(302, 221)
 
-[node name="CanvasLayerPause" parent="." index="5"]
+[node name="CanvasLayerPause" parent="." index="7"]
 layer = 2
 
-[node name="DialogueAreaZeus" parent="." index="6" instance=ExtResource("4_8nr8u")]
+[node name="DialogueAreaZeus" parent="." index="8" instance=ExtResource("4_8nr8u")]
 process_mode = 0
 position = Vector2(858, 753)
 dialogueKey = "lvl_1_1"
@@ -41,29 +61,33 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="7" instance=ExtResource("5_gruuc")]
+[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("5_gruuc")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("6_pav88")
 sceneTextFile = "res://src/dialogue/level_1_dialogue/lvl_1.json"
 speechBubbleScene = ExtResource("9_kjp2t")
 
-[node name="Scene_1" parent="." index="8" instance=ExtResource("8_5f6q4")]
+[node name="Scene_1" parent="." index="10" instance=ExtResource("8_5f6q4")]
 z_index = 0
 
-[node name="Zeus" type="Sprite2D" parent="." index="9"]
-position = Vector2(-533, -792)
+[node name="Scene_2" parent="." index="11" instance=ExtResource("10_jg6un")]
+
+[node name="Scene_3" parent="." index="12" instance=ExtResource("11_idnj5")]
+
+[node name="Zeus" type="Sprite2D" parent="." index="13"]
+position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
 texture = ExtResource("8_0n21w")
 script = ExtResource("9_6bubv")
-entryPosition = Vector2(-301, -800)
-exitPosition = Vector2(-704, -800)
+entryPosition = Vector2(-1277, -1728)
+exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
-position = Vector2(901.717, 405.445)
+position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="10"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="14"]
 
 [editable path="DialogueAreaZeus"]

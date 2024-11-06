@@ -34,7 +34,6 @@ func show_text(text):
 		bubble.visible = false
 	
 	if not speechBubbles.has(activeSpeaker):
-		print("Stvoren novi!")
 		var newBubble = speechBubbleScene.instantiate()
 		speechBubbleLayer.add_child(newBubble)
 		

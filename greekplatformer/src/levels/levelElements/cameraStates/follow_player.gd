@@ -9,6 +9,7 @@ extends State
 var playerY
 
 func enter():
+	print(self.name)
 	playerY = player().player.global_position.y
 	
 	player().block=false

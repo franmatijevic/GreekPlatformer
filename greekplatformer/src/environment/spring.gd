@@ -2,9 +2,11 @@ extends Area2D
 
 @export var max_force:float=800##Snaga opruge kojom te odgurne
 @export var side_force:float=1200##nadodanje vertikalne sile na horizontalne opruge
+@export var extra_force_multiplier:float = 1.5
 
 const charge:float=0.1
 
+var impact_velocity_y
 var total_force:Vector2=Vector2.DOWN
 var kept_force:Vector2=Vector2.DOWN
 
@@ -12,7 +14,7 @@ func _ready() -> void:
 	total_force = Vector2(sin(rotation), -cos(rotation))*max_force#sin i cos su tako poslozeni jer se uracunava defaultno rotiranje za 90 stupnjeva u smjeru kazaljke na satu
 	total_force.y -= abs(pow(sin(rotation),3)*side_force)
 	#kept_force = Vector2(pow(abs(cos(rotation)),2), abs(sin(rotation))).normalized()
-	kept_force = Vector2(pow(abs(cos(rotation)),4), 0).normalized()
+	#kept_force = Vector2(pow(abs(cos(rotation)),4), 0).normalized()
 	kept_force = Vector2(abs(cos(rotation)), 0).normalized()
 
 func _on_body_entered(body: Node2D) -> void:
@@ -21,6 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if(body is Character):
 		#if(body.velocity.y>=0):
+		impact_velocity_y = body.velocity.y
+		print(impact_velocity_y)
 		$Timer.start(charge)
 	elif(body is Throwable):
 		#if(body.linear_velocity.y>=0):
@@ -29,7 +33,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:#odbacivanje tijela iz opruge
 	for i in get_overlapping_bodies():
 		if(i is Character):
-			i.velocity=kept_force * i.velocity  + total_force
+			var impact_force = Vector2(0, -impact_velocity_y * extra_force_multiplier)
+			var adjusted_total_force = total_force + impact_force
+			
+			i.velocity=kept_force * i.velocity  + adjusted_total_force
 			#i.velocity.y = -max_force
 			i.jumped=false
 		elif(i is Throwable):

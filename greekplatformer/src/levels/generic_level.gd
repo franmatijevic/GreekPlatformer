@@ -2,6 +2,7 @@ extends Node2D
 
 @export var current_room:Area2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
+@onready var dialogue_player: Node2D = $DialoguePlayer
 
 @warning_ignore("unused_signal")
 signal toggle_paused(paused: bool)
@@ -27,7 +28,7 @@ func _input(_event: InputEvent) -> void:
 		if(get_node("Camera").block==false and !get_node("Player").dead):
 			restart()
 	if Input.is_action_just_pressed("pause"):
-		if(get_node("Camera").block==false):
+		if(get_node("Camera").block==false) and !dialogue_player.inProgress:
 			game_paused = !game_paused
 
 func restart():
