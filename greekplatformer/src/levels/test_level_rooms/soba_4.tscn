@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=4 uid="uid://ihf0fm4fvepw"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_8untp"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="2_4tg62"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="3_ee2o4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_806s4"]
+size = Vector2(9066, 4775)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4poj"]
+size = Vector2(1158, 9)
+
+[node name="Soba4" instance=ExtResource("1_8untp")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAcABgAAAAAAAAABAAcABgAAAAAAAAACAAcABgAAAAAAAAADAAcABgAAAAAAAAAEAAcABgAAAAAAAAAFAAcABgAAAAAAAAAGAAcABgAAAAAAAAAAAAgABQAAAAAAAAAAAAkABQAAAAAAAAABAAkABQAAAAAAAAABAAgABQAAAAAAAAACAAgABQAAAAAAAAADAAgABQAAAAAAAAADAAkABQAAAAAAAAACAAkABQAAAAAAAAAEAAkABQAAAAAAAAAEAAgABQAAAAAAAAAFAAgABQAAAAAAAAAFAAkABQAAAAAAAAAGAAkABQAAAAAAAAAGAAgABQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(4523, -1313.5)
+shape = SubResource("RectangleShape2D_806s4")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(116, 774)
+
+[node name="DeathPit" parent="Objects" index="0" instance=ExtResource("2_4tg62")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(1471, 1013)
+shape = SubResource("RectangleShape2D_a4poj")
+
+[node name="Spring" parent="Objects" index="1" instance=ExtResource("3_ee2o4")]
+position = Vector2(809, 834)

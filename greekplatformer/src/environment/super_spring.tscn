@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg136dkjyc6yp"]
+
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="1_5g6ou"]
+[ext_resource type="Texture2D" uid="uid://buih4glh62hcs" path="res://src/environment/environmentArt/tempSuperSpring.png" id="2_j602x"]
+
+[node name="SuperSpring" instance=ExtResource("1_5g6ou")]
+max_force = 2000.0
+side_force = 1700.0
+
+[node name="TempSpring" parent="." index="0"]
+texture = ExtResource("2_j602x")

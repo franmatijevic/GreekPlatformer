@@ -28,6 +28,7 @@ window/size/viewport_height=1080
 window/size/mode=4
 window/size/borderless=true
 window/stretch/mode="canvas_items"
+window/stretch/scale=0.8
 
 [importer_defaults]
 

@@ -5,10 +5,12 @@
 [sub_resource type="SystemFont" id="SystemFont_y54tb"]
 font_names = PackedStringArray("Bell MT")
 font_weight = 575
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_lpgyk"]
 font_names = PackedStringArray("Bell MT")
 font_weight = 600
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j42k"]
 
@@ -35,6 +37,7 @@ font_weight = 600
 [sub_resource type="SystemFont" id="SystemFont_xbat3"]
 font_names = PackedStringArray("Bell MT")
 font_weight = 550
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdjvg"]
 
@@ -61,6 +64,7 @@ font_weight = 550
 [sub_resource type="SystemFont" id="SystemFont_fdjkd"]
 font_names = PackedStringArray("Bell MT")
 font_weight = 550
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhtfh"]
 
@@ -95,9 +99,12 @@ grow_vertical = 2
 script = ExtResource("1_wmr8m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.258824)
 
 [node name="Panel" type="Panel" parent="."]

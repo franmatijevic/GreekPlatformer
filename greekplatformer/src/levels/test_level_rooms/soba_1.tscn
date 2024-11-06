@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=4 uid="uid://bjwpcl3f268h5"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_seqfx"]
+[ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="2_1rkai"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="3_531nn"]
+[ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="4_o035q"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="5_kmm5q"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="6_w6fdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tki28"]
+size = Vector2(3985, 1784)
+
+[sub_resource type="Curve2D" id="Curve2D_w0ypn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1123, 720, 0, 0, 0, 0, 1955, 730, 0, 0, 0, 0, 342, 716, 0, 0, 0, 0, 1123, 720)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsabg"]
+size = Vector2(764, 44.5)
+
+[node name="Soba1" instance=ExtResource("1_seqfx")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAgACwAAAAAAAAABAAgACwAAAAAAAAACAAgACwAAAAAAAAADAAgACwAAAAAAAAAEAAgACwAAAAAAAAAFAAgACwAAAAAAAAAGAAgACwAAAAAAAAAHAAgACwAAAAAAAAAIAAgACwAAAAAAAAD//wUABQAAAAAAAAD//wQABQAAAAAAAAD//wMABQAAAAAAAAD//wIABQAAAAAAAAD//wEABQAAAAAAAAD//wAABQAAAAAAAAD/////BQAAAAAAAAD///7/BQAAAAAAAAD//wgACwAAAAAAAAD//wkABQAAAAAAAAAAAAkABQAAAAAAAAABAAkABQAAAAAAAAACAAkABQAAAAAAAAADAAkABQAAAAAAAAAEAAkABQAAAAAAAAAFAAkABQAAAAAAAAAGAAkABQAAAAAAAAAHAAkABQAAAAAAAAAIAAkABQAAAAAAAAAJAAkABQAAAAAAAAAKAAkABQAAAAAAAAALAAkABQAAAAAAAAAMAAkABQAAAAAAAAANAAkABQAAAAAAAAAOAAkABQAAAAAAAAAPAAkABQAAAAAAAAAQAAkABQAAAAAAAAARAAkABQAAAAAAAAD///3/BQAAAAAAAAD///z/BQAAAAAAAAD///v/BQAAAAAAAAAJAAgABQAAAAAAAAAKAAgABQAAAAAAAAALAAgABQAAAAAAAAAMAAgABQAAAAAAAAANAAgABQAAAAAAAAAOAAgABQAAAAAAAAAPAAgABQAAAAAAAAAQAAgABQAAAAAAAAARAAgABQAAAAAAAAASAAgABQAAAAAAAAASAAkABQAAAAAAAAATAAgABQAAAAAAAAATAAkABQAAAAAAAAAUAAkABQAAAAAAAAAUAAgABQAAAAAAAAAUAAcABQAAAAAAAAAUAAYACwAAAAAAAAAbAAUABgAAAAAAAAAcAAUABgAAAAAAAAAdAAUABgAAAAAAAAAeAAUABgAAAAAAAAAbAAYABQAAAAAAAAAbAAcABQAAAAAAAAAbAAgABQAAAAAAAAAbAAkABQAAAAAAAAAcAAkABQAAAAAAAAAdAAkABQAAAAAAAAAeAAkABQAAAAAAAAAeAAgABQAAAAAAAAAeAAcABQAAAAAAAAAeAAYABQAAAAAAAAAdAAYABQAAAAAAAAAcAAYABQAAAAAAAAAcAAcABQAAAAAAAAAcAAgABQAAAAAAAAAdAAgABQAAAAAAAAAdAAcABQAAAAAAAAAfAAYABQAAAAAAAAAfAAcABQAAAAAAAAAfAAgABQAAAAAAAAAfAAkABQAAAAAAAAAfAAUABgAAAAAAAAAfAAEABQAAAAAAAAAfAAAABQAAAAAAAAAfAP//BQAAAAAAAAAfAP7/BQAAAAAAAAAfAP3/BQAAAAAAAAAfAPz/BQAAAAAAAAAfAPv/BQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(1982.5, 260)
+shape = SubResource("RectangleShape2D_tki28")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(118, 871)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="0"]
+curve = SubResource("Curve2D_w0ypn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+position = Vector2(1123, 720)
+rotation = 0.0120187
+
+[node name="BirdPlatform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_1rkai")]
+speed = 0.15
+
+[node name="Spring" parent="Objects" index="1" instance=ExtResource("3_531nn")]
+position = Vector2(752, 963)
+
+[node name="Spring2" parent="Objects" index="2" instance=ExtResource("3_531nn")]
+position = Vector2(2625, 704)
+
+[node name="WideSpikes" parent="Objects" index="3" instance=ExtResource("4_o035q")]
+position = Vector2(1425, 1017)
+
+[node name="WideSpikes2" parent="Objects" index="4" instance=ExtResource("4_o035q")]
+position = Vector2(1898, 1017)
+
+[node name="WideSpikes3" parent="Objects" index="5" instance=ExtResource("4_o035q")]
+position = Vector2(2362, 1017)
+
+[node name="BreakingPlatform" parent="Objects" index="6" instance=ExtResource("5_kmm5q")]
+position = Vector2(2148, 704)
+
+[node name="BreakingPlatform2" parent="Objects" index="7" instance=ExtResource("5_kmm5q")]
+position = Vector2(3116, 596)
+
+[node name="DeathPit" parent="Objects" index="8" instance=ExtResource("6_w6fdt")]
+position = Vector2(2706, 1109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(370, -307)
+shape = SubResource("RectangleShape2D_vsabg")
