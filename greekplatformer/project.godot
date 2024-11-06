@@ -11,7 +11,15 @@ config_version=5
 [application]
 
 config/name="GreekPlatformer"
+<<<<<<< Updated upstream
 run/main_scene="res://src/levels/finalLevels/level_1.tscn"
+=======
+<<<<<<< HEAD
+run/main_scene="res://src/levels/test_level1.tscn"
+=======
+run/main_scene="res://src/levels/finalLevels/level_1.tscn"
+>>>>>>> 259dada3673103a643e31a23f2b130744ef69146
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
