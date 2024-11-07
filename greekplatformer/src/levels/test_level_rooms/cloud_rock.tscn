@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=4 uid="uid://cqg1pv7i27vfe"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_vtol4"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="2_83m32"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="3_65e2y"]
+[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_nescx"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_b77ut"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="6_1orot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qadw"]
+size = Vector2(2432, 1478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dus7d"]
+size = Vector2(1040, 256)
+
+[sub_resource type="Curve2D" id="Curve2D_k5dfa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -512)
+}
+point_count = 2
+
+[node name="CloudRock" instance=ExtResource("1_vtol4")]
+downOffset = 192
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD4/wIABQAAAAAAAAD5/wIABQAAAAAAAAD6/wIABQAAAAAAAAD7/wIABQAAAAAAAAD3/wIABQAAAAAAAAAEAAIABQAAAAAAAAAFAAIABQAAAAAAAAAGAAIABQAAAAAAAAAHAAIABQAAAAAAAAAIAAIABQAAAAAAAAAJAAIABQAAAAAAAAD3/wEABQAAAAAAAAD4/wEABQAAAAAAAAD5/wEABQAAAAAAAAD6/wEABQAAAAAAAAD7/wEABQAAAAAAAAAEAAEABQAAAAAAAAAFAAEABQAAAAAAAAAGAAEABQAAAAAAAAAHAAEABQAAAAAAAAAIAAEABQAAAAAAAAAJAAEABQAAAAAAAAD3/wAABgAAAAAAAAD4/wAABgAAAAAAAAD5/wAABgAAAAAAAAD6/wAABgAAAAAAAAD7/wAABgAAAAAAAAAEAAAABgAAAAAAAAAFAAAABgAAAAAAAAAGAAAABgAAAAAAAAAHAAAABgAAAAAAAAAIAAAABgAAAAAAAAAJAAAABgAAAAAAAAD8/wQABQAAAAAAAAD9/wQABQAAAAAAAAD+/wQABQAAAAAAAAD//wQABQAAAAAAAAAAAAQABQAAAAAAAAABAAQABQAAAAAAAAACAAQABQAAAAAAAAADAAQABQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(64, -227)
+shape = SubResource("RectangleShape2D_0qadw")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-1024, -120)
+
+[node name="DeathPit" parent="Objects" index="0" instance=ExtResource("2_83m32")]
+position = Vector2(0, -132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(-8, 384)
+shape = SubResource("RectangleShape2D_dus7d")
+
+[node name="PressurePlate" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_65e2y")]
+position = Vector2(680, 0)
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="cloud_platform" parent="Objects" index="2" instance=ExtResource("4_nescx")]
+position = Vector2(-264, -132)
+
+[node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("5_b77ut")]
+position = Vector2(-272, -232)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="4"]
+position = Vector2(216, 576)
+curve = SubResource("Curve2D_k5dfa")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("6_1orot")]
+speed = 300.0

@@ -8,14 +8,17 @@
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="7_k2amy"]
 [ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="8_nq8xc"]
 [ext_resource type="Texture2D" uid="uid://dyyf3tuc8r1nv" path="res://src/dialogue/dialogueArt/tmp_dialogue.png" id="8_s7jtu"]
-[ext_resource type="PackedScene" path="res://src/levels/test_level_rooms/rock_throw.tscn" id="9_72tu0"]
-[ext_resource type="PackedScene" path="res://src/levels/test_level_rooms/bounce.tscn" id="10_fv2c2"]
+[ext_resource type="PackedScene" uid="uid://b7tl8dqhrok5f" path="res://src/levels/test_level_rooms/rock_throw.tscn" id="9_72tu0"]
+[ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/levels/test_level_rooms/cloud_rock.tscn" id="11_wf35p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
 
 [node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
 current_room = NodePath("StartingRoom")
+
+[node name="BlackScreen" parent="." index="1"]
+visible = false
 
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
@@ -57,12 +60,12 @@ theme_override_font_sizes/font_size = 90
 autowrap_mode = 2
 
 [node name="Room2" parent="." index="9" instance=ExtResource("8_nq8xc")]
-position = Vector2(4784, -1048)
+position = Vector2(6448, -640)
 
 [node name="RockThrow" parent="." index="10" instance=ExtResource("9_72tu0")]
-position = Vector2(3160, 1648)
+position = Vector2(4784, 128)
 
-[node name="Room" parent="." index="11" instance=ExtResource("10_fv2c2")]
-position = Vector2(1976, 128)
+[node name="CloudRock" parent="." index="11" instance=ExtResource("11_wf35p")]
+position = Vector2(2224, 256)
 
 [editable path="DialogueAreaZeus"]

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="12_pksjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vohw"]
-size = Vector2(1920, 2680)
+size = Vector2(2048, 2680)
 
 [sub_resource type="Curve2D" id="Curve2D_wx80i"]
 _data = {
@@ -62,6 +62,7 @@ position = Vector2(-120, -208)
 rotation = 0.785398
 max_force = 2000.0
 side_force = 1500.0
+extra_force_multiplier = 0.0
 
 [node name="BreakingPlatform" parent="Objects" index="1" instance=ExtResource("3_8nrhj")]
 position = Vector2(1288, 216)
@@ -71,11 +72,13 @@ position = Vector2(1080, 408)
 
 [node name="Spring3" parent="Objects" index="3" instance=ExtResource("2_m8lqd")]
 position = Vector2(704, 64)
+extra_force_multiplier = 0.0
 
 [node name="Spring2" parent="Objects" index="4" instance=ExtResource("2_m8lqd")]
 position = Vector2(704, -320)
 rotation = -1.5708
 side_force = 1500.0
+extra_force_multiplier = 0.0
 
 [node name="cloud_platform3" parent="Objects" index="5" instance=ExtResource("4_gwsra")]
 position = Vector2(864, 584)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b7tl8dqhrok5f"]
+[gd_scene load_steps=10 format=4 uid="uid://b7tl8dqhrok5f"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_s8xab"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_wkn54"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="6_gv3ge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uupvk"]
-size = Vector2(1928, 1080)
+size = Vector2(2432, 1350)
 
 [sub_resource type="Curve2D" id="Curve2D_iw1wp"]
 _data = {
@@ -16,13 +16,19 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_yalv7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -256)
+}
+point_count = 2
+
 [node name="RockThrow" instance=ExtResource("1_s8xab")]
 
 [node name="TileMapLayer" parent="." index="0"]
-tile_map_data = PackedByteArray("AAABAAEABQAAAAAAAAAAAAEABQAAAAAAAAD//wEABQAAAAAAAAD+/wEABQAAAAAAAAD9/wEABQAAAAAAAAD8/wEABQAAAAAAAAD7/wEABQAAAAAAAAD6/wEABQAAAAAAAAACAAEABQAAAAAAAAADAAEABQAAAAAAAAAEAAEABQAAAAAAAAAFAAEABQAAAAAAAAAGAAEABQAAAAAAAAAHAAEABQAAAAAAAAAIAAEABQAAAAAAAAAIAAAABQAAAAAAAAAIAP//BQAAAAAAAAAIAP7/BQAAAAAAAAAIAP3/BQAAAAAAAAAIAPz/BQAAAAAAAAAIAPv/BQAAAAAAAAD+/wAABQAAAAAAAAD//wAABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAEABgAAAAAAAAAAAAEABgAAAAAAAAD//wEABQAAAAAAAAD+/wEABQAAAAAAAAD9/wEABgAAAAAAAAD8/wEABgAAAAAAAAD7/wEABgAAAAAAAAD6/wEABgAAAAAAAAACAAEABgAAAAAAAAADAAEABgAAAAAAAAAEAAEABgAAAAAAAAAFAAEABgAAAAAAAAAGAAEABgAAAAAAAAAHAAEABgAAAAAAAAAIAAEABQAAAAAAAAAIAP7/BQAAAAAAAAAIAP3/BQAAAAAAAAAIAPz/BQAAAAAAAAAIAPv/BQAAAAAAAAD+/wAABgAAAAAAAAD//wAABAAAAAAAAAD2/wIABQAAAAAAAAD3/wIABQAAAAAAAAD4/wIABQAAAAAAAAD5/wIABQAAAAAAAAD6/wIABQAAAAAAAAD7/wIABQAAAAAAAAD8/wIABQAAAAAAAAD9/wIABQAAAAAAAAD+/wIABQAAAAAAAAD//wIABQAAAAAAAAAAAAIABQAAAAAAAAABAAIABQAAAAAAAAACAAIABQAAAAAAAAADAAIABQAAAAAAAAAEAAIABQAAAAAAAAAFAAIABQAAAAAAAAAGAAIABQAAAAAAAAAHAAIABQAAAAAAAAAIAAIABQAAAAAAAAD2/wEABgAAAAAAAAD3/wEABgAAAAAAAAD4/wEABgAAAAAAAAD5/wEABgAAAAAAAAAIAPr/BQAAAAAAAAAIAPn/BQAAAAAAAAAIAPj/BQAAAAAAAAD2/wMABQAAAAAAAAD3/wMABQAAAAAAAAD4/wMABQAAAAAAAAD5/wMABQAAAAAAAAD6/wMABQAAAAAAAAD7/wMABQAAAAAAAAD8/wMABQAAAAAAAAD9/wMABQAAAAAAAAD+/wMABQAAAAAAAAD//wMABQAAAAAAAAAAAAMABQAAAAAAAAABAAMABQAAAAAAAAACAAMABQAAAAAAAAADAAMABQAAAAAAAAAEAAMABQAAAAAAAAAFAAMABQAAAAAAAAAGAAMABQAAAAAAAAAHAAMABQAAAAAAAAAIAAMABQAAAAAAAAA=")
 
 [node name="RoomSize" parent="." index="1"]
-position = Vector2(192, -280)
+position = Vector2(-64, -291)
 shape = SubResource("RectangleShape2D_uupvk")
 
 [node name="Respawn" parent="." index="3"]
@@ -30,6 +36,7 @@ position = Vector2(-648, 0)
 
 [node name="Spring" parent="Objects" index="0" instance=ExtResource("2_wkn54")]
 position = Vector2(-192, -64)
+extra_force_multiplier = 0.0
 
 [node name="Path2D" type="Path2D" parent="Objects" index="1"]
 position = Vector2(808, 0)
@@ -43,8 +50,9 @@ position = Vector2(0, -15)
 scale = Vector2(1.5, 0.8)
 activated = true
 
-[node name="PressurePlate" parent="Objects/Path2D/PathFollow2D" index="1" instance=ExtResource("3_e3x4a")]
+[node name="PressurePlate" parent="Objects/Path2D/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_e3x4a")]
 position = Vector2(0, -56)
+connectedTo = [NodePath("../../../Path2D2/PathFollow2D/BlockDoor")]
 
 [node name="Lever" parent="Objects" index="2" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_6qbpx")]
 position = Vector2(-304, 104)
@@ -54,3 +62,14 @@ connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
 
 [node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("6_gv3ge")]
 position = Vector2(-496, 32)
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="4"]
+position = Vector2(1088, 0)
+curve = SubResource("Curve2D_yalv7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("3_aey2p")]
+scale = Vector2(1, 2)
