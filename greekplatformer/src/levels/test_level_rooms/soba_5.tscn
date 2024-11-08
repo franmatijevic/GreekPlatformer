@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=4 uid="uid://cry7ue7lta84u"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_gy7c1"]
+[ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="2_8c6dk"]
+[ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="3_ee611"]
+[ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="4_qjj2o"]
+[ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="5_efecu"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="6_imug5"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="7_jexui"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="8_wx8i1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yksl"]
+size = Vector2(5338, 3967)
+
+[sub_resource type="Curve2D" id="Curve2D_kfih6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2088, 86, 0, 0, 0, 0, 2832, 78, 0, 0, 0, 0, 1798, 82, 0, 0, 0, 0, 2088, 86)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_vfq0c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3025, 1, 0, 0, 0, 0, 3497, -2, 0, 0, 0, 0, 2706, -8, 0, 0, 0, 0, 3025, 1)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_dt8bu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3664, 126, 0, 0, 0, 0, 3664, -366, 0, 0, 0, 0, 3661, 224, 0, 0, 0, 0, 3664, 126)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_4dumg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5312, -1216, 0, 0, 0, 0, 5312, -1664)
+}
+point_count = 2
+
+[node name="Soba5" instance=ExtResource("1_gy7c1")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAcACwAAAAAAAAABAAcACwAAAAAAAAACAAcACwAAAAAAAAADAAcACwAAAAAAAAAiAPn/CwAAAAAAAAAjAPn/CwAAAAAAAAAkAPn/CwAAAAAAAAAlAPn/CwAAAAAAAAAmAPn/CwAAAAAAAAAnAPn/CwAAAAAAAAAoAPn/CwAAAAAAAAApAPn/CwAAAAAAAAApAPX/BQAAAAAAAAApAPT/BQAAAAAAAAApAPP/BQAAAAAAAAApAPL/BQAAAAAAAAApAPH/BQAAAAAAAAApAPD/CwAAAAAAAAApAO//BQAAAAAAAAApAO7/CwAAAAAAAAApAO3/BQAAAAAAAAApAOz/CwAAAAAAAAApAOv/BQAAAAAAAAApAOr/BQAAAAAAAAAiAPr/BAAAAAAAADAjAPr/BAAAAAEAAAAkAPr/BAAAAAEAAAAlAPr/BAAAAAEAAAAmAPr/BAAAAAEAAAAnAPr/BAAAAAEAAAAoAPr/BAAAAAEAAAApAPr/BAAAAAEAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(2659, -835.5)
+shape = SubResource("RectangleShape2D_6yksl")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(116, 680)
+
+[node name="SuperSpring" parent="Objects" index="0" instance=ExtResource("2_8c6dk")]
+position = Vector2(445, 835)
+
+[node name="SuperSpring2" parent="Objects" index="1" instance=ExtResource("2_8c6dk")]
+position = Vector2(943, 266)
+
+[node name="NormalPlatform" parent="Objects" index="2" instance=ExtResource("3_ee611")]
+position = Vector2(943, 338)
+
+[node name="NormalPlatform2" parent="Objects" index="3" instance=ExtResource("3_ee611")]
+position = Vector2(1626, 153)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="4"]
+curve = SubResource("Curve2D_kfih6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+position = Vector2(2088, 86)
+rotation = -0.0107523
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_qjj2o")]
+speed = 0.17
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="5"]
+curve = SubResource("Curve2D_vfq0c")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+position = Vector2(3025, 1)
+rotation = -0.00635585
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("4_qjj2o")]
+speed = 0.18
+
+[node name="Path2D3" type="Path2D" parent="Objects" index="6"]
+curve = SubResource("Curve2D_dt8bu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D3" index="0"]
+position = Vector2(3664, 126)
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("4_qjj2o")]
+speed = 0.15
+
+[node name="LongPlatform" parent="Objects" index="7" instance=ExtResource("5_efecu")]
+position = Vector2(3667, -530)
+
+[node name="LongPlatform2" parent="Objects" index="8" instance=ExtResource("5_efecu")]
+position = Vector2(3986, -530)
+
+[node name="LongPlatform3" parent="Objects" index="9" instance=ExtResource("5_efecu")]
+position = Vector2(3846, -530)
+
+[node name="Spring" parent="Objects" index="10" instance=ExtResource("6_imug5")]
+position = Vector2(4025, -604)
+
+[node name="PressurePlate" parent="Objects" index="11" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_wx8i1")]
+position = Vector2(4575, -891)
+connectedTo = [NodePath("../Path2D4/PathFollow2D/BlockDoor")]
+
+[node name="Path2D4" type="Path2D" parent="Objects" index="12"]
+curve = SubResource("Curve2D_4dumg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D4" index="0"]
+position = Vector2(5312, -1216)
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("7_jexui")]
+scale = Vector2(1, 5)
+speed = 70.0

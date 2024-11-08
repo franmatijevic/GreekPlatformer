@@ -2,7 +2,7 @@ extends Area2D
 
 @export var max_force:float=800##Snaga opruge kojom te odgurne
 @export var side_force:float=1200##nadodanje vertikalne sile na horizontalne opruge
-@export var extra_force_multiplier:float = 1.5
+@export var extra_force_multiplier:float = 0
 
 const charge:float=0.1
 

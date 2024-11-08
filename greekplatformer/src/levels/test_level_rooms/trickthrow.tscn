@@ -62,7 +62,6 @@ position = Vector2(-120, -208)
 rotation = 0.785398
 max_force = 2000.0
 side_force = 1500.0
-extra_force_multiplier = 0.0
 
 [node name="BreakingPlatform" parent="Objects" index="1" instance=ExtResource("3_8nrhj")]
 position = Vector2(1288, 216)
@@ -72,13 +71,11 @@ position = Vector2(1080, 408)
 
 [node name="Spring3" parent="Objects" index="3" instance=ExtResource("2_m8lqd")]
 position = Vector2(704, 64)
-extra_force_multiplier = 0.0
 
 [node name="Spring2" parent="Objects" index="4" instance=ExtResource("2_m8lqd")]
 position = Vector2(704, -320)
 rotation = -1.5708
 side_force = 1500.0
-extra_force_multiplier = 0.0
 
 [node name="cloud_platform3" parent="Objects" index="5" instance=ExtResource("4_gwsra")]
 position = Vector2(864, 584)
