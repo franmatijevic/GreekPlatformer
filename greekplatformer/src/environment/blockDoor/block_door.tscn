@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxiqo4sifn21q"]
+[gd_scene load_steps=6 format=3 uid="uid://bxiqo4sifn21q"]
 
 [ext_resource type="Script" path="res://src/environment/blockDoor/block_door.gd" id="1_qaqi8"]
 [ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_wy2k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nts8c"]
 size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40bjp"]
+size = Vector2(1, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cphmf"]
+size = Vector2(128, 1)
 
 [node name="BlockDoor" type="AnimatableBody2D"]
 collision_layer = 2
@@ -18,3 +24,22 @@ shape = SubResource("RectangleShape2D_nts8c")
 [node name="Pixel1x1" type="Sprite2D" parent="."]
 scale = Vector2(128, 128)
 texture = ExtResource("1_wy2k2")
+
+[node name="DetectHorizontal" type="Area2D" parent="."]
+position = Vector2(64, 0)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectHorizontal"]
+shape = SubResource("RectangleShape2D_40bjp")
+
+[node name="DetectVertical" type="Area2D" parent="."]
+position = Vector2(0, 64)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectVertical"]
+shape = SubResource("RectangleShape2D_cphmf")
+
+[connection signal="body_entered" from="DetectHorizontal" to="." method="_on_detect_horizontal_body_entered"]
+[connection signal="body_exited" from="DetectHorizontal" to="." method="_on_detect_horizontal_body_exited"]
+[connection signal="body_entered" from="DetectVertical" to="." method="_on_detect_vertical_body_entered"]
+[connection signal="body_exited" from="DetectVertical" to="." method="_on_detect_vertical_body_exited"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=4 uid="uid://ddcmg04sjxibr"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_4orq5"]
+[ext_resource type="PackedScene" uid="uid://cb47qwqitaccv" path="res://src/environment/lever/lever.tscn" id="2_stdj6"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="3_30u2w"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="4_bvny3"]
+[ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="5_jakvd"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="6_uv1a3"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="7_go1fa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyd28"]
+size = Vector2(2432, 1592)
+
+[sub_resource type="Curve2D" id="Curve2D_cx7mq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -128, 0)
+}
+point_count = 2
+
+[node name="SimpleCatch" instance=ExtResource("1_4orq5")]
+upOffset = 242
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD6/wAABgAAAAAAAAD7/wAABgAAAAAAAAD8/wAABgAAAAAAAAD9/wAABgAAAAAAAAD+/wAABgAAAAAAAAADAAAABgAAAAAAAAAEAAAABgAAAAAAAAAFAAAABgAAAAAAAAAGAAAABgAAAAAAAAAHAAAABgAAAAAAAAAIAAAABgAAAAAAAAAJAAAABQAAAAAAAAAKAAAABQAAAAAAAAALAAAABgAAAAAAAAD+/wEABQAAAAAAAAD+/wIABQAAAAAAAAD9/wIABQAAAAAAAAD8/wIABQAAAAAAAAD7/wIABQAAAAAAAAD6/wIABQAAAAAAAAD6/wEABQAAAAAAAAD7/wEABQAAAAAAAAD8/wEABQAAAAAAAAD9/wEABQAAAAAAAAADAAEABAAAAAAAADAEAAIABQAAAAAAAAAFAAIABQAAAAAAAAAGAAIABQAAAAAAAAAHAAIABQAAAAAAAAAIAAIABQAAAAAAAAAJAAIABQAAAAAAAAAKAAIABQAAAAAAAAALAAIABQAAAAAAAAALAAEABQAAAAAAAAAKAAEABQAAAAAAAAAJAAEABQAAAAAAAAAIAAEABQAAAAAAAAAHAAEABQAAAAAAAAAGAAEABQAAAAAAAAAFAAEABQAAAAAAAAAEAAEABQAAAAAAAAD//wAABgAAAAAAAAD//wEABAAAAAAAAFAAAPf/BQAAAAAAAAACAPf/BQAAAAAAAAD//wMABQAAAAAAAAAAAAMABQAAAAAAAAADAAMABQAAAAAAAAACAAMABQAAAAAAAAABAAMABQAAAAAAAAAMAAAABgAAAAAAAAAMAAEABQAAAAAAAAAMAAIABQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(448, -412)
+shape = SubResource("RectangleShape2D_xyd28")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-672, -128)
+
+[node name="Lever" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_stdj6")]
+position = Vector2(-464, -24)
+one_shot = true
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="Path2D" type="Path2D" parent="Objects" index="1"]
+position = Vector2(192, -1048)
+curve = SubResource("Curve2D_cx7mq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("3_30u2w")]
+speed = 200.0
+
+[node name="RigidBody2D" parent="Objects" index="2" instance=ExtResource("4_bvny3")]
+position = Vector2(168, -1152)
+
+[node name="WideSpikes" parent="Objects" index="3" instance=ExtResource("5_jakvd")]
+position = Vector2(56, 360)
+
+[node name="WideSpikes2" parent="Objects" index="4" instance=ExtResource("5_jakvd")]
+position = Vector2(472, 360)
+
+[node name="Spike" parent="Objects" index="5" instance=ExtResource("6_uv1a3")]
+position = Vector2(312, 312)
+rotation = 0.253073
+
+[node name="Spike2" parent="Objects" index="6" instance=ExtResource("6_uv1a3")]
+position = Vector2(168, 264)
+rotation = -0.235619
+
+[node name="Spike3" parent="Objects" index="7" instance=ExtResource("6_uv1a3")]
+position = Vector2(-24, 272)
+rotation = 0.296706
+
+[node name="Spike4" parent="Objects" index="8" instance=ExtResource("6_uv1a3")]
+position = Vector2(48, 320)
+rotation = 0.113446
+
+[node name="Spike5" parent="Objects" index="9" instance=ExtResource("6_uv1a3")]
+position = Vector2(424, 296)
+rotation = -0.469494
+
+[node name="PressurePlate" parent="Objects" index="10" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_go1fa")]
+position = Vector2(728, 0)
+connectedTo = [NodePath("../Spike6"), NodePath("../Spike7"), NodePath("../Spike8"), NodePath("../Spike9")]
+
+[node name="Spike6" parent="Objects" index="11" instance=ExtResource("6_uv1a3")]
+position = Vector2(1184, -120)
+distance = -200.0
+speed = 1500.0
+
+[node name="Spike7" parent="Objects" index="12" instance=ExtResource("6_uv1a3")]
+position = Vector2(1248, -120)
+distance = -200.0
+
+[node name="Spike8" parent="Objects" index="13" instance=ExtResource("6_uv1a3")]
+position = Vector2(1312, -120)
+distance = -200.0
+speed = 1500.0
+
+[node name="Spike9" parent="Objects" index="14" instance=ExtResource("6_uv1a3")]
+position = Vector2(1376, -120)
+distance = -200.0

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp5dpb0ywtqsn"]
+
+[ext_resource type="Script" path="res://src/environment/delayer.gd" id="1_yijmk"]
+
+[node name="Delayer" type="Node"]
+script = ExtResource("1_yijmk")
+
+[node name="Positive" type="Timer" parent="."]
+one_shot = true
+
+[node name="Negative" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Positive" to="." method="_on_positive_timeout"]
+[connection signal="timeout" from="Negative" to="." method="_on_negative_timeout"]

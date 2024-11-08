@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=4 uid="uid://uivi7er6pb3n"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_qgpqn"]
+[ext_resource type="PackedScene" uid="uid://hjhx55yccp7w" path="res://src/environment/pressurePlate/plate_platform.tscn" id="2_ev26m"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="3_3qk1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58eub"]
+size = Vector2(2432, 1734)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lie33"]
+size = Vector2(1520, 106)
+
+[node name="platePlat2" instance=ExtResource("1_qgpqn")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD7/wEABQAAAAAAAAD7/wAABgAAAAAAAAD7/wIABQAAAAAAAAD7/wMABQAAAAAAAAD8/wAABgAAAAAAAAD9/wAABgAAAAAAAAD+/wAABgAAAAAAAAD+/wEABAAAAAAAAFD9/wEABQAAAAAAAAD8/wEABQAAAAAAAAD8/wIABQAAAAAAAAD8/wMABQAAAAAAAAD9/wMABQAAAAAAAAD9/wIABQAAAAAAAAACAP//BQAAAAAAAAACAP7/BQAAAAAAAAADAP//BQAAAAAAAAADAP7/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAACAPz/BQAAAAAAAAADAPz/BQAAAAAAAAABAPz/BAAAAAAAADAEAPz/BAAAAAAAAFABAPv/BQAAAAAAAAACAPv/BQAAAAAAAAADAPv/BQAAAAAAAAAEAPv/BQAAAAAAAAAKAAEABgAAAAAAAAAKAAIABQAAAAAAAAAKAAMABQAAAAAAAAALAAMABQAAAAAAAAAMAAMABQAAAAAAAAAMAAIABQAAAAAAAAANAAIABQAAAAAAAAANAAEABgAAAAAAAAAMAAEABgAAAAAAAAALAAEABgAAAAAAAAALAAIABQAAAAAAAAANAAMABQAAAAAAAAD9/wQABQAAAAAAAAAKAAQABQAAAAAAAAD9/wUABQAAAAAAAAD9/wYABQAAAAAAAAD8/wQABQAAAAAAAAD7/wQABQAAAAAAAAD7/wUABQAAAAAAAAD7/wYABQAAAAAAAAD8/wYABQAAAAAAAAD8/wUABQAAAAAAAAD+/wkABQAAAAAAAAD//wkABQAAAAAAAAAAAAkABQAAAAAAAAABAAkABQAAAAAAAAACAAkABQAAAAAAAAADAAkABQAAAAAAAAAEAAkABQAAAAAAAAAFAAkABQAAAAAAAAAGAAkABQAAAAAAAAAHAAkABQAAAAAAAAAIAAkABQAAAAAAAAAJAAkABQAAAAAAAAD9/wcABQAAAAAAAAAKAAcABQAAAAAAAAAKAAUABQAAAAAAAAAKAAYABQAAAAAAAAALAAYABQAAAAAAAAAMAAYABQAAAAAAAAANAAYABQAAAAAAAAANAAUABQAAAAAAAAANAAQABQAAAAAAAAAMAAQABQAAAAAAAAALAAQABQAAAAAAAAALAAUABQAAAAAAAAAMAAUABQAAAAAAAAACAAAABAAAAAAAADADAAAABAAAAAAAAFAJAAEABgAAAAAAAAAJAAIABAAAAAAAADALAAcABQAAAAAAAAAMAAcABQAAAAAAAAANAAcABQAAAAAAAAD8/wcABQAAAAAAAAD7/wcABQAAAAAAAAAEAPr/BQAAAAAAAAAEAPn/BQAAAAAAAAADAPn/BQAAAAAAAAACAPn/BQAAAAAAAAABAPn/BQAAAAAAAAABAPr/BQAAAAAAAAACAPr/BQAAAAAAAAADAPr/BQAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(576, 29)
+shape = SubResource("RectangleShape2D_58eub")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-512, -128)
+
+[node name="PlatePlatform" parent="Objects" index="0" instance=ExtResource("2_ev26m")]
+position = Vector2(128, -160)
+
+[node name="PressurePlateALT" parent="Objects/PlatePlatform/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo")]
+precision = 4.0
+connectedTo = [NodePath("../BlockDoor"), NodePath("../../../PlatePlatform2/PathFollow2D/BlockDoor"), NodePath("../../../PlatePlatform3/PathFollow2D/BlockDoor")]
+
+[node name="PlatePlatform2" parent="Objects" index="1" instance=ExtResource("2_ev26m")]
+position = Vector2(640, 48)
+
+[node name="PlatePlatform3" parent="Objects" index="2" instance=ExtResource("2_ev26m")]
+position = Vector2(1024, 48)
+
+[node name="DeathPit" parent="Objects" index="3" instance=ExtResource("3_3qk1j")]
+position = Vector2(-144, 440)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(664, 504)
+shape = SubResource("RectangleShape2D_lie33")
+
+[editable path="Objects/PlatePlatform"]
+[editable path="Objects/PlatePlatform2"]
+[editable path="Objects/PlatePlatform3"]

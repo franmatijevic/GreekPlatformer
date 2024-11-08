@@ -36,7 +36,8 @@ func _on_timer_timeout() -> void:#odbacivanje tijela iz opruge
 			var impact_force = Vector2(0, -impact_velocity_y * extra_force_multiplier)
 			var adjusted_total_force = total_force + impact_force
 			
-			i.velocity=kept_force * i.velocity  + adjusted_total_force
+			#i.velocity=kept_force * i.velocity  + adjusted_total_force
+			i.velocity = adjusted_total_force
 			#i.velocity.y = -max_force
 			i.jumped=false
 		elif(i is Throwable):

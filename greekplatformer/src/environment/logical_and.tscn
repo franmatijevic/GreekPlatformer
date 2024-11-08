@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc3w3pwi3ui6g"]
+
+[ext_resource type="Script" path="res://src/environment/logical_and.gd" id="1_w2j74"]
+
+[node name="LogicalAND" type="Node"]
+script = ExtResource("1_w2j74")

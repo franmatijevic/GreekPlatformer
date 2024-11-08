@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://di0ss16asdj7m" path="res://src/levels/tilesets/trokut.png" id="2_wcmlp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgit7"]
-size = Vector2(108, 5)
+size = Vector2(108, 7)
 
 [node name="PressurePlate" type="AnimatableBody2D"]
 collision_layer = 2
@@ -63,7 +63,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/detectSomething"]
-position = Vector2(0, -20.5)
+position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_hgit7")
 
 [connection signal="body_entered" from="Plate/detectSomething" to="." method="_on_detect_something_body_entered"]

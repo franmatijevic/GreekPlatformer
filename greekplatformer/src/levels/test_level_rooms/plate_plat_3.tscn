@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=4 uid="uid://dmjewtowkouuf"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_qhj0o"]
+[ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="2_13qxm"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="3_jjq1b"]
+[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_0y6ec"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_2bxb1"]
+[ext_resource type="PackedScene" uid="uid://hjhx55yccp7w" path="res://src/environment/pressurePlate/plate_platform.tscn" id="6_yejyb"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="7_5amlh"]
+[ext_resource type="PackedScene" uid="uid://bc3w3pwi3ui6g" path="res://src/environment/logical_and.tscn" id="8_ywhya"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="9_hmhju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mix1u"]
+size = Vector2(3712, 2896)
+
+[sub_resource type="Curve2D" id="Curve2D_k3s27"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2250)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faonw"]
+size = Vector2(2552, 112)
+
+[node name="platePlat3" instance=ExtResource("1_qhj0o")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD3/wEABgAAAAAAAAD4/wEABgAAAAAAAAD5/wEABgAAAAAAAAD6/wEABgAAAAAAAAD6/wIABAAAAAAAAFD5/wIABQAAAAAAAAD5/wMABQAAAAAAAAD5/wQABQAAAAAAAAD4/wQABQAAAAAAAAD3/wQABQAAAAAAAAD3/wMABQAAAAAAAAD3/wIABQAAAAAAAAD4/wIABQAAAAAAAAD4/wMABQAAAAAAAAD5/wUABQAAAAAAAAD4/wUABQAAAAAAAAD3/wUABQAAAAAAAAD+/wAABAAAAAAAADD//wAABAAAAAAAAFD+////BQAAAAAAAAD/////BQAAAAAAAAD///7/BQAAAAAAAAD+//7/BQAAAAAAAAAAAAQABgAAAAAAAAABAAQABgAAAAAAAAACAAQABgAAAAAAAAADAAQABgAAAAAAAAAAAAUABQAAAAAAAAABAAUABQAAAAAAAAACAAUABQAAAAAAAAADAAUABAAAAAAAAFD+//3/BQAAAAAAAAD///3/BQAAAAAAAAD///z/BQAAAAAAAAD///v/BQAAAAAAAAD9//3/BAAAAAAAADD8//z/BAAAAAAAADAAAPz/BAAAAAAAAFD+//z/BQAAAAAAAAD9//z/BQAAAAAAAAD9//v/BQAAAAAAAAD8//v/BQAAAAAAAAD8//r/BQAAAAAAAAD9//r/BQAAAAAAAAD+//r/BQAAAAAAAAD+//v/BQAAAAAAAAAAAPv/BQAAAAAAAAAAAPr/BQAAAAAAAAD///r/BQAAAAAAAAABAPr/BAAAAAAAAFD7//r/BAAAAAAAADD//wQABgAAAAAAAAD//wUABAAAAAAAADD7//n/BQAAAAAAAAD7//j/BQAAAAAAAAD7//f/BQAAAAAAAAD7//b/BQAAAAAAAAD8//b/BQAAAAAAAAD9//b/BQAAAAAAAAD+//b/BQAAAAAAAAD///b/BQAAAAAAAAAAAPb/BQAAAAAAAAABAPb/BQAAAAAAAAABAPf/BQAAAAAAAAABAPj/BQAAAAAAAAABAPn/BQAAAAAAAAAAAPn/BQAAAAAAAAD///n/BQAAAAAAAAD+//n/BQAAAAAAAAD9//n/BQAAAAAAAAD8//n/BQAAAAAAAAD8//f/BQAAAAAAAAD9//f/BQAAAAAAAAD+//f/BQAAAAAAAAD///f/BQAAAAAAAAAAAPf/BQAAAAAAAAAAAPj/BQAAAAAAAAD///j/BQAAAAAAAAD+//j/BQAAAAAAAAD9//j/BQAAAAAAAAD8//j/BQAAAAAAAAAMAP7/BQAAAAAAAAANAP7/BQAAAAAAAAAOAP7/BQAAAAAAAAAPAP7/BQAAAAAAAAAPAP3/BQAAAAAAAAAPAPz/BQAAAAAAAAAPAPv/BQAAAAAAAAAPAPr/BQAAAAAAAAAMAPv/BQAAAAAAAAANAPv/BQAAAAAAAAAOAPv/BQAAAAAAAAAMAAIABQAAAAAAAAANAAIABQAAAAAAAAAOAAIABQAAAAAAAAAPAAIABQAAAAAAAAAPAP//BQAAAAAAAAAPAAAABQAAAAAAAAAPAAEABQAAAAAAAAAPAPn/BQAAAAAAAAAPAPj/BQAAAAAAAAAOAPf/BQAAAAAAAAANAPf/BQAAAAAAAAAMAPb/BQAAAAAAAAAMAPf/BQAAAAAAAAAMAPX/BgAAAAAAAAANAPX/BgAAAAAAAAALAPX/BgAAAAAAAAAOAPX/BgAAAAAAAAAPAPX/BgAAAAAAAAAQAPX/BgAAAAAAAAARAPX/BgAAAAAAAAASAPX/BgAAAAAAAAATAPX/BgAAAAAAAAALAPb/BAAAAAAAADANAPb/BQAAAAAAAAAOAPb/BQAAAAAAAAAPAPb/BQAAAAAAAAAQAPb/BQAAAAAAAAARAPb/BQAAAAAAAAASAPb/BQAAAAAAAAATAPb/BQAAAAAAAAAPAPf/BQAAAAAAAAAQAPf/BQAAAAAAAAARAPf/BQAAAAAAAAASAPf/BQAAAAAAAAATAPf/BQAAAAAAAAATAPj/BQAAAAAAAAATAPn/BQAAAAAAAAATAPr/BQAAAAAAAAATAPv/BQAAAAAAAAATAPz/BQAAAAAAAAATAP3/BQAAAAAAAAATAP7/BQAAAAAAAAATAP//BQAAAAAAAAATAAAABQAAAAAAAAATAAEABQAAAAAAAAATAAIABQAAAAAAAAASAAIABQAAAAAAAAARAAIABQAAAAAAAAARAAEABQAAAAAAAAAQAAEABQAAAAAAAAAQAAAABQAAAAAAAAAQAP//BQAAAAAAAAAQAP7/BQAAAAAAAAAQAP3/BQAAAAAAAAAQAPz/BQAAAAAAAAAQAPv/BQAAAAAAAAAQAPr/BQAAAAAAAAAQAPn/BQAAAAAAAAAQAPj/BQAAAAAAAAARAPj/BQAAAAAAAAARAPn/BQAAAAAAAAARAPr/BQAAAAAAAAARAPv/BQAAAAAAAAARAPz/BQAAAAAAAAARAP3/BQAAAAAAAAARAP7/BQAAAAAAAAARAP//BQAAAAAAAAARAAAABQAAAAAAAAASAAAABQAAAAAAAAASAAEABQAAAAAAAAASAP//BQAAAAAAAAASAP7/BQAAAAAAAAASAP3/BQAAAAAAAAASAPz/BQAAAAAAAAASAPv/BQAAAAAAAAASAPr/BQAAAAAAAAASAPn/BQAAAAAAAAASAPj/BQAAAAAAAAAQAAIABQAAAAAAAAAMAAMABAAAAAAAADAOAAUABQAAAAAAAAANAAQABQAAAAAAAAANAAMABQAAAAAAAAAOAAMABQAAAAAAAAAOAAQABQAAAAAAAAAPAAMABQAAAAAAAAAPAAQABQAAAAAAAAAPAAUABQAAAAAAAAAQAAUABQAAAAAAAAARAAUABQAAAAAAAAASAAUABQAAAAAAAAATAAUABQAAAAAAAAATAAQABQAAAAAAAAATAAMABQAAAAAAAAASAAMABQAAAAAAAAARAAMABQAAAAAAAAAQAAMABQAAAAAAAAAQAAQABQAAAAAAAAARAAQABQAAAAAAAAASAAQABQAAAAAAAAABAPX/BAAAAAAAAAAAAPX/BQAAAAAAAAAAAPT/BQAAAAAAAAAAAPP/BQAAAAAAAAABAPL/BQAAAAAAAAABAPH/BQAAAAAAAAABAPD/BQAAAAAAAAACAPD/BQAAAAAAAAADAPD/BQAAAAAAAAADAO//BQAAAAAAAAACAO//BQAAAAAAAAABAO//BQAAAAAAAAD///X/BQAAAAAAAAD+//X/BQAAAAAAAAD9//X/BQAAAAAAAAD8//X/BQAAAAAAAAD7//X/BQAAAAAAAAD6//X/BQAAAAAAAAD6//T/BQAAAAAAAAD6//P/BQAAAAAAAAD6//L/BQAAAAAAAAD6//H/BQAAAAAAAAD5//H/BQAAAAAAAAD5//D/BQAAAAAAAAD4//D/BQAAAAAAAAD3//D/BQAAAAAAAAD3/+//BQAAAAAAAAD4/+//BQAAAAAAAAD5/+//BQAAAAAAAAD6/+//BQAAAAAAAAD6//D/BQAAAAAAAAD7//D/BQAAAAAAAAD7//H/BQAAAAAAAAD7//L/BQAAAAAAAAD7//P/BQAAAAAAAAD8//P/BQAAAAAAAAD8//T/BQAAAAAAAAD7/+//BQAAAAAAAAD7//T/BQAAAAAAAAD9//T/BQAAAAAAAAD+//T/BQAAAAAAAAD///T/BQAAAAAAAAD///P/BQAAAAAAAAD///L/BQAAAAAAAAAAAPL/BQAAAAAAAAD+//P/BQAAAAAAAAD9//P/BQAAAAAAAAD8//L/BQAAAAAAAAD8//H/BQAAAAAAAAD8//D/BQAAAAAAAAD8/+//BQAAAAAAAAD9/+//BQAAAAAAAAD+/+//BQAAAAAAAAD//+//BQAAAAAAAAAAAO//BQAAAAAAAAAAAPD/BQAAAAAAAAAAAPH/BQAAAAAAAAD///H/BQAAAAAAAAD+//H/BQAAAAAAAAD9//D/BQAAAAAAAAD9//H/BQAAAAAAAAD9//L/BQAAAAAAAAD+//L/BQAAAAAAAAD///D/BQAAAAAAAAD+//D/BQAAAAAAAAACAPH/BAAAAAAAAFD4//H/BAAAAAAAADD6//b/BAAAAAAAADD5//P/BAAAAAAAADANAAUABAAAAAAAADD5//L/BQAAAAAAAAABAPP/BAAAAAAAAFAEAPD/BAAAAAAAAFAEAO//BQAAAAAAAAD5/wYABQAAAAAAAAAOAAYABQAAAAAAAAANAAgABQAAAAAAAAAMAAgABQAAAAAAAAALAAgABQAAAAAAAAAKAAgABQAAAAAAAAAJAAgABQAAAAAAAAAIAAgABQAAAAAAAAAHAAgABQAAAAAAAAAGAAgABQAAAAAAAAAFAAgABQAAAAAAAAAEAAgABQAAAAAAAAADAAgABQAAAAAAAAACAAgABQAAAAAAAAABAAgABQAAAAAAAAAAAAgABQAAAAAAAAD//wgABQAAAAAAAAD+/wgABQAAAAAAAAD9/wgABQAAAAAAAAD8/wgABQAAAAAAAAD7/wgABQAAAAAAAAD6/wgABQAAAAAAAAAOAPj/BAAAAAAAADAOAAEABAAAAAAAAGA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(704, -680)
+shape = SubResource("RectangleShape2D_mix1u")
+
+[node name="SuperSpring" parent="Objects" index="0" instance=ExtResource("2_13qxm")]
+position = Vector2(416, 448)
+max_force = 2800.0
+
+[node name="PressurePlate" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
+position = Vector2(1672, -256)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="cloud_platform" parent="Objects" index="2" instance=ExtResource("4_0y6ec")]
+position = Vector2(832, -848)
+
+[node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("5_2bxb1")]
+position = Vector2(840, -968)
+
+[node name="RigidBody2D2" parent="Objects" index="4" instance=ExtResource("5_2bxb1")]
+position = Vector2(904, -968)
+
+[node name="PlatePlatform" parent="Objects" index="5" instance=ExtResource("6_yejyb")]
+position = Vector2(-456, -24)
+
+[node name="BlockDoor" parent="Objects/PlatePlatform/PathFollow2D" index="0"]
+speed = 180.0
+
+[node name="PressurePlateALT" parent="Objects/PlatePlatform/PathFollow2D" index="1"]
+precision = 2.0
+
+[node name="PressurePlate2" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
+position = Vector2(1720, -656)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="PlatePlatform2" parent="Objects" index="7" instance=ExtResource("6_yejyb")]
+position = Vector2(832, -760)
+
+[node name="BlockDoor" parent="Objects/PlatePlatform2/PathFollow2D" index="0"]
+scale = Vector2(1.5, 0.4)
+speed = 200.0
+
+[node name="PressurePlateALT" parent="Objects/PlatePlatform2/PathFollow2D" index="1"]
+scale = Vector2(1.5, 1)
+
+[node name="PressurePlate3" parent="Objects" index="8" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
+position = Vector2(1656, 192)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="RigidBody2D3" parent="Objects" index="9" instance=ExtResource("5_2bxb1")]
+position = Vector2(768, -968)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="10"]
+position = Vector2(1152, 896)
+curve = SubResource("Curve2D_k3s27")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("7_5amlh")]
+scale = Vector2(2, 1)
+speed = 250.0
+
+[node name="LogicalAND" parent="Objects" index="11" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_ywhya")]
+count = 3
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="DeathPit" parent="Objects" index="12" instance=ExtResource("9_hmhju")]
+position = Vector2(0, 752)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(508, 72)
+shape = SubResource("RectangleShape2D_faonw")
+
+[editable path="Objects/PlatePlatform"]
+[editable path="Objects/PlatePlatform2"]

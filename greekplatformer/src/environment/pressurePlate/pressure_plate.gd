@@ -1,12 +1,17 @@
 extends StaticBody2D
 
+@export var precision:float=0##ako je na nekoj moving platformi mozda je pozeljno povecati
+
 @export var start_deactivating:float=0.3
-@export var connectedTo:Array[Node2D] = []
+@export var connectedTo:Array[Node] = []
 
 
 var count:int=0
 var plate_speed:float=5
 var time=-99
+
+func _ready() -> void:
+	get_node("Plate/detectSomething/CollisionShape2D").shape.size.y+=precision
 
 func _physics_process(delta: float) -> void:
 	if(count>0):

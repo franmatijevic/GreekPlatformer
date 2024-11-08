@@ -12,3 +12,6 @@ func update_physics_process(delta:float):
 		player().holding_object.be_picked_up(player())
 		
 		player().set_state("MoveState")
+	
+	if(player().is_on_floor()):
+		player().direction=0

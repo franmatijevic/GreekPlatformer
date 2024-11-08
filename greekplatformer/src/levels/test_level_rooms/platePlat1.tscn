@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=4 uid="uid://dx6pbtihboj8g"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_fqnkx"]
+[ext_resource type="PackedScene" uid="uid://hjhx55yccp7w" path="res://src/environment/pressurePlate/plate_platform.tscn" id="2_v10fn"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="3_ciho7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xivx"]
+size = Vector2(2432, 1350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn28n"]
+size = Vector2(1408, 150)
+
+[node name="PlatePlatform" instance=ExtResource("1_fqnkx")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD4/wEABgAAAAAAAAD5/wEABgAAAAAAAAD6/wEABgAAAAAAAAD7/wEABgAAAAAAAAD8/wEABgAAAAAAAAD4/wIABQAAAAAAAAD5/wIABQAAAAAAAAD6/wIABQAAAAAAAAD7/wIABQAAAAAAAAD8/wIABAAAAAAAAFD7/wMABQAAAAAAAAD6/wMABQAAAAAAAAD5/wMABQAAAAAAAAD4/wQABQAAAAAAAAD5/wQABQAAAAAAAAD6/wQABQAAAAAAAAD7/wQABQAAAAAAAAD4/wMABQAAAAAAAAAHAAEABgAAAAAAAAAIAAEABgAAAAAAAAAJAAEABgAAAAAAAAAKAAEABgAAAAAAAAAIAAQABQAAAAAAAAAJAAQABQAAAAAAAAAKAAQABQAAAAAAAAAKAAMABQAAAAAAAAAKAAIABQAAAAAAAAAJAAIABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABQAAAAAAAAAJAAMABQAAAAAAAAD9/wcABQAAAAAAAAD+/wcABQAAAAAAAAD//wcABQAAAAAAAAAAAAcABQAAAAAAAAABAAcABQAAAAAAAAACAAcABQAAAAAAAAADAAcABQAAAAAAAAAEAAcABQAAAAAAAAAFAAcABQAAAAAAAAAGAAcABQAAAAAAAAD7/wUABQAAAAAAAAD6/wUABQAAAAAAAAD5/wUABQAAAAAAAAD4/wUABQAAAAAAAAAIAAUABQAAAAAAAAAJAAUABQAAAAAAAAAKAAUABQAAAAAAAAAHAAIABAAAAAAAADA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(192, -35)
+shape = SubResource("RectangleShape2D_7xivx")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-904, 0)
+
+[node name="Objects" parent="." index="4"]
+position = Vector2(8, 8)
+
+[node name="PlatePlatform" parent="Objects" index="0" instance=ExtResource("2_v10fn")]
+position = Vector2(0, 24)
+
+[node name="PlatePlatform2" parent="Objects" index="1" instance=ExtResource("2_v10fn")]
+position = Vector2(464, -24)
+
+[node name="DeathPit" parent="Objects" index="2" instance=ExtResource("3_ciho7")]
+position = Vector2(-64, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(320, -24)
+shape = SubResource("RectangleShape2D_qn28n")

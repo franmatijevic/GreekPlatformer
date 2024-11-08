@@ -4,7 +4,8 @@ func enter():
 	player().set_collision_layer_value(1, true)
 
 func exit():
-	player().direction=0
+	if player().is_on_floor():
+		player().direction=0
 
 func update_physics_process(_delta:float):
 	

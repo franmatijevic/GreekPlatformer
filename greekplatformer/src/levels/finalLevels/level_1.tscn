@@ -39,20 +39,10 @@ position = Vector2(6665, -1984)
 scale = Vector2(5.36, 5.36)
 texture = ExtResource("3_qykho")
 
-[node name="Player" parent="." index="6" instance=ExtResource("2_gr02m")]
-z_index = 1
-position = Vector2(172, 733)
-jump_height = 220.0
-jump_time_to_peak = 0.37
-jump_time_to_descent = 0.26
-
-[node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
-position = Vector2(302, 221)
-
-[node name="CanvasLayerPause" parent="." index="7"]
+[node name="CanvasLayerPause" parent="." index="6"]
 layer = 2
 
-[node name="DialogueAreaZeus" parent="." index="8" instance=ExtResource("4_8nr8u")]
+[node name="DialogueAreaZeus" parent="." index="7" instance=ExtResource("4_8nr8u")]
 process_mode = 0
 position = Vector2(858, 753)
 dialogueKey = "lvl_1_1"
@@ -61,21 +51,21 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("5_gruuc")]
+[node name="DialoguePlayer" parent="." index="8" instance=ExtResource("5_gruuc")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("6_pav88")
 sceneTextFile = "res://src/dialogue/level_1_dialogue/lvl_1.json"
 speechBubbleScene = ExtResource("9_kjp2t")
 
-[node name="Scene_1" parent="." index="10" instance=ExtResource("8_5f6q4")]
+[node name="Scene_1" parent="." index="9" instance=ExtResource("8_5f6q4")]
 z_index = 0
 
-[node name="Scene_2" parent="." index="11" instance=ExtResource("10_jg6un")]
+[node name="Scene_2" parent="." index="10" instance=ExtResource("10_jg6un")]
 
-[node name="Scene_3" parent="." index="12" instance=ExtResource("11_idnj5")]
+[node name="Scene_3" parent="." index="11" instance=ExtResource("11_idnj5")]
 
-[node name="Zeus" type="Sprite2D" parent="." index="13"]
+[node name="Zeus" type="Sprite2D" parent="." index="12"]
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
@@ -88,6 +78,13 @@ speed = 1000.0
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="14"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="13"]
+
+[node name="Player" parent="." index="14" instance=ExtResource("2_gr02m")]
+position = Vector2(168, 736)
+jump_height = 250.0
+
+[node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
+position = Vector2(306, 218)
 
 [editable path="DialogueAreaZeus"]

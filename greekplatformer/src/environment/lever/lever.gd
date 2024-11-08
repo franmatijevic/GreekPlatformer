@@ -4,7 +4,7 @@ class_name Interactable
 
 @export var one_shot:bool=false
 @export var use_time:float=0.5
-@export var connectedTo:Array[Node2D] = []
+@export var connectedTo:Array[Node] = []
 
 var activating:bool=false
 var other_direction:bool=false

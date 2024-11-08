@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=13 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="5_s3s67"]
-[ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="6_dpx1i"]
-[ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="7_k2amy"]
 [ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="8_nq8xc"]
-[ext_resource type="Texture2D" uid="uid://dyyf3tuc8r1nv" path="res://src/dialogue/dialogueArt/tmp_dialogue.png" id="8_s7jtu"]
-[ext_resource type="PackedScene" uid="uid://b7tl8dqhrok5f" path="res://src/levels/test_level_rooms/rock_throw.tscn" id="9_72tu0"]
+[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/levels/test_level_rooms/simpleTrap.tscn" id="11_iqxsf"]
 [ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/levels/test_level_rooms/cloud_rock.tscn" id="11_wf35p"]
+[ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/levels/test_level_rooms/simple_catch.tscn" id="12_c5cgg"]
+[ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/levels/test_level_rooms/platePlat1.tscn" id="13_odpob"]
+[ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="14_4th8v"]
+[ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/levels/test_level_rooms/plate_plat_3.tscn" id="15_ak1qm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -37,35 +38,25 @@ oneTime = true
 position = Vector2(-266, -25)
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="8" instance=ExtResource("6_dpx1i")]
-process_mode = 1
-scale = Vector2(15.815, 15.815)
-script = ExtResource("7_k2amy")
-sceneTextFile = "res://src/dialogue/zeus_prometej_dijalog_1.json"
+[node name="Room2" parent="." index="8" instance=ExtResource("8_nq8xc")]
+position = Vector2(18736, -2304)
 
-[node name="Background" type="TextureRect" parent="DialoguePlayer" index="0"]
-offset_right = 122.0
-offset_bottom = 69.0
-texture = ExtResource("8_s7jtu")
-expand_mode = 1
+[node name="CloudRock" parent="." index="9" instance=ExtResource("11_wf35p")]
+position = Vector2(5680, 0)
 
-[node name="TextLabel" type="Label" parent="DialoguePlayer" index="1"]
-offset_left = 2.0
-offset_top = 39.0
-offset_right = 2394.0
-offset_bottom = 624.0
-scale = Vector2(0.05, 0.05)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 90
-autowrap_mode = 2
+[node name="Room" parent="." index="10" instance=ExtResource("11_iqxsf")]
+position = Vector2(3632, 256)
 
-[node name="Room2" parent="." index="9" instance=ExtResource("8_nq8xc")]
-position = Vector2(6448, -640)
+[node name="SimpleCatch" parent="." index="11" instance=ExtResource("12_c5cgg")]
+position = Vector2(16304, -1408)
 
-[node name="RockThrow" parent="." index="10" instance=ExtResource("9_72tu0")]
-position = Vector2(4784, 128)
+[node name="PlatePlatform" parent="." index="12" instance=ExtResource("13_odpob")]
+position = Vector2(7984, -128)
 
-[node name="CloudRock" parent="." index="11" instance=ExtResource("11_wf35p")]
-position = Vector2(2224, 256)
+[node name="platePlat2" parent="." index="13" instance=ExtResource("14_4th8v")]
+position = Vector2(13744, -1536)
+
+[node name="platePlat3" parent="." index="14" instance=ExtResource("15_ak1qm")]
+position = Vector2(10544, -128)
 
 [editable path="DialogueAreaZeus"]

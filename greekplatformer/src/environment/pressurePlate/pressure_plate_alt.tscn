@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcud1xqim688d"]
+
+[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_7xw8t"]
+[ext_resource type="Script" path="res://src/environment/pressurePlate/pressure_plate.gd" id="1_cdaix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40ckk"]
+size = Vector2(128, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdj40"]
+size = Vector2(128, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cthwf"]
+size = Vector2(128, 8)
+
+[node name="PressurePlateALT" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 5
+sync_to_physics = false
+script = ExtResource("1_cdaix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_40ckk")
+
+[node name="Pixel1x1" type="Sprite2D" parent="."]
+position = Vector2(0, 21)
+scale = Vector2(128, 32)
+texture = ExtResource("1_7xw8t")
+
+[node name="Plate" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+sync_to_physics = false
+
+[node name="Pixel1x2" type="Sprite2D" parent="Plate"]
+scale = Vector2(128, 10)
+texture = ExtResource("1_7xw8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate"]
+shape = SubResource("RectangleShape2D_fdj40")
+
+[node name="detectSomething" type="Area2D" parent="Plate"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/detectSomething"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_cthwf")
+
+[connection signal="body_entered" from="Plate/detectSomething" to="." method="_on_detect_something_body_entered"]
+[connection signal="body_exited" from="Plate/detectSomething" to="." method="_on_detect_something_body_exited"]

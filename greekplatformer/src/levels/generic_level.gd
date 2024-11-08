@@ -28,7 +28,7 @@ func _input(_event: InputEvent) -> void:
 		if(get_node("Camera").block==false and !get_node("Player").dead):
 			restart()
 	if Input.is_action_just_pressed("pause"):
-		if(get_node("Camera").block==false) and !dialogue_player.inProgress:
+		if(get_node("Camera").block==false) and (!dialogue_player or !dialogue_player.inProgress):
 			game_paused = !game_paused
 
 func restart():
