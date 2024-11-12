@@ -31,6 +31,9 @@ tile_map_data = PackedByteArray("AAD3/wEABgAAAAAAAAD4/wEABgAAAAAAAAD5/wEABgAAAAA
 position = Vector2(704, -680)
 shape = SubResource("RectangleShape2D_mix1u")
 
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-1016, 0)
+
 [node name="SuperSpring" parent="Objects" index="0" instance=ExtResource("2_13qxm")]
 position = Vector2(416, 448)
 max_force = 2800.0

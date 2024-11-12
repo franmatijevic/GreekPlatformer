@@ -1,6 +1,7 @@
 extends Node
 
 @onready var loading_screen = preload("res://src/ui/loading_screen.tscn")
+@onready var black_loading = preload("res://src/ui/black_loading_screen.tscn")
 
 var scene_to_load_path
 var loading_screen_instance
@@ -22,6 +23,23 @@ func load_scene(path):
 	current_scene.queue_free()
 	loading = true
 	minTime = 1
+	scene_to_load_path = path
+
+func load_more_level(path):
+	var current_scene = get_tree().current_scene
+	
+	
+	loading_screen_instance = black_loading.instantiate()
+	get_tree().root.call_deferred("add_child", loading_screen_instance)
+	
+	if ResourceLoader.has_cached(path):
+		ResourceLoader.load_threaded_get(path)
+	else:
+		ResourceLoader.load_threaded_request(path)
+	
+	current_scene.queue_free()
+	loading = true
+	minTime = 0
 	scene_to_load_path = path
 
 func _process(delta: float) -> void:

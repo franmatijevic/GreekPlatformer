@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=4 uid="uid://q0fd5uttpyas"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_1po12"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_itx78"]
+[ext_resource type="PackedScene" uid="uid://cb47qwqitaccv" path="res://src/environment/lever/lever.tscn" id="3_rwebs"]
+[ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="4_kw876"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="5_3ytf4"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="6_8xod0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gga4a"]
+size = Vector2(6400, 2816)
+
+[sub_resource type="Curve2D" id="Curve2D_yfbju"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3500, 0)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36cbe"]
+size = Vector2(4720, 798)
+
+[node name="Train1" instance=ExtResource("1_1po12")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD1/wAABgAAAAAAAAD2/wAABgAAAAAAAAD3/wAABgAAAAAAAAD4/wAABgAAAAAAAAD5/wAABgAAAAAAAAD6/wAABgAAAAAAAAD6/wEABAAAAAAAAFD4/wMABAAAAAAAAFD5/wEABQAAAAAAAAD4/wEABQAAAAAAAAD4/wIABQAAAAAAAAD5/wIABAAAAAAAAFD3/wEABQAAAAAAAAD3/wIABQAAAAAAAAD3/wMABQAAAAAAAAD3/wQABQAAAAAAAAD3/wUABQAAAAAAAAD3/wYABQAAAAAAAAD2/wEABQAAAAAAAAD2/wIABQAAAAAAAAD2/wMABQAAAAAAAAD2/wQABQAAAAAAAAD2/wUABQAAAAAAAAD2/wYABQAAAAAAAAD1/wEABQAAAAAAAAD1/wIABQAAAAAAAAD1/wMABQAAAAAAAAD1/wQABQAAAAAAAAD1/wUABQAAAAAAAAD1/wYABQAAAAAAAAD0/wAABgAAAAAAAADz/wAABgAAAAAAAAD0/wEABQAAAAAAAADz/wEABQAAAAAAAADz/wIABQAAAAAAAADz/wMABQAAAAAAAADz/wQABQAAAAAAAADz/wUABQAAAAAAAAD0/wUABQAAAAAAAAD0/wYABQAAAAAAAAD0/wQABQAAAAAAAAD0/wMABQAAAAAAAAD0/wIABQAAAAAAAADz/wYABQAAAAAAAAD3/wcABQAAAAAAAAD2/wcABQAAAAAAAAD1/wcABQAAAAAAAAD0/wcABQAAAAAAAADz/wcABQAAAAAAAADz/wgABQAAAAAAAAD0/wgABQAAAAAAAAD1/wgABQAAAAAAAAD2/wgABQAAAAAAAAD3/wgABQAAAAAAAAD3/wkABQAAAAAAAAD2/wkABQAAAAAAAAD1/wkABQAAAAAAAAD0/wkABQAAAAAAAADz/wkABQAAAAAAAADz/woABQAAAAAAAAD0/woABQAAAAAAAAD1/woABQAAAAAAAAD2/woABQAAAAAAAAD3/woABQAAAAAAAADy/wAABgAAAAAAAADx/wAABgAAAAAAAADy/woABQAAAAAAAADx/woABQAAAAAAAADx/wkABQAAAAAAAADx/wgABQAAAAAAAADx/wcABQAAAAAAAADx/wYABQAAAAAAAADx/wUABQAAAAAAAADx/wQABQAAAAAAAADx/wMABQAAAAAAAADx/wIABQAAAAAAAADx/wEABQAAAAAAAADy/wEABQAAAAAAAADy/wIABQAAAAAAAADy/wMABQAAAAAAAADy/wQABQAAAAAAAADy/wUABQAAAAAAAADy/wYABQAAAAAAAADy/wcABQAAAAAAAADy/wgABQAAAAAAAADy/wkABQAAAAAAAAASAPn/BQAAAAAAAAATAPj/BQAAAAAAAAATAPf/BQAAAAAAAAATAPb/BQAAAAAAAAATAPX/BQAAAAAAAAAWAPz/BQAAAAAAAAAVAPz/BQAAAAAAAAAUAPz/BQAAAAAAAAATAPz/BQAAAAAAAAATAPv/BQAAAAAAAAATAPr/BQAAAAAAAAATAPn/BQAAAAAAAAAdAAAABgAAAAAAAAAcAAAABgAAAAAAAAAeAAAABgAAAAAAAAAfAAAABgAAAAAAAAAgAAAABgAAAAAAAAAhAAAABgAAAAAAAAAiAAAABgAAAAAAAAAcAAEABAAAAAAAADAdAAIABAAAAAAAADAeAAMABAAAAAAAADAdAAEABQAAAAAAAAAeAAEABQAAAAAAAAAeAAIABQAAAAAAAAAgAAoABQAAAAAAAAAgAAkABQAAAAAAAAAfAAkABQAAAAAAAAAfAAoABQAAAAAAAAAfAAgABQAAAAAAAAAfAAcABQAAAAAAAAAfAAYABQAAAAAAAAAfAAUABQAAAAAAAAAgAAUABQAAAAAAAAAgAAQABQAAAAAAAAAgAAMABQAAAAAAAAAgAAIABQAAAAAAAAAgAAEABQAAAAAAAAAfAAEABQAAAAAAAAAfAAIABQAAAAAAAAAfAAMABQAAAAAAAAAfAAQABQAAAAAAAAAgAAcABQAAAAAAAAAgAAYABQAAAAAAAAAiAAEABQAAAAAAAAAiAAIABQAAAAAAAAAiAAMABQAAAAAAAAAiAAQABQAAAAAAAAAiAAUABQAAAAAAAAAiAAYABQAAAAAAAAAiAAcABQAAAAAAAAAiAAgABQAAAAAAAAAiAAkABQAAAAAAAAAiAAoABQAAAAAAAAAhAAoABQAAAAAAAAAgAAgABQAAAAAAAAAhAAkABQAAAAAAAAAhAAgABQAAAAAAAAAhAAcABQAAAAAAAAAhAAYABQAAAAAAAAAhAAUABQAAAAAAAAAhAAQABQAAAAAAAAAhAAMABQAAAAAAAAAhAAIABQAAAAAAAAAhAAEABQAAAAAAAAAWAPv/BQAAAAAAAAAVAPv/BQAAAAAAAAAUAPv/BQAAAAAAAAAUAPr/BQAAAAAAAAAUAPn/BQAAAAAAAAAUAPj/BQAAAAAAAAAUAPf/BQAAAAAAAAAUAPb/BQAAAAAAAAAUAPX/BQAAAAAAAAAVAPX/BQAAAAAAAAAVAPb/BQAAAAAAAAAVAPf/BQAAAAAAAAAVAPj/BQAAAAAAAAAVAPn/BQAAAAAAAAAWAPr/BQAAAAAAAAAVAPr/BQAAAAAAAAAWAPb/BQAAAAAAAAAWAPf/BQAAAAAAAAAWAPj/BQAAAAAAAAAWAPn/BQAAAAAAAAAWAPX/BQAAAAAAAAASAPr/BQAAAAAAAAAXAPz/BAAAAAAAAFD4/wwABQAAAAAAAAD5/wwABQAAAAAAAAD6/wwABQAAAAAAAAD7/wwABQAAAAAAAAD8/wwABQAAAAAAAAD9/wwABQAAAAAAAAD+/wwABQAAAAAAAAD//wwABQAAAAAAAAAAAAwABQAAAAAAAAABAAwABQAAAAAAAAACAAwABQAAAAAAAAADAAwABQAAAAAAAAAEAAwABQAAAAAAAAAFAAwABQAAAAAAAAAGAAwABQAAAAAAAAAHAAwABQAAAAAAAAAIAAwABQAAAAAAAAAJAAwABQAAAAAAAAAKAAwABQAAAAAAAAALAAwABQAAAAAAAAAMAAwABQAAAAAAAAANAAwABQAAAAAAAAAOAAwABQAAAAAAAAAPAAwABQAAAAAAAAAQAAwABQAAAAAAAAARAAwABQAAAAAAAAASAAwABQAAAAAAAAATAAwABQAAAAAAAAAUAAwABQAAAAAAAAAVAAwABQAAAAAAAAAWAAwABQAAAAAAAAAXAAwABQAAAAAAAAAYAAwABQAAAAAAAAAZAAwABQAAAAAAAAAaAAwABQAAAAAAAAAbAAwABQAAAAAAAAAcAAwABQAAAAAAAAAdAAwABQAAAAAAAAAeAAwABQAAAAAAAAAXAPv/BQAAAAAAAAAXAPr/BQAAAAAAAAAXAPn/BQAAAAAAAAAXAPj/BQAAAAAAAAAYAPf/BQAAAAAAAAAYAPb/BQAAAAAAAAAYAPX/BQAAAAAAAAAXAPf/BQAAAAAAAAAXAPb/BQAAAAAAAAAXAPX/BQAAAAAAAAAYAPj/BAAAAAAAAFASAPX/BAAAAAAAADASAPv/BAAAAAAAADA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(1280, 0)
+shape = SubResource("RectangleShape2D_gga4a")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-832, -128)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="0"]
+position = Vector2(-256, -64)
+curve = SubResource("Curve2D_yfbju")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_itx78")]
+scale = Vector2(3, 1.2)
+speed = 200.0
+
+[node name="Lever" parent="Objects/Path2D/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_rwebs")]
+position = Vector2(0, -98)
+use_time = 0.2
+connectedTo = [NodePath("../BlockDoor")]
+
+[node name="BreakingPlatform" parent="Objects" index="1" instance=ExtResource("4_kw876")]
+position = Vector2(544.5, -296)
+
+[node name="BreakingPlatform2" parent="Objects" index="2" instance=ExtResource("4_kw876")]
+position = Vector2(1512, -296)
+
+[node name="BreakingPlatform3" parent="Objects" index="3" instance=ExtResource("4_kw876")]
+position = Vector2(1768, -512)
+
+[node name="BreakingPlatform4" parent="Objects" index="4" instance=ExtResource("4_kw876")]
+position = Vector2(2040, -696)
+
+[node name="Lever" parent="Objects" index="5" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_rwebs")]
+position = Vector2(2376, -912)
+one_shot = true
+connectedTo = [NodePath("../Spike"), NodePath("../Spike2"), NodePath("../Spike3"), NodePath("../Spike4")]
+
+[node name="Spike" parent="Objects" index="6" instance=ExtResource("5_3ytf4")]
+position = Vector2(2496, -232)
+rotation = 3.14159
+distance = -200.0
+speed = 24.0
+
+[node name="Spike2" parent="Objects" index="7" instance=ExtResource("5_3ytf4")]
+position = Vector2(2624, -232)
+rotation = 3.14159
+distance = -200.0
+speed = 24.0
+
+[node name="Spike3" parent="Objects" index="8" instance=ExtResource("5_3ytf4")]
+position = Vector2(2752, -232)
+rotation = 3.14159
+distance = -200.0
+speed = 24.0
+
+[node name="Spike4" parent="Objects" index="9" instance=ExtResource("5_3ytf4")]
+position = Vector2(2880, -232)
+rotation = 3.14159
+distance = -200.0
+speed = 24.0
+
+[node name="DeathPit" parent="Objects" index="10" instance=ExtResource("6_8xod0")]
+position = Vector2(1368, 1264)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(152, -409)
+shape = SubResource("RectangleShape2D_36cbe")

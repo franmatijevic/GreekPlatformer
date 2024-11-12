@@ -15,5 +15,6 @@ func _physics_process(delta):
 	if pathFollow.progress_ratio == 1:
 		pathFollow.progress_ratio = 0
 	
+	
 	get_node("BirdSprite").rotation= previous_position.angle_to_point(global_position) 
 	
