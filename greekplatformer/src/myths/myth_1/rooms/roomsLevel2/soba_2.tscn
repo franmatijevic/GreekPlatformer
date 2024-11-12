@@ -36,6 +36,7 @@ position = Vector2(2883, -956)
 
 [node name="Spring2" parent="Objects" index="3" instance=ExtResource("2_syldi")]
 position = Vector2(1091, 60)
+max_force = 1600.0
 
 [node name="Spring3" parent="Objects" index="4" instance=ExtResource("2_syldi")]
 position = Vector2(2756, -1475)

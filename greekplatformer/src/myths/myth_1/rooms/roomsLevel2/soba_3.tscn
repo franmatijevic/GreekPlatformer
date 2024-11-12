@@ -33,6 +33,7 @@ position = Vector2(1054, 703)
 
 [node name="SuperSpring2" parent="Objects" index="2" instance=ExtResource("4_vtpre")]
 position = Vector2(1970, 841)
+max_force = 2100.0
 
 [node name="SuperSpring3" parent="Objects" index="3" instance=ExtResource("4_vtpre")]
 position = Vector2(2884, -334)

@@ -69,25 +69,25 @@ connectedTo = [NodePath("../Spike"), NodePath("../Spike2"), NodePath("../Spike3"
 position = Vector2(2496, -232)
 rotation = 3.14159
 distance = -200.0
-speed = 24.0
+speed = 20.0
 
 [node name="Spike2" parent="Objects" index="7" instance=ExtResource("5_3ytf4")]
 position = Vector2(2624, -232)
 rotation = 3.14159
 distance = -200.0
-speed = 24.0
+speed = 20.0
 
 [node name="Spike3" parent="Objects" index="8" instance=ExtResource("5_3ytf4")]
 position = Vector2(2752, -232)
 rotation = 3.14159
 distance = -200.0
-speed = 24.0
+speed = 20.0
 
 [node name="Spike4" parent="Objects" index="9" instance=ExtResource("5_3ytf4")]
 position = Vector2(2880, -232)
 rotation = 3.14159
 distance = -200.0
-speed = 24.0
+speed = 20.0
 
 [node name="DeathPit" parent="Objects" index="10" instance=ExtResource("6_8xod0")]
 position = Vector2(1368, 1264)

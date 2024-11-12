@@ -133,6 +133,7 @@ position = Vector2(888, -10)
 
 [node name="SuperSpring" parent="Objects" index="18" instance=ExtResource("7_7vcbg")]
 position = Vector2(424, -283)
+max_force = 2100.0
 
 [node name="Path2D4" type="Path2D" parent="Objects" index="19"]
 curve = SubResource("Curve2D_5rlag")

@@ -5,4 +5,3 @@
 
 [node name="Player" instance=ExtResource("1_62uey")]
 script = ExtResource("2_2j8tk")
-jump_height = 216.0
