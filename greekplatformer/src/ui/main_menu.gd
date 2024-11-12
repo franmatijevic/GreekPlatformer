@@ -1,6 +1,6 @@
 extends Node2D
 
-var new_game = "res://src/levels/finalLevels/level_1.tscn"
+var new_game = "res://src/myths/myth_1/levels/level_1.tscn"
 
 func open_menu(option_name:String):
 	for i in get_node("options").get_children():
