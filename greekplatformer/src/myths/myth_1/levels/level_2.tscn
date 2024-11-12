@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_goh0a"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_hlsjp"]
-[ext_resource type="PackedScene" uid="uid://bjwpcl3f268h5" path="res://src/myths/myth_1/rooms/roomsLevel1/soba_1.tscn" id="3_tuqd1"]
-[ext_resource type="PackedScene" uid="uid://bfogytv5q02fn" path="res://src/myths/myth_1/rooms/roomsLevel1/soba_2.tscn" id="4_2vaqy"]
-[ext_resource type="PackedScene" uid="uid://cuxjdcuj3e2bj" path="res://src/myths/myth_1/rooms/roomsLevel1/soba_3.tscn" id="5_qyfq7"]
-[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel1/soba_4.tscn" id="6_ksauk"]
-[ext_resource type="PackedScene" uid="uid://cry7ue7lta84u" path="res://src/myths/myth_1/rooms/roomsLevel1/soba_5.tscn" id="7_2jacc"]
+[ext_resource type="PackedScene" uid="uid://bjwpcl3f268h5" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_1.tscn" id="3_tuqd1"]
+[ext_resource type="PackedScene" uid="uid://bfogytv5q02fn" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_2.tscn" id="4_2vaqy"]
+[ext_resource type="PackedScene" uid="uid://cuxjdcuj3e2bj" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_3.tscn" id="5_qyfq7"]
+[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_4.tscn" id="6_ksauk"]
+[ext_resource type="PackedScene" uid="uid://cry7ue7lta84u" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_5.tscn" id="7_2jacc"]
 
 [node name="level2" node_paths=PackedStringArray("current_room") instance=ExtResource("1_goh0a")]
 position = Vector2(36, -7)

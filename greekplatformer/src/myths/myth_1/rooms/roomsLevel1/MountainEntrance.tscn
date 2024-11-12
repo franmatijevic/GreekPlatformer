@@ -12,7 +12,7 @@ size = Vector2(2400, 1350)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jo8c"]
 size = Vector2(2360, 26)
 
-[node name="Room" instance=ExtResource("1_7e426")]
+[node name="Mountainentrance" instance=ExtResource("1_7e426")]
 
 [node name="RoomSize" parent="." index="1"]
 shape = SubResource("RectangleShape2D_ob0eo")

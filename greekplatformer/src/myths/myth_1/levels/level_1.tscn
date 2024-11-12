@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="11_6ytnd"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="12_v3ewr"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="13_s3rpa"]
-[ext_resource type="PackedScene" uid="uid://c20usakr3hbgc" path="res://src/levels/test_level_rooms/MountainEntrance.tscn" id="14_r2nsp"]
+[ext_resource type="PackedScene" uid="uid://c20usakr3hbgc" path="res://src/myths/myth_1/rooms/roomsLevel1/MountainEntrance.tscn" id="14_r2nsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
