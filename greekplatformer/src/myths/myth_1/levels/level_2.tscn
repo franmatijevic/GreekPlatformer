@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dt268si0825a6"]
+[gd_scene load_steps=15 format=3 uid="uid://dt268si0825a6"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_goh0a"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_hlsjp"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/levels/test_level_rooms/cloud_rock.tscn" id="9_dcwrc"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/levels/test_level_rooms/platePlat1.tscn" id="10_o816v"]
 [ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/levels/test_level_rooms/plate_plat_3.tscn" id="11_o32uc"]
-[ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="12_h486v"]
 [ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/levels/test_level_rooms/train_1.tscn" id="13_n48ka"]
 [ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/levels/test_level_rooms/simple_catch.tscn" id="14_c7yos"]
 [ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="15_u470v"]
@@ -56,14 +55,11 @@ position = Vector2(28804, -6417)
 [node name="platePlat3" parent="." index="14" instance=ExtResource("11_o32uc")]
 position = Vector2(31364, -6417)
 
-[node name="platePlat2" parent="." index="15" instance=ExtResource("12_h486v")]
-position = Vector2(34564, -7825)
+[node name="Train1" parent="." index="15" instance=ExtResource("13_n48ka")]
+position = Vector2(35844, -7825)
 
-[node name="Train1" parent="." index="16" instance=ExtResource("13_n48ka")]
-position = Vector2(38276, -7697)
+[node name="SimpleCatch" parent="." index="16" instance=ExtResource("14_c7yos")]
+position = Vector2(41092, -7825)
 
-[node name="SimpleCatch" parent="." index="17" instance=ExtResource("14_c7yos")]
-position = Vector2(43524, -7697)
-
-[node name="Room2" parent="." index="18" instance=ExtResource("15_u470v")]
-position = Vector2(45956, -8593)
+[node name="Room2" parent="." index="17" instance=ExtResource("15_u470v")]
+position = Vector2(43524, -8721)

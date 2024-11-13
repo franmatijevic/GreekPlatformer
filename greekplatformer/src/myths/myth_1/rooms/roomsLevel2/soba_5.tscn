@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cry7ue7lta84u"]
+[gd_scene load_steps=16 format=4 uid="uid://cry7ue7lta84u"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_gy7c1"]
 [ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="2_8c6dk"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="6_imug5"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="7_jexui"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="8_wx8i1"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="9_6kxcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yksl"]
-size = Vector2(5338, 3967)
+size = Vector2(5309, 3967)
 
 [sub_resource type="Curve2D" id="Curve2D_kfih6"]
 _data = {
@@ -36,13 +37,16 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76g4g"]
+size = Vector2(5314, 20)
+
 [node name="Soba5" instance=ExtResource("1_gy7c1")]
 
 [node name="TileMapLayer" parent="." index="0"]
 tile_map_data = PackedByteArray("AAAAAAcACwAAAAAAAAABAAcACwAAAAAAAAACAAcACwAAAAAAAAADAAcACwAAAAAAAAAiAPn/CwAAAAAAAAAjAPn/CwAAAAAAAAAkAPn/CwAAAAAAAAAlAPn/CwAAAAAAAAAmAPn/CwAAAAAAAAAnAPn/CwAAAAAAAAAoAPn/CwAAAAAAAAApAPn/CwAAAAAAAAApAPX/BQAAAAAAAAApAPT/BQAAAAAAAAApAPP/BQAAAAAAAAApAPL/BQAAAAAAAAApAPH/BQAAAAAAAAApAPD/CwAAAAAAAAApAO//BQAAAAAAAAApAO7/CwAAAAAAAAApAO3/BQAAAAAAAAApAOz/CwAAAAAAAAApAOv/BQAAAAAAAAApAOr/BQAAAAAAAAAiAPr/BAAAAAAAADAjAPr/BAAAAAEAAAAkAPr/BAAAAAEAAAAlAPr/BAAAAAEAAAAmAPr/BAAAAAEAAAAnAPr/BAAAAAEAAAAoAPr/BAAAAAEAAAApAPr/BAAAAAEAAAA=")
 
 [node name="RoomSize" parent="." index="1"]
-position = Vector2(2659, -835.5)
+position = Vector2(2657.5, -832)
 shape = SubResource("RectangleShape2D_6yksl")
 
 [node name="Respawn" parent="." index="3"]
@@ -119,3 +123,9 @@ loop = false
 [node name="BlockDoor" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("7_jexui")]
 scale = Vector2(1, 5)
 speed = 70.0
+
+[node name="DeathPit" parent="Objects" index="13" instance=ExtResource("9_6kxcg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(2623, 1112)
+shape = SubResource("RectangleShape2D_76g4g")
