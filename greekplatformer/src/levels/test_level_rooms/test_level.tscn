@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=12 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
-[ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="5_s3s67"]
 [ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="8_nq8xc"]
 [ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/levels/test_level_rooms/simpleTrap.tscn" id="11_iqxsf"]
 [ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/levels/test_level_rooms/cloud_rock.tscn" id="11_wf35p"]
@@ -12,9 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/levels/test_level_rooms/platePlat1.tscn" id="13_odpob"]
 [ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="14_4th8v"]
 [ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/levels/test_level_rooms/plate_plat_3.tscn" id="15_ak1qm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
-size = Vector2(224, 303)
 
 [node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
 current_room = NodePath("StartingRoom")
@@ -29,36 +25,26 @@ floor_max_angle = 0.785398
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
 position = Vector2(-79, 0)
 
-[node name="DialogueAreaZeus" parent="." index="7" instance=ExtResource("5_s3s67")]
-dialogueKey = "Zeus"
-oneTime = true
-
-[node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
-position = Vector2(-266, -25)
-shape = SubResource("RectangleShape2D_8hqll")
-
-[node name="Room2" parent="." index="8" instance=ExtResource("8_nq8xc")]
+[node name="Room2" parent="." index="7" instance=ExtResource("8_nq8xc")]
 position = Vector2(18736, 6896)
 
-[node name="CloudRock" parent="." index="9" instance=ExtResource("11_wf35p")]
+[node name="CloudRock" parent="." index="8" instance=ExtResource("11_wf35p")]
 position = Vector2(5680, 9200)
 
-[node name="Room" parent="." index="10" instance=ExtResource("11_iqxsf")]
+[node name="Room" parent="." index="9" instance=ExtResource("11_iqxsf")]
 position = Vector2(3632, 9456)
 
-[node name="SimpleCatch" parent="." index="11" instance=ExtResource("12_c5cgg")]
+[node name="SimpleCatch" parent="." index="10" instance=ExtResource("12_c5cgg")]
 position = Vector2(4720, -1744)
 
-[node name="PlatePlatform" parent="." index="12" instance=ExtResource("13_odpob")]
+[node name="PlatePlatform" parent="." index="11" instance=ExtResource("13_odpob")]
 position = Vector2(7984, 9072)
 
-[node name="platePlat2" parent="." index="13" instance=ExtResource("14_4th8v")]
+[node name="platePlat2" parent="." index="12" instance=ExtResource("14_4th8v")]
 position = Vector2(13744, 7664)
 
-[node name="platePlat3" parent="." index="14" instance=ExtResource("15_ak1qm")]
+[node name="platePlat3" parent="." index="13" instance=ExtResource("15_ak1qm")]
 position = Vector2(10544, 9072)
 
-[node name="Train1" parent="." index="15" instance=ExtResource("12_sfk78")]
+[node name="Train1" parent="." index="14" instance=ExtResource("12_sfk78")]
 position = Vector2(3048, 304)
-
-[editable path="DialogueAreaZeus"]
