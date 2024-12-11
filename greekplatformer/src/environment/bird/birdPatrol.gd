@@ -16,5 +16,9 @@ func _physics_process(delta):
 		pathFollow.progress_ratio = 0
 	
 	
-	get_node("BirdSprite").rotation= previous_position.angle_to_point(global_position) 
+	if global_position.x < previous_position.x:
+		get_node("BirdSprite").scale.x = -abs(get_node("BirdSprite").scale.x)
+	else:
+		get_node("BirdSprite").scale.x = abs(get_node("BirdSprite").scale.x)
+
 	

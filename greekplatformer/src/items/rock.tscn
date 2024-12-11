@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bajynjcw0ua61"]
 
 [ext_resource type="Script" path="res://src/items/itemScripts/throwable.gd" id="1_nq7h8"]
-[ext_resource type="Texture2D" uid="uid://byuldulfb025u" path="res://src/items/throwableArt/Rock.png" id="2_47si2"]
+[ext_resource type="Texture2D" uid="uid://coijiwvk01vhu" path="res://src/environment/environmentArt/kamen.png" id="2_if2ul"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n4di"]
 radius = 57.85
@@ -21,8 +21,8 @@ picking_up_time = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 1.52588e-05)
-scale = Vector2(0.340782, 0.391847)
-texture = ExtResource("2_47si2")
+scale = Vector2(0.0631716, 0.0726377)
+texture = ExtResource("2_if2ul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)

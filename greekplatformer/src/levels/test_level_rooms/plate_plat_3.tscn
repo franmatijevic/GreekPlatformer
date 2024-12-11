@@ -90,6 +90,7 @@ rotates = false
 loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("7_5amlh")]
+position = Vector2(0, -207)
 scale = Vector2(2, 1)
 speed = 250.0
 

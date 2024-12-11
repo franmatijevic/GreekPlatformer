@@ -1,0 +1,65 @@
+[gd_scene load_steps=15 format=3 uid="uid://bn1xvc3cih87u"]
+
+[ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_tgts0"]
+[ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_c1khh"]
+[ext_resource type="PackedScene" uid="uid://bjwpcl3f268h5" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_1.tscn" id="3_rmvbu"]
+[ext_resource type="PackedScene" uid="uid://bfogytv5q02fn" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_2.tscn" id="4_j0yus"]
+[ext_resource type="PackedScene" uid="uid://cuxjdcuj3e2bj" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_3.tscn" id="5_7io3i"]
+[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_4.tscn" id="6_0xduo"]
+[ext_resource type="PackedScene" uid="uid://cry7ue7lta84u" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_5.tscn" id="7_sr2b7"]
+[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/levels/test_level_rooms/simpleTrap.tscn" id="8_w1xxh"]
+[ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/levels/test_level_rooms/cloud_rock.tscn" id="9_vrl5g"]
+[ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/levels/test_level_rooms/platePlat1.tscn" id="10_0wjwh"]
+[ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/levels/test_level_rooms/plate_plat_3.tscn" id="11_6lw1u"]
+[ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/levels/test_level_rooms/train_1.tscn" id="12_rguj4"]
+[ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/levels/test_level_rooms/simple_catch.tscn" id="13_otkbe"]
+[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/levels/test_level_rooms/trickthrow.tscn" id="14_1hxlx"]
+
+[node name="level2" node_paths=PackedStringArray("current_room") instance=ExtResource("1_tgts0")]
+position = Vector2(36, -7)
+current_room = NodePath("Soba1")
+
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." index="4" instance=ExtResource("2_c1khh")]
+position = Vector2(-1386, 136)
+
+[node name="Soba1" parent="." index="5" instance=ExtResource("3_rmvbu")]
+position = Vector2(-1517, -785)
+
+[node name="Soba2" parent="." index="6" instance=ExtResource("4_j0yus")]
+position = Vector2(4069, 6761)
+
+[node name="Soba3" parent="." index="7" instance=ExtResource("5_7io3i")]
+position = Vector2(14459, 6520)
+
+[node name="Soba4" parent="." index="8" instance=ExtResource("6_0xduo")]
+position = Vector2(21392, 6483)
+
+[node name="Soba5" parent="." index="9" instance=ExtResource("7_sr2b7")]
+position = Vector2(29090, 5890)
+
+[node name="CanvasLayerPause" parent="." index="10"]
+follow_viewport_scale = 377.106
+
+[node name="Room" parent="." index="11" instance=ExtResource("8_w1xxh")]
+position = Vector2(5018, -145)
+
+[node name="CloudRock" parent="." index="12" instance=ExtResource("9_vrl5g")]
+position = Vector2(7066, -401)
+
+[node name="PlatePlatform" parent="." index="13" instance=ExtResource("10_0wjwh")]
+position = Vector2(9370, -529)
+
+[node name="platePlat3" parent="." index="14" instance=ExtResource("11_6lw1u")]
+position = Vector2(11930, -529)
+
+[node name="Train1" parent="." index="15" instance=ExtResource("12_rguj4")]
+position = Vector2(16410, -1937)
+
+[node name="SimpleCatch" parent="." index="16" instance=ExtResource("13_otkbe")]
+position = Vector2(21658, -1937)
+
+[node name="Room2" parent="." index="17" instance=ExtResource("14_1hxlx")]
+position = Vector2(24090, -2833)

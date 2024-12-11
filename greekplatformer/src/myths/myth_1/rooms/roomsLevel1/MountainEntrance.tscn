@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_ob0eo")
 [node name="Passage" parent="Objects" index="0" instance=ExtResource("2_ojp7v")]
 z_index = -1
 position = Vector2(-184, 168)
+path = "res://src/myths/myth_1/levels/level_2_demo.tscn"
 
 [node name="LongPlatform" parent="Objects" index="1" instance=ExtResource("3_5n5mi")]
 position = Vector2(-64, 272)
