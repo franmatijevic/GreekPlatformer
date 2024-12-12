@@ -5,6 +5,9 @@ class_name State
 func player():
 	return get_parent().get_parent()
 
+func source():
+	return get_parent().get_parent().get_parent()
+
 func enter():
 	pass
 

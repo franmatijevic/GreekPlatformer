@@ -1,0 +1,193 @@
+[gd_scene load_steps=13 format=3 uid="uid://cy47xdciin3c"]
+
+[ext_resource type="PackedScene" uid="uid://dv3qd8ajp8ck" path="res://src/player/player_animation.tscn" id="1_60jgh"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/procedural_animation.gd" id="2_ereob"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/idle.gd" id="3_5fk1u"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/walking.gd" id="4_fm0s2"]
+[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="4_wxls5"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/legForward.gd" id="5_nf0eo"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/endWalking.gd" id="6_nbl7x"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/aboveGround.gd" id="9_pjty6"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/armAnimations/idleState.gd" id="10_apttu"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/armAnimations/movingState.gd" id="11_avgt6"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/armAnimations/grabing.gd" id="11_rpokg"]
+[ext_resource type="Script" path="res://src/player/procedural_animations/armAnimations/holding.gd" id="12_8h0lv"]
+
+[node name="ProceduralAnimation" node_paths=PackedStringArray("legs_state", "arms_state") instance=ExtResource("1_60jgh")]
+script = ExtResource("2_ereob")
+legs_state = NodePath("Leg Machine/IdleState")
+arms_state = NodePath("Arm Machine/IdleState")
+
+[node name="LeftArm" parent="CharacterContainer/Body" index="0"]
+rotation = 1.46014
+scale = Vector2(0.141, 0.383)
+
+[node name="LeftForearm" parent="CharacterContainer/Body" index="1"]
+position = Vector2(-54.7431, -21.3619)
+rotation = 1.46014
+scale = Vector2(0.140999, 0.382997)
+
+[node name="LeftFist" parent="CharacterContainer/Body" index="2"]
+position = Vector2(-101.455, -16.1716)
+rotation = 1.46014
+scale = Vector2(0.199998, 0.199998)
+
+[node name="LeftLowerLeg" parent="CharacterContainer/Body" index="4"]
+position = Vector2(-4.07316, 88.9025)
+scale = Vector2(0.140999, 0.382998)
+
+[node name="LeftFoot" parent="CharacterContainer/Body" index="5"]
+position = Vector2(-1.01322, 134.802)
+scale = Vector2(0.300001, 0.1)
+
+[node name="Head" parent="CharacterContainer/Body" index="7"]
+rotation = 0.135338
+scale = Vector2(0.399999, 0.399999)
+
+[node name="RIghtFoot" parent="CharacterContainer/Body" index="8"]
+position = Vector2(-2.06239, 134.864)
+rotation = 0.0185975
+scale = Vector2(0.299993, 0.0999975)
+
+[node name="RightLowerLeg" parent="CharacterContainer/Body" index="9"]
+position = Vector2(-4.58542, 88.9339)
+scale = Vector2(0.140998, 0.382995)
+
+[node name="RightLeg" parent="CharacterContainer/Body" index="10"]
+scale = Vector2(0.140997, 0.382992)
+
+[node name="RightArm" parent="CharacterContainer/Body" index="11"]
+scale = Vector2(0.141, 0.383)
+
+[node name="RightForearm" parent="CharacterContainer/Body" index="12"]
+position = Vector2(28.9952, -25.0736)
+scale = Vector2(0.141, 0.383)
+
+[node name="RightFist" parent="CharacterContainer/Body" index="13"]
+position = Vector2(75.9837, -24.0371)
+scale = Vector2(0.2, 0.2)
+
+[node name="RightLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="1"]
+rotation = -0.177516
+scale = Vector2(0.999994, 0.999994)
+
+[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg" index="1"]
+position = Vector2(4.76837e-06, 44.0002)
+rotation = 0.235527
+
+[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg" index="1"]
+position = Vector2(-1.43051e-06, 46)
+rotation = -0.0289678
+scale = Vector2(1, 1)
+
+[node name="LeftLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="2"]
+rotation = -0.0665682
+
+[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg" index="1"]
+position = Vector2(2.86102e-06, 44)
+scale = Vector2(0.999997, 0.999997)
+
+[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg/LowerLeg" index="1"]
+position = Vector2(-3.8147e-06, 46.0014)
+rotation = 0.0702353
+
+[node name="RightArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="3"]
+rotation = -1.54874
+scale = Vector2(1, 1)
+
+[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightArm" index="1"]
+position = Vector2(-3.8147e-06, 42.0001)
+
+[node name="LeftArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="4"]
+rotation = 1.46014
+
+[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftArm" index="1"]
+position = Vector2(1.14441e-05, 42)
+scale = Vector2(0.999995, 0.999995)
+
+[node name="Head" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="5"]
+rotation = -0.135338
+scale = Vector2(0.999997, 0.999997)
+
+[node name="LeftArm" parent="IK Targets" index="0"]
+position = Vector2(-139, -12)
+
+[node name="StepTargets" type="Node2D" parent="." index="2"]
+
+[node name="leftFoot" type="Marker2D" parent="StepTargets" index="0"]
+position = Vector2(-2, 135)
+
+[node name="Icon" type="Sprite2D" parent="StepTargets/leftFoot" index="0"]
+modulate = Color(1, 0.337255, 0.337255, 1)
+z_index = 100
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_wxls5")
+
+[node name="RayCast2D" type="RayCast2D" parent="StepTargets/leftFoot" index="1"]
+position = Vector2(0, -30)
+target_position = Vector2(0, 35)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="rightFoot" type="Marker2D" parent="StepTargets" index="1"]
+position = Vector2(-2, 135)
+
+[node name="Icon" type="Sprite2D" parent="StepTargets/rightFoot" index="0"]
+modulate = Color(1, 0.337255, 0.337255, 1)
+z_index = 100
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_wxls5")
+
+[node name="RayCast2D" type="RayCast2D" parent="StepTargets/rightFoot" index="1"]
+position = Vector2(0, -30)
+target_position = Vector2(0, 35)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Leg Machine" type="Node" parent="." index="3"]
+
+[node name="IdleState" type="Node" parent="Leg Machine" index="0"]
+script = ExtResource("3_5fk1u")
+
+[node name="Walking" type="Node" parent="Leg Machine" index="1"]
+script = ExtResource("4_fm0s2")
+
+[node name="LeftLegForward" type="Node" parent="Leg Machine" index="2" node_paths=PackedStringArray("currentLeg", "secondLeg", "stepTarget")]
+script = ExtResource("5_nf0eo")
+currentLeg = NodePath("../../IK Targets/LeftFoot")
+secondLeg = NodePath("../../IK Targets/RightFoot")
+stepTarget = NodePath("../../StepTargets/leftFoot")
+
+[node name="RightLegForward" type="Node" parent="Leg Machine" index="3" node_paths=PackedStringArray("currentLeg", "secondLeg", "stepTarget")]
+script = ExtResource("5_nf0eo")
+currentLeg = NodePath("../../IK Targets/RightFoot")
+secondLeg = NodePath("../../IK Targets/LeftFoot")
+stepTarget = NodePath("../../StepTargets/rightFoot")
+
+[node name="EndWalking" type="Node" parent="Leg Machine" index="4" node_paths=PackedStringArray("leftFoot", "rightFoot")]
+script = ExtResource("6_nbl7x")
+leftFoot = NodePath("../../IK Targets/LeftFoot")
+rightFoot = NodePath("../../IK Targets/RightFoot")
+
+[node name="AboveGround" type="Node" parent="Leg Machine" index="5"]
+script = ExtResource("9_pjty6")
+
+[node name="Arm Machine" type="Node" parent="." index="4"]
+
+[node name="IdleState" type="Node" parent="Arm Machine" index="0"]
+script = ExtResource("10_apttu")
+
+[node name="Grab" type="Node" parent="Arm Machine" index="1"]
+script = ExtResource("11_rpokg")
+
+[node name="Holding" type="Node" parent="Arm Machine" index="2"]
+script = ExtResource("12_8h0lv")
+
+[node name="Moving" type="Node" parent="Arm Machine" index="3"]
+script = ExtResource("11_avgt6")
+
+[node name="Label" type="Label" parent="." index="5"]
+offset_left = 59.0
+offset_top = -141.0
+offset_right = 99.0
+offset_bottom = -118.0

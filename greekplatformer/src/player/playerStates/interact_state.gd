@@ -5,6 +5,7 @@ var timer:float=0
 func enter():
 	timer = player().holding_object.use_time
 	player().holding_object.player_interaction()
+	#player().get_node("ProceduralAnimation").set_arms("Grab")
 
 func update_physics_process(delta:float):
 	if Input.is_action_just_released("pickThrow"):
@@ -18,3 +19,4 @@ func update_physics_process(delta:float):
 
 func exit():
 	player().holding_object = null
+	#player().get_node("ProceduralAnimation").set_arms("IdleState")
