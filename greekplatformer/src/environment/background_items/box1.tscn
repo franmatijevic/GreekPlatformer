@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qto1v3ycd3eb"]
+
+[ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="1_gd38a"]
+
+[node name="Box1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-29.1064, -16)
+scale = Vector2(0.659574, 0.659574)
+texture = ExtResource("1_gd38a")
