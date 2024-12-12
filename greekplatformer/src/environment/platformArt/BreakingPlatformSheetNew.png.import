@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://psvx8b5x46t8"
-path="res://.godot/imported/BreakingPlatformSheet.png-523b7360b5bae8e1fb05d53961e13973.ctex"
+uid="uid://b2580hc5h50h4"
+path="res://.godot/imported/BreakingPlatformSheetNew.png-81ce5385a72d6518fbd92a526b5bafd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/platformArt/BreakingPlatformSheet.png"
-dest_files=["res://.godot/imported/BreakingPlatformSheet.png-523b7360b5bae8e1fb05d53961e13973.ctex"]
+source_file="res://src/environment/platformArt/BreakingPlatformSheetNew.png"
+dest_files=["res://.godot/imported/BreakingPlatformSheetNew.png-81ce5385a72d6518fbd92a526b5bafd5.ctex"]
 
 [params]
 
