@@ -5,6 +5,8 @@
 [node name="Barrel" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+z_as_relative = false
 position = Vector2(-84, -21.674)
 scale = Vector2(0.52459, 0.335122)
 texture = ExtResource("1_6s2t3")

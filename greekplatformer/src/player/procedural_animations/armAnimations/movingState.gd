@@ -15,8 +15,8 @@ func update_physics_process(delta:float):
 		player().set_arms("IdleState")
 	
 	
-	targetLeft.x=player().rightFoot.position.x/2
-	targetRight.x=player().leftFoot.position.x/2
+	targetLeft.x=player().rightFoot.position.x
+	targetRight.x=player().leftFoot.position.x
 	
 	#player().leftArm.position.y #ovisi o player().rightFoot.position.x
 	

@@ -1,29 +1,37 @@
 extends State
 
-const straight:float=45
-const bent:float=55
+const step=100
 
-const step=50
-
-var leftStart
-var rightStart
+var leftHold
+var rightHold
 
 func enter():
-	#print("EEEEEEEEEEEEEE")
+	#leftHold=player().targetLeftLeg.global_position
+	#rightHold=player().targetRightLeg.global_position
 	
-	leftStart=player().targetLeftLeg.global_position
-	rightStart=player().targetRightLeg.global_position
+	#if((player().position.x+player().position.x)/2>30):
+	#	if(abs(player().leftFoot.position.x)>abs(player().rightFoot.position.x)):
+	#		player().targetLeftLeg.step()
+	#	else:
+	#		player().targetRightLeg.step()
+	
+	#player().hip.position.y=60
 	
 	if(source().velocity.x==0):
-		player().set_legs("EndWalking")
+		#player().set_legs("EndWalking")
+		pass
+		#player().set_legs("IdleState")
 	
-	#var k=1
-	#if(source().velocity.x<0):
-	#	k=-1
-	
-	
+	k=1
+	t1=PI
+	t2=0
+	if(source().velocity.x<0):
+		k=-1
+		t1=0
+		t2=PI
 	
 	#player().hip.position.y=100#umjesto 45
+	player().hip.position.y=60
 	
 	#create_tween().tween_property(player().hip,"position", Vector2(player().hip.position.x,bent), 0.7)
 	
@@ -32,23 +40,51 @@ func enter():
 	#else:
 	#	player().set_legs("RightLegForward")
 
-func update_physics_process(_delta:float):
-	if(source().velocity.x!=0):
-		player().targetLeftLeg.global_position.x=leftStart.x
-		player().targetRightLeg.global_position.x=rightStart.x
-	if(source().velocity.y!=0):
-		player().targetLeftLeg.global_position.y=leftStart.y
-		player().targetRightLeg.global_position.x=rightStart.y
+func exit():
+	player().hip.position.y=45
+
+var r=30
+var t1=0
+var t2=0
+var offset:float=135#-r/2.0
+var k=0
+
+var speed=10
+
+var inclineOffset:Vector2
+
+func update_physics_process(delta:float):
 	
-	if(player().leftFoot.global_position.distance_to(player().rightFoot.global_position))>step:
-		if(abs(player().rightFoot.position.x)>abs(player().leftFoot.position.x)):
-			player().set_legs("RightLegForward")
-			print("DES")
-		else:
-			player().set_legs("LeftLegForward")
-			print("LIJ")
+	if(source().velocity.x<0):
+		k=-1
+	else:
+		k=1
 	
-	elif abs(player().leftFoot.global_position.distance_to(player().targetLeftLeg.global_position))>step:
-		player().set_legs("LeftLegForward")
-	elif abs(player().rightFoot.global_position.distance_to(player().targetRightLeg.global_position))>step:
-		player().set_legs("RightLegForward")
+	var normal = source().get_floor_normal()
+	var angle = PI/2
+	if(normal):
+		var dir=Vector2(-normal.y, normal.x) * k
+		player().leftFoot.rotation=dir.angle()
+		player().rightFoot.rotation=dir.angle()
+		
+		inclineOffset=normal*r/2.0
+	else:
+		inclineOffset=Vector2(0,r/2.0)
+	
+	#player().hip.position.y=45 - 15*sin(angle) +15
+	
+	
+	
+	#Basic rjesenje
+	t1=t1-delta*speed*k
+	t2=t2-delta*speed*k
+	player().targetLeftLeg.position=Vector2(r*cos(t1), -r*sin(t1)+offset-r/2)+inclineOffset
+	player().targetRightLeg.position=Vector2(r*cos(t2), -r*sin(t2)+offset-r/2)+inclineOffset
+
+	if(source().velocity.x==0):
+		player().set_legs("EndWalking")
+		#player().set_legs("IdleState")
+		pass
+	
+	if(!source().is_on_floor()):
+		player().set_legs("AboveGround")

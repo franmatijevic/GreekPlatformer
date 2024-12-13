@@ -166,8 +166,8 @@ offset = Vector2(-7.73627, 41.8461)
 [node name="LeftFoot" type="Sprite2D" parent="CharacterContainer/Body"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-1.01318, 134.802)
-rotation = 0.00366166
-scale = Vector2(0.300004, 0.100001)
+rotation = 0.00366165
+scale = Vector2(0.300005, 0.100002)
 texture = ExtResource("1_vya28")
 offset = Vector2(29.7674, -7.11108)
 
@@ -186,17 +186,17 @@ offset = Vector2(5.81818, -44.6711)
 
 [node name="RIghtFoot" type="Sprite2D" parent="CharacterContainer/Body"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-2.0625, 134.862)
-rotation = 0.0186321
-scale = Vector2(0.299981, 0.0999928)
+position = Vector2(-2.06245, 134.863)
+rotation = 0.0186165
+scale = Vector2(0.299989, 0.0999934)
 texture = ExtResource("1_vya28")
 offset = Vector2(29.7674, -7.11108)
 
 [node name="RightLowerLeg" type="Sprite2D" parent="CharacterContainer/Body"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(-4.58531, 88.9328)
-rotation = -0.0548744
-scale = Vector2(0.140996, 0.382985)
+rotation = -0.0548736
+scale = Vector2(0.140997, 0.382986)
 texture = ExtResource("1_vya28")
 offset = Vector2(-7.73627, 41.8461)
 
@@ -332,6 +332,9 @@ remote_path = NodePath("../../../../../../Body/RightForearm")
 [node name="LowerArm" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightArm/UpperArm"]
 position = Vector2(0, 47)
 rest = Transform2D(1, 0, 0, 1, 0, 47)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightArm/UpperArm/LowerArm"]
 scale = Vector2(0.2, 0.2)
@@ -360,6 +363,9 @@ remote_path = NodePath("../../../../../../Body/LeftForearm")
 [node name="LowerArm" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftArm/UpperArm"]
 position = Vector2(0, 47)
 rest = Transform2D(1, 0, 0, 1, 0, 47)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftArm/UpperArm/LowerArm"]
 scale = Vector2(0.2, 0.2)
@@ -370,6 +376,9 @@ remote_path = NodePath("../../../../../../../Body/LeftFist")
 [node name="Head" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Hip"]
 position = Vector2(0, -91)
 rest = Transform2D(1, 0, 0, 1, 0, -91)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/Head"]

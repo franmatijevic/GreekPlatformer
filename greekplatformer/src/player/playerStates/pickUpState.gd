@@ -4,7 +4,7 @@ var timer:float=0
 
 func enter():
 	timer = player().holding_object.picking_up_time
-	#player().get_node("ProceduralAnimation").set_aarms("Grab")
+	player().get_node("ProceduralAnimation").set_arms("Grab")
 
 func update_physics_process(delta:float):
 	if(timer>0):
@@ -19,4 +19,4 @@ func update_physics_process(delta:float):
 
 func exit():
 	pass
-	#player().get_node("ProceduralAnimation").set_arms("Holding")
+	player().get_node("ProceduralAnimation").set_arms("Holding")

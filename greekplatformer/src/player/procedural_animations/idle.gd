@@ -2,7 +2,7 @@ extends State
 
 const speed=20
 
-func update_process(delta:float):
+func update_process(_delta:float):
 	
 	
 	if(source().velocity.x!=0):

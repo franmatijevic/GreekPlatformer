@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c16evoraxqlrq"]
+[gd_scene load_steps=9 format=4 uid="uid://c16evoraxqlrq"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_bf6o2"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="2_gyerm"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="3_5uevs"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="4_mls21"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_gfusj"]
+[ext_resource type="PackedScene" uid="uid://b8ah06rn02iu2" path="res://src/environment/background_items/barrel.tscn" id="6_p1bgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ovr6"]
 size = Vector2(3456, 1350)
@@ -27,17 +28,20 @@ shape = SubResource("RectangleShape2D_0ovr6")
 [node name="Respawn" parent="." index="3"]
 position = Vector2(-2440, -88)
 
-[node name="PressurePlate" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_gyerm")]
+[node name="Barrel" parent="Objects" index="0" instance=ExtResource("6_p1bgb")]
+position = Vector2(-2208, -72)
+
+[node name="PressurePlate" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_gyerm")]
 position = Vector2(8, 0)
 connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor"), NodePath("../Spike")]
 
-[node name="Spike" parent="Objects" index="1" instance=ExtResource("3_5uevs")]
+[node name="Spike" parent="Objects" index="2" instance=ExtResource("3_5uevs")]
 position = Vector2(104, -104)
 rotation = -1.5708
 distance = 136.0
 speed = 2000.0
 
-[node name="Path2D" type="Path2D" parent="Objects" index="2"]
+[node name="Path2D" type="Path2D" parent="Objects" index="3"]
 position = Vector2(576, -384)
 curve = SubResource("Curve2D_c0h4q")
 
@@ -49,10 +53,10 @@ loop = false
 scale = Vector2(1, 2)
 speed = 200.0
 
-[node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("5_gfusj")]
+[node name="RigidBody2D" parent="Objects" index="4" instance=ExtResource("5_gfusj")]
 position = Vector2(400, -296)
 
-[node name="Path2D2" type="Path2D" parent="Objects" index="4"]
+[node name="Path2D2" type="Path2D" parent="Objects" index="5"]
 position = Vector2(-1024, -192)
 curve = SubResource("Curve2D_c0h4q")
 
@@ -63,6 +67,6 @@ loop = false
 [node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("4_mls21")]
 scale = Vector2(4, 3)
 
-[node name="PressurePlate2" parent="Objects" index="5" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_gyerm")]
+[node name="PressurePlate2" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_gyerm")]
 position = Vector2(-1864, 0)
 connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]

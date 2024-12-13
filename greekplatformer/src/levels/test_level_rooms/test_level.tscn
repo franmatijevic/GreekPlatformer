@@ -19,7 +19,7 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(856, 104)
+position = Vector2(-2144, 32)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]

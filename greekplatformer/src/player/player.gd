@@ -37,13 +37,13 @@ func _physics_process(delta: float) -> void:
 			icon.flip_h = true
 			marker_2d.position = Vector2(-56, -4)
 			collision_shape_2d.position = Vector2(-63, 25)
-			#$ProceduralAnimation.flip(true)
+			$ProceduralAnimation.flip(true)
 		elif direction == 1:
 			facing_direction = true
 			icon.flip_h = false
 			marker_2d.position = Vector2(18, -4)
 			collision_shape_2d.position = Vector2(14, 25)
-			#$ProceduralAnimation.flip(false)
+			$ProceduralAnimation.flip(false)
 
 	if coyoteBuffer > 0:
 		coyoteBuffer -= delta

@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var leftFoot = $"IK Targets/LeftFoot"
 @onready var rightFoot = $"IK Targets/RightFoot"
 @onready var leftArm = $"IK Targets/LeftArm"
@@ -10,6 +11,8 @@ extends Node2D
 @onready var targetRightLeg = $"StepTargets/rightFoot"
 
 @onready var hip = $"CharacterContainer/Bones/Skeleton2D/Hip"
+
+@onready var shoulder = $"CharacterContainer/Bones/Skeleton2D/Hip/LeftArm"
 
 var armStates: Dictionary = {}
 var legStates: Dictionary = {}
@@ -44,15 +47,24 @@ func _physics_process(delta: float) -> void:
 	arms_state.update_physics_process(delta)
 	legs_state.update_physics_process(delta)
 	
-	if(get_parent().is_on_floor()):
-		var leftPoint=targetLeftLeg.get_node("RayCast2D").get_collision_point()
-		if(leftPoint):
-			targetLeftLeg.global_position.y=leftPoint.y
-		var rightPoint=targetRightLeg.get_node("RayCast2D").get_collision_point()
-		if(rightPoint):
-			targetRightLeg.global_position.y=rightPoint.y
+	var speed=200
 	
-	get_node("Label").text=legs_state.name
+	var realTargetLeft=targetLeftLeg.global_position+Vector2(0,20)
+	var realTargetRight=targetRightLeg.global_position+Vector2(0,20)
+	
+	leftFoot.global_position=leftFoot.global_position.move_toward(realTargetLeft, speed*delta)
+	rightFoot.global_position=rightFoot.global_position.move_toward(realTargetRight, speed*delta)
+	
+	
+	#if(get_parent().is_on_floor()):
+	#	var leftPoint=targetLeftLeg.get_node("RayCast2D").get_collision_point()
+	#	if(leftPoint):
+	#		targetLeftLeg.global_position.y=leftPoint.y
+	#	var rightPoint=targetRightLeg.get_node("RayCast2D").get_collision_point()
+	#	if(rightPoint):
+	#		targetRightLeg.global_position.y=rightPoint.y
+	
+	#get_node("Label").text=legs_state.name
 
 func set_arms(state: String):
 	arms_state.exit()
@@ -69,6 +81,7 @@ func fix_legs():
 	rightFoot.global_position = get_node("CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg/Foot/Marker2D").global_position
 
 func flip(new_dir:bool):
+	return
 	if(new_dir==direction):
 		return
 	else:
