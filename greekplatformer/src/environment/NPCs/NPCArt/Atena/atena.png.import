@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8o5baq8wi7l8"
-path="res://.godot/imported/athena.png-3494b7a7ae09cbe91377711431a56663.ctex"
+path="res://.godot/imported/atena.png-0b01f886105f434862d03c576ef682fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/NPCs/NPCArt/Atena/athena.png"
-dest_files=["res://.godot/imported/athena.png-3494b7a7ae09cbe91377711431a56663.ctex"]
+source_file="res://src/environment/NPCs/NPCArt/Atena/atena.png"
+dest_files=["res://.godot/imported/atena.png-0b01f886105f434862d03c576ef682fe.ctex"]
 
 [params]
 

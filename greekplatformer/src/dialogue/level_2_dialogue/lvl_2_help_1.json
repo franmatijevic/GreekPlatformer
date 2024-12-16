@@ -1,8 +1,8 @@
 {
 	"lvl_2_help_1": [
-		{"speaker": "Atena", "text": "You can pick up rocks using the SPACE button.", "action": "none"},
+		{"speaker": "Atena", "text": "You can pick up rocks using the SPACE button.", "action": "fade", "parameters": {"duration": 4, "targetAlpha": 1.0}},
 		{"speaker": "Atena", "text": "You can also throw rocks with SPACE.", "action": "none"},
 		{"speaker": "Atena", "text": "You can calmly drop rocks with S.", "action": "none"},
-		{"speaker": "Atena", "text": "Good luck!", "action": "exit"}
+		{"speaker": "Atena", "text": "Good luck!", "action": "fade", "parameters": {"duration": 4, "targetAlpha": 0.0}}
 	]
 }

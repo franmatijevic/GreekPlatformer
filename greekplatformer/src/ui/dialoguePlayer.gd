@@ -21,6 +21,7 @@ func _ready():
 	
 	speakerMarkers["Zeus"] = $"../Zeus/ZeusDialogueMarker"
 	speakerMarkers["Prometej"] = $"../Player/PlayerDialogueMarker"
+	speakerMarkers["Atena"] = $"../Atena/AtenaDialogueMarker"
 	
 func load_scene_text():
 	if FileAccess.file_exists(sceneTextFile):
