@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dx6pbtihboj8g"]
+[gd_scene load_steps=8 format=4 uid="uid://dx6pbtihboj8g"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_fqnkx"]
 [ext_resource type="PackedScene" uid="uid://hjhx55yccp7w" path="res://src/environment/pressurePlate/plate_platform.tscn" id="2_v10fn"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="3_ciho7"]
+[ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="4_dhl4y"]
+[ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="5_15woa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xivx"]
 size = Vector2(2432, 1606)
@@ -38,3 +40,17 @@ position = Vector2(-64, 672)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
 position = Vector2(320, -24)
 shape = SubResource("RectangleShape2D_qn28n")
+
+[node name="GreekVase" type="Sprite2D" parent="." index="5"]
+z_index = -10
+z_as_relative = false
+position = Vector2(-877, 73)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("4_dhl4y")
+
+[node name="Box" type="Sprite2D" parent="." index="6"]
+z_index = -10
+z_as_relative = false
+position = Vector2(-768.178, 100.25)
+scale = Vector2(0.601064, 0.601064)
+texture = ExtResource("5_15woa")

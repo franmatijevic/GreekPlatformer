@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ikjh3dbwa4r"
-path="res://.godot/imported/greekVase.png-c6705a8bd083cf67509526f83e9f4d3d.ctex"
+uid="uid://d18ctajw6hr8v"
+path="res://.godot/imported/barrel.png-05dc9bbc5f86ef30632f9edda2281479.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/environmentArt/greekVase.png"
-dest_files=["res://.godot/imported/greekVase.png-c6705a8bd083cf67509526f83e9f4d3d.ctex"]
+source_file="res://src/environment/background_items/background_items_art/barrel.png"
+dest_files=["res://.godot/imported/barrel.png-05dc9bbc5f86ef30632f9edda2281479.ctex"]
 
 [params]
 

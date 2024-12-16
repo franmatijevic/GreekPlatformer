@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ihf0fm4fvepw"]
+[gd_scene load_steps=17 format=4 uid="uid://ihf0fm4fvepw"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_8untp"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="2_4tg62"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="7_3ymgk"]
 [ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="7_7vcbg"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="9_wnv7d"]
+[ext_resource type="Texture2D" uid="uid://637ll5o48bkt" path="res://src/environment/background_items/background_items_art/Box2.png" id="10_d3cya"]
+[ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="11_1dw5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_806s4"]
 size = Vector2(4202, 3589)
@@ -147,3 +149,17 @@ speed = 0.15
 
 [node name="Spring" parent="Objects" index="20" instance=ExtResource("9_wnv7d")]
 position = Vector2(2241, -1088)
+
+[node name="Box2" type="Sprite2D" parent="." index="5"]
+z_index = -10
+z_as_relative = false
+position = Vector2(3310, -1194)
+scale = Vector2(1.12667, 1.12667)
+texture = ExtResource("10_d3cya")
+
+[node name="GreekVase" type="Sprite2D" parent="." index="6"]
+z_index = -10
+z_as_relative = false
+position = Vector2(2690, 504)
+scale = Vector2(0.0999999, 0.0999999)
+texture = ExtResource("11_1dw5k")

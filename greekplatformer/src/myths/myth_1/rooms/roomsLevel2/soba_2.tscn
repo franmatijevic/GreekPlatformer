@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bfogytv5q02fn"]
+[gd_scene load_steps=10 format=4 uid="uid://bfogytv5q02fn"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_grahm"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_syldi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_8e6vu"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="4_b6o6c"]
 [ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="5_kf0hw"]
+[ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="7_vry84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elv7n"]
 size = Vector2(5304, 3329)
@@ -69,3 +70,10 @@ position = Vector2(3898, -1539)
 
 [node name="BreakingPlatform2" parent="Objects" index="12" instance=ExtResource("3_euttw")]
 position = Vector2(4315, -1539)
+
+[node name="GreekVase" type="Sprite2D" parent="." index="5"]
+z_index = -10
+z_as_relative = false
+position = Vector2(4961, -1482)
+scale = Vector2(0.121, 0.121)
+texture = ExtResource("7_vry84")

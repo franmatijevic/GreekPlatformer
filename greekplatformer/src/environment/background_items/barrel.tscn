@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8ah06rn02iu2"]
 
-[ext_resource type="Texture2D" uid="uid://d18ctajw6hr8v" path="res://src/environment/background_items/background_items_art/slice1.png" id="1_6s2t3"]
+[ext_resource type="Texture2D" uid="uid://d18ctajw6hr8v" path="res://src/environment/background_items/background_items_art/barrel.png" id="1_6s2t3"]
 
 [node name="Barrel" type="Node2D"]
 

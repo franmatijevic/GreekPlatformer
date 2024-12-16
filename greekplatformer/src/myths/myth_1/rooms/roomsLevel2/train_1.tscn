@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://q0fd5uttpyas"]
+[gd_scene load_steps=11 format=4 uid="uid://q0fd5uttpyas"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_1po12"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_itx78"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="4_kw876"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="5_3ytf4"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="6_8xod0"]
+[ext_resource type="Texture2D" uid="uid://d18ctajw6hr8v" path="res://src/environment/background_items/background_items_art/barrel.png" id="7_saiym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gga4a"]
 size = Vector2(6400, 2816)
@@ -95,3 +96,10 @@ position = Vector2(1368, 1264)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
 position = Vector2(152, -409)
 shape = SubResource("RectangleShape2D_36cbe")
+
+[node name="Barrel" type="Sprite2D" parent="." index="5"]
+z_index = -10
+z_as_relative = false
+position = Vector2(-1261.35, -153.292)
+scale = Vector2(0.822559, 0.56821)
+texture = ExtResource("7_saiym")

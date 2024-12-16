@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://msbx403o64vi"]
+[gd_scene load_steps=21 format=4 uid="uid://msbx403o64vi"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_5d1eh"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_m8lqd"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="12_pksjy"]
 [ext_resource type="PackedScene" uid="uid://bp5dpb0ywtqsn" path="res://src/environment/delayer.tscn" id="13_1o5ai"]
 [ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="13_e6p0a"]
+[ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="14_j6pc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vohw"]
 size = Vector2(2432, 2680)
@@ -187,3 +188,10 @@ position = Vector2(944, 624)
 [node name="Delayer" parent="Objects" index="20" node_paths=PackedStringArray("connectedTo") instance=ExtResource("13_1o5ai")]
 delay = 1.0
 connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor")]
+
+[node name="Box" type="Sprite2D" parent="." index="5"]
+z_index = -10
+z_as_relative = false
+position = Vector2(-588.537, 855.5)
+scale = Vector2(0.819149, 0.819149)
+texture = ExtResource("14_j6pc7")
