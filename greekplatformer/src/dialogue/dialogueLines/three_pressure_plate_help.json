@@ -1,0 +1,8 @@
+{
+	"three_pressure_plate_help": [
+		{"speaker": "Atena", "text": "Hard shut these doors are.", "action": "fade", "parameters": {"duration": 4, "targetAlpha": 1.0}},
+		{"speaker": "Atena", "text": "But, maybe a rumour helps...", "action": "none"},
+		{"speaker": "Atena", "text": "To open the door you ought to find all three pressure plates.", "action": "none"},
+		{"speaker": "Atena", "text": "One is above and one is below...", "action": "fade", "parameters": {"duration": 4, "targetAlpha": 0.0}}
+	]
+}
