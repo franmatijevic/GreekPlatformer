@@ -32,18 +32,22 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if direction:
-		if direction == -1:
-			facing_direction = false
-			icon.flip_h = true
-			marker_2d.position = Vector2(-56, -4)
-			collision_shape_2d.position = Vector2(-63, 25)
-			$ProceduralAnimation.flip(true)
-		elif direction == 1:
-			facing_direction = true
-			icon.flip_h = false
-			marker_2d.position = Vector2(18, -4)
-			collision_shape_2d.position = Vector2(14, 25)
-			$ProceduralAnimation.flip(false)
+		if(!is_on_floor() or velocity.x*$"ProceduralAnimation".k>=0):
+			if direction == -1:
+				facing_direction = false
+				icon.flip_h = true
+				marker_2d.position = Vector2(-52, -5)
+				#marker_2d.position = Vector2(-24, -4)
+				collision_shape_2d.position = Vector2(-63, 25)
+				$ProceduralAnimation.flip(true)
+			elif direction == 1:
+				facing_direction = true
+				icon.flip_h = false
+				#marker_2d.position = Vector2(18, -4)
+				marker_2d.position = Vector2(49,-5)
+				collision_shape_2d.position = Vector2(14, 25)
+				$ProceduralAnimation.flip(false)
+	
 
 	if coyoteBuffer > 0:
 		coyoteBuffer -= delta
@@ -94,15 +98,20 @@ func throw(throwing_force: Vector2):
 
 	if !facing_direction:
 		force.x = -force.x
-
+	
+	get_node("ProceduralAnimation").set_arms("Throw")
+	
 	holding_object.be_thrown(force)
 	holding_object = null
+	
+	
 
 func pick_or_throw():
 	if holding_object == null:
 		pick_up()
 	else:
 		throw(throw_force)
+
 
 func jump():
 	if holding_object:
@@ -124,6 +133,10 @@ func jump():
 func stop_jump():
 	if velocity.y < 0 and jumped == true:
 		velocity.y = 0
+
+func restart():
+	velocity = Vector2.ZERO
+	get_node("ProceduralAnimation").restart()
 
 func shoot():
 	if holding_object:

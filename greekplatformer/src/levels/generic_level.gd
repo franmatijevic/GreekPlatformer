@@ -35,7 +35,8 @@ func restart():
 	if(current_room != new_next_level):
 		return
 	get_node("BlackScreen/Control").modulate.a=1
-	get_node("Player").velocity = Vector2.ZERO
+	#get_node("Player").velocity = Vector2.ZERO
+	get_node("Player").restart()
 	get_node("Player").global_position = current_room.get_node("Respawn").global_position
 	
 	current_room.process_mode=Node.PROCESS_MODE_DISABLED

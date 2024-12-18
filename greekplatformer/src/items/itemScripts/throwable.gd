@@ -9,10 +9,12 @@ var throwForce:Vector2
 
 var player = null#get_node("../Player")
 
+@export var offset:Vector2=Vector2.ZERO#kako ce player drzati predmet u rukama
+
 
 func _physics_process(_delta):
 	if pickedUp:
-		self.global_position = player.get_node("Marker2D").global_position
+		self.global_position = player.get_node("ProceduralAnimation").holdingObjectPoint.global_position + offset
 
 func be_picked_up(charact:Character):
 	pickedUp = true

@@ -3,20 +3,23 @@ extends State
 var targetLeft:Vector2
 var targetRight:Vector2
 
-var speed=200
+#var speed=200
 
 func enter():
-	targetLeft.y=50
-	targetRight.y=50
+	player().targetLeftArm.position.y=60
+	player().targetRightArm.position.y=60
 
 func update_physics_process(delta:float):
+	
+	var speed=player().armSpeed
+	player().armSpeed=move_toward(player().armSpeed, 500, 100*delta)
 	
 	if(source().velocity.x==0):
 		player().set_arms("IdleState")
 	
 	
-	targetLeft.x=player().rightFoot.position.x
-	targetRight.x=player().leftFoot.position.x
+	player().targetLeftArm.position.x=player().rightFoot.position.x
+	player().targetRightArm.position.x=player().leftFoot.position.x
 	
 	#player().leftArm.position.y #ovisi o player().rightFoot.position.x
 	

@@ -80,7 +80,7 @@ scale = Vector2(0.445, 0.220588)
 texture = ExtResource("6_i6bi8")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(18, -4)
+position = Vector2(49, -36)
 
 [node name="DetectPickup" type="Area2D" parent="."]
 position = Vector2(-2, 8)

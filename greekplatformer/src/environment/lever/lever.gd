@@ -30,6 +30,9 @@ func _physics_process(delta: float) -> void:
 			do_action(false)
 			set_physics_process(false)
 
+func holding_point():
+	return get_node("Handle/Point").global_position
+
 func player_interaction():
 	if(one_shot and other_direction):
 		return
