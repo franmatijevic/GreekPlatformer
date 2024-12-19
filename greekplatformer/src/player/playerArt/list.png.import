@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yh23wmh71n7l"
-path="res://.godot/imported/stopalo.png-9c27e86561d4736caf87e346d02c8507.ctex"
+uid="uid://bp73i42k32220"
+path="res://.godot/imported/list.png-0e9c5321242eb6146169694a3a75176f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/player/playerArt/stopalo.png"
-dest_files=["res://.godot/imported/stopalo.png-9c27e86561d4736caf87e346d02c8507.ctex"]
+source_file="res://src/player/playerArt/list.png"
+dest_files=["res://.godot/imported/list.png-0e9c5321242eb6146169694a3a75176f.ctex"]
 
 [params]
 
