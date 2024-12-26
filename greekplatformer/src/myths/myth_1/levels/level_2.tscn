@@ -58,7 +58,7 @@ position = Vector2(16475, -5137)
 follow_viewport_scale = 377.106
 
 [node name="Room" parent="." index="12" instance=ExtResource("8_fo8j4")]
-position = Vector2(24360, -6033)
+position = Vector2(24354, -6037)
 
 [node name="CloudRock" parent="." index="13" instance=ExtResource("9_dcwrc")]
 position = Vector2(26408, -6289)

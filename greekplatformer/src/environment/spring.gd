@@ -10,7 +10,10 @@ var impact_velocity_y
 var total_force:Vector2=Vector2.DOWN
 var kept_force:Vector2=Vector2.DOWN
 
+@onready var animatedSprite = $AnimatedSprite2D
+
 func _ready() -> void:
+	animatedSprite.play("default")
 	total_force = Vector2(sin(rotation), -cos(rotation))*max_force#sin i cos su tako poslozeni jer se uracunava defaultno rotiranje za 90 stupnjeva u smjeru kazaljke na satu
 	total_force.y -= abs(pow(sin(rotation),3)*side_force)
 	#kept_force = Vector2(pow(abs(cos(rotation)),2), abs(sin(rotation))).normalized()
@@ -19,14 +22,17 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if($Timer.time_left>0):
+		animatedSprite.play("default")
 		return
 	
 	if(body is Character):
+		animatedSprite.play("spring_off")
 		#if(body.velocity.y>=0):
 		impact_velocity_y = body.velocity.y
 		print(impact_velocity_y)
 		$Timer.start(charge)
 	elif(body is Throwable):
+		animatedSprite.play("default")
 		#if(body.linear_velocity.y>=0):
 		$Timer.start(charge)
 
