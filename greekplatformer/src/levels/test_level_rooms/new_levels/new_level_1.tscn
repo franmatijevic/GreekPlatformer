@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy1qaohhwkhuh"]
+[gd_scene load_steps=12 format=3 uid="uid://cy1qaohhwkhuh"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_07pw2"]
 [ext_resource type="PackedScene" uid="uid://dpk0rlxpn4h88" path="res://src/player/player.tscn" id="2_bgd0m"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="6_v5pa5"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="7_xc6uf"]
 [ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="8_kev1b"]
+[ext_resource type="PackedScene" uid="uid://b2yiqrecd4v80" path="res://src/levels/test_level_rooms/new_levels/room_2.tscn" id="10_s5e8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dao8x"]
 size = Vector2(369, 25)
@@ -20,7 +21,7 @@ current_room = NodePath("Room1")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_bgd0m")]
-position = Vector2(-1410, -84)
+position = Vector2(-1410, -77)
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="9"]
 position = Vector2(267, 107)
@@ -61,3 +62,6 @@ scale = Vector2(15, 15)
 script = ExtResource("7_xc6uf")
 sceneTextFile = "res://src/dialogue/dialogueLines/three_pressure_plate_help.json"
 speechBubbleScene = ExtResource("8_kev1b")
+
+[node name="Room2" parent="." index="11" instance=ExtResource("10_s5e8r")]
+position = Vector2(16481, -1897)

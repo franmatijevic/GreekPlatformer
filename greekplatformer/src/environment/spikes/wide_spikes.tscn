@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv3vgreahlfwk"]
+[gd_scene load_steps=5 format=3 uid="uid://cv3vgreahlfwk"]
 
 [ext_resource type="Script" path="res://src/environment/spikes/wide_spikes.gd" id="1_fswiu"]
 [ext_resource type="Texture2D" uid="uid://uxekd3n52v40" path="res://src/environment/spikes/spikesArt/WideSpikes.png" id="1_utem0"]
@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3oh"]
 size = Vector2(475, 47)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oms6g"]
+size = Vector2(474, 20)
+
 [node name="WideSpikes" type="Area2D"]
+monitorable = false
 script = ExtResource("1_fswiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,5 +19,13 @@ texture = ExtResource("1_utem0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_mn3oh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_oms6g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

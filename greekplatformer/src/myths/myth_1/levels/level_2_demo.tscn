@@ -20,6 +20,12 @@
 position = Vector2(36, -7)
 current_room = NodePath("Soba1")
 
+[node name="Control" parent="BlackScreen" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" parent="BlackScreen/Control" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
