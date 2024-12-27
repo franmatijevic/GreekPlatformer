@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbn4vcflc2dsc"
-path="res://.godot/imported/planinaPozadina.png-35ab9adf17aa55a7dab5e72c4bd41018.ctex"
+uid="uid://di0nuvqxlc2v3"
+path="res://.godot/imported/olimp100.png-e16d93354734ddd46843b0fbac0e865e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/environmentArt/planinaPozadina.png"
-dest_files=["res://.godot/imported/planinaPozadina.png-35ab9adf17aa55a7dab5e72c4bd41018.ctex"]
+source_file="res://src/environment/environmentArt/background/olimp100.png"
+dest_files=["res://.godot/imported/olimp100.png-e16d93354734ddd46843b0fbac0e865e.ctex"]
 
 [params]
 

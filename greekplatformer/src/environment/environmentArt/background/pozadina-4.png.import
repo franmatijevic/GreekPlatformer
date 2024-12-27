@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckpb2gx5h311f"
-path="res://.godot/imported/olimp.png-25a519a19b061e8d2942e1f3fa27e9a7.ctex"
+uid="uid://cao4ndbib6aha"
+path="res://.godot/imported/pozadina-4.png-d37ad7a031fdf0697fba7bcfc0098c68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/environmentArt/olimp.png"
-dest_files=["res://.godot/imported/olimp.png-25a519a19b061e8d2942e1f3fa27e9a7.ctex"]
+source_file="res://src/environment/environmentArt/background/pozadina-4.png"
+dest_files=["res://.godot/imported/pozadina-4.png-d37ad7a031fdf0697fba7bcfc0098c68.ctex"]
 
 [params]
 
