@@ -452,6 +452,8 @@ speed = 0.065
 
 [node name="SuperSpring3" parent="Objects" index="91" instance=ExtResource("12_h75dy")]
 position = Vector2(-2725, -1981)
+max_force = 1500.0
+side_force = 1200.0
 
 [node name="Path2D7" type="Path2D" parent="Objects" index="92"]
 curve = SubResource("Curve2D_ucemx")
