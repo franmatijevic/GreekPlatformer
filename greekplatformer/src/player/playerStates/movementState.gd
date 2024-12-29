@@ -11,11 +11,11 @@ func update_physics_process(_delta:float):
 	
 	player().direction = Input.get_axis("left", "right")
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("up"):
 		player().jump()
 	elif Input.is_action_just_pressed("alt_jump"):
 		player().jump()
-	elif Input.is_action_just_released("jump"):
+	elif Input.is_action_just_released("up"):
 		player().stop_jump()
 	elif Input.is_action_just_released("alt_jump"):
 		player().stop_jump()

@@ -9,6 +9,7 @@ class_name Bird
 var previous_position: Vector2
  
 func _physics_process(delta):
+	
 	previous_position = pathFollow.global_position
 	
 	pathFollow.progress_ratio += speed * delta

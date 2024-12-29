@@ -100,7 +100,7 @@ dialogueKey = "lvl_2_help_1"
 oneTime = true
 
 [node name="CollisionShape2D" parent="DialogueAreaHelp1" index="0"]
-position = Vector2(29.5, 149)
+position = Vector2(-91, 153)
 shape = SubResource("RectangleShape2D_0fxqs")
 
 [node name="DialoguePlayer" parent="." index="21" instance=ExtResource("17_8gyri")]

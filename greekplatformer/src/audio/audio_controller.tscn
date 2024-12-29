@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwnkdowfgjokx"]
+
+[ext_resource type="Script" path="res://src/audio/audio_controller.gd" id="1_0fobe"]
+[ext_resource type="AudioStream" uid="uid://1plirdl40rdp" path="res://src/audio/breaking_platform.wav" id="1_pmh4l"]
+[ext_resource type="AudioStream" uid="uid://gsm8rvbx60es" path="res://src/audio/cloud.mp3" id="2_wyge1"]
+[ext_resource type="AudioStream" uid="uid://cpr4olcpj753g" path="res://src/audio/death1.wav" id="3_jwsj0"]
+[ext_resource type="AudioStream" uid="uid://drgvpm3utesuf" path="res://src/audio/death2.wav" id="4_ckhvi"]
+[ext_resource type="AudioStream" uid="uid://db0o2xgww3vyv" path="res://src/audio/door_opening.wav" id="5_4fw8j"]
+[ext_resource type="AudioStream" uid="uid://bytd4krfmiveh" path="res://src/audio/lever.wav" id="6_hymg5"]
+[ext_resource type="AudioStream" uid="uid://cb4xqmkqygldp" path="res://src/audio/seagull.ogg" id="7_ud1w5"]
+[ext_resource type="AudioStream" uid="uid://bwva571co7nqf" path="res://src/audio/stone_fall.wav" id="8_8vn21"]
+[ext_resource type="AudioStream" uid="uid://bf03fmgikku3w" path="res://src/audio/walk_ceramic.wav" id="9_85ugp"]
+
+[node name="AudioController" type="Node2D"]
+script = ExtResource("1_0fobe")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="breaking_platform" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("1_pmh4l")
+
+[node name="cloud" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("2_wyge1")
+
+[node name="death1" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("3_jwsj0")
+
+[node name="death2" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_ckhvi")
+
+[node name="door_opening" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_4fw8j")
+
+[node name="lever" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_hymg5")
+
+[node name="seagull" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("7_ud1w5")
+
+[node name="stone_fall" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("8_8vn21")
+
+[node name="walk_ceramic" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("9_85ugp")
+
+[node name="Music" type="Node" parent="."]

@@ -50,6 +50,8 @@ func _physics_process(delta: float) -> void:
 				collision_shape_2d.position = Vector2(14, 25)
 				$ProceduralAnimation.flip(false)
 	
+	if !(is_on_floor() and abs(velocity.x) > 0):
+		AudioController.play_walk_ceramic()
 
 	if coyoteBuffer > 0:
 		coyoteBuffer -= delta
