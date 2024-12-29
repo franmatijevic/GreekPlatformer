@@ -22,6 +22,8 @@ var facing_direction: bool = true  # true is right, false is left
 var holding_object = null
 
 var dead:bool=false
+var impactPoint
+var impactValue
 
 func _ready():
 	for i in get_node("States").get_children():
@@ -32,7 +34,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if direction:
-		if(!is_on_floor() or velocity.x*$"ProceduralAnimation".k>=0):
+		if(!is_on_floor() or (abs(velocity.x)<100)):
 			if direction == -1:
 				facing_direction = false
 				icon.flip_h = true

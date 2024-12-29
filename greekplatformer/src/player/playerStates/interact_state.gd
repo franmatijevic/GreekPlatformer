@@ -22,11 +22,12 @@ func update_physics_process(delta:float):
 		player().holding_object.stop_player_interaction()
 		player().set_state("MoveState")
 	
-	if(player().holding_object and left.global_position==player().holding_object.holding_point() and right.global_position==player().holding_object.holding_point()):
+	if(player().holding_object and (left.global_position.distance_squared_to(player().holding_object.holding_point())<15 or right.global_position.distance_squared_to(player().holding_object.holding_point())<15)):
 		if(!holding):
 			holding=true
 			player().holding_object.player_interaction()
-		
+	
+	if(holding):
 		if(timer>0):
 			timer =  timer - delta
 		else:

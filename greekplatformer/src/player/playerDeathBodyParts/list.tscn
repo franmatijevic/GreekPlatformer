@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://7cuas3omet2h"]
+
+[ext_resource type="Texture2D" uid="uid://bp73i42k32220" path="res://src/player/playerArt/list.png" id="1_1knqd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_08nfj"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj07u"]
+height = 72.0
+
+[node name="List" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_08nfj")
+
+[node name="List" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_1knqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+shape = SubResource("CapsuleShape2D_nj07u")

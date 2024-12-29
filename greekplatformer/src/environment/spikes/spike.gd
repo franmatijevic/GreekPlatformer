@@ -12,6 +12,7 @@ func _ready() -> void:
 	set_physics_process(false)
 
 func _on_body_entered(body: Node2D) -> void:
+	body.impactPoint=global_position
 	body.death()
 
 func _physics_process(delta: float) -> void:

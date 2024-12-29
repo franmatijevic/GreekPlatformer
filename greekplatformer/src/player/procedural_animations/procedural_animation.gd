@@ -32,14 +32,13 @@ var hipSpeed=10
 var hipAngleSpeed=4
 
 
-var direction:bool=true
+var direction:bool=false
 var k=1
 
 
 const feetOffset:float=20
 
 func _ready():
-	
 	
 	for i in get_node("Leg Machine").get_children():
 		legStates[i.name.to_lower()] = i
@@ -63,15 +62,23 @@ func _process(delta: float) -> void:
 	legs_state.update_process(delta)
 	hip_state.update_process(delta)
 
+
 func _physics_process(delta: float) -> void:
 	arms_state.update_physics_process(delta)
 	legs_state.update_physics_process(delta)
 	hip_state.update_physics_process(delta)
 	
+	var body=get_node("CharacterContainer/Bones/Skeleton2D/Hip")
+	bodyPartMovement(body.get_node("RightLeg"), body.get_node("RightLeg/LowerLeg"),rightFoot,k, PI/2)
+	bodyPartMovement(body.get_node("LeftLeg"), body.get_node("LeftLeg/LowerLeg"),leftFoot,k, -PI/2)
 	
-	if(get_parent().velocity.x<0):
+	bodyPartMovement(body.get_node("LeftArm"), body.get_node("LeftArm/UpperArm"),leftArm,-k, 0)
+	bodyPartMovement(body.get_node("RightArm"), body.get_node("RightArm/UpperArm"),rightArm,-k, 0)
+
+	
+	if(!get_parent().facing_direction):
 		k=-1
-	elif(get_parent().velocity.x>0):
+	else:
 		k=1
 	
 	var normal=-get_parent().get_floor_normal()
@@ -121,41 +128,50 @@ func flip(new_dir:bool):
 		if(direction==true):
 			var stack = get_node("CharacterContainer/Bones/Skeleton2D").modification_stack
 			var mod = stack.get_modification(0)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
-			mod = stack.get_modification(1)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
-			mod = stack.get_modification(2)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
-			mod = stack.get_modification(3)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
+			#mod = stack.get_modification(1)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
+			#mod = stack.get_modification(2)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
+			
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
+			#mod = stack.get_modification(3)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(0))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(180))
 			mod = stack.get_modification(4)
 			mod.set_constraint_angle_min(deg_to_rad(155))
 			mod.set_constraint_angle_max(deg_to_rad(210))
+			
+			head.position=Vector2(132,-46)
+			get_node("CharacterContainer/Bones/Skeleton2D/Hip/LeftArm/UpperArm/RemoteTransform2D").rotation=-PI/3-PI/3
+			get_node("CharacterContainer/Bones/Skeleton2D/Hip/RightArm/UpperArm/RemoteTransform2D").rotation=-2*PI/3
+			
 			#mod.set_constraint_angle_invert(false)
 			#head.position.x=-abs(head.position.x)
-			
 		else:
 			var stack = get_node("CharacterContainer/Bones/Skeleton2D").modification_stack
 			var mod = stack.get_modification(0)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
-			mod = stack.get_modification(1)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
-			mod = stack.get_modification(2)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
-			mod = stack.get_modification(3)
-			mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
-			mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
+			#mod = stack.get_modification(1)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
+			#mod = stack.get_modification(2)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
+			##mod = stack.get_modification(3)
+			#mod.set_ccdik_joint_constraint_angle_min(1,deg_to_rad(180))
+			#mod.set_ccdik_joint_constraint_angle_max(1,deg_to_rad(360))
 			mod = stack.get_modification(4)
 			mod.set_constraint_angle_min(deg_to_rad(25))
 			mod.set_constraint_angle_max(deg_to_rad(330))
-			mod.set_constraint_angle_invert(true)
+			head.position=Vector2(132,-46)
+			get_node("CharacterContainer/Bones/Skeleton2D/Hip/LeftArm/UpperArm/RemoteTransform2D").rotation=-PI/3
+			get_node("CharacterContainer/Bones/Skeleton2D/Hip/RightArm/UpperArm/RemoteTransform2D").rotation=-PI/3
+			#mod.set_constraint_angle_invert(true)
 			#head.position.x=abs(head.position.x)
 		
 		
@@ -177,22 +193,28 @@ func flip(new_dir:bool):
 		
 		for i in get_node("CharacterContainer/Body").get_children():
 			i.set_flip_h(!i.is_flipped_h())
+			i.offset.x*=-1
+		
+		var i = get_node("CharacterContainer/Body/DesnoStopalo")
+		i.set_flip_v(!i.is_flipped_v())
+		i.set_flip_h(!i.is_flipped_h())
+		i.offset*=-1
+		i = get_node("CharacterContainer/Body/LijevoStopalo")
+		i.set_flip_v(!i.is_flipped_v())
+		i.set_flip_h(!i.is_flipped_h())
+		i.offset*=-1
 		
 		legSpeed=30
 		armSpeed=30
 		
-		rightArm.position=Vector2(0,80)
-		leftArm.position=Vector2(0,80)
+		if(arms_state and arms_state.name=="Holding"):
+			targetRightArm.global_position=get_parent().get_node("Marker2D").global_position
+			targetLeftArm.global_position=get_parent().get_node("Marker2D").global_position
+			rightArm.global_position=get_parent().get_node("Marker2D").global_position
+			leftArm.global_position=get_parent().get_node("Marker2D").global_position
 		
-		targetLeftArm.position=Vector2(0,100)
-		targetRightArm.position=Vector2(0,100)
 		
-		#set_legs("AboveGround")
-		#leftFoot.position.y=135
-		#rightFoot.position.y=135
-		
-		#leftArm.position.x*=-1
-		#rightArm.position.x*=-1
+		hip.rotation=0
 		
 		leftFoot.position=Vector2(0,135)
 		rightFoot.position=Vector2(0,135)
@@ -200,3 +222,27 @@ func flip(new_dir:bool):
 		targetRightLeg.position=Vector2(0,150)
 		
 		
+		
+		#$CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg.rotation=0
+		#$CharacterContainer/Bones/Skeleton2D/Hip/RightLeg.rotation=0
+		
+		
+
+func bodyPartMovement(upperLimb,lowerLimb,target, k, offset):
+	var upperLimbLen=upperLimb.get_length()
+	var lowerLimbLen=lowerLimb.get_length()
+	var d = upperLimb.global_position.distance_to(target.global_position)
+	d=min(d,upperLimbLen+lowerLimbLen)
+	
+	
+	var alpha = acos((pow(d,2) + pow(upperLimbLen,2)-pow(lowerLimbLen,2))/(2*d*upperLimbLen))
+	
+	var pivot = upperLimb.global_position.angle_to_point(target.global_position)
+	
+	var beta=asin(d/lowerLimbLen * sin(alpha))
+	
+	
+	upperLimb.rotation=pivot - k * alpha - hip.rotation + offset
+	
+	
+	lowerLimb.rotation=beta * k

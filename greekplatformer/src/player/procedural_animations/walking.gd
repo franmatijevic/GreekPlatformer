@@ -1,7 +1,7 @@
 extends State
 
-const r=30#radijus kruznice koja je putanja
-var offset:float=135#po y od centra do stopala
+const r=35#radijus kruznice koja je putanja
+var offset:float=145 + 35  #po y od centra do stopala
 
 var t1=0
 var t2=0
@@ -22,7 +22,7 @@ func enter():
 func update_physics_process(delta:float):
 	
 	player().legSpeed=move_toward(player().legSpeed, legSpeed, 150*delta)
-	
+	#player().legSpeed=10000
 	
 	var k=player().k
 	var normal = source().get_floor_normal()
@@ -39,7 +39,7 @@ func update_physics_process(delta:float):
 	
 	
 	t1=t1-delta*speed*k
-	t2=t2-delta*speed*k
+	t2=t2-delta*speed*k#*0.6
 	player().targetLeftLeg.position=Vector2(r*cos(t1), -r*sin(t1)+offset-r/2.0)+inclineOffset
 	player().targetRightLeg.position=Vector2(r*cos(t2), -r*sin(t2)+offset-r/2.0)+inclineOffset
 

@@ -21,14 +21,25 @@ func update_physics_process(delta:float):
 	
 	player().legSpeed=move_toward(player().legSpeed, legSpeed, 50*delta)
 	
-	t=t+delta*10
+	
+	if(source().facing_direction):
+		player().rightFoot.rotation=move_toward(player().rightFoot.rotation,0, 50*delta)
+	else:
+		player().rightFoot.rotation=move_toward(player().rightFoot.rotation, -PI, 50*delta)
+	player().leftFoot.rotation=player().rightFoot.rotation
+	
+	t=t+delta*20
 	player().targetLeftLeg.position=Vector2(0, -68*sin(t) + 135)
-	player().targetRightLeg.position=Vector2(0, -68*sin(t) + 135)
+	#player().targetRightLeg.position=Vector2(0, -68*sin(t) + 135)
+	
+	player().targetRightLeg.position=Vector2(0, 150)
+	
 	if(t>3/2.0*PI):
 		player().set_legs("IdleState")
 
 func exit():
 	player().targetLeftLeg.position=Vector2(0,150)
+	#player().targetRightLeg.position=Vector2(0, 150)
 	player().targetRightLeg.position=Vector2(0, 150)
 	#var normal = source().get_floor_normal()
 	#if(normal):

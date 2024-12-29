@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var ChapterName:String
 @export var current_room:Area2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
 @onready var dialogue_player: Node2D = $DialoguePlayer
@@ -61,10 +62,18 @@ func restart():
 	
 	$Timer.start(0.1)
 	get_node("Player").set_state("MoveState")
+	get_node("Player").visible=true
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
 func _ready() -> void:
-	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
+	get_node("BlackScreen/Text/Label").text=ChapterName
+	var t = create_tween()
+	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 1, 1)
+	t.tween_interval(0.3)
+	t.set_parallel()
+	t.tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 1)#0.6)
+	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 0, 1.5)#0.6)
+	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	current_room_file = load(current_room.scene_file_path)
 	current_room_position= current_room.global_position

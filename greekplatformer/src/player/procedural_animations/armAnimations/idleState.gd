@@ -1,9 +1,12 @@
 extends State
 
 
-const restPose=Vector2(0,80)
+const restPose=Vector2(0,120)
 
 func enter():
+	if(source().velocity.x!=0):
+		player().set_arms("Moving")
+	
 	player().targetLeftArm.position=restPose
 	player().targetRightArm.position=restPose
 

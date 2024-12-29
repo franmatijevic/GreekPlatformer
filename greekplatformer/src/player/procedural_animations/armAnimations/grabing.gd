@@ -31,12 +31,14 @@ func update_physics_process(delta:float):
 	player().targetRightArm.global_position=target.global_position
 	
 	var speed=player().armSpeed
-	player().armSpeed=move_toward(player().armSpeed, 400, 50*delta)
+	player().armSpeed=move_toward(player().armSpeed, 400, 150*delta)
 	
 	if(abs(target.global_position.y - player().shoulder.global_position.y)>0.6*armLength):
 		player().hip.position.y=move_toward(player().hip.position.y,70,speed*delta)
 	if(abs(target.global_position.x - player().shoulder.global_position.x)>armLength):
-		player().hip.rotation=move_toward(player().hip.rotation, PI/2*0.8  ,1.8*delta)
+		player().hip.rotation=move_toward(player().hip.rotation, PI/2*0.8*player().k  ,3*delta)
+		#player().get_node("CharacterContainer/Bones/Skeleton2D/Hip/RightLeg").rotation=k*player().hip.rotation
+		#player().get_node("CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg").rotation=k*player().hip.rotation
 	
 	
 	#player().leftArm.global_position=player().leftArm.global_position.move_toward(target.global_position, speed*delta)

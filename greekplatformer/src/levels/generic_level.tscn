@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=12 format=3 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Script" path="res://src/levels/generic_level.gd" id="1_qp3oh"]
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/follow_player.gd" id="6_ourqe"]
 [ext_resource type="PackedScene" uid="uid://cv001k4gc8bu8" path="res://src/ui/pause_menu.tscn" id="7_5ljx5"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/room_transition.gd" id="8_qapjt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0tbd"]
+font_size = 60
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_361e8"]
 texture = ExtResource("1_w8uqh")
@@ -56,6 +59,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Text" type="Control" parent="BlackScreen"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -472.0
+offset_top = -20.0
+offset_right = 472.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BlackScreen/Text"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -11.5
+offset_right = 191.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PUNO TEKSTA GDJE NESTO PISE JOS NE ZNAM STA"
+label_settings = SubResource("LabelSettings_d0tbd")
+horizontal_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="BlackScreen/Text"]
+position = Vector2(-184, 72)
+points = PackedVector2Array(0, 0, 1300, 0)
+width = 3.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_xr8xv")

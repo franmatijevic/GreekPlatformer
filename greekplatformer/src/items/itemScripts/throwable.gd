@@ -12,9 +12,10 @@ var player = null#get_node("../Player")
 @export var offset:Vector2=Vector2.ZERO#kako ce player drzati predmet u rukama
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if pickedUp:
-		self.global_position = player.get_node("ProceduralAnimation").holdingObjectPoint.global_position + offset
+		global_position = global_position.move_toward(player.get_node("ProceduralAnimation").holdingObjectPoint.global_position + offset, delta*99999)
+
 
 func be_picked_up(charact:Character):
 	pickedUp = true

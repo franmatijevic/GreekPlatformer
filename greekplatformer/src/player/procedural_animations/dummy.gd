@@ -12,8 +12,11 @@ func update_physics_process(_delta:float):
 	var distance=hip-player().hip.position.y
 	
 	
-	player().targetLeftLeg.position.y = legLength+distance
-	player().targetRightLeg.position.y = legLength+distance
+	player().targetLeftLeg.position.y = legLength+distance+10
+	player().targetRightLeg.position.y = legLength+distance+10
 	#player().leftFoot.position.y = legLength+distance
 	#player().rightFoot.position.y = legLength+distance
-	
+
+func exit():
+	var t=create_tween()
+	t.tween_property(player().hip, "rotation", 0, 0.5)

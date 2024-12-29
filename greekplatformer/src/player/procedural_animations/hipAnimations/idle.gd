@@ -7,9 +7,9 @@ const maxHeight=45
 const minHeight=45+15
 
 const angleSpeed=0.5
-const heigthSpeed=20
+const heigthSpeed=50
 
-var k=0
+#var k=0
 var t=0
 
 var angleTarget
@@ -27,6 +27,8 @@ func update_physics_process(delta:float):
 	
 	player().hip.rotation=move_toward(player().hip.rotation, angleTarget, angleSpeed*delta)
 	player().hip.position.y=move_toward(player().hip.position.y, maxHeight, heigthSpeed*delta)
+	
+	#player().hip.position.y=move_toward(player().hip.position.y, maxHeight+3 +3*sin(PI-t), 20*delta)
 	
 	#player().targetLeftLeg.position.y=move_toward(player().targetLeftLeg.position.y, 120, heigthSpeed*delta)
 	#player().targetRightLeg.position.y=move_toward(player().targetRightLeg.position.y, 120, heigthSpeed*delta)

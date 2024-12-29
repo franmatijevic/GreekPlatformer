@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy47xdciin3c"]
+[gd_scene load_steps=15 format=3 uid="uid://cy47xdciin3c"]
 
 [ext_resource type="PackedScene" uid="uid://dv3qd8ajp8ck" path="res://src/player/player_animation.tscn" id="1_60jgh"]
 [ext_resource type="Script" path="res://src/player/procedural_animations/procedural_animation.gd" id="2_ereob"]
 [ext_resource type="Script" path="res://src/player/procedural_animations/idle.gd" id="3_5fk1u"]
-[ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="3_gjvc0"]
 [ext_resource type="Script" path="res://src/player/procedural_animations/walking.gd" id="4_fm0s2"]
 [ext_resource type="Script" path="res://src/player/procedural_animations/endWalking.gd" id="6_nbl7x"]
 [ext_resource type="Script" path="res://src/player/procedural_animations/aboveGround.gd" id="9_pjty6"]
@@ -21,117 +20,6 @@ script = ExtResource("2_ereob")
 legs_state = NodePath("Leg Machine/IdleState")
 arms_state = NodePath("Arm Machine/IdleState")
 hip_state = NodePath("Hip Machine/Idle")
-
-[node name="LeftArm" parent="CharacterContainer/Body" index="0"]
-rotation = 1.46014
-scale = Vector2(0.141, 0.383)
-
-[node name="LeftForearm" parent="CharacterContainer/Body" index="1"]
-position = Vector2(-54.7431, -21.3619)
-rotation = 1.46014
-scale = Vector2(0.140999, 0.382997)
-
-[node name="LeftFist" parent="CharacterContainer/Body" index="2"]
-position = Vector2(-101.455, -16.1716)
-rotation = 1.46014
-scale = Vector2(0.199998, 0.199998)
-
-[node name="LeftLeg" parent="CharacterContainer/Body" index="3"]
-scale = Vector2(0.140999, 0.382998)
-
-[node name="LeftLowerLeg" parent="CharacterContainer/Body" index="4"]
-position = Vector2(-3.58809, 88.8673)
-scale = Vector2(0.140998, 0.382995)
-
-[node name="LeftFoot" parent="CharacterContainer/Body" index="5"]
-position = Vector2(-0.0210221, 134.73)
-scale = Vector2(0.3, 0.0999998)
-
-[node name="Head" parent="CharacterContainer/Body" index="7"]
-scale = Vector2(0.399999, 0.399999)
-
-[node name="RIghtFoot" parent="CharacterContainer/Body" index="8"]
-position = Vector2(-0.0973208, 134.735)
-scale = Vector2(0.299998, 0.0999993)
-
-[node name="RightLowerLeg" parent="CharacterContainer/Body" index="9"]
-position = Vector2(-3.62534, 88.8705)
-rotation = -0.0767718
-scale = Vector2(0.140999, 0.382997)
-
-[node name="RightLeg" parent="CharacterContainer/Body" index="10"]
-rotation = -0.0767718
-scale = Vector2(0.140999, 0.382997)
-
-[node name="RightArm" parent="CharacterContainer/Body" index="11"]
-scale = Vector2(0.141, 0.383)
-
-[node name="RightForearm" parent="CharacterContainer/Body" index="12"]
-position = Vector2(28.9914, -25.0737)
-scale = Vector2(0.141, 0.383)
-
-[node name="RightFist" parent="CharacterContainer/Body" index="13"]
-position = Vector2(75.98, -24.0372)
-scale = Vector2(0.2, 0.2)
-
-[node name="RightLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="1"]
-rotation = -0.0767718
-scale = Vector2(0.999993, 0.999993)
-
-[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg" index="1"]
-position = Vector2(4.76837e-06, 44.0004)
-
-[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg" index="1"]
-position = Vector2(3.8147e-06, 46.0001)
-rotation = -0.0722518
-
-[node name="LeftLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="2"]
-rotation = -0.0776217
-scale = Vector2(0.999996, 0.999996)
-
-[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg" index="1"]
-position = Vector2(-1.90735e-06, 44)
-scale = Vector2(0.999996, 0.999996)
-
-[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg/LowerLeg" index="1"]
-position = Vector2(-7.62939e-06, 46.0015)
-rotation = -2.34691e-06
-scale = Vector2(1.00001, 1.00001)
-
-[node name="RightArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="3"]
-rotation = -1.54874
-scale = Vector2(1, 1)
-
-[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightArm" index="1"]
-position = Vector2(-1.71661e-05, 42.0004)
-
-[node name="LeftArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="4"]
-rotation = 1.46014
-
-[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftArm" index="1"]
-position = Vector2(1.90735e-05, 42)
-scale = Vector2(0.999991, 0.999991)
-
-[node name="Head" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="5"]
-scale = Vector2(0.999997, 0.999997)
-
-[node name="LeftArm" parent="IK Targets" index="0"]
-position = Vector2(-139, -12)
-
-[node name="Icon" type="Sprite2D" parent="IK Targets/LeftFoot" index="0"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_gjvc0")
-
-[node name="Icon" type="Sprite2D" parent="IK Targets/RightFoot" index="0"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_gjvc0")
-
-[node name="Head" parent="IK Targets" index="4"]
-position = Vector2(132, -46)
-
-[node name="Icon" type="Sprite2D" parent="IK Targets/Head" index="0"]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_gjvc0")
 
 [node name="StepTargets" type="Node2D" parent="." index="2"]
 
@@ -188,3 +76,106 @@ script = ExtResource("12_f1kjs")
 
 [node name="Dummy" type="Node" parent="Hip Machine" index="2"]
 script = ExtResource("15_kdl43")
+
+[node name="LijevaNadlaktica" parent="CharacterContainer/Body" index="0"]
+rotation = 1.40024
+scale = Vector2(0.02, 0.02)
+
+[node name="LijevaPodlaktica" parent="CharacterContainer/Body" index="1"]
+position = Vector2(-43.3655, 7.64095)
+rotation = 1.92384
+scale = Vector2(0.0500001, 0.0500003)
+
+[node name="LijevoBedro" parent="CharacterContainer/Body" index="2"]
+rotation = 0.0370292
+scale = Vector2(0.0800006, 0.0800006)
+
+[node name="LijeviList" parent="CharacterContainer/Body" index="3"]
+position = Vector2(1.07243, 90.7147)
+rotation = 0.0370292
+scale = Vector2(0.0500003, 0.0500006)
+
+[node name="LijevoStopalo" parent="CharacterContainer/Body" index="4"]
+position = Vector2(-0.890085, 150.054)
+rotation = -0.0264244
+scale = Vector2(0.0350002, 0.0349966)
+
+[node name="Glava" parent="CharacterContainer/Body" index="6"]
+rotation = -0.246774
+scale = Vector2(0.0500001, 0.0500001)
+
+[node name="DesnoBedro" parent="CharacterContainer/Body" index="7"]
+rotation = -2.90488
+scale = Vector2(0.0799995, -0.0799999)
+
+[node name="DesniList" parent="CharacterContainer/Body" index="8"]
+position = Vector2(-13.3914, 88.7253)
+rotation = -2.84827
+scale = Vector2(0.0500008, -0.0500008)
+
+[node name="DesnoStopalo" parent="CharacterContainer/Body" index="9"]
+position = Vector2(-30.7739, 145.486)
+rotation = 0.158145
+scale = Vector2(0.034999, 0.0349993)
+
+[node name="DesnaNadlaktica" parent="CharacterContainer/Body" index="10"]
+rotation = -1.26479
+scale = Vector2(0.0200056, 0.0200018)
+
+[node name="DesnaPodlaktica" parent="CharacterContainer/Body" index="11"]
+position = Vector2(43.9347, 13.5647)
+rotation = -0.741188
+scale = Vector2(0.0450004, 0.0450002)
+
+[node name="RightLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="1"]
+rotation = -2.90488
+scale = Vector2(0.999895, 0.999895)
+
+[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg" index="1"]
+position = Vector2(2.76435, -45.6512)
+rotation = 0.0566063
+scale = Vector2(1.00002, 1.00002)
+
+[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg" index="1"]
+position = Vector2(0.22891, -59.367)
+rotation = 3.00642
+scale = Vector2(0.999941, 0.999941)
+
+[node name="LeftLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="2"]
+rotation = 0.0370292
+scale = Vector2(0.999863, 0.999863)
+
+[node name="LowerLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg" index="1"]
+position = Vector2(2.76446, 45.6499)
+scale = Vector2(0.999963, 0.999963)
+
+[node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg/LowerLeg" index="1"]
+position = Vector2(0.235476, 59.3817)
+rotation = -0.0634537
+scale = Vector2(0.999986, 0.999986)
+
+[node name="RightArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="3"]
+rotation = 0.306012
+scale = Vector2(0.999996, 0.999996)
+
+[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightArm" index="1"]
+position = Vector2(45.0267, 5.17666e-05)
+scale = Vector2(0.999851, 0.999851)
+
+[node name="LeftArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="4"]
+rotation = 2.97104
+scale = Vector2(0.999998, 0.999998)
+
+[node name="UpperArm" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftArm" index="1"]
+position = Vector2(45.0188, -5.73844e-05)
+scale = Vector2(0.999832, 0.999832)
+
+[node name="Head" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="5"]
+rotation = -0.246774
+scale = Vector2(0.999965, 0.999965)
+
+[node name="LeftArm" parent="IK Targets" index="0"]
+position = Vector2(-147, 27)
+
+[node name="Head" parent="IK Targets" index="4"]
+position = Vector2(132, -46)

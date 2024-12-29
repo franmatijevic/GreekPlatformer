@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dagl3fyg7hkn0"]
+
+[ext_resource type="Texture2D" uid="uid://dp3nwvljvd8o3" path="res://src/player/playerArt/nadlaktica.png" id="1_icdxa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tggll"]
+bounce = 0.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhyqp"]
+height = 50.0
+
+[node name="Nadlaktica" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_tggll")
+
+[node name="Nadlaktica" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_icdxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yhyqp")

@@ -1,32 +1,21 @@
 extends State
 
-func enter():
-	#player().leftFoot.position=Vector2(0,135)
-	#player().rightFoot.position=Vector2(0,135)
-	player().targetLeftLeg.position=Vector2(0,150)
-	player().targetRightLeg.position=Vector2(0,150)
+const rest=Vector2(0,135)
+
 
 func update_process(delta:float):
 	
+	player().targetLeftLeg.position=rest
+	player().targetRightLeg.position=rest
 	#player().targetLeftLeg.position.y=135 - (45 - player().hip.position.y)
 	
 	player().legSpeed=move_toward(player().legSpeed, 40, 5*delta)
 	
-	#player().targetLeftLeg.global_position.x=holdLeft.x
-	#if(source().velocity.x==0 or 1==1):
-	#	player().targetLeftLeg.position.x=holdLeft.x
-		#player().targetRightLeg.position.x=holdRight.x
-	#else:
-	#	holdLeft.x=player().leftFoot.global_position.x
-		#holdRight.x=player().rightFoot.global_position.x
-	
-	#player().targetLeftLeg.global_position.y=holdLeft.y
-	#if(source().velocity.y==0 or 1==1):
-	#	player().targetLeftLeg.global_position.y=holdLeft.y
-	#	player().targetRightLeg.global_position.y=holdRight.y
-	#else:
-	#	holdLeft.y=player().leftFoot.global_position.y
-	#	holdRight.y=player().rightFoot.global_position.y
+	if(source().facing_direction):
+		player().rightFoot.rotation=move_toward(player().rightFoot.rotation,0, 50*delta)
+	else:
+		player().rightFoot.rotation=move_toward(player().rightFoot.rotation, -PI, 50*delta)
+	player().leftFoot.rotation=player().rightFoot.rotation
 	
 	
 	if(source().velocity.x!=0):

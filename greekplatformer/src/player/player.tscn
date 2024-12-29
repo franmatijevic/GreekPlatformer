@@ -21,7 +21,7 @@ size = Vector2(48, 21)
 size = Vector2(83.875, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulvm"]
-size = Vector2(78, 232)
+size = Vector2(125, 232)
 
 [node name="Player" type="CharacterBody2D"]
 process_mode = 1
@@ -96,11 +96,11 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectDialogue"]
-position = Vector2(-23, -18)
+position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_8ulvm")
 
 [node name="ProceduralAnimation" parent="." instance=ExtResource("9_0411t")]
-position = Vector2(-2, -42)
+position = Vector2(0, -70)
 
 [connection signal="body_entered" from="DetectFloor" to="." method="_on_detect_floor_body_entered"]
 [connection signal="body_exited" from="DetectFloor" to="." method="_on_detect_floor_body_exited"]

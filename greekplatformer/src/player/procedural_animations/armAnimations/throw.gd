@@ -6,6 +6,11 @@ var t=0
 
 var speed=400
 
+var throwTime=0.3
+var putHandsBackTime=0.6
+
+const rest=Vector2(0,135)
+
 func enter():
 	t=0
 	
@@ -16,13 +21,17 @@ func enter():
 
 func update_physics_process(delta:float):
 	
+	t=t+delta
+	
 	player().armSpeed=move_toward(player().armSpeed, 700, 99999*delta)
 	
-	player().targetLeftArm.global_position=target.global_position
-	player().targetRightArm.global_position=target.global_position
-	
-	t=t+delta
-	if(t>0.3):
+	if(t<throwTime):
+		player().targetLeftArm.global_position=target.global_position
+		player().targetRightArm.global_position=target.global_position
+	elif(t<putHandsBackTime):
+		player().targetLeftArm.position=rest
+		player().targetRightArm.position=rest
+	else:
 		player().set_arms("IdleState")
 
 func exit():

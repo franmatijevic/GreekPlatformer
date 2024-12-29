@@ -32,7 +32,7 @@ position = Vector2(8, 8)
 position = Vector2(0, 24)
 
 [node name="PlatePlatform2" parent="Objects" index="1" instance=ExtResource("2_v10fn")]
-position = Vector2(464, -24)
+position = Vector2(464, 24)
 
 [node name="DeathPit" parent="Objects" index="2" instance=ExtResource("3_ciho7")]
 position = Vector2(-64, 672)

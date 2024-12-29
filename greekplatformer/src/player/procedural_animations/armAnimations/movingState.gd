@@ -6,8 +6,8 @@ var targetRight:Vector2
 #var speed=200
 
 func enter():
-	player().targetLeftArm.position.y=60
-	player().targetRightArm.position.y=60
+	player().targetLeftArm.position.y=120
+	player().targetRightArm.position.y=120
 
 func update_physics_process(delta:float):
 	
@@ -18,8 +18,8 @@ func update_physics_process(delta:float):
 		player().set_arms("IdleState")
 	
 	
-	player().targetLeftArm.position.x=player().rightFoot.position.x
-	player().targetRightArm.position.x=player().leftFoot.position.x
+	player().targetLeftArm.position.x=player().rightFoot.position.x/2
+	player().targetRightArm.position.x=player().leftFoot.position.x/2
 	
 	#player().leftArm.position.y #ovisi o player().rightFoot.position.x
 	

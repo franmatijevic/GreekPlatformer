@@ -1,6 +1,6 @@
 extends State
 
-var offset:float=100
+var offset:float=120
 
 var t:float=0
 
@@ -15,17 +15,17 @@ func update_physics_process(delta:float):
 	
 	player().legSpeed=move_toward(player().legSpeed, legSpeed, 150*delta)
 	
-	t=t-delta*10*player().k
+	t=t-delta*1*player().k
 	
 	if(source().facing_direction):
 		player().rightFoot.rotation=move_toward(player().rightFoot.rotation,0, 50*delta)
 	else:
 		player().rightFoot.rotation=move_toward(player().rightFoot.rotation, -PI, 50*delta)
+	player().leftFoot.rotation=player().rightFoot.rotation
 	
-	
-	var r=30
-	player().targetLeftLeg.position=Vector2(r*cos(t), -1.2*r*sin(t)+offset)
-	player().targetRightLeg.position=Vector2(r*cos(t+PI), -1.2*r*sin(t+PI)+offset)
+	var r=20
+	player().targetLeftLeg.position=Vector2(r*cos(1.5*t), -1*r*sin(t)+offset)
+	player().targetRightLeg.position=Vector2(r*cos(1.5*t+PI), -1*r*sin(t+PI)+offset)
 	
 	
 	if(source().is_on_floor()):
