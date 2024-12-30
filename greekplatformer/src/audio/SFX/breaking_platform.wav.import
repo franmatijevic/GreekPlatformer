@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1plirdl40rdp"
-path="res://.godot/imported/breaking_platform.wav-2614db5040cc235015ec3eb070e9575b.sample"
+path="res://.godot/imported/breaking_platform.wav-527d2b317d6fa147b3ac1212cd3b31cc.sample"
 
 [deps]
 
-source_file="res://src/audio/breaking_platform.wav"
-dest_files=["res://.godot/imported/breaking_platform.wav-2614db5040cc235015ec3eb070e9575b.sample"]
+source_file="res://src/audio/SFX/breaking_platform.wav"
+dest_files=["res://.godot/imported/breaking_platform.wav-527d2b317d6fa147b3ac1212cd3b31cc.sample"]
 
 [params]
 

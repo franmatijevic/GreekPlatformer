@@ -5,6 +5,8 @@ class_name Throwable
 var pickedUp:bool = false
 var throwForce:Vector2
 
+var thrownSound = false
+
 @export var picking_up_time:float=0.2
 
 var player = null#get_node("../Player")
@@ -15,7 +17,9 @@ var player = null#get_node("../Player")
 func _physics_process(delta):
 	if pickedUp:
 		global_position = global_position.move_toward(player.get_node("ProceduralAnimation").holdingObjectPoint.global_position + offset, delta*99999)
-
+	if thrownSound == true and self.linear_velocity == Vector2.ZERO:
+		AudioController.play_stone_fall()
+		thrownSound = false
 
 func be_picked_up(charact:Character):
 	pickedUp = true
@@ -24,6 +28,7 @@ func be_picked_up(charact:Character):
 
 func be_thrown(force:Vector2):
 	set_deferred("freeze", false)
+	thrownSound = true
 	#freeze=false
 	pickedUp = false
 	linear_velocity = force

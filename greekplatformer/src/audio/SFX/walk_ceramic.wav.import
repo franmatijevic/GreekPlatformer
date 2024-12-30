@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bf03fmgikku3w"
-path="res://.godot/imported/walk_ceramic.wav-afb0eb198a31535e6374c4f300484b18.sample"
+path="res://.godot/imported/walk_ceramic.wav-a3b6b7b592a25ab080e4211c9476b384.sample"
 
 [deps]
 
-source_file="res://src/audio/walk_ceramic.wav"
-dest_files=["res://.godot/imported/walk_ceramic.wav-afb0eb198a31535e6374c4f300484b18.sample"]
+source_file="res://src/audio/SFX/walk_ceramic.wav"
+dest_files=["res://.godot/imported/walk_ceramic.wav-a3b6b7b592a25ab080e4211c9476b384.sample"]
 
 [params]
 

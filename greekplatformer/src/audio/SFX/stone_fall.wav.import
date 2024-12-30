@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bytd4krfmiveh"
-path="res://.godot/imported/lever.wav-857dae0ff2f1b425e98cdf779c82b790.sample"
+uid="uid://bwva571co7nqf"
+path="res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"
 
 [deps]
 
-source_file="res://src/audio/lever.wav"
-dest_files=["res://.godot/imported/lever.wav-857dae0ff2f1b425e98cdf779c82b790.sample"]
+source_file="res://src/audio/SFX/stone_fall.wav"
+dest_files=["res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"]
 
 [params]
 

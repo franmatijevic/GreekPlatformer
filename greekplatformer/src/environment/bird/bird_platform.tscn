@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbl4ugem5qj5c"]
+[gd_scene load_steps=5 format=3 uid="uid://bbl4ugem5qj5c"]
 
 [ext_resource type="Texture2D" uid="uid://duscl0bybd3lk" path="res://src/environment/platformArt/bird.png" id="1_1hyyh"]
 [ext_resource type="Script" path="res://src/environment/bird/birdPatrol.gd" id="1_ri33u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_de70f"]
 size = Vector2(198.667, 84)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_66ge1"]
 
 [node name="BirdPlatform" type="AnimatableBody2D"]
 collision_layer = 2
@@ -21,3 +23,13 @@ position = Vector2(-0.499995, 27.5)
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_de70f")
 one_way_collision = true
+
+[node name="SeagullSound" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeagullSound"]
+scale = Vector2(40, 40)
+shape = SubResource("CircleShape2D_66ge1")
+
+[connection signal="body_entered" from="SeagullSound" to="." method="_on_seagull_sound_body_entered"]

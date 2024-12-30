@@ -7,7 +7,7 @@ class_name Bird
 @export var speed: float = 0.5
 
 var previous_position: Vector2
- 
+
 func _physics_process(delta):
 	
 	previous_position = pathFollow.global_position
@@ -22,4 +22,6 @@ func _physics_process(delta):
 	else:
 		get_node("BirdSprite").scale.x = abs(get_node("BirdSprite").scale.x)
 
-	
+
+func _on_seagull_sound_body_entered(body):
+	AudioController.play_seagull()

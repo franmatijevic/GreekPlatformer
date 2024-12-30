@@ -42,3 +42,7 @@ func play_stone_fall():
 func play_walk_ceramic():
 	if not mute:
 		$SFX/walk_ceramic.play()
+
+func play_spring():
+	if not mute:
+		$SFX/spring.play()

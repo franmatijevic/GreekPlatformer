@@ -27,6 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if(body is Character):
 		animatedSprite.play("spring_off")
+		AudioController.play_spring()
 		#if(body.velocity.y>=0):
 		impact_velocity_y = body.velocity.y
 		print(impact_velocity_y)

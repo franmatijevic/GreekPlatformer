@@ -19,6 +19,8 @@ func _physics_process(delta: float) -> void:
 			$Handle.rotation_degrees = 45
 			if(!one_shot):
 				other_direction=true
+			AudioController.play_lever()
+			AudioController.play_door_opening()
 			do_action(true)
 			set_physics_process(false)
 	else:
