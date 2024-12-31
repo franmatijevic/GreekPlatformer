@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dco3s4m4j7w1o"]
+[gd_scene load_steps=13 format=3 uid="uid://by1btwtslvdcq"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_eabs3"]
 [ext_resource type="Texture2D" uid="uid://biocakxmyk8r7" path="res://src/ui/mainMenuArt/Background.png" id="2_ao73r"]
@@ -11,140 +11,92 @@
 [ext_resource type="Texture2D" uid="uid://co6gtk84ce2dl" path="res://src/ui/mainMenuArt/Quit button pressed.png" id="8_ows5f"]
 [ext_resource type="Texture2D" uid="uid://c1ln1i52umsur" path="res://src/ui/mainMenuArt/Settings button selected.png" id="8_uukgq"]
 [ext_resource type="Texture2D" uid="uid://buch2t71iisfs" path="res://src/ui/mainMenuArt/Quit button selected.png" id="11_cey1q"]
-[ext_resource type="Texture2D" uid="uid://cvo78k1tmkc6g" path="res://src/ui/mainMenuArt/SettingsBackground.png" id="12_5xdhl"]
-[ext_resource type="Texture2D" uid="uid://c7i4v7yo761x0" path="res://src/ui/mainMenuArt/New Game button.png" id="13_vlwti"]
-[ext_resource type="Texture2D" uid="uid://bvwrknnyv6t7q" path="res://src/ui/mainMenuArt/New Game button pressed.png" id="14_opw2a"]
-[ext_resource type="Texture2D" uid="uid://bucxcck1v1c7c" path="res://src/ui/mainMenuArt/New Game button selected.png" id="15_ds08j"]
-[ext_resource type="Texture2D" uid="uid://bb7ytisx4s8kf" path="res://src/ui/mainMenuArt/Continue button.png" id="16_eev0j"]
-[ext_resource type="Texture2D" uid="uid://b8dxjeha7p5il" path="res://src/ui/mainMenuArt/Continue button pressed.png" id="17_rus5j"]
-[ext_resource type="Texture2D" uid="uid://dym15un4d2lor" path="res://src/ui/mainMenuArt/Continue button selected.png" id="18_b5v58"]
-[ext_resource type="Texture2D" uid="uid://yf0vmy8d2luj" path="res://src/ui/mainMenuArt/Back button.png" id="19_xls57"]
-[ext_resource type="Texture2D" uid="uid://cf1pvixayis77" path="res://src/ui/mainMenuArt/Back button pressed.png" id="20_ikjnj"]
-[ext_resource type="Texture2D" uid="uid://bi5prxkvq3fph" path="res://src/ui/mainMenuArt/Back button selected.png" id="21_qudrh"]
+[ext_resource type="PackedScene" uid="uid://deujd6qlusunl" path="res://src/ui/settings_menu.tscn" id="12_5vbax"]
 
-[node name="mainMenu" type="Node2D"]
-scale = Vector2(1.25, 1.25)
-script = ExtResource("1_eabs3")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="options" type="Control" parent="."]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eabs3")
 
-[node name="main" type="Control" parent="options"]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="MainBackground" type="Sprite2D" parent="options/main"]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_ao73r")
 
-[node name="FlowContainer" type="FlowContainer" parent="options/main"]
-layout_mode = 0
-offset_left = -186.0
-offset_right = 250.0
-offset_bottom = 266.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="HFlowContainer" type="HFlowContainer" parent="options/main/FlowContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Play" type="TextureButton" parent="options/main/FlowContainer/HFlowContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator7" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator8" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_rke07")
 texture_pressed = ExtResource("4_b3wlv")
 texture_hover = ExtResource("5_j014t")
+stretch_mode = 3
 
-[node name="Settings" type="TextureButton" parent="options/main/FlowContainer/HFlowContainer"]
+[node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_8yer6")
 texture_pressed = ExtResource("6_3qgnv")
 texture_hover = ExtResource("8_uukgq")
+stretch_mode = 3
 
-[node name="Quit" type="TextureButton" parent="options/main/FlowContainer/HFlowContainer"]
+[node name="Quit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_r4jp0")
 texture_pressed = ExtResource("8_ows5f")
 texture_hover = ExtResource("11_cey1q")
+stretch_mode = 3
 
-[node name="settings" type="Control" parent="options"]
+[node name="SettingsMenu" parent="." instance=ExtResource("12_5vbax")]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SettingsBackground" type="Sprite2D" parent="options/settings"]
-texture = ExtResource("12_5xdhl")
-
-[node name="FlowContainer" type="FlowContainer" parent="options/settings"]
-layout_mode = 0
-offset_left = -186.0
-offset_right = 170.0
-offset_bottom = 102.0
-
-[node name="HFlowContainer" type="HFlowContainer" parent="options/settings/FlowContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="options/settings/FlowContainer/HFlowContainer"]
-layout_mode = 2
-text = "Tu ce biti volume (music, sfx) i kontrole rebind"
-
-[node name="Back" type="TextureButton" parent="options/settings/FlowContainer/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("19_xls57")
-texture_pressed = ExtResource("20_ikjnj")
-texture_hover = ExtResource("21_qudrh")
-
-[node name="playOptions" type="Control" parent="options"]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="options/playOptions"]
-texture = ExtResource("2_ao73r")
-
-[node name="FlowContainer" type="FlowContainer" parent="options/playOptions"]
-layout_mode = 0
-offset_left = -208.0
-offset_right = 216.0
-offset_bottom = 242.0
-alignment = 1
-
-[node name="HFlowContainer" type="HFlowContainer" parent="options/playOptions/FlowContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="New Game" type="TextureButton" parent="options/playOptions/FlowContainer/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("13_vlwti")
-texture_pressed = ExtResource("14_opw2a")
-texture_hover = ExtResource("15_ds08j")
-
-[node name="Continue" type="TextureButton" parent="options/playOptions/FlowContainer/HFlowContainer"]
-visible = false
-layout_mode = 2
-texture_normal = ExtResource("16_eev0j")
-texture_pressed = ExtResource("17_rus5j")
-texture_hover = ExtResource("18_b5v58")
-
-[node name="Back" type="TextureButton" parent="options/playOptions/FlowContainer/HFlowContainer"]
-layout_mode = 2
-texture_normal = ExtResource("19_xls57")
-texture_pressed = ExtResource("20_ikjnj")
-texture_hover = ExtResource("21_qudrh")
-
-[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="options/main/FlowContainer/HFlowContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="options/settings/FlowContainer/HFlowContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="options/playOptions/FlowContainer/HFlowContainer/Back" to="." method="_on_back_pressed"]
+layout_mode = 1

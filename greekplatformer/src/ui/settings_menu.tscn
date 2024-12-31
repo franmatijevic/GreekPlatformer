@@ -1,0 +1,185 @@
+[gd_scene load_steps=17 format=3 uid="uid://deujd6qlusunl"]
+
+[ext_resource type="Script" path="res://src/ui/settings_menu.gd" id="1_g6cia"]
+[ext_resource type="Texture2D" uid="uid://dl0hmujw2xpgn" path="res://src/ui/mainMenuArt/EmptyBackground.png" id="1_qygnv"]
+
+[sub_resource type="SystemFont" id="SystemFont_e5vxk"]
+font_names = PackedStringArray("Bell MT")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kl01g"]
+font = SubResource("SystemFont_e5vxk")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_la5pq"]
+font_names = PackedStringArray("Bell MT")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w05qq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iphbe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3moh1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2dvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpxc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5e7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e0mc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80us7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7v8ll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkkmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2pgg"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g6cia")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qygnv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -246.0
+offset_right = 108.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="SettingsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_kl01g")
+horizontal_alignment = 1
+
+[node name="Seperator2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Audio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_la5pq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_iphbe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3moh1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_x2dvt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lpxc4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_h5e7e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4e0mc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_80us7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7v8ll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkkmc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k2pgg")
+text = "Audio"
+
+[node name="KeyboardConfig" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_la5pq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_iphbe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3moh1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_x2dvt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lpxc4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_h5e7e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4e0mc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_80us7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7v8ll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkkmc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k2pgg")
+text = "Keyboard Config"
+
+[node name="Seperator5" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator7" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_la5pq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_iphbe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3moh1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_x2dvt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lpxc4")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_h5e7e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4e0mc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_80us7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7v8ll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkkmc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k2pgg")
+text = "Back"

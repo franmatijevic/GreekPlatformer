@@ -1,29 +1,32 @@
-extends Node2D
+extends Control
+
+@onready var play: TextureButton = $MarginContainer/HBoxContainer/VBoxContainer/Play as TextureButton
+@onready var settings: TextureButton = $MarginContainer/HBoxContainer/VBoxContainer/Settings as TextureButton
+@onready var quit: TextureButton = $MarginContainer/HBoxContainer/VBoxContainer/Quit as TextureButton
+@onready var settings_menu: Control = $SettingsMenu
+@onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
+
 
 var new_game = "res://src/myths/myth_1/levels/level_1.tscn"
 
-func open_menu(option_name:String):
-	for i in get_node("options").get_children():
-		i.set_visible(false)
+
+func _ready() -> void:
+	play.button_up.connect(on_play_pressed)
+	settings.button_up.connect(on_settings_pressed)
+	quit.button_up.connect(on_quit_pressed)
+	settings_menu.exit_settings_menu.connect(on_exit_settings_menu)
 	
-	get_node("options").get_node(option_name).set_visible(true)
-	get_node("options").get_node(option_name).visible=true
-
-func _on_continue_pressed() -> void: # continue the saved file
+func on_play_pressed():
 	SceneLoader.load_scene(new_game)
-
-func _on_quit_pressed() -> void:
+	
+func on_settings_pressed():
+	margin_container.visible = false
+	settings_menu.set_process(true)
+	settings_menu.visible = true
+	
+func on_quit_pressed():
 	get_tree().quit()
-
-func _on_play_pressed() -> void:
-	open_menu("playOptions")
-
-func _on_settings_pressed() -> void:
-	open_menu("settings")
-
-func _on_back_pressed() -> void:
-	open_menu("main")
-
-func _on_new_game_pressed() -> void:
-	SceneLoader.load_scene(new_game)
 	
+func on_exit_settings_menu():
+	margin_container.visible = true
+	settings_menu.visible = false
