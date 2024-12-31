@@ -37,6 +37,7 @@ position = Vector2(232, 126)
 
 [node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("3_qnncy")]
 position = Vector2(-136, 48)
+gravity_scale = 1.0
 picking_up_time = null
 
 [node name="Spike" parent="Objects" index="2" instance=ExtResource("4_aojxv")]

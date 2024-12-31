@@ -6,12 +6,13 @@ class_name Player
 @onready var icon: Sprite2D = $Icon
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var collision_shape_2d: CollisionShape2D = $DetectPickup/CollisionShape2D
+@onready var trajectory_line: Line2D = $TrajectoryLine
 
 const jumpBufferTime: float = 0.105
 const coyoteBufferTime: float = 0.105
 const pickUpBufferTime:float =0.105
 
-const throw_force: Vector2 = Vector2(800, -700)
+const throw_force: Vector2 = Vector2(750, -750)
 
 var states: Dictionary = {}
 var coyoteBuffer: float = 0
@@ -24,6 +25,8 @@ var holding_object = null
 var dead:bool=false
 var impactPoint
 var impactValue
+
+const GRAVITY = 980
 
 func _ready():
 	for i in get_node("States").get_children():
@@ -67,10 +70,40 @@ func _physics_process(delta: float) -> void:
 	if current_state:
 		current_state.update_physics_process(delta)
 	super(delta)
+	
 
 func _process(delta: float) -> void:
 	if current_state:
 		current_state.update_process(delta)
+		
+	update_trajectory_with_mouse()
+	
+	if holding_object:
+		flip_player_to_aim()
+
+func flip_player_to_aim():
+	var mouse_pos = get_global_mouse_position()
+	facing_direction = mouse_pos.x > global_position.x
+	icon.flip_h = !facing_direction
+	
+	if facing_direction:
+		marker_2d.position = Vector2(49, -5)
+		collision_shape_2d.position = Vector2(14, 25)
+		$ProceduralAnimation.flip(false)
+	else:
+		marker_2d.position = Vector2(-52, -5)
+		collision_shape_2d.position = Vector2(-63, 25)
+		$ProceduralAnimation.flip(true)
+	
+func update_trajectory_with_mouse():
+	if holding_object == null or current_state.name == "InteractState":
+		trajectory_line.hide()
+		return
+	
+	trajectory_line.show()
+	var mouse_pos = get_global_mouse_position()
+	var direction = (mouse_pos - global_position).normalized()
+	trajectory_line.update_trajectory(direction, throw_force.length(), GRAVITY, get_physics_process_delta_time(), 50)
 
 func pick_up():
 	if holding_object != null:
@@ -97,17 +130,13 @@ func pick_up():
 func throw(throwing_force: Vector2):
 	if holding_object == null:
 		return
-
-	var force: Vector2 = throwing_force
-
-	if !facing_direction:
-		force.x = -force.x
 	
 	get_node("ProceduralAnimation").set_arms("Throw")
 	
+	var force: Vector2 = (get_global_mouse_position() - global_position).normalized() * throwing_force.length()
+	get_node("ProceduralAnimation").set_arms("Throw")
 	holding_object.be_thrown(force)
 	holding_object = null
-	
 	
 
 func pick_or_throw():
