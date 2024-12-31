@@ -23,6 +23,7 @@ stream = ExtResource("1_pmh4l")
 
 [node name="cloud" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("2_wyge1")
+volume_db = 24.0
 
 [node name="death1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_jwsj0")

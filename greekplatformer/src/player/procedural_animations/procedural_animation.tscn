@@ -21,62 +21,6 @@ legs_state = NodePath("Leg Machine/IdleState")
 arms_state = NodePath("Arm Machine/IdleState")
 hip_state = NodePath("Hip Machine/Idle")
 
-[node name="StepTargets" type="Node2D" parent="." index="2"]
-
-[node name="leftFoot" type="Marker2D" parent="StepTargets" index="0"]
-position = Vector2(-2, 135)
-
-[node name="rightFoot" type="Marker2D" parent="StepTargets" index="1"]
-position = Vector2(-2, 135)
-
-[node name="rightArm" type="Marker2D" parent="StepTargets" index="2"]
-
-[node name="leftArm" type="Marker2D" parent="StepTargets" index="3"]
-
-[node name="Leg Machine" type="Node" parent="." index="3"]
-
-[node name="IdleState" type="Node" parent="Leg Machine" index="0"]
-script = ExtResource("3_5fk1u")
-
-[node name="Walking" type="Node" parent="Leg Machine" index="1"]
-script = ExtResource("4_fm0s2")
-
-[node name="EndWalking" type="Node" parent="Leg Machine" index="2" node_paths=PackedStringArray("leftFoot", "rightFoot")]
-script = ExtResource("6_nbl7x")
-leftFoot = NodePath("../../IK Targets/LeftFoot")
-rightFoot = NodePath("../../IK Targets/RightFoot")
-
-[node name="AboveGround" type="Node" parent="Leg Machine" index="3"]
-script = ExtResource("9_pjty6")
-
-[node name="Arm Machine" type="Node" parent="." index="4"]
-
-[node name="IdleState" type="Node" parent="Arm Machine" index="0"]
-script = ExtResource("10_apttu")
-
-[node name="Grab" type="Node" parent="Arm Machine" index="1"]
-script = ExtResource("11_rpokg")
-
-[node name="Holding" type="Node" parent="Arm Machine" index="2"]
-script = ExtResource("12_8h0lv")
-
-[node name="Moving" type="Node" parent="Arm Machine" index="3"]
-script = ExtResource("11_avgt6")
-
-[node name="Throw" type="Node" parent="Arm Machine" index="4"]
-script = ExtResource("12_onpvg")
-
-[node name="Hip Machine" type="Node" parent="." index="5"]
-
-[node name="Idle" type="Node" parent="Hip Machine" index="0"]
-script = ExtResource("11_6l7n4")
-
-[node name="Moving" type="Node" parent="Hip Machine" index="1"]
-script = ExtResource("12_f1kjs")
-
-[node name="Dummy" type="Node" parent="Hip Machine" index="2"]
-script = ExtResource("15_kdl43")
-
 [node name="LijevaNadlaktica" parent="CharacterContainer/Body" index="0"]
 rotation = 1.40024
 scale = Vector2(0.02, 0.02)
@@ -114,7 +58,7 @@ rotation = -2.84827
 scale = Vector2(0.0500008, -0.0500008)
 
 [node name="DesnoStopalo" parent="CharacterContainer/Body" index="9"]
-position = Vector2(-30.7739, 145.486)
+position = Vector2(-30.774, 145.486)
 rotation = 0.158145
 scale = Vector2(0.034999, 0.0349993)
 
@@ -179,3 +123,59 @@ position = Vector2(-147, 27)
 
 [node name="Head" parent="IK Targets" index="4"]
 position = Vector2(132, -46)
+
+[node name="StepTargets" type="Node2D" parent="." index="2"]
+
+[node name="leftFoot" type="Marker2D" parent="StepTargets" index="0"]
+position = Vector2(-2, 135)
+
+[node name="rightFoot" type="Marker2D" parent="StepTargets" index="1"]
+position = Vector2(-2, 135)
+
+[node name="rightArm" type="Marker2D" parent="StepTargets" index="2"]
+
+[node name="leftArm" type="Marker2D" parent="StepTargets" index="3"]
+
+[node name="Leg Machine" type="Node" parent="." index="3"]
+
+[node name="IdleState" type="Node" parent="Leg Machine" index="0"]
+script = ExtResource("3_5fk1u")
+
+[node name="Walking" type="Node" parent="Leg Machine" index="1"]
+script = ExtResource("4_fm0s2")
+
+[node name="EndWalking" type="Node" parent="Leg Machine" index="2" node_paths=PackedStringArray("leftFoot", "rightFoot")]
+script = ExtResource("6_nbl7x")
+leftFoot = NodePath("../../IK Targets/LeftFoot")
+rightFoot = NodePath("../../IK Targets/RightFoot")
+
+[node name="AboveGround" type="Node" parent="Leg Machine" index="3"]
+script = ExtResource("9_pjty6")
+
+[node name="Arm Machine" type="Node" parent="." index="4"]
+
+[node name="IdleState" type="Node" parent="Arm Machine" index="0"]
+script = ExtResource("10_apttu")
+
+[node name="Grab" type="Node" parent="Arm Machine" index="1"]
+script = ExtResource("11_rpokg")
+
+[node name="Holding" type="Node" parent="Arm Machine" index="2"]
+script = ExtResource("12_8h0lv")
+
+[node name="Moving" type="Node" parent="Arm Machine" index="3"]
+script = ExtResource("11_avgt6")
+
+[node name="Throw" type="Node" parent="Arm Machine" index="4"]
+script = ExtResource("12_onpvg")
+
+[node name="Hip Machine" type="Node" parent="." index="5"]
+
+[node name="Idle" type="Node" parent="Hip Machine" index="0"]
+script = ExtResource("11_6l7n4")
+
+[node name="Moving" type="Node" parent="Hip Machine" index="1"]
+script = ExtResource("12_f1kjs")
+
+[node name="Dummy" type="Node" parent="Hip Machine" index="2"]
+script = ExtResource("15_kdl43")

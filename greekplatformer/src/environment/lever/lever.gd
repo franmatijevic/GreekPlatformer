@@ -36,7 +36,6 @@ func holding_point():
 	return get_node("Handle/Point").global_position
 
 func player_interaction():
-	print("jedan")
 	if(one_shot and other_direction):
 		return
 	activating=!other_direction

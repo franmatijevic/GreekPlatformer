@@ -24,8 +24,8 @@ func update_physics_process(delta:float):
 	player().leftFoot.rotation=player().rightFoot.rotation
 	
 	var r=20
-	player().targetLeftLeg.position=Vector2(r*cos(1.5*t), -1*r*sin(t)+offset)
-	player().targetRightLeg.position=Vector2(r*cos(1.5*t+PI), -1*r*sin(t+PI)+offset)
+	player().targetLeftLeg.position=Vector2(0.8*r*cos(1.5*t), -1*r*sin(t)+offset)
+	player().targetRightLeg.position=Vector2(0.8*r*cos(1.5*t+PI), -1*r*sin(t+PI)+offset)
 	
 	
 	if(source().is_on_floor()):

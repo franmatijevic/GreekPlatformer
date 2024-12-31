@@ -221,12 +221,6 @@ func flip(new_dir:bool):
 		targetLeftLeg.position=Vector2(0,150)
 		targetRightLeg.position=Vector2(0,150)
 		
-		
-		
-		#$CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg.rotation=0
-		#$CharacterContainer/Bones/Skeleton2D/Hip/RightLeg.rotation=0
-		
-		
 
 func bodyPartMovement(upperLimb,lowerLimb,target, k, offset):
 	var upperLimbLen=upperLimb.get_length()

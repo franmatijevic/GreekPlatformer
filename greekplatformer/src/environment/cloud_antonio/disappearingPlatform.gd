@@ -9,7 +9,7 @@ var isOnPlatform: bool = false
 var disappear: bool = false
 
 func _on_area_2d_body_entered(body):
-	get_node("Label").text = ":("
+	#get_node("Label").text = ":("
 	
 	if body.name == "Player":
 		if body.is_on_floor():
@@ -18,7 +18,7 @@ func _on_area_2d_body_entered(body):
 			timer.start()
 			
 func _on_area_2d_body_exited(_body):
-	get_node("Label").text=":)"
+	#get_node("Label").text=":)"
 	
 	if collisionShape2d.disabled == false and isOnPlatform == true:
 		isOnPlatform = false
