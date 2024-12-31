@@ -17,6 +17,8 @@ var player = null#get_node("../Player")
 func _physics_process(delta):
 	if pickedUp:
 		global_position = global_position.move_toward(player.get_node("ProceduralAnimation").holdingObjectPoint.global_position + offset, delta*99999)
+	if linear_velocity.y == 0:
+		linear_velocity.x = 0
 	if thrownSound == true and self.linear_velocity == Vector2.ZERO:
 		AudioController.play_stone_fall()
 		thrownSound = false
