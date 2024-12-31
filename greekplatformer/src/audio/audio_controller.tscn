@@ -20,33 +20,43 @@ script = ExtResource("1_0fobe")
 
 [node name="breaking_platform" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("1_pmh4l")
+bus = &"SFX"
 
 [node name="cloud" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("2_wyge1")
 volume_db = 24.0
+bus = &"SFX"
 
 [node name="death1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("3_jwsj0")
+bus = &"SFX"
 
 [node name="death2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("4_ckhvi")
+bus = &"SFX"
 
 [node name="door_opening" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("5_4fw8j")
+bus = &"SFX"
 
 [node name="lever" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("6_hymg5")
+bus = &"SFX"
 
 [node name="seagull" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("7_ud1w5")
+bus = &"SFX"
 
 [node name="spring" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_dxlas")
+bus = &"SFX"
 
 [node name="stone_fall" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_8vn21")
+bus = &"SFX"
 
 [node name="walk_ceramic" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_85ugp")
+bus = &"SFX"
 
 [node name="Music" type="Node" parent="."]

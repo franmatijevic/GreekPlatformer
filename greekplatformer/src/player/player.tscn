@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://cy47xdciin3c" path="res://src/player/procedural_animations/procedural_animation.tscn" id="9_0411t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4g2n"]
-radius = 19.0
+radius = 26.0
 height = 232.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prcv2"]
 size = Vector2(54, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u68a"]
-size = Vector2(83.875, 146)
+size = Vector2(128, 232)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ulvm"]
 size = Vector2(125, 232)
@@ -88,7 +88,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPickup"]
-position = Vector2(5.9375, 17)
+position = Vector2(23, -26)
 shape = SubResource("RectangleShape2D_3u68a")
 
 [node name="DetectDialogue" type="Area2D" parent="."]

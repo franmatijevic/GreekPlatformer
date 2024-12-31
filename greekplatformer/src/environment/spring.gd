@@ -25,15 +25,19 @@ func _on_body_entered(body: Node2D) -> void:
 		animatedSprite.play("default")
 		return
 	
+	animatedSprite.play("spring_off")
+	AudioController.play_spring()
+	
 	if(body is Character):
-		animatedSprite.play("spring_off")
-		AudioController.play_spring()
+		#animatedSprite.play("spring_off")
+		#AudioController.play_spring()
 		#if(body.velocity.y>=0):
 		impact_velocity_y = body.velocity.y
-		print(impact_velocity_y)
+		#print(impact_velocity_y)
 		$Timer.start(charge)
 	elif(body is Throwable):
-		animatedSprite.play("default")
+		##animatedSprite.play("default")
+		
 		#if(body.linear_velocity.y>=0):
 		$Timer.start(charge)
 

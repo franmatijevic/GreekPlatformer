@@ -3,6 +3,7 @@ extends State
 var timer:float=0
 
 func enter():
+	
 	timer = player().holding_object.picking_up_time
 	player().get_node("ProceduralAnimation").set_arms("Grab")
 

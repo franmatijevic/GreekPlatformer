@@ -36,18 +36,18 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	if direction:
+	if direction and !holding_object:
 		if(!is_on_floor() or (abs(velocity.x)<100)):
 			if direction == -1:
 				facing_direction = false
-				icon.flip_h = true
+				#icon.flip_h = true
 				marker_2d.position = Vector2(-52, -5)
 				#marker_2d.position = Vector2(-24, -4)
 				collision_shape_2d.position = Vector2(-63, 25)
 				$ProceduralAnimation.flip(true)
 			elif direction == 1:
 				facing_direction = true
-				icon.flip_h = false
+				#icon.flip_h = false
 				#marker_2d.position = Vector2(18, -4)
 				marker_2d.position = Vector2(49,-5)
 				collision_shape_2d.position = Vector2(14, 25)

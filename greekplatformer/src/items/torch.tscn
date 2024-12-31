@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1sllw7w6efgc"]
+[gd_scene load_steps=21 format=3 uid="uid://b1sllw7w6efgc"]
 
 [ext_resource type="Texture2D" uid="uid://6xrwrfrfeg4r" path="res://src/items/throwableArt/torchSheet.png" id="1_kyqo5"]
 [ext_resource type="Script" path="res://src/items/itemScripts/throwable.gd" id="1_ue1i1"]
+[ext_resource type="AudioStream" uid="uid://bwva571co7nqf" path="res://src/audio/SFX/stone_fall.wav" id="3_xnc15"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu2hc"]
 atlas = ExtResource("1_kyqo5")
@@ -115,7 +116,7 @@ size = Vector2(48, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc6ea"]
 size = Vector2(62, 171)
 
-[node name="Torch" type="RigidBody2D"]
+[node name="Torch" type="RigidBody2D" node_paths=PackedStringArray("sound")]
 collision_layer = 4
 collision_mask = 10
 can_sleep = false
@@ -123,6 +124,7 @@ lock_rotation = true
 script = ExtResource("1_ue1i1")
 picking_up_time = 0.1
 offset = Vector2(0, -58)
+sound = NodePath("StoneFall")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -145,3 +147,7 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 4.5)
 shape = SubResource("RectangleShape2D_sc6ea")
+
+[node name="StoneFall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xnc15")
+bus = &"SFX"

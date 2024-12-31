@@ -25,6 +25,11 @@ func update_physics_process(delta:float):
 	#player().legSpeed=10000
 	
 	var k=player().k
+	
+	var walkDir=-1
+	if(source().velocity.x>0):
+		walkDir=1
+	
 	var normal = source().get_floor_normal()
 	if(normal):
 		var dir=(Vector2(-normal.y, normal.x) * k).angle()
@@ -38,8 +43,8 @@ func update_physics_process(delta:float):
 	
 	
 	
-	t1=t1-delta*speed*k
-	t2=t2-delta*speed*k#*0.6
+	t1=t1-delta*speed*walkDir
+	t2=t2-delta*speed*walkDir#*0.6
 	player().targetLeftLeg.position=Vector2(r*cos(t1), -r*sin(t1)+offset-r/2.0)+inclineOffset
 	player().targetRightLeg.position=Vector2(r*cos(t2), -r*sin(t2)+offset-r/2.0)+inclineOffset
 

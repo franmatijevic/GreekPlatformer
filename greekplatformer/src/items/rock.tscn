@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bajynjcw0ua61"]
+[gd_scene load_steps=6 format=3 uid="uid://bajynjcw0ua61"]
 
 [ext_resource type="Script" path="res://src/items/itemScripts/throwable.gd" id="1_nq7h8"]
 [ext_resource type="Texture2D" uid="uid://coijiwvk01vhu" path="res://src/environment/environmentArt/kamen.png" id="2_if2ul"]
+[ext_resource type="AudioStream" uid="uid://bwva571co7nqf" path="res://src/audio/SFX/stone_fall.wav" id="3_17n7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1n4di"]
 radius = 57.85
@@ -9,7 +10,7 @@ radius = 57.85
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af1kj"]
 size = Vector2(71, 71)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("sound")]
 collision_layer = 4
 collision_mask = 10
 can_sleep = false
@@ -17,6 +18,7 @@ lock_rotation = true
 linear_damp_mode = 1
 script = ExtResource("1_nq7h8")
 picking_up_time = 0.1
+sound = NodePath("StoneFall")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 1.52588e-05)
@@ -37,3 +39,7 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_af1kj")
+
+[node name="StoneFall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_17n7e")
+bus = &"SFX"

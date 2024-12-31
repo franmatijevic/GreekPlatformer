@@ -32,7 +32,8 @@ func _on_timer_timeout():
 	var tween = create_tween()
 	
 	if isOnPlatform == true or (isOnPlatform == false and disappear == true):
-		AudioController.play_cloud()
+		#AudioController.play_cloud()
+		AudioController.positionSound($Sound,1)
 		disappear = false
 		tween.tween_property(self, "modulate:a", 0, 0.4)
 		

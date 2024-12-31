@@ -20,6 +20,17 @@ func play_sound(audio:AudioStreamPlayer, pitchVariance:bool):
 	
 	audio.play()
 
+func positionSound(audio:AudioStreamPlayer2D, pitchVariance:bool):
+	if mute or SFXvolume==0:
+		return
+	
+	if(pitchVariance):
+		var pitch = randf_range(0.95, 1.05)
+		audio.pitch_scale=pitch
+	
+	audio.play(audio.position.x)
+
+
 func update_volume():
 	var sfx_index= AudioServer.get_bus_index("SFX")
 	var value_in_db=SFXvolume

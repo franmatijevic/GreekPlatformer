@@ -12,15 +12,18 @@ func enter():
 func update_physics_process(delta:float):
 	
 	var speed=player().armSpeed
-	player().armSpeed=move_toward(player().armSpeed, 500, 100*delta)
+	player().armSpeed=move_toward(player().armSpeed, 900, 500*delta)
 	
 	if(source().velocity.x==0):
 		player().set_arms("IdleState")
 	
 	
-	player().targetLeftArm.position.x=player().rightFoot.position.x/2
-	player().targetRightArm.position.x=player().leftFoot.position.x/2
+	player().targetLeftArm.position.x=player().rightFoot.position.x*0.6
+	player().targetRightArm.position.x=player().leftFoot.position.x*0.6
 	
+	#if abs(player().leftArm.position.x-player().rightFoot.position.x)>12:
+	#	player().targetLeftArm.position.x=player().rightFoot.position.x/2
+	#	player().targetRightArm.position.x=player().leftFoot.position.x/2
 	#player().leftArm.position.y #ovisi o player().rightFoot.position.x
 	
 	

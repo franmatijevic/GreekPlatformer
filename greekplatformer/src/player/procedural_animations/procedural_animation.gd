@@ -39,6 +39,15 @@ var k=1
 const feetOffset:float=20
 
 func _ready():
+	leftFoot.position=Vector2(0,135)
+	rightFoot.position=Vector2(0,135)
+	targetLeftLeg.position=Vector2(0,150)
+	targetRightLeg.position=Vector2(0,150)
+	
+	targetLeftLeg.position=Vector2(0,135)
+	targetRightLeg.position=Vector2(0,135)
+	targetLeftArm.position=Vector2(0,135)
+	targetRightArm.position=Vector2(0,135)
 	
 	for i in get_node("Leg Machine").get_children():
 		legStates[i.name.to_lower()] = i
