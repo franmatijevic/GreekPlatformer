@@ -1,13 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://deujd6qlusunl"]
+[gd_scene load_steps=19 format=3 uid="uid://deujd6qlusunl"]
 
 [ext_resource type="Script" path="res://src/ui/settings_menu.gd" id="1_g6cia"]
 [ext_resource type="Texture2D" uid="uid://dl0hmujw2xpgn" path="res://src/ui/mainMenuArt/EmptyBackground.png" id="1_qygnv"]
+[ext_resource type="PackedScene" uid="uid://clur1ya81g66" path="res://src/ui/audio_menu.tscn" id="3_5yk0w"]
+[ext_resource type="PackedScene" uid="uid://dq2adov201q6l" path="res://src/ui/keyboard_config_menu.tscn" id="4_rp45s"]
 
-[sub_resource type="SystemFont" id="SystemFont_e5vxk"]
+[sub_resource type="SystemFont" id="SystemFont_5gwa2"]
 font_names = PackedStringArray("Bell MT")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kl01g"]
-font = SubResource("SystemFont_e5vxk")
+font = SubResource("SystemFont_5gwa2")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
@@ -183,3 +186,11 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7v8ll")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkkmc")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k2pgg")
 text = "Back"
+
+[node name="AudioMenu" parent="." instance=ExtResource("3_5yk0w")]
+visible = false
+layout_mode = 1
+
+[node name="KeyboardConfigMenu" parent="." instance=ExtResource("4_rp45s")]
+visible = false
+layout_mode = 1
