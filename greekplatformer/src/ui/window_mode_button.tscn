@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbmvdmjbxdkwo"]
+[gd_scene load_steps=4 format=3 uid="uid://c0787t0twfbn4"]
 
-[ext_resource type="Script" path="res://src/ui/key_rebind_button.gd" id="1_xrx1c"]
+[ext_resource type="Script" path="res://src/ui/window_mode_button.gd" id="1_srcto"]
 
-[sub_resource type="SystemFont" id="SystemFont_fmya8"]
+[sub_resource type="SystemFont" id="SystemFont_58kx3"]
 font_names = PackedStringArray("Bell MT")
 subpixel_positioning = 0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wdke4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkdpg"]
 
-[node name="KeyRebindButton" type="Control" groups=["hotkey_button"]]
+[node name="WindowModeButton" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xrx1c")
+script = ExtResource("1_srcto")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -36,20 +36,17 @@ alignment = 1
 custom_minimum_size = Vector2(300, 35)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_fmya8")
+theme_override_fonts/font = SubResource("SystemFont_58kx3")
 theme_override_font_sizes/font_size = 35
-text = "ACTION"
+text = "Window Mode"
 vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 400
-theme_override_styles/separator = SubResource("StyleBoxEmpty_wdke4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkdpg")
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 22
-text = "ACTION_KEY"

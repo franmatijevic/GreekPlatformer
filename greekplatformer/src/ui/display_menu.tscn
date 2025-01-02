@@ -1,0 +1,107 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwmhmtaxpgvnj"]
+
+[ext_resource type="Script" path="res://src/ui/display_menu.gd" id="1_60l3l"]
+[ext_resource type="PackedScene" uid="uid://c0787t0twfbn4" path="res://src/ui/window_mode_button.tscn" id="2_78xbk"]
+
+[sub_resource type="SystemFont" id="SystemFont_e5vxk"]
+font_names = PackedStringArray("Bell MT")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ke721"]
+font = SubResource("SystemFont_e5vxk")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_lyuhc"]
+font_names = PackedStringArray("Bell MT")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pa6hb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwlrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbx6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ktbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8bxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aqdv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j8q0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rds1a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k20yk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2175j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqg3v"]
+
+[node name="DisplayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60l3l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.5
+offset_top = -349.0
+offset_right = 531.5
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="DisplayLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "DISPLAY"
+label_settings = SubResource("LabelSettings_ke721")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="WindowModeButton" parent="VBoxContainer/VBoxContainer" instance=ExtResource("2_78xbk")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_lyuhc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pa6hb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_jwlrx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kbx6v")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0ktbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q8bxw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_aqdv1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1j8q0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rds1a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_k20yk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2175j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yqg3v")
+text = "Back"

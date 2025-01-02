@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://src/ui/keyboard_config_menu.gd" id="1_e34s4"]
 [ext_resource type="PackedScene" uid="uid://dbmvdmjbxdkwo" path="res://src/ui/key_rebind_button.tscn" id="2_p0xtp"]
 
-[sub_resource type="SystemFont" id="SystemFont_e5vxk"]
+[sub_resource type="SystemFont" id="SystemFont_bwfe4"]
 font_names = PackedStringArray("Bell MT")
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_c652d"]
-font = SubResource("SystemFont_e5vxk")
+font = SubResource("SystemFont_bwfe4")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 

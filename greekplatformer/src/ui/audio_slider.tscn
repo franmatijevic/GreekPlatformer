@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://yha41b0sg7pv"]
+
+[ext_resource type="Script" path="res://src/ui/audio_slider.gd" id="1_sxhul"]
+
+[sub_resource type="SystemFont" id="SystemFont_yukok"]
+font_names = PackedStringArray("Bell MT")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfstn"]
+
+[node name="AudioSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sxhul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -20.0
+offset_right = 550.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="AudioBus" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(230, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_yukok")
+theme_override_font_sizes/font_size = 35
+text = "Audio bus"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 130
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nfstn")
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 130
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nfstn")
+
+[node name="AudioValue" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(230, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_yukok")
+theme_override_font_sizes/font_size = 35
+text = "100"
+vertical_alignment = 1
