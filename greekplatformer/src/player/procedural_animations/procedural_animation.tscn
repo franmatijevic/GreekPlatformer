@@ -40,7 +40,7 @@ rotation = 0.0370292
 scale = Vector2(0.0500003, 0.0500006)
 
 [node name="LijevoStopalo" parent="CharacterContainer/Body" index="4"]
-position = Vector2(-0.890085, 150.054)
+position = Vector2(-0.890221, 150.054)
 rotation = -0.0264244
 scale = Vector2(0.0350002, 0.0349966)
 

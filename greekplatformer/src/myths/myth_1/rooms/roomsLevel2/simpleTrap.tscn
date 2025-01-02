@@ -52,6 +52,8 @@ loop = false
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_mls21")]
 scale = Vector2(1, 2)
 speed = 200.0
+shakeWhileActive = true
+shakeAmount = 0.15
 
 [node name="RigidBody2D" parent="Objects" index="4" instance=ExtResource("5_gfusj")]
 position = Vector2(400, -296)
@@ -66,6 +68,8 @@ loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("4_mls21")]
 scale = Vector2(4, 3)
+shakeWhileActive = true
+shakeAmount = 0.15
 
 [node name="PressurePlate2" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_gyerm")]
 position = Vector2(-1864, 0)

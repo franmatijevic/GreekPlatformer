@@ -78,7 +78,7 @@ func _process(delta: float) -> void:
 		
 	update_trajectory_with_mouse()
 	
-	if holding_object:
+	if holding_object and current_state.name!="InteractState":
 		flip_player_to_aim()
 
 func flip_player_to_aim():
@@ -185,8 +185,19 @@ func set_state(state: String):
 	current_state = states[state.to_lower()]
 	current_state.enter()
 
-func _on_detect_floor_body_entered(_body: Node2D) -> void:
+func _on_detect_floor_body_entered(body: Node2D) -> void:
 	jumped = false
+	
+	if(body is TileMapLayer):
+		var percentage=min(velocity.length(),1000)/1000
+		
+		$HitGroundParticles.amount=round(25*percentage)+1
+		$HitGroundParticles.initial_velocity_max=350*percentage
+		
+		if(!$HitGroundParticles.emitting):
+			$HitGroundParticles.emitting=true
+		else:
+			$HitGroundParticles.restart()
 
 func _on_detect_floor_body_exited(_body: Node2D) -> void:
 	coyoteBuffer = coyoteBufferTime

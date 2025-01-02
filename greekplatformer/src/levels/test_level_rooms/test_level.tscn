@@ -48,4 +48,7 @@ position = Vector2(13744, 7664)
 position = Vector2(10544, 9072)
 
 [node name="Train1" parent="." index="14" instance=ExtResource("12_sfk78")]
-position = Vector2(3000, 544)
+position = Vector2(8560, 544)
+
+[node name="Room3" parent="." index="15" instance=ExtResource("11_iqxsf")]
+position = Vector2(3664, 352)

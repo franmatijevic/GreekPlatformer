@@ -92,6 +92,15 @@ func next_level():
 	
 	get_node("Camera").set_state("RoomTransition")
 
+##Camera shake - amount je izmedu 0 do 1, decayValue je brzina nestajanja shakea
+func camShake(amount:float):#dosta kratki shake
+	$Camera.add_trauma(amount)
+
+func longCamShake(amount:float, decayValue:float):#shake s zeljenim trajanjem
+	$Camera.add_long_trauma(amount, decayValue)
+
+func setCamShake(amount:float):#kad se ne zna koliko ce trajati shake, moze se pozivati svaki frame pa kad se prestane pozivat onda stane dosta brzo
+	$Camera.set_trauma(amount)
 
 func _on_room_transition_end_transition() -> void:
 	if prev_room == null:
@@ -101,7 +110,6 @@ func _on_room_transition_end_transition() -> void:
 	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object
 		if(get_node("Player").holding_object != i):
 			i.call_deferred("queue_free")
-
 
 func _on_timer_timeout() -> void:
 	current_room.pause_all_objects(false)
