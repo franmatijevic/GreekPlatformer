@@ -5,6 +5,9 @@ extends Node2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
 @onready var dialogue_player: Node2D = $DialoguePlayer
 
+@onready var pause_menu: Control = $CanvasLayerPause/PauseMenu/Panel/SettingsPauseMenu
+
+
 @warning_ignore("unused_signal")
 signal toggle_paused(paused: bool)
 
@@ -26,11 +29,15 @@ var game_paused: bool = false:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
-		if(get_node("Camera").block==false and !get_node("Player").dead):
+		if(get_node("Camera").block==false and !get_node("Player").dead and !game_paused):
 			restart()
 			game_paused = false
+		elif (game_paused):
+			pass
 	if Input.is_action_just_pressed("pause"):
-		if(get_node("Camera").block==false) and (!dialogue_player or !dialogue_player.inProgress):
+		if (game_paused && pause_menu.visible):
+			pass
+		elif(get_node("Camera").block==false) and (!dialogue_player or !dialogue_player.inProgress):
 			game_paused = !game_paused
 
 func restart():
@@ -79,6 +86,8 @@ func _ready() -> void:
 	current_room_file = load(current_room.scene_file_path)
 	current_room_position= current_room.global_position
 	
+	print(current_room.scene_file_path)
+	
 	current_room.pause_all_objects(false)
 
 func next_level():
@@ -89,6 +98,8 @@ func next_level():
 	current_room_position= current_room.global_position
 	
 	current_room_file = load(current_room.scene_file_path)
+	
+	print(current_room.scene_file_path)
 	
 	get_node("Camera").set_state("RoomTransition")
 

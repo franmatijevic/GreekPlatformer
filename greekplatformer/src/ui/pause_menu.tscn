@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://cv001k4gc8bu8"]
+[gd_scene load_steps=40 format=3 uid="uid://cv001k4gc8bu8"]
 
 [ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="1_wmr8m"]
+[ext_resource type="PackedScene" uid="uid://bwqhyeh2awubc" path="res://src/ui/settings_pause_menu.tscn" id="2_7rt1w"]
 
 [sub_resource type="SystemFont" id="SystemFont_y54tb"]
 font_names = PackedStringArray("Bell MT")
@@ -172,6 +173,26 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dkjbb")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_36x4f")
 text = "Resume"
 
+[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.654232, 0.654232, 0.654232, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_lpgyk")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4j42k")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_f475h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6y60k")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_m71nj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tx6mh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_3qpwx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g87f7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_5uj4m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cvxjm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dkjbb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_36x4f")
+text = "Settings"
+
 [node name="Restart" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -212,6 +233,11 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ch7cf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d7n8j")
 text = "Quit"
 
+[node name="SettingsPauseMenu" parent="Panel" instance=ExtResource("2_7rt1w")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

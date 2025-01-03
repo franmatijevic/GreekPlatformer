@@ -19,6 +19,7 @@ func add_window_mode_items():
 		option_button.add_item(i)
 	
 func on_window_mode_selected(index : int):
+	SignalBus.emit_on_window_mode(index)
 	match index:
 		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)

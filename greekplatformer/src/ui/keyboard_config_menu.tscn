@@ -5,12 +5,12 @@
 
 [sub_resource type="SystemFont" id="SystemFont_bwfe4"]
 font_names = PackedStringArray("Bell MT")
+font_weight = 775
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_c652d"]
 font = SubResource("SystemFont_bwfe4")
 font_size = 50
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6optr"]
 
@@ -18,6 +18,7 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_5vnrn"]
 font_names = PackedStringArray("Bell MT")
+font_weight = 675
 subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_37s1d"]
@@ -139,19 +140,9 @@ layout_mode = 2
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_5vnrn")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_37s1d")

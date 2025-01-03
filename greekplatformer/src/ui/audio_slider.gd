@@ -28,3 +28,11 @@ func get_audio_bus_index():
 func on_value_changed(value : float):
 	AudioServer.set_bus_volume_db(index, linear_to_db(value))
 	set_audio_value_label_text()
+	
+	match index:
+		0:
+			SignalBus.emit_on_master_volume(value)
+		1:
+			SignalBus.emit_on_sfx_volume(value)
+		2:
+			SignalBus.emit_on_music_volume(value)

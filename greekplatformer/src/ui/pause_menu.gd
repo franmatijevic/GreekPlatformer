@@ -2,6 +2,8 @@ extends Control
 
 @onready var generic_level_script = $"../.."
 @onready var canvas_layer_pause: CanvasLayer = $".."
+@onready var settings_pause_menu: Control = $Panel/SettingsPauseMenu
+@onready var v_box_container: VBoxContainer = $Panel/VBoxContainer
 
 func _ready() -> void:
 	generic_level_script.connect("toggle_paused", _on_generic_level_script_toggle_paused)
@@ -23,3 +25,7 @@ func _on_quit_pressed() -> void:
 func _on_restart_pressed() -> void:
 	generic_level_script.restart()
 	generic_level_script.game_paused = false
+
+func _on_settings_pressed() -> void:
+	settings_pause_menu.visible = true
+	v_box_container.visible = false

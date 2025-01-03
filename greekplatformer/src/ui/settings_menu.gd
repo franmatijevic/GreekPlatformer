@@ -10,6 +10,7 @@ extends Control
 
 
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var v_box_container_pause_menu: VBoxContainer = $"../VBoxContainer"
 
 
 signal exit_settings_menu
@@ -25,8 +26,13 @@ func _ready() -> void:
 	set_process(false)
 	
 func on_back_pressed():
-	exit_settings_menu.emit()
-	set_process(false)
+	print(get_parent().get_parent().name)
+	if get_parent().get_parent().name == "PauseMenu":
+		visible = false
+		v_box_container_pause_menu.visible = true
+	else:
+		exit_settings_menu.emit()
+		set_process(false)
 	
 func on_audio_pressed():
 	v_box_container.visible = false

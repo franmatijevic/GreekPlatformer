@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjqap3gkdft8h"]
+
+[ext_resource type="Script" path="res://src/ui/play_menu.gd" id="1_iaptr"]
+[ext_resource type="Texture2D" uid="uid://dl0hmujw2xpgn" path="res://src/ui/mainMenuArt/EmptyBackground.png" id="2_cb24t"]
+[ext_resource type="Texture2D" uid="uid://c7i4v7yo761x0" path="res://src/ui/mainMenuArt/New Game button.png" id="3_psnq4"]
+[ext_resource type="Texture2D" uid="uid://bvwrknnyv6t7q" path="res://src/ui/mainMenuArt/New Game button pressed.png" id="4_noirw"]
+[ext_resource type="Texture2D" uid="uid://bucxcck1v1c7c" path="res://src/ui/mainMenuArt/New Game button selected.png" id="5_ewv77"]
+[ext_resource type="Texture2D" uid="uid://bb7ytisx4s8kf" path="res://src/ui/mainMenuArt/Continue button.png" id="6_lehwc"]
+[ext_resource type="Texture2D" uid="uid://b8dxjeha7p5il" path="res://src/ui/mainMenuArt/Continue button pressed.png" id="7_4kxwu"]
+[ext_resource type="Texture2D" uid="uid://dym15un4d2lor" path="res://src/ui/mainMenuArt/Continue button selected.png" id="8_1umko"]
+[ext_resource type="Texture2D" uid="uid://yf0vmy8d2luj" path="res://src/ui/mainMenuArt/Back button.png" id="9_251ad"]
+[ext_resource type="Texture2D" uid="uid://cf1pvixayis77" path="res://src/ui/mainMenuArt/Back button pressed.png" id="10_xg8ew"]
+[ext_resource type="Texture2D" uid="uid://bi5prxkvq3fph" path="res://src/ui/mainMenuArt/Back button selected.png" id="11_j6ux6"]
+
+[sub_resource type="SystemFont" id="SystemFont_5gwa2"]
+font_names = PackedStringArray("Bell MT")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_08pw5"]
+font = SubResource("SystemFont_5gwa2")
+font_size = 66
+font_color = Color(0, 0, 0, 1)
+
+[node name="PlayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iaptr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cb24t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -262.0
+offset_right = 126.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="PlayLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_08pw5")
+horizontal_alignment = 1
+
+[node name="Seperator2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator8" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator7" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NewGame" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_psnq4")
+texture_pressed = ExtResource("4_noirw")
+texture_hover = ExtResource("5_ewv77")
+stretch_mode = 3
+
+[node name="ContinueGame" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_lehwc")
+texture_pressed = ExtResource("7_4kxwu")
+texture_hover = ExtResource("8_1umko")
+stretch_mode = 3
+
+[node name="Back" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_251ad")
+texture_pressed = ExtResource("10_xg8ew")
+texture_hover = ExtResource("11_j6ux6")
+stretch_mode = 3

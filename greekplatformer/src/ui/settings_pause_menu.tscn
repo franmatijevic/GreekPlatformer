@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwqhyeh2awubc"]
+
+[ext_resource type="PackedScene" uid="uid://deujd6qlusunl" path="res://src/ui/settings_menu.tscn" id="1_eykn5"]
+
+[node name="SettingsPauseMenu" instance=ExtResource("1_eykn5")]
+
+[node name="TextureRect" parent="." index="0"]
+visible = false

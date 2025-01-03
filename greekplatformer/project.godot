@@ -21,6 +21,8 @@ config/icon="res://icon.svg"
 AudioController="*res://src/audio/audio_controller.tscn"
 SceneLoader="*res://src/ui/scene_loader.gd"
 SignalBus="*res://src/singletons/SignalBus.gd"
+SettingsData="*res://src/ui/SettingsData.gd"
+SaveAndLoad="*res://src/SaveAndLoad/SaveAndLoad.gd"
 
 [display]
 

@@ -5,9 +5,7 @@ extends Control
 @onready var quit: TextureButton = $MarginContainer/HBoxContainer/VBoxContainer/Quit as TextureButton
 @onready var settings_menu: Control = $SettingsMenu
 @onready var margin_container: MarginContainer = $MarginContainer as MarginContainer
-
-
-var new_game = "res://src/myths/myth_1/levels/level_1.tscn"
+@onready var play_menu: Control = $PlayMenu
 
 
 func _ready() -> void:
@@ -15,9 +13,12 @@ func _ready() -> void:
 	settings.button_up.connect(on_settings_pressed)
 	quit.button_up.connect(on_quit_pressed)
 	settings_menu.exit_settings_menu.connect(on_exit_settings_menu)
+	play_menu.exit_play_menu.connect(on_exit_play_menu)
 	
 func on_play_pressed():
-	SceneLoader.load_scene(new_game)
+	margin_container.visible = false
+	play_menu.set_process(true)
+	play_menu.visible = true
 	
 func on_settings_pressed():
 	margin_container.visible = false
@@ -30,3 +31,7 @@ func on_quit_pressed():
 func on_exit_settings_menu():
 	margin_container.visible = true
 	settings_menu.visible = false
+	
+func on_exit_play_menu():
+	margin_container.visible = true
+	play_menu.visible = false

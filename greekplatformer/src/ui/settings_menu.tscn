@@ -1,22 +1,23 @@
 [gd_scene load_steps=20 format=3 uid="uid://deujd6qlusunl"]
 
 [ext_resource type="Script" path="res://src/ui/settings_menu.gd" id="1_g6cia"]
-[ext_resource type="Texture2D" uid="uid://dl0hmujw2xpgn" path="res://src/ui/mainMenuArt/EmptyBackground.png" id="1_qygnv"]
+[ext_resource type="Texture2D" uid="uid://cvo78k1tmkc6g" path="res://src/ui/mainMenuArt/SettingsBackground.png" id="2_15nic"]
 [ext_resource type="PackedScene" uid="uid://clur1ya81g66" path="res://src/ui/audio_menu.tscn" id="3_5yk0w"]
 [ext_resource type="PackedScene" uid="uid://dq2adov201q6l" path="res://src/ui/keyboard_config_menu.tscn" id="4_rp45s"]
 [ext_resource type="PackedScene" uid="uid://dwmhmtaxpgvnj" path="res://src/ui/display_menu.tscn" id="5_hlkil"]
 
-[sub_resource type="SystemFont" id="SystemFont_5gwa2"]
+[sub_resource type="SystemFont" id="SystemFont_8gjc7"]
 font_names = PackedStringArray("Bell MT")
+font_weight = 550
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kl01g"]
-font = SubResource("SystemFont_5gwa2")
+font = SubResource("SystemFont_8gjc7")
 font_size = 50
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_la5pq"]
 font_names = PackedStringArray("Bell MT")
+font_weight = 575
 subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w05qq"]
@@ -57,7 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_qygnv")
+texture = ExtResource("2_15nic")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -94,19 +95,9 @@ layout_mode = 2
 
 [node name="Display" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_la5pq")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
@@ -124,19 +115,9 @@ text = "Display"
 
 [node name="Audio" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_la5pq")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
@@ -154,19 +135,9 @@ text = "Audio"
 
 [node name="KeyboardConfig" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_la5pq")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
@@ -193,19 +164,9 @@ layout_mode = 2
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.654902, 0.654902, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_la5pq")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w05qq")
