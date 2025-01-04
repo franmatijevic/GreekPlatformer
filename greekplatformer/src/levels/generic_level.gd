@@ -16,6 +16,7 @@ var current_room_file
 var new_next_level
 var prev_room
 
+var respawnLocation
 var current_room_position
 var holding_object:Throwable=null
 
@@ -58,11 +59,13 @@ func restart():
 	holding_object=null
 	get_node("Player").holding_object=null
 	
-	
+	#respawnLocation
 	current_room.queue_free()
 	current_room = current_room_file.instantiate()
 	add_child(current_room)
 	current_room.global_position = current_room_position
+	
+	current_room.get_node("Respawn").global_position=respawnLocation
 	
 	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
 	get_node("Camera/Camera2D").reset_smoothing()
@@ -85,6 +88,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	current_room_file = load(current_room.scene_file_path)
 	current_room_position= current_room.global_position
+	respawnLocation=current_room.get_node("Respawn").global_position
 	
 	print(current_room.scene_file_path)
 	
@@ -94,6 +98,8 @@ func next_level():
 	prev_room = current_room
 	current_room=new_next_level
 	holding_object=get_node("Player").holding_object
+	
+	respawnLocation=current_room.get_node("Respawn").global_position
 	
 	current_room_position= current_room.global_position
 	

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8fd8l4kaoaqx"]
 
 [ext_resource type="Script" path="res://src/environment/pressurePlate/pressure_plate.gd" id="1_6bx41"]
-[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="2_quip0"]
-[ext_resource type="Texture2D" uid="uid://di0ss16asdj7m" path="res://src/levels/tilesets/trokut.png" id="2_wcmlp"]
+[ext_resource type="Texture2D" uid="uid://o568s1sa326g" path="res://src/levels/tilesets/blackTrokut.png" id="2_31foy"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="3_2rqa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgit7"]
 size = Vector2(108, 7)
@@ -18,19 +18,19 @@ polygon = PackedVector2Array(-96, 0, 96, 0, 64, -32, -64, -32)
 
 [node name="Trokut" type="Sprite2D" parent="."]
 position = Vector2(80, -16)
-scale = Vector2(0.032, 0.032)
-texture = ExtResource("2_wcmlp")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_31foy")
 
 [node name="Trokut2" type="Sprite2D" parent="."]
 position = Vector2(-80, -16)
 rotation = 3.14159
-scale = Vector2(0.032, -0.032)
-texture = ExtResource("2_wcmlp")
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_31foy")
 
 [node name="Pixel1x1" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 scale = Vector2(128, 32)
-texture = ExtResource("2_quip0")
+texture = ExtResource("3_2rqa2")
 
 [node name="Plate" type="AnimatableBody2D" parent="."]
 collision_layer = 2
@@ -44,18 +44,18 @@ polygon = PackedVector2Array(64, 0, -64, 0, -54, -10, 54, -10)
 [node name="Pixel1x2" type="Sprite2D" parent="Plate"]
 position = Vector2(0, -37)
 scale = Vector2(108, 10)
-texture = ExtResource("2_quip0")
+texture = ExtResource("3_2rqa2")
 
 [node name="Trokut3" type="Sprite2D" parent="Plate"]
 position = Vector2(59, -37)
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("2_wcmlp")
+scale = Vector2(0.078, 0.078)
+texture = ExtResource("2_31foy")
 
 [node name="Trokut4" type="Sprite2D" parent="Plate"]
 position = Vector2(-59, -37)
 rotation = 3.14159
-scale = Vector2(0.01, -0.01)
-texture = ExtResource("2_wcmlp")
+scale = Vector2(0.078, -0.078)
+texture = ExtResource("2_31foy")
 
 [node name="detectSomething" type="Area2D" parent="Plate"]
 position = Vector2(0, -24)

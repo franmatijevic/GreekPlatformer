@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxiqo4sifn21q"]
 
 [ext_resource type="Script" path="res://src/environment/blockDoor/block_door.gd" id="1_qaqi8"]
-[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_wy2k2"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="2_nd0m7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nts8c"]
 size = Vector2(128, 128)
@@ -23,7 +23,7 @@ shape = SubResource("RectangleShape2D_nts8c")
 
 [node name="Pixel1x1" type="Sprite2D" parent="."]
 scale = Vector2(128, 128)
-texture = ExtResource("1_wy2k2")
+texture = ExtResource("2_nd0m7")
 
 [node name="DetectHorizontal" type="Area2D" parent="."]
 position = Vector2(64, 0)

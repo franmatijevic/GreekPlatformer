@@ -31,7 +31,10 @@ func do_action(togle:bool):
 	for i in connectedTo:
 		i.action(togle)
 
-func _on_detect_something_body_entered(_body: Node2D) -> void:
+func _on_detect_something_body_entered(body: Node2D) -> void:
+	if body is Throwable:
+		body.linear_velocity.x+=($Plate/detectSomething.global_position.x-body.global_position.x)*2
+	
 	count=count+1
 	if(count==1 and time==-99):
 		do_action(true)

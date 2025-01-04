@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=15 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
@@ -7,10 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/myths/myth_1/rooms/roomsLevel2/simpleTrap.tscn" id="11_iqxsf"]
 [ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/myths/myth_1/rooms/roomsLevel2/cloud_rock.tscn" id="11_wf35p"]
 [ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/myths/myth_1/rooms/roomsLevel2/simple_catch.tscn" id="12_c5cgg"]
+[ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="12_iqmii"]
 [ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/myths/myth_1/rooms/roomsLevel2/train_1.tscn" id="12_sfk78"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="13_odpob"]
+[ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
 [ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="14_4th8v"]
 [ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/myths/myth_1/rooms/roomsLevel2/plate_plat_3.tscn" id="15_ak1qm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
+radius = 240.0
 
 [node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
 ChapterName = "Chapter 0: wow gle tekst"
@@ -20,7 +25,7 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(-2144, 32)
+position = Vector2(840, -400)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
@@ -51,4 +56,13 @@ position = Vector2(10544, 9072)
 position = Vector2(8560, 544)
 
 [node name="Room3" parent="." index="15" instance=ExtResource("11_iqxsf")]
-position = Vector2(3664, 352)
+position = Vector2(3664, 5472)
+
+[node name="LeverTutorial" parent="." index="16" instance=ExtResource("12_iqmii")]
+position = Vector2(1888, 8)
+
+[node name="Checkpoint" parent="." index="17" instance=ExtResource("13_pnq13")]
+position = Vector2(-1856, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
+shape = SubResource("CircleShape2D_a57mi")

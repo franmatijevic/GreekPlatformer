@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcud1xqim688d"]
 
-[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_7xw8t"]
 [ext_resource type="Script" path="res://src/environment/pressurePlate/pressure_plate.gd" id="1_cdaix"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="2_dfpjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40ckk"]
 size = Vector2(128, 32)
@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_40ckk")
 [node name="Pixel1x1" type="Sprite2D" parent="."]
 position = Vector2(0, 21)
 scale = Vector2(128, 32)
-texture = ExtResource("1_7xw8t")
+texture = ExtResource("2_dfpjr")
 
 [node name="Plate" type="AnimatableBody2D" parent="."]
 collision_layer = 2
@@ -34,7 +34,7 @@ sync_to_physics = false
 
 [node name="Pixel1x2" type="Sprite2D" parent="Plate"]
 scale = Vector2(128, 10)
-texture = ExtResource("1_7xw8t")
+texture = ExtResource("2_dfpjr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plate"]
 shape = SubResource("RectangleShape2D_fdj40")
