@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://sn04t8yngnd1"]
+[gd_scene load_steps=4 format=3 uid="uid://sn04t8yngnd1"]
 
 [ext_resource type="Texture2D" uid="uid://26e7u1m3p7m2" path="res://src/mainMechanics/trajectory_line.png" id="1_8028f"]
 [ext_resource type="Script" path="res://src/mainMechanics/trajectory.gd" id="2_kr1wv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aiy6n"]
 
 [node name="TrajectoryLine" type="Line2D"]
 texture_repeat = 2
@@ -12,3 +14,9 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("2_kr1wv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_aiy6n")

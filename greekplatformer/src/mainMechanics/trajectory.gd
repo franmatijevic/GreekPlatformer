@@ -11,6 +11,7 @@ func update_trajectory(dir: Vector2, speed: float, gravity: float, delta: float,
 	var accumulated_distance = 0.0
 	
 	for i in range(max_points):
+		
 		if accumulated_distance >= start_offset:
 			add_point(pos)
 		

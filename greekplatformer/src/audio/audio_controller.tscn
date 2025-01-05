@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwnkdowfgjokx"]
+[gd_scene load_steps=13 format=3 uid="uid://dwnkdowfgjokx"]
 
 [ext_resource type="Script" path="res://src/audio/audio_controller.gd" id="1_0fobe"]
 [ext_resource type="AudioStream" uid="uid://1plirdl40rdp" path="res://src/audio/SFX/breaking_platform.wav" id="1_pmh4l"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bwva571co7nqf" path="res://src/audio/SFX/stone_fall.wav" id="8_8vn21"]
 [ext_resource type="AudioStream" uid="uid://bf03fmgikku3w" path="res://src/audio/SFX/walk_ceramic.wav" id="9_85ugp"]
 [ext_resource type="AudioStream" uid="uid://3me8fscdowf7" path="res://src/audio/SFX/spring.wav" id="9_dxlas"]
+[ext_resource type="AudioStream" uid="uid://d2crn60aarcol" path="res://src/audio/music/amfora master.wav" id="12_metok"]
 
 [node name="AudioController" type="Node2D"]
 process_mode = 1
@@ -60,3 +61,7 @@ stream = ExtResource("9_85ugp")
 bus = &"SFX"
 
 [node name="Music" type="Node" parent="."]
+
+[node name="AmforaMaster" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("12_metok")
+autoplay = true
