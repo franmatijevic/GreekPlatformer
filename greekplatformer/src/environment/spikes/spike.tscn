@@ -10,6 +10,7 @@ radius = 13.0384
 size = Vector2(168, 11)
 
 [node name="Spike" type="Area2D"]
+z_as_relative = false
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_f4iid")

@@ -105,7 +105,7 @@ func next_level():
 	
 	current_room_file = load(current_room.scene_file_path)
 	
-	print(current_room.scene_file_path)
+	#print(current_room.scene_file_path)
 	
 	get_node("Camera").set_state("RoomTransition")
 
@@ -122,10 +122,13 @@ func setCamShake(amount:float):#kad se ne zna koliko ce trajati shake, moze se p
 func _on_room_transition_end_transition() -> void:
 	if prev_room == null:
 		return
+	if prev_room == current_room:
+		return
 	
 	#prev_room.get_node("Objects").queue_free()
 	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object
 		if(get_node("Player").holding_object != i):
+			pass
 			i.call_deferred("queue_free")
 
 func _on_timer_timeout() -> void:

@@ -31,10 +31,10 @@ func positionSound(audio:AudioStreamPlayer2D, pitchVariance:bool):
 	audio.play(audio.position.x)
 
 
-func update_volume():
-	var sfx_index= AudioServer.get_bus_index("SFX")
-	var value_in_db=SFXvolume
-	AudioServer.set_bus_volume_db(sfx_index, value_in_db)
+#func update_volume():
+#	var sfx_index= AudioServer.get_bus_index("SFX")
+#	var value_in_db=SFXvolume
+#	AudioServer.set_bus_volume_db(sfx_index, value_in_db)
 
 func play_breaking_platform():
 	play_sound($SFX/breaking_platform,1)
@@ -55,7 +55,21 @@ func play_lever():
 	play_sound($SFX/lever,0)
 
 func play_seagull():
-	play_sound($SFX/seagull,1)
+	match rng.randi_range(0, 5):
+		0:
+			play_sound($SFX/pidgeon1,1)
+		1:
+			play_sound($SFX/pidgeon2,1)
+		2:
+			play_sound($SFX/pidgeon3,1)
+		3:
+			play_sound($SFX/pidgeon4,1)
+		4:
+			play_sound($SFX/pidgeon5,1)
+		5:
+			play_sound($SFX/pidgeon6,1)
+	
+	#play_sound($SFX/seagull,1)
 
 func play_stone_fall():
 	play_sound($SFX/stone_fall,1)

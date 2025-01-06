@@ -53,6 +53,8 @@ position = Vector2(-10164, -64)
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Parallax2D" type="Parallax2D" parent="Objects"]
+z_index = -100
+z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-10307, 219)
 
@@ -63,6 +65,8 @@ scale = Vector2(0.506356, 0.441611)
 texture = ExtResource("4_2td4q")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Objects"]
+z_index = -100
+z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-9867, -69)
 
@@ -73,6 +77,8 @@ scale = Vector2(0.512972, 0.372875)
 texture = ExtResource("5_8tdyp")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Objects"]
+z_index = -100
+z_as_relative = false
 scale = Vector2(0.506356, 0.441611)
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-10454, -234)
@@ -84,6 +90,8 @@ scale = Vector2(1.02513, 0.999596)
 texture = ExtResource("6_s0cyc")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Objects"]
+z_index = -100
+z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-9787, -101)
 
@@ -98,6 +106,7 @@ position = Vector2(-10164, -64)
 
 [node name="Hram" type="Sprite2D" parent="Background"]
 z_index = -50
+z_as_relative = false
 position = Vector2(6854, 184)
 scale = Vector2(0.634598, 0.670299)
 texture = ExtResource("3_05elr")
