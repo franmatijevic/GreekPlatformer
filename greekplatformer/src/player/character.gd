@@ -13,7 +13,7 @@ class_name Character
 @export var ACCELERATION: float = 40
 @export var DEACCELERATION: float = 70
 
-@export var Max_falling_speed:float=4000
+@export var Max_falling_speed:float=4000	
 
 var currentPlatform: Node2D = null
 

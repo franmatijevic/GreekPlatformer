@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="4_2jc5r"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="5_8aggs"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="6_s7xjg"]
-[ext_resource type="PackedScene" path="res://src/dialogue/speechBubble.tscn" id="7_j8v7e"]
+[ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="7_j8v7e"]
 [ext_resource type="PackedScene" uid="uid://bhouohppiwwlb" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_0.tscn" id="8_0g4v1"]
 [ext_resource type="PackedScene" uid="uid://ce5li6vdurv2g" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_1.tscn" id="8_rq302"]
 [ext_resource type="PackedScene" uid="uid://bj5hnkidodqeq" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_2.tscn" id="9_a1ew1"]

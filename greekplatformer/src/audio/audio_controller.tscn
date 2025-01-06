@@ -20,10 +20,11 @@
 [ext_resource type="AudioStream" uid="uid://p8k3ijrpihd" path="res://src/audio/SFX/pidgeon6.wav" id="17_5kmsi"]
 
 [node name="AudioController" type="Node2D"]
-process_mode = 1
+process_mode = 3
 script = ExtResource("1_0fobe")
 
 [node name="SFX" type="Node" parent="."]
+process_mode = 1
 
 [node name="breaking_platform" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("1_pmh4l")
@@ -91,7 +92,9 @@ stream = ExtResource("17_5kmsi")
 bus = &"SFX"
 
 [node name="Music" type="Node" parent="."]
+process_mode = 3
 
 [node name="AmforaMaster" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("12_metok")
 autoplay = true
+bus = &"Music"
