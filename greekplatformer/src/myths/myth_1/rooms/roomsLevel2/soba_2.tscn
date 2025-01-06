@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_grahm"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="2_syldi"]
+[ext_resource type="PackedScene" uid="uid://cf6jq16e0lfcx" path="res://src/environment/cloud_irma/cloud_type_2.tscn" id="3_3s8nq"]
 [ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="3_euttw"]
-[ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_8e6vu"]
-[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="4_b6o6c"]
+[ext_resource type="PackedScene" path="res://src/environment/death_pit.tscn" id="4_b6o6c"]
 [ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="5_kf0hw"]
 [ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="7_vry84"]
 
@@ -43,14 +43,16 @@ max_force = 1600.0
 position = Vector2(2756, -1475)
 rotation = 1.5708
 
-[node name="cloud_platform" parent="Objects" index="5" instance=ExtResource("4_8e6vu")]
-position = Vector2(1138, -296)
+[node name="cloudType2" parent="Objects" index="5" instance=ExtResource("3_3s8nq")]
+position = Vector2(1244, -298)
+scale = Vector2(0.9, 0.9)
 
-[node name="cloud_platform2" parent="Objects" index="6" instance=ExtResource("4_8e6vu")]
-position = Vector2(1645, -398)
+[node name="cloudType3" parent="Objects" index="6" instance=ExtResource("3_3s8nq")]
+position = Vector2(1716, -439)
+scale = Vector2(0.8, 0.8)
 
-[node name="cloud_platform3" parent="Objects" index="7" instance=ExtResource("4_8e6vu")]
-position = Vector2(2141, -468)
+[node name="cloudType4" parent="Objects" index="7" instance=ExtResource("3_3s8nq")]
+position = Vector2(2175, -558)
 
 [node name="DeathPit" parent="Objects" index="8" instance=ExtResource("4_b6o6c")]
 position = Vector2(781, 413)
