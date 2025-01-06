@@ -5,6 +5,9 @@ signal end_transition
 var time:float
 
 func enter():
+	print("current: "+str(source().current_room.name) + " prev: " + str(source().prev_room.name))
+	
+	
 	time=0.8
 	player().player.process_mode=Node.PROCESS_MODE_DISABLED
 	player().get_parent().current_room.pause_all_objects(true)

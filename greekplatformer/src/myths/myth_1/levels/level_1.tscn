@@ -46,6 +46,8 @@ scale = Vector2(0.848261, 0.848261)
 texture = ExtResource("2_0vc73")
 
 [node name="PlaninaPozadina" type="Sprite2D" parent="." index="5"]
+z_index = -60
+z_as_relative = false
 position = Vector2(6665, -1984)
 scale = Vector2(5.36, 5.36)
 texture = ExtResource("3_stvl2")

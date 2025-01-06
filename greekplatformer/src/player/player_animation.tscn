@@ -134,6 +134,8 @@ modifications/6 = SubResource("SkeletonModification2DLookAt_e6rj7")
 [node name="Body" type="Node2D" parent="CharacterContainer"]
 
 [node name="LijevaNadlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -50
+z_as_relative = false
 position = Vector2(1, 0)
 rotation = -1.5708
 scale = Vector2(0.0200481, 0.0200001)
@@ -141,6 +143,8 @@ texture = ExtResource("1_0xgv3")
 offset = Vector2(13.751, 965.5)
 
 [node name="LijevaPodlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -50
+z_as_relative = false
 position = Vector2(45.985, 0)
 rotation = -1.0472
 scale = Vector2(0.0500077, 0.05)
@@ -148,18 +152,24 @@ texture = ExtResource("2_umdjc")
 offset = Vector2(313.75, 622.357)
 
 [node name="LijevoBedro" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -40
+z_as_relative = false
 position = Vector2(0, 45)
 scale = Vector2(0.0800033, 0.0799996)
 texture = ExtResource("3_af02p")
 offset = Vector2(64.063, 240)
 
 [node name="LijeviList" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -40
+z_as_relative = false
 position = Vector2(2.76419, 90.6433)
 scale = Vector2(0.049994, 0.0500025)
 texture = ExtResource("4_tarrc")
 offset = Vector2(-4.04436, 584.327)
 
 [node name="LijevoStopalo" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -40
+z_as_relative = false
 position = Vector2(3, 150)
 rotation = -0.0266097
 scale = Vector2(0.0350011, 0.0350011)
@@ -167,12 +177,16 @@ texture = ExtResource("5_qax7f")
 offset = Vector2(180.714, 271.428)
 
 [node name="Torso" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -20
+z_as_relative = false
 position = Vector2(0, 45)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("6_0ksaw")
 offset = Vector2(20.5001, -498)
 
 [node name="Glava" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = -10
+z_as_relative = false
 position = Vector2(1, -13)
 rotation = 0.0845438
 scale = Vector2(0.05, 0.05)
@@ -180,18 +194,24 @@ texture = ExtResource("7_qco17")
 offset = Vector2(35.5001, 106)
 
 [node name="DesnoBedro" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = 10
+z_as_relative = false
 position = Vector2(0, 45)
 scale = Vector2(0.0799998, -0.0799983)
 texture = ExtResource("3_af02p")
 offset = Vector2(64.0627, 240)
 
 [node name="DesniList" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = 10
+z_as_relative = false
 position = Vector2(2.764, -0.643002)
 scale = Vector2(0.0500046, -0.050006)
 texture = ExtResource("4_tarrc")
 offset = Vector2(-5, 466.5)
 
 [node name="DesnoStopalo" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = 10
+z_as_relative = false
 position = Vector2(2.99342, -59.9961)
 rotation = 0.852811
 scale = Vector2(0.0349996, 0.034999)
@@ -199,6 +219,8 @@ texture = ExtResource("5_qax7f")
 offset = Vector2(180.714, 271.428)
 
 [node name="DesnaNadlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = 20
+z_as_relative = false
 position = Vector2(1, 0)
 rotation = -1.74237
 scale = Vector2(0.0200105, 0.0200021)
@@ -206,6 +228,8 @@ texture = ExtResource("1_0xgv3")
 offset = Vector2(13.751, 965.5)
 
 [node name="DesnaPodlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
+z_index = 20
+z_as_relative = false
 position = Vector2(45.3259, -7.68022)
 rotation = -1.21877
 scale = Vector2(0.0449988, 0.0450002)

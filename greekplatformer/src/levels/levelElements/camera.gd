@@ -52,6 +52,9 @@ func shake():
 	$Camera2D.offset.y = max_offset.y * amount * randf_range(-1, 1)
 
 func set_state(state: String):
+	if(state.to_lower()==current_state.name.to_lower()):
+		return
+	
 	current_state.exit()
 	current_state = states[state.to_lower()]
 	current_state.enter()

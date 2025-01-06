@@ -103,6 +103,7 @@ shape = SubResource("RectangleShape2D_8ulvm")
 position = Vector2(0, -70)
 
 [node name="HitGroundParticles" type="CPUParticles2D" parent="."]
+z_as_relative = false
 position = Vector2(0, 98)
 emitting = false
 amount = 30

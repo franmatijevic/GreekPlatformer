@@ -6,6 +6,8 @@
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aiy6n"]
 
 [node name="TrajectoryLine" type="Line2D"]
+z_index = 30
+z_as_relative = false
 texture_repeat = 2
 width = 50.0
 texture = ExtResource("1_8028f")
