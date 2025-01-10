@@ -17,6 +17,11 @@ signal on_music_volume(value : float)
 
 signal set_settings_dictionary(settings_dictionary : Dictionary)
 
+signal load_settings_data(settings_dictionary : Dictionary)
+
+func emit_load_settings_data(settings_dictionary : Dictionary):
+	load_settings_data.emit(settings_dictionary)
+
 func emit_set_settings_dictionary(settings_dictionary : Dictionary):
 	set_settings_dictionary.emit(settings_dictionary)
 

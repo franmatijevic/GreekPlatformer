@@ -12,9 +12,19 @@ var index : int = 0
 func _ready() -> void:
 	h_slider.value_changed.connect(on_value_changed)
 	get_audio_bus_index()
+	load_data()
 	set_audio_bus_label_text()
 	h_slider.value = db_to_linear(AudioServer.get_bus_volume_db(index))
 	set_audio_value_label_text()
+	
+func load_data():
+	match bus_name:
+		"Master":
+			on_value_changed(SettingsData.get_master_volume_value())
+		"SFX":
+			on_value_changed(SettingsData.get_sfx_volume_value())
+		"Music":
+			on_value_changed(SettingsData.get_music_volume_value())
 	
 func set_audio_bus_label_text():
 	audio_bus.text = str(bus_name) + " Volume"

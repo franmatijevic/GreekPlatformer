@@ -3,6 +3,7 @@ extends Control
 @onready var label: Label = $HBoxContainer/Label
 @onready var button: Button = $HBoxContainer/Button
 
+
 @export var action_name : String = ""
 
 var is_remapping = false
@@ -11,6 +12,21 @@ func _ready():
 	set_process_unhandled_input(false)
 	set_action_name()
 	set_text_for_key()
+	load_keybindings_from_settings()
+	
+func load_keybindings_from_settings():
+	var keybindings = ConfigFileHandler.load_keybindings()
+	
+	var action_event = keybindings[action_name]
+	
+	if action_event is InputEventKey:
+		var action_keycode = OS.get_keycode_string(action_event.keycode)
+		button.text = "%s" % action_keycode
+	elif action_event is InputEventMouseButton:
+		var action_keycode = OS.get_keycode_string(action_event.button_index)
+		button.text = "%s" % "Mouse Button " + str(action_event.button_index)
+		
+	rebind_action_key_initial(action_event)
 
 func set_action_name():
 	label.text = "Unassigned"
@@ -37,7 +53,7 @@ func set_text_for_key():
 	var action_event = action_events[0]
 	
 	if action_event is InputEventKey:
-		var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
+		var action_keycode = OS.get_keycode_string(action_event.keycode)
 		button.text = "%s" % action_keycode
 	elif action_event is InputEventMouseButton:
 		var action_keycode = OS.get_keycode_string(action_event.button_index)
@@ -73,21 +89,42 @@ func rebind_action_key(event):
 					is_duplicate = true
 					set_text_for_key()
 					break
-	else:
-		action_keycode = OS.get_keycode_string(action_event.physical_keycode)
+	elif action_event is InputEventKey:
+		action_keycode = OS.get_keycode_string(action_event.keycode)
 		if (action_keycode == "Escape"):
 			is_duplicate = true
 			set_text_for_key()
 		else:
 			for i in get_tree().get_nodes_in_group("hotkey_button"):
-					if i.action_name != self.action_name:
-						if (i.button.text == "%s" % action_keycode):
-							is_duplicate = true
-							set_text_for_key()
-							break
+				if i.action_name != self.action_name:
+					if (i.button.text == "%s" % action_keycode):
+						is_duplicate = true
+						set_text_for_key()
+						break
 
 	if not is_duplicate:
 		InputMap.action_erase_events(action_name)
-		InputMap.action_add_event(action_name,event)
+		InputMap.action_add_event(action_name, event)
+
+		ConfigFileHandler.save_keybinding(action_name, event)
+		
 		set_text_for_key()
 		set_action_name()
+		
+
+func rebind_action_key_initial(event):
+	var action_event = event
+	var action_keycode
+	
+	if action_event is InputEventMouseButton:
+		action_keycode = OS.get_keycode_string(action_event.button_index)
+	elif action_event is InputEventKey:
+		action_keycode = OS.get_keycode_string(action_event.keycode)
+		
+	InputMap.action_erase_events(action_name)
+	InputMap.action_add_event(action_name, event)
+
+	ConfigFileHandler.save_keybinding(action_name, event)
+		
+	set_text_for_key()
+	set_action_name()

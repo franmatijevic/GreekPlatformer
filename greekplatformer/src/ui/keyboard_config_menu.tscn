@@ -106,15 +106,15 @@ action_name = "alt_jump"
 
 [node name="KeyRebindButton3" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p0xtp")]
 layout_mode = 2
-action_name = "down"
+action_name = "left"
 
 [node name="KeyRebindButton4" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p0xtp")]
 layout_mode = 2
-action_name = "left"
+action_name = "right"
 
 [node name="KeyRebindButton5" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p0xtp")]
 layout_mode = 2
-action_name = "right"
+action_name = "down"
 
 [node name="KeyRebindButton6" parent="VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p0xtp")]
 layout_mode = 2
