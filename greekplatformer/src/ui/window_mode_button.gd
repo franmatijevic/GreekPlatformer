@@ -16,15 +16,19 @@ func _ready() -> void:
 	load_data()
 	
 func load_data():
-	on_window_mode_selected(SettingsData.get_window_mode_index())
-	option_button.select(SettingsData.get_window_mode_index())
-	
+	var display_settings = ConfigFileHandler.load_display_settings()
+	#on_window_mode_selected(SettingsData.get_window_mode_index())
+	#option_button.select(SettingsData.get_window_mode_index())
+	on_window_mode_selected(display_settings.window_mode)
+	option_button.select(display_settings.window_mode)
+
 func add_window_mode_items():
 	for i in WINDOW_MODE_ARRAY:
 		option_button.add_item(i)
 	
 func on_window_mode_selected(index : int):
-	SignalBus.emit_on_window_mode(index)
+	#SignalBus.emit_on_window_mode(index)
+	ConfigFileHandler.save_display_settings("window_mode", index)
 	match index:
 		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)

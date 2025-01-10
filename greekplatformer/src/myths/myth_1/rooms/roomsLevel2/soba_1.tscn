@@ -67,7 +67,7 @@ position = Vector2(3116, 596)
 position = Vector2(2706, 1109)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
-position = Vector2(370, -307)
+position = Vector2(370, -252)
 shape = SubResource("RectangleShape2D_vsabg")
 
 [node name="Box2" type="Sprite2D" parent="." index="5"]

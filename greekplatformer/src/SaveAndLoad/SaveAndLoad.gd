@@ -1,6 +1,6 @@
 extends Node
 
-const SETTINGS_SAVE : String = "user://SettingsData.json"
+const SETTINGS_SAVE : String = "user://SettingsData1.json"
 
 # Settings
 
