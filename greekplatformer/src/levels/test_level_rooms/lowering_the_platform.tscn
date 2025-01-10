@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=4 uid="uid://c3ptstpycfihj"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_4hnjp"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_y4b83"]
+[ext_resource type="PackedScene" uid="uid://dcud1xqim688d" path="res://src/environment/pressurePlate/pressure_plate_alt.tscn" id="3_inrd4"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="4_qb30r"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="5_l7icg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a1ms"]
+size = Vector2(2432, 1500)
+
+[sub_resource type="Curve2D" id="Curve2D_wt34v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3000)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8qla"]
+size = Vector2(992, 58)
+
+[node name="LoweringThePlatform" instance=ExtResource("1_4hnjp")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD+/wEACAAAAAAAAAD9/wEACAAAAAAAAAD8/wEACAAAAAAAAAD7/wEACAAAAAAAAAD+/wIAAQAAAAAAAFD9/wIABwAAAAAAAAD8/wIABwAAAAAAAAD7/wIABwAAAAAAAAD6/wIABwAAAAAAAAD6/wEACAAAAAAAAAAHAP//CAAAAAAAAAAIAP//CAAAAAAAAAAJAP//CAAAAAAAAAAGAP//AQAAAAAAAGAGAAAABwAAAAAAAAAGAAEABwAAAAAAAAAGAAIABwAAAAAAAAAGAAMABwAAAAAAAAAHAAMABwAAAAAAAAAHAAIABwAAAAAAAAAHAAEABwAAAAAAAAAHAAAABwAAAAAAAAAIAAAABwAAAAAAAAAIAAEABwAAAAAAAAAJAAEABwAAAAAAAAAJAAIABwAAAAAAAAAJAAMABwAAAAAAAAAIAAMABwAAAAAAAAAIAAIABwAAAAAAAAAJAAAABwAAAAAAAAAFAAAACAAAAAAAAAAFAAEAAQAAAAAAADAKAP//CAAAAAAAAAAKAAAABwAAAAAAAAAKAAEABwAAAAAAAAAKAAIABwAAAAAAAAAKAAMABwAAAAAAAAAKAAQABwAAAAAAAAAJAAQABwAAAAAAAAAIAAQABwAAAAAAAAAHAAQABwAAAAAAAAAGAAQABwAAAAAAAAD9/wMABwAAAAAAAAD9/wQABwAAAAAAAAD8/wQABwAAAAAAAAD8/wMABwAAAAAAAAD7/wMABwAAAAAAAAD6/wMABwAAAAAAAAD6/wQABwAAAAAAAAD7/wQABwAAAAAAAAD5/wEACAAAAAAAAAD4/wEACAAAAAAAAAD5/wQABwAAAAAAAAD4/wQABwAAAAAAAAD4/wMABwAAAAAAAAD4/wIABwAAAAAAAAD5/wIABwAAAAAAAAD5/wMABwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(192, -208)
+shape = SubResource("RectangleShape2D_3a1ms")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-336, 8)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="0"]
+position = Vector2(256, -288)
+curve = SubResource("Curve2D_wt34v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_y4b83")]
+position = Vector2(0, 88)
+
+[node name="PressurePlateALT" parent="Objects/Path2D/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_inrd4")]
+connectedTo = [NodePath("../BlockDoor")]
+
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("4_qb30r")]
+position = Vector2(-272, 88)
+
+[node name="DeathPit" parent="Objects" index="2" instance=ExtResource("5_l7icg")]
+position = Vector2(56, 464)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(208, 35)
+shape = SubResource("RectangleShape2D_t8qla")

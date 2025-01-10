@@ -8,6 +8,7 @@ var right
 var holding:bool=false
 
 func enter():
+	player().direction=0
 	holding=false
 	timer = player().holding_object.use_time
 	

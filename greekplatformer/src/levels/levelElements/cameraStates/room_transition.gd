@@ -5,7 +5,7 @@ signal end_transition
 var time:float
 
 func enter():
-	print("current: "+str(source().current_room.name) + " prev: " + str(source().prev_room.name))
+	#print("current: "+str(source().current_room.name) + " prev: " + str(source().prev_room.name))
 	
 	
 	time=0.8

@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=4 uid="uid://dcjccvul36vbj"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_bc5v8"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_lave8"]
+[ext_resource type="PackedScene" uid="uid://dcud1xqim688d" path="res://src/environment/pressurePlate/pressure_plate_alt.tscn" id="3_q27g1"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="4_hmp5l"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="5_q4ct5"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="6_woys2"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="7_b4k4r"]
+[ext_resource type="PackedScene" uid="uid://bp5dpb0ywtqsn" path="res://src/environment/delayer.tscn" id="8_5ayj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfw2i"]
+size = Vector2(2562, 1384)
+
+[sub_resource type="Curve2D" id="Curve2D_wt34v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3000)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpo4"]
+size = Vector2(1304, 130)
+
+[node name="SimpleJuggle" instance=ExtResource("1_bc5v8")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD9/wEACAAAAAAAAAD8/wEACAAAAAAAAAD7/wEACAAAAAAAAAD6/wEACAAAAAAAAAD5/wEACAAAAAAAAAD9/wIAAQAAAAAAAFAGAP//CAAAAAAAAAAHAP//CAAAAAAAAAAIAP//BwAAAAAAAAAJAP//BwAAAAAAAAAKAP//BwAAAAAAAAALAP//CAAAAAAAAAAFAP//CAAAAAAAAAD8/wIABwAAAAAAAAD7/wIABwAAAAAAAAD6/wIABwAAAAAAAAD5/wIABwAAAAAAAAD5/wMABwAAAAAAAAD5/wQABwAAAAAAAAD6/wQABwAAAAAAAAD7/wQABwAAAAAAAAD8/wQABwAAAAAAAAD8/wMABwAAAAAAAAD7/wMABwAAAAAAAAD6/wMABwAAAAAAAAAGAAAABwAAAAAAAAAHAAAABwAAAAAAAAAIAAAABwAAAAAAAAAJAAAABwAAAAAAAAAKAAAABwAAAAAAAAALAAAABwAAAAAAAAAKAAEABwAAAAAAAAALAAEABwAAAAAAAAAJAAEABwAAAAAAAAAIAAEABwAAAAAAAAAHAAEABwAAAAAAAAAHAAIABwAAAAAAAAAHAAMABwAAAAAAAAAIAAMABwAAAAAAAAAJAAMABwAAAAAAAAAKAAMABwAAAAAAAAAKAAIABwAAAAAAAAAJAAIABwAAAAAAAAAIAAIABwAAAAAAAAALAAIABwAAAAAAAAALAAMABwAAAAAAAAAHAAQABwAAAAAAAAAIAAQABwAAAAAAAAAJAAQABwAAAAAAAAAKAAQABwAAAAAAAAALAAQABwAAAAAAAAD9/wUABwAAAAAAAAD+/wUABwAAAAAAAAD//wUABwAAAAAAAAAAAAUABwAAAAAAAAAGAAUABwAAAAAAAAAHAAUABwAAAAAAAAAFAAUABwAAAAAAAAAEAAUABwAAAAAAAAADAAUABwAAAAAAAAACAAUABwAAAAAAAAABAAUABwAAAAAAAAAGAAEAAQAAAAAAADAFAAAAAQAAAAAAADAMAP//CAAAAAAAAAAMAAAABwAAAAAAAAAMAAEABwAAAAAAAAAMAAIABwAAAAAAAAAMAAMABwAAAAAAAAAMAAQABwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(383, -156)
+shape = SubResource("RectangleShape2D_tfw2i")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-632, 40)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="0"]
+position = Vector2(-8, -160)
+curve = SubResource("Curve2D_wt34v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_lave8")]
+position = Vector2(0, 88)
+speed = 30.0
+
+[node name="PressurePlateALT" parent="Objects/Path2D/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_q27g1")]
+connectedTo = [NodePath("../BlockDoor")]
+
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("4_hmp5l")]
+position = Vector2(-408, 48)
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="2"]
+position = Vector2(384, -416)
+curve = SubResource("Curve2D_wt34v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("2_lave8")]
+position = Vector2(0, 88)
+
+[node name="PressurePlateALT" parent="Objects/Path2D2/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_q27g1")]
+connectedTo = [NodePath("../BlockDoor")]
+
+[node name="DeathPit" parent="Objects" index="3" instance=ExtResource("5_q4ct5")]
+position = Vector2(136, 440)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
+position = Vector2(132, 55)
+shape = SubResource("RectangleShape2D_nwpo4")
+
+[node name="PressurePlate" parent="Objects" index="4" node_paths=PackedStringArray("connectedTo") instance=ExtResource("6_woys2")]
+position = Vector2(-408, 128)
+connectedTo = [NodePath("../Spike"), NodePath("../Spike4"), NodePath("../Spike3"), NodePath("../Delayer")]
+
+[node name="Spike" parent="Objects" index="5" instance=ExtResource("7_b4k4r")]
+position = Vector2(1088, -280)
+distance = -200.0
+
+[node name="Spike2" parent="Objects" index="6" instance=ExtResource("7_b4k4r")]
+position = Vector2(1216, -280)
+distance = -200.0
+
+[node name="Spike3" parent="Objects" index="7" instance=ExtResource("7_b4k4r")]
+position = Vector2(1344, -280)
+distance = -200.0
+
+[node name="Spike4" parent="Objects" index="8" instance=ExtResource("7_b4k4r")]
+position = Vector2(1152, -280)
+distance = -200.0
+
+[node name="Spike5" parent="Objects" index="9" instance=ExtResource("7_b4k4r")]
+position = Vector2(1280, -280)
+distance = -200.0
+
+[node name="Delayer" parent="Objects" index="10" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_5ayj5")]
+delay = 0.1
+connectedTo = [NodePath("../Spike2"), NodePath("../Spike5")]

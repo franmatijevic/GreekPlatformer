@@ -13,7 +13,7 @@ class_name Character
 @export var ACCELERATION: float = 40
 @export var DEACCELERATION: float = 70
 
-@export var Max_falling_speed:float=4000	
+@export var Max_falling_speed:float=4000
 
 var currentPlatform: Node2D = null
 
@@ -31,10 +31,14 @@ func _physics_process(delta: float) -> void:
 				var collider = get_last_slide_collision().get_collider()
 				if collider is Bird:
 					currentPlatform = collider
-					velocity = collider.velocity
+					#velocity = collider.velocity
 					collider.shape_owner_set_one_way_collision(0, false)
 				else:
 					currentPlatform = null
+				
+				#if direction==0:
+				#	velocity.x=0
+				
 			velocity.y += gravity * delta
 	
 	if direction:
@@ -48,4 +52,3 @@ func _on_detect_floor_body_exited(body: Node2D) -> void:
 	if currentPlatform == body:
 		currentPlatform.shape_owner_set_one_way_collision(0, true)
 		currentPlatform = null
-	

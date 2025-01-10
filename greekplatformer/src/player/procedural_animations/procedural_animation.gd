@@ -225,8 +225,8 @@ func flip(new_dir:bool):
 		
 		hip.rotation=0
 		
-		leftFoot.position=Vector2(0,135)
-		rightFoot.position=Vector2(0,135)
+		leftFoot.position=Vector2(0,140)
+		rightFoot.position=Vector2(0,150)
 		targetLeftLeg.position=Vector2(0,150)
 		targetRightLeg.position=Vector2(0,150)
 		

@@ -12,11 +12,17 @@
 texture = ExtResource("1_vu83u")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
 [sub_resource type="TileSet" id="TileSet_u1ut5"]
 physics_layer_0/collision_layer = 2
@@ -58,11 +64,11 @@ position = Vector2(-10164, -64)
 z_index = -100
 z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-10307, 219)
+scroll_offset = Vector2(0, 219)
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects/Parallax2D"]
 z_index = -200
-position = Vector2(1848, 128)
+position = Vector2(-2500, 128)
 scale = Vector2(0.506356, 0.441611)
 texture = ExtResource("4_2td4q")
 
@@ -70,11 +76,11 @@ texture = ExtResource("4_2td4q")
 z_index = -100
 z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-9867, -69)
+scroll_offset = Vector2(0, -69)
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects/Parallax2D2"]
 z_index = -200
-position = Vector2(1488, 552)
+position = Vector2(-2500, 552)
 scale = Vector2(0.512972, 0.372875)
 texture = ExtResource("5_8tdyp")
 
@@ -83,11 +89,11 @@ z_index = -100
 z_as_relative = false
 scale = Vector2(0.506356, 0.441611)
 scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-10454, -234)
+scroll_offset = Vector2(0, -234)
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects/Parallax2D3"]
 z_index = -200
-position = Vector2(4026.81, 889.923)
+position = Vector2(-2500, 889.923)
 scale = Vector2(1.02513, 0.999596)
 texture = ExtResource("6_s0cyc")
 
@@ -95,11 +101,11 @@ texture = ExtResource("6_s0cyc")
 z_index = -100
 z_as_relative = false
 scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-9787, -101)
+scroll_offset = Vector2(0, -101)
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects/Parallax2D4"]
 z_index = -200
-position = Vector2(1379, 201)
+position = Vector2(-2500, 201)
 scale = Vector2(0.523382, 0.38681)
 texture = ExtResource("6_wwx8c")
 

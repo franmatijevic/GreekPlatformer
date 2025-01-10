@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=19 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
@@ -11,8 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/myths/myth_1/rooms/roomsLevel2/train_1.tscn" id="12_sfk78"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="13_odpob"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
+[ext_resource type="PackedScene" uid="uid://spss52n2u5ul" path="res://src/levels/test_level_rooms/plate_tutorial.tscn" id="14_2rysc"]
 [ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="14_4th8v"]
 [ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/myths/myth_1/rooms/roomsLevel2/plate_plat_3.tscn" id="15_ak1qm"]
+[ext_resource type="PackedScene" uid="uid://dcjccvul36vbj" path="res://src/levels/test_level_rooms/simple_juggle.tscn" id="15_sgh4s"]
+[ext_resource type="PackedScene" uid="uid://c3ptstpycfihj" path="res://src/levels/test_level_rooms/lowering_the_platform.tscn" id="16_kti2m"]
+[ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="17_q4aqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
 radius = 240.0
@@ -25,7 +29,7 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(840, -400)
+position = Vector2(856, -288)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
@@ -41,28 +45,40 @@ position = Vector2(5680, 9200)
 position = Vector2(3632, 9456)
 
 [node name="SimpleCatch" parent="." index="10" instance=ExtResource("12_c5cgg")]
-position = Vector2(4720, -1744)
+position = Vector2(6176, 6520)
 
 [node name="PlatePlatform" parent="." index="11" instance=ExtResource("13_odpob")]
 position = Vector2(7984, 9072)
 
 [node name="platePlat2" parent="." index="12" instance=ExtResource("14_4th8v")]
-position = Vector2(13744, 7664)
+position = Vector2(13840, 9040)
 
 [node name="platePlat3" parent="." index="13" instance=ExtResource("15_ak1qm")]
-position = Vector2(10544, 9072)
+position = Vector2(25160, -1160)
 
 [node name="Train1" parent="." index="14" instance=ExtResource("12_sfk78")]
-position = Vector2(8560, 544)
+position = Vector2(9920, 6288)
 
 [node name="Room3" parent="." index="15" instance=ExtResource("11_iqxsf")]
 position = Vector2(3664, 5472)
 
 [node name="LeverTutorial" parent="." index="16" instance=ExtResource("12_iqmii")]
-position = Vector2(1888, 8)
+position = Vector2(17344, -1176)
 
 [node name="Checkpoint" parent="." index="17" instance=ExtResource("13_pnq13")]
 position = Vector2(-1856, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
 shape = SubResource("CircleShape2D_a57mi")
+
+[node name="PlateTutorial" parent="." index="18" instance=ExtResource("14_2rysc")]
+position = Vector2(-1800, 4240)
+
+[node name="SimpleJuggle" parent="." index="19" instance=ExtResource("15_sgh4s")]
+position = Vector2(22272, -928)
+
+[node name="LoweringThePlatform" parent="." index="20" instance=ExtResource("16_kti2m")]
+position = Vector2(19944, -680)
+
+[node name="FlockOfBirds" parent="." index="21" instance=ExtResource("17_q4aqx")]
+position = Vector2(1856, -24)

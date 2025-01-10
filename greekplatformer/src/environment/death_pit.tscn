@@ -4,6 +4,7 @@
 
 [node name="DeathPit" type="Area2D"]
 collision_layer = 0
+collision_mask = 5
 script = ExtResource("1_0ybnu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

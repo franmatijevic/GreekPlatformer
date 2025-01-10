@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=4 uid="uid://spss52n2u5ul"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_qvpat"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="2_psc3v"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_ocsux"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="4_4suug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr42r"]
+size = Vector2(2432, 1444)
+
+[sub_resource type="Curve2D" id="Curve2D_t10iq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -384)
+}
+point_count = 2
+
+[node name="PlateTutorial" instance=ExtResource("1_qvpat")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD8/wIACAAAAAAAAAD9/wIACAAAAAAAAAD+/wIACAAAAAAAAAD//wIACAAAAAAAAAAAAAIACAAAAAAAAAABAAIACAAAAAAAAAACAAIACAAAAAAAAAADAAIACAAAAAAAAAAEAAIACAAAAAAAAAAFAAIACAAAAAAAAAAGAAIACAAAAAAAAAAHAAIACAAAAAAAAAAIAAIABwAAAAAAAAAJAAIABwAAAAAAAAAIAP7/BwAAAAAAAAAJAP7/BwAAAAAAAAAJAP3/BwAAAAAAAAAJAPz/BwAAAAAAAAAJAPv/BwAAAAAAAAAJAPr/BwAAAAAAAAAJAPn/BwAAAAAAAAAIAPn/BwAAAAAAAAAIAPr/BwAAAAAAAAAIAPv/BwAAAAAAAAAIAPz/BwAAAAAAAAAIAP3/BwAAAAAAAAAHAP7/AQAAAAAAADAKAP7/AQAAAAAAAFALAP3/AQAAAAAAAFAGAP3/AQAAAAAAADAHAP3/BwAAAAAAAAAHAPz/BwAAAAAAAAAHAPv/BwAAAAAAAAAHAPr/BwAAAAAAAAAHAPn/BwAAAAAAAAAGAPn/BwAAAAAAAAAGAPr/BwAAAAAAAAAGAPv/BwAAAAAAAAAGAPz/BwAAAAAAAAAKAP3/BwAAAAAAAAAKAPz/BwAAAAAAAAAKAPv/BwAAAAAAAAAKAPr/BwAAAAAAAAAKAPn/BwAAAAAAAAALAPn/BwAAAAAAAAALAPr/BwAAAAAAAAALAPv/BwAAAAAAAAALAPz/BwAAAAAAAAAKAAIACAAAAAAAAAALAAIACAAAAAAAAAAMAAIACAAAAAAAAAD8/wMABwAAAAAAAAD9/wMABwAAAAAAAAD+/wMABwAAAAAAAAD//wMABwAAAAAAAAAAAAMABwAAAAAAAAABAAMABwAAAAAAAAACAAMABwAAAAAAAAADAAMABwAAAAAAAAAEAAMABwAAAAAAAAAFAAMABwAAAAAAAAAGAAMABwAAAAAAAAAHAAMABwAAAAAAAAAIAAMABwAAAAAAAAAJAAMABwAAAAAAAAAKAAMABwAAAAAAAAALAAMABwAAAAAAAAAMAAMABwAAAAAAAAAMAAQABwAAAAAAAAALAAQABwAAAAAAAAAKAAQABwAAAAAAAAAJAAQABwAAAAAAAAAIAAQABwAAAAAAAAAHAAQABwAAAAAAAAAGAAQABwAAAAAAAAAFAAQABwAAAAAAAAAEAAQABwAAAAAAAAADAAQABwAAAAAAAAACAAQABwAAAAAAAAABAAQABwAAAAAAAAAAAAQABwAAAAAAAAD//wQABwAAAAAAAAD+/wQABwAAAAAAAAD9/wQABwAAAAAAAAD8/wQABwAAAAAAAAD7/wIACAAAAAAAAAD6/wIACAAAAAAAAAD6/wQABwAAAAAAAAD7/wQABwAAAAAAAAD7/wMABwAAAAAAAAD6/wMABwAAAAAAAAAFAPn/BwAAAAAAAAAFAPj/BwAAAAAAAAAEAPj/BwAAAAAAAAADAPj/BwAAAAAAAAACAPn/BwAAAAAAAAABAPj/BwAAAAAAAAABAPn/BwAAAAAAAAAAAPn/BwAAAAAAAAD///n/BwAAAAAAAAD///j/BwAAAAAAAAD+//j/BwAAAAAAAAD+//n/BwAAAAAAAAD9//n/BwAAAAAAAAD9//j/BwAAAAAAAAD8//n/BwAAAAAAAAD8//j/BwAAAAAAAAD7//j/BwAAAAAAAAD7//n/BwAAAAAAAAD6//n/BwAAAAAAAAADAPn/BwAAAAAAAAAEAPn/BwAAAAAAAAAAAPj/BwAAAAAAAAD6//j/BwAAAAAAAAACAPj/BwAAAAAAAAAGAPj/BwAAAAAAAAAHAPj/BwAAAAAAAAAIAPj/BwAAAAAAAAAJAPj/BwAAAAAAAAAKAPj/BwAAAAAAAAALAPj/BwAAAAAAAAAMAPj/BwAAAAAAAAAMAPn/BwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(448, -184)
+shape = SubResource("RectangleShape2D_gr42r")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-632, 160)
+
+[node name="PressurePlate" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_psc3v")]
+position = Vector2(-280, 256)
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("3_ocsux")]
+position = Vector2(376, 160)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="2"]
+position = Vector2(1088, 192)
+curve = SubResource("Curve2D_t10iq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_4suug")]
+position = Vector2(64, -128)
+scale = Vector2(2, 3)
+speed = 120.0
+shakeWhileActive = true
+shakeAmount = 0.15
