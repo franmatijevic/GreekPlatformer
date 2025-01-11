@@ -70,7 +70,7 @@ scale = Vector2(1.05249, 1)
 curve = SubResource("Curve2D_6iguo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
-position = Vector2(-115.861, -1037.81)
+position = Vector2(-115.888, -1037.77)
 progress = 15818.2
 rotates = false
 
@@ -78,7 +78,7 @@ rotates = false
 speed = -0.03
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Objects/Path2D" index="1"]
-position = Vector2(1882.51, -750.93)
+position = Vector2(1882.5, -750.919)
 progress = 12303.1
 rotates = false
 
@@ -86,7 +86,7 @@ rotates = false
 speed = -0.03
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Objects/Path2D" index="2"]
-position = Vector2(5105.45, -448)
+position = Vector2(5105.44, -448)
 progress = 8787.92
 rotates = false
 
@@ -94,7 +94,7 @@ rotates = false
 speed = -0.03
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Objects/Path2D" index="3"]
-position = Vector2(8148.78, -918.738)
+position = Vector2(8148.78, -918.739)
 progress = 5272.75
 rotates = false
 
@@ -102,7 +102,7 @@ rotates = false
 speed = -0.03
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Objects/Path2D" index="4"]
-position = Vector2(11418.3, -962.25)
+position = Vector2(11418.3, -962.253)
 progress = 1757.58
 rotates = false
 
@@ -114,7 +114,7 @@ position = Vector2(0, 8)
 curve = SubResource("Curve2D_cnydn")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
-position = Vector2(-346.259, -955.764)
+position = Vector2(-346.262, -955.763)
 progress = 2012.25
 rotates = false
 
@@ -122,7 +122,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Objects/Path2D2" index="1"]
-position = Vector2(2044.23, -60.811)
+position = Vector2(2044.23, -60.8097)
 progress = 6036.74
 rotates = false
 
@@ -130,7 +130,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Objects/Path2D2" index="2"]
-position = Vector2(5681.17, 845.962)
+position = Vector2(5681.14, 845.963)
 progress = 10061.2
 rotates = false
 
@@ -138,7 +138,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Objects/Path2D2" index="3"]
-position = Vector2(8494.49, -802.417)
+position = Vector2(8494.48, -802.434)
 progress = 14085.7
 rotates = false
 
@@ -146,7 +146,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Objects/Path2D2" index="4"]
-position = Vector2(11840.9, -323.329)
+position = Vector2(11840.9, -323.327)
 progress = 18110.2
 rotates = false
 
@@ -158,7 +158,7 @@ position = Vector2(-352, 80)
 curve = SubResource("Curve2D_l00kk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D3" index="0"]
-position = Vector2(563.931, -951.953)
+position = Vector2(563.932, -951.953)
 progress = 2080.51
 rotates = false
 
@@ -166,7 +166,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Objects/Path2D3" index="1"]
-position = Vector2(2250.99, -148.655)
+position = Vector2(2250.98, -148.656)
 progress = 6241.53
 rotates = false
 
@@ -174,7 +174,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Objects/Path2D3" index="2"]
-position = Vector2(6135.64, -528)
+position = Vector2(6135.69, -528)
 progress = 10402.6
 rotates = false
 
@@ -182,7 +182,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Objects/Path2D3" index="3"]
-position = Vector2(9439.85, -1035.75)
+position = Vector2(9439.87, -1035.74)
 progress = 14563.6
 rotates = false
 
@@ -190,7 +190,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Objects/Path2D3" index="4"]
-position = Vector2(12449.7, -353.649)
+position = Vector2(12449.7, -353.655)
 progress = 18724.6
 rotates = false
 
@@ -202,7 +202,7 @@ position = Vector2(-472, -248)
 curve = SubResource("Curve2D_2e0bs")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D4" index="0"]
-position = Vector2(-108.594, -337.128)
+position = Vector2(-108.595, -337.132)
 progress = 2071.86
 rotates = false
 
@@ -218,7 +218,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Objects/Path2D4" index="2"]
-position = Vector2(6355.85, 809.763)
+position = Vector2(6355.84, 809.764)
 progress = 10359.3
 rotates = false
 
@@ -226,7 +226,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D4" type="PathFollow2D" parent="Objects/Path2D4" index="3"]
-position = Vector2(10121.9, 280.904)
+position = Vector2(10121.8, 280.946)
 progress = 14503.0
 rotates = false
 
@@ -234,7 +234,7 @@ rotates = false
 speed = 0.03
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Objects/Path2D4" index="4"]
-position = Vector2(12541, -236.992)
+position = Vector2(12541, -237.02)
 progress = 18646.8
 rotates = false
 
