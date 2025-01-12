@@ -92,7 +92,7 @@ func _ready() -> void:
 	current_room_position= current_room.global_position
 	respawnLocation=current_room.get_node("Respawn").global_position
 	
-	print(current_room.scene_file_path)
+	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0])
 	
 	current_room.pause_all_objects(false)
 
@@ -107,7 +107,7 @@ func next_level():
 	
 	current_room_file = load(current_room.scene_file_path)
 	
-	#print(current_room.scene_file_path)
+	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0])
 	
 	get_node("Camera").set_state("RoomTransition")
 
@@ -135,3 +135,6 @@ func _on_room_transition_end_transition() -> void:
 
 func _on_timer_timeout() -> void:
 	current_room.pause_all_objects(false)
+	
+func room_changed(path: String, room : String):
+	SignalBus.emit_on_changed_room(path, room)

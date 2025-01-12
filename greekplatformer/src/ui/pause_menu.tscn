@@ -231,7 +231,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fti5v")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnsoh")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ch7cf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d7n8j")
-text = "Quit"
+text = "Save & Quit"
 
 [node name="SettingsPauseMenu" parent="Panel" instance=ExtResource("2_7rt1w")]
 visible = false

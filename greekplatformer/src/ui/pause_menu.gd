@@ -5,7 +5,11 @@ extends Control
 @onready var settings_pause_menu: Control = $Panel/SettingsPauseMenu
 @onready var v_box_container: VBoxContainer = $Panel/VBoxContainer
 
+var current_path : String
+var current_room : String
+
 func _ready() -> void:
+	SignalBus.on_changed_room.connect(on_changed_room)
 	generic_level_script.connect("toggle_paused", _on_generic_level_script_toggle_paused)
 
 func _on_generic_level_script_toggle_paused(paused: bool):
@@ -20,6 +24,7 @@ func _on_resume_pressed() -> void:
 	generic_level_script.game_paused = false
 
 func _on_quit_pressed() -> void:
+	SignalBus.emit_on_quit_pressed(current_path, current_room)
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
@@ -29,3 +34,7 @@ func _on_restart_pressed() -> void:
 func _on_settings_pressed() -> void:
 	settings_pause_menu.visible = true
 	v_box_container.visible = false
+
+func on_changed_room(path : String, room : String):
+	current_path = path
+	current_room = room
