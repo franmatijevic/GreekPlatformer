@@ -21,6 +21,8 @@ func on_new_game_pressed():
 func on_continue_game_pressed():
 	SceneLoader.load_scene(new_game_path)
 	
+	SceneLoader.continue_from_save(new_game_path, "Scene_3")
+
 func on_back_pressed():
 	exit_play_menu.emit()
 	set_process(false)

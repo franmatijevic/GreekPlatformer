@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Level
+
 @export var ChapterName:String
 @export var current_room:Area2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
