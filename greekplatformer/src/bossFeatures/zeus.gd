@@ -31,8 +31,6 @@ func _physics_process(delta: float) -> void:
 	$Label/Label.text=str(get_node("Attacks").get_children()[currentAttack].name)
 
 func next_attack():
-	#block=true
-	print("switch")
 	
 	get_node("Attacks").get_children()[currentAttack].exit()
 	currentAttack = currentAttack + 1

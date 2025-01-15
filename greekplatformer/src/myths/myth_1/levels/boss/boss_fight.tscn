@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cks6l7juxu7ko"]
+
+[ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
+
+[node name="BossFight" instance=ExtResource("1_vnnb8")]

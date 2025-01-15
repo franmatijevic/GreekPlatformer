@@ -24,7 +24,14 @@ func _on_body_entered(body: Node2D) -> void:
 	else:
 		get_parent().get_parent().get_parent().camShake(0.15)
 	
-	queue_free() #umjesto ovog ce ici neka animacija
+	get_node("AnimatedSprite2D").play()
+	
+	velocity=Vector2.ZERO
+	var t = create_tween()
+	t.tween_interval(1)
+	t.tween_callback(queue_free)
+	
+	#queue_free() #umjesto ovog ce ici neka animacija
 
 static func new_thunderbolt(target_coords:Vector2) -> Thunderbolt:
 	var thunder: Thunderbolt = thunderScene.instantiate()

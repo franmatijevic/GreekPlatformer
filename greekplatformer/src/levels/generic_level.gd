@@ -98,6 +98,13 @@ func _ready() -> void:
 
 func next_level():
 	prev_room = current_room
+	
+	#for i in current_room.get_node("Objects").get_children():
+	#	if !(i is Throwable):
+	#		i.queue_free()
+	#	elif i != get_node("Player").holding_object:
+	#		i.queue_free()
+	
 	current_room=new_next_level
 	holding_object=get_node("Player").holding_object
 	
@@ -127,7 +134,9 @@ func _on_room_transition_end_transition() -> void:
 	if prev_room == current_room:
 		return
 	
-	#prev_room.get_node("Objects").queue_free()
+	prev_room.get_node("Objects").queue_free()
+	#prev_room.call_deferred("queue_free")
+	
 	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object
 		if(get_node("Player").holding_object != i):
 			pass

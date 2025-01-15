@@ -31,6 +31,7 @@ shape = SubResource("RectangleShape2D_ibmbv")
 [node name="Attacks" type="Node" parent="."]
 
 [node name="Label" type="Node2D" parent="."]
+visible = false
 position = Vector2(368, 88)
 scale = Vector2(15, 15)
 

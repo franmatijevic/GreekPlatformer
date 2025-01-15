@@ -1,9 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dijfdscbpg476"]
+[gd_scene load_steps=5 format=3 uid="uid://dijfdscbpg476"]
 
 [ext_resource type="Script" path="res://src/bossFeatures/zeus_hand.gd" id="1_detgo"]
+[ext_resource type="Texture2D" uid="uid://dnnu6kruxf75e" path="res://src/environment/environmentArt/firstSceneZeus/rukadrzimunju.png" id="2_dmt55"]
+[ext_resource type="Texture2D" uid="uid://bl78mytlglmfa" path="res://src/environment/environmentArt/firstSceneZeus/zeus-2nw.png" id="3_emmrj"]
+[ext_resource type="Texture2D" uid="uid://b7qc73ptkbj1s" path="res://src/environment/environmentArt/firstSceneZeus/ruka.png" id="4_4hqjd"]
 
 [node name="ZeusHand" type="Node2D"]
 script = ExtResource("1_detgo")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(-24, -80, -160, 64, -72, 32, -112, 136, -40, 48, -64, 160, -16, 64, -24, 168, 24, 56, 40, 104, 40, 0, 64, -64)
+
+[node name="Rukadrzimunju" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-192, -144)
+texture = ExtResource("2_dmt55")
+
+[node name="Zeus-2Nw" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-64, 928)
+texture = ExtResource("3_emmrj")
+
+[node name="Ruka" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1264, 640)
+texture = ExtResource("4_4hqjd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false

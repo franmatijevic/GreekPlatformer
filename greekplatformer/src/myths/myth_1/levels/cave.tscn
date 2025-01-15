@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=3 uid="uid://bnkfkiq1ig3q5"]
+
+[ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
+[ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
+[ext_resource type="PackedScene" uid="uid://spss52n2u5ul" path="res://src/levels/test_level_rooms/plate_tutorial.tscn" id="3_vmdto"]
+[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/myths/myth_1/rooms/roomsLevel2/simpleTrap.tscn" id="4_wxogk"]
+[ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="5_tvml2"]
+[ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/myths/myth_1/rooms/roomsLevel2/simple_catch.tscn" id="6_02sff"]
+[ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/myths/myth_1/rooms/roomsLevel2/cloud_rock.tscn" id="7_2p0fa"]
+[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_4.tscn" id="10_x75b3"]
+[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/myths/myth_1/rooms/roomsLevel2/trickthrow.tscn" id="11_rgv2d"]
+[ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/myths/myth_1/rooms/roomsLevel2/train_1.tscn" id="11_viuj6"]
+[ext_resource type="PackedScene" uid="uid://bs1erneadtoes" path="res://src/myths/myth_1/rooms/roomsLevel2/cave_intro.tscn" id="12_6fbti"]
+[ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
+
+[node name="Cave" node_paths=PackedStringArray("current_room") instance=ExtResource("1_1wbxc")]
+ChapterName = "Chapter 2: Caveq"
+current_room = NodePath("Room2")
+
+[node name="BlackScreen" parent="." index="1"]
+visible = false
+
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
+[node name="LeverTutorial" parent="." index="5" instance=ExtResource("2_3dbg0")]
+position = Vector2(5816, -232)
+
+[node name="PlateTutorial" parent="." index="6" instance=ExtResource("3_vmdto")]
+position = Vector2(696, 152)
+
+[node name="Room" parent="." index="7" instance=ExtResource("4_wxogk")]
+position = Vector2(4024, 408)
+
+[node name="FlockOfBirds" parent="." index="8" instance=ExtResource("5_tvml2")]
+position = Vector2(23608, -872)
+
+[node name="SimpleCatch" parent="." index="9" instance=ExtResource("6_02sff")]
+position = Vector2(16952, 280)
+
+[node name="CloudRock" parent="." index="10" instance=ExtResource("7_2p0fa")]
+position = Vector2(14904, 280)
+
+[node name="Soba4" parent="." index="11" instance=ExtResource("10_x75b3")]
+position = Vector2(18616, -616)
+
+[node name="Train1" parent="." index="12" instance=ExtResource("11_viuj6")]
+position = Vector2(9272, 280)
+
+[node name="CaveIntro" parent="." index="13" instance=ExtResource("12_6fbti")]
+position = Vector2(-1608, -104)
+
+[node name="Room2" parent="." index="14" instance=ExtResource("11_rgv2d")]
+position = Vector2(38968, -2536)
+
+[node name="Player" parent="." index="15" instance=ExtResource("12_rh5en")]
+position = Vector2(38416, -1792)

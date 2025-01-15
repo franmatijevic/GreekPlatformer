@@ -1,7 +1,7 @@
 extends State
 
 @export var time:float=1
-var t
+var t=time
 
 func enter():
 	t=0
