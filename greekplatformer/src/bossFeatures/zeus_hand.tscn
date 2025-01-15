@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dijfdscbpg476"]
+
+[ext_resource type="Script" path="res://src/bossFeatures/zeus_hand.gd" id="1_detgo"]
+
+[node name="ZeusHand" type="Node2D"]
+script = ExtResource("1_detgo")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-24, -80, -160, 64, -72, 32, -112, 136, -40, 48, -64, 160, -16, 64, -24, 168, 24, 56, 40, 104, 40, 0, 64, -64)

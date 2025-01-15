@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvj8dw1myq5l3"]
+
+[ext_resource type="Script" path="res://src/bossFeatures/thunderbolt.gd" id="1_gl6bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6obce"]
+size = Vector2(40, 96)
+
+[node name="Thunderbolt" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_gl6bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_6obce")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(8, -32)
+points = PackedVector2Array(-8, -16, -24, 32, 0, 32, -16, 80)
+default_color = Color(0.152941, 0.152941, 0.156863, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

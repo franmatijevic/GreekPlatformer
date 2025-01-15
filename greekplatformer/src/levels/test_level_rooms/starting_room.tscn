@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bv6crjirceehq"]
+[gd_scene load_steps=19 format=4 uid="uid://bv6crjirceehq"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_v1w17"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="2_ns463"]
@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="8_ovq42"]
 [ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="9_sttrj"]
 [ext_resource type="PackedScene" uid="uid://d1iy44djkvw5j" path="res://src/player/playerDeathBodyParts/head.tscn" id="10_ccrkb"]
+[ext_resource type="PackedScene" uid="uid://dijfdscbpg476" path="res://src/bossFeatures/zeus_hand.tscn" id="11_0k4hc"]
+[ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="12_32y53"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="13_8pfbo"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="14_ggxjk"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/swoop.gd" id="15_tm2kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0vdt"]
 size = Vector2(10200, 2060)
@@ -19,6 +24,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640, 0)
 }
 point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3vpwc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1424, 112, 0, 0, 0, 0, 2096.96, -860.154, 0, 0, 0, 0, 1125.47, -1025.24, 0, 0, 0, 0, 738.148, -777.609, 0, 0, 0, 0, 0, 0)
+}
+point_count = 6
 
 [node name="StartingRoom" instance=ExtResource("1_v1w17")]
 
@@ -91,3 +102,51 @@ position = Vector2(-721, 66)
 
 [node name="Head" parent="Objects" index="14" instance=ExtResource("10_ccrkb")]
 position = Vector2(-8304, -360)
+
+[node name="ZeusHand" parent="Objects" index="15" instance=ExtResource("11_0k4hc")]
+position = Vector2(-1992, -1664)
+timeBetweenShoots = 1.5
+activeOnStart = false
+
+[node name="ZeusHand2" parent="Objects" index="16" instance=ExtResource("11_0k4hc")]
+position = Vector2(-848, -1680)
+shouldBeFlipped = true
+activeOnStart = false
+
+[node name="Zeus" parent="Objects" index="17" instance=ExtResource("12_32y53")]
+position = Vector2(-4712, -488)
+
+[node name="thunder" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("13_8pfbo")
+hand1 = NodePath("../../ZeusHand")
+hand2 = NodePath("../../ZeusHand2")
+time = 15.0
+
+[node name="idle" type="Node" parent="Objects/Zeus" index="5"]
+script = ExtResource("14_ggxjk")
+time = 10.0
+
+[node name="Swoop" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
+script = ExtResource("15_tm2kd")
+path = NodePath("../../Path2D2/PathFollow2D")
+speed = 0.2
+
+[node name="thunderShort" type="Node" parent="Objects/Zeus" index="8" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("13_8pfbo")
+hand1 = NodePath("../../ZeusHand")
+hand2 = NodePath("../../ZeusHand2")
+time = 6.0
+
+[node name="IdleShort" type="Node" parent="Objects/Zeus" index="9"]
+script = ExtResource("14_ggxjk")
+time = 5.0
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="18"]
+position = Vector2(-4720, -480)
+curve = SubResource("Curve2D_3vpwc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+position = Vector2(2.38419e-07, 0)
+progress = 5128.05
+rotates = false
+loop = false
