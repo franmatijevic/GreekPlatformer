@@ -9,7 +9,7 @@ func _ready() -> void:
 		config.set_value("keybinding", "alt_jump", "Space")
 		config.set_value("keybinding", "left", "A")
 		config.set_value("keybinding", "right", "D")
-		config.set_value("keybinding", "down", "S")
+		config.set_value("keybinding", "down", "Mouse Button 2")
 		config.set_value("keybinding", "pickThrow", "Mouse Button 1")
 		config.set_value("keybinding", "restart", "U")
 		

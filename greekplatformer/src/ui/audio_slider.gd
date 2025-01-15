@@ -21,13 +21,10 @@ func load_data():
 	var audio_settings = ConfigFileHandler.load_audio_settings()
 	match bus_name:
 		"Master":
-			#on_value_changed(SettingsData.get_master_volume_value())
 			on_value_changed(min(audio_settings.master_volume, 1.0))
 		"SFX":
-			#on_value_changed(SettingsData.get_sfx_volume_value())
 			on_value_changed(min(audio_settings.sfx_volume, 1.0))
 		"Music":
-			#on_value_changed(SettingsData.get_music_volume_value())
 			on_value_changed(min(audio_settings.music_volume, 1.0))
 	
 func set_audio_bus_label_text():
@@ -45,11 +42,8 @@ func on_value_changed(value : float):
 	
 	match index:
 		0:
-			#SignalBus.emit_on_master_volume(value)
 			ConfigFileHandler.save_audio_settings("master_volume", value)
 		1:
-			#SignalBus.emit_on_sfx_volume(value)
 			ConfigFileHandler.save_audio_settings("sfx_volume", value)
 		2:
-			#SignalBus.emit_on_music_volume(value)
 			ConfigFileHandler.save_audio_settings("music_volume", value)

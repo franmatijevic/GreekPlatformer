@@ -17,8 +17,6 @@ func _ready() -> void:
 	
 func load_data():
 	var display_settings = ConfigFileHandler.load_display_settings()
-	#on_window_mode_selected(SettingsData.get_window_mode_index())
-	#option_button.select(SettingsData.get_window_mode_index())
 	on_window_mode_selected(display_settings.window_mode)
 	option_button.select(display_settings.window_mode)
 
@@ -27,7 +25,6 @@ func add_window_mode_items():
 		option_button.add_item(i)
 	
 func on_window_mode_selected(index : int):
-	#SignalBus.emit_on_window_mode(index)
 	ConfigFileHandler.save_display_settings("window_mode", index)
 	match index:
 		0:

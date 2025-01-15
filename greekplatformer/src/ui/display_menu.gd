@@ -10,5 +10,4 @@ func _ready() -> void:
 	
 func on_back_pressed():
 	exit_display_menu.emit()
-	SignalBus.emit_set_settings_dictionary(SettingsData.create_storage_dictionary())
 	set_process(false)
