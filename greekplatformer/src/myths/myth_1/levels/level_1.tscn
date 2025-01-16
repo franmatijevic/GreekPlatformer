@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=18 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_0e6ak"]
 [ext_resource type="Texture2D" uid="uid://ckpb2gx5h311f" path="res://src/environment/environmentArt/background/olimp.png" id="2_0vc73"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="12_v3ewr"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="13_s3rpa"]
 [ext_resource type="PackedScene" uid="uid://c20usakr3hbgc" path="res://src/myths/myth_1/rooms/roomsLevel1/MountainEntrance.tscn" id="14_r2nsp"]
+[ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="16_j3rc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -107,5 +108,9 @@ position = Vector2(306, 218)
 
 [node name="Room" parent="." index="16" instance=ExtResource("14_r2nsp")]
 position = Vector2(6512, -3704)
+
+[node name="BackgroundMusicStart" type="Node" parent="." index="17"]
+script = ExtResource("16_j3rc2")
+backgroundMusic = true
 
 [editable path="DialogueAreaZeus"]

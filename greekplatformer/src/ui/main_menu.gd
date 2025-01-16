@@ -9,6 +9,7 @@ extends Control
 
 
 func _ready() -> void:
+	AudioController.play_menu_music()
 	play.button_up.connect(on_play_pressed)
 	settings.button_up.connect(on_settings_pressed)
 	quit.button_up.connect(on_quit_pressed)

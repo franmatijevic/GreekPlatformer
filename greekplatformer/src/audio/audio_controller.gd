@@ -138,3 +138,21 @@ func stop_dialogue(activeSpeaker: String):
 			stop_sound($SFX/talk_npc_musko)
 		"npc_zensko":
 			stop_sound($SFX/talk_npc_zensko)
+
+func play_menu_music():
+	play_sound($Music/TimpaniMenu, 0, 0)
+
+func play_game_music():
+	play_sound($Music/AmforaMaster, 0, 0)
+
+func play_boss_music():
+	play_sound($Music/BossMusic, 0, 0)
+
+func stop_menu_music():
+	stop_sound($Music/TimpaniMenu)
+
+func stop_game_music():
+	stop_sound($Music/AmforaMaster)
+
+func stop_boss_music():
+	stop_sound($Music/BossMusic)
