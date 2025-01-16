@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bwva571co7nqf"
-path="res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"
+uid="uid://cohnq3j2bly6f"
+path="res://.godot/imported/talk_atena.wav-22c79da0df6ece8a423fa26d52c87a26.sample"
 
 [deps]
 
-source_file="res://src/audio/SFX/stone_fall.wav"
-dest_files=["res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"]
+source_file="res://src/audio/SFX/talk_atena.wav"
+dest_files=["res://.godot/imported/talk_atena.wav-22c79da0df6ece8a423fa26d52c87a26.sample"]
 
 [params]
 

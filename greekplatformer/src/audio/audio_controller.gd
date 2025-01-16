@@ -5,10 +5,6 @@ extends Node2D
 @export_range (0,1) var Musicvolume:float=0.75
 
 var rng = RandomNumberGenerator.new()
-var death_number: int
-
-func _ready():
-	death_number = rng.randi_range(0, 1)
 
 func play_sound(audio:AudioStreamPlayer, pitchVariance:bool):
 	if mute or SFXvolume==0:
@@ -19,6 +15,9 @@ func play_sound(audio:AudioStreamPlayer, pitchVariance:bool):
 		audio.pitch_scale=pitch
 	
 	audio.play()
+
+func stop_sound(audio:AudioStreamPlayer):
+	audio.stop()
 
 func positionSound(audio:AudioStreamPlayer2D, pitchVariance:bool):
 	if mute or SFXvolume==0:
@@ -43,10 +42,11 @@ func play_cloud():
 	play_sound($SFX/cloud,1)
 
 func play_death():
-	if death_number:
-		play_sound($SFX/death1,0)
-	else:
-		play_sound($SFX/death2,0)
+	match rng.randi_range(0, 1):
+		0:
+			play_sound($SFX/death1,0)
+		1:
+			play_sound($SFX/death2,0)
 
 func play_door_opening():
 	play_sound($SFX/door_opening,0)
@@ -82,3 +82,40 @@ func play_spring():
 
 func play_ground_stomp():
 	play_sound($SFX/stone_fall,1)
+
+func play_jump():
+	match rng.randi_range(0, 3):
+		0:
+			play_sound($SFX/jump1,0)
+		1:
+			play_sound($SFX/jump2,0)
+		2:
+			play_sound($SFX/jump3, 0)
+		3:
+			play_sound($SFX/jump4, 0)
+
+func play_dialogue(activeSpeaker: String):
+	match activeSpeaker:
+		"Prometej":
+			play_sound($SFX/talk_prometej, 0)
+		"Zeus":
+			play_sound($SFX/talk_zeus, 0)
+		"Atena":
+			play_sound($SFX/talk_atena, 0)
+		"npc_musko":
+			play_sound($SFX/talk_npc_musko, 0)
+		"npc_zensko":
+			play_sound($SFX/talk_npc_zensko, 0)
+
+func stop_dialogue(activeSpeaker: String):
+	match activeSpeaker:
+		"Prometej":
+			stop_sound($SFX/talk_prometej)
+		"Zeus":
+			stop_sound($SFX/talk_zeus)
+		"Atena":
+			stop_sound($SFX/talk_atena)
+		"npc_musko":
+			stop_sound($SFX/talk_npc_musko)
+		"npc_zensko":
+			stop_sound($SFX/talk_npc_zensko)

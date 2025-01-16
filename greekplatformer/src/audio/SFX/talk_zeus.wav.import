@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bwva571co7nqf"
-path="res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"
+uid="uid://nu6w1iqe1pnr"
+path="res://.godot/imported/talk_zeus.wav-0e3ec8daf0ca4a0fdb0a5536b2025d64.sample"
 
 [deps]
 
-source_file="res://src/audio/SFX/stone_fall.wav"
-dest_files=["res://.godot/imported/stone_fall.wav-733974cf45553883e4d8e17c436b17bc.sample"]
+source_file="res://src/audio/SFX/talk_zeus.wav"
+dest_files=["res://.godot/imported/talk_zeus.wav-0e3ec8daf0ca4a0fdb0a5536b2025d64.sample"]
 
 [params]
 

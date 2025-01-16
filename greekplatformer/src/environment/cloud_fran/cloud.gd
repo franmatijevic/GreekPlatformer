@@ -38,6 +38,7 @@ func reapear():
 	get_node("CollisionShape2D").disabled=false
 
 func disapear():
+	AudioController.play_cloud()
 	visible=false
 	get_node("CollisionShape2D").disabled=true
 	disapeared=true

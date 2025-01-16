@@ -151,11 +151,13 @@ func jump():
 		return
 
 	if is_on_floor():
+		AudioController.play_jump()
 		velocity.y = JUMP_VELOCITY
 		coyoteBuffer = 0
 		jumpBuffer = 0
 		jumped = true
 	elif coyoteBuffer > 0 and jumped == false:
+		AudioController.play_jump()
 		velocity.y = JUMP_VELOCITY
 		coyoteBuffer = 0
 		jumpBuffer = 0

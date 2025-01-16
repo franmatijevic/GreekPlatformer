@@ -59,25 +59,25 @@ position = Vector2(16475, -5137)
 follow_viewport_scale = 377.106
 
 [node name="Room" parent="." index="12" instance=ExtResource("8_fo8j4")]
-position = Vector2(24354, -6037)
+position = Vector2(23515, -6030)
 
 [node name="CloudRock" parent="." index="13" instance=ExtResource("9_dcwrc")]
-position = Vector2(26408, -6289)
+position = Vector2(25569, -6282)
 
 [node name="PlatePlatform" parent="." index="14" instance=ExtResource("10_o816v")]
-position = Vector2(28712, -6417)
+position = Vector2(27873, -6410)
 
 [node name="platePlat3" parent="." index="15" instance=ExtResource("11_o32uc")]
-position = Vector2(31272, -6417)
+position = Vector2(30433, -6410)
 
 [node name="Train1" parent="." index="16" instance=ExtResource("13_n48ka")]
-position = Vector2(35752, -7825)
+position = Vector2(34913, -7818)
 
 [node name="SimpleCatch" parent="." index="17" instance=ExtResource("14_c7yos")]
-position = Vector2(41000, -7825)
+position = Vector2(40161, -7818)
 
 [node name="Room2" parent="." index="18" instance=ExtResource("15_u470v")]
-position = Vector2(43432, -8721)
+position = Vector2(42593, -8714)
 
 [node name="Atena" type="Sprite2D" parent="." index="19"]
 modulate = Color(1, 1, 1, 0)
@@ -96,7 +96,7 @@ scale = Vector2(1.5873, -1.5873)
 
 [node name="DialogueAreaHelp1" parent="." index="20" instance=ExtResource("16_a6ohr")]
 process_mode = 0
-position = Vector2(24830, -6444)
+position = Vector2(23991, -6437)
 dialogueKey = "lvl_2_help_1"
 oneTime = true
 

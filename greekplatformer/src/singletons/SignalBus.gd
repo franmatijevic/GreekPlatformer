@@ -2,6 +2,7 @@ extends Node
 
 signal display_dialogue(text_key)
 signal dialogue_finished
+signal display_full_text
 
 signal can_click_next
 signal npc_enter

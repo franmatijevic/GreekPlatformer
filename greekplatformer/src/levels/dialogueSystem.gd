@@ -15,6 +15,8 @@ func _input(event):
 	if areaActive and event.is_action_pressed("ui_accept") and canClickNext:
 		canClickNext = false
 		SignalBus.emit_signal("display_dialogue", dialogueKey)
+	elif areaActive and event.is_action_pressed("ui_accept") and !canClickNext:
+		SignalBus.emit_signal("display_full_text")
 
 func _on_area_entered(_area):
 	areaActive = true

@@ -10,8 +10,11 @@ var inProgress = false
 var activeSpeaker = ""
 var speechBubbles = {}
 var speakerMarkers = {}
+var audioMarkers = {}
 
+var displayFullText:bool = false
 var textSpeed = 0.05
+var tween
 
 signal npc_enter
 signal npc_exit
@@ -20,8 +23,7 @@ signal perform_action(action: String, params: Dictionary)
 func _ready():
 	sceneText = load_scene_text()
 	SignalBus.connect("display_dialogue", Callable(self, "on_display_dialogue"))
-	SignalBus.connect("speed_up_dialogue", Callable(self, "text_speed_up"))
-	SignalBus.connect("slow_down_dialogue", Callable(self, "text_speed_down"))
+	SignalBus.connect("display_full_text", Callable(self, "_display_full_text"))
 	
 	speakerMarkers["Zeus"] = $"../Zeus/ZeusDialogueMarker"
 	speakerMarkers["Prometej"] = $"../Player/PlayerDialogueMarker"
@@ -35,6 +37,9 @@ func load_scene_text():
 		return testJSONConv.get_data()
 
 func show_text(text) -> void:
+	
+	AudioController.play_dialogue(activeSpeaker)
+	
 	for bubble in speechBubbles.values():
 		bubble.visible = false
 	
@@ -50,18 +55,20 @@ func show_text(text) -> void:
 		
 		speechBubbles[activeSpeaker] = newBubble
 		
-		var tween = create_tween()
+		tween = create_tween()
 		tween.tween_property(newBubble.get_node("Label"), "visible_ratio", 1.0, textSpeed*text.length())
 		await get_tree().create_timer(textSpeed*text.length()).timeout
+		AudioController.stop_dialogue(activeSpeaker)
 		SignalBus.emit_signal("can_click_next")
 	else:
 		speechBubbles[activeSpeaker].get_node("Label").text = text
 		speechBubbles[activeSpeaker].visible = true
 		
 		speechBubbles[activeSpeaker].get_node("Label").visible_ratio = 0.0
-		var tween = create_tween()
+		tween = create_tween()
 		tween.tween_property(speechBubbles[activeSpeaker].get_node("Label"), "visible_ratio", 1.0, textSpeed*text.length())
 		await get_tree().create_timer(textSpeed*text.length()).timeout
+		AudioController.stop_dialogue(activeSpeaker)
 		SignalBus.emit_signal("can_click_next")
 
 	
@@ -111,3 +118,9 @@ func on_display_dialogue(textKey):
 		inProgress = true
 		selectedText = sceneText[textKey].duplicate()
 		next_line()
+
+func _display_full_text():
+	displayFullText = true
+	tween.kill()
+	AudioController.stop_dialogue(activeSpeaker)
+	speechBubbles[activeSpeaker].get_node("Label").visible_ratio = 1.0
