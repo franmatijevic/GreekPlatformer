@@ -32,6 +32,7 @@ func enter():
 	bodyPart(podlaktica,"LijevaPodlaktica")
 	bodyPart(podlaktica, "DesnaPodlaktica")
 	
+	player().get_parent().get_node("Camera").set_state("Death")
 	
 	time=1
 	

@@ -60,6 +60,8 @@ func restart():
 		holding_object.queue_free()
 	holding_object=null
 	get_node("Player").holding_object=null
+	get_node("Player").flip_player(true)
+	get_node("Player").starting()
 	
 	#respawnLocation
 	current_room.queue_free()
@@ -72,6 +74,7 @@ func restart():
 	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
 	get_node("Camera/Camera2D").reset_smoothing()
 	get_node("Camera/Camera2D").force_update_scroll()
+	get_node("Camera").set_state("FollowPlayer")
 	
 	$Timer.start(0.1)
 	get_node("Player").set_state("MoveState")
@@ -84,8 +87,8 @@ func _ready() -> void:
 	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 1, 1)
 	t.tween_interval(0.3)
 	t.set_parallel()
-	t.tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 1)#0.6)
-	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 0, 1.5)#0.6)
+	t.tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 1.75)#0.6)
+	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 0, 2.25)#0.6)
 	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	current_room_file = load(current_room.scene_file_path)

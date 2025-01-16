@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [node name="Thunderbolt" type="Area2D"]
@@ -103,7 +103,5 @@ default_color = Color(0.152941, 0.152941, 0.156863, 1)
 position = Vector2(16, -32)
 rotation = 5.44543
 sprite_frames = SubResource("SpriteFrames_ot0ak")
-frame = 7
-frame_progress = 0.239572
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,8 +7,6 @@ var currentAttack:int=0
 
 var originalPosition
 
-var block=false
-
 func _ready() -> void:
 	for i in get_children():
 		if i is State:
@@ -23,11 +21,8 @@ func _ready() -> void:
 	originalPosition=global_position + idlePositionOffset
 
 func _physics_process(delta: float) -> void:
-	if !block:
-		get_node("Attacks").get_children()[currentAttack].update_physics_process(delta)
-	else:
-		next_attack()
-		block=false
+	get_node("Attacks").get_children()[currentAttack].update_physics_process(delta)
+
 	$Label/Label.text=str(get_node("Attacks").get_children()[currentAttack].name)
 
 func next_attack():
@@ -37,7 +32,6 @@ func next_attack():
 	if currentAttack == get_node("Attacks").get_child_count():
 		currentAttack=0
 	get_node("Attacks").get_children()[currentAttack].enter()
-	#block=false
 
 func take_damage():
 	health=health-1

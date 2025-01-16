@@ -39,8 +39,8 @@ func activate_hands():
 
 func update_physics_process(delta:float):
 	if t>time:
-		#player().next_attack()
-		player().block=true
+		player().next_attack()
+		#player().block=true
 	t=t+delta
 	
 	var target = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 - 1000

@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Thunderbolt
 
-@export var speed:float=500
+@export var speed:float=700
 @export var target:Vector2
 
 var velocity
@@ -11,7 +11,7 @@ const thunderScene: PackedScene = preload("res://src/bossFeatures/thunderbolt.ts
 
 func _ready() -> void:
 	velocity=(target - global_position).normalized() * speed
-	rotation = velocity.angle() + PI/2
+	rotation = velocity.angle() + PI/2 + PI
 	
 
 func _physics_process(delta: float) -> void:
@@ -28,7 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	velocity=Vector2.ZERO
 	var t = create_tween()
-	t.tween_interval(1)
+	t.tween_interval(0.5)
 	t.tween_callback(queue_free)
 	
 	#queue_free() #umjesto ovog ce ici neka animacija

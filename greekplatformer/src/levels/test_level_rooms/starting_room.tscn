@@ -51,7 +51,7 @@ shouldBeFlipped = true
 timeBetweenShoots = 7.0
 
 [node name="Zeus" parent="Objects" index="2" instance=ExtResource("12_32y53")]
-position = Vector2(-4720, -464)
+position = Vector2(-4720, -480)
 
 [node name="Node" type="Node" parent="Objects/Zeus" index="5"]
 script = ExtResource("14_ggxjk")
@@ -63,7 +63,11 @@ hand1 = NodePath("../../ZeusHand2")
 hand2 = NodePath("../../ZeusHand")
 time = 15.0
 
-[node name="Node3" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
+[node name="Node4" type="Node" parent="Objects/Zeus" index="7"]
+script = ExtResource("14_ggxjk")
+time = 4.0
+
+[node name="Node3" type="Node" parent="Objects/Zeus" index="8" node_paths=PackedStringArray("path")]
 script = ExtResource("15_tm2kd")
 path = NodePath("../../Path2D2/PathFollow2D")
 speed = 0.1
