@@ -1,0 +1,8 @@
+{
+	"javelin": [
+		{"speaker": "object", "text": "Peltast troops commonly used javelins, and hoplites and cavalry troops were also often equipped with javelins for throwing.", "action": "none"},
+		{"speaker": "object", "text": "The javelins used were light spears around 1.5 meters in length, with a bronze head to facilitate recovery of the weapon.", "action": "none"},
+		{"speaker": "object", "text": "Javelins were also used in the Ancient Olympics and other Panhellenic games.", "action": "none"},
+		{"speaker": "object", "text": "They were hurled in a certain direction and whoever hurled it the farthest, as long as it hit tip-first, won that game.", "action": "exit"},
+	]
+}

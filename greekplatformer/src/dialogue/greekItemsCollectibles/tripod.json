@@ -1,0 +1,7 @@
+{
+	"tripod": [
+		{"speaker": "object", "text": "Tripods in ancient Greece played sacred role.", "action": "none"},
+		{"speaker": "object", "text": "Ancient Greeks believed that their fates were firmly in the hands of the gods, who needed to be pleased and appeased through offerings and sacrifices at their temples.", "action": "none"},
+		{"speaker": "object", "text": "The priest or priestess put a cauldron on the tripod, lit a fire under it, and then you placed your ritual offerings in the cauldron—maybe grain, animal flesh, oil or wine.", "action": "exit"},
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"herm": [
+		{"speaker": "object", "text": "The home was the center of ancient Greek life and protecting the home and its inhabitants required daily offerings and prayers to the gods.", "action": "none"},
+		{"speaker": "object", "text": "In addition to a small family altar in the courtyard, ancient Greeks placed special objects at the entrance to the home to protect it from evil spirits or dangerous energies.", "action": "none"},
+		{"speaker": "object", "text": "One such object was called a herm, a small statue of Hermes, the god of travel.", "action": "none"},
+		{"speaker": "object", "text": "Upon leaving the house, family members would say a prayer to Hermes to protect them on their journey—even if it was only a short trip to the market—and offer a prayer of gratitude for returning home safely.", "action": "exit"},
+	]
+}
