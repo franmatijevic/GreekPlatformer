@@ -105,7 +105,7 @@ func finish():
 	for bubble in speechBubbles.values():
 		bubble.visible = false
 	inProgress = false
-	get_node("Player").set_state("MoveState")
+	get_parent().get_node("Player").set_state("MoveState")
 	SignalBus.emit_signal("dialogue_finished")
 	SignalBus.emit_signal("npc_exit")
 	
@@ -114,7 +114,7 @@ func on_display_dialogue(textKey):
 		next_line()
 	else:
 		SignalBus.emit_signal("npc_enter")
-		get_node("Player").set_state("DialogState")
+		get_parent().get_node("Player").set_state("DialogState")
 		inProgress = true
 		selectedText = sceneText[textKey].duplicate()
 		next_line()

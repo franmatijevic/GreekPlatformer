@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="6_i6bi8"]
 [ext_resource type="Script" path="res://src/player/playerStates/dead_state.gd" id="6_v8jiw"]
 [ext_resource type="Script" path="res://src/player/playerStates/interact_state.gd" id="7_tjjen"]
-[ext_resource type="Script" path="res://src/player/playerStates/state.gd" id="8_amjyq"]
+[ext_resource type="Script" path="res://src/player/playerStates/dialog.gd" id="8_a3aol"]
 [ext_resource type="PackedScene" uid="uid://cy47xdciin3c" path="res://src/player/procedural_animations/procedural_animation.tscn" id="9_0411t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4g2n"]
@@ -64,7 +64,7 @@ script = ExtResource("6_v8jiw")
 script = ExtResource("7_tjjen")
 
 [node name="DialogState" type="Node" parent="States"]
-script = ExtResource("8_amjyq")
+script = ExtResource("8_a3aol")
 
 [node name="DetectFloor" type="Area2D" parent="."]
 collision_layer = 0

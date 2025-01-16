@@ -2,7 +2,7 @@ extends Character
 
 class_name Player
 
-@onready var current_state: State = get_node("States/MoveState")
+@onready var current_state: State = get_node("States/DialogState")
 @onready var icon: Sprite2D = $Icon
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var collision_shape_2d: CollisionShape2D = $DetectPickup/CollisionShape2D
@@ -33,7 +33,19 @@ func _ready():
 		states[i.name.to_lower()] = i
 	if current_state:
 		current_state.enter()
+	
+	var t=create_tween()
+	t.tween_interval(2)
+	t.tween_callback(start)
 
+func starting():
+	set_state("DialogState")
+	var t=create_tween()
+	t.tween_interval(0.5)
+	t.tween_callback(start)
+
+func start():
+	set_state("MoveState")
 
 func _physics_process(delta: float) -> void:
 	if direction and !holding_object:
@@ -80,6 +92,18 @@ func _process(delta: float) -> void:
 	
 	if holding_object and current_state.name!="InteractState":
 		flip_player_to_aim()
+
+func flip_player(direction:bool):
+	if direction == false:
+		facing_direction = false
+		marker_2d.position = Vector2(-52, -5)
+		collision_shape_2d.position = Vector2(-63, 25)
+		$ProceduralAnimation.flip(true)
+	elif direction == true:
+		facing_direction = true
+		marker_2d.position = Vector2(49,-5)
+		collision_shape_2d.position = Vector2(14, 25)
+		$ProceduralAnimation.flip(false)
 
 func flip_player_to_aim():
 	var mouse_pos = get_global_mouse_position()
