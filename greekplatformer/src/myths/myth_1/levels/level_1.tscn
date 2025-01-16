@@ -98,7 +98,7 @@ position = Vector2(2250.47, 779.472)
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="14"]
 
 [node name="Player" parent="." index="15" instance=ExtResource("13_s3rpa")]
-position = Vector2(-9672, 600)
+position = Vector2(-1321, 600)
 floor_max_angle = 0.785398
 jump_height = 250.0
 
