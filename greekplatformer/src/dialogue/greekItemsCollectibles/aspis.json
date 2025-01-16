@@ -1,0 +1,8 @@
+{
+	"aspis": [
+		{"speaker": "object", "text": "If you were a hoplite soldier in the Greek army, your essential everyday weapon was a simple wooden shield called an aspis.", "action": "none"},
+		{"speaker": "object", "text": "This round shield was invented in the 8th century B.C. and spread like wildfire across the Mediterranean because of a game-changing innovation:", "action": "none"},
+		{"speaker": "object", "text": "the leather back of the shield had two grips, one to secure the elbow and a second one for the hand.", "action": "none"},
+		{"speaker": "object", "text": "The aspis got its strength from a wooden core that was reinforced with plates of metal like bronze or iron.", "action": "exit"},
+	]
+}

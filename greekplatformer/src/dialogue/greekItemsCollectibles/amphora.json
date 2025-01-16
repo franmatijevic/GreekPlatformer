@@ -1,0 +1,8 @@
+{
+	"amphora": [
+		{"speaker": "object", "text": "Amphora is a type of container with a pointed bottom and characteristic shape and size which fit tightly against each other in storage rooms and packages, tied together with rope and delivered by land or sea.", "action": "none"},
+		{"speaker": "object", "text": "The size and shape have been determined from at least as early as the Neolithic Period.", "action": "none"},
+		{"speaker": "object", "text": "Amphorae were used in vast numbers for the transport and storage of various products, both liquid and dry, but mostly for wine. They are most often ceramic, but examples in metals and other materials have been found.", "action": "none"},
+		{"speaker": "object", "text": "Versions of the amphorae were one of many shapes used in Ancient Greek vase painting.", "action": "exit"},
+	]
+}

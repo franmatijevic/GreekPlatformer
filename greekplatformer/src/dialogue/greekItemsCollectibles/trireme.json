@@ -1,0 +1,10 @@
+{
+	"trireme": [
+		{"speaker": "object", "text": "Trireme was galley ship used by the ancient civilizations of the Mediterranean Sea.", "action": "none"},
+		{"speaker": "object", "text": "As a ship, it was fast and agile and was the dominant warship in the Mediterranean from the 7th to the 4th centuries BC.", "action": "none"},
+		{"speaker": "object", "text": "The design of the trireme most likely pushed the technological limits of the ancient world.", "action": "none"},
+		{"speaker": "object", "text": "It was important to achieve high speed and retain the ship's resistance to waves and the possible rollover.", "action": "none"},
+		{"speaker": "object", "text": "The total complement of the ship was about 200.", "action": "none"},
+		{"speaker": "object", "text": "These were divided into the 170 rowers, who provided the ship's motive power, the deck crew headed by the trierarch and a marine detachment.", "action": "exit"},
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"krater": [
+		{"speaker": "object", "text": "The krater was the centerpiece of the symposium, an Ancient Greek drinking party filled with wine, women and song.", "action": "none"},
+		{"speaker": "object", "text": "Kraters were wide-rimmed bowls made of ceramic or bronze in which wine was mixed with water and then ladled out to the guests at the symposium.", "action": "none"},
+		{"speaker": "object", "text": "Every Greek household would have a krater for family gatherings and celebrations.", "action": "none"},
+		{"speaker": "object", "text": "The humblest were made of unadorned red ceramic, while wealthier families owned craters with elaborate depictions of the gods making merry.", "action": "exit"},
+	]
+}

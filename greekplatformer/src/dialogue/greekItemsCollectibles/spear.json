@@ -1,0 +1,8 @@
+{
+	"spear": [
+		{"speaker": "object", "text": "The primary weapon that was used by Greek troops was a two-to-three meter spear with a leaf-shaped blade at one end and a short spike at the other known as the doru.", "action": "none"},
+		{"speaker": "object", "text": "The spearhead was usually made of bronze or iron but which one was more prominently used is still an open question.", "action": "none"},
+		{"speaker": "object", "text": "The doru was used one-handed.", "action": "none"},
+		{"speaker": "object", "text": "Mounted cavalry were known to have used a thinner spear or very long lance which provided a range advantage over shorter infantry spears.", "action": "exit"},
+	]
+}
