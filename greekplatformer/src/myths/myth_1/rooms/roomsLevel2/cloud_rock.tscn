@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_vtol4"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="2_83m32"]
-[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="3_65e2y"]
+[ext_resource type="PackedScene" uid="uid://dxuegyf56w8ke" path="res://src/environment/pressurePlate/basket_plate.tscn" id="3_upe6p"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_nescx"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_b77ut"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="6_1orot"]
@@ -39,12 +39,13 @@ position = Vector2(0, -132)
 position = Vector2(-8, 384)
 shape = SubResource("RectangleShape2D_dus7d")
 
-[node name="PressurePlate" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_65e2y")]
+[node name="PressurePlate2" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_upe6p")]
 position = Vector2(680, 0)
 connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
 
 [node name="cloud_platform" parent="Objects" index="2" instance=ExtResource("4_nescx")]
 position = Vector2(-264, -132)
+max_time_on_platform = 3.0
 
 [node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("5_b77ut")]
 position = Vector2(-272, -232)
@@ -58,4 +59,5 @@ rotates = false
 loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("6_1orot")]
+position = Vector2(0, -2)
 speed = 300.0

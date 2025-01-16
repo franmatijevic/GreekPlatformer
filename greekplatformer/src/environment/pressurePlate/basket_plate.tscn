@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxuegyf56w8ke"]
+
+[ext_resource type="Script" path="res://src/environment/pressurePlate/pressure_plate.gd" id="1_od305"]
+[ext_resource type="Texture2D" uid="uid://o568s1sa326g" path="res://src/levels/tilesets/blackTrokut.png" id="2_dklmh"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="3_cp1s1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmphs"]
+size = Vector2(187, 50)
+
+[node name="PressurePlate" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 5
+sync_to_physics = false
+script = ExtResource("1_od305")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-96, 0, 96, 0, 64, -32, -64, -32)
+
+[node name="Trokut" type="Sprite2D" parent="."]
+position = Vector2(80, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut2" type="Sprite2D" parent="."]
+position = Vector2(-80, -16)
+rotation = 3.14159
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut3" type="Sprite2D" parent="."]
+position = Vector2(-80, -16)
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut4" type="Sprite2D" parent="."]
+position = Vector2(-112, -48)
+rotation = 1.5708
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut5" type="Sprite2D" parent="."]
+position = Vector2(80, -16)
+rotation = 1.5708
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut6" type="Sprite2D" parent="."]
+position = Vector2(112, -48)
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut9" type="Sprite2D" parent="."]
+position = Vector2(80, -48)
+rotation = 3.14159
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Trokut7" type="Sprite2D" parent="."]
+position = Vector2(-80, -48)
+rotation = 4.71239
+scale = Vector2(0.25, -0.25)
+texture = ExtResource("2_dklmh")
+
+[node name="Pixel1x1" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(128, 32)
+texture = ExtResource("3_cp1s1")
+
+[node name="Plate" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+sync_to_physics = false
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Plate"]
+position = Vector2(-54, -53)
+polygon = PackedVector2Array(150, 54, -42, 53, -42, 21, -74, -11, -41, -11, -8, 21, 119, 21, 150, -11, 182, -11, 150, 22)
+
+[node name="detectSomething" type="Area2D" parent="Plate"]
+position = Vector2(0, -24)
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/detectSomething"]
+position = Vector2(-0.5, -15)
+shape = SubResource("RectangleShape2D_bmphs")
+
+[connection signal="body_entered" from="Plate/detectSomething" to="." method="_on_detect_something_body_entered"]
+[connection signal="body_exited" from="Plate/detectSomething" to="." method="_on_detect_something_body_exited"]

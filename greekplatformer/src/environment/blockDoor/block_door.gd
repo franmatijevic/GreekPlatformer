@@ -52,10 +52,13 @@ func _physics_process(delta: float) -> void:
 		else:
 			$DetectHorizontal.set_deferred("monitoring", false)
 		if(direction.y>0):
+			AudioController.play_door_opening()
 			$DetectVertical.position.y=abs($DetectVertical.position.y)
 		elif(direction.y<0):
+			AudioController.play_door_opening()
 			$DetectVertical.position.y=-abs($DetectVertical.position.y)
 		else:
+			AudioController.stop_door_opening()
 			$DetectVertical.set_deferred("monitoring", false)
 	
 	

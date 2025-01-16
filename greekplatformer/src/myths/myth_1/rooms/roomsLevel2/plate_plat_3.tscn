@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_qhj0o"]
 [ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="2_13qxm"]
-[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="3_jjq1b"]
+[ext_resource type="PackedScene" uid="uid://dxuegyf56w8ke" path="res://src/environment/pressurePlate/basket_plate.tscn" id="3_hc5ie"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="4_0y6ec"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="5_2bxb1"]
 [ext_resource type="PackedScene" uid="uid://hjhx55yccp7w" path="res://src/environment/pressurePlate/plate_platform.tscn" id="6_yejyb"]
@@ -34,24 +34,32 @@ shape = SubResource("RectangleShape2D_mix1u")
 [node name="Respawn" parent="." index="3"]
 position = Vector2(-1016, 0)
 
-[node name="SuperSpring" parent="Objects" index="0" instance=ExtResource("2_13qxm")]
+[node name="PressurePlate2" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_hc5ie")]
+position = Vector2(1713, -641)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="SuperSpring" parent="Objects" index="1" instance=ExtResource("2_13qxm")]
 position = Vector2(416, 448)
 max_force = 2800.0
 
-[node name="PressurePlate" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
-position = Vector2(1672, -256)
+[node name="PressurePlate3" parent="Objects" index="2" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_hc5ie")]
+position = Vector2(1727, 257)
 connectedTo = [NodePath("../LogicalAND")]
 
-[node name="cloud_platform" parent="Objects" index="2" instance=ExtResource("4_0y6ec")]
+[node name="PressurePlate" parent="Objects" index="3" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_hc5ie")]
+position = Vector2(1719, -256)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="cloud_platform" parent="Objects" index="4" instance=ExtResource("4_0y6ec")]
 position = Vector2(832, -848)
 
-[node name="RigidBody2D" parent="Objects" index="3" instance=ExtResource("5_2bxb1")]
+[node name="RigidBody2D" parent="Objects" index="5" instance=ExtResource("5_2bxb1")]
 position = Vector2(840, -968)
 
-[node name="RigidBody2D2" parent="Objects" index="4" instance=ExtResource("5_2bxb1")]
+[node name="RigidBody2D2" parent="Objects" index="6" instance=ExtResource("5_2bxb1")]
 position = Vector2(904, -968)
 
-[node name="PlatePlatform" parent="Objects" index="5" instance=ExtResource("6_yejyb")]
+[node name="PlatePlatform" parent="Objects" index="7" instance=ExtResource("6_yejyb")]
 position = Vector2(-456, -24)
 
 [node name="BlockDoor" parent="Objects/PlatePlatform/PathFollow2D" index="0"]
@@ -60,11 +68,7 @@ speed = 180.0
 [node name="PressurePlateALT" parent="Objects/PlatePlatform/PathFollow2D" index="1"]
 precision = 2.0
 
-[node name="PressurePlate2" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
-position = Vector2(1720, -656)
-connectedTo = [NodePath("../LogicalAND")]
-
-[node name="PlatePlatform2" parent="Objects" index="7" instance=ExtResource("6_yejyb")]
+[node name="PlatePlatform2" parent="Objects" index="8" instance=ExtResource("6_yejyb")]
 position = Vector2(832, -760)
 
 [node name="BlockDoor" parent="Objects/PlatePlatform2/PathFollow2D" index="0"]
@@ -73,10 +77,6 @@ speed = 200.0
 
 [node name="PressurePlateALT" parent="Objects/PlatePlatform2/PathFollow2D" index="1"]
 scale = Vector2(1.5, 1)
-
-[node name="PressurePlate3" parent="Objects" index="8" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_jjq1b")]
-position = Vector2(1656, 192)
-connectedTo = [NodePath("../LogicalAND")]
 
 [node name="RigidBody2D3" parent="Objects" index="9" instance=ExtResource("5_2bxb1")]
 position = Vector2(768, -968)

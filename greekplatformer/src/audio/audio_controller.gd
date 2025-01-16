@@ -6,7 +6,7 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-func play_sound(audio:AudioStreamPlayer, pitchVariance:bool):
+func play_sound(audio:AudioStreamPlayer, pitchVariance:bool, fromPoint:float):
 	if mute or SFXvolume==0:
 		return
 	
@@ -14,7 +14,23 @@ func play_sound(audio:AudioStreamPlayer, pitchVariance:bool):
 		var pitch = randf_range(0.95, 1.05)
 		audio.pitch_scale=pitch
 	
-	audio.play()
+	audio.play(fromPoint)
+
+func play_sound_stackable(audio_stream:AudioStream, pitchVariance:bool, fromPoint:float):
+	if mute or SFXvolume==0:
+		return
+	
+	var audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
+	
+	audio_player.stream = audio_stream
+	if(pitchVariance):
+		var pitch = randf_range(0.95, 1.05)
+		audio_player.pitch_scale=pitch
+	
+	audio_player.connect("finished", Callable(audio_player, "queue_free"))
+	
+	audio_player.play(fromPoint)
 
 func stop_sound(audio:AudioStreamPlayer):
 	audio.stop()
@@ -36,76 +52,79 @@ func positionSound(audio:AudioStreamPlayer2D, pitchVariance:bool):
 #	AudioServer.set_bus_volume_db(sfx_index, value_in_db)
 
 func play_breaking_platform():
-	play_sound($SFX/breaking_platform,1)
+	play_sound_stackable($SFX/breaking_platform.stream,1,0)
 
 func play_cloud():
-	play_sound($SFX/cloud,1)
+	play_sound_stackable($SFX/cloud.stream,1,0)
 
 func play_death():
 	match rng.randi_range(0, 1):
 		0:
-			play_sound($SFX/death1,0)
+			play_sound($SFX/death1,0,0)
 		1:
-			play_sound($SFX/death2,0)
+			play_sound($SFX/death2,0,0)
 
 func play_door_opening():
-	play_sound($SFX/door_opening,0)
+	play_sound($SFX/door_opening,0,rng.randi_range(0, 20))
+
+func stop_door_opening():
+	stop_sound($SFX/door_opening)
 
 func play_lever():
-	play_sound($SFX/lever,0)
+	play_sound($SFX/lever,0,0)
 
 func play_seagull():
 	match rng.randi_range(0, 5):
 		0:
-			play_sound($SFX/pidgeon1,1)
+			play_sound($SFX/pidgeon1,1,0)
 		1:
-			play_sound($SFX/pidgeon2,1)
+			play_sound($SFX/pidgeon2,1,0)
 		2:
-			play_sound($SFX/pidgeon3,1)
+			play_sound($SFX/pidgeon3,1,0)
 		3:
-			play_sound($SFX/pidgeon4,1)
+			play_sound($SFX/pidgeon4,1,0)
 		4:
-			play_sound($SFX/pidgeon5,1)
+			play_sound($SFX/pidgeon5,1,0)
 		5:
-			play_sound($SFX/pidgeon6,1)
+			play_sound($SFX/pidgeon6,1,0)
 	
 	#play_sound($SFX/seagull,1)
 
 func play_stone_fall():
-	play_sound($SFX/stone_fall,1)
+	play_sound($SFX/stone_fall,1,0)
 
 func play_walk_ceramic():
-	play_sound($SFX/walk_ceramic,0)
+	play_sound($SFX/walk_ceramic,0,0)
 
 func play_spring():
-	play_sound($SFX/spring,1)
+	play_sound_stackable($SFX/spring.stream,1,0)
 
 func play_ground_stomp():
-	play_sound($SFX/stone_fall,1)
+	play_sound($SFX/stone_fall,1,0)
 
 func play_jump():
 	match rng.randi_range(0, 3):
 		0:
-			play_sound($SFX/jump1,0)
+			play_sound($SFX/jump1,1.0,0)
 		1:
-			play_sound($SFX/jump2,0)
+			play_sound($SFX/jump2,1.0,0)
 		2:
-			play_sound($SFX/jump3, 0)
+			play_sound($SFX/jump3, 1.0,0)
 		3:
-			play_sound($SFX/jump4, 0)
+			play_sound($SFX/jump4, 1.0,0)
 
 func play_dialogue(activeSpeaker: String):
 	match activeSpeaker:
 		"Prometej":
-			play_sound($SFX/talk_prometej, 0)
+			play_sound($SFX/talk_prometej, 0, rng.randi_range(0, 6))
 		"Zeus":
-			play_sound($SFX/talk_zeus, 0)
+			play_sound($SFX/talk_zeus, 0, rng.randi_range(0, 6))
 		"Atena":
-			play_sound($SFX/talk_atena, 0)
+			play_sound($SFX/talk_atena, 0, rng.randi_range(0, 6))
 		"npc_musko":
-			play_sound($SFX/talk_npc_musko, 0)
+			play_sound($SFX/talk_npc_musko, 0, rng.randi_range(0, 6))
 		"npc_zensko":
-			play_sound($SFX/talk_npc_zensko, 0)
+			play_sound($SFX/talk_npc_zensko, 0, rng.randi_range(0, 6))
 
 func stop_dialogue(activeSpeaker: String):
 	match activeSpeaker:
