@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=4 uid="uid://xo2tgl6vov72"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_dj1t8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j45sb"]
+size = Vector2(2432, 1218)
+
+[node name="OlimpIntro" instance=ExtResource("1_dj1t8")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD6/wEABgAAAAAAAAD7/wEABgAAAAAAAAD8/wEABgAAAAAAAAD9/wEABgAAAAAAAAD+/wEABgAAAAAAAAD//wEABgAAAAAAAAAAAAEABgAAAAAAAAABAAEABgAAAAAAAAACAAEABgAAAAAAAAADAAEABgAAAAAAAAAEAAEABgAAAAAAAAAFAAEABgAAAAAAAAAGAAEABgAAAAAAAAAHAAEABgAAAAAAAAAIAAEABgAAAAAAAAD5/wEABgAAAAAAAAD4/wEABgAAAAAAAAAJAAEABgAAAAAAAAAKAAEABgAAAAAAAAD4/wIABwAAAAAAAAD5/wIABwAAAAAAAAD6/wIABwAAAAAAAAD7/wIABwAAAAAAAAD8/wIABwAAAAAAAAD9/wIABwAAAAAAAAD+/wIABwAAAAAAAAD//wIABwAAAAAAAAAAAAIABwAAAAAAAAABAAIABwAAAAAAAAACAAIABwAAAAAAAAADAAIABwAAAAAAAAAEAAIABwAAAAAAAAAFAAIABwAAAAAAAAAGAAIABwAAAAAAAAAHAAIABwAAAAAAAAAIAAIABwAAAAAAAAAJAAIABwAAAAAAAAAKAAIABwAAAAAAAAD3/wAABwAAAAAAAAD3////BwAAAAAAAAD3//7/BwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(192, -287)
+shape = SubResource("RectangleShape2D_j45sb")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-640, 64)
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(1216, 64)

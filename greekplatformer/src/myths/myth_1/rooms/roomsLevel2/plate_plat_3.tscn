@@ -32,7 +32,7 @@ position = Vector2(704, -680)
 shape = SubResource("RectangleShape2D_mix1u")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(-1016, 0)
+position = Vector2(-832, 64)
 
 [node name="PressurePlate2" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_hc5ie")]
 position = Vector2(1713, -641)
@@ -104,6 +104,9 @@ position = Vector2(0, 752)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
 position = Vector2(508, 72)
 shape = SubResource("RectangleShape2D_faonw")
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(2176, -1472)
 
 [editable path="Objects/PlatePlatform"]
 [editable path="Objects/PlatePlatform2"]

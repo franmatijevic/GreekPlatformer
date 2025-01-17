@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://pmy66x62unny"]
+[gd_scene load_steps=16 format=3 uid="uid://pmy66x62unny"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_8qchm"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="2_pwrnr"]
@@ -7,11 +7,37 @@
 [ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="4_xas2a"]
 [ext_resource type="PackedScene" uid="uid://c3ptstpycfihj" path="res://src/levels/test_level_rooms/lowering_the_platform.tscn" id="5_ey0a2"]
 [ext_resource type="PackedScene" uid="uid://dcjccvul36vbj" path="res://src/levels/test_level_rooms/simple_juggle.tscn" id="6_2dl6k"]
+[ext_resource type="PackedScene" uid="uid://b2yiqrecd4v80" path="res://src/levels/test_level_rooms/new_levels/room_2.tscn" id="8_sjyc1"]
+[ext_resource type="PackedScene" uid="uid://c0gvja8oywg3d" path="res://src/levels/test_level_rooms/new_levels/room_1.tscn" id="9_u43d6"]
+[ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="10_ptuuy"]
+[ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="11_xuug8"]
+[ext_resource type="PackedScene" uid="uid://xo2tgl6vov72" path="res://src/myths/myth_1/rooms/roomLevel3/olimp_intro.tscn" id="12_beblk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oxxwt"]
+size = Vector2(1080, 626)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly1c5"]
+size = Vector2(1200, 1136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb41l"]
+size = Vector2(744, 640)
 
 [node name="Olimp" node_paths=PackedStringArray("current_room") instance=ExtResource("1_8qchm")]
 ChapterName = "Chapter 3: Mount Olympus"
-current_room = NodePath("PlatePlatform")
+current_room = NodePath("OlimpIntro")
 lineLength = 4.0
+
+[node name="Control" parent="BlackScreen" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" parent="BlackScreen/Control" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" parent="BlackScreen" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" parent="BlackScreen/Text" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Line2D" parent="BlackScreen/Text" index="1"]
 position = Vector2(466, 72)
@@ -21,19 +47,52 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_pxfoj")]
-position = Vector2(-7232, 304)
+position = Vector2(-9720, 400)
 
 [node name="PlatePlatform" parent="." index="6" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)
 
 [node name="platePlat3" parent="." index="7" instance=ExtResource("3_62bcb")]
-position = Vector2(1168, -136)
+position = Vector2(16528, -264)
 
 [node name="FlockOfBirds" parent="." index="8" instance=ExtResource("4_xas2a")]
-position = Vector2(9992, -240)
+position = Vector2(36240, -11528)
 
 [node name="LoweringThePlatform" parent="." index="9" instance=ExtResource("5_ey0a2")]
 position = Vector2(-3952, 376)
 
 [node name="SimpleJuggle" parent="." index="10" instance=ExtResource("6_2dl6k")]
-position = Vector2(-1648, 120)
+position = Vector2(13712, -8)
+
+[node name="Room2" parent="." index="11" instance=ExtResource("8_sjyc1")]
+position = Vector2(26256, -3848)
+
+[node name="Room1" parent="." index="12" instance=ExtResource("9_u43d6")]
+position = Vector2(7056, -264)
+
+[node name="Checkpoint" parent="." index="13" instance=ExtResource("10_ptuuy")]
+position = Vector2(9632, 2104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
+position = Vector2(156, -303)
+shape = SubResource("RectangleShape2D_oxxwt")
+
+[node name="Checkpoint2" parent="." index="14" instance=ExtResource("10_ptuuy")]
+position = Vector2(1576, -1984)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" index="0"]
+position = Vector2(328, -408)
+shape = SubResource("RectangleShape2D_ly1c5")
+
+[node name="Room" parent="." index="15" instance=ExtResource("11_xuug8")]
+position = Vector2(20880, -2056)
+
+[node name="Checkpoint3" parent="." index="16" instance=ExtResource("10_ptuuy")]
+position = Vector2(30464, -3136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3" index="0"]
+position = Vector2(-124, -328)
+shape = SubResource("RectangleShape2D_cb41l")
+
+[node name="OlimpIntro" parent="." index="17" instance=ExtResource("12_beblk")]
+position = Vector2(-8816, 376)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=21 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ptstpycfihj" path="res://src/levels/test_level_rooms/lowering_the_platform.tscn" id="16_kti2m"]
 [ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="17_q4aqx"]
 [ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="18_kjm2o"]
+[ext_resource type="PackedScene" uid="uid://b2yiqrecd4v80" path="res://src/levels/test_level_rooms/new_levels/room_2.tscn" id="19_2yxld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
 radius = 240.0
@@ -30,7 +31,7 @@ current_room = NodePath("StartingRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
-position = Vector2(-4016, 112)
+position = Vector2(760, -336)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
@@ -82,7 +83,10 @@ position = Vector2(22272, -928)
 position = Vector2(19944, -680)
 
 [node name="FlockOfBirds" parent="." index="21" instance=ExtResource("17_q4aqx")]
-position = Vector2(6960, 2016)
+position = Vector2(18608, -6240)
 
 [node name="Room4" parent="." index="22" instance=ExtResource("18_kjm2o")]
-position = Vector2(2880, 200)
+position = Vector2(20752, -11480)
+
+[node name="Room5" parent="." index="23" instance=ExtResource("19_2yxld")]
+position = Vector2(3920, -1328)

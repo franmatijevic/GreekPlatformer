@@ -31,7 +31,7 @@ position = Vector2(384, -156)
 shape = SubResource("RectangleShape2D_tfw2i")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(-632, 40)
+position = Vector2(-640, 64)
 
 [node name="Path2D" type="Path2D" parent="Objects" index="0"]
 position = Vector2(-8, -160)
@@ -99,3 +99,6 @@ distance = -200.0
 [node name="Delayer" parent="Objects" index="10" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_5ayj5")]
 delay = 0.1
 connectedTo = [NodePath("../Spike2"), NodePath("../Spike5")]
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(1496, -192)
