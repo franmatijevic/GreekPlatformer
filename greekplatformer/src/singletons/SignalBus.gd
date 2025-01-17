@@ -9,7 +9,10 @@ signal npc_enter
 signal npc_exit
 signal perform_action(action, params)
 
+signal on_interacted_artefact
 
+func emit_on_interacted_artefact():
+	on_interacted_artefact.emit()
 # Settings
 
 signal on_changed_room(path : String, room : String)

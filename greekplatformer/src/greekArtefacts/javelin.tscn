@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bod8rxiafye"]
+
+[ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_jbgq8"]
+[ext_resource type="Texture2D" uid="uid://cfp4ei7vvuerd" path="res://src/greekArtefacts/all_artefacts/javelin.png" id="2_wt0yx"]
+
+[node name="GreekArtefact" instance=ExtResource("1_jbgq8")]
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("2_wt0yx")

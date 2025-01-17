@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck4x0dqsr4j0l"]
+
+[ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_0v4rd"]
+[ext_resource type="Texture2D" uid="uid://dh7nm15f0s300" path="res://src/greekArtefacts/all_artefacts/spear.png" id="2_p65qt"]
+
+[node name="GreekArtefact" instance=ExtResource("1_0v4rd")]
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("2_p65qt")

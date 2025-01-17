@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://wtel6idotxma"]
+
+[ext_resource type="Script" path="res://src/greekArtefacts/greekArtefact.gd" id="1_edkn6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdyk"]
+size = Vector2(253, 45.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f456u"]
+bg_color = Color(0.333333, 0.333333, 0.333333, 0.690196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GreekArtefact" type="Node2D"]
+script = ExtResource("1_edkn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+z_as_relative = false
+scale = Vector2(0.506494, 0.506493)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 99)
+shape = SubResource("RectangleShape2D_ipdyk")
+
+[node name="Interact" type="Label" parent="."]
+offset_left = -70.0
+offset_top = -183.0
+offset_right = 73.0
+offset_bottom = -129.0
+theme_override_colors/font_color = Color(0.147672, 0.147672, 0.147672, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_f456u")
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArtefactInformation" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ArtefactInformationTexture" type="TextureRect" parent="ArtefactInformation"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

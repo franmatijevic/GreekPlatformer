@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8ulo5kuocg5"]
+
+[ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_q4nnp"]
+[ext_resource type="Texture2D" uid="uid://dof7e5a2dcl3g" path="res://src/greekArtefacts/all_artefacts/herm.png" id="2_7ctcc"]
+
+[node name="GreekArtefact" instance=ExtResource("1_q4nnp")]
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("2_7ctcc")

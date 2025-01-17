@@ -22,6 +22,8 @@ var respawnLocation
 var current_room_position
 var holding_object:Throwable=null
 
+var interactWithArtefact = false
+
 var game_paused: bool = false:
 	get:
 		return game_paused
@@ -40,8 +42,12 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if (game_paused && pause_menu.visible):
 			pass
+		elif (interactWithArtefact):
+			get_tree().paused = false
+			interactWithArtefact = false
 		elif(get_node("Camera").block==false) and (!dialogue_player or !dialogue_player.inProgress):
 			game_paused = !game_paused
+
 
 func restart():
 	if(current_room != new_next_level):
@@ -82,6 +88,7 @@ func restart():
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
 func _ready() -> void:
+	SignalBus.on_interacted_artefact.connect(on_interacted_artefact)
 	get_node("BlackScreen/Text/Label").text=ChapterName
 	var t = create_tween()
 	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 1, 1)
@@ -150,3 +157,7 @@ func _on_timer_timeout() -> void:
 	
 func room_changed(path: String, room : String):
 	SignalBus.emit_on_changed_room(path, room)
+
+func on_interacted_artefact():
+	interactWithArtefact = true
+	get_tree().paused = true

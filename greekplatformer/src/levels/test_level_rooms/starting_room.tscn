@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bv6crjirceehq"]
+[gd_scene load_steps=21 format=4 uid="uid://bv6crjirceehq"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_v1w17"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="2_ns463"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="13_8pfbo"]
 [ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="14_ggxjk"]
 [ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/swoop.gd" id="15_tm2kd"]
+[ext_resource type="PackedScene" uid="uid://bot5n4nm2bi8c" path="res://src/greekArtefacts/amphora.tscn" id="16_3nqip"]
+[ext_resource type="PackedScene" uid="uid://bql3ot7albj67" path="res://src/greekArtefacts/aspis.tscn" id="17_3sleb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0vdt"]
 size = Vector2(10200, 2060)
@@ -141,3 +143,9 @@ position = Vector2(0.00151676, -0.00159758)
 progress = 5128.05
 rotates = false
 loop = false
+
+[node name="GreekArtefact" parent="Objects" index="19" instance=ExtResource("16_3nqip")]
+position = Vector2(-8215, 133)
+
+[node name="GreekArtefact2" parent="Objects" index="20" instance=ExtResource("17_3sleb")]
+position = Vector2(-7392, 129)

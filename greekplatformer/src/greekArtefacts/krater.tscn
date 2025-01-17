@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddri2gjhvruj3"]
+
+[ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_cv7p0"]
+[ext_resource type="Texture2D" uid="uid://r1tni7vutabg" path="res://src/greekArtefacts/all_artefacts/krater.png" id="2_cefec"]
+
+[node name="GreekArtefact" instance=ExtResource("1_cv7p0")]
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("2_cefec")
