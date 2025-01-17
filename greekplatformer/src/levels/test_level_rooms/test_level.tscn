@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=20 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjccvul36vbj" path="res://src/levels/test_level_rooms/simple_juggle.tscn" id="15_sgh4s"]
 [ext_resource type="PackedScene" uid="uid://c3ptstpycfihj" path="res://src/levels/test_level_rooms/lowering_the_platform.tscn" id="16_kti2m"]
 [ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="17_q4aqx"]
+[ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="18_kjm2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
 radius = 240.0
@@ -60,7 +61,7 @@ position = Vector2(25160, -1160)
 position = Vector2(9920, 6288)
 
 [node name="Room3" parent="." index="15" instance=ExtResource("11_iqxsf")]
-position = Vector2(3664, 5472)
+position = Vector2(19304, 11560)
 
 [node name="LeverTutorial" parent="." index="16" instance=ExtResource("12_iqmii")]
 position = Vector2(17344, -1176)
@@ -72,7 +73,7 @@ position = Vector2(-1856, 56)
 shape = SubResource("CircleShape2D_a57mi")
 
 [node name="PlateTutorial" parent="." index="18" instance=ExtResource("14_2rysc")]
-position = Vector2(-1800, 4240)
+position = Vector2(19192, 4560)
 
 [node name="SimpleJuggle" parent="." index="19" instance=ExtResource("15_sgh4s")]
 position = Vector2(22272, -928)
@@ -81,4 +82,7 @@ position = Vector2(22272, -928)
 position = Vector2(19944, -680)
 
 [node name="FlockOfBirds" parent="." index="21" instance=ExtResource("17_q4aqx")]
-position = Vector2(1856, -24)
+position = Vector2(6960, 2016)
+
+[node name="Room4" parent="." index="22" instance=ExtResource("18_kjm2o")]
+position = Vector2(2880, 200)

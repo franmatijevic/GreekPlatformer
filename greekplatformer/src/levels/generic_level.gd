@@ -9,6 +9,7 @@ class_name Level
 
 @onready var pause_menu: Control = $CanvasLayerPause/PauseMenu/Panel/SettingsPauseMenu
 
+@export var lineLength:float=650
 
 @warning_ignore("unused_signal")
 signal toggle_paused(paused: bool)
@@ -95,6 +96,10 @@ func teleport(spot):
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
 func _ready() -> void:
+	
+	get_node("BlackScreen/Text/Line2D").points.set(0, Vector2(-lineLength,0))
+	get_node("BlackScreen/Text/Line2D").points.set(1, Vector2(lineLength,0))
+	
 	SignalBus.on_interacted_artefact.connect(on_interacted_artefact)
 	get_node("BlackScreen/Text/Label").text=ChapterName
 	var t = create_tween()

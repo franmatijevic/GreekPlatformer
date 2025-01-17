@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg8n57qvp1hs8"]
 
-[ext_resource type="Texture2D" uid="uid://cdho3tefu3l4p" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblak.png" id="1_p4irw"]
 [ext_resource type="Script" path="res://src/bossFeatures/zeus.gd" id="1_sx8bc"]
+[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="2_qsd86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_llmtk"]
 radius = 242.124
@@ -15,10 +15,6 @@ collision_layer = 32
 collision_mask = 5
 script = ExtResource("1_sx8bc")
 
-[node name="ZeusGlavaOblak" type="Sprite2D" parent="."]
-position = Vector2(48, 0)
-texture = ExtResource("1_p4irw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, -64)
 shape = SubResource("CircleShape2D_llmtk")
@@ -30,13 +26,7 @@ shape = SubResource("RectangleShape2D_ibmbv")
 
 [node name="Attacks" type="Node" parent="."]
 
-[node name="Label" type="Node2D" parent="."]
-visible = false
-position = Vector2(368, 88)
-scale = Vector2(15, 15)
-
-[node name="Label" type="Label" parent="Label"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("2_qsd86")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

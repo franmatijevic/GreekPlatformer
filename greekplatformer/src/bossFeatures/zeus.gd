@@ -7,7 +7,10 @@ var currentAttack:int=0
 
 var originalPosition
 
+var prev_position
+
 func _ready() -> void:
+	prev_position=global_position
 	for i in get_children():
 		if i is State:
 			i.reparent(get_node("Attacks"), 0)
@@ -21,9 +24,19 @@ func _ready() -> void:
 	originalPosition=global_position + idlePositionOffset
 
 func _physics_process(delta: float) -> void:
+	
 	get_node("Attacks").get_children()[currentAttack].update_physics_process(delta)
 
-	$Label/Label.text=str(get_node("Attacks").get_children()[currentAttack].name)
+func rotateToFacing():
+	if prev_position!=global_position:
+		rotation = (global_position - prev_position).angle()
+	
+	if prev_position.x>global_position.x:
+		$Head.flip_h=true
+	else:
+		$Head.flip_h=false
+
+
 
 func next_attack():
 	
