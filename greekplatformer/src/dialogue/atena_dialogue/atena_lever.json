@@ -1,0 +1,8 @@
+{
+	"atena_lever": [
+		{"speaker": "Atena", "text": "Looks like you've encountered some kind of modern technology?", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena", "text": "I don't know how much I can help you...", "action": "none"},
+		{"speaker": "Atena", "text": "But maybe you can pull it using the LEFT MOUSE button.", "action": "none"},
+		{"speaker": "Atena", "text": "Give it a try!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	]
+}

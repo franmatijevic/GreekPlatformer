@@ -97,7 +97,7 @@ scale = Vector2(1.5873, -1.5873)
 [node name="DialogueAreaHelp1" parent="." index="20" instance=ExtResource("16_a6ohr")]
 process_mode = 0
 position = Vector2(23929, -6443)
-dialogueKey = "lvl_2_help_1"
+dialogueKey = "atena_pick_up"
 oneTime = true
 
 [node name="CollisionShape2D" parent="DialogueAreaHelp1" index="0"]

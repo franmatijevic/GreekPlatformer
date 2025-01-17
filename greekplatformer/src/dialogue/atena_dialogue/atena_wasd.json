@@ -1,0 +1,15 @@
+{
+	"atena_wasd": [
+		{"speaker": "Atena", "text": "Prometheus, my dear!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena", "text": "Long time no see.", "action": "none"},
+		{"speaker": "Atena", "text": "What calls your spirit to action on this lovely day?", "action": "none"},
+		{"speaker": "Prometej", "text": "I want to bring fire to the people!", "action": "none"},
+		{"speaker": "Atena", "text": "And defy Zeus?", "action": "none"},
+		{"speaker": "Atena", "text": "You're a brave one, Prometheus.", "action": "none"},
+		{"speaker": "Atena", "text": "Very well then...", "action": "none"},
+		{"speaker": "Atena", "text": "I shall guide you on your travels.", "action": "none"},
+		{"speaker": "Atena", "text": "You can move using the A and D keys.", "action": "none"},
+		{"speaker": "Atena", "text": "To jump, use W or SPACE.", "action": "none"},
+		{"speaker": "Atena", "text": "Good luck on your journey!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	]
+}
