@@ -29,5 +29,7 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 [node name="Objects" type="Node2D" parent="."]
 process_mode = 4
 
+[node name="Skip" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

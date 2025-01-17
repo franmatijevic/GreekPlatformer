@@ -21,34 +21,34 @@ current_room = NodePath("CaveIntro")
 player = NodePath("../Player")
 
 [node name="LeverTutorial" parent="." index="5" instance=ExtResource("2_3dbg0")]
-position = Vector2(5816, -232)
+position = Vector2(5688, -232)
 
 [node name="PlateTutorial" parent="." index="6" instance=ExtResource("3_vmdto")]
 position = Vector2(696, 152)
 
 [node name="Room" parent="." index="7" instance=ExtResource("4_wxogk")]
-position = Vector2(4024, 408)
+position = Vector2(3640, 408)
 
 [node name="SimpleCatch" parent="." index="8" instance=ExtResource("6_02sff")]
-position = Vector2(16952, 280)
+position = Vector2(16824, -104)
 
 [node name="CloudRock" parent="." index="9" instance=ExtResource("7_2p0fa")]
-position = Vector2(14904, 280)
+position = Vector2(14776, -104)
 
 [node name="Soba4" parent="." index="10" instance=ExtResource("10_x75b3")]
-position = Vector2(18616, -616)
+position = Vector2(18488, -1000)
 
 [node name="Train1" parent="." index="11" instance=ExtResource("11_viuj6")]
-position = Vector2(9272, 280)
+position = Vector2(9144, -104)
 
 [node name="CaveIntro" parent="." index="12" instance=ExtResource("12_6fbti")]
 position = Vector2(-1608, -104)
 
 [node name="Room2" parent="." index="13" instance=ExtResource("11_rgv2d")]
-position = Vector2(26552, -2280)
+position = Vector2(26680, -2664)
 
 [node name="Player" parent="." index="14" instance=ExtResource("12_rh5en")]
-position = Vector2(-2664, -136)
+position = Vector2(-2952, 48)
 
 [node name="QuickThrow" parent="." index="15" instance=ExtResource("12_7iuwp")]
-position = Vector2(23864, -744)
+position = Vector2(23992, -1128)

@@ -47,15 +47,23 @@ func _input(_event: InputEvent) -> void:
 			interactWithArtefact = false
 		elif(get_node("Camera").block==false) and (!dialogue_player or !dialogue_player.inProgress):
 			game_paused = !game_paused
-
+	#if Input.is_action_just_pressed("ui_accept"):
+	#	skip()
 
 func restart():
+	teleport(current_room.get_node("Respawn"))
+
+
+func skip():
+	teleport(current_room.get_node("Skip"))
+
+func teleport(spot):
 	if(current_room != new_next_level):
 		return
 	get_node("BlackScreen/Control").modulate.a=1
 	#get_node("Player").velocity = Vector2.ZERO
 	get_node("Player").restart()
-	get_node("Player").global_position = current_room.get_node("Respawn").global_position
+	get_node("Player").global_position = spot.global_position#current_room.get_node("Respawn").global_position
 	
 	current_room.process_mode=Node.PROCESS_MODE_DISABLED
 	if(new_next_level != current_room):
@@ -76,7 +84,7 @@ func restart():
 	current_room.global_position = current_room_position
 	current_room.get_node("Respawn").global_position=respawnLocation
 	
-	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
+	get_node("Camera").global_position = spot.global_position#current_room.get_node("Respawn").global_position
 	get_node("Camera/Camera2D").reset_smoothing()
 	get_node("Camera/Camera2D").force_update_scroll()
 	get_node("Camera").set_state("FollowPlayer")
