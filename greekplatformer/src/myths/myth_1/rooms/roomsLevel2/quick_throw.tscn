@@ -1,55 +1,202 @@
-[gd_scene load_steps=8 format=4 uid="uid://c5mnbtg4jx3fy"]
+[gd_scene load_steps=14 format=4 uid="uid://c5mnbtg4jx3fy"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_20px2"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_i8gkb"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="3_cvqiw"]
 [ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="4_7wmfb"]
 [ext_resource type="PackedScene" uid="uid://bc3w3pwi3ui6g" path="res://src/environment/logical_and.tscn" id="5_dx74j"]
+[ext_resource type="Texture2D" uid="uid://bol618spy30no" path="res://src/environment/environmentArt/floor/blackDecoratedTile.png" id="6_dfodg"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="6_j5wwe"]
+[ext_resource type="PackedScene" uid="uid://dxuegyf56w8ke" path="res://src/environment/pressurePlate/basket_plate.tscn" id="7_lprjx"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="8_4pj5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v74a"]
+size = Vector2(2944, 2360)
+
+[sub_resource type="Curve2D" id="Curve2D_5owak"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -768)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_vhm00"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1024)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_8v4bw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 2168, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
 [node name="QuickThrow" instance=ExtResource("1_20px2")]
 
 [node name="TileMapLayer" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD8/wIABwAAAAAAAAD9/wIABwAAAAAAAAD+/wIACAAAAAAAAAD//wIACAAAAAAAAAAAAAIABwAAAAAAAAABAAIABwAAAAAAAAACAAIABwAAAAAAAAADAAIABwAAAAAAAAAEAAIACAAAAAAAAAAFAAIACAAAAAAAAAAGAAIABwAAAAAAAAAHAAIABwAAAAAAAAD6/wIABwAAAAAAAAD5/wIACAAAAAAAAAD4/wIACAAAAAAAAAD3/wIACAAAAAAAAAD2/wIACAAAAAAAAAD1/wIACAAAAAAAAAD0/wIACAAAAAAAAAAIAAIABwAAAAAAAAAJAAIABwAAAAAAAAAKAAIACAAAAAAAAAALAAIACAAAAAAAAAAMAAIACAAAAAAAAAD9/wEAAQAAAAAAAAD6/wEAAQAAAAAAAGAAAAEAAQAAAAAAAGADAAEAAQAAAAAAAAAGAAEAAQAAAAAAAGAJAAEAAQAAAAAAAAABAAEABwAAAAAAAAACAAEABwAAAAAAAAAHAAEABwAAAAAAAAAIAAEABwAAAAAAAAD7/wEABwAAAAAAAAD8/wEABwAAAAAAAAANAAIACAAAAAAAAAAOAAIACAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD7/wIACAAAAAAAAAD8/wIACAAAAAAAAAD9/wIABwAAAAAAAAD+/wIABwAAAAAAAAD//wIABwAAAAAAAAAAAAIABwAAAAAAAAABAAIABwAAAAAAAAACAAIABwAAAAAAAAADAAIABwAAAAAAAAAEAAIABwAAAAAAAAAFAAIABwAAAAAAAAAGAAIABwAAAAAAAAAHAAIABwAAAAAAAAD6/wIACAAAAAAAAAD5/wIACAAAAAAAAAAIAAIABwAAAAAAAAAJAAIABwAAAAAAAAAKAAIACAAAAAAAAAALAAIACAAAAAAAAAAMAAIABwAAAAAAAAAAAAEAAQAAAAAAAGADAAEAAQAAAAAAAAAGAAEAAQAAAAAAAGAJAAEAAQAAAAAAAAABAAEABwAAAAAAAAACAAEABwAAAAAAAAAHAAEABwAAAAAAAAAIAAEABwAAAAAAAAANAAIABwAAAAAAAAAOAAIABwAAAAAAAAD7//T/BwAAAAAAAAD6//X/BwAAAAAAAAD5//b/BwAAAAAAAAD4//f/BwAAAAAAAAD4//j/BwAAAAAAAAD4//n/BwAAAAAAAAD5//n/BwAAAAAAAAD5//r/BwAAAAAAAAD7//r/AQAAAAAAAFD7//n/BwAAAAAAAAD6//r/BwAAAAAAAAD6//v/AQAAAAAAAFD7//X/AQAAAAAAAFD6//b/AQAAAAAAAFD5//f/BwAAAAAAAAD5//j/BwAAAAAAAAAKAPv/CAAAAAAAAAALAPv/CAAAAAAAAAAMAPv/CAAAAAAAAAANAPv/CAAAAAAAAAAOAPv/CAAAAAAAAAAMAPz/BwAAAAAAAAANAPz/BwAAAAAAAAAOAPz/BwAAAAAAAAAOAP3/BwAAAAAAAAAOAP7/BwAAAAAAAAAOAP//BwAAAAAAAAANAP//BwAAAAAAAAANAAAABwAAAAAAAAANAAEABwAAAAAAAAANAP3/BwAAAAAAAAANAP7/BwAAAAAAAAAOAAAABwAAAAAAAAAOAAEABwAAAAAAAAD6//T/BwAAAAAAAAD5//X/BwAAAAAAAAD6//n/BwAAAAAAAAD5//v/BwAAAAAAAAD4//b/BwAAAAAAAAD4//X/BwAAAAAAAAD5//T/BwAAAAAAAAANAPT/BwAAAAAAAAAOAPT/BwAAAAAAAAAOAPX/BwAAAAAAAAANAPX/BwAAAAAAAAAHAPL/BwAAAAAAAAAGAPL/BwAAAAAAAAAFAPL/BwAAAAAAAAAEAPL/BwAAAAAAAAADAPL/BwAAAAAAAAACAPL/BwAAAAAAAAABAPL/BwAAAAAAAAAAAPL/BwAAAAAAAAD///L/BwAAAAAAAAD+//L/BwAAAAAAAAD9//L/BwAAAAAAAAD8//L/BwAAAAAAAAD7//L/BwAAAAAAAAD7//P/BwAAAAAAAAD6//P/BwAAAAAAAAAIAPL/BwAAAAAAAAAJAPL/BwAAAAAAAAAKAPL/BwAAAAAAAAALAPL/BwAAAAAAAAAMAPL/BwAAAAAAAAANAPL/BwAAAAAAAAAOAPL/BwAAAAAAAAAOAPP/BwAAAAAAAAANAPP/BwAAAAAAAAAKAPz/AQAAAAAAADAMAP3/AQAAAAAAADAMAAAAAQAAAAAAAGAMAAEABwAAAAAAAAALAPz/BwAAAAAAAAAMAPX/AQAAAAAAADD4/wIACAAAAAAAAAD4//r/BwAAAAAAAAD4//v/BwAAAAAAAAD4//T/BwAAAAAAAAD4//P/BwAAAAAAAAD4//L/BwAAAAAAAAD4//H/BwAAAAAAAAD4//D/BwAAAAAAAAD5//P/BwAAAAAAAAD5//L/BwAAAAAAAAD5//H/BwAAAAAAAAD5//D/BwAAAAAAAAD6//D/BwAAAAAAAAD6//H/BwAAAAAAAAD6//L/BwAAAAAAAAD7//H/BwAAAAAAAAD8//H/BwAAAAAAAAD9//H/BwAAAAAAAAD+//H/BwAAAAAAAAD///H/BwAAAAAAAAAAAPH/BwAAAAAAAAABAPH/BwAAAAAAAAACAPH/BwAAAAAAAAADAPH/BwAAAAAAAAAEAPH/BwAAAAAAAAAFAPH/BwAAAAAAAAAGAPH/BwAAAAAAAAAHAPH/BwAAAAAAAAAIAPH/BwAAAAAAAAAJAPH/BwAAAAAAAAAKAPH/BwAAAAAAAAALAPH/BwAAAAAAAAAMAPH/BwAAAAAAAAANAPH/BwAAAAAAAAAOAPH/BwAAAAAAAAAMAPD/BwAAAAAAAAANAPD/BwAAAAAAAAAOAPD/BwAAAAAAAAALAPD/BwAAAAAAAAAKAPD/BwAAAAAAAAAJAPD/BwAAAAAAAAAIAPD/BwAAAAAAAAAHAPD/BwAAAAAAAAAGAPD/BwAAAAAAAAAFAPD/BwAAAAAAAAAEAPD/BwAAAAAAAAADAPD/BwAAAAAAAAACAPD/BwAAAAAAAAABAPD/BwAAAAAAAAAAAPD/BwAAAAAAAAD///D/BwAAAAAAAAD+//D/BwAAAAAAAAD9//D/BwAAAAAAAAD8//D/BwAAAAAAAAD7//D/BwAAAAAAAAAMAPT/BwAAAAAAAAAMAPP/BwAAAAAAAAD8//P/BwAAAAAAAAD9//P/BwAAAAAAAAD+//P/BwAAAAAAAAD///P/BwAAAAAAAAAAAPP/BwAAAAAAAAABAPP/BwAAAAAAAAACAPP/BwAAAAAAAAADAPP/BwAAAAAAAAAEAPP/BwAAAAAAAAAFAPP/BwAAAAAAAAAGAPP/BwAAAAAAAAAHAPP/BwAAAAAAAAAIAPP/BwAAAAAAAAAJAPP/BwAAAAAAAAAKAPP/BwAAAAAAAAALAPP/BwAAAAAAAAA=")
 
-[node name="Path2D" type="Path2D" parent="Objects" index="0"]
-position = Vector2(184, -1736)
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(448, -820)
+shape = SubResource("RectangleShape2D_7v74a")
+
+[node name="PressurePlate" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_cvqiw")]
+position = Vector2(256, 128)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="PressurePlate3" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_cvqiw")]
+position = Vector2(1024, 128)
+connectedTo = [NodePath("../LogicalAND")]
+
+[node name="RigidBody2D" parent="Objects" index="2" instance=ExtResource("4_7wmfb")]
+position = Vector2(1024, 48)
+
+[node name="RigidBody2D2" parent="Objects" index="3" instance=ExtResource("4_7wmfb")]
+position = Vector2(256, 48)
+
+[node name="LogicalAND" parent="Objects" index="4" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_dx74j")]
+count = 2
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="LogicalANDobrnuto" parent="Objects" index="5" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_dx74j")]
+count = 2
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
+
+[node name="PressurePlate7" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_lprjx")]
+position = Vector2(1416, -640)
+connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
+
+[node name="PressurePlate4" parent="Objects" index="7" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_lprjx")]
+position = Vector2(-640, -896)
+connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
+
+[node name="Path2D2" type="Path2D" parent="Objects" index="8"]
+position = Vector2(-128, 896)
+curve = SubResource("Curve2D_5owak")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
+rotates = false
+loop = false
+
+[node name="BlackDecoratedTile2" type="Sprite2D" parent="Objects/Path2D2/PathFollow2D" index="0"]
+position = Vector2(-64, -576)
+texture = ExtResource("6_dfodg")
+
+[node name="BlackDecoratedTile4" type="Sprite2D" parent="Objects/Path2D2/PathFollow2D" index="1"]
+position = Vector2(64, -576)
+texture = ExtResource("6_dfodg")
+
+[node name="BlackDecoratedTile" type="Sprite2D" parent="Objects/Path2D2/PathFollow2D" index="2"]
+position = Vector2(-192, -576)
+texture = ExtResource("6_dfodg")
+
+[node name="Spring" parent="Objects/Path2D2/PathFollow2D" index="3" instance=ExtResource("6_j5wwe")]
+position = Vector2(0, -704)
+max_force = 1800.0
+
+[node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="4" instance=ExtResource("2_i8gkb")]
+z_as_relative = false
+scale = Vector2(4, 10)
+speed = 120.0
+
+[node name="BlackDecoratedTile3" type="Sprite2D" parent="Objects/Path2D2/PathFollow2D" index="5"]
+z_as_relative = false
+position = Vector2(192, -576)
+texture = ExtResource("6_dfodg")
+
+[node name="Path2D3" type="Path2D" parent="Objects" index="9"]
+position = Vector2(640, 1152)
+curve = SubResource("Curve2D_vhm00")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D3" index="0"]
+rotates = false
+loop = false
+
+[node name="Spring2" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("6_j5wwe")]
+position = Vector2(0, -960)
+max_force = 1800.0
+
+[node name="BlockDoor" parent="Objects/Path2D3/PathFollow2D" index="1" instance=ExtResource("2_i8gkb")]
+z_as_relative = false
+scale = Vector2(4, 14)
+speed = 400.0
+
+[node name="BlackDecoratedTile2" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="2"]
+position = Vector2(-64, -832)
+texture = ExtResource("6_dfodg")
+
+[node name="BlackDecoratedTile3" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="3"]
+z_as_relative = false
+position = Vector2(192, -832)
+texture = ExtResource("6_dfodg")
+
+[node name="BlackDecoratedTile4" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="4"]
+position = Vector2(64, -832)
+texture = ExtResource("6_dfodg")
+
+[node name="BlackDecoratedTile" type="Sprite2D" parent="Objects/Path2D3/PathFollow2D" index="5"]
+z_as_relative = false
+position = Vector2(-192, -832)
+texture = ExtResource("6_dfodg")
+
+[node name="Path2D" type="Path2D" parent="Objects" index="10"]
+position = Vector2(384, -2624)
 curve = SubResource("Curve2D_8v4bw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+progress = 2168.0
+rotates = false
+loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_i8gkb")]
+scale = Vector2(20, 17)
+shakeWhileActive = true
+shakeAmount = 0.1
 
-[node name="PressurePlate" parent="Objects" index="1" instance=ExtResource("3_cvqiw")]
-position = Vector2(256, 128)
+[node name="Spike" parent="Objects/Path2D/PathFollow2D" index="1" instance=ExtResource("8_4pj5l")]
+position = Vector2(192, 1152)
+rotation = 3.14159
 
-[node name="PressurePlate3" parent="Objects" index="2" instance=ExtResource("3_cvqiw")]
-position = Vector2(1024, 128)
+[node name="Spike2" parent="Objects/Path2D/PathFollow2D" index="2" instance=ExtResource("8_4pj5l")]
+position = Vector2(0, 1152)
+rotation = 3.14159
 
-[node name="PressurePlate2" parent="Objects" index="3" instance=ExtResource("3_cvqiw")]
-position = Vector2(-512, 128)
+[node name="Spike3" parent="Objects/Path2D/PathFollow2D" index="3" instance=ExtResource("8_4pj5l")]
+position = Vector2(64, 1152)
+rotation = 3.14159
 
-[node name="RigidBody2D" parent="Objects" index="4" instance=ExtResource("4_7wmfb")]
-position = Vector2(1024, 48)
+[node name="Spike4" parent="Objects/Path2D/PathFollow2D" index="4" instance=ExtResource("8_4pj5l")]
+position = Vector2(128, 1152)
+rotation = 3.14159
 
-[node name="RigidBody2D2" parent="Objects" index="5" instance=ExtResource("4_7wmfb")]
-position = Vector2(256, 48)
+[node name="Spike5" parent="Objects/Path2D/PathFollow2D" index="5" instance=ExtResource("8_4pj5l")]
+position = Vector2(256, 1152)
+rotation = 3.14159
 
-[node name="RigidBody2D3" parent="Objects" index="6" instance=ExtResource("4_7wmfb")]
-position = Vector2(-512, 48)
+[node name="Spike6" parent="Objects/Path2D/PathFollow2D" index="6" instance=ExtResource("8_4pj5l")]
+position = Vector2(320, 1152)
+rotation = 3.14159
 
-[node name="LogicalAND" parent="Objects" index="7" instance=ExtResource("5_dx74j")]
+[node name="Spike7" parent="Objects/Path2D/PathFollow2D" index="7" instance=ExtResource("8_4pj5l")]
+position = Vector2(384, 1152)
+rotation = 3.14159
 
-[node name="Spring" parent="Objects" index="8" instance=ExtResource("6_j5wwe")]
-position = Vector2(-128, 192)
+[node name="Spike8" parent="Objects/Path2D/PathFollow2D" index="8" instance=ExtResource("8_4pj5l")]
+position = Vector2(448, 1152)
+rotation = 3.14159
 
-[node name="Spring2" parent="Objects" index="9" instance=ExtResource("6_j5wwe")]
-position = Vector2(640, 192)
+[node name="Spike9" parent="Objects/Path2D/PathFollow2D" index="9" instance=ExtResource("8_4pj5l")]
+position = Vector2(512, 1152)
+rotation = 3.14159
 
-[node name="PressurePlate4" parent="Objects" index="10" instance=ExtResource("3_cvqiw")]
+[node name="Spike10" parent="Objects/Path2D/PathFollow2D" index="10" instance=ExtResource("8_4pj5l")]
+position = Vector2(-192, 1152)
+rotation = 3.14159
 
-[node name="PressurePlate5" parent="Objects" index="11" instance=ExtResource("3_cvqiw")]
+[node name="Spike11" parent="Objects/Path2D/PathFollow2D" index="11" instance=ExtResource("8_4pj5l")]
+position = Vector2(-128, 1152)
+rotation = 3.14159
 
-[node name="PressurePlate6" parent="Objects" index="12" instance=ExtResource("3_cvqiw")]
+[node name="Spike12" parent="Objects/Path2D/PathFollow2D" index="12" instance=ExtResource("8_4pj5l")]
+position = Vector2(-64, 1152)
+rotation = 3.14159

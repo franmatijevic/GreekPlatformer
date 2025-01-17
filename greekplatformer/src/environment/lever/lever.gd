@@ -12,6 +12,12 @@ var other_direction:bool=false
 func _ready() -> void:
 	set_physics_process(false)
 
+var glow=0
+
+func _process(delta: float) -> void:
+	glow=glow + delta
+	get_node("Handle/Glow").modulate.a=abs(cos(glow))
+
 func _physics_process(delta: float) -> void:
 	if(activating):
 		$Handle.rotation_degrees+=90.0/use_time * delta

@@ -39,5 +39,5 @@ func _on_body_exited(_body: Node2D) -> void:
 	for i in get_node("Objects").get_children():
 		if !(i is Throwable):
 			i.queue_free()
-		elif i != get_parent().get_node("Player").holding_object:
+		elif i != get_parent().get_node("Player").holding_object and i!=get_parent().holding_object:
 			i.queue_free()

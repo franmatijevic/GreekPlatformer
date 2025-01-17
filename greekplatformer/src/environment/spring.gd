@@ -44,7 +44,9 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:#odbacivanje tijela iz opruge
 	for i in get_overlapping_bodies():
 		if(i is Character):
-			var impact_force = Vector2(0, -impact_velocity_y * extra_force_multiplier)
+			var impact_force = Vector2.ZERO# Vector2(0, -impact_velocity_y * extra_force_multiplier)
+			if impact_velocity_y:
+				impact_force = Vector2(0, -impact_velocity_y * extra_force_multiplier)
 			var adjusted_total_force = total_force + impact_force
 			
 			#i.velocity=kept_force * i.velocity  + adjusted_total_force

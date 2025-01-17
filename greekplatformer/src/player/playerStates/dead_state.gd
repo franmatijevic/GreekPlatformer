@@ -45,7 +45,8 @@ func enter():
 	if(player().holding_object):
 		player().throw( Vector2(player().velocity.x, -10) )
 	
-	
+	player().direction=0
+	player().velocity=Vector2.ZERO
 
 func bodyPart(bodyPart, target):
 	var part = bodyPart.instantiate()
@@ -67,6 +68,8 @@ func bodyPart(bodyPart, target):
 	part.set_deferred("rotation", body.get_node(target).rotation)
 
 func update_physics_process(delta:float):
+	player().velocity=Vector2.ZERO
+	
 	if time>0:
 		time-=delta
 	else:

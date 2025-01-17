@@ -27,6 +27,10 @@ func _physics_process(delta):
 		thrownSound = false
 	elif linear_velocity!=Vector2.ZERO:
 		thrownSound=true
+	#elif linear_velocity.x!=0:
+	#	thrownSound=true
+	#elif abs(linear_velocity.y)>500:
+	#	thrownSound=true
 
 func be_picked_up(charact:Character):
 	pickedUp = true

@@ -74,7 +74,7 @@ func restart():
 	current_room = current_room_file.instantiate()
 	add_child(current_room)
 	current_room.global_position = current_room_position
-		current_room.get_node("Respawn").global_position=respawnLocation
+	current_room.get_node("Respawn").global_position=respawnLocation
 	
 	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
 	get_node("Camera/Camera2D").reset_smoothing()
@@ -143,7 +143,7 @@ func _on_room_transition_end_transition() -> void:
 	if prev_room == current_room:
 		return
 	
-	prev_room.get_node("Objects").queue_free()
+	#prev_room.get_node("Objects").queue_free()
 	#prev_room.call_deferred("queue_free")
 	
 	for i in prev_room.get_node("Objects").get_children(): #mora pojedinacan inace obrise i holding_object

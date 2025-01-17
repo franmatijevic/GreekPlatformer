@@ -13,6 +13,12 @@ var time=-99
 func _ready() -> void:
 	get_node("Plate/detectSomething/CollisionShape2D").shape.size.y+=precision
 
+var glow=0
+
+func _process(delta: float) -> void:
+	glow=glow + delta
+	get_node("Plate/Glow").modulate.a=abs(cos(glow))
+
 func _physics_process(delta: float) -> void:
 	if(count>0):
 		time=start_deactivating
