@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck4x0dqsr4j0l"]
+[gd_scene load_steps=4 format=3 uid="uid://ck4x0dqsr4j0l"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_0v4rd"]
 [ext_resource type="Texture2D" uid="uid://dh7nm15f0s300" path="res://src/greekArtefacts/all_artefacts/spear.png" id="2_p65qt"]
+[ext_resource type="Texture2D" uid="uid://b6abkutx7mtcv" path="res://src/greekArtefacts/all_artefacts/koplje.png" id="2_xlahh"]
 
 [node name="GreekArtefact" instance=ExtResource("1_0v4rd")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(21, 93)
+rotation = 2.03505
+scale = Vector2(0.315394, 0.310963)
+texture = ExtResource("2_xlahh")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_p65qt")

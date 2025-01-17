@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://djbcp6hl82hsp"]
+[gd_scene load_steps=4 format=3 uid="uid://djbcp6hl82hsp"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_12kdi"]
 [ext_resource type="Texture2D" uid="uid://ny8knygy2o4i" path="res://src/greekArtefacts/all_artefacts/tripod.png" id="2_aa2al"]
+[ext_resource type="Texture2D" uid="uid://cemulyr3yj5ra" path="res://src/greekArtefacts/tripod (2).png" id="2_xenlc"]
 
 [node name="GreekArtefact" instance=ExtResource("1_12kdi")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-2, -59)
+scale = Vector2(0.288123, 0.299797)
+texture = ExtResource("2_xenlc")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_aa2al")

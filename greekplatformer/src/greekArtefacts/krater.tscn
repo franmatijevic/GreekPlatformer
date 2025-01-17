@@ -5,5 +5,10 @@
 
 [node name="GreekArtefact" instance=ExtResource("1_cv7p0")]
 
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-2.38419e-07, -53)
+scale = Vector2(0.196624, 0.191513)
+texture = ExtResource("2_cefec")
+
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_cefec")
