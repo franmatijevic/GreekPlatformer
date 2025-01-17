@@ -11,8 +11,24 @@ signal perform_action(action, params)
 
 signal on_interacted_artefact
 
+signal on_death
+
+signal on_show_skip_level
+signal on_hide_skip_level
+
 func emit_on_interacted_artefact():
 	on_interacted_artefact.emit()
+
+func emit_on_death():
+	on_death.emit()
+
+func emit_show_skip_level():
+	on_show_skip_level.emit()
+
+func emit_hide_skip_level():
+	on_hide_skip_level.emit()
+
+
 # Settings
 
 signal on_changed_room(path : String, room : String)

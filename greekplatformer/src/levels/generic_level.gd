@@ -14,6 +14,7 @@ class_name Level
 @warning_ignore("unused_signal")
 signal toggle_paused(paused: bool)
 
+var cnt_spawn_skip_level = 0
 
 var current_room_file
 var new_next_level
@@ -101,6 +102,7 @@ func _ready() -> void:
 	get_node("BlackScreen/Text/Line2D").points.set(1, Vector2(lineLength,0))
 	
 	SignalBus.on_interacted_artefact.connect(on_interacted_artefact)
+	SignalBus.on_death.connect(show_skip_level)
 	get_node("BlackScreen/Text/Label").text=ChapterName
 	var t = create_tween()
 	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 1, 1)
@@ -138,6 +140,7 @@ func next_level():
 	current_room_file = load(current_room.scene_file_path)
 	
 	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0])
+	hide_skip_level()
 	
 	get_node("Camera").set_state("RoomTransition")
 
@@ -174,3 +177,13 @@ func room_changed(path: String, room : String):
 func on_interacted_artefact():
 	interactWithArtefact = true
 	get_tree().paused = true
+
+func show_skip_level():
+	cnt_spawn_skip_level = cnt_spawn_skip_level + 1
+	
+	if (cnt_spawn_skip_level >= 7):
+		SignalBus.emit_show_skip_level()
+
+func hide_skip_level():
+	cnt_spawn_skip_level = 0
+	SignalBus.emit_hide_skip_level()

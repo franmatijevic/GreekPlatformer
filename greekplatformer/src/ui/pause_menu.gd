@@ -4,12 +4,15 @@ extends Control
 @onready var canvas_layer_pause: CanvasLayer = $".."
 @onready var settings_pause_menu: Control = $Panel/SettingsPauseMenu
 @onready var v_box_container: VBoxContainer = $Panel/VBoxContainer
+@onready var skip: Button = $Panel/VBoxContainer/Skip
 
 var current_path : String
 var current_room : String
 
 func _ready() -> void:
 	SignalBus.on_changed_room.connect(on_changed_room)
+	SignalBus.on_show_skip_level.connect(show_skip_level)
+	SignalBus.on_hide_skip_level.connect(hide_skip_level)
 	generic_level_script.connect("toggle_paused", _on_generic_level_script_toggle_paused)
 
 func _on_generic_level_script_toggle_paused(paused: bool):
@@ -38,3 +41,14 @@ func _on_settings_pressed() -> void:
 func on_changed_room(path : String, room : String):
 	current_path = path
 	current_room = room
+
+func show_skip_level():
+	skip.visible = true
+
+func hide_skip_level():
+	skip.visible = false
+
+
+func _on_skip_pressed() -> void:
+	generic_level_script.skip()
+	_on_restart_pressed()

@@ -204,6 +204,7 @@ func shoot():
 
 func death():
 	if(current_state.name!="DeadState"):
+		SignalBus.emit_on_death()
 		set_state("DeadState")
 
 func set_state(state: String):
