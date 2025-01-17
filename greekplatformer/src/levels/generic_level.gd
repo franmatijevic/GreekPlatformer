@@ -115,6 +115,7 @@ func _ready() -> void:
 
 func next_level():
 	prev_room = current_room
+	AudioController.stop_door_opening()
 	
 	#for i in current_room.get_node("Objects").get_children():
 	#	if !(i is Throwable):

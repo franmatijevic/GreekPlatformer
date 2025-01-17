@@ -18,6 +18,7 @@ func enter():
 	player().dead=true
 	player().visible=false
 	room=player().get_parent().current_room
+	AudioController.stop_door_opening()
 	AudioController.play_death()
 	bodyPart(head, "Glava")
 	bodyPart(torso, "Torso")
