@@ -66,7 +66,14 @@ position = Vector2(0, -16)
 scale = Vector2(128, 32)
 texture = ExtResource("3_cp1s1")
 
+[node name="Glow" type="Line2D" parent="Pixel1x1"]
+position = Vector2(-0.601077, -0.1875)
+scale = Vector2(0.0854372, 0.0539039)
+points = PackedVector2Array(14.57, -0.707, 10.5433, -0.707001, -0.43, -0.707)
+default_color = Color(0.87451, 0.729412, 0.537255, 1)
+
 [node name="Plate" type="AnimatableBody2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 5
 sync_to_physics = false

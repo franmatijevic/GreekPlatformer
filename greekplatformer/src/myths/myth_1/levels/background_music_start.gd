@@ -6,7 +6,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if menuMusic == true:
+	if menuMusic:
 		AudioController.play_menu_music()
 		AudioController.stop_game_music()
 		AudioController.stop_boss_music()

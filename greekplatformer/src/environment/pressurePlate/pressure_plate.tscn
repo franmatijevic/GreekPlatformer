@@ -46,6 +46,12 @@ position = Vector2(0, -37)
 scale = Vector2(108, 10)
 texture = ExtResource("3_2rqa2")
 
+[node name="Glow" type="Line2D" parent="Plate/Pixel1x2"]
+position = Vector2(-0.472222, -0.0999998)
+scale = Vector2(0.0667205, 0.134952)
+points = PackedVector2Array(14.57, -0.707, 10.5433, -0.707001, -0.43, -0.707)
+default_color = Color(0.87451, 0.729412, 0.537255, 1)
+
 [node name="Trokut3" type="Sprite2D" parent="Plate"]
 position = Vector2(59, -37)
 scale = Vector2(0.078, 0.078)

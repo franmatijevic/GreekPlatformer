@@ -74,8 +74,7 @@ func restart():
 	current_room = current_room_file.instantiate()
 	add_child(current_room)
 	current_room.global_position = current_room_position
-	
-	current_room.get_node("Respawn").global_position=respawnLocation
+		current_room.get_node("Respawn").global_position=respawnLocation
 	
 	get_node("Camera").global_position = current_room.get_node("Respawn").global_position
 	get_node("Camera/Camera2D").reset_smoothing()
