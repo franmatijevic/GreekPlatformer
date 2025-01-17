@@ -157,6 +157,8 @@ loop = false
 position = Vector2(-0.000231679, 64)
 scale = Vector2(2, 2)
 speed = 60.0
+shakeWhileActive = true
+shakeAmount = 0.2
 
 [node name="DeathPit" parent="Objects" index="13" instance=ExtResource("11_o2wut")]
 
@@ -187,7 +189,7 @@ connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor")]
 
 [node name="EndLevel" parent="Objects" index="20" instance=ExtResource("14_xr5jw")]
 position = Vector2(1904, 840)
-nextLevelPath = "res://src/ui/main_menu.tscn"
+nextLevelPath = "res://src/myths/myth_1/levels/olimp.tscn"
 
 [node name="Box" type="Sprite2D" parent="." index="5"]
 z_index = -10

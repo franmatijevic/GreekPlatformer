@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=4 uid="uid://b7hape40kll6y"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_c3nbl"]
+[ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="2_54k8m"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="3_h3wob"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="4_nf11g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcq11"]
+size = Vector2(3008, 1496)
+
+[sub_resource type="Curve2D" id="Curve2D_f68ru"]
+
+[node name="Room" instance=ExtResource("1_c3nbl")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD3/wMACAAAAAAAAAD4/wMACAAAAAAAAAD5/wMACAAAAAAAAAD6/wMACAAAAAAAAAD7/wMACAAAAAAAAAD8/wMACAAAAAAAAAD9/wMACAAAAAAAAAD+/wMACAAAAAAAAAD//wMACAAAAAAAAAAHAAMACAAAAAAAAAAIAAMACAAAAAAAAAAJAAMACAAAAAAAAAAKAAMACAAAAAAAAAALAAMACAAAAAAAAAAMAAMACAAAAAAAAAD2/wMACAAAAAAAAAD1/wMACAAAAAAAAAD0/wMACAAAAAAAAADz/wMACAAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(-224, -176)
+shape = SubResource("RectangleShape2D_kcq11")
+
+[node name="Path2D" type="Path2D" parent="Objects" index="0"]
+curve = SubResource("Curve2D_f68ru")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+
+[node name="BirdPlatform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_54k8m")]
+
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("3_h3wob")]
+position = Vector2(-752, 328)
+
+[node name="PressurePlate" parent="Objects" index="2" instance=ExtResource("4_nf11g")]
+position = Vector2(1224, 384)

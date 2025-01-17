@@ -9,6 +9,9 @@ func enter():
 
 func update_physics_process(delta: float) -> void:
 	
+	#player().rotateToFacing()
+	
+	
 	player().global_position = path.global_position
 	
 	path.progress_ratio += speed * delta
