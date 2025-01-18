@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh7nm15f0s300"
-path="res://.godot/imported/spear.png-0ed38660bf112c812271130bb7fb4ab9.ctex"
+uid="uid://qm3t8fij47of"
+path="res://.godot/imported/javelin_prompt.png-8e8cb36d0dd4c55bbe561b8eaa1c530b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/spear.png"
-dest_files=["res://.godot/imported/spear.png-0ed38660bf112c812271130bb7fb4ab9.ctex"]
+source_file="res://src/greekArtefacts/all_artefacts/javelin_prompt.png"
+dest_files=["res://.godot/imported/javelin_prompt.png-8e8cb36d0dd4c55bbe561b8eaa1c530b.ctex"]
 
 [params]
 

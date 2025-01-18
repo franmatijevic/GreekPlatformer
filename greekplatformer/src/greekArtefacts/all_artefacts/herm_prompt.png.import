@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ny8knygy2o4i"
-path="res://.godot/imported/tripod.png-f174d6f29ebd242f3e9fabaa10008799.ctex"
+uid="uid://b87hioi4x7b5y"
+path="res://.godot/imported/herm_prompt.png-d0f36a821c92744a2da66373cb14df08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/tripod.png"
-dest_files=["res://.godot/imported/tripod.png-f174d6f29ebd242f3e9fabaa10008799.ctex"]
+source_file="res://src/greekArtefacts/all_artefacts/herm_prompt.png"
+dest_files=["res://.godot/imported/herm_prompt.png-d0f36a821c92744a2da66373cb14df08.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgrwmyk6xwehl"
-path="res://.godot/imported/amphora.png-d53bfe541296ca23a9234bbcfac837db.ctex"
+uid="uid://wg32sax6east"
+path="res://.godot/imported/spear_prompt.png-3c2e533053c70845a1426872d446f9ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/amphora.png"
-dest_files=["res://.godot/imported/amphora.png-d53bfe541296ca23a9234bbcfac837db.ctex"]
+source_file="res://src/greekArtefacts/all_artefacts/spear_prompt.png"
+dest_files=["res://.godot/imported/spear_prompt.png-3c2e533053c70845a1426872d446f9ae.ctex"]
 
 [params]
 

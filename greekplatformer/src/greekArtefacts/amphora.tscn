@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_j0bpu"]
 [ext_resource type="Texture2D" uid="uid://ds76m0cvbrq5e" path="res://src/greekArtefacts/all_artefacts/amfora.png" id="2_lnf5v"]
-[ext_resource type="Texture2D" uid="uid://dgrwmyk6xwehl" path="res://src/greekArtefacts/all_artefacts/amphora.png" id="3_q0psr"]
+[ext_resource type="Texture2D" uid="uid://cbfjo4oqtidw8" path="res://src/greekArtefacts/all_artefacts/amphora_prompt.png" id="3_eddw2"]
 
 [node name="GreekArtefact" instance=ExtResource("1_j0bpu")]
 
@@ -12,4 +12,4 @@ scale = Vector2(0.341247, 0.345114)
 texture = ExtResource("2_lnf5v")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
-texture = ExtResource("3_q0psr")
+texture = ExtResource("3_eddw2")

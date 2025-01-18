@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddri2gjhvruj3"]
+[gd_scene load_steps=4 format=3 uid="uid://ddri2gjhvruj3"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_cv7p0"]
 [ext_resource type="Texture2D" uid="uid://r1tni7vutabg" path="res://src/greekArtefacts/all_artefacts/krater.png" id="2_cefec"]
+[ext_resource type="Texture2D" uid="uid://dsc2k37de851o" path="res://src/greekArtefacts/all_artefacts/krater_prompt.png" id="3_f40og"]
 
 [node name="GreekArtefact" instance=ExtResource("1_cv7p0")]
 
@@ -11,4 +12,4 @@ scale = Vector2(0.196624, 0.191513)
 texture = ExtResource("2_cefec")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
-texture = ExtResource("2_cefec")
+texture = ExtResource("3_f40og")

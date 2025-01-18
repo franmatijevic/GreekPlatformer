@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gss65117b70"
-path="res://.godot/imported/trireme.png-13bf56c59d26ea2cbfebdaa1fcc9c959.ctex"
+uid="uid://bx804jji6px2n"
+path="res://.godot/imported/tripod_prompt.png-1b442d3f03e1f4a9221551916bfc5905.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/trireme.png"
-dest_files=["res://.godot/imported/trireme.png-13bf56c59d26ea2cbfebdaa1fcc9c959.ctex"]
+source_file="res://src/greekArtefacts/all_artefacts/tripod_prompt.png"
+dest_files=["res://.godot/imported/tripod_prompt.png-1b442d3f03e1f4a9221551916bfc5905.ctex"]
 
 [params]
 
