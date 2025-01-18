@@ -1,15 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://djbcp6hl82hsp"]
+[gd_scene load_steps=5 format=3 uid="uid://djbcp6hl82hsp"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_12kdi"]
 [ext_resource type="Texture2D" uid="uid://ny8knygy2o4i" path="res://src/greekArtefacts/all_artefacts/tripod.png" id="2_aa2al"]
-[ext_resource type="Texture2D" uid="uid://cemulyr3yj5ra" path="res://src/greekArtefacts/tripod (2).png" id="2_xenlc"]
+[ext_resource type="Texture2D" uid="uid://cemulyr3yj5ra" path="res://src/greekArtefacts/artefacts_art/tripod (2).png" id="2_xenlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6hae"]
+size = Vector2(249, 37)
 
 [node name="GreekArtefact" instance=ExtResource("1_12kdi")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-2, -59)
-scale = Vector2(0.288123, 0.299797)
+position = Vector2(-14, 46.6144)
+scale = Vector2(0.154531, 0.160792)
 texture = ExtResource("2_xenlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-5.5, 136.5)
+shape = SubResource("RectangleShape2D_x6hae")
+
+[node name="Interact" parent="." index="2"]
+offset_top = -243.0
+offset_bottom = -189.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_aa2al")

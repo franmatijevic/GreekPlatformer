@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddri2gjhvruj3"]
+[gd_scene load_steps=4 format=3 uid="uid://ddri2gjhvruj3"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_cv7p0"]
-[ext_resource type="Texture2D" uid="uid://r1tni7vutabg" path="res://src/greekArtefacts/all_artefacts/krater.png" id="2_cefec"]
+[ext_resource type="Texture2D" uid="uid://r1tni7vutabg" path="res://src/greekArtefacts/artefacts_art/krater.png" id="2_cefec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2mar"]
+size = Vector2(248, 32)
 
 [node name="GreekArtefact" instance=ExtResource("1_cv7p0")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-2.38419e-07, -53)
-scale = Vector2(0.196624, 0.191513)
+position = Vector2(4, -2.00703)
+scale = Vector2(0.135959, 0.132425)
 texture = ExtResource("2_cefec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(10, 96)
+shape = SubResource("RectangleShape2D_u2mar")
+
+[node name="Interact" parent="." index="2"]
+offset_top = -331.0
+offset_bottom = -277.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_cefec")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dof7e5a2dcl3g"
-path="res://.godot/imported/herm.png-08381fea5ae5c72b1d64f919952803a1.ctex"
+uid="uid://b6abkutx7mtcv"
+path="res://.godot/imported/koplje.png-55adc260a2939a80d0d29fddb024c7e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/herm.png"
-dest_files=["res://.godot/imported/herm.png-08381fea5ae5c72b1d64f919952803a1.ctex"]
+source_file="res://src/greekArtefacts/artefacts_art/koplje.png"
+dest_files=["res://.godot/imported/koplje.png-55adc260a2939a80d0d29fddb024c7e8.ctex"]
 
 [params]
 

@@ -1,15 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bot5n4nm2bi8c"]
+[gd_scene load_steps=5 format=3 uid="uid://bot5n4nm2bi8c"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_j0bpu"]
-[ext_resource type="Texture2D" uid="uid://ds76m0cvbrq5e" path="res://src/greekArtefacts/all_artefacts/amfora.png" id="2_lnf5v"]
+[ext_resource type="Texture2D" uid="uid://ds76m0cvbrq5e" path="res://src/greekArtefacts/artefacts_art/amfora.png" id="2_lnf5v"]
 [ext_resource type="Texture2D" uid="uid://dgrwmyk6xwehl" path="res://src/greekArtefacts/all_artefacts/amphora.png" id="3_q0psr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nof84"]
+size = Vector2(298, 46)
 
 [node name="GreekArtefact" instance=ExtResource("1_j0bpu")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-11, 5)
-scale = Vector2(0.341247, 0.345114)
+position = Vector2(27.4036, 30.7889)
+scale = Vector2(0.26444, 0.267437)
 texture = ExtResource("2_lnf5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(35, 98)
+shape = SubResource("RectangleShape2D_nof84")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("3_q0psr")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_0v4rd"]
 [ext_resource type="Texture2D" uid="uid://dh7nm15f0s300" path="res://src/greekArtefacts/all_artefacts/spear.png" id="2_p65qt"]
-[ext_resource type="Texture2D" uid="uid://b6abkutx7mtcv" path="res://src/greekArtefacts/all_artefacts/koplje.png" id="2_xlahh"]
+[ext_resource type="Texture2D" uid="uid://b6abkutx7mtcv" path="res://src/greekArtefacts/artefacts_art/koplje.png" id="2_xlahh"]
 
 [node name="GreekArtefact" instance=ExtResource("1_0v4rd")]
 
