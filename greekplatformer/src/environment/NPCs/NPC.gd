@@ -28,6 +28,7 @@ func move_toward_position(delta):
 	var direction = (targetPosition - position).normalized()
 	var distance = speed * delta
 	if position.distance_to(targetPosition) > distance:
+		get_parent().setCamShake(0.25)
 		position += direction * distance
 	else:
 		position = targetPosition
