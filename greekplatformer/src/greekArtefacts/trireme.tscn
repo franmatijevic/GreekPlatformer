@@ -1,5 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2a2i66bcqgwt"]
+[gd_scene load_steps=3 format=3 uid="uid://d2a2i66bcqgwt"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_mpwqr"]
+[ext_resource type="Texture2D" uid="uid://ceokt4frf8yro" path="res://src/environment/platformArt/trireme.png" id="2_1bu7g"]
 
 [node name="GreekArtefact" instance=ExtResource("1_mpwqr")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1.99999, 5)
+scale = Vector2(0.350247, 0.391733)
+texture = ExtResource("2_1bu7g")
