@@ -8,7 +8,7 @@ func enter():
 	t=0
 	#global_position.y =camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2
 	
-	player().global_position.y = chillPosition.global_position.y+500
+	player().global_position.y = chillPosition.global_position.y-500
 	
 	var t = create_tween()
 	t.tween_property(player(), "global_position", chillPosition.global_position, 3)

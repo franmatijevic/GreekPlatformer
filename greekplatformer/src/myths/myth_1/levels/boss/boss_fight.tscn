@@ -1,9 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=8 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="2_g0i0h"]
+[ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
+[ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="4_m4tqd"]
+[ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="5_b822x"]
+[ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="6_aqgdi"]
+[ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
 
-[node name="BossFight" instance=ExtResource("1_vnnb8")]
+[node name="BossFight" node_paths=PackedStringArray("torch", "current_room") instance=ExtResource("1_vnnb8")]
+script = ExtResource("2_nqc5n")
+torch = NodePath("Torch")
 ChapterName = "Chapter 4: Conflict"
+current_room = NodePath("TorchRoom")
 
-[node name="TorchRoom" parent="." index="5" instance=ExtResource("2_g0i0h")]
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
+[node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
+position = Vector2(-1112, 208)
+
+[node name="Torch" parent="." index="6" instance=ExtResource("6_aqgdi")]
+position = Vector2(256, 160)
+
+[node name="TorchRoom" parent="." index="7" instance=ExtResource("2_g0i0h")]
+
+[node name="ZeusCombat" parent="." index="8" instance=ExtResource("5_b822x")]
+position = Vector2(2048, -48)
+
+[node name="ZeusSwooping" parent="." index="9" instance=ExtResource("7_syvmk")]
+position = Vector2(10112, 592)

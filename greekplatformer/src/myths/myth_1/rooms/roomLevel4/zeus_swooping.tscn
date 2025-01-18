@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=4 uid="uid://517cssknstaj"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_0s3ys"]
+[ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_5d7a1"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="3_vkwoi"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="4_5tvob"]
+[ext_resource type="PackedScene" uid="uid://dijfdscbpg476" path="res://src/bossFeatures/zeus_hand.tscn" id="5_0rao3"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="6_5rbhh"]
+[ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="7_uisai"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="8_acrt5"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="9_5p5va"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oehrn"]
+size = Vector2(7064, 1702)
+
+[sub_resource type="Curve2D" id="Curve2D_xv1gn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 320)
+}
+point_count = 2
+
+[node name="ZeusSwooping" instance=ExtResource("1_0s3ys")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD4/wMABwAAAAAAAAD5/wMACAAAAAAAAAD6/wMACAAAAAAAAAD7/wMACAAAAAAAAAD8/wMACAAAAAAAAAD9/wMACAAAAAAAAAD+/wMACAAAAAAAAAD//wMABwAAAAAAAAAAAAMABwAAAAAAAAABAAMABwAAAAAAAAACAAMABwAAAAAAAAADAAMACAAAAAAAAAAEAAMACAAAAAAAAAAFAAMACAAAAAAAAAAGAAMACAAAAAAAAAAHAAMACAAAAAAAAAACAAIAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAEAAQAAAAAAAGD//wIAAQAAAAAAAGABAAIABwAAAAAAAAAAAAIABwAAAAAAAAAJAAIAAQAAAAAAAAAIAAIABwAAAAAAAAAJAAMABwAAAAAAAAAIAAMABwAAAAAAAAD4/wQABwAAAAAAAAD5/wQABwAAAAAAAAD6/wQABwAAAAAAAAD7/wQABwAAAAAAAAD8/wQABwAAAAAAAAD9/wQABwAAAAAAAAD+/wQABwAAAAAAAAD//wQABwAAAAAAAAAAAAQABwAAAAAAAAABAAQABwAAAAAAAAACAAQABwAAAAAAAAADAAQABwAAAAAAAAAEAAQABwAAAAAAAAAFAAQABwAAAAAAAAAGAAQABwAAAAAAAAAHAAQABwAAAAAAAAAIAAQABwAAAAAAAAAJAAQABwAAAAAAAAAKAAMABwAAAAAAAAALAAMABwAAAAAAAAAMAAMABwAAAAAAAAANAAMABwAAAAAAAAAOAAMAAQAAAAAAAAAPAAQAAQAAAAAAAAAOAAQABwAAAAAAAAANAAQABwAAAAAAAAAMAAQABwAAAAAAAAALAAQABwAAAAAAAAAKAAQABwAAAAAAAAATAAMAAQAAAAAAAGAPAAUABwAAAAAAAAAQAAUABwAAAAAAAAARAAUABwAAAAAAAAASAAUABwAAAAAAAAATAAUABwAAAAAAAAATAAQABwAAAAAAAAAUAAMABwAAAAAAAAAVAAMACAAAAAAAAAAVAAQABwAAAAAAAAAUAAQABwAAAAAAAAAUAAUABwAAAAAAAAAVAAUABwAAAAAAAAAWAAUABwAAAAAAAAAOAAUABwAAAAAAAAANAAUABwAAAAAAAAAMAAUABwAAAAAAAAALAAUABwAAAAAAAAAKAAUABwAAAAAAAAAJAAUABwAAAAAAAAAIAAUABwAAAAAAAAAHAAUABwAAAAAAAAAGAAUABwAAAAAAAAAFAAUABwAAAAAAAAAEAAUABwAAAAAAAAADAAUABwAAAAAAAAACAAUABwAAAAAAAAABAAUABwAAAAAAAAAAAAUABwAAAAAAAAD//wUABwAAAAAAAAD+/wUABwAAAAAAAAD9/wUABwAAAAAAAAD8/wUABwAAAAAAAAD7/wUABwAAAAAAAAD6/wUABwAAAAAAAAD5/wUABwAAAAAAAAD4/wUABwAAAAAAAAAOAP//AQAAAAAAADAPAAAAAQAAAAAAADATAP//AQAAAAAAAFAQAAAABwAAAAAAAAARAAAABwAAAAAAAAASAAAABwAAAAAAAAASAP//BwAAAAAAAAARAP//BwAAAAAAAAAQAP//BwAAAAAAAAAPAP//BwAAAAAAAAAOAP7/CAAAAAAAAAAPAP7/CAAAAAAAAAAQAP7/CAAAAAAAAAARAP7/CAAAAAAAAAASAP7/CAAAAAAAAAATAP7/CAAAAAAAAAD3/wMABwAAAAAAAAD2/wMACAAAAAAAAAD1/wMACAAAAAAAAAD0/wMACAAAAAAAAAD3/wIABwAAAAAAAAD4/wIABwAAAAAAAAD4/wEABwAAAAAAAAD3/wEAAQAAAAAAAGDx/wMAAQAAAAAAAGDx/wQABwAAAAAAAADt/wMACAAAAAAAAADu/wQABwAAAAAAAADu/wUABwAAAAAAAADv/wUABwAAAAAAAADw/wUABwAAAAAAAADx/wUABwAAAAAAAADy/wUABwAAAAAAAADz/wUABwAAAAAAAAD0/wUABwAAAAAAAAD1/wUABwAAAAAAAAD2/wUABwAAAAAAAAD3/wUABwAAAAAAAAD3/wQABwAAAAAAAAD2/wQABwAAAAAAAAD1/wQABwAAAAAAAAD0/wQABwAAAAAAAADz/wQABwAAAAAAAADy/wQABwAAAAAAAADt/wUABwAAAAAAAADt/wQABwAAAAAAAADs/wQABwAAAAAAAADs/wUABwAAAAAAAADr/wUABwAAAAAAAADr/wQABwAAAAAAAADr/wMACAAAAAAAAADs/wMACAAAAAAAAADv/wQAAQAAAAAAAADu/wMAAQAAAAAAAADz/wMACAAAAAAAAADy/wMACAAAAAAAAAAWAAMACAAAAAAAAAAXAAMACAAAAAAAAAAYAAMABwAAAAAAAAAZAAMACAAAAAAAAAAWAAQABwAAAAAAAAAXAAQABwAAAAAAAAAYAAQABwAAAAAAAAAZAAQABwAAAAAAAAAaAAMACAAAAAAAAAAbAAMACAAAAAAAAAAXAAUABwAAAAAAAAAYAAUABwAAAAAAAAAZAAUABwAAAAAAAAAaAAUABwAAAAAAAAAbAAUABwAAAAAAAAAbAAQABwAAAAAAAAAaAAQABwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(844, -152)
+shape = SubResource("RectangleShape2D_oehrn")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-2560, 320)
+
+[node name="Zeus" parent="Objects" index="0" instance=ExtResource("2_5d7a1")]
+position = Vector2(5216, -240)
+
+[node name="Waiting" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
+script = ExtResource("3_vkwoi")
+chillPosition = NodePath("../../ChillPosition")
+
+[node name="Thunder" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("4_5tvob")
+hand1 = NodePath("../../ZeusHand")
+hand2 = NodePath("../../ZeusHand2")
+time = 30.0
+
+[node name="ChillPosition" type="Node2D" parent="Objects" index="1"]
+position = Vector2(5408, -88)
+
+[node name="ZeusHand" parent="Objects" index="2" instance=ExtResource("5_0rao3")]
+activeOnStart = false
+
+[node name="ZeusHand2" parent="Objects" index="3" instance=ExtResource("5_0rao3")]
+shouldBeFlipped = true
+activeOnStart = false
+
+[node name="RigidBody2D" parent="Objects" index="4" instance=ExtResource("6_5rbhh")]
+position = Vector2(-2488, 336)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="5"]
+position = Vector2(3136, 128)
+curve = SubResource("Curve2D_xv1gn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("7_uisai")]
+position = Vector2(0, 96)
+scale = Vector2(1, 2.5)
+speed = 40.0
+
+[node name="Spike" parent="Objects/Path2D/PathFollow2D" index="1" instance=ExtResource("8_acrt5")]
+position = Vector2(-24, -112)
+
+[node name="Spike2" parent="Objects/Path2D/PathFollow2D" index="2" instance=ExtResource("8_acrt5")]
+position = Vector2(32, -112)
+
+[node name="PressurePlate" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_5p5va")]
+position = Vector2(3448, 384)
+connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]

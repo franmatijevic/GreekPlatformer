@@ -19,7 +19,7 @@ func _ready() -> void:
 	camera = hand1.camera
 
 func enter():
-	t=time + 1#vrijeme prije pucanja + jos malo vremena(odmor valjda)
+	t=time + 5#vrijeme prije pucanja + jos malo vremena(odmor valjda)
 	
 	if hand1.state==0:
 		var t=create_tween()
@@ -33,10 +33,12 @@ func activate_hands():
 		hand1.state=2
 		hand1.target = target1.global_position.x
 		hand1.t=time
+		hand1.horizontalVelocity  = handSpeed
 	if hand2 and target2:
 		hand2.state=2
 		hand2.target = target2.global_position.x
 		hand2.t=time
+		hand2.horizontalVelocity  = handSpeed
 
 func update_physics_process(delta:float):
 	if t>time:
@@ -44,7 +46,13 @@ func update_physics_process(delta:float):
 		#player().block=true
 	t=t+delta
 	
-	var target = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 - 1000
+	var target
+	if camera:
+		target = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2
+	else:
+		target = player().global_position.y - 1000
+	
+	#var target = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 - 1000
 	player().global_position.y=move_toward(player().global_position.y, target, 500*delta)
 
 

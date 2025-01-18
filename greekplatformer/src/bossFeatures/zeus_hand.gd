@@ -93,6 +93,9 @@ func shoot_down():
 	var thunder = Thunderbolt.new_thunderbolt(Vector2(target,global_position.y+1000))
 	thunder.global_position=global_position
 	get_parent().add_child(thunder)
+	thunder.global_position=Vector2(target,global_position.y+1000)
+	thunder.set_direction()
+
 
 func shoot():
 	var thunder = Thunderbolt.new_thunderbolt(player.global_position)

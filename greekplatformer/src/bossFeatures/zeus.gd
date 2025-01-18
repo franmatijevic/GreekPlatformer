@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	
 	match currentAttack:
 		-1:
-			pass
+			global_position.y-=delta*100
 		_:
 			get_node("Attacks").get_children()[currentAttack].update_physics_process(delta)
 
@@ -63,17 +63,21 @@ func take_damage():
 	health=health-1
 	if health==0:
 		do_action(true)
+		currentAttack=-1
+		var t = create_tween()
+		t.tween_property($Head, "modulate:a", 0, 2)
+		
 	else:
 		get_parent().get_parent().get_parent().camShake(0.25)
 		immunity=true
 		var t = create_tween()
 		t.set_parallel(false)
 		for i in range(5):
-			t.tween_property(self, "modulate:a", 0.7, 0.2)
-			t.tween_property(self, "modulate:a", 1, 0.2)
+			t.tween_property($Head, "modulate:a", 0.7, 0.2)
+			t.tween_property($Head, "modulate:a", 1, 0.2)
 		t.tween_callback(end_taking_damage)
-		t.tween_property(self, "modulate:a", 0.7, 0.2)
-		t.tween_property(self, "modulate:a", 1, 0.2)
+		t.tween_property($Head, "modulate:a", 0.7, 0.2)
+		t.tween_property($Head, "modulate:a", 1, 0.2)
 
 func end_taking_damage():
 	immunity=false
