@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_8untp"]
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="2_4tg62"]
 [ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="4_00yhj"]
-[ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="4_8cw1s"]
 [ext_resource type="PackedScene" uid="uid://cb47qwqitaccv" path="res://src/environment/lever/lever.tscn" id="5_djna4"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="6_tfskv"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="7_3ymgk"]
 [ext_resource type="PackedScene" uid="uid://dg136dkjyc6yp" path="res://src/environment/super_spring.tscn" id="7_7vcbg"]
+[ext_resource type="PackedScene" uid="uid://c846pn2uo83cx" path="res://src/environment/bat/bat_platform.tscn" id="9_3x6kc"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="9_wnv7d"]
 [ext_resource type="Texture2D" uid="uid://637ll5o48bkt" path="res://src/environment/background_items/background_items_art/Box2.png" id="10_d3cya"]
 [ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="11_1dw5k"]
@@ -95,8 +95,7 @@ curve = SubResource("Curve2D_425qg")
 position = Vector2(1296, 677)
 rotates = false
 
-[node name="BirdPlatform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("4_8cw1s")]
-position = Vector2(-1, 5)
+[node name="BatPlatform" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("9_3x6kc")]
 speed = 0.18
 
 [node name="Path2D3" type="Path2D" parent="Objects" index="13"]
@@ -107,8 +106,7 @@ curve = SubResource("Curve2D_425qg")
 position = Vector2(1296, 677)
 rotates = false
 
-[node name="BirdPlatform" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("4_8cw1s")]
-position = Vector2(1, -1)
+[node name="BatPlatform" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("9_3x6kc")]
 speed = 0.18
 
 [node name="Lever" parent="Objects" index="14" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_djna4")]
@@ -146,7 +144,7 @@ curve = SubResource("Curve2D_5rlag")
 position = Vector2(1110, -1027)
 rotates = false
 
-[node name="BirdPlatform" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("4_8cw1s")]
+[node name="BatPlatform" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("9_3x6kc")]
 speed = 0.15
 
 [node name="Spring" parent="Objects" index="20" instance=ExtResource("9_wnv7d")]

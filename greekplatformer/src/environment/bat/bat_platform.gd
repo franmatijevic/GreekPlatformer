@@ -18,6 +18,6 @@ func _physics_process(delta):
 	
 	
 	if global_position.x < previous_position.x:
-		get_node("BirdSprite").scale.x = -abs(get_node("BatSprite").scale.x)
+		get_node("BatSprite").scale.x = -abs(get_node("BatSprite").scale.x)
 	else:
-		get_node("BirdSprite").scale.x = abs(get_node("BatSprite").scale.x)
+		get_node("BatSprite").scale.x = abs(get_node("BatSprite").scale.x)

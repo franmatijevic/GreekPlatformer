@@ -36,10 +36,10 @@ var game_paused: bool = false:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
-		if(get_node("Camera").block==false and !get_node("Player").dead and !game_paused and !dialogue_player.inProgress):
+		if(get_node("Camera").block==false and !get_node("Player").dead and !game_paused and (!dialogue_player or !dialogue_player.inProgress)):
 			restart()
 			game_paused = false
-		elif (game_paused || dialogue_player.inProgress):
+		elif (game_paused || (!dialogue_player or !dialogue_player.inProgress)):
 			pass
 	if Input.is_action_just_pressed("pause"):
 		if (game_paused && pause_menu.visible):
