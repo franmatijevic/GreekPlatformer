@@ -4,6 +4,7 @@ extends Sprite2D
 @export var exitPosition: Vector2
 @export var speed: float = 100
 @export var currentKey = ""
+@export var screenShake = false
 
 var moving = false
 var fading = false
@@ -28,7 +29,8 @@ func move_toward_position(delta):
 	var direction = (targetPosition - position).normalized()
 	var distance = speed * delta
 	if position.distance_to(targetPosition) > distance:
-		get_parent().setCamShake(0.25)
+		if screenShake:
+			get_parent().setCamShake(0.25)
 		position += direction * distance
 	else:
 		position = targetPosition

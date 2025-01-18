@@ -23,7 +23,7 @@ size = Vector2(224, 303)
 
 [node name="level1" node_paths=PackedStringArray("current_room") instance=ExtResource("1_levd8")]
 ChapterName = "Chapter 1: Prologue"
-current_room = NodePath("Scene_1")
+current_room = NodePath("Scene_0")
 
 [node name="Control" parent="BlackScreen" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -121,6 +121,7 @@ entryPosition = Vector2(-1277, -1728)
 exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
 currentKey = "lvl_1_1"
+screenShake = true
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
@@ -128,7 +129,7 @@ position = Vector2(2250.47, 779.472)
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="16"]
 
 [node name="Player" parent="." index="17" instance=ExtResource("15_173jf")]
-position = Vector2(-572, 659)
+position = Vector2(-6787, 708)
 floor_max_angle = 0.785398
 jump_height = 250.0
 
