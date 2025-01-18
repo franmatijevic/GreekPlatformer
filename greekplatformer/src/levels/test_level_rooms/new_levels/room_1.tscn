@@ -560,19 +560,19 @@ shape = SubResource("RectangleShape2D_jcw32")
 position = Vector2(-8676, 388)
 
 [node name="GreekArtefact2" parent="Objects" index="106" instance=ExtResource("20_f3oay")]
-position = Vector2(-8276, 412)
+position = Vector2(-8276, 394)
 
 [node name="GreekArtefact3" parent="Objects" index="107" instance=ExtResource("21_71a5l")]
-position = Vector2(-7874, 423)
+position = Vector2(-7874, 446)
 
 [node name="GreekArtefact4" parent="Objects" index="108" instance=ExtResource("22_58s42")]
-position = Vector2(-7557, 414)
+position = Vector2(-7557, 406)
 
 [node name="GreekArtefact5" parent="Objects" index="109" instance=ExtResource("23_4kwx1")]
-position = Vector2(-7207, 420)
+position = Vector2(-7207, 453)
 
 [node name="GreekArtefact6" parent="Objects" index="110" instance=ExtResource("20_8cagl")]
-position = Vector2(-6890, 378)
+position = Vector2(-6890, 445)
 
 [node name="GreekArtefact7" parent="Objects" index="111" instance=ExtResource("25_656pc")]
 position = Vector2(-9093, 349)
