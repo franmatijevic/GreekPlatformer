@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q3b40cqwcheg"
-path="res://.godot/imported/amfora.png-dd2789c822ca38104fcfb145eaadc3de.ctex"
+uid="uid://ds76m0cvbrq5e"
+path="res://.godot/imported/amfora.png-3cbd2dae1a792143ff6cf21a648a9e20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/amfora.png"
-dest_files=["res://.godot/imported/amfora.png-dd2789c822ca38104fcfb145eaadc3de.ctex"]
+source_file="res://src/greekArtefacts/artefacts_art/amfora.png"
+dest_files=["res://.godot/imported/amfora.png-3cbd2dae1a792143ff6cf21a648a9e20.ctex"]
 
 [params]
 

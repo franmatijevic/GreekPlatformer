@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crbmhs5ticei0"
-path="res://.godot/imported/aspis.png-438b676fde33bed47161b66bb0cddb24.ctex"
+uid="uid://r1tni7vutabg"
+path="res://.godot/imported/krater.png-27631c814c7fda3c33b25a4052dcc9fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/all_artefacts/aspis.png"
-dest_files=["res://.godot/imported/aspis.png-438b676fde33bed47161b66bb0cddb24.ctex"]
+source_file="res://src/greekArtefacts/artefacts_art/krater.png"
+dest_files=["res://.godot/imported/krater.png-27631c814c7fda3c33b25a4052dcc9fe.ctex"]
 
 [params]
 

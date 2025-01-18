@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c0gvja8oywg3d"]
+[gd_scene load_steps=39 format=4 uid="uid://c0gvja8oywg3d"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_2i8m6"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_71wco"]
@@ -18,6 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="16_7e2ka"]
 [ext_resource type="PackedScene" uid="uid://bbl4ugem5qj5c" path="res://src/environment/bird/bird_platform.tscn" id="17_7cpsq"]
 [ext_resource type="Texture2D" uid="uid://duscl0bybd3lk" path="res://src/environment/platformArt/bird.png" id="18_jdluv"]
+[ext_resource type="PackedScene" uid="uid://ck4x0dqsr4j0l" path="res://src/greekArtefacts/spear.tscn" id="19_xhgrc"]
+[ext_resource type="PackedScene" uid="uid://djbcp6hl82hsp" path="res://src/greekArtefacts/tripod.tscn" id="20_8cagl"]
+[ext_resource type="PackedScene" uid="uid://bot5n4nm2bi8c" path="res://src/greekArtefacts/amphora.tscn" id="20_f3oay"]
+[ext_resource type="PackedScene" uid="uid://bql3ot7albj67" path="res://src/greekArtefacts/aspis.tscn" id="21_71a5l"]
+[ext_resource type="PackedScene" uid="uid://j8ulo5kuocg5" path="res://src/greekArtefacts/herm.tscn" id="22_58s42"]
+[ext_resource type="PackedScene" uid="uid://ddri2gjhvruj3" path="res://src/greekArtefacts/krater.tscn" id="23_4kwx1"]
+[ext_resource type="PackedScene" uid="uid://b6bod8rxiafye" path="res://src/greekArtefacts/javelin.tscn" id="25_656pc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmf37"]
 size = Vector2(15359.5, 8497.5)
@@ -548,6 +555,27 @@ shape = SubResource("RectangleShape2D_exqkc")
 position = Vector2(-6650.24, -802.009)
 rotation = -0.359538
 shape = SubResource("RectangleShape2D_jcw32")
+
+[node name="GreekArtefact" parent="Objects" index="105" instance=ExtResource("19_xhgrc")]
+position = Vector2(-8676, 388)
+
+[node name="GreekArtefact2" parent="Objects" index="106" instance=ExtResource("20_f3oay")]
+position = Vector2(-8276, 412)
+
+[node name="GreekArtefact3" parent="Objects" index="107" instance=ExtResource("21_71a5l")]
+position = Vector2(-7874, 423)
+
+[node name="GreekArtefact4" parent="Objects" index="108" instance=ExtResource("22_58s42")]
+position = Vector2(-7557, 414)
+
+[node name="GreekArtefact5" parent="Objects" index="109" instance=ExtResource("23_4kwx1")]
+position = Vector2(-7207, 420)
+
+[node name="GreekArtefact6" parent="Objects" index="110" instance=ExtResource("20_8cagl")]
+position = Vector2(-6890, 378)
+
+[node name="GreekArtefact7" parent="Objects" index="111" instance=ExtResource("25_656pc")]
+position = Vector2(-9093, 349)
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(5440, 320)

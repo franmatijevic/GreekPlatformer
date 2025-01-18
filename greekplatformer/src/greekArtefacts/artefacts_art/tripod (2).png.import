@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b37pv73uybtju"
-path="res://.godot/imported/krater.png-f28210232c8d09d45b423a4aed004d7f.ctex"
+uid="uid://cemulyr3yj5ra"
+path="res://.godot/imported/tripod (2).png-892544bd946e9ff8ccc0aaec4b3b4de0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/greekArtefacts/krater.png"
-dest_files=["res://.godot/imported/krater.png-f28210232c8d09d45b423a4aed004d7f.ctex"]
+source_file="res://src/greekArtefacts/artefacts_art/tripod (2).png"
+dest_files=["res://.godot/imported/tripod (2).png-892544bd946e9ff8ccc0aaec4b3b4de0.ctex"]
 
 [params]
 
