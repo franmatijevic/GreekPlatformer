@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=19 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_0e6ak"]
 [ext_resource type="Texture2D" uid="uid://ckpb2gx5h311f" path="res://src/environment/environmentArt/background/olimp.png" id="2_0vc73"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="13_s3rpa"]
 [ext_resource type="PackedScene" uid="uid://c20usakr3hbgc" path="res://src/myths/myth_1/rooms/roomsLevel1/MountainEntrance.tscn" id="14_r2nsp"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="16_j3rc2"]
+[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="16_oukpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -66,25 +67,51 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="8" instance=ExtResource("5_8aggs")]
+[node name="DialogueAreaAtena" parent="." index="8" instance=ExtResource("4_2jc5r")]
+process_mode = 0
+position = Vector2(-6435, 733)
+dialogueKey = "atena_wasd"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
+shape = SubResource("RectangleShape2D_8hqll")
+
+[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("5_8aggs")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("6_s7xjg")
 sceneTextFile = "res://src/dialogue/level_1_dialogue/lvl_1.json"
 speechBubbleScene = ExtResource("7_j8v7e")
 
-[node name="Scene_0" parent="." index="9" instance=ExtResource("8_0g4v1")]
+[node name="Scene_0" parent="." index="10" instance=ExtResource("8_0g4v1")]
 light_mask = 1
 position = Vector2(96, 264)
 collision_layer = 0
 
-[node name="Scene_1" parent="." index="10" instance=ExtResource("8_rq302")]
+[node name="Scene_1" parent="." index="11" instance=ExtResource("8_rq302")]
 
-[node name="Scene_2" parent="." index="11" instance=ExtResource("9_a1ew1")]
+[node name="Scene_2" parent="." index="12" instance=ExtResource("9_a1ew1")]
 
-[node name="Scene_3" parent="." index="12" instance=ExtResource("10_8l4dm")]
+[node name="Scene_3" parent="." index="13" instance=ExtResource("10_8l4dm")]
 
-[node name="Zeus" type="Sprite2D" parent="." index="13"]
+[node name="Atena" type="Sprite2D" parent="." index="14"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(-7616, -267)
+rotation = 3.14159
+scale = Vector2(1.40777, -1.40777)
+texture = ExtResource("16_oukpp")
+script = ExtResource("12_v3ewr")
+entryPosition = Vector2(-7616, -267)
+exitPosition = Vector2(23460, -6735)
+currentKey = "atena_wasd"
+
+[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
+position = Vector2(-5780.76, 675.549)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="Zeus" type="Sprite2D" parent="." index="15"]
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
@@ -93,25 +120,27 @@ script = ExtResource("12_v3ewr")
 entryPosition = Vector2(-1277, -1728)
 exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
+currentKey = "lvl_1_1"
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="14"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="16"]
 
-[node name="Player" parent="." index="15" instance=ExtResource("13_s3rpa")]
-position = Vector2(-6312, 684)
+[node name="Player" parent="." index="17" instance=ExtResource("13_s3rpa")]
+position = Vector2(-6870, 697)
 floor_max_angle = 0.785398
 jump_height = 250.0
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
-position = Vector2(306, 218)
+position = Vector2(7643, 161)
 
-[node name="Room" parent="." index="16" instance=ExtResource("14_r2nsp")]
+[node name="Room" parent="." index="18" instance=ExtResource("14_r2nsp")]
 position = Vector2(6512, -3704)
 
-[node name="BackgroundMusicStart" type="Node" parent="." index="17"]
+[node name="BackgroundMusicStart" type="Node" parent="." index="19"]
 script = ExtResource("16_j3rc2")
 backgroundMusic = true
 
 [editable path="DialogueAreaZeus"]
+[editable path="DialogueAreaAtena"]

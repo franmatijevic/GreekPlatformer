@@ -3,6 +3,7 @@ extends Sprite2D
 @export var entryPosition: Vector2
 @export var exitPosition: Vector2
 @export var speed: float = 100
+@export var currentKey = ""
 
 var moving = false
 var fading = false
@@ -49,14 +50,15 @@ func update_fade(delta):
 	if progress >= 1.0:
 		fading = false
 
-func _on_perform_action(action: String, params: Dictionary):
-	if action == "move_to" and params.has("targetPosition"):
-		targetPosition = Vector2(params["targetPosition"][0], params["targetPosition"][1])
-		moving = true
-	elif action == "fade" and params.has("targetAlpha") and params.has("duration"):
-		fade_target_alpha = params["targetAlpha"]
-		fade_duration = params["duration"]
-		fade_timer = 0.0
-		fading = true
-	elif action == "exit":
-		_on_npc_exit()
+func _on_perform_action(action: String, params: Dictionary, key: String):
+	if currentKey == key:
+		if action == "move_to" and params.has("targetPosition"):
+			targetPosition = Vector2(params["targetPosition"][0], params["targetPosition"][1])
+			moving = true
+		elif action == "fade" and params.has("targetAlpha") and params.has("duration"):
+			fade_target_alpha = params["targetAlpha"]
+			fade_duration = params["duration"]
+			fade_timer = 0.0
+			fading = true
+		elif action == "exit":
+			_on_npc_exit()

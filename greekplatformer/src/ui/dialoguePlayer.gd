@@ -11,6 +11,7 @@ var activeSpeaker = ""
 var speechBubbles = {}
 var speakerMarkers = {}
 var audioMarkers = {}
+var currentKey
 
 var displayFullText:bool = false
 var textSpeed = 0.05
@@ -18,7 +19,7 @@ var tween
 
 signal npc_enter
 signal npc_exit
-signal perform_action(action: String, params: Dictionary)
+signal perform_action(action: String, params: Dictionary, key: String)
 
 func _ready():
 	sceneText = load_scene_text()
@@ -99,20 +100,21 @@ func handle_line(line):
 		var params = {}
 		if line.has("parameters"):
 			params = line["parameters"]
-		SignalBus.emit_signal("perform_action", line["action"], params)
+		SignalBus.emit_signal("perform_action", line["action"], params, currentKey)
 
 func finish():
 	for bubble in speechBubbles.values():
 		bubble.visible = false
 	inProgress = false
 	get_parent().get_node("Player").set_state("MoveState")
-	SignalBus.emit_signal("dialogue_finished")
+	SignalBus.emit_signal("dialogue_finished", currentKey)
 	SignalBus.emit_signal("npc_exit")
 	
 func on_display_dialogue(textKey):
 	if inProgress:
 		next_line()
 	else:
+		currentKey = textKey
 		SignalBus.emit_signal("npc_enter")
 		get_parent().get_node("Player").set_state("DialogState")
 		inProgress = true

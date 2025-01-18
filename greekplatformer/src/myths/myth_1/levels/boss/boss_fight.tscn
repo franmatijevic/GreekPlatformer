@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="4_m4tqd"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="5_b822x"]
 [ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="6_aqgdi"]
-[ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
+[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
 
 [node name="BossFight" node_paths=PackedStringArray("torch", "current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")

@@ -1,11 +1,11 @@
 extends Node
 
 signal display_dialogue(text_key)
-signal dialogue_finished
+signal dialogue_finished(key)
 signal display_full_text
 
 signal can_click_next
-signal npc_enter
+signal npc_enter(key)
 signal npc_exit
 signal perform_action(action, params)
 

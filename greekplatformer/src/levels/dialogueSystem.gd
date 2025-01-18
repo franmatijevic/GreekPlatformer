@@ -20,16 +20,15 @@ func _input(event):
 
 func _on_area_entered(_area):
 	areaActive = true
-	if oneTime:
-		canClickNext = false
-		SignalBus.emit_signal("display_dialogue", dialogueKey)
+	canClickNext = false
+	SignalBus.emit_signal("display_dialogue", dialogueKey)
 
 func _on_area_exited(_area):
 	areaActive = false
 
-func _on_dialogue_finished():
-	if oneTime:
-		queue_free()
+func _on_dialogue_finished(currentKey):
+	if oneTime and dialogueKey == currentKey:
+		self.queue_free()
 		
 func _can_click_next():
 	canClickNext = true
