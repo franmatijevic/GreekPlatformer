@@ -15,5 +15,11 @@ tile_map_data = PackedByteArray("AAD5/wMABgAAAAAAAAD6/wMABgAAAAAAAAD7/wMABgAAAAA
 position = Vector2(-192, -8)
 shape = SubResource("RectangleShape2D_b4ecn")
 
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-1208, 320)
+
 [node name="Torch" parent="Objects" index="0" instance=ExtResource("2_mgry0")]
 position = Vector2(256, 160)
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(-128, 320)

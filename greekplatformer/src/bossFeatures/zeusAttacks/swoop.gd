@@ -9,7 +9,7 @@ func enter():
 
 func update_physics_process(delta: float) -> void:
 	
-	#player().rotateToFacing()
+	player().rotateToFacing()
 	
 	
 	player().global_position = path.global_position

@@ -15,18 +15,19 @@ collision_layer = 32
 collision_mask = 5
 script = ExtResource("1_sx8bc")
 
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("2_qsd86")
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, -64)
+position = Vector2(-32, -64)
 shape = SubResource("CircleShape2D_llmtk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-61.2372, 211.497)
-rotation = 0.314159
+position = Vector2(61.237, 211.497)
+rotation = -0.314159
 shape = SubResource("RectangleShape2D_ibmbv")
 
 [node name="Attacks" type="Node" parent="."]
-
-[node name="Head" type="Sprite2D" parent="."]
-texture = ExtResource("2_qsd86")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

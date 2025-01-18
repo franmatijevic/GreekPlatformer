@@ -9,7 +9,7 @@ var t:float=10
 
 @export var spaceBetweenHands:float=128*4
 
-@export var timeBetweenShoots:float=5
+var timeBetweenShoots:float=5
 
 @export var activeOnStart:bool=true
 
@@ -18,7 +18,13 @@ var targetPosition:Vector2=Vector2.ZERO #pozicija relativna kameri
 
 var horizontalVelocity:float=0
 
+var target #meta kada puca direktno
+
 func _ready() -> void:
+	if !activeOnStart:
+		state=0
+		targetPosition.y=-300
+	
 	player = get_parent().get_parent().get_parent().get_node("Player")
 	camera = get_parent().get_parent().get_parent().get_node("Camera/Camera2D")
 	
@@ -26,16 +32,31 @@ func _ready() -> void:
 		$Line2D.scale.x=-1
 
 func _physics_process(delta: float) -> void:
-	var height = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 + offsetY
+	#var height = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 + offsetY
 	
 	match state:
 		0: #hidden
 			targetPosition.y = move_toward(targetPosition.y, -300, 100*delta)
 		1: #agressive
 			agressive(delta)
+		2: #direct shot
+			direct(delta)
 	
 	
 	global_position.y = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 + offsetY + targetPosition.y
+
+func direct(delta):
+	
+	global_position.x = move_toward(global_position.x, target, horizontalVelocity*delta)
+	
+	
+	if t>0:
+		t=t-delta
+	elif global_position.x == target:
+		shoot_down()
+		t=15
+	
+	targetPosition.y = move_toward(targetPosition.y, 0, 100*delta)
 
 func agressive(delta:float):
 	var k=1
@@ -68,8 +89,15 @@ func agressive(delta:float):
 	
 	targetPosition.y = move_toward(targetPosition.y, 0, 100*delta)
 
+func shoot_down():
+	var thunder = Thunderbolt.new_thunderbolt(Vector2(target,global_position.y+1000))
+	thunder.global_position=global_position
+	get_parent().add_child(thunder)
+
 func shoot():
 	var thunder = Thunderbolt.new_thunderbolt(player.global_position)
 	thunder.global_position=global_position
 	get_parent().add_child(thunder)
+	thunder.global_position=global_position
+	thunder.set_direction()
 	#player().get_parent().current_room.get_node("Objects").add_child(arrow)

@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=3 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
+[ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="2_g0i0h"]
 
 [node name="BossFight" instance=ExtResource("1_vnnb8")]
+ChapterName = "Chapter 4: Conflict"
+
+[node name="TorchRoom" parent="." index="5" instance=ExtResource("2_g0i0h")]

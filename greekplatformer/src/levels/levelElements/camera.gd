@@ -49,7 +49,7 @@ func shake():
 	var amount = pow(trauma, trauma_power)
 	rotation = max_roll * amount * randf_range(-1, 1)
 	$Camera2D.offset.x = max_offset.x * amount * randf_range(-1, 1)
-	$Camera2D.offset.y = max_offset.y * amount * randf_range(-1, 1)
+	$Camera2D.offset.y = max_offset.y * amount * randf_range(-1, 1) + player.cameraOffset
 
 func set_state(state: String):
 	if(state.to_lower()==current_state.name.to_lower()):

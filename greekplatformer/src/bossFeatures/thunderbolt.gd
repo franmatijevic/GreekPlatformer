@@ -10,9 +10,11 @@ var velocity
 const thunderScene: PackedScene = preload("res://src/bossFeatures/thunderbolt.tscn")
 
 func _ready() -> void:
+	set_direction()
+
+func set_direction():
 	velocity=(target - global_position).normalized() * speed
 	rotation = velocity.angle() + PI/2 + PI
-	
 
 func _physics_process(delta: float) -> void:
 	global_position += velocity * delta

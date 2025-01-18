@@ -1,24 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=7 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
-[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/myths/myth_1/rooms/roomsLevel2/trickthrow.tscn" id="8_nq8xc"]
-[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/myths/myth_1/rooms/roomsLevel2/simpleTrap.tscn" id="11_iqxsf"]
-[ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/myths/myth_1/rooms/roomsLevel2/cloud_rock.tscn" id="11_wf35p"]
-[ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/myths/myth_1/rooms/roomsLevel2/simple_catch.tscn" id="12_c5cgg"]
-[ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="12_iqmii"]
-[ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/myths/myth_1/rooms/roomsLevel2/train_1.tscn" id="12_sfk78"]
-[ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="13_odpob"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
-[ext_resource type="PackedScene" uid="uid://spss52n2u5ul" path="res://src/levels/test_level_rooms/plate_tutorial.tscn" id="14_2rysc"]
-[ext_resource type="PackedScene" uid="uid://uivi7er6pb3n" path="res://src/levels/test_level_rooms/plate_plat_2.tscn" id="14_4th8v"]
-[ext_resource type="PackedScene" uid="uid://dmjewtowkouuf" path="res://src/myths/myth_1/rooms/roomsLevel2/plate_plat_3.tscn" id="15_ak1qm"]
-[ext_resource type="PackedScene" uid="uid://dcjccvul36vbj" path="res://src/levels/test_level_rooms/simple_juggle.tscn" id="15_sgh4s"]
-[ext_resource type="PackedScene" uid="uid://c3ptstpycfihj" path="res://src/levels/test_level_rooms/lowering_the_platform.tscn" id="16_kti2m"]
-[ext_resource type="PackedScene" uid="uid://bmbjb0224tvtj" path="res://src/levels/test_level_rooms/flock_of_birds.tscn" id="17_q4aqx"]
-[ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="18_kjm2o"]
-[ext_resource type="PackedScene" uid="uid://b2yiqrecd4v80" path="res://src/levels/test_level_rooms/new_levels/room_2.tscn" id="19_2yxld"]
+[ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
 radius = 240.0
@@ -37,56 +23,11 @@ floor_max_angle = 0.785398
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
 position = Vector2(-79, 0)
 
-[node name="Room2" parent="." index="7" instance=ExtResource("8_nq8xc")]
-position = Vector2(18736, 6896)
-
-[node name="CloudRock" parent="." index="8" instance=ExtResource("11_wf35p")]
-position = Vector2(5680, 9200)
-
-[node name="Room" parent="." index="9" instance=ExtResource("11_iqxsf")]
-position = Vector2(3632, 9456)
-
-[node name="SimpleCatch" parent="." index="10" instance=ExtResource("12_c5cgg")]
-position = Vector2(6176, 6520)
-
-[node name="PlatePlatform" parent="." index="11" instance=ExtResource("13_odpob")]
-position = Vector2(7984, 9072)
-
-[node name="platePlat2" parent="." index="12" instance=ExtResource("14_4th8v")]
-position = Vector2(13840, 9040)
-
-[node name="platePlat3" parent="." index="13" instance=ExtResource("15_ak1qm")]
-position = Vector2(25160, -1160)
-
-[node name="Train1" parent="." index="14" instance=ExtResource("12_sfk78")]
-position = Vector2(9920, 6288)
-
-[node name="Room3" parent="." index="15" instance=ExtResource("11_iqxsf")]
-position = Vector2(19304, 11560)
-
-[node name="LeverTutorial" parent="." index="16" instance=ExtResource("12_iqmii")]
-position = Vector2(17344, -1176)
-
-[node name="Checkpoint" parent="." index="17" instance=ExtResource("13_pnq13")]
+[node name="Checkpoint" parent="." index="7" instance=ExtResource("13_pnq13")]
 position = Vector2(-1856, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
 shape = SubResource("CircleShape2D_a57mi")
 
-[node name="PlateTutorial" parent="." index="18" instance=ExtResource("14_2rysc")]
-position = Vector2(19192, 4560)
-
-[node name="SimpleJuggle" parent="." index="19" instance=ExtResource("15_sgh4s")]
-position = Vector2(22272, -928)
-
-[node name="LoweringThePlatform" parent="." index="20" instance=ExtResource("16_kti2m")]
-position = Vector2(19944, -680)
-
-[node name="FlockOfBirds" parent="." index="21" instance=ExtResource("17_q4aqx")]
-position = Vector2(18608, -6240)
-
-[node name="Room4" parent="." index="22" instance=ExtResource("18_kjm2o")]
-position = Vector2(20752, -11480)
-
-[node name="Room5" parent="." index="23" instance=ExtResource("19_2yxld")]
-position = Vector2(3920, -1328)
+[node name="ZeusCombat" parent="." index="8" instance=ExtResource("20_nhpum")]
+position = Vector2(2152, -56)

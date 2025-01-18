@@ -3,7 +3,7 @@ extends StaticBody2D
 
 @onready var timer: Timer = $Timer
 @onready var collision_shape_2d = $CollisionShape2D
-var timeOnPlatform = randf() + 0.2
+var timeOnPlatform = randf() + 1.5#0.2
 var reaperTime = randi() % 5 + 5
 var isOnPlatform: bool = false
 var disappear: bool = false

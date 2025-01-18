@@ -55,21 +55,21 @@ timeBetweenShoots = 7.0
 [node name="Zeus" parent="Objects" index="2" instance=ExtResource("12_32y53")]
 position = Vector2(-4720, -480)
 
-[node name="Node" type="Node" parent="Objects/Zeus" index="5"]
+[node name="Node" type="Node" parent="Objects/Zeus" index="4"]
 script = ExtResource("14_ggxjk")
 time = 10.0
 
-[node name="Node2" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
+[node name="Node2" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
 script = ExtResource("13_8pfbo")
 hand1 = NodePath("../../ZeusHand2")
 hand2 = NodePath("../../ZeusHand")
 time = 15.0
 
-[node name="Node4" type="Node" parent="Objects/Zeus" index="7"]
+[node name="Node4" type="Node" parent="Objects/Zeus" index="6"]
 script = ExtResource("14_ggxjk")
 time = 4.0
 
-[node name="Node3" type="Node" parent="Objects/Zeus" index="8" node_paths=PackedStringArray("path")]
+[node name="Node3" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
 script = ExtResource("15_tm2kd")
 path = NodePath("../../Path2D2/PathFollow2D")
 speed = 0.1
@@ -129,7 +129,7 @@ position = Vector2(-1472, -800)
 rotation = 1.5708
 
 [node name="Torch" parent="Objects" index="16" instance=ExtResource("9_sttrj")]
-position = Vector2(-721, 66)
+position = Vector2(888, -280)
 
 [node name="Head" parent="Objects" index="17" instance=ExtResource("10_ccrkb")]
 position = Vector2(-8304, -360)

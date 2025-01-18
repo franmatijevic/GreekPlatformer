@@ -10,7 +10,7 @@ var playerY
 
 func enter():
 	#print(self.name)
-	playerY = player().player.global_position.y
+	playerY = player().player.global_position.y# + player().player.cameraOffset
 	
 	player().block=false
 	var current_room = player().get_parent().current_room
@@ -26,18 +26,23 @@ func enter():
 
 func exit():
 	player().block=true
+	#player().get_node("Camera2D").position.y=0
 
 
 func update_physics_process(delta:float):
 	#player() vraca Node2D "Camera", a player().player je zapravo player
 	player().global_position.x=player().player.global_position.x
 	
+	#player().get_node("Camera2D").position.y = player().player.cameraOffset
+	
+	player().get_node("Camera2D").offset.y =  player().player.cameraOffset
+	
 	if(player().player.is_on_floor() or abs(player().player.velocity.y)>max_player_velocity):
-		playerY = player().global_position.y
+		playerY = player().global_position.y #+ player().player.cameraOffset
 	
 	if(player().player.global_position.y-player().get_node("Camera2D").get_target_position().y>max_camera_to_player_distance):
-		playerY = player().player.global_position.y+1080
-		player().global_position.y = playerY
+		playerY = player().player.global_position.y+1080# + player().player.cameraOffset
+		player().global_position.y = playerY #+ player().player.cameraOffset
 		
 		#var x = player().get_node("Camera2D").get_target_position().x
 		#player().get_node("Camera2D").reset_smoothing()

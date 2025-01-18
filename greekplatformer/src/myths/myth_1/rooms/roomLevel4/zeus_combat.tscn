@@ -1,0 +1,160 @@
+[gd_scene load_steps=17 format=4 uid="uid://b8xa1v70gwas"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_m5278"]
+[ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_0dm0t"]
+[ext_resource type="PackedScene" uid="uid://dijfdscbpg476" path="res://src/bossFeatures/zeus_hand.tscn" id="3_5tjlm"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="3_mxu0l"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="4_an3ya"]
+[ext_resource type="PackedScene" uid="uid://cf6jq16e0lfcx" path="res://src/environment/cloud_irma/cloud_type_2.tscn" id="4_k00gf"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/swoop.gd" id="5_byj28"]
+[ext_resource type="PackedScene" uid="uid://c6k1k7e6uk1ay" path="res://src/bossFeatures/zeus_death_pit.tscn" id="5_iaxj8"]
+[ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="7_vldwa"]
+[ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="9_mowxu"]
+[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="11_0f2m4"]
+[ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="12_4g3yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pcx3"]
+size = Vector2(5336, 3316)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dihlv"]
+size = Vector2(2244, 42)
+
+[sub_resource type="Curve2D" id="Curve2D_yidp0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -815.412, -718.328, 0, 0, 0, 0, -1650.27, -773.42, 0, 0, 0, 0, -2400, -440, 0, 0, 0, 0, -2593.91, -85.42, 0, 0, 0, 0, -1737.91, -109.42, 0, 0, 0, 0, -1169.91, -93.42, 0, 0, 0, 0, -721.91, -45.42, 0, 0, 0, 0, -273.91, 18.58, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vnk"]
+size = Vector2(1936, 512)
+
+[node name="ZeusCombat" instance=ExtResource("1_m5278")]
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD4/wMACAAAAAAAAAD5/wMACAAAAAAAAAD6/wMACAAAAAAAAAD7/wMACAAAAAAAAAD8/wMABwAAAAAAAAD9/wMABwAAAAAAAAD+/wMABwAAAAAAAAD//wMACAAAAAAAAAAAAAMACAAAAAAAAAD8/wEAAQAAAAAAAGD8/wIABwAAAAAAAAD9/wEABwAAAAAAAAD9/wIABwAAAAAAAAD+/wIAAQAAAAAAAAABAAMACAAAAAAAAAAJAPv/CAAAAAAAAAAKAPv/CAAAAAAAAAALAPv/CAAAAAAAAAAMAPv/CAAAAAAAAAANAPv/CAAAAAAAAAAKAPz/BwAAAAAAAAALAPz/BwAAAAAAAAAMAPz/BwAAAAAAAAAMAP3/AQAAAAAAAFALAP3/AQAAAAAAADANAPz/AQAAAAAAAFAJAPz/AQAAAAAAADASAAUACAAAAAAAAAATAAUACAAAAAAAAAAUAAUACAAAAAAAAAAVAAUABwAAAAAAAAAWAAUABwAAAAAAAAAXAAUABwAAAAAAAAAYAAUABwAAAAAAAAAZAAUACAAAAAAAAAAaAAUACAAAAAAAAAAbAAUACAAAAAAAAAAWAAIABwAAAAAAAAAXAAIABwAAAAAAAAAVAAMABwAAAAAAAAAWAAMABwAAAAAAAAAVAAQABwAAAAAAAAAWAAQABwAAAAAAAAAXAAQABwAAAAAAAAAXAAMABwAAAAAAAAAYAAQABwAAAAAAAAAYAAMAAQAAAAAAAAAUAAQAAQAAAAAAAGABAAQAAQAAAAAAAFAAAAQABwAAAAAAAAD//wQABwAAAAAAAAD+/wQABwAAAAAAAAD9/wQABwAAAAAAAAD8/wQABwAAAAAAAAD7/wQABwAAAAAAAAD6/wQABwAAAAAAAAD5/wQABwAAAAAAAAD4/wQABwAAAAAAAAD4/wUABwAAAAAAAAD5/wUABwAAAAAAAAD6/wUABwAAAAAAAAD7/wUABwAAAAAAAAD8/wUABwAAAAAAAAD9/wUABwAAAAAAAAD+/wUAAQAAAAAAAFD9/wcABwAAAAAAAAD9/wYABwAAAAAAAAD8/wYABwAAAAAAAAD7/wYABwAAAAAAAAD6/wYABwAAAAAAAAD5/wYABwAAAAAAAAD4/wYABwAAAAAAAAD4/wcABwAAAAAAAAD5/wcABwAAAAAAAAD6/wcABwAAAAAAAAD7/wcABwAAAAAAAAD8/wcABwAAAAAAAAAcAAUACAAAAAAAAAAdAAUACAAAAAAAAAAeAAUACAAAAAAAAAAfAAUACAAAAAAAAAAgAAUACAAAAAAAAAAhAAUACAAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(1644, -750)
+shape = SubResource("RectangleShape2D_4pcx3")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-768, 320)
+
+[node name="Zeus" parent="Objects" index="0" instance=ExtResource("2_0dm0t")]
+position = Vector2(4001.91, -890.58)
+
+[node name="ShortWait" type="Node" parent="Objects/Zeus" index="0" node_paths=PackedStringArray("chillPosition")]
+script = ExtResource("3_mxu0l")
+time = 3.0
+chillPosition = NodePath("../../ChillingSpot")
+
+[node name="IntenseThunder" type="Node" parent="Objects/Zeus" index="1" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("4_an3ya")
+hand1 = NodePath("../../AgressiveHand")
+hand2 = NodePath("../../AgressiveHand2")
+hand1Interval = 3.0
+hand2Interval = 4.0
+time = 15.0
+
+[node name="AnotherShortWait" type="Node" parent="Objects/Zeus" index="2" node_paths=PackedStringArray("chillPosition")]
+script = ExtResource("3_mxu0l")
+time = 5.0
+chillPosition = NodePath("../../ChillingSpot")
+
+[node name="ChillThundeer" type="Node" parent="Objects/Zeus" index="3" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("4_an3ya")
+hand1 = NodePath("../../AgressiveHand")
+hand2 = NodePath("../../AgressiveHand2")
+hand1Interval = 6.0
+hand2Interval = 7.0
+time = 20.0
+
+[node name="Odmor" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
+script = ExtResource("3_mxu0l")
+time = 5.0
+chillPosition = NodePath("../../ChillingSpot")
+
+[node name="Swoop" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("path")]
+script = ExtResource("5_byj28")
+path = NodePath("../../Path2D/PathFollow2D")
+speed = 0.18
+
+[node name="AgressiveHand" parent="Objects" index="1" instance=ExtResource("3_5tjlm")]
+position = Vector2(3064, -1936)
+activeOnStart = false
+
+[node name="AgressiveHand2" parent="Objects" index="2" instance=ExtResource("3_5tjlm")]
+position = Vector2(3776, -1960)
+shouldBeFlipped = true
+activeOnStart = false
+
+[node name="ChillingSpot" type="Node2D" parent="Objects" index="3"]
+position = Vector2(3528, -904)
+
+[node name="cloudType2" parent="Objects" index="4" instance=ExtResource("4_k00gf")]
+position = Vector2(656, 224)
+
+[node name="ZeusDeathPit" parent="Objects" index="5" instance=ExtResource("5_iaxj8")]
+position = Vector2(520, 568)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/ZeusDeathPit" index="0"]
+position = Vector2(674, 248)
+shape = SubResource("RectangleShape2D_dihlv")
+
+[node name="cloudType3" parent="Objects" index="6" instance=ExtResource("4_k00gf")]
+position = Vector2(248, 32)
+
+[node name="cloudType4" parent="Objects" index="7" instance=ExtResource("4_k00gf")]
+position = Vector2(984, -384)
+
+[node name="cloudType5" parent="Objects" index="8" instance=ExtResource("4_k00gf")]
+position = Vector2(632, -176)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="9"]
+position = Vector2(4001.91, -882.58)
+curve = SubResource("Curve2D_yidp0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+rotates = false
+loop = false
+
+[node name="cloudType6" parent="Objects" index="10" instance=ExtResource("4_k00gf")]
+position = Vector2(2168, -536)
+
+[node name="cloudType7" parent="Objects" index="11" instance=ExtResource("4_k00gf")]
+position = Vector2(2944, -528)
+
+[node name="NormalPlatform" parent="Objects" index="12" instance=ExtResource("7_vldwa")]
+position = Vector2(2088, 592)
+
+[node name="LongPlatform" parent="Objects" index="13" instance=ExtResource("9_mowxu")]
+position = Vector2(1576, 520)
+
+[node name="NormalPlatform3" parent="Objects" index="14" instance=ExtResource("7_vldwa")]
+position = Vector2(1296, 400)
+
+[node name="NormalPlatform2" parent="Objects" index="15" instance=ExtResource("7_vldwa")]
+position = Vector2(1856, 584)
+
+[node name="NormalPlatform4" parent="Objects" index="16" instance=ExtResource("7_vldwa")]
+position = Vector2(1064, 272)
+
+[node name="NormalPlatform5" parent="Objects" index="17" instance=ExtResource("7_vldwa")]
+position = Vector2(2552, -544)
+
+[node name="NormalPlatform6" parent="Objects" index="18" instance=ExtResource("7_vldwa")]
+position = Vector2(3320, -104)
+
+[node name="RigidBody2D" parent="Objects" index="19" instance=ExtResource("11_0f2m4")]
+position = Vector2(-312, 56)
+
+[node name="CameraOffset" parent="Objects" index="20" instance=ExtResource("12_4g3yh")]
+position = Vector2(1384, -696)
+offset = -256.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CameraOffset" index="0"]
+position = Vector2(768, -96)
+shape = SubResource("RectangleShape2D_84vnk")
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(-1800, -944)

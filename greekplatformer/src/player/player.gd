@@ -28,6 +28,8 @@ var impactValue
 
 const GRAVITY = 980
 
+var cameraOffset:float=0
+
 func _ready():
 	for i in get_node("States").get_children():
 		states[i.name.to_lower()] = i

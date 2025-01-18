@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6k1k7e6uk1ay"]
+
+[ext_resource type="Script" path="res://src/bossFeatures/zeus_death_pit.gd" id="1_86qep"]
+
+[node name="ZeusDeathPit" type="Area2D"]
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_86qep")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

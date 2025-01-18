@@ -9,6 +9,8 @@ bounce = 0.5
 height = 50.0
 
 [node name="Nadlaktica" type="RigidBody2D"]
+z_index = 20
+z_as_relative = false
 collision_layer = 32
 collision_mask = 34
 physics_material_override = SubResource("PhysicsMaterial_tggll")
