@@ -1,9 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2a2i66bcqgwt"]
+[gd_scene load_steps=2 format=3 uid="uid://d2a2i66bcqgwt"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_mpwqr"]
-[ext_resource type="Texture2D" uid="uid://bxes1y6wl6f6b" path="res://src/greekArtefacts/all_artefacts/trireme_prompt.png" id="2_teiyp"]
 
 [node name="GreekArtefact" instance=ExtResource("1_mpwqr")]
-
-[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
-texture = ExtResource("2_teiyp")
