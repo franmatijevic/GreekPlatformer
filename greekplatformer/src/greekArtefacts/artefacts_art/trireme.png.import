@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceokt4frf8yro"
-path="res://.godot/imported/trireme.png-9145603dd67ed0ab9b001466c5de04f9.ctex"
+path="res://.godot/imported/trireme.png-f6ba52aca0c6a25e851555431198445a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/environment/platformArt/trireme.png"
-dest_files=["res://.godot/imported/trireme.png-9145603dd67ed0ab9b001466c5de04f9.ctex"]
+source_file="res://src/greekArtefacts/artefacts_art/trireme.png"
+dest_files=["res://.godot/imported/trireme.png-f6ba52aca0c6a25e851555431198445a.ctex"]
 
 [params]
 

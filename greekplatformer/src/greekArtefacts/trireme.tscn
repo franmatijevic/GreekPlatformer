@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2a2i66bcqgwt"]
+[gd_scene load_steps=5 format=3 uid="uid://d2a2i66bcqgwt"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_mpwqr"]
-[ext_resource type="Texture2D" uid="uid://ceokt4frf8yro" path="res://src/environment/platformArt/trireme.png" id="2_1bu7g"]
+[ext_resource type="Texture2D" uid="uid://ceokt4frf8yro" path="res://src/greekArtefacts/artefacts_art/trireme.png" id="2_1bu7g"]
+[ext_resource type="Texture2D" uid="uid://bxes1y6wl6f6b" path="res://src/greekArtefacts/all_artefacts/trireme_prompt.png" id="3_wgp4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ftwo"]
+size = Vector2(433, 172)
 
 [node name="GreekArtefact" instance=ExtResource("1_mpwqr")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(1.99999, 5)
+position = Vector2(0, 18)
+rotation = -0.0663225
 scale = Vector2(0.350247, 0.391733)
 texture = ExtResource("2_1bu7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(2.5, 147)
+shape = SubResource("RectangleShape2D_4ftwo")
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("3_wgp4d")

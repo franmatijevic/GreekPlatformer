@@ -49,7 +49,7 @@ rotates = false
 speed = 0.1
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Objects/Path2D" index="1"]
-position = Vector2(666.422, -65.0323)
+position = Vector2(666.421, -65.0319)
 progress = 3275.62
 rotates = false
 
