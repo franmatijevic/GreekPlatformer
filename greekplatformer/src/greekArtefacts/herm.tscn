@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://j8ulo5kuocg5"]
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_q4nnp"]
-[ext_resource type="Texture2D" uid="uid://b1g852kit67vc" path="res://src/greekArtefacts/herm.png" id="2_hu8nb"]
+[ext_resource type="Texture2D" uid="uid://dof7e5a2dcl3g" path="res://src/greekArtefacts/artefacts_art/herm.png" id="2_hu8nb"]
 [ext_resource type="Texture2D" uid="uid://b87hioi4x7b5y" path="res://src/greekArtefacts/all_artefacts/herm_prompt.png" id="3_tl7om"]
 
 [node name="GreekArtefact" instance=ExtResource("1_q4nnp")]
