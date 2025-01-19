@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://pmy66x62unny"]
+[gd_scene load_steps=17 format=3 uid="uid://pmy66x62unny"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_8qchm"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="2_pwrnr"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="10_ptuuy"]
 [ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="11_xuug8"]
 [ext_resource type="PackedScene" uid="uid://xo2tgl6vov72" path="res://src/myths/myth_1/rooms/roomLevel3/olimp_intro.tscn" id="12_beblk"]
+[ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="13_mddcf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxxwt"]
 size = Vector2(1080, 626)
@@ -96,3 +97,7 @@ shape = SubResource("RectangleShape2D_cb41l")
 
 [node name="OlimpIntro" parent="." index="17" instance=ExtResource("12_beblk")]
 position = Vector2(-8816, 376)
+
+[node name="BackgroundMusic" type="Node" parent="." index="18"]
+script = ExtResource("13_mddcf")
+backgroundMusic = true

@@ -93,7 +93,11 @@ text = "PUNO TEKSTA GDJE NESTO PISE JOS NE ZNAM STA"
 label_settings = SubResource("LabelSettings_d0tbd")
 horizontal_alignment = 1
 
+[node name="Node2D" type="Node2D" parent="BlackScreen/Text"]
+position = Vector2(-184, 72)
+
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text"]
+visible = false
 position = Vector2(-184, 72)
 points = PackedVector2Array(0, 0, 1300, 0)
 width = 3.0

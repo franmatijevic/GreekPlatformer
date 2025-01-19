@@ -9,6 +9,8 @@ extends Control
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	AudioController.play_menu_music()
 	play.button_up.connect(on_play_pressed)
 	settings.button_up.connect(on_settings_pressed)

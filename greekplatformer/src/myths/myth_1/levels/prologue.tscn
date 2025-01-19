@@ -37,6 +37,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" parent="BlackScreen/Text" index="0"]
 metadata/_edit_use_anchors_ = true
 
+[node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
+position = Vector2(325, 0)
+points = PackedVector2Array(0, 0, 650, 0)
+width = 3.0
+
+[node name="Line2D" parent="BlackScreen/Text" index="2"]
+visible = false
+
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
@@ -129,7 +137,7 @@ position = Vector2(2250.47, 779.472)
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="16"]
 
 [node name="Player" parent="." index="17" instance=ExtResource("15_173jf")]
-position = Vector2(-6787, 708)
+position = Vector2(-6952, 792)
 floor_max_angle = 0.785398
 jump_height = 250.0
 

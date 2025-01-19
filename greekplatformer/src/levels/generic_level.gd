@@ -110,6 +110,7 @@ func _ready() -> void:
 	t.tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 1.75)#0.6)
 	t.tween_property(get_node("BlackScreen/Text"), "modulate:a", 0, 2.25)#0.6)
 	
+	
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	current_room_file = load(current_room.scene_file_path)
 	current_room_position= current_room.global_position

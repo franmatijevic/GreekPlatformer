@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if(timer>0):
 		timer-=delta
 	else:
-		SceneLoader.load_more_level(path)
+		SceneLoader.load_scene(path)
 		set_physics_process(false)
 
 func _on_body_entered(body: Node2D) -> void:

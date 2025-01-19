@@ -1,8 +1,12 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://de834d1rptmo4"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://de834d1rptmo4"]
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_2yn86"]
 resource_name = "Compressor"
 gain = 3.5
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_2lheh"]
+resource_name = "LowPassFilter"
+resonance = 1.0
 
 [resource]
 bus/1/name = &"SFX"
@@ -19,3 +23,5 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_2lheh")
+bus/2/effect/0/enabled = false

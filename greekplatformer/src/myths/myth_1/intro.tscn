@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxveqeb8dejnp"]
+
+[ext_resource type="Script" path="res://src/myths/myth_1/credit_scene.gd" id="1_tx2e7"]
+[ext_resource type="FontFile" uid="uid://dbheckwybavgo" path="res://src/dialogue/fonts/GRECOromanLubedWrestling.ttf" id="2_ri7sx"]
+
+[sub_resource type="Theme" id="Theme_4j1vh"]
+default_font = ExtResource("2_ri7sx")
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_tx2e7")
+duration = 30.0
+allBlackEffect = 0.0
+nextScene = "res://src/myths/myth_1/levels/prologue.tscn"
+textSpeed = -60
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1504.0
+offset_top = -736.0
+offset_right = 1600.0
+offset_bottom = 1120.0
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -528.0
+offset_top = -280.0
+offset_right = 744.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Text" type="Node2D" parent="."]
+position = Vector2(0, 1464)
+
+[node name="Label" type="Label" parent="Text"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -584.0
+offset_top = -358.5
+offset_right = 584.0
+offset_bottom = 358.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_4j1vh")
+theme_override_font_sizes/font_size = 50
+text = "In the time before humans, there were the Gods and the Titans. The Gods were great beings with immense powers, and Zeus was their leader. The Titans were powerful giants, who were older than the Gods. They fought for power in a great war that lasted many, many years.
+
+One of the Titans was Prometheus, who turned against the Titans and joined Zeus, and gained his trust.
+
+Zeus tasked Prometheus with creating animals of the Earth and he created humans with some mud.
+
+Zeus thought that humans would only be useful for worshipping the gods, which Prometheus disliked.
+
+Prometheus tricked Zeus and gave him the faulty worship, which enraged Zeus.
+
+Zeus decided to take away fire from the humans, which left them in dark and freezing.
+
+But Prometheus had to do something about that..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]

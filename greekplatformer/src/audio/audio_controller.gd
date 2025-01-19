@@ -143,6 +143,8 @@ func play_menu_music():
 	play_sound($Music/TimpaniMenu, 0, 0)
 
 func play_game_music():
+	if $Music/AmforaMaster.is_playing():
+		return
 	play_sound($Music/AmforaMaster, 0, 0)
 
 func play_boss_music():
