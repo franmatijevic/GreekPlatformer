@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=9 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="2_g0i0h"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="4_m4tqd"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="5_b822x"]
 [ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="6_aqgdi"]
-[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
+[ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
+[ext_resource type="PackedScene" uid="uid://di513g1lk467e" path="res://src/myths/myth_1/rooms/roomLevel4/artillery.tscn" id="8_x8a4o"]
 
 [node name="BossFight" node_paths=PackedStringArray("torch", "current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")
@@ -18,15 +19,19 @@ current_room = NodePath("TorchRoom")
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(-1112, 208)
+position = Vector2(-2576, 208)
 
 [node name="Torch" parent="." index="6" instance=ExtResource("6_aqgdi")]
-position = Vector2(256, 160)
+position = Vector2(-1784, 56)
 
 [node name="TorchRoom" parent="." index="7" instance=ExtResource("2_g0i0h")]
+position = Vector2(-2008, 0)
 
 [node name="ZeusCombat" parent="." index="8" instance=ExtResource("5_b822x")]
-position = Vector2(2048, -48)
+position = Vector2(8616, -5888)
 
 [node name="ZeusSwooping" parent="." index="9" instance=ExtResource("7_syvmk")]
-position = Vector2(10112, 592)
+position = Vector2(2904, 24)
+
+[node name="Artillery" parent="." index="10" instance=ExtResource("8_x8a4o")]
+position = Vector2(9432, 1400)

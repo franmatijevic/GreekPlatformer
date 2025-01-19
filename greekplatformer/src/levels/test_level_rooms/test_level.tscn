@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
-[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="6_wrwmt"]
+[ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="6_wrwmt"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
@@ -34,4 +34,4 @@ shape = SubResource("CircleShape2D_a57mi")
 position = Vector2(9600, -2992)
 
 [node name="ZeusSwooping" parent="." index="9" instance=ExtResource("6_wrwmt")]
-position = Vector2(3808, 264)
+position = Vector2(2784, 200)

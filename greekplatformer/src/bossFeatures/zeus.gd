@@ -88,9 +88,10 @@ func do_action(togle:bool):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Character:
+		immunity=true
 		body.death()
 	if body is Throwable:
-		if body.linear_velocity==Vector2.ZERO:
+		if body.linear_velocity==Vector2.ZERO or body.pickedUp==true:
 			return
 		body.linear_velocity.x*=-1
 		body.linear_velocity.y-=400

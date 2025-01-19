@@ -46,18 +46,17 @@ shape = SubResource("RectangleShape2D_k0vdt")
 position = Vector2(-8656, -48)
 
 [node name="ZeusHand2" parent="Objects" index="0" instance=ExtResource("11_0k4hc")]
-timeBetweenShoots = 8.0
 
 [node name="ZeusHand" parent="Objects" index="1" instance=ExtResource("11_0k4hc")]
 shouldBeFlipped = true
-timeBetweenShoots = 7.0
 
 [node name="Zeus" parent="Objects" index="2" instance=ExtResource("12_32y53")]
 position = Vector2(-4720, -480)
 
-[node name="Node" type="Node" parent="Objects/Zeus" index="4"]
+[node name="Node" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("14_ggxjk")
 time = 10.0
+chillPosition = NodePath("../../Path2D2")
 
 [node name="Node2" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
 script = ExtResource("13_8pfbo")
@@ -65,9 +64,10 @@ hand1 = NodePath("../../ZeusHand2")
 hand2 = NodePath("../../ZeusHand")
 time = 15.0
 
-[node name="Node4" type="Node" parent="Objects/Zeus" index="6"]
+[node name="Node4" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("14_ggxjk")
 time = 4.0
+chillPosition = NodePath("../../Path2D2")
 
 [node name="Node3" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
 script = ExtResource("15_tm2kd")
