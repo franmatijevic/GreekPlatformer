@@ -19,7 +19,7 @@
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="16_pkbs7"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="17_8gyri"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="18_yn5x6"]
-[ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="19_ilpay"]
+[ext_resource type="PackedScene" path="res://src/dialogue/speechBubble.tscn" id="19_ilpay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fxqs"]
 size = Vector2(215, 32.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxuegyf56w8ke"]
+[gd_scene load_steps=5 format=3 uid="uid://bdkml3gn3iwpx"]
 
 [ext_resource type="Script" path="res://src/environment/pressurePlate/pressure_plate.gd" id="1_od305"]
 [ext_resource type="Texture2D" uid="uid://o568s1sa326g" path="res://src/levels/tilesets/blackTrokut.png" id="2_dklmh"]

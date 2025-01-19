@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/environment/cloud_antonio/disappearingPlatform.gd" id="1_cao5x"]
 [ext_resource type="Texture2D" uid="uid://b6bfk1tfvdci0" path="res://src/environment/platformArt/black-cloud.png" id="1_l312b"]
-[ext_resource type="AudioStream" uid="uid://gsm8rvbx60es" path="res://src/audio/SFX/cloud.mp3" id="3_27lj0"]
+[ext_resource type="AudioStream" uid="uid://dr1g2uoae2m0f" path="res://src/audio/SFX/cloud.mp3" id="3_27lj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jl8po"]
 size = Vector2(204, 29.5)

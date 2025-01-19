@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=19 format=3 uid="uid://bfrefanp3pukp"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_levd8"]
 [ext_resource type="Texture2D" uid="uid://ckpb2gx5h311f" path="res://src/environment/environmentArt/background/olimp.png" id="2_6m72j"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="4_sxvn3"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="5_ymj42"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="6_dulq0"]
-[ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="7_isa2h"]
+[ext_resource type="PackedScene" path="res://src/dialogue/speechBubble.tscn" id="7_isa2h"]
 [ext_resource type="PackedScene" uid="uid://bhouohppiwwlb" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_0.tscn" id="8_yt3am"]
 [ext_resource type="PackedScene" uid="uid://ce5li6vdurv2g" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_1.tscn" id="9_s0i50"]
 [ext_resource type="PackedScene" uid="uid://bj5hnkidodqeq" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_2.tscn" id="10_4mrsj"]
@@ -41,9 +41,6 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
-
-[node name="Line2D" parent="BlackScreen/Text" index="2"]
-visible = false
 
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")

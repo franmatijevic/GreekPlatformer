@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
 [ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="6_wrwmt"]
-[ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="7_h3x1g"]
+[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="7_h3x1g"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
