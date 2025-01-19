@@ -1,7 +1,7 @@
 {
 	"three_pressure_plate_help": [
 		{"speaker": "Atena", "text": "Seems like these doors are hard shut", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
-		{"speaker": "Atena", "text": "But I've heard a rumour among the gods...", "action": "none"},
+		{"speaker": "Atena", "text": "But I've heard a rumour amongst the gods...", "action": "none"},
 		{"speaker": "Atena", "text": "To open the door you ought to find 3 pressure plates.", "action": "none"},
 		{"speaker": "Atena", "text": "One is above and one is below...", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	]

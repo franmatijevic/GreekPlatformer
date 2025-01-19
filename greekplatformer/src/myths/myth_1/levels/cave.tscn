@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bnkfkiq1ig3q5"]
+[gd_scene load_steps=24 format=3 uid="uid://bnkfkiq1ig3q5"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
 [ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
@@ -14,12 +14,22 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/vignette.gdshader" id="13_fu0ms"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="14_ode3w"]
+[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="15_w6lpo"]
+[ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="16_wsq05"]
+[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="17_qw61e"]
+[ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="18_ye8yl"]
+[ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="19_825oa"]
+[ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="20_1fk0c"]
+[ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="21_yuxoi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
 shader = ExtResource("13_fu0ms")
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h1y5"]
+size = Vector2(224, 303)
 
 [node name="Cave" node_paths=PackedStringArray("current_room") instance=ExtResource("1_1wbxc")]
 ChapterName = "Chapter 2: Cave"
@@ -29,9 +39,6 @@ current_room = NodePath("CaveIntro")
 position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
-
-[node name="Line2D" parent="BlackScreen/Text" index="2"]
-visible = false
 
 [node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
@@ -82,3 +89,87 @@ color = Color(0, 0, 0, 1)
 [node name="BackgroundMusicStart" type="Node" parent="." index="17"]
 script = ExtResource("14_ode3w")
 backgroundMusic = true
+
+[node name="Atena" type="Sprite2D" parent="." index="18"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(1270, -3)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_w6lpo")
+flip_h = true
+flip_v = true
+script = ExtResource("16_wsq05")
+entryPosition = Vector2(1270, -3)
+exitPosition = Vector2(1270, -3)
+currentKey = "atena_pick_up"
+
+[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
+position = Vector2(1912, -1384)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="Atena2" type="Sprite2D" parent="." index="19"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(6012, -362)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_w6lpo")
+flip_h = true
+flip_v = true
+script = ExtResource("16_wsq05")
+entryPosition = Vector2(6087, -362)
+exitPosition = Vector2(6087, -362)
+currentKey = "atena_lever"
+
+[node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
+position = Vector2(31710, 4694.08)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="Zeus" type="Sprite2D" parent="." index="20"]
+visible = false
+position = Vector2(-1277, -1728)
+rotation = 0.615819
+scale = Vector2(1.38879, 1.38879)
+texture = ExtResource("17_qw61e")
+script = ExtResource("16_wsq05")
+entryPosition = Vector2(-1277, -1728)
+exitPosition = Vector2(-1277, -1728)
+speed = 1000.0
+currentKey = "lvl_1_1"
+screenShake = true
+
+[node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
+position = Vector2(2250.47, 779.472)
+
+[node name="DialoguePlayer" parent="." index="21" instance=ExtResource("18_ye8yl")]
+z_index = 100
+scale = Vector2(15.815, 15.815)
+script = ExtResource("19_825oa")
+sceneTextFile = "res://src/dialogue/dialogues/lvl_2.json"
+speechBubbleScene = ExtResource("20_1fk0c")
+
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="22"]
+
+[node name="DialogueAreaZeus" parent="." index="23" instance=ExtResource("21_yuxoi")]
+process_mode = 0
+position = Vector2(182, 255)
+dialogueKey = "atena_pick_up"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
+shape = SubResource("RectangleShape2D_6h1y5")
+
+[node name="DialogueAreaAtena" parent="." index="24" instance=ExtResource("21_yuxoi")]
+process_mode = 0
+position = Vector2(5391, 13)
+dialogueKey = "atena_lever"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
+shape = SubResource("RectangleShape2D_6h1y5")
+
+[editable path="DialogueAreaZeus"]
+[editable path="DialogueAreaAtena"]

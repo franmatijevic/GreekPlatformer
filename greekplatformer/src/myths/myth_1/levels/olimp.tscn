@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://pmy66x62unny"]
+[gd_scene load_steps=25 format=3 uid="uid://pmy66x62unny"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_8qchm"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="2_pwrnr"]
@@ -13,6 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="11_xuug8"]
 [ext_resource type="PackedScene" uid="uid://xo2tgl6vov72" path="res://src/myths/myth_1/rooms/roomLevel3/olimp_intro.tscn" id="12_beblk"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="13_mddcf"]
+[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="14_ldh58"]
+[ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="15_p5c6w"]
+[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="16_4rs1x"]
+[ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="17_u1o2k"]
+[ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="18_l22ke"]
+[ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="19_j1g7n"]
+[ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="20_da8sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxxwt"]
 size = Vector2(1080, 626)
@@ -22,6 +29,9 @@ size = Vector2(1200, 1136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cb41l"]
 size = Vector2(744, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi8l7"]
+size = Vector2(224, 303)
 
 [node name="Olimp" node_paths=PackedStringArray("current_room") instance=ExtResource("1_8qchm")]
 ChapterName = "Chapter 3: Mount Olympus"
@@ -40,7 +50,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" parent="BlackScreen/Text" index="0"]
 metadata/_edit_use_anchors_ = true
 
-[node name="Line2D" parent="BlackScreen/Text" index="1"]
+[node name="Line2D" parent="BlackScreen/Text" index="2"]
 position = Vector2(466, 72)
 points = PackedVector2Array(-650, 0, 650, 0)
 
@@ -48,7 +58,7 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_pxfoj")]
-position = Vector2(-9720, 400)
+position = Vector2(-9677, 355)
 
 [node name="PlatePlatform" parent="." index="6" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)
@@ -101,3 +111,78 @@ position = Vector2(-8816, 376)
 [node name="BackgroundMusic" type="Node" parent="." index="18"]
 script = ExtResource("13_mddcf")
 backgroundMusic = true
+
+[node name="Atena" type="Sprite2D" parent="." index="19"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(11557, -369)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_ldh58")
+flip_h = true
+flip_v = true
+script = ExtResource("15_p5c6w")
+entryPosition = Vector2(11557, -369)
+exitPosition = Vector2(11557, -369)
+currentKey = "three_pressure_plate_help"
+
+[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
+position = Vector2(21736, -1351.95)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="Atena2" type="Sprite2D" parent="." index="20"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(6012, -362)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_ldh58")
+flip_h = true
+flip_v = true
+script = ExtResource("15_p5c6w")
+entryPosition = Vector2(6087, -362)
+exitPosition = Vector2(6087, -362)
+currentKey = "atena_lever"
+
+[node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
+position = Vector2(31710, 4694.08)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="Zeus" type="Sprite2D" parent="." index="21"]
+visible = false
+position = Vector2(-1277, -1728)
+rotation = 0.615819
+scale = Vector2(1.38879, 1.38879)
+texture = ExtResource("16_4rs1x")
+script = ExtResource("15_p5c6w")
+entryPosition = Vector2(-1277, -1728)
+exitPosition = Vector2(-1277, -1728)
+speed = 1000.0
+currentKey = "lvl_1_1"
+screenShake = true
+
+[node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
+position = Vector2(2250.47, 779.472)
+
+[node name="DialoguePlayer" parent="." index="22" instance=ExtResource("17_u1o2k")]
+z_index = 100
+scale = Vector2(15.815, 15.815)
+script = ExtResource("18_l22ke")
+sceneTextFile = "res://src/dialogue/dialogues/lvl_3.json"
+speechBubbleScene = ExtResource("19_j1g7n")
+
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="23"]
+
+[node name="DialogueAreaZeus" parent="." index="24" instance=ExtResource("20_da8sd")]
+process_mode = 0
+position = Vector2(11048, -27)
+dialogueKey = "three_pressure_plate_help"
+oneTime = true
+wait = true
+
+[node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
+shape = SubResource("RectangleShape2D_fi8l7")
+
+[editable path="DialogueAreaZeus"]

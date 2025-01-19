@@ -125,6 +125,8 @@ func play_dialogue(activeSpeaker: String):
 			play_sound($SFX/talk_npc_musko, 0, rng.randi_range(0, 6))
 		"npc_zensko":
 			play_sound($SFX/talk_npc_zensko, 0, rng.randi_range(0, 6))
+		"Atena2":
+			play_sound($SFX/talk_atena, 0, rng.randi_range(0, 6))
 
 func stop_dialogue(activeSpeaker: String):
 	match activeSpeaker:
@@ -138,7 +140,9 @@ func stop_dialogue(activeSpeaker: String):
 			stop_sound($SFX/talk_npc_musko)
 		"npc_zensko":
 			stop_sound($SFX/talk_npc_zensko)
-
+		"Atena2":
+			stop_sound($SFX/talk_atena)
+			
 func play_menu_music():
 	play_sound($Music/TimpaniMenu, 0, 0)
 

@@ -21,7 +21,7 @@ func _input(event):
 
 func _on_area_entered(_area):
 	if wait:
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(2.0).timeout
 	areaActive = true
 	canClickNext = false
 	SignalBus.emit_signal("display_dialogue", dialogueKey)
