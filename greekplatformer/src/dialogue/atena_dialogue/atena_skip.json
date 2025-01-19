@@ -1,12 +1,12 @@
 {
 	"atena_skip": [
-		{"speaker": "Atena", "text": "How are you finding your travels?", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
-		{"speaker": "Atena", "text": "I guess you're really set on your goal.", "action": "none"},
+		{"speaker": "Atena", "text": "I guess you're really set on your goal.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
 		{"speaker": "Atena", "text": "If you find yourself really stuck...", "action": "none"},
 		{"speaker": "Atena", "text": "...you can skip a section you're struggling with.", "action": "none"},
 		{"speaker": "Atena", "text": "Just press the ESC button and click on skip!", "action": "none"},
 		{"speaker": "Atena", "text": "I will then help you travel across.", "action": "none"},
-		{"speaker": "Atena", "text": "But you're a real hero, I believe you can do this on your own.", "action": "none"},
+		{"speaker": "Atena", "text": "But I will help you only if you really struggle and die 7 times.", "action": "none"},
+		{"speaker": "Atena", "text": "You're a hero, I believe you can do this on your own.", "action": "none"},
 		{"speaker": "Atena", "text": "Stay safe!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	]
 }

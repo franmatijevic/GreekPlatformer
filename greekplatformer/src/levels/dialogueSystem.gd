@@ -2,6 +2,7 @@ extends Area2D
 
 @export var dialogueKey = ""
 @export var oneTime = false
+@export var wait = false
 
 var areaActive = false
 var canClickNext = true
@@ -19,6 +20,8 @@ func _input(event):
 		SignalBus.emit_signal("display_full_text")
 
 func _on_area_entered(_area):
+	if wait:
+		await get_tree().create_timer(3.0).timeout
 	areaActive = true
 	canClickNext = false
 	SignalBus.emit_signal("display_dialogue", dialogueKey)

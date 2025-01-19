@@ -111,63 +111,46 @@ rotation = 3.14159
 scale = Vector2(1.40777, -1.40777)
 texture = ExtResource("12_3arqa")
 script = ExtResource("13_38hvr")
-entryPosition = Vector2(-7616, -267)
+entryPosition = Array[Vector2]([Vector2(-7616, -267), Vector2(3041, -636)])
 exitPosition = Vector2(23460, -6735)
 speed = 99999.0
-currentKey = "atena_wasd"
+currentKey = Array[String](["atena_wasd", "atena_skip"])
+screenShake = null
 
 [node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
 position = Vector2(-5780.76, 675.549)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Atena2" type="Sprite2D" parent="." index="16"]
-modulate = Color(1, 1, 1, 0)
-z_index = 100
-position = Vector2(3187, -569)
-rotation = 3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("12_3arqa")
-script = ExtResource("13_38hvr")
-entryPosition = Vector2(3164, -710)
-exitPosition = Vector2(23460, -6735)
-speed = 10000.0
-currentKey = "atena_skip"
-
-[node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
-position = Vector2(2632, 1103.99)
-rotation = 3.14159
-scale = Vector2(1.5873, -1.5873)
-
-[node name="Zeus" type="Sprite2D" parent="." index="17"]
+[node name="Zeus" type="Sprite2D" parent="." index="16"]
 position = Vector2(-1106, -1950)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
 texture = ExtResource("14_mxg7i")
 script = ExtResource("13_38hvr")
-entryPosition = Vector2(-1277, -1728)
+entryPosition = Array[Vector2]([Vector2(376, -45)])
 exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
-currentKey = "lvl_1_1"
+currentKey = Array[String](["lvl_1_1"])
 screenShake = true
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="18"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="17"]
 
-[node name="Player" parent="." index="19" instance=ExtResource("15_173jf")]
-position = Vector2(-6734, 761)
+[node name="Player" parent="." index="18" instance=ExtResource("15_173jf")]
+position = Vector2(-6787, 708)
 floor_max_angle = 0.785398
 jump_height = 250.0
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
 position = Vector2(7643, 161)
 
-[node name="Room" parent="." index="20" instance=ExtResource("16_glgde")]
+[node name="Room" parent="." index="19" instance=ExtResource("16_glgde")]
 position = Vector2(6512, -3704)
 
-[node name="BackgroundMusicStart" type="Node" parent="." index="21"]
+[node name="BackgroundMusicStart" type="Node" parent="." index="20"]
 script = ExtResource("17_rljx6")
 backgroundMusic = true
 

@@ -1,8 +1,8 @@
 extends Line2D
 
 func update_trajectory(dir: Vector2, speed: float, gravity: float, delta: float, start_offset: float) -> void:
-	var max_points = 100
-	var time_step = 0.01
+	var max_points = 10000
+	var time_step = 0.0001
 	clear_points()
 	
 	var pos: Vector2 = Vector2.ZERO
