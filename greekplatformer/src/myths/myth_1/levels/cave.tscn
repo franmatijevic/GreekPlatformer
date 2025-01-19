@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnkfkiq1ig3q5"]
+[gd_scene load_steps=15 format=3 uid="uid://bnkfkiq1ig3q5"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
 [ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
@@ -12,6 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://bs1erneadtoes" path="res://src/myths/myth_1/rooms/roomsLevel2/cave_intro.tscn" id="12_6fbti"]
 [ext_resource type="PackedScene" uid="uid://c5mnbtg4jx3fy" path="res://src/myths/myth_1/rooms/roomsLevel2/quick_throw.tscn" id="12_7iuwp"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
+[ext_resource type="Shader" path="res://src/myths/myth_1/levels/vignette.gdshader" id="13_fu0ms"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
+shader = ExtResource("13_fu0ms")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [node name="Cave" node_paths=PackedStringArray("current_room") instance=ExtResource("1_1wbxc")]
 ChapterName = "Chapter 2: Cave"
@@ -52,3 +59,13 @@ position = Vector2(-2952, 48)
 
 [node name="QuickThrow" parent="." index="15" instance=ExtResource("12_7iuwp")]
 position = Vector2(23992, -1128)
+
+[node name="VignetteEffect" type="CanvasLayer" parent="." index="16"]
+layer = 0
+
+[node name="Vignette" type="ColorRect" parent="VignetteEffect" index="0"]
+z_index = 4096
+material = SubResource("ShaderMaterial_sl3xa")
+offset_right = 2400.0
+offset_bottom = 1350.0
+color = Color(0, 0, 0, 1)
