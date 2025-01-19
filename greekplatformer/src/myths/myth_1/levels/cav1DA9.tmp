@@ -17,8 +17,8 @@
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="15_lmn3h"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="16_v4dvv"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="17_hyyuv"]
-[ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="17_vergl"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="18_rjepo"]
+[ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="19_m7tbg"]
 [ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="20_q8o1i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
@@ -105,10 +105,10 @@ shape = SubResource("RectangleShape2D_fwul8")
 
 [node name="DialoguePlayer" parent="." index="19" instance=ExtResource("17_hyyuv")]
 z_index = 100
-scale = Vector2(-15.815, -15.815)
+scale = Vector2(15.815, 15.815)
 script = ExtResource("18_rjepo")
 sceneTextFile = "res://src/dialogue/dialogues/lvl_2.json"
-speechBubbleScene = ExtResource("17_vergl")
+speechBubbleScene = ExtResource("19_m7tbg")
 
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="20"]
 
@@ -121,39 +121,23 @@ texture = ExtResource("20_q8o1i")
 script = ExtResource("15_lmn3h")
 exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
+currentKey = "lvl_1_1"
+screenShake = true
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="Atena" type="Sprite2D" parent="." index="22"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(1303, 30)
+[node name="Atena2" type="Sprite2D" parent="." index="22"]
+position = Vector2(3922, -1837)
 scale = Vector2(0.517, 0.517)
 texture = ExtResource("14_21p5a")
 script = ExtResource("15_lmn3h")
-entryPosition = Vector2(1303, 30)
-exitPosition = Vector2(1303, 30)
+entryPosition = Array[Vector2]([Vector2(1370, -37), Vector2(6000, -342)])
 speed = 1000.0
 currentKey = "atena_pick_up"
 
-[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
-position = Vector2(-1709.86, 984.526)
-rotation = 3.14159
-scale = Vector2(1.5873, -1.5873)
-
-[node name="Atena2" type="Sprite2D" parent="." index="23"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(5954, -392)
-scale = Vector2(0.517, 0.517)
-texture = ExtResource("14_21p5a")
-script = ExtResource("15_lmn3h")
-entryPosition = Vector2(5954, -392)
-exitPosition = Vector2(5954, -392)
-speed = 1000.0
-currentKey = "atena_lever"
-
-[node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
-position = Vector2(-11257.3, 1649.9)
+[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena2" index="0"]
+position = Vector2(-181.987, 619.535)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 

@@ -31,6 +31,7 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
+	AudioController.stop_door_opening()
 	generic_level_script.restart()
 	generic_level_script.game_paused = false
 
