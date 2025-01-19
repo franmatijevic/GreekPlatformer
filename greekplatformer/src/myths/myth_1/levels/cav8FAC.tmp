@@ -1,0 +1,152 @@
+[gd_scene load_steps=23 format=3 uid="uid://bnkfkiq1ig3q5"]
+
+[ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
+[ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
+[ext_resource type="PackedScene" uid="uid://spss52n2u5ul" path="res://src/levels/test_level_rooms/plate_tutorial.tscn" id="3_vmdto"]
+[ext_resource type="PackedScene" uid="uid://c16evoraxqlrq" path="res://src/myths/myth_1/rooms/roomsLevel2/simpleTrap.tscn" id="4_wxogk"]
+[ext_resource type="PackedScene" uid="uid://ddcmg04sjxibr" path="res://src/myths/myth_1/rooms/roomsLevel2/simple_catch.tscn" id="6_02sff"]
+[ext_resource type="PackedScene" uid="uid://cqg1pv7i27vfe" path="res://src/myths/myth_1/rooms/roomsLevel2/cloud_rock.tscn" id="7_2p0fa"]
+[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_4.tscn" id="10_x75b3"]
+[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/myths/myth_1/rooms/roomsLevel2/trickthrow.tscn" id="11_rgv2d"]
+[ext_resource type="PackedScene" uid="uid://q0fd5uttpyas" path="res://src/myths/myth_1/rooms/roomsLevel2/train_1.tscn" id="11_viuj6"]
+[ext_resource type="PackedScene" uid="uid://bs1erneadtoes" path="res://src/myths/myth_1/rooms/roomsLevel2/cave_intro.tscn" id="12_6fbti"]
+[ext_resource type="PackedScene" uid="uid://c5mnbtg4jx3fy" path="res://src/myths/myth_1/rooms/roomsLevel2/quick_throw.tscn" id="12_7iuwp"]
+[ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
+[ext_resource type="Shader" path="res://src/myths/myth_1/levels/vignette.gdshader" id="13_fu0ms"]
+[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="14_21p5a"]
+[ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="15_lmn3h"]
+[ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="16_v4dvv"]
+[ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="17_hyyuv"]
+[ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="18_rjepo"]
+[ext_resource type="PackedScene" uid="uid://byqxl2umwlcci" path="res://src/dialogue/speechBubble.tscn" id="19_m7tbg"]
+[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="20_q8o1i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
+shader = ExtResource("13_fu0ms")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwul8"]
+size = Vector2(224, 303)
+
+[node name="Cave" node_paths=PackedStringArray("current_room") instance=ExtResource("1_1wbxc")]
+ChapterName = "Chapter 2: Cave"
+current_room = NodePath("CaveIntro")
+
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
+[node name="LeverTutorial" parent="." index="5" instance=ExtResource("2_3dbg0")]
+position = Vector2(5688, -232)
+
+[node name="PlateTutorial" parent="." index="6" instance=ExtResource("3_vmdto")]
+position = Vector2(696, 152)
+
+[node name="Room" parent="." index="7" instance=ExtResource("4_wxogk")]
+position = Vector2(3640, 408)
+
+[node name="SimpleCatch" parent="." index="8" instance=ExtResource("6_02sff")]
+position = Vector2(16824, -104)
+
+[node name="CloudRock" parent="." index="9" instance=ExtResource("7_2p0fa")]
+position = Vector2(14776, -104)
+
+[node name="Soba4" parent="." index="10" instance=ExtResource("10_x75b3")]
+position = Vector2(18488, -1000)
+
+[node name="Train1" parent="." index="11" instance=ExtResource("11_viuj6")]
+position = Vector2(9144, -104)
+
+[node name="CaveIntro" parent="." index="12" instance=ExtResource("12_6fbti")]
+position = Vector2(-1608, -104)
+
+[node name="Room2" parent="." index="13" instance=ExtResource("11_rgv2d")]
+position = Vector2(26680, -2664)
+
+[node name="Player" parent="." index="14" instance=ExtResource("12_rh5en")]
+position = Vector2(-2864, 33)
+
+[node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="11"]
+position = Vector2(4069, 584)
+
+[node name="QuickThrow" parent="." index="15" instance=ExtResource("12_7iuwp")]
+position = Vector2(23992, -1128)
+
+[node name="VignetteEffect" type="CanvasLayer" parent="." index="16"]
+layer = 0
+
+[node name="Vignette" type="ColorRect" parent="VignetteEffect" index="0"]
+z_index = 4096
+material = SubResource("ShaderMaterial_sl3xa")
+offset_right = 2400.0
+offset_bottom = 1350.0
+color = Color(0, 0, 0, 1)
+
+[node name="Atena" type="Sprite2D" parent="." index="17"]
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+position = Vector2(6165, -371)
+rotation = 3.14159
+scale = Vector2(0.516517, -0.516517)
+texture = ExtResource("14_21p5a")
+flip_h = true
+script = ExtResource("15_lmn3h")
+entryPosition = Vector2(1349, 25)
+exitPosition = Vector2(23460, -6735)
+speed = 10000.0
+currentKey = "atena_pick_up"
+
+[node name="AtenaDialogueMarker" type="Marker2D" parent="Atena" index="0"]
+position = Vector2(-181.987, 619.535)
+rotation = 3.14159
+scale = Vector2(1.5873, -1.5873)
+
+[node name="DialogueAreaAtena" parent="." index="18" instance=ExtResource("16_v4dvv")]
+process_mode = 0
+position = Vector2(566, -1399)
+dialogueKey = "atena_pick_up"
+oneTime = true
+sendToNextPos = Vector2(6165, -371)
+
+[node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
+position = Vector2(318, 1657)
+shape = SubResource("RectangleShape2D_fwul8")
+
+[node name="DialogueAreaAtena2" parent="." index="19" instance=ExtResource("16_v4dvv")]
+process_mode = 0
+position = Vector2(5502, 12)
+dialogueKey = "atena_lever"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaAtena2" index="0"]
+position = Vector2(-14, -4)
+shape = SubResource("RectangleShape2D_fwul8")
+
+[node name="DialoguePlayer" parent="." index="20" instance=ExtResource("17_hyyuv")]
+z_index = 100
+scale = Vector2(15.815, 15.815)
+script = ExtResource("18_rjepo")
+sceneTextFile = "res://src/dialogue/dialogues/lvl_2.json"
+speechBubbleScene = ExtResource("19_m7tbg")
+
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="21"]
+
+[node name="Zeus" type="Sprite2D" parent="." index="22"]
+visible = false
+position = Vector2(-1277, -1728)
+rotation = 0.615819
+scale = Vector2(1.38879, 1.38879)
+texture = ExtResource("20_q8o1i")
+script = ExtResource("15_lmn3h")
+entryPosition = Vector2(-1277, -1728)
+exitPosition = Vector2(-1277, -1728)
+speed = 1000.0
+currentKey = "lvl_1_1"
+screenShake = true
+
+[node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
+position = Vector2(2250.47, 779.472)
+
+[editable path="DialogueAreaAtena"]
+[editable path="DialogueAreaAtena2"]

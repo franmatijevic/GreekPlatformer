@@ -1,7 +1,7 @@
 {
 	"lvl_1_1": [
 		{"speaker": "Zeus", "text": "Who goes there?", "action": "none"},
-		{"speaker": "Zeus", "text": "Oh... It is you Prometheus", "action": "move_to", "parameters": {"targetPosition": [-99, 111]}},
+		{"speaker": "Zeus", "text": "Oh... It is you Prometheus.", "action": "move_to", "parameters": {"targetPosition": [-99, 111]}},
 		{"speaker": "Zeus", "text": "What are you up to?", "action": "none"},
 		{"speaker": "Zeus", "text": "I sure hope you're not thinking of doing something devious behind my back!", "action": "none"},
 		{"speaker": "Prometej", "text": "Zeus, let me bring fire to the people!", "action": "none"},
@@ -27,6 +27,18 @@
 		{"speaker": "Atena", "text": "I shall guide you on your travels.", "action": "none"},
 		{"speaker": "Atena", "text": "You can move using the A and D keys.", "action": "none"},
 		{"speaker": "Atena", "text": "To jump, use W or SPACE.", "action": "none"},
+		{"speaker": "Atena", "text": "Unless you've rebind some keys in the settings...", "action": "none"},
+		{"speaker": "Atena", "text": "In that case you should know the controls better than me.", "action": "none"},
 		{"speaker": "Atena", "text": "Good luck on your journey!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	],
+	"atena_skip": [
+		{"speaker": "Atena2", "text": "I guess you're really set on your goal.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena2", "text": "If you find yourself really stuck...", "action": "none"},
+		{"speaker": "Atena2", "text": "...you can skip a section you're struggling with.", "action": "none"},
+		{"speaker": "Atena2", "text": "Just press the ESC button and click on \"Skip to next level!\"", "action": "none"},
+		{"speaker": "Atena2", "text": "I will then help you travel across.", "action": "none"},
+		{"speaker": "Atena2", "text": "But I will help you only if you really struggle and die 7 times.", "action": "none"},
+		{"speaker": "Atena2", "text": "You're a hero, I believe you can do this on your own.", "action": "none"},
+		{"speaker": "Atena2", "text": "Stay safe!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	]
 }

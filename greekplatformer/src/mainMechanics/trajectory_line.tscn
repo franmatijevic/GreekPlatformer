@@ -14,6 +14,7 @@ z_index = 30
 z_as_relative = false
 texture_repeat = 2
 material = SubResource("ShaderMaterial_mokl4")
+position = Vector2(-20, -20)
 width = 50.0
 texture = ExtResource("1_8028f")
 texture_mode = 1
