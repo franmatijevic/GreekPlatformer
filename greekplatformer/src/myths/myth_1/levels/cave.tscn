@@ -124,7 +124,7 @@ exitPosition = Vector2(6087, -362)
 currentKey = "atena_lever"
 
 [node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
-position = Vector2(31710, 4694.08)
+position = Vector2(11694, -1539.97)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 

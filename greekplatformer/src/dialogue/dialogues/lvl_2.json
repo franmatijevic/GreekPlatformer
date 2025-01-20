@@ -7,9 +7,10 @@
 		{"speaker": "Atena", "text": "I bid you farewell!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	],
 	"atena_lever": [
-		{"speaker": "Atena2", "text": "Looks like you've encountered some kind of state of the art modern technology?", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
-		{"speaker": "Atena2", "text": "I don't know how much I can help you...", "action": "none"},
-		{"speaker": "Atena2", "text": "But maybe you can pull the lever using the LEFT MOUSE button.", "action": "none"},
-		{"speaker": "Atena2", "text": "Give it a try!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+		{"speaker": "Atena2", "text": "Looks like you've encountered state-of-the-art-technology.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena2", "text": "This in front of you is a lever.", "action": "none"},
+		{"speaker": "Atena2", "text": "You can pull the lever using the LEFT MOUSE button.", "action": "none"},
+		{"speaker": "Atena2", "text": "\"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\"", "action": "none"},
+		{"speaker": "Atena2", "text": "Give it a try, maybe something happens!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	]
 }
