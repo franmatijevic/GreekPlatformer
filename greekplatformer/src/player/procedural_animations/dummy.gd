@@ -8,7 +8,8 @@ func enter():
 	hip=player().hip.position.y
 	hip=45
 
-func update_physics_process(_delta:float):
+#func update_physics_process(_delta:float):
+func update_process(delta:float):
 	var distance=hip-player().hip.position.y
 	
 	

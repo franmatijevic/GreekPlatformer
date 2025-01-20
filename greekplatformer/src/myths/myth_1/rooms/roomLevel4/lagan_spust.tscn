@@ -112,10 +112,10 @@ position = Vector2(4048, 1664)
 position = Vector2(6360, 1840)
 
 [node name="cloudType4" parent="Objects" index="11" instance=ExtResource("2_nwfhl")]
-position = Vector2(7080, 1848)
+position = Vector2(7000, 1912)
 
 [node name="cloudType5" parent="Objects" index="12" instance=ExtResource("2_nwfhl")]
-position = Vector2(7704, 1840)
+position = Vector2(7672, 1840)
 
 [node name="Path2D" type="Path2D" parent="Objects" index="13"]
 position = Vector2(7424, 1320)
@@ -131,11 +131,13 @@ speed = 300.0
 
 [node name="PressurePlateALT" parent="Objects/Path2D/PathFollow2D" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("10_4s6po")]
 position = Vector2(0, -48)
+precision = 2.0
 connectedTo = [NodePath("../BlockDoor")]
 
 [node name="Lever" parent="Objects" index="14" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_wwkqd")]
 position = Vector2(7914, 1608)
 rotation = -1.5708
+use_time = 0.2
 connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]
 
 [node name="CameraOffset" parent="Objects" index="15" instance=ExtResource("13_jliy0")]

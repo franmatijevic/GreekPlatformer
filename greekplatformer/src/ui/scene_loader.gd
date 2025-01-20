@@ -12,7 +12,9 @@ var minTime:float=1
 var room_name
 
 func load_scene(path):
-	AudioServer.set_bus_effect_enabled(2, 0, true)
+	#AudioServer.set_bus_effect_enabled(2, 0, true)
+	AudioController.stop_menu_music()
+	
 	var current_scene = get_tree().current_scene
 	
 	loading_screen_instance = loading_screen.instantiate()
@@ -25,13 +27,13 @@ func load_scene(path):
 	
 	current_scene.queue_free()
 	loading = true
-	minTime = 1
+	minTime = 2
 	scene_to_load_path = path
 
 func load_more_level(path):
-	AudioServer.set_bus_effect_enabled(2, 0, true)
+	#AudioServer.set_bus_effect_enabled(2, 0, true)
 	var current_scene = get_tree().current_scene
-	
+	#AudioController.stop_menu_music()
 	
 	loading_screen_instance = black_loading.instantiate()
 	get_tree().root.call_deferred("add_child", loading_screen_instance)
@@ -70,6 +72,6 @@ func _process(delta: float) -> void:
 	if ResourceLoader.THREAD_LOAD_LOADED:
 		var level = ResourceLoader.load_threaded_get(scene_to_load_path)
 		get_tree().change_scene_to_packed(level)
-		AudioServer.set_bus_effect_enabled(2, 0, false)
+		#AudioServer.set_bus_effect_enabled(2, 0, false)
 		loading_screen_instance.queue_free()
 		loading = false

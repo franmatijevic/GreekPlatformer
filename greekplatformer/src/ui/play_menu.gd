@@ -9,7 +9,7 @@ const GAME_SAVE : String = "user://GameSave.json"
 
 signal exit_play_menu
 
-var new_game_path = "res://src/myths/myth_1/levels/prologue.tscn"
+var new_game_path = "res://src/myths/myth_1/levels/boss/boss_fight.tscn"#"res://src/myths/myth_1/intro.tscn"
 var continue_game_path : String
 var continue_game_room : String
 
@@ -21,8 +21,9 @@ func _ready() -> void:
 	set_process(false)
 	
 func on_new_game_pressed():
-	SceneLoader.load_scene(new_game_path)
-	
+	#SceneLoader.load_scene(new_game_path)
+	SceneLoader.load_more_level(new_game_path)
+
 func on_continue_game_pressed():
 	SceneLoader.continue_from_save(continue_game_path, continue_game_room)
 	

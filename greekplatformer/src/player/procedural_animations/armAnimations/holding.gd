@@ -8,7 +8,8 @@ func enter():
 	#player().get_node("CharacterContainer/Bones/Skeleton2D/Hip/LeftArm/UpperArm").position.y=42
 	#player().get_node("CharacterContainer/Bones/Skeleton2D/Hip/RightArm/UpperArm").position.y=42
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	
 	player().armSpeed=move_toward(player().armSpeed, 400, 100*delta)
 	

@@ -1,13 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=15 format=3 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Script" path="res://src/levels/generic_level.gd" id="1_qp3oh"]
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
+[ext_resource type="FontFile" uid="uid://llsamwy41a1j" path="res://src/dialogue/fonts/Roman SD.ttf" id="2_yfv10"]
 [ext_resource type="Texture2D" uid="uid://cfbl0e13s3tj0" path="res://src/environment/environmentArt/floor/BrickFloor4.png" id="3_qfqkm"]
 [ext_resource type="Script" path="res://src/levels/levelElements/camera.gd" id="5_sveee"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/follow_player.gd" id="6_ourqe"]
 [ext_resource type="PackedScene" uid="uid://cv001k4gc8bu8" path="res://src/ui/pause_menu.tscn" id="7_5ljx5"]
 [ext_resource type="Script" path="res://src/player/playerStates/state.gd" id="7_cx0o8"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/room_transition.gd" id="8_qapjt"]
+
+[sub_resource type="Theme" id="Theme_micti"]
+default_font = ExtResource("2_yfv10")
+default_font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_d0tbd"]
 font_size = 60
@@ -39,6 +44,20 @@ script = ExtResource("1_qp3oh")
 process_mode = 1
 wait_time = 0.1
 one_shot = true
+
+[node name="FPS" type="CanvasLayer" parent="."]
+layer = 128
+visible = false
+
+[node name="Label" type="Label" parent="FPS"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme = SubResource("Theme_micti")
+vertical_alignment = 2
 
 [node name="BlackScreen" type="CanvasLayer" parent="."]
 

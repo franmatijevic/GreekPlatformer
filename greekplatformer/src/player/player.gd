@@ -198,6 +198,7 @@ func stop_jump():
 func restart():
 	velocity = Vector2.ZERO
 	get_node("ProceduralAnimation").restart()
+	cameraOffset=0
 
 func shoot():
 	if holding_object:

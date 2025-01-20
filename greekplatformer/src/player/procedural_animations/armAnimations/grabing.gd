@@ -25,7 +25,8 @@ func enter():
 	
 	player().set_hip("Dummy")
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	
 	player().targetLeftArm.global_position=target.global_position
 	player().targetRightArm.global_position=target.global_position

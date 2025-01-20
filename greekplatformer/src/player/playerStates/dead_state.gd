@@ -81,3 +81,4 @@ func exit():
 	player().visible=false
 	player().impactPoint=null
 	player().impactValue=null
+	player().cameraOffset=0

@@ -4,6 +4,10 @@ const torchScene: PackedScene = preload("res://src/items/torch.tscn")
 
 @export var torch:Throwable
 
+func _ready() -> void:
+	super()
+	put_torch_in_player_hand()
+
 func teleport(spot):
 	super(spot)
 	

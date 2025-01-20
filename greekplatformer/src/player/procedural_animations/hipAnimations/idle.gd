@@ -19,7 +19,8 @@ var height
 func enter():
 	t=PI/8
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	t=t+delta
 
 	var k=player().k

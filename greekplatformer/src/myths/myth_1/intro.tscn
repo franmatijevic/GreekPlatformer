@@ -8,10 +8,11 @@ default_font = ExtResource("2_ri7sx")
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_tx2e7")
-duration = 30.0
+duration = 40.0
 allBlackEffect = 0.0
 nextScene = "res://src/myths/myth_1/levels/prologue.tscn"
 textSpeed = -60
+useFormalLoading = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1504.0
@@ -21,7 +22,6 @@ offset_bottom = 1120.0
 color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

@@ -19,7 +19,8 @@ func enter():
 	else:
 		pass
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	
 	t=t+delta
 	

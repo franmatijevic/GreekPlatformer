@@ -70,12 +70,12 @@ func _process(delta: float) -> void:
 	arms_state.update_process(delta)
 	legs_state.update_process(delta)
 	hip_state.update_process(delta)
-
-
-func _physics_process(delta: float) -> void:
-	arms_state.update_physics_process(delta)
-	legs_state.update_physics_process(delta)
-	hip_state.update_physics_process(delta)
+	
+	
+	#func _physics_process(delta: float) -> void:
+	#arms_state.update_physics_process(delta)
+	#legs_state.update_physics_process(delta)
+	#hip_state.update_physics_process(delta)
 	
 	var body=get_node("CharacterContainer/Bones/Skeleton2D/Hip")
 	bodyPartMovement(body.get_node("RightLeg"), body.get_node("RightLeg/LowerLeg"),rightFoot,k, PI/2)

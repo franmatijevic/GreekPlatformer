@@ -19,7 +19,8 @@ func enter():
 		t1=0
 		t2=PI
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	
 	player().legSpeed=move_toward(player().legSpeed, legSpeed, 150*delta)
 	#player().legSpeed=10000

@@ -1,0 +1,292 @@
+[gd_scene load_steps=19 format=4 uid="uid://il6uv46adl02"]
+
+[ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_7cwoi"]
+[ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_tmijd"]
+[ext_resource type="PackedScene" uid="uid://dijfdscbpg476" path="res://src/bossFeatures/zeus_hand.tscn" id="3_8do01"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="3_elwxe"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="4_1urhs"]
+[ext_resource type="PackedScene" uid="uid://cf6jq16e0lfcx" path="res://src/environment/cloud_irma/cloud_type_2.tscn" id="4_lb1yn"]
+[ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="5_jxp63"]
+[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/swoop.gd" id="5_sfbf3"]
+[ext_resource type="PackedScene" uid="uid://c6k1k7e6uk1ay" path="res://src/bossFeatures/zeus_death_pit.tscn" id="7_85ft6"]
+[ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="8_ojv1h"]
+[ext_resource type="PackedScene" uid="uid://bp5dpb0ywtqsn" path="res://src/environment/delayer.tscn" id="9_w1oy8"]
+[ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="12_dx3h2"]
+[ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="13_c0x1q"]
+[ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="14_api1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7c7"]
+size = Vector2(4992, 2160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_335er"]
+size = Vector2(1728, 6)
+
+[sub_resource type="Curve2D" id="Curve2D_h0c6x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -24, 416, 0, 0, 0, 0, 78.2051, -739.21, 0, 0, 0, 0, 960, -1632)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bimf"]
+size = Vector2(1072, 744)
+
+[node name="josJednaBorba" instance=ExtResource("1_7cwoi")]
+downOffset = 356
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAD6/wEABgAAAAAAAAD7/wEABgAAAAAAAAD8/wEABgAAAAAAAAD9/wEABgAAAAAAAAD+/wEABgAAAAAAAAD//wEABgAAAAAAAAAAAAEABgAAAAAAAAABAAEABgAAAAAAAAACAAEABgAAAAAAAAADAAEABgAAAAAAAAADAAIAAQAAAAAAAFACAAIABwAAAAAAAAABAAIABwAAAAAAAAAAAAMABwAAAAAAAAAAAAQAAQAAAAAAAFAAAAIABwAAAAAAAAD//wIABwAAAAAAAAD//wMABwAAAAAAAAD+/wMABwAAAAAAAAD+/wQABwAAAAAAAAD//wQABwAAAAAAAAD9/wQABwAAAAAAAAD9/wMABwAAAAAAAAD9/wIABwAAAAAAAAD+/wIABwAAAAAAAAD8/wIABwAAAAAAAAD7/wIABwAAAAAAAAD7/wMABwAAAAAAAAD8/wMABwAAAAAAAAD8/wQABwAAAAAAAAD7/wQABwAAAAAAAAD6/wQABwAAAAAAAAD6/wMABwAAAAAAAAD6/wIABwAAAAAAAAABAAMAAQAAAAAAAFD5/wEABgAAAAAAAAD4/wEABgAAAAAAAAD3/wEABgAAAAAAAAD2/wEABgAAAAAAAAD1/wEABgAAAAAAAAD0/wEABgAAAAAAAAAOAAEABgAAAAAAAAAOAAMAAQAAAAAAADAOAAIABwAAAAAAAAAPAAIABwAAAAAAAAAPAAMABwAAAAAAAAAPAAQABwAAAAAAAAAPAAEABwAAAAAAAAAQAAEABwAAAAAAAAARAAEABwAAAAAAAAASAAEABwAAAAAAAAATAAEABwAAAAAAAAAUAAEABwAAAAAAAAAVAAEABwAAAAAAAAAVAAMABwAAAAAAAAAVAAQABwAAAAAAAAAUAAQABwAAAAAAAAATAAQABwAAAAAAAAASAAQABwAAAAAAAAARAAQABwAAAAAAAAAQAAQABwAAAAAAAAAQAAMABwAAAAAAAAAQAAIABwAAAAAAAAARAAIABwAAAAAAAAASAAIABwAAAAAAAAATAAIABwAAAAAAAAAUAAIABwAAAAAAAAAVAAIABwAAAAAAAAAUAAMABwAAAAAAAAATAAMABwAAAAAAAAASAAMABwAAAAAAAAARAAMABwAAAAAAAAAPAAYABwAAAAAAAAAPAAcABwAAAAAAAAAPAAUABwAAAAAAAAAOAAcABwAAAAAAAAANAAcABwAAAAAAAAAMAAcABwAAAAAAAAALAAcABwAAAAAAAAAKAAcABwAAAAAAAAAJAAcABwAAAAAAAAAIAAcABwAAAAAAAAAHAAcABwAAAAAAAAAGAAcABwAAAAAAAAAFAAcABwAAAAAAAAAEAAcABwAAAAAAAAADAAcABwAAAAAAAAACAAcABwAAAAAAAAABAAcABwAAAAAAAAAAAAcABwAAAAAAAAD//wcABwAAAAAAAAD//wYABwAAAAAAAAD//wUABwAAAAAAAAAWAAEABgAAAAAAAAAXAAEABgAAAAAAAAAWAAIABwAAAAAAAAAWAAMABwAAAAAAAAAWAAQABwAAAAAAAAAXAAQABwAAAAAAAAAXAAMABwAAAAAAAAAXAAIABwAAAAAAAADz/wEABgAAAAAAAADy/wEABgAAAAAAAADx/wEABgAAAAAAAAD5/wQABwAAAAAAAAD4/wQABwAAAAAAAAD3/wQABwAAAAAAAAD2/wQABwAAAAAAAAD1/wQABwAAAAAAAAD0/wQABwAAAAAAAADz/wQABwAAAAAAAADy/wQABwAAAAAAAADx/wQABwAAAAAAAADx/wMABwAAAAAAAADx/wIABwAAAAAAAADy/wIABwAAAAAAAADz/wIABwAAAAAAAAD0/wIABwAAAAAAAAD1/wIABwAAAAAAAAD2/wIABwAAAAAAAAD3/wIABwAAAAAAAAD4/wIABwAAAAAAAAD4/wMABwAAAAAAAAD5/wMABwAAAAAAAAD3/wMABwAAAAAAAAD5/wIABwAAAAAAAAD2/wMABwAAAAAAAAD1/wMABwAAAAAAAAD0/wMABwAAAAAAAADz/wMABwAAAAAAAADy/wMABwAAAAAAAAA=")
+
+[node name="RoomSize" parent="." index="1"]
+position = Vector2(576, -440)
+shape = SubResource("RectangleShape2D_8p7c7")
+
+[node name="Respawn" parent="." index="3"]
+position = Vector2(-1688, 64)
+
+[node name="Zeus" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_tmijd")]
+position = Vector2(1960, -640)
+connectedTo = [NodePath("../Spike"), NodePath("../Delayer")]
+
+[node name="Wait" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
+script = ExtResource("3_elwxe")
+time = 10.0
+chillPosition = NodePath("../../ChillingPosition")
+setPos = false
+
+[node name="thunder" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("4_1urhs")
+hand1 = NodePath("../../ZeusHand")
+hand2 = NodePath("../../ZeusHand2")
+hand1Interval = 5.0
+hand2Interval = 6.0
+time = 20.0
+
+[node name="moreThunder" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
+script = ExtResource("4_1urhs")
+hand1 = NodePath("../../ZeusHand")
+hand2 = NodePath("../../ZeusHand2")
+hand1Interval = 1.8
+hand2Interval = 2.2
+time = 10.0
+
+[node name="swoop" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
+script = ExtResource("5_sfbf3")
+path = NodePath("../../Path2D/PathFollow2D")
+speed = 0.3
+
+[node name="ZeusHand" parent="Objects" index="1" instance=ExtResource("3_8do01")]
+position = Vector2(320, -1280)
+activeOnStart = false
+
+[node name="ZeusHand2" parent="Objects" index="2" instance=ExtResource("3_8do01")]
+position = Vector2(320, -1280)
+shouldBeFlipped = true
+activeOnStart = false
+
+[node name="ChillingPosition" type="Node2D" parent="Objects" index="3"]
+position = Vector2(1960, -632)
+
+[node name="cloudType2" parent="Objects" index="4" instance=ExtResource("4_lb1yn")]
+position = Vector2(1240, -144)
+
+[node name="LongPlatform" parent="Objects" index="5" instance=ExtResource("5_jxp63")]
+position = Vector2(648, -168)
+
+[node name="cloudType3" parent="Objects" index="6" instance=ExtResource("4_lb1yn")]
+position = Vector2(1432, 288)
+
+[node name="ZeusDeathPit" parent="Objects" index="7" instance=ExtResource("7_85ft6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/ZeusDeathPit" index="0"]
+position = Vector2(1008, 459)
+shape = SubResource("RectangleShape2D_335er")
+
+[node name="Spike" parent="Objects" index="8" instance=ExtResource("8_ojv1h")]
+position = Vector2(1856, 24)
+distance = -150.0
+
+[node name="Spike2" parent="Objects" index="9" instance=ExtResource("8_ojv1h")]
+position = Vector2(1920, 24)
+distance = -150.0
+
+[node name="Spike3" parent="Objects" index="10" instance=ExtResource("8_ojv1h")]
+position = Vector2(1984, 24)
+distance = -150.0
+
+[node name="Spike4" parent="Objects" index="11" instance=ExtResource("8_ojv1h")]
+position = Vector2(2048, 24)
+distance = -150.0
+
+[node name="Spike5" parent="Objects" index="12" instance=ExtResource("8_ojv1h")]
+position = Vector2(2112, 24)
+distance = -150.0
+
+[node name="Spike6" parent="Objects" index="13" instance=ExtResource("8_ojv1h")]
+position = Vector2(2168, 24)
+distance = -150.0
+
+[node name="Spike7" parent="Objects" index="14" instance=ExtResource("8_ojv1h")]
+position = Vector2(2240, 24)
+distance = -150.0
+
+[node name="Spike8" parent="Objects" index="15" instance=ExtResource("8_ojv1h")]
+position = Vector2(2304, 24)
+distance = -150.0
+
+[node name="Spike9" parent="Objects" index="16" instance=ExtResource("8_ojv1h")]
+position = Vector2(2368, 24)
+distance = -150.0
+
+[node name="Spike10" parent="Objects" index="17" instance=ExtResource("8_ojv1h")]
+position = Vector2(2432, 24)
+distance = -150.0
+
+[node name="Spike11" parent="Objects" index="18" instance=ExtResource("8_ojv1h")]
+position = Vector2(2496, 24)
+distance = -150.0
+
+[node name="Spike12" parent="Objects" index="19" instance=ExtResource("8_ojv1h")]
+position = Vector2(2560, 24)
+distance = -150.0
+
+[node name="Spike13" parent="Objects" index="20" instance=ExtResource("8_ojv1h")]
+position = Vector2(2624, 24)
+distance = -150.0
+
+[node name="Spike14" parent="Objects" index="21" instance=ExtResource("8_ojv1h")]
+position = Vector2(2688, 24)
+distance = -150.0
+
+[node name="Spike15" parent="Objects" index="22" instance=ExtResource("8_ojv1h")]
+position = Vector2(2752, 24)
+distance = -150.0
+
+[node name="Delayer" parent="Objects" index="23" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer2"), NodePath("../Spike2")]
+
+[node name="Delayer2" parent="Objects" index="24" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer3"), NodePath("../Spike3")]
+
+[node name="Delayer3" parent="Objects" index="25" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer4"), NodePath("../Spike4")]
+
+[node name="Delayer4" parent="Objects" index="26" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer5"), NodePath("../Spike5")]
+
+[node name="Delayer5" parent="Objects" index="27" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer6"), NodePath("../Spike6")]
+
+[node name="Delayer6" parent="Objects" index="28" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer7"), NodePath("../Spike7")]
+
+[node name="Delayer7" parent="Objects" index="29" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer8"), NodePath("../Spike8")]
+
+[node name="Delayer8" parent="Objects" index="30" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Spike9"), NodePath("../Delayer9")]
+
+[node name="Delayer9" parent="Objects" index="31" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer10"), NodePath("../Spike10")]
+
+[node name="Delayer10" parent="Objects" index="32" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer11"), NodePath("../Spike11")]
+
+[node name="Delayer11" parent="Objects" index="33" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer12"), NodePath("../Spike12")]
+
+[node name="Delayer12" parent="Objects" index="34" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer13"), NodePath("../Spike13")]
+
+[node name="Delayer13" parent="Objects" index="35" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Spike14"), NodePath("../Delayer14")]
+
+[node name="Delayer14" parent="Objects" index="36" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Spike15")]
+
+[node name="cloudType4" parent="Objects" index="37" instance=ExtResource("4_lb1yn")]
+position = Vector2(-456, -552)
+
+[node name="cloudType5" parent="Objects" index="38" instance=ExtResource("4_lb1yn")]
+position = Vector2(-944, -432)
+
+[node name="Spring" parent="Objects" index="39" instance=ExtResource("12_dx3h2")]
+position = Vector2(-1208, 64)
+max_force = 2000.0
+
+[node name="PressurePlate" parent="Objects" index="40" node_paths=PackedStringArray("connectedTo") instance=ExtResource("13_c0x1q")]
+position = Vector2(-688, 128)
+scale = Vector2(1.3, 1)
+precision = -150.0
+connectedTo = [NodePath("../Spike16"), NodePath("../Spike21"), NodePath("../Delayer16")]
+
+[node name="Spike16" parent="Objects" index="41" instance=ExtResource("8_ojv1h")]
+position = Vector2(64, 24)
+distance = -150.0
+
+[node name="Spike17" parent="Objects" index="42" instance=ExtResource("8_ojv1h")]
+position = Vector2(-8, 16)
+distance = -150.0
+
+[node name="Spike18" parent="Objects" index="43" instance=ExtResource("8_ojv1h")]
+position = Vector2(-64, 24)
+distance = -150.0
+
+[node name="Spike19" parent="Objects" index="44" instance=ExtResource("8_ojv1h")]
+position = Vector2(-128, 24)
+distance = -150.0
+
+[node name="Spike20" parent="Objects" index="45" instance=ExtResource("8_ojv1h")]
+position = Vector2(-192, 24)
+distance = -150.0
+
+[node name="Spike21" parent="Objects" index="46" instance=ExtResource("8_ojv1h")]
+position = Vector2(-256, 24)
+distance = -150.0
+
+[node name="Delayer16" parent="Objects" index="47" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Delayer15"), NodePath("../Spike20"), NodePath("../Spike17")]
+
+[node name="Delayer15" parent="Objects" index="48" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_w1oy8")]
+delay = 0.1
+connectedTo = [NodePath("../Spike18"), NodePath("../Spike19")]
+
+[node name="cloudType6" parent="Objects" index="49" instance=ExtResource("4_lb1yn")]
+position = Vector2(0, -680)
+
+[node name="Path2D" type="Path2D" parent="Objects" index="50"]
+position = Vector2(1000, 984)
+curve = SubResource("Curve2D_h0c6x")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
+position = Vector2(-24, 416)
+rotates = false
+loop = false
+
+[node name="cloudType7" parent="Objects" index="51" instance=ExtResource("4_lb1yn")]
+position = Vector2(816, 280)
+
+[node name="CameraOffset" parent="Objects" index="52" instance=ExtResource("14_api1m")]
+position = Vector2(-504, -720)
+offset = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CameraOffset" index="0"]
+position = Vector2(-216, -100)
+shape = SubResource("RectangleShape2D_5bimf")
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(2912, 64)

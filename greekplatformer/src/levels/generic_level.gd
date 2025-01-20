@@ -34,6 +34,9 @@ var game_paused: bool = false:
 		get_tree().paused = game_paused
 		emit_signal("toggle_paused", game_paused)
 
+#func _process(delta: float) -> void:
+#	$FPS/Label.set_text("FPS %d" % Engine.get_frames_per_second())
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):
 		if(get_node("Camera").block==false and !get_node("Player").dead and !game_paused and (!dialogue_player or !dialogue_player.inProgress)):
@@ -170,7 +173,7 @@ func _on_room_transition_end_transition() -> void:
 
 func _on_timer_timeout() -> void:
 	current_room.pause_all_objects(false)
-	
+
 func room_changed(path: String, room : String):
 	SignalBus.emit_on_changed_room(path, room)
 

@@ -10,7 +10,8 @@ var t=0
 func enter():
 	t=0
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	t+=delta*5
 	
 	#player().hip.position.y=move_toward(player().hip.position.y, 45, 20*delta)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b8xa1v70gwas"]
+[gd_scene load_steps=19 format=4 uid="uid://b8xa1v70gwas"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_m5278"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_0dm0t"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c6k1k7e6uk1ay" path="res://src/bossFeatures/zeus_death_pit.tscn" id="5_iaxj8"]
 [ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="7_vldwa"]
 [ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="9_mowxu"]
-[ext_resource type="PackedScene" uid="uid://bajynjcw0ua61" path="res://src/items/rock.tscn" id="11_0f2m4"]
 [ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="12_4g3yh"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="13_xxq1i"]
 
@@ -56,7 +55,7 @@ connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]
 
 [node name="ShortWait" type="Node" parent="Objects/Zeus" index="0" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_mxu0l")
-time = 3.0
+time = 10.0
 chillPosition = NodePath("../../ChillingSpot")
 
 [node name="IntenseThunder" type="Node" parent="Objects/Zeus" index="1" node_paths=PackedStringArray("hand1", "hand2")]
@@ -69,7 +68,7 @@ time = 15.0
 
 [node name="AnotherShortWait" type="Node" parent="Objects/Zeus" index="2" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_mxu0l")
-time = 5.0
+time = 10.0
 chillPosition = NodePath("../../ChillingSpot")
 
 [node name="ChillThundeer" type="Node" parent="Objects/Zeus" index="3" node_paths=PackedStringArray("hand1", "hand2")]
@@ -82,7 +81,7 @@ time = 20.0
 
 [node name="Odmor" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_mxu0l")
-time = 5.0
+time = 15.0
 chillPosition = NodePath("../../ChillingSpot")
 
 [node name="Swoop" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("path")]
@@ -159,10 +158,7 @@ position = Vector2(2552, -544)
 [node name="NormalPlatform6" parent="Objects" index="18" instance=ExtResource("7_vldwa")]
 position = Vector2(3320, -104)
 
-[node name="RigidBody2D" parent="Objects" index="19" instance=ExtResource("11_0f2m4")]
-position = Vector2(-312, 56)
-
-[node name="CameraOffset" parent="Objects" index="20" instance=ExtResource("12_4g3yh")]
+[node name="CameraOffset" parent="Objects" index="19" instance=ExtResource("12_4g3yh")]
 position = Vector2(1384, -696)
 offset = -256.0
 
@@ -170,7 +166,7 @@ offset = -256.0
 position = Vector2(768, -96)
 shape = SubResource("RectangleShape2D_84vnk")
 
-[node name="Path2D2" type="Path2D" parent="Objects" index="21"]
+[node name="Path2D2" type="Path2D" parent="Objects" index="20"]
 position = Vector2(4608, 768)
 curve = SubResource("Curve2D_qugif")
 
@@ -184,7 +180,7 @@ speed = 200.0
 shakeWhileActive = true
 shakeAmount = 0.25
 
-[node name="CameraOffset2" parent="Objects" index="22" instance=ExtResource("12_4g3yh")]
+[node name="CameraOffset2" parent="Objects" index="21" instance=ExtResource("12_4g3yh")]
 position = Vector2(1880, 656)
 offset = -383.0
 

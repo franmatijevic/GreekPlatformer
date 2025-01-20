@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=15 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
-[ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="2_g0i0h"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="4_m4tqd"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="5_b822x"]
@@ -10,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://di513g1lk467e" path="res://src/myths/myth_1/rooms/roomLevel4/artillery.tscn" id="8_x8a4o"]
 [ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="9_4smky"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/boss/rain.gdshader" id="10_7qu0g"]
+[ext_resource type="PackedScene" uid="uid://2tuduabs8nyj" path="res://src/myths/myth_1/rooms/roomLevel4/boss_intro.tscn" id="11_opkjn"]
+[ext_resource type="PackedScene" uid="uid://il6uv46adl02" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="12_4gme7"]
+[ext_resource type="PackedScene" uid="uid://dmosolowjyfbo" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="12_cs36e"]
+[ext_resource type="PackedScene" uid="uid://rn3ihqx7v4nl" path="res://src/myths/myth_1/rooms/roomLevel4/last_atena_encounter.tscn" id="13_upo2k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
 shader = ExtResource("10_7qu0g")
@@ -29,38 +32,35 @@ shader_parameter/slant = 0.2
 script = ExtResource("2_nqc5n")
 torch = NodePath("Torch")
 ChapterName = "Chapter 4: Conflict"
-current_room = NodePath("TorchRoom")
+current_room = NodePath("BossIntro")
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
 
-[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+[node name="Camera" parent="." index="4" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(-2576, 208)
+position = Vector2(-3408, 5168)
 
 [node name="Torch" parent="." index="6" instance=ExtResource("6_aqgdi")]
-position = Vector2(-1784, 56)
+position = Vector2(-3168, 5128)
 
-[node name="TorchRoom" parent="." index="7" instance=ExtResource("2_g0i0h")]
-position = Vector2(-2008, 0)
+[node name="ZeusCombat" parent="." index="7" instance=ExtResource("5_b822x")]
+position = Vector2(45760, 12075)
 
-[node name="ZeusCombat" parent="." index="8" instance=ExtResource("5_b822x")]
-position = Vector2(8616, -5888)
+[node name="ZeusSwooping" parent="." index="8" instance=ExtResource("7_syvmk")]
+position = Vector2(30656, 9752)
 
-[node name="ZeusSwooping" parent="." index="9" instance=ExtResource("7_syvmk")]
-position = Vector2(2904, 24)
+[node name="Artillery" parent="." index="9" instance=ExtResource("8_x8a4o")]
+position = Vector2(36288, 10650.5)
 
-[node name="Artillery" parent="." index="10" instance=ExtResource("8_x8a4o")]
-position = Vector2(9432, 1400)
+[node name="LaganSpust" parent="." index="10" instance=ExtResource("9_4smky")]
+position = Vector2(19392, 7064)
 
-[node name="LaganSpust" parent="." index="11" instance=ExtResource("9_4smky")]
-position = Vector2(8560, 6200)
-
-[node name="RainEffect" type="CanvasLayer" parent="." index="12"]
+[node name="RainEffect" type="CanvasLayer" parent="." index="11"]
 layer = 0
 
 [node name="Rain" type="ColorRect" parent="RainEffect" index="0"]
@@ -68,3 +68,15 @@ material = SubResource("ShaderMaterial_gwvmd")
 offset_right = 2400.0
 offset_bottom = 1350.0
 color = Color(1, 1, 1, 0)
+
+[node name="BossIntro" parent="." index="13" instance=ExtResource("11_opkjn")]
+position = Vector2(-2624, 5528)
+
+[node name="UmjerenSpust" parent="." index="14" instance=ExtResource("12_cs36e")]
+position = Vector2(960, 5784)
+
+[node name="josJednaBorba" parent="." index="15" instance=ExtResource("12_4gme7")]
+position = Vector2(14784, 6936)
+
+[node name="LastAtenaEncounter" parent="." index="16" instance=ExtResource("13_upo2k")]
+position = Vector2(52416, 12971)

@@ -10,7 +10,8 @@ func enter():
 	player().targetLeftArm.position=restPose
 	player().targetRightArm.position=restPose
 
-func update_physics_process(delta:float):
+#func update_physics_process(delta:float):
+func update_process(delta:float):
 	
 	player().armSpeed=move_toward(player().armSpeed, 300, 50*delta)
 	
