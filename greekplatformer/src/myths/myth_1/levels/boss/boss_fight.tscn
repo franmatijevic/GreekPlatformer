@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=12 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="2_g0i0h"]
@@ -9,6 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
 [ext_resource type="PackedScene" uid="uid://di513g1lk467e" path="res://src/myths/myth_1/rooms/roomLevel4/artillery.tscn" id="8_x8a4o"]
 [ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="9_4smky"]
+[ext_resource type="Shader" path="res://src/myths/myth_1/levels/boss/rain.gdshader" id="10_7qu0g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
+shader = ExtResource("10_7qu0g")
+shader_parameter/rain_amount = 25.0
+shader_parameter/near_rain_length = 0.2
+shader_parameter/far_rain_length = 0.1
+shader_parameter/near_rain_width = 0.1
+shader_parameter/far_rain_width = 0.1
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.3
+shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_rain_speed = 0.75
+shader_parameter/additional_rain_speed = 0.9
+shader_parameter/slant = 0.2
 
 [node name="BossFight" node_paths=PackedStringArray("torch", "current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")
@@ -44,3 +59,12 @@ position = Vector2(9432, 1400)
 
 [node name="LaganSpust" parent="." index="11" instance=ExtResource("9_4smky")]
 position = Vector2(8560, 6200)
+
+[node name="RainEffect" type="CanvasLayer" parent="." index="12"]
+layer = 0
+
+[node name="Rain" type="ColorRect" parent="RainEffect" index="0"]
+material = SubResource("ShaderMaterial_gwvmd")
+offset_right = 2400.0
+offset_bottom = 1350.0
+color = Color(1, 1, 1, 0)
