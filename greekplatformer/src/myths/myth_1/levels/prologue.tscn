@@ -1,7 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_levd8"]
-[ext_resource type="Texture2D" uid="uid://ckpb2gx5h311f" path="res://src/environment/environmentArt/background/olimp.png" id="2_6m72j"]
 [ext_resource type="Texture2D" uid="uid://cbn4vcflc2dsc" path="res://src/environment/environmentArt/background/planinaPozadina.png" id="3_ircm7"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="4_sxvn3"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="5_ymj42"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="14_mxg7i"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="15_173jf"]
 [ext_resource type="PackedScene" uid="uid://c20usakr3hbgc" path="res://src/myths/myth_1/rooms/roomsLevel1/MountainEntrance.tscn" id="16_glgde"]
+[ext_resource type="PackedScene" uid="uid://dgyquxv3i73ux" path="res://src/environment/environmentArt/background/parallax.tscn" id="17_2jwx7"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="17_rljx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
@@ -48,22 +48,17 @@ player = NodePath("../Player")
 [node name="Camera2D" parent="Camera" index="0"]
 zoom = Vector2(0.705, 0.705)
 
-[node name="Olimp" type="Sprite2D" parent="." index="4"]
-position = Vector2(888, 75)
-scale = Vector2(0.848261, 0.848261)
-texture = ExtResource("2_6m72j")
-
-[node name="PlaninaPozadina" type="Sprite2D" parent="." index="5"]
+[node name="PlaninaPozadina" type="Sprite2D" parent="." index="4"]
 z_index = -60
 z_as_relative = false
 position = Vector2(6665, -1984)
 scale = Vector2(5.36, 5.36)
 texture = ExtResource("3_ircm7")
 
-[node name="CanvasLayerPause" parent="." index="6"]
+[node name="CanvasLayerPause" parent="." index="5"]
 layer = 2
 
-[node name="DialogueAreaZeus" parent="." index="7" instance=ExtResource("4_sxvn3")]
+[node name="DialogueAreaZeus" parent="." index="6" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(858, 753)
 dialogueKey = "lvl_1_1"
@@ -72,7 +67,7 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialogueAreaAtena" parent="." index="8" instance=ExtResource("4_sxvn3")]
+[node name="DialogueAreaAtena" parent="." index="7" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(-6435, 733)
 dialogueKey = "atena_wasd"
@@ -81,7 +76,7 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialogueAreaAtena2" parent="." index="9" instance=ExtResource("4_sxvn3")]
+[node name="DialogueAreaAtena2" parent="." index="8" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(2686, 35)
 dialogueKey = "atena_skip"
@@ -90,25 +85,25 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaAtena2" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="10" instance=ExtResource("5_ymj42")]
+[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("5_ymj42")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("6_dulq0")
 sceneTextFile = "res://src/dialogue/dialogues/lvl_1.json"
 speechBubbleScene = ExtResource("7_isa2h")
 
-[node name="Scene_0" parent="." index="11" instance=ExtResource("8_yt3am")]
+[node name="Scene_0" parent="." index="10" instance=ExtResource("8_yt3am")]
 light_mask = 1
 position = Vector2(96, 264)
 collision_layer = 0
 
-[node name="Scene_1" parent="." index="12" instance=ExtResource("9_s0i50")]
+[node name="Scene_1" parent="." index="11" instance=ExtResource("9_s0i50")]
 
-[node name="Scene_2" parent="." index="13" instance=ExtResource("10_4mrsj")]
+[node name="Scene_2" parent="." index="12" instance=ExtResource("10_4mrsj")]
 
-[node name="Scene_3" parent="." index="14" instance=ExtResource("11_j30nq")]
+[node name="Scene_3" parent="." index="13" instance=ExtResource("11_j30nq")]
 
-[node name="Atena" type="Sprite2D" parent="." index="15"]
+[node name="Atena" type="Sprite2D" parent="." index="14"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(-7616, -267)
@@ -125,7 +120,7 @@ position = Vector2(-5780.76, 675.549)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Atena2" type="Sprite2D" parent="." index="16"]
+[node name="Atena2" type="Sprite2D" parent="." index="15"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(3129, -693)
@@ -142,7 +137,7 @@ position = Vector2(2573, 1042.99)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Zeus" type="Sprite2D" parent="." index="17"]
+[node name="Zeus" type="Sprite2D" parent="." index="16"]
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
@@ -157,9 +152,9 @@ screenShake = true
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="18"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="17"]
 
-[node name="Player" parent="." index="19" instance=ExtResource("15_173jf")]
+[node name="Player" parent="." index="18" instance=ExtResource("15_173jf")]
 position = Vector2(-6952, 792)
 floor_max_angle = 0.785398
 jump_height = 250.0
@@ -167,12 +162,15 @@ jump_height = 250.0
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
 position = Vector2(7643, 161)
 
-[node name="Room" parent="." index="20" instance=ExtResource("16_glgde")]
+[node name="Room" parent="." index="19" instance=ExtResource("16_glgde")]
 position = Vector2(6512, -3704)
 
-[node name="BackgroundMusicStart" type="Node" parent="." index="21"]
+[node name="BackgroundMusicStart" type="Node" parent="." index="20"]
 script = ExtResource("17_rljx6")
 backgroundMusic = true
+
+[node name="Objects" parent="." index="21" instance=ExtResource("17_2jwx7")]
+position = Vector2(1337, 2575)
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]

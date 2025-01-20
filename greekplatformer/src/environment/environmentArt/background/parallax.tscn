@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgyquxv3i73ux"]
+
+[ext_resource type="Texture2D" uid="uid://b6kvr0x3nlcvu" path="res://src/environment/environmentArt/background/pozadina-2-FULL.png" id="1_te350"]
+[ext_resource type="Texture2D" uid="uid://dbnqgo3i1ddm1" path="res://src/environment/environmentArt/White_Cloud_PNG_Clipart-878.png" id="2_ob3np"]
+[ext_resource type="Texture2D" uid="uid://bu6fwet0i2asq" path="res://src/environment/environmentArt/background/pozadina-3.png" id="3_x7c2r"]
+[ext_resource type="Texture2D" uid="uid://cao4ndbib6aha" path="res://src/environment/environmentArt/background/pozadina-4.png" id="4_jb8gf"]
+[ext_resource type="Texture2D" uid="uid://bd8w17k34qj63" path="res://src/environment/environmentArt/background/pozadina-1-full.png" id="5_s2e5u"]
+[ext_resource type="Texture2D" uid="uid://di0nuvqxlc2v3" path="res://src/environment/environmentArt/background/olimp100.png" id="6_sv4fg"]
+
+[node name="Objects" type="Node2D"]
+position = Vector2(2931, 1060)
+scale = Vector2(1.4, 1.4)
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = -100
+z_as_relative = false
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-6174.29, -2557.86)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -200
+position = Vector2(5276.43, 1777.15)
+scale = Vector2(0.512972, 0.372875)
+texture = ExtResource("1_te350")
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+z_index = -200
+z_as_relative = false
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-130, -2893.57)
+
+[node name="White Mist" type="Sprite2D" parent="Parallax2D5"]
+z_index = -151
+position = Vector2(-753.571, 2338.57)
+rotation = -3.13803
+scale = Vector2(1.68571, 1.68571)
+texture = ExtResource("2_ob3np")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = -200
+z_as_relative = false
+scale = Vector2(0.506356, 0.441611)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(1719.29, -4771.43)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -200
+position = Vector2(-5790.32, 7786.43)
+scale = Vector2(1.25176, 0.999596)
+texture = ExtResource("3_x7c2r")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = -300
+z_as_relative = false
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(678.571, -1877.14)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+z_index = -150
+position = Vector2(-2655.71, 810.711)
+scale = Vector2(0.523382, 0.38681)
+texture = ExtResource("4_jb8gf")
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+z_index = -100
+z_as_relative = false
+scale = Vector2(0.549471, 0.549471)
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(-2521.43, -1926.43)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6"]
+z_index = -100
+position = Vector2(715.498, 959.367)
+scale = Vector2(1.1765, 1.0224)
+texture = ExtResource("5_s2e5u")
+
+[node name="Parallax2D7" type="Parallax2D" parent="."]
+z_index = -100
+z_as_relative = false
+scale = Vector2(0.549471, 0.549471)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(495.714, -2014.29)
+
+[node name="Olimp100" type="Sprite2D" parent="Parallax2D7"]
+z_index = -300
+position = Vector2(-1975.93, 877.475)
+scale = Vector2(3.15742, 3.15742)
+texture = ExtResource("6_sv4fg")
