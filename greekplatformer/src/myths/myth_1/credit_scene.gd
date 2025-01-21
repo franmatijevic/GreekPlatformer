@@ -12,6 +12,11 @@ extends Node2D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
+	for i in get_children():
+		if i is AudioStreamPlayer:
+			i.play()
+	
 	var t  = create_tween()
 	t.set_parallel(false)
 	t.tween_interval(1)

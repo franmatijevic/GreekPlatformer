@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://by1btwtslvdcq"]
+[gd_scene load_steps=17 format=3 uid="uid://by1btwtslvdcq"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_eabs3"]
 [ext_resource type="Texture2D" uid="uid://biocakxmyk8r7" path="res://src/ui/mainMenuArt/Background.png" id="2_ao73r"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://deujd6qlusunl" path="res://src/ui/settings_menu.tscn" id="12_5vbax"]
 [ext_resource type="PackedScene" uid="uid://bjqap3gkdft8h" path="res://src/ui/play_menu.tscn" id="13_bu8w3"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="14_r7qyj"]
+[ext_resource type="AudioStream" uid="uid://ujqvtti0jvrw" path="res://src/audio/SFX/ui/click3.wav" id="15_sryd4"]
+[ext_resource type="AudioStream" uid="uid://6oesalnw4egj" path="res://src/audio/SFX/ui/switch3.wav" id="16_sers0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -110,3 +112,13 @@ layout_mode = 1
 [node name="BackgroundMusicStart" type="Node" parent="."]
 script = ExtResource("14_r7qyj")
 menuMusic = true
+
+[node name="Press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_sryd4")
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_sers0")
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

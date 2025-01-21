@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1sllw7w6efgc"]
+[gd_scene load_steps=24 format=3 uid="uid://b1sllw7w6efgc"]
 
 [ext_resource type="Texture2D" uid="uid://6xrwrfrfeg4r" path="res://src/items/throwableArt/torchSheet.png" id="1_kyqo5"]
 [ext_resource type="Script" path="res://src/items/torch.gd" id="1_rod5p"]
 [ext_resource type="AudioStream" uid="uid://bwva571co7nqf" path="res://src/audio/SFX/stone_fall.wav" id="3_xnc15"]
+[ext_resource type="AudioStream" uid="uid://c1ini506epksl" path="res://src/audio/SFX/flame.ogg" id="4_08ilk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu2hc"]
 atlas = ExtResource("1_kyqo5")
@@ -111,10 +112,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hejrw"]
-size = Vector2(48, 130)
+size = Vector2(48, 292)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc6ea"]
 size = Vector2(62, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76hms"]
+size = Vector2(25, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t10n"]
+size = Vector2(68, 80)
 
 [node name="Torch" type="RigidBody2D" node_paths=PackedStringArray("sound")]
 z_as_relative = false
@@ -134,7 +141,7 @@ frame = 8
 frame_progress = 0.680447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 57.5)
+position = Vector2(0, 17)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_hejrw")
 one_way_collision_margin = 0.0
@@ -151,3 +158,27 @@ shape = SubResource("RectangleShape2D_sc6ea")
 [node name="StoneFall" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xnc15")
 bus = &"SFX"
+
+[node name="detectBlockDoor" type="Area2D" parent="."]
+position = Vector2(-16, 102)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectBlockDoor"]
+position = Vector2(15.5, -17.5)
+shape = SubResource("RectangleShape2D_76hms")
+
+[node name="detectWall" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectWall"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_5t10n")
+
+[node name="Flame" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_08ilk")
+bus = &"SFX"
+
+[connection signal="body_entered" from="detectBlockDoor" to="." method="_on_detect_block_door_body_entered"]
+[connection signal="body_exited" from="detectBlockDoor" to="." method="_on_detect_block_door_body_exited"]

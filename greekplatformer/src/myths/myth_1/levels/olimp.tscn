@@ -50,6 +50,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" parent="BlackScreen/Text" index="0"]
 metadata/_edit_use_anchors_ = true
 
+[node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
+position = Vector2(150, 0)
+points = PackedVector2Array(0, 0, 1000, 0)
+width = 3.0
+
 [node name="Line2D" parent="BlackScreen/Text" index="2"]
 position = Vector2(466, 72)
 points = PackedVector2Array(-650, 0, 650, 0)
@@ -111,6 +116,7 @@ position = Vector2(-8816, 376)
 [node name="BackgroundMusic" type="Node" parent="." index="18"]
 script = ExtResource("13_mddcf")
 backgroundMusic = true
+chorus = true
 
 [node name="Atena" type="Sprite2D" parent="." index="19"]
 modulate = Color(1, 1, 1, 0)

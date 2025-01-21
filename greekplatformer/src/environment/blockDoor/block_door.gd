@@ -1,5 +1,7 @@
 extends AnimatableBody2D
 
+class_name BlockDoor
+
 @onready var path = $".."
 
 @export var speed:float = 100

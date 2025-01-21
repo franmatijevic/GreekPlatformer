@@ -31,7 +31,7 @@ size = Vector2(2320, 178)
 size = Vector2(6872, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjs05"]
-size = Vector2(4344, 1928)
+size = Vector2(4960, 1928)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pii45"]
 size = Vector2(3352, 1216)
@@ -184,7 +184,7 @@ position = Vector2(96, -1984)
 offset = -300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CameraOffset" index="0"]
-position = Vector2(4068, 2184)
+position = Vector2(3760, 2184)
 shape = SubResource("RectangleShape2D_jjs05")
 
 [node name="CameraOffset2" parent="Objects" index="28" instance=ExtResource("14_28br1")]

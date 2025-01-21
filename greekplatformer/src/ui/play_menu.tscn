@@ -102,3 +102,7 @@ texture_normal = ExtResource("9_251ad")
 texture_pressed = ExtResource("10_xg8ew")
 texture_hover = ExtResource("11_j6ux6")
 stretch_mode = 3
+
+[connection signal="mouse_entered" from="VBoxContainer/NewGame" to="." method="_on_new_game_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/ContinueGame" to="." method="_on_continue_game_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Back" to="." method="_on_back_mouse_entered"]

@@ -19,16 +19,19 @@ func _ready() -> void:
 	play_menu.exit_play_menu.connect(on_exit_play_menu)
 	
 func on_play_pressed():
+	$Press.play()
 	margin_container.visible = false
 	play_menu.set_process(true)
 	play_menu.visible = true
 	
 func on_settings_pressed():
+	$Press.play()
 	margin_container.visible = false
 	settings_menu.set_process(true)
 	settings_menu.visible = true
 	
 func on_quit_pressed():
+	$Press.play()
 	get_tree().quit()
 	
 func on_exit_settings_menu():
@@ -38,3 +41,13 @@ func on_exit_settings_menu():
 func on_exit_play_menu():
 	margin_container.visible = true
 	play_menu.visible = false
+
+
+func _on_play_mouse_entered() -> void:
+	$Hover.play()
+
+func _on_settings_mouse_entered() -> void:
+	$Hover.play()
+
+func _on_quit_mouse_entered() -> void:
+	$Hover.play()

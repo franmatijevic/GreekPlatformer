@@ -201,7 +201,11 @@ func flip(new_dir:bool):
 		
 		
 		for i in get_node("CharacterContainer/Body").get_children():
-			i.set_flip_h(!i.is_flipped_h())
+			if i is Sprite2D:
+				i.set_flip_h(!i.is_flipped_h())
+			else:
+				i.get_children()[0].set_flip_h(!i.is_flipped_h())
+				#i.scale.x*=-1
 			i.offset.x*=-1
 		
 		var i = get_node("CharacterContainer/Body/DesnoStopalo")

@@ -29,9 +29,11 @@ func _ready() -> void:
 	camera = get_parent().get_parent().get_parent().get_node("Camera/Camera2D")
 	
 	if( shouldBeFlipped):
-		$Line2D.scale.x=-1
+		scale.x=-1
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
+	
+	#func _physics_process(delta: float) -> void:
 	#var height = camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2 + offsetY
 	
 	match state:
@@ -80,12 +82,17 @@ func agressive(delta:float):
 	global_position.x += horizontalVelocity*delta
 	
 	
-	
-	if t>0:
+	if t>0.99:
 		t=t-delta
+		hold(false)
+	elif t>0:
+		t=t-delta
+		hold(true)
 	else:
 		shoot()
+		hold(false)
 		t=timeBetweenShoots
+	
 	
 	targetPosition.y = move_toward(targetPosition.y, 0, 100*delta)
 
@@ -104,3 +111,7 @@ func shoot():
 	thunder.global_position=global_position
 	thunder.set_direction()
 	#player().get_parent().current_room.get_node("Objects").add_child(arrow)
+
+func hold(togle:bool):
+	$Ruka.visible = !togle
+	$RukaMunja.visible = togle

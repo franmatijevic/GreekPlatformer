@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dwnkdowfgjokx"]
+[gd_scene load_steps=31 format=4 uid="uid://dwnkdowfgjokx"]
 
 [ext_resource type="Script" path="res://src/audio/audio_controller.gd" id="1_0fobe"]
 [ext_resource type="AudioStream" uid="uid://1plirdl40rdp" path="res://src/audio/SFX/breaking_platform.wav" id="1_pmh4l"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://cohnq3j2bly6f" path="res://src/audio/SFX/talk_atena.wav" id="24_j580v"]
 [ext_resource type="AudioStream" uid="uid://c3gviu1gnqoj8" path="res://src/audio/SFX/talk_npc_musko.wav" id="25_obiqq"]
 [ext_resource type="AudioStream" uid="uid://ecof2f2mgdcc" path="res://src/audio/SFX/talk_npc_zensko.wav" id="26_s4gfu"]
+[ext_resource type="AudioStream" uid="uid://cfxdieggjnfpl" path="res://src/audio/SFX/jumpland.wav" id="27_3uaft"]
 [ext_resource type="AudioStream" uid="uid://nkkrvoyd7sgn" path="res://src/audio/music/timpani_loop.wav" id="28_j7n6c"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_mm4nn"]
@@ -146,6 +147,10 @@ bus = &"SFX"
 [node name="talk_npc_zensko" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("26_s4gfu")
 volume_db = 12.0
+bus = &"SFX"
+
+[node name="PlayerLand" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("27_3uaft")
 bus = &"SFX"
 
 [node name="Music" type="Node" parent="."]

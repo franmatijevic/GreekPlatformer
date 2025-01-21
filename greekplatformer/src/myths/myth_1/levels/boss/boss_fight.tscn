@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=16 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://il6uv46adl02" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="12_4gme7"]
 [ext_resource type="PackedScene" uid="uid://dmosolowjyfbo" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="12_cs36e"]
 [ext_resource type="PackedScene" uid="uid://rn3ihqx7v4nl" path="res://src/myths/myth_1/rooms/roomLevel4/last_atena_encounter.tscn" id="13_upo2k"]
+[ext_resource type="AudioStream" uid="uid://dw58ijl0xcu0m" path="res://src/audio/SFX/rain.ogg" id="14_t778h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
 shader = ExtResource("10_7qu0g")
@@ -39,7 +40,7 @@ position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
 
-[node name="Camera" parent="." index="4" node_paths=PackedStringArray("player")]
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
@@ -69,14 +70,20 @@ offset_right = 2400.0
 offset_bottom = 1350.0
 color = Color(1, 1, 1, 0)
 
-[node name="BossIntro" parent="." index="13" instance=ExtResource("11_opkjn")]
+[node name="BossIntro" parent="." index="12" instance=ExtResource("11_opkjn")]
 position = Vector2(-2624, 5528)
 
-[node name="UmjerenSpust" parent="." index="14" instance=ExtResource("12_cs36e")]
+[node name="UmjerenSpust" parent="." index="13" instance=ExtResource("12_cs36e")]
 position = Vector2(960, 5784)
 
-[node name="josJednaBorba" parent="." index="15" instance=ExtResource("12_4gme7")]
+[node name="josJednaBorba" parent="." index="14" instance=ExtResource("12_4gme7")]
 position = Vector2(14784, 6936)
 
-[node name="LastAtenaEncounter" parent="." index="16" instance=ExtResource("13_upo2k")]
+[node name="LastAtenaEncounter" parent="." index="15" instance=ExtResource("13_upo2k")]
 position = Vector2(52416, 12971)
+
+[node name="Rain" type="AudioStreamPlayer" parent="." index="16"]
+stream = ExtResource("14_t778h")
+volume_db = -1.0
+autoplay = true
+bus = &"SFX"

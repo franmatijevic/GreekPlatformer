@@ -25,11 +25,13 @@ func _on_area_entered(_area):
 	areaActive = true
 	canClickNext = false
 	SignalBus.emit_signal("display_dialogue", dialogueKey)
+	AudioServer.set_bus_effect_enabled(2, 0, true)
 
 func _on_area_exited(_area):
 	areaActive = false
 
 func _on_dialogue_finished(currentKey):
+	AudioServer.set_bus_effect_enabled(2, 0, false)
 	if oneTime and dialogueKey == currentKey:
 		self.queue_free()
 		

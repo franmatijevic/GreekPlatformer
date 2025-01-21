@@ -155,9 +155,8 @@ position = Vector2(2250.47, 779.472)
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="17"]
 
 [node name="Player" parent="." index="18" instance=ExtResource("15_173jf")]
-position = Vector2(-6952, 792)
+position = Vector2(-7256, 792)
 floor_max_angle = 0.785398
-jump_height = 250.0
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
 position = Vector2(7643, 161)

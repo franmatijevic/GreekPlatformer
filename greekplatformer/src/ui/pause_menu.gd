@@ -19,9 +19,11 @@ func _on_generic_level_script_toggle_paused(paused: bool):
 	if paused:
 		canvas_layer_pause.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		AudioServer.set_bus_effect_enabled(2, 0, true)
 	else:
 		canvas_layer_pause.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		AudioServer.set_bus_effect_enabled(2, 0, false)
 
 func _on_resume_pressed() -> void:
 	generic_level_script.game_paused = false
