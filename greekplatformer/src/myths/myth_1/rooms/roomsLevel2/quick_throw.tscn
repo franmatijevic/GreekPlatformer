@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c5mnbtg4jx3fy"]
+[gd_scene load_steps=15 format=4 uid="uid://c5mnbtg4jx3fy"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_20px2"]
 [ext_resource type="PackedScene" uid="uid://bxiqo4sifn21q" path="res://src/environment/blockDoor/block_door.tscn" id="2_i8gkb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="6_j5wwe"]
 [ext_resource type="PackedScene" uid="uid://bdkml3gn3iwpx" path="res://src/environment/pressurePlate/basket_plate.tscn" id="7_lprjx"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="8_4pj5l"]
+[ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="10_uhr8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v74a"]
 size = Vector2(2944, 2360)
@@ -95,7 +96,7 @@ texture = ExtResource("6_dfodg")
 
 [node name="Spring" parent="Objects/Path2D2/PathFollow2D" index="3" instance=ExtResource("6_j5wwe")]
 position = Vector2(0, -704)
-max_force = 1800.0
+max_force = 1900.0
 
 [node name="BlockDoor" parent="Objects/Path2D2/PathFollow2D" index="4" instance=ExtResource("2_i8gkb")]
 z_as_relative = false
@@ -143,7 +144,7 @@ position = Vector2(-192, -832)
 texture = ExtResource("6_dfodg")
 
 [node name="Path2D" type="Path2D" parent="Objects" index="10"]
-position = Vector2(384, -2624)
+position = Vector2(384, -2760)
 curve = SubResource("Curve2D_8v4bw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D" index="0"]
@@ -157,51 +158,63 @@ shakeWhileActive = true
 shakeAmount = 0.1
 
 [node name="Spike" parent="Objects/Path2D/PathFollow2D" index="1" instance=ExtResource("8_4pj5l")]
-position = Vector2(192, 1152)
-rotation = 3.14159
+position = Vector2(192, 1216)
+rotation = 2.96706
 
 [node name="Spike2" parent="Objects/Path2D/PathFollow2D" index="2" instance=ExtResource("8_4pj5l")]
-position = Vector2(0, 1152)
-rotation = 3.14159
+position = Vector2(8, 1208)
+rotation = 2.94961
 
 [node name="Spike3" parent="Objects/Path2D/PathFollow2D" index="3" instance=ExtResource("8_4pj5l")]
-position = Vector2(64, 1152)
+position = Vector2(64, 1208)
 rotation = 3.14159
 
 [node name="Spike4" parent="Objects/Path2D/PathFollow2D" index="4" instance=ExtResource("8_4pj5l")]
-position = Vector2(128, 1152)
-rotation = 3.14159
+position = Vector2(128, 1224)
+rotation = 3.22886
 
 [node name="Spike5" parent="Objects/Path2D/PathFollow2D" index="5" instance=ExtResource("8_4pj5l")]
-position = Vector2(256, 1152)
+position = Vector2(256, 1216)
 rotation = 3.14159
 
 [node name="Spike6" parent="Objects/Path2D/PathFollow2D" index="6" instance=ExtResource("8_4pj5l")]
-position = Vector2(320, 1152)
-rotation = 3.14159
+position = Vector2(320, 1232)
+rotation = 3.22188
 
 [node name="Spike7" parent="Objects/Path2D/PathFollow2D" index="7" instance=ExtResource("8_4pj5l")]
-position = Vector2(384, 1152)
+position = Vector2(384, 1224)
 rotation = 3.14159
 
 [node name="Spike8" parent="Objects/Path2D/PathFollow2D" index="8" instance=ExtResource("8_4pj5l")]
-position = Vector2(448, 1152)
+position = Vector2(448, 1224)
 rotation = 3.14159
 
 [node name="Spike9" parent="Objects/Path2D/PathFollow2D" index="9" instance=ExtResource("8_4pj5l")]
-position = Vector2(512, 1152)
-rotation = 3.14159
+position = Vector2(520, 1160)
+rotation = 2.79253
 
 [node name="Spike10" parent="Objects/Path2D/PathFollow2D" index="10" instance=ExtResource("8_4pj5l")]
-position = Vector2(-192, 1152)
-rotation = 3.14159
+position = Vector2(-200, 1136)
+rotation = 3.31613
 
 [node name="Spike11" parent="Objects/Path2D/PathFollow2D" index="11" instance=ExtResource("8_4pj5l")]
-position = Vector2(-128, 1152)
-rotation = 3.14159
+position = Vector2(-136, 1200)
+rotation = 3.31613
 
 [node name="Spike12" parent="Objects/Path2D/PathFollow2D" index="12" instance=ExtResource("8_4pj5l")]
-position = Vector2(-64, 1152)
+position = Vector2(-72, 1208)
+rotation = 3.14159
+
+[node name="BlockDoor2" parent="Objects/Path2D/PathFollow2D" index="13" instance=ExtResource("2_i8gkb")]
+position = Vector2(168, 1064)
+scale = Vector2(5, 1)
+
+[node name="WideSpikes" parent="Objects" index="11" instance=ExtResource("10_uhr8p")]
+position = Vector2(-48, -1528)
+rotation = 3.14159
+
+[node name="WideSpikes2" parent="Objects" index="12" instance=ExtResource("10_uhr8p")]
+position = Vector2(-312, -1528)
 rotation = 3.14159
 
 [node name="Skip" parent="." index="5"]

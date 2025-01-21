@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=12 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="7_h3x1g"]
 [ext_resource type="PackedScene" uid="uid://dmosolowjyfbo" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="8_ub76o"]
 [ext_resource type="PackedScene" uid="uid://il6uv46adl02" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="9_0kfy8"]
+[ext_resource type="PackedScene" uid="uid://c5mnbtg4jx3fy" path="res://src/myths/myth_1/rooms/roomsLevel2/quick_throw.tscn" id="10_tw504"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
@@ -46,4 +47,7 @@ position = Vector2(-1712, 7192)
 position = Vector2(12008, -4656)
 
 [node name="josJednaBorba" parent="." index="12" instance=ExtResource("9_0kfy8")]
-position = Vector2(3008, 256)
+position = Vector2(10144, 4824)
+
+[node name="QuickThrow" parent="." index="13" instance=ExtResource("10_tw504")]
+position = Vector2(2112, 152)

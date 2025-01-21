@@ -9,7 +9,7 @@ const GAME_SAVE : String = "user://GameSave.json"
 
 signal exit_play_menu
 
-var new_game_path = "res://src/myths/myth_1/levels/boss/boss_fight.tscn"#"res://src/myths/myth_1/intro.tscn"
+var new_game_path = "res://src/myths/myth_1/intro.tscn"
 var continue_game_path : String
 var continue_game_room : String
 

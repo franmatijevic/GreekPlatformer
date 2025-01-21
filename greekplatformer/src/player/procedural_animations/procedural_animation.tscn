@@ -32,7 +32,8 @@ scale = Vector2(0.0500001, 0.0500003)
 
 [node name="LijevoBedro" parent="CharacterContainer/Body" index="2"]
 rotation = 0.0370292
-scale = Vector2(0.0800006, 0.0800006)
+scale = Vector2(0.04, 0.04)
+offset = Vector2(64.063, 400)
 
 [node name="LijeviList" parent="CharacterContainer/Body" index="3"]
 position = Vector2(1.07243, 90.7147)
@@ -49,8 +50,9 @@ rotation = -0.246774
 scale = Vector2(0.0500001, 0.0500001)
 
 [node name="DesnoBedro" parent="CharacterContainer/Body" index="7"]
+visible = true
 rotation = -2.90488
-scale = Vector2(0.0799995, -0.0799999)
+offset = Vector2(64.063, 400)
 
 [node name="DesniList" parent="CharacterContainer/Body" index="8"]
 position = Vector2(-13.3914, 88.7253)
@@ -81,9 +83,10 @@ rotation = 0.0566063
 scale = Vector2(1.00002, 1.00002)
 
 [node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg" index="1"]
-position = Vector2(0.22891, -59.367)
+position = Vector2(0.228918, -59.367)
 rotation = 3.00642
 scale = Vector2(0.999941, 0.999941)
+skew = 0.0
 
 [node name="LeftLeg" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="2"]
 rotation = 0.0370292
@@ -94,8 +97,8 @@ position = Vector2(2.76446, 45.6499)
 scale = Vector2(0.999963, 0.999963)
 
 [node name="Foot" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg/LowerLeg" index="1"]
-position = Vector2(0.235476, 59.3817)
-rotation = -0.0634537
+position = Vector2(0.235477, 59.3817)
+rotation = -0.0634536
 scale = Vector2(0.999986, 0.999986)
 
 [node name="RightArm" parent="CharacterContainer/Bones/Skeleton2D/Hip" index="3"]

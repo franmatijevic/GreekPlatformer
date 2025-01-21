@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://dv3qd8ajp8ck"]
+[gd_scene load_steps=17 format=3 uid="uid://dv3qd8ajp8ck"]
 
 [ext_resource type="Texture2D" uid="uid://dp3nwvljvd8o3" path="res://src/player/playerArt/nadlaktica.png" id="1_0xgv3"]
-[ext_resource type="Texture2D" uid="uid://bfcin2sxy7dq4" path="res://src/player/playerArt/podlaktica.png" id="2_umdjc"]
-[ext_resource type="Texture2D" uid="uid://bjkimvr66nxt2" path="res://src/player/playerArt/bedro.png" id="3_af02p"]
-[ext_resource type="Texture2D" uid="uid://bp73i42k32220" path="res://src/player/playerArt/list.png" id="4_tarrc"]
-[ext_resource type="Texture2D" uid="uid://yh23wmh71n7l" path="res://src/player/playerArt/stopalo.png" id="5_qax7f"]
-[ext_resource type="Texture2D" uid="uid://cha7gjkdpj08q" path="res://src/player/playerArt/torso.png" id="6_0ksaw"]
-[ext_resource type="Texture2D" uid="uid://c73l4hvt22fmp" path="res://src/player/playerArt/glava.png" id="7_qco17"]
+[ext_resource type="Texture2D" uid="uid://c83t4scyxtnrp" path="res://src/player/playerArt/playerArtNew/podlaktica.png" id="2_bpyk6"]
+[ext_resource type="Texture2D" uid="uid://cfko8mldy0yyd" path="res://src/player/playerArt/playerArtNew/bedro.png" id="3_5lc3o"]
+[ext_resource type="Texture2D" uid="uid://d3sdbtyefdart" path="res://src/player/playerArt/playerArtNew/list.png" id="4_20t47"]
+[ext_resource type="Texture2D" uid="uid://ds6osp2lfa270" path="res://src/player/playerArt/playerArtNew/stopalo.png" id="5_pvruu"]
+[ext_resource type="Texture2D" uid="uid://byj5ym0t5vbgv" path="res://src/player/playerArt/playerArtNew/torso.png" id="6_y121d"]
+[ext_resource type="Texture2D" uid="uid://gapm3sy761pu" path="res://src/player/playerArt/playerArtNew/glava.png" id="7_l2q51"]
+[ext_resource type="Texture2D" uid="uid://lacbpcgiqrtf" path="res://src/player/playerArt/playerArtNew/nadlaktica.png" id="8_pwqnp"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_rvfau"]
 enabled = false
@@ -148,15 +149,15 @@ z_as_relative = false
 position = Vector2(45.985, 0)
 rotation = -1.0472
 scale = Vector2(0.0500077, 0.05)
-texture = ExtResource("2_umdjc")
+texture = ExtResource("2_bpyk6")
 offset = Vector2(313.75, 622.357)
 
 [node name="LijevoBedro" type="Sprite2D" parent="CharacterContainer/Body"]
 z_index = -40
 z_as_relative = false
 position = Vector2(0, 45)
-scale = Vector2(0.0800033, 0.0799996)
-texture = ExtResource("3_af02p")
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_5lc3o")
 offset = Vector2(64.063, 240)
 
 [node name="LijeviList" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -164,7 +165,7 @@ z_index = -40
 z_as_relative = false
 position = Vector2(2.76419, 90.6433)
 scale = Vector2(0.049994, 0.0500025)
-texture = ExtResource("4_tarrc")
+texture = ExtResource("4_20t47")
 offset = Vector2(-4.04436, 584.327)
 
 [node name="LijevoStopalo" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -173,7 +174,7 @@ z_as_relative = false
 position = Vector2(3, 150)
 rotation = -0.0266097
 scale = Vector2(0.0350011, 0.0350011)
-texture = ExtResource("5_qax7f")
+texture = ExtResource("5_pvruu")
 offset = Vector2(180.714, 271.428)
 
 [node name="Torso" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -181,7 +182,7 @@ z_index = -20
 z_as_relative = false
 position = Vector2(0, 45)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("6_0ksaw")
+texture = ExtResource("6_y121d")
 offset = Vector2(20.5001, -498)
 
 [node name="Glava" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -190,15 +191,15 @@ z_as_relative = false
 position = Vector2(1, -13)
 rotation = 0.0845438
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("7_qco17")
+texture = ExtResource("7_l2q51")
 offset = Vector2(35.5001, 106)
 
 [node name="DesnoBedro" type="Sprite2D" parent="CharacterContainer/Body"]
 z_index = 10
 z_as_relative = false
 position = Vector2(0, 45)
-scale = Vector2(0.0799998, -0.0799983)
-texture = ExtResource("3_af02p")
+scale = Vector2(0.04, -0.04)
+texture = ExtResource("3_5lc3o")
 offset = Vector2(64.0627, 240)
 
 [node name="DesniList" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -206,7 +207,7 @@ z_index = 10
 z_as_relative = false
 position = Vector2(2.764, -0.643002)
 scale = Vector2(0.0500046, -0.050006)
-texture = ExtResource("4_tarrc")
+texture = ExtResource("4_20t47")
 offset = Vector2(-5, 466.5)
 
 [node name="DesnoStopalo" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -215,7 +216,7 @@ z_as_relative = false
 position = Vector2(2.99342, -59.9961)
 rotation = 0.852811
 scale = Vector2(0.0349996, 0.034999)
-texture = ExtResource("5_qax7f")
+texture = ExtResource("5_pvruu")
 offset = Vector2(180.714, 271.428)
 
 [node name="DesnaNadlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -224,7 +225,7 @@ z_as_relative = false
 position = Vector2(1, 0)
 rotation = -1.74237
 scale = Vector2(0.0200105, 0.0200021)
-texture = ExtResource("1_0xgv3")
+texture = ExtResource("8_pwqnp")
 offset = Vector2(13.751, 965.5)
 
 [node name="DesnaPodlaktica" type="Sprite2D" parent="CharacterContainer/Body"]
@@ -233,7 +234,7 @@ z_as_relative = false
 position = Vector2(45.3259, -7.68022)
 rotation = -1.21877
 scale = Vector2(0.0449988, 0.0450002)
-texture = ExtResource("2_umdjc")
+texture = ExtResource("2_bpyk6")
 offset = Vector2(380, 661)
 
 [node name="Bones" type="Node2D" parent="CharacterContainer"]
@@ -269,6 +270,9 @@ update_scale = false
 
 [node name="Foot" type="Bone2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/RightLeg/LowerLeg"]
 position = Vector2(0.229425, -59.3513)
+rotation = 0.852796
+scale = Vector2(0.999983, 1.00002)
+skew = 2.96831e-05
 rest = Transform2D(0.99357, -0.112696, 0.112696, 0.99357, 0.22888, -59.367)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -286,7 +290,7 @@ update_scale = false
 rest = Transform2D(0.999178, 0.0370158, -0.0370158, 0.999178, 0, 0)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bones/Skeleton2D/Hip/LeftLeg"]
-scale = Vector2(0.141, 0.383)
+scale = Vector2(0.071, 0.192)
 remote_path = NodePath("../../../../../Body/LijevoBedro")
 update_scale = false
 
