@@ -23,11 +23,14 @@ func _ready() -> void:
 func on_new_game_pressed():
 	#SceneLoader.load_scene(new_game_path)
 	SceneLoader.load_more_level(new_game_path)
+	get_parent().get_node("Press").play()
 
 func on_continue_game_pressed():
 	SceneLoader.continue_from_save(continue_game_path, continue_game_room)
+	get_parent().get_node("Press").play()
 	
 func on_back_pressed():
+	get_parent().get_node("Press").play()
 	exit_play_menu.emit()
 	set_process(false)
 
@@ -45,3 +48,15 @@ func display_continue_button():
 			continue_game.visible = false
 	else:
 		continue_game.visible = false
+
+
+func _on_new_game_mouse_entered() -> void:
+	get_parent().get_node("Hover").play()
+
+
+func _on_continue_game_mouse_entered() -> void:
+	get_parent().get_node("Hover").play()
+
+
+func _on_back_mouse_entered() -> void:
+	get_parent().get_node("Hover").play()

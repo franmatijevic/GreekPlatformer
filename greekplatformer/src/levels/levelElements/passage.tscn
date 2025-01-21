@@ -1,22 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsjlj7hag4gey"]
+[gd_scene load_steps=5 format=3 uid="uid://dsjlj7hag4gey"]
 
 [ext_resource type="Script" path="res://src/levels/levelElements/passage.gd" id="1_k60ua"]
-[ext_resource type="Texture2D" uid="uid://djnqmjpnxgc7x" path="res://pixel1x1.png" id="1_m18r6"]
+[ext_resource type="Texture2D" uid="uid://bx3gffcsyal6e" path="res://src/environment/environmentArt/caveEntrance.png" id="2_vu28h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46fx8"]
 radius = 96.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au11d"]
+bg_color = Color(0.333333, 0.333333, 0.333333, 0.690196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Passage" type="Area2D"]
+z_index = -59
 collision_layer = 0
 script = ExtResource("1_k60ua")
 path = "res://src/myths/myth_1/levels/level_2.tscn"
 
 [node name="Pixel1x1" type="Sprite2D" parent="."]
-scale = Vector2(192, 192)
-texture = ExtResource("1_m18r6")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_vu28h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 30)
 shape = SubResource("CircleShape2D_46fx8")
+
+[node name="Enter" type="Label" parent="."]
+offset_left = -45.0
+offset_top = -242.0
+offset_right = 3.0
+offset_bottom = -188.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.147672, 0.147672, 0.147672, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_au11d")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

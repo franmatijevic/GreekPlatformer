@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvj8dw1myq5l3"]
+[gd_scene load_steps=16 format=3 uid="uid://bvj8dw1myq5l3"]
 
 [ext_resource type="Script" path="res://src/bossFeatures/thunderbolt.gd" id="1_gl6bh"]
 [ext_resource type="Texture2D" uid="uid://4rnwcg58stk5" path="res://src/environment/environmentArt/firstSceneZeus/munjaSpriteSheet.png" id="2_a3mkv"]
+[ext_resource type="AudioStream" uid="uid://m00q5t6bv6vt" path="res://src/audio/SFX/thunder.wav" id="3_0annh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6obce"]
-size = Vector2(32, 400)
+size = Vector2(32, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8lqc"]
 atlas = ExtResource("2_a3mkv")
@@ -91,7 +92,7 @@ collision_mask = 3
 script = ExtResource("1_gl6bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 24)
+position = Vector2(0, 96)
 shape = SubResource("RectangleShape2D_6obce")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -104,5 +105,10 @@ default_color = Color(0.152941, 0.152941, 0.156863, 1)
 position = Vector2(16, -32)
 rotation = 5.44543
 sprite_frames = SubResource("SpriteFrames_ot0ak")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0annh")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

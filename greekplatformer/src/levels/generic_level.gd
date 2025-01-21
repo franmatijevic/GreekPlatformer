@@ -34,8 +34,6 @@ var game_paused: bool = false:
 		get_tree().paused = game_paused
 		emit_signal("toggle_paused", game_paused)
 
-#func _process(delta: float) -> void:
-#	$FPS/Label.set_text("FPS %d" % Engine.get_frames_per_second())
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):

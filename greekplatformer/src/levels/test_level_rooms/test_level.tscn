@@ -17,15 +17,15 @@ radius = 240.0
 ChapterName = "Chapter 0: wow gle tekst"
 current_room = NodePath("StartingRoom")
 
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
 [node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
 position = Vector2(760, -336)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
 position = Vector2(-79, 0)
-
-[node name="Camera" parent="." index="6" node_paths=PackedStringArray("player")]
-player = NodePath("../Player")
 
 [node name="Checkpoint" parent="." index="7" instance=ExtResource("13_pnq13")]
 position = Vector2(-1856, 56)
@@ -45,5 +45,5 @@ position = Vector2(-1712, 7192)
 [node name="UmjerenSpust" parent="." index="11" instance=ExtResource("8_ub76o")]
 position = Vector2(12008, -4656)
 
-[node name="josJednaBorba" parent="." index="13" instance=ExtResource("9_0kfy8")]
+[node name="josJednaBorba" parent="." index="12" instance=ExtResource("9_0kfy8")]
 position = Vector2(3008, 256)

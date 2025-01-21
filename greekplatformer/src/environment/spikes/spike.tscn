@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy8dahgd1g1jr"]
+[gd_scene load_steps=7 format=3 uid="uid://cy8dahgd1g1jr"]
 
 [ext_resource type="Script" path="res://src/environment/spikes/spike.gd" id="1_f4iid"]
 [ext_resource type="Texture2D" uid="uid://bm6rpob4s2nta" path="res://src/mainMechanics/arrowArt/Arrow.png" id="1_rg6sr"]
 [ext_resource type="Texture2D" uid="uid://owbyg06kbrhb" path="res://src/environment/spikes/spikesArt/bodlja.png" id="3_ot2m6"]
+[ext_resource type="AudioStream" uid="uid://opy5v3r2q3li" path="res://src/audio/SFX/swish-6.wav" id="4_eropg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gdda"]
 radius = 13.0384
@@ -40,5 +41,10 @@ shape = SubResource("RectangleShape2D_p6ves")
 position = Vector2(0, 76)
 rotation = -1.5708
 texture = ExtResource("3_ot2m6")
+
+[node name="Swish" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_eropg")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://de834d1rptmo4"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://de834d1rptmo4"]
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_2yn86"]
 resource_name = "Compressor"
@@ -6,11 +6,21 @@ gain = 3.5
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_2lheh"]
 resource_name = "LowPassFilter"
-resonance = 1.0
+cutoff_hz = 2500.0
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_6v1vq"]
 resource_name = "Reverb"
-damping = 0.25
+hipass = 0.25
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_7kxur"]
+resource_name = "Chorus"
+voice_count = 3
+voice/3/delay_ms = 12.0
+voice/3/rate_hz = 1.0
+voice/3/depth_ms = 0.0
+voice/3/level_db = 0.0
+voice/3/cutoff_hz = 16000.0
+voice/3/pan = 0.0
 
 [resource]
 bus/1/name = &"SFX"
@@ -31,3 +41,5 @@ bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_2lheh")
 bus/2/effect/0/enabled = false
 bus/2/effect/1/effect = SubResource("AudioEffectReverb_6v1vq")
 bus/2/effect/1/enabled = false
+bus/2/effect/2/effect = SubResource("AudioEffectChorus_7kxur")
+bus/2/effect/2/enabled = false

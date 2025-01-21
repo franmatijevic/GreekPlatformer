@@ -70,8 +70,8 @@ scroll_offset = Vector2(-2521.43, -1926.43)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D6"]
 z_index = -100
-position = Vector2(715.498, 959.367)
-scale = Vector2(1.1765, 1.0224)
+position = Vector2(824.818, 959.367)
+scale = Vector2(1.20545, 1.0224)
 texture = ExtResource("5_s2e5u")
 
 [node name="Parallax2D7" type="Parallax2D" parent="."]

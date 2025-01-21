@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="5_2htdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwhc"]
-size = Vector2(3562.75, 1959)
+size = Vector2(7228.38, 5496)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj54c"]
-size = Vector2(3636, 65)
+size = Vector2(7323, 65)
 
 [node name="Room" type="Area2D"]
 process_mode = 1
@@ -22,7 +22,7 @@ script = ExtResource("1_natfj")
 tile_set = ExtResource("3_xq04m")
 
 [node name="RoomSize" type="CollisionShape2D" parent="."]
-position = Vector2(4212, -162.5)
+position = Vector2(6044.81, -1931)
 shape = SubResource("RectangleShape2D_7lwhc")
 
 [node name="Wall" type="StaticBody2D" parent="."]
@@ -34,13 +34,7 @@ build_mode = 1
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="Respawn" type="Marker2D" parent="."]
-position = Vector2(2556, 34)
-
-[node name="DeathPit" parent="." instance=ExtResource("5_2htdw")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathPit"]
-position = Vector2(4204, 618)
-shape = SubResource("RectangleShape2D_cj54c")
+position = Vector2(2604, -228)
 
 [node name="Objects" type="Node2D" parent="."]
 process_mode = 4
@@ -104,7 +98,7 @@ position = Vector2(5748, -901)
 scale = Vector2(1.72, 1.72)
 
 [node name="NormalPlatform15" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
-position = Vector2(5456, -1036)
+position = Vector2(5362, -1026)
 scale = Vector2(1.72, 1.72)
 
 [node name="NormalPlatform16" parent="Objects/Platforms" instance=ExtResource("4_vbwwx")]
@@ -118,6 +112,13 @@ scale = Vector2(1.76, 1.76)
 [node name="LongPlatform2" parent="Objects/Platforms" instance=ExtResource("4_hmp0w")]
 position = Vector2(5126, -329)
 scale = Vector2(1.76, 1.76)
+
+[node name="DeathPit" parent="Objects" instance=ExtResource("5_2htdw")]
+position = Vector2(11, 328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit"]
+position = Vector2(6047.5, 618)
+shape = SubResource("RectangleShape2D_cj54c")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

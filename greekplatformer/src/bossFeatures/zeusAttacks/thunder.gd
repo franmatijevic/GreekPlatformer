@@ -61,8 +61,10 @@ func update_physics_process(delta:float):
 func exit():
 	if hand1:
 		hand1.state=0
+		hand1.hold(false)
 	if hand2:
 		hand2.state=0
+		hand2.hold(false)
 	t=0
 	var t=create_tween()
 	t.tween_property(player(), "modulate:a", 1, 1)

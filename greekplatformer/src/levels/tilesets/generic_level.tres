@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bmgboki0qowjg" path="res://src/environment/environmentArt/floor/BlackFloor.png" id="5_sxxdo"]
 [ext_resource type="Texture2D" uid="uid://dt0m4pr41ywgc" path="res://src/environment/environmentArt/floor/PatternFloor2.png" id="6_nvcjr"]
 [ext_resource type="Texture2D" uid="uid://bfmsse72u88ws" path="res://src/environment/environmentArt/floor/caveFloor.png" id="6_tnk3v"]
-[ext_resource type="Texture2D" uid="uid://dm3u61kfd8cq5" path="res://src/levels/tilesets/waterTileSet.tres" id="7_j5xqr"]
 [ext_resource type="Texture2D" uid="uid://1cple5ml31nt" path="res://src/environment/environmentArt/floor/floorTileSheet.png" id="8_fplf6"]
+[ext_resource type="Texture2D" uid="uid://bpmx5k6je57mp" path="res://src/levels/levelElements/voda.png" id="8_wyq0v"]
 [ext_resource type="Texture2D" uid="uid://c3gms71nudqm2" path="res://src/environment/environmentArt/floor/blackFloorTile.png" id="9_e7yj6"]
 [ext_resource type="Texture2D" uid="uid://bol618spy30no" path="res://src/environment/environmentArt/floor/blackDecoratedTile.png" id="10_3hgcl"]
 [ext_resource type="Texture2D" uid="uid://cdhmur2s6hkgo" path="res://src/environment/environmentArt/floor/trgScenaTile-0.png" id="11_bk6dj"]
@@ -61,11 +61,14 @@ texture_region_size = Vector2i(128, 128)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4b2wu"]
-texture = ExtResource("7_j5xqr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pcf53"]
+texture = ExtResource("8_wyq0v")
 texture_region_size = Vector2i(128, 128)
-0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qf42a"]
 texture = ExtResource("8_fplf6")
@@ -202,5 +205,5 @@ sources/9 = SubResource("TileSetAtlasSource_t7ubi")
 sources/10 = SubResource("TileSetAtlasSource_8i8re")
 sources/12 = SubResource("TileSetAtlasSource_tntu3")
 sources/13 = SubResource("TileSetAtlasSource_7xg5m")
-sources/15 = SubResource("TileSetAtlasSource_4b2wu")
 sources/16 = SubResource("TileSetAtlasSource_qf42a")
+sources/15 = SubResource("TileSetAtlasSource_pcf53")

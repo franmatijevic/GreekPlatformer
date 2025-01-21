@@ -162,3 +162,6 @@ func stop_game_music():
 
 func stop_boss_music():
 	stop_sound($Music/BossMusic)
+
+func playerHitGround():
+	play_sound($SFX/PlayerLand, 1, 0)

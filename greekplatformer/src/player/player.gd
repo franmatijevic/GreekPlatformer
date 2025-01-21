@@ -217,6 +217,7 @@ func set_state(state: String):
 
 func _on_detect_floor_body_entered(body: Node2D) -> void:
 	jumped = false
+	AudioController.playerHitGround()
 	
 	if(body is TileMapLayer):
 		var percentage=min(velocity.length(),1000)/1000

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/levels/levelElements/room.gd" id="1_g3q1e"]
 [ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="2_eh0gg"]
-[ext_resource type="PackedScene" path="res://src/environment/death_pit.tscn" id="3_woatf"]
+[ext_resource type="PackedScene" uid="uid://cd2t2tjpuu7ei" path="res://src/environment/death_pit.tscn" id="3_woatf"]
 [ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="4_slwjx"]
 [ext_resource type="PackedScene" uid="uid://426wnoh7ld8w" path="res://src/environment/normalPlatforms/longPlatform.tscn" id="5_1f8r5"]
 [ext_resource type="PackedScene" uid="uid://c8ke8wwbtj02s" path="res://src/environment/breaking_platfrom/breaking_platfrom.tscn" id="5_phsv0"]

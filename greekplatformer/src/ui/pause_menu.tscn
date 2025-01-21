@@ -38,6 +38,7 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_mgkvs"]
 font_names = PackedStringArray("Bell MT")
 font_weight = 600
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jixa"]
 

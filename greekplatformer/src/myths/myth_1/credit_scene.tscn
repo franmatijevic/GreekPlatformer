@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bokr5yqieb8hu"]
+[gd_scene load_steps=6 format=4 uid="uid://bokr5yqieb8hu"]
 
 [ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="1_4f4mi"]
 [ext_resource type="Script" path="res://src/myths/myth_1/credit_scene.gd" id="1_ghiqn"]
 [ext_resource type="FontFile" uid="uid://dbheckwybavgo" path="res://src/dialogue/fonts/GRECOromanLubedWrestling.ttf" id="2_kvp4u"]
+[ext_resource type="AudioStream" uid="uid://dabdgj4nr4r85" path="res://src/audio/SFX/wind1.wav" id="4_s8reg"]
 
 [sub_resource type="Theme" id="Theme_j7f8f"]
 default_font = ExtResource("2_kvp4u")
@@ -34,6 +35,8 @@ text = "Tu desno bi trebo bit
 prometej
 Ovdje ce ici tekst
 Kao hvala na igranju i to"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -50,3 +53,7 @@ offset_top = -3824.0
 offset_right = 4504.0
 offset_bottom = 3184.0
 color = Color(0, 0, 0, 1)
+
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s8reg")
+bus = &"SFX"
