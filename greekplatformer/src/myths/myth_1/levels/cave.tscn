@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnkfkiq1ig3q5"]
+[gd_scene load_steps=26 format=3 uid="uid://bnkfkiq1ig3q5"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
 [ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="19_825oa"]
 [ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="20_1fk0c"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="21_yuxoi"]
+[ext_resource type="PackedScene" uid="uid://c1gonqb4ub2b1" path="res://src/myths/myth_1/rooms/roomsLevel2/artefact_room_1.tscn" id="22_r3myl"]
+[ext_resource type="PackedScene" uid="uid://bb3fvipvlenbb" path="res://src/myths/myth_1/rooms/roomsLevel2/artefact_room_2.tscn" id="23_0tr7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
 shader = ExtResource("13_fu0ms")
@@ -33,14 +35,14 @@ size = Vector2(224, 303)
 
 [node name="Cave" node_paths=PackedStringArray("current_room") instance=ExtResource("1_1wbxc")]
 ChapterName = "Chapter 2: Cave"
-current_room = NodePath("Room2")
+current_room = NodePath("CaveIntro")
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
 
-[node name="Camera" parent="." index="4" node_paths=PackedStringArray("player")]
+[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
 [node name="LeverTutorial" parent="." index="5" instance=ExtResource("2_3dbg0")]
@@ -53,13 +55,13 @@ position = Vector2(696, 152)
 position = Vector2(3640, 408)
 
 [node name="SimpleCatch" parent="." index="8" instance=ExtResource("6_02sff")]
-position = Vector2(16824, -104)
+position = Vector2(19256, -104)
 
 [node name="CloudRock" parent="." index="9" instance=ExtResource("7_2p0fa")]
 position = Vector2(14776, -104)
 
 [node name="Soba4" parent="." index="10" instance=ExtResource("10_x75b3")]
-position = Vector2(18488, -1000)
+position = Vector2(20920, -1000)
 
 [node name="Train1" parent="." index="11" instance=ExtResource("11_viuj6")]
 position = Vector2(9144, -104)
@@ -68,13 +70,13 @@ position = Vector2(9144, -104)
 position = Vector2(-1608, -104)
 
 [node name="Room2" parent="." index="13" instance=ExtResource("11_rgv2d")]
-position = Vector2(26680, -2664)
+position = Vector2(31800, -2792)
 
 [node name="Player" parent="." index="14" instance=ExtResource("12_rh5en")]
-position = Vector2(26253, -1882)
+position = Vector2(-2951, 47)
 
 [node name="QuickThrow" parent="." index="15" instance=ExtResource("12_7iuwp")]
-position = Vector2(23992, -1128)
+position = Vector2(26424, -1128)
 
 [node name="VignetteEffect" type="CanvasLayer" parent="." index="16"]
 layer = 0
@@ -170,6 +172,12 @@ oneTime = true
 
 [node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
 shape = SubResource("RectangleShape2D_6h1y5")
+
+[node name="ArtefactRoom1" parent="." index="25" instance=ExtResource("22_r3myl")]
+position = Vector2(28344, -3048)
+
+[node name="ArtefactRoom2" parent="." index="26" instance=ExtResource("23_0tr7v")]
+position = Vector2(16056, -1000)
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qm3t8fij47of" path="res://src/greekArtefacts/all_artefacts/javelin_prompt.png" id="3_3cntp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wodvq"]
-size = Vector2(673, 99)
+size = Vector2(765, 99)
 
 [node name="GreekArtefact" instance=ExtResource("1_jbgq8")]
 
@@ -16,7 +16,7 @@ scale = Vector2(0.235207, 0.203713)
 texture = ExtResource("2_1r4lh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(13.5, 33.5)
+position = Vector2(-5.5, 33.5)
 shape = SubResource("RectangleShape2D_wodvq")
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]

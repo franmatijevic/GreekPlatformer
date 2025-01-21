@@ -5,19 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://bxes1y6wl6f6b" path="res://src/greekArtefacts/all_artefacts/trireme_prompt.png" id="3_wgp4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ftwo"]
-size = Vector2(433, 172)
+size = Vector2(577, 172)
 
 [node name="GreekArtefact" instance=ExtResource("1_mpwqr")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, 18)
-rotation = -0.0663225
+z_index = 100
+position = Vector2(4.47035e-08, 17)
+rotation = -0.137296
 scale = Vector2(0.350247, 0.391733)
 texture = ExtResource("2_1bu7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(2.5, 147)
+position = Vector2(19.5, -187)
 shape = SubResource("RectangleShape2D_4ftwo")
+
+[node name="Interact" parent="." index="2"]
+offset_top = -475.0
+offset_bottom = -421.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("3_wgp4d")
