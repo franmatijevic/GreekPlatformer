@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8hco5jfeuthy"
-path="res://.godot/imported/PatternFloorOlimp.png-d471c8cb6f0399bb12c38b9b39ed850c.ctex"
+uid="uid://oween7dnf40f"
+path="res://.godot/imported/PatternBrickLevel1.png-2fc39a226a696fef5844576f48505ea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/a_temp_map/PatternFloorOlimp.png"
-dest_files=["res://.godot/imported/PatternFloorOlimp.png-d471c8cb6f0399bb12c38b9b39ed850c.ctex"]
+source_file="res://src/environment/environmentArt/floor/PatternBrickLevel1.png"
+dest_files=["res://.godot/imported/PatternBrickLevel1.png-2fc39a226a696fef5844576f48505ea8.ctex"]
 
 [params]
 

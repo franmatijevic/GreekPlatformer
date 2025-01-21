@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dto8wowtnsk7l"
-path="res://.godot/imported/PatternFloorCave.png-9883eb9ba52fc87a6fe322709507579a.ctex"
+uid="uid://xj8vq68b8xw5"
+path="res://.godot/imported/PatternBrickCave.png-58233cab52125b73810d2147fd2a3958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/a_temp_map/PatternFloorCave.png"
-dest_files=["res://.godot/imported/PatternFloorCave.png-9883eb9ba52fc87a6fe322709507579a.ctex"]
+source_file="res://src/environment/environmentArt/floor/PatternBrickCave.png"
+dest_files=["res://.godot/imported/PatternBrickCave.png-58233cab52125b73810d2147fd2a3958.ctex"]
 
 [params]
 
