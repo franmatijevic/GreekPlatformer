@@ -30,7 +30,7 @@ point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_iags4"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2489, -1981, 0, 0, 0, 0, 3473, -1977, 0, 0, 0, 0, 2489, -1981)
+"points": PackedVector2Array(0, 0, 0, 0, 2434, -1981, 0, 0, 0, 0, 3557, -1981, 0, 0, 0, 0, 2435, -1980)
 }
 point_count = 3
 
@@ -126,23 +126,22 @@ position = Vector2(2248, -1976)
 [node name="LongPlatform9" parent="Objects" index="24" instance=ExtResource("8_akst4")]
 position = Vector2(1416, -9)
 
-[node name="Path2D2" type="Path2D" parent="Objects" index="25"]
+[node name="Path2D3" type="Path2D" parent="Objects" index="25"]
 position = Vector2(-5328, -503)
 curve = SubResource("Curve2D_442o1")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D2" index="0"]
-position = Vector2(6417, -294.245)
-progress = 953.243
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D3" index="0"]
+position = Vector2(6417, 659)
 rotates = false
 
-[node name="bird2" parent="Objects/Path2D2/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
+[node name="bird2" parent="Objects/Path2D3/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
 position = Vector2(-1, -7.62939e-05)
-speed = 0.2
+speed = 0.15
 
 [node name="Spring" parent="Objects" index="26" instance=ExtResource("8_dgw05")]
 position = Vector2(1788, -82)
-max_force = 1000.0
-extra_force_multiplier = 0.4
+max_force = 2000.0
+extra_force_multiplier = 0.3
 
 [node name="Path2D4" type="Path2D" parent="Objects" index="27"]
 position = Vector2(-11.4225, 0)
@@ -156,15 +155,29 @@ rotates = false
 [node name="BirdPlatform" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
 speed = 0.1
 
-[node name="Path2D7" type="Path2D" parent="Objects" index="28"]
-curve = SubResource("Curve2D_iags4")
+[node name="Path2D5" type="Path2D" parent="Objects" index="28"]
+position = Vector2(-11.4225, 0)
+scale = Vector2(0.990497, 1)
+curve = SubResource("Curve2D_hpix5")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D7" index="0"]
-position = Vector2(2489, -1981)
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D5" index="0"]
+position = Vector2(2491.85, -794.511)
+progress = 2664.95
 rotates = false
 
-[node name="BirdPlatform" parent="Objects/Path2D7/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
-speed = 0.2
+[node name="BirdPlatform" parent="Objects/Path2D5/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
+speed = 0.1
+
+[node name="Path2D8" type="Path2D" parent="Objects" index="29"]
+curve = SubResource("Curve2D_iags4")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D8" index="0"]
+position = Vector2(3418.01, -1981)
+progress = 984.004
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D8/PathFollow2D" index="0" instance=ExtResource("7_x67qk")]
+speed = 0.15
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(4096, -64)

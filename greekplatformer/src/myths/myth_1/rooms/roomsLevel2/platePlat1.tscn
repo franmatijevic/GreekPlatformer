@@ -10,7 +10,7 @@
 size = Vector2(2432, 1606)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn28n"]
-size = Vector2(1408, 150)
+size = Vector2(1541, 150)
 
 [node name="PlatePlatform" instance=ExtResource("1_fqnkx")]
 downOffset = 128
@@ -38,7 +38,7 @@ position = Vector2(464, 24)
 position = Vector2(-64, 672)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
-position = Vector2(320, -24)
+position = Vector2(308.5, -24)
 shape = SubResource("RectangleShape2D_qn28n")
 
 [node name="GreekVase" type="Sprite2D" parent="." index="5"]

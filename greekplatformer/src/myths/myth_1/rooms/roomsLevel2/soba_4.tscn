@@ -19,7 +19,7 @@
 size = Vector2(4480, 3667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4poj"]
-size = Vector2(2685, 40.5)
+size = Vector2(2685, 146.5)
 
 [sub_resource type="Curve2D" id="Curve2D_425qg"]
 _data = {
@@ -70,7 +70,7 @@ position = Vector2(128, 832)
 [node name="DeathPit" parent="Objects" index="0" instance=ExtResource("2_4tg62")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
-position = Vector2(1856.5, 1019.75)
+position = Vector2(1856.5, 1072.75)
 shape = SubResource("RectangleShape2D_a4poj")
 
 [node name="LongPlatform" parent="Objects" index="1" instance=ExtResource("4_00yhj")]
@@ -169,6 +169,7 @@ position = Vector2(1310, 15)
 position = Vector2(1008, -119)
 
 [node name="Box2" type="Sprite2D" parent="Objects" index="21"]
+modulate = Color(1, 1, 1, 0.392157)
 z_index = -100
 z_as_relative = false
 position = Vector2(3310, -1194)
@@ -176,19 +177,27 @@ scale = Vector2(1.12667, 1.12667)
 texture = ExtResource("10_d3cya")
 
 [node name="GreekVase" type="Sprite2D" parent="Objects" index="22"]
+modulate = Color(1, 1, 1, 0.784314)
 z_index = -100
 z_as_relative = false
 position = Vector2(2690, 504)
 scale = Vector2(0.0999999, 0.0999999)
 texture = ExtResource("11_1dw5k")
 
-[node name="DeathPit2" parent="Objects" index="23" instance=ExtResource("2_4tg62")]
+[node name="GreekVase3" type="Sprite2D" parent="Objects" index="23"]
+z_index = -100
+z_as_relative = false
+position = Vector2(2723, 533)
+scale = Vector2(0.0499999, 0.0499999)
+texture = ExtResource("11_1dw5k")
+
+[node name="DeathPit2" parent="Objects" index="24" instance=ExtResource("2_4tg62")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit2" index="0"]
 position = Vector2(2435.25, -928)
 shape = SubResource("RectangleShape2D_wn10d")
 
-[node name="Path2D5" type="Path2D" parent="Objects" index="24"]
+[node name="Path2D5" type="Path2D" parent="Objects" index="25"]
 position = Vector2(3008, 1216)
 curve = SubResource("Curve2D_yq1h1")
 
@@ -207,7 +216,7 @@ texture = ExtResource("12_w3rt4")
 position = Vector2(-128, 0)
 texture = ExtResource("12_w3rt4")
 
-[node name="Path2D6" type="Path2D" parent="Objects" index="25"]
+[node name="Path2D6" type="Path2D" parent="Objects" index="26"]
 position = Vector2(3392, 640)
 curve = SubResource("Curve2D_7lq7h")
 
@@ -237,7 +246,7 @@ texture = ExtResource("12_w3rt4")
 position = Vector2(-128, -64)
 texture = ExtResource("12_w3rt4")
 
-[node name="PressurePlate" parent="Objects" index="26" node_paths=PackedStringArray("connectedTo") instance=ExtResource("13_kgnqk")]
+[node name="PressurePlate" parent="Objects" index="27" node_paths=PackedStringArray("connectedTo") instance=ExtResource("13_kgnqk")]
 position = Vector2(296, 896)
 connectedTo = [NodePath("../Path2D6/PathFollow2D/BlockDoor"), NodePath("../Path2D5/PathFollow2D/BlockDoor")]
 
@@ -245,6 +254,7 @@ connectedTo = [NodePath("../Path2D6/PathFollow2D/BlockDoor"), NodePath("../Path2
 position = Vector2(4352, 64)
 
 [node name="Box" type="Sprite2D" parent="." index="6"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(3712, 720)

@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bc3w3pwi3ui6g" path="res://src/environment/logical_and.tscn" id="5_dx74j"]
 [ext_resource type="Texture2D" uid="uid://bol618spy30no" path="res://src/environment/environmentArt/floor/blackDecoratedTile.png" id="6_dfodg"]
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="6_j5wwe"]
-[ext_resource type="PackedScene" uid="uid://bdkml3gn3iwpx" path="res://src/environment/pressurePlate/basket_plate.tscn" id="7_lprjx"]
 [ext_resource type="PackedScene" uid="uid://cy8dahgd1g1jr" path="res://src/environment/spikes/spike.tscn" id="8_4pj5l"]
 [ext_resource type="PackedScene" uid="uid://cv3vgreahlfwk" path="res://src/environment/spikes/wide_spikes.tscn" id="10_uhr8p"]
+[ext_resource type="PackedScene" path="res://src/environment/pressurePlate/basket_plate_half.tscn" id="11_ywhb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v74a"]
 size = Vector2(2944, 2360)
@@ -66,15 +66,7 @@ connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
 count = 2
 connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
 
-[node name="PressurePlate7" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_lprjx")]
-position = Vector2(1416, -640)
-connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
-
-[node name="PressurePlate4" parent="Objects" index="7" node_paths=PackedStringArray("connectedTo") instance=ExtResource("7_lprjx")]
-position = Vector2(-640, -896)
-connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
-
-[node name="Path2D2" type="Path2D" parent="Objects" index="8"]
+[node name="Path2D2" type="Path2D" parent="Objects" index="6"]
 position = Vector2(-128, 896)
 curve = SubResource("Curve2D_5owak")
 
@@ -108,7 +100,7 @@ z_as_relative = false
 position = Vector2(192, -576)
 texture = ExtResource("6_dfodg")
 
-[node name="Path2D3" type="Path2D" parent="Objects" index="9"]
+[node name="Path2D3" type="Path2D" parent="Objects" index="7"]
 position = Vector2(640, 1152)
 curve = SubResource("Curve2D_vhm00")
 
@@ -143,7 +135,7 @@ z_as_relative = false
 position = Vector2(-192, -832)
 texture = ExtResource("6_dfodg")
 
-[node name="Path2D" type="Path2D" parent="Objects" index="10"]
+[node name="Path2D" type="Path2D" parent="Objects" index="8"]
 position = Vector2(384, -2760)
 curve = SubResource("Curve2D_8v4bw")
 
@@ -154,6 +146,7 @@ loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_i8gkb")]
 scale = Vector2(20, 17)
+speed = 75.0
 shakeWhileActive = true
 shakeAmount = 0.1
 
@@ -209,13 +202,22 @@ rotation = 3.14159
 position = Vector2(168, 1064)
 scale = Vector2(5, 1)
 
-[node name="WideSpikes" parent="Objects" index="11" instance=ExtResource("10_uhr8p")]
+[node name="WideSpikes" parent="Objects" index="9" instance=ExtResource("10_uhr8p")]
 position = Vector2(-48, -1528)
 rotation = 3.14159
 
-[node name="WideSpikes2" parent="Objects" index="12" instance=ExtResource("10_uhr8p")]
+[node name="WideSpikes2" parent="Objects" index="10" instance=ExtResource("10_uhr8p")]
 position = Vector2(-312, -1528)
 rotation = 3.14159
+
+[node name="PressurePlate2" parent="Objects" index="11" node_paths=PackedStringArray("connectedTo") instance=ExtResource("11_ywhb7")]
+position = Vector2(1416, -640)
+connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
+
+[node name="PressurePlate5" parent="Objects" index="12" node_paths=PackedStringArray("connectedTo") instance=ExtResource("11_ywhb7")]
+position = Vector2(-641, -896)
+scale = Vector2(-1.32, 1)
+connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor"), NodePath("../LogicalANDobrnuto")]
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(1728, -704)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bnkfkiq1ig3q5"]
+[gd_scene load_steps=30 format=3 uid="uid://bnkfkiq1ig3q5"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
 [ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bb3fvipvlenbb" path="res://src/myths/myth_1/rooms/roomsLevel2/artefact_room_2.tscn" id="23_0tr7v"]
 [ext_resource type="PackedScene" uid="uid://ds2lqrpqmxgl2" path="res://src/backgrounds/test_background.tscn" id="24_l5smn"]
 [ext_resource type="PackedScene" uid="uid://bnxet8sju8nm6" path="res://src/backgrounds/cave_gradient.tscn" id="25_sefdb"]
+[ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="26_cwyad"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
 shader = ExtResource("13_fu0ms")
@@ -35,14 +36,17 @@ shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6h1y5"]
 size = Vector2(224, 303)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f4au"]
+size = Vector2(332, 577.75)
+
 [node name="Cave" node_paths=PackedStringArray("current_room", "background") instance=ExtResource("1_1wbxc")]
 ChapterName = "Chapter 2: Cave"
 current_room = NodePath("CaveIntro")
 background = NodePath("CaveGradient")
 
 [node name="CaveGradient" parent="." index="0" instance=ExtResource("25_sefdb")]
-position = Vector2(16288, -192)
 scale = Vector2(1, 30)
+transform = Transform2D(-3.61999e-06, 1, -30, -0.0001086, 0, 0)
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
@@ -191,6 +195,13 @@ position = Vector2(16056, -1000)
 visible = false
 position = Vector2(-16, -56)
 scale = Vector2(2, 100)
+
+[node name="Checkpoint" parent="." index="29" instance=ExtResource("26_cwyad")]
+position = Vector2(9632, 2104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
+position = Vector2(11929, -3628.13)
+shape = SubResource("RectangleShape2D_3f4au")
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]

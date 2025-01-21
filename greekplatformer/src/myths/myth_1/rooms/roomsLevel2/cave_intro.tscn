@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=4 uid="uid://bs1erneadtoes"]
+[gd_scene load_steps=4 format=4 uid="uid://bs1erneadtoes"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_6epq6"]
+[ext_resource type="Texture2D" uid="uid://bx3gffcsyal6e" path="res://src/environment/environmentArt/caveEntrance.png" id="2_4gt6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxynu"]
 size = Vector2(3144, 2000)
@@ -19,3 +20,10 @@ position = Vector2(-1344, 192)
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(1344, 448)
+
+[node name="CaveEntrance" type="Sprite2D" parent="." index="6"]
+modulate = Color(1, 1, 1, 0.498039)
+z_index = -100
+position = Vector2(-1271, 70)
+scale = Vector2(0.356481, 0.356481)
+texture = ExtResource("2_4gt6i")

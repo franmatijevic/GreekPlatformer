@@ -195,7 +195,7 @@ func jump():
 
 func stop_jump():
 	if velocity.y < 0 and jumped == true:
-		velocity.y = 0
+		velocity.y = JUMP_VELOCITY / 4
 
 func restart():
 	velocity = Vector2.ZERO

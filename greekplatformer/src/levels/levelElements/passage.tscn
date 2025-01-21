@@ -20,6 +20,7 @@ script = ExtResource("1_k60ua")
 path = "res://src/myths/myth_1/levels/level_2.tscn"
 
 [node name="Pixel1x1" type="Sprite2D" parent="."]
+z_index = -1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_vu28h")
 

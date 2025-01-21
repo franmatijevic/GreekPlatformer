@@ -99,6 +99,7 @@ position = Vector2(152, -289)
 shape = SubResource("RectangleShape2D_36cbe")
 
 [node name="Barrel" type="Sprite2D" parent="Objects" index="11"]
+self_modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(-1045, -101)
@@ -106,6 +107,7 @@ scale = Vector2(0.504098, 0.365699)
 texture = ExtResource("7_saiym")
 
 [node name="Box2" type="Sprite2D" parent="Objects" index="12"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(3989, -58)

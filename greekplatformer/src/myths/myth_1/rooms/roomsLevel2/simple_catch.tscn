@@ -101,9 +101,15 @@ position = Vector2(1376, -120)
 distance = -200.0
 
 [node name="NormalPlatform" parent="Objects" index="15" instance=ExtResource("8_5kh4a")]
-position = Vector2(-36, 10)
+z_index = -1
+position = Vector2(0, 10)
 
-[node name="GreekVase" type="Sprite2D" parent="Objects" index="16"]
+[node name="NormalPlatform2" parent="Objects" index="16" instance=ExtResource("8_5kh4a")]
+z_index = -1
+position = Vector2(386, 10)
+
+[node name="GreekVase" type="Sprite2D" parent="Objects" index="17"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(-660, -57)

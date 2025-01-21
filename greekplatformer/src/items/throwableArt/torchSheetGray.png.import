@@ -2,21 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byj5ym0t5vbgv"
-path="res://.godot/imported/torso.png-9e3b2fa52b5707b768e81c1bc0bd073f.ctex"
+uid="uid://bbnouclbev6y2"
+path="res://.godot/imported/torchSheetGray.png-9cdab967bf4b48789e20b31b5232dc71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/player/playerArt/playerArtNew/torso.png"
-dest_files=["res://.godot/imported/torso.png-9e3b2fa52b5707b768e81c1bc0bd073f.ctex"]
+source_file="res://src/items/throwableArt/torchSheetGray.png"
+dest_files=["res://.godot/imported/torchSheetGray.png-9cdab967bf4b48789e20b31b5232dc71.ctex"]
 
 [params]
 
 compress/mode=3
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

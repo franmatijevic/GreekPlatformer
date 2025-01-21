@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/stopalo.png-2a0ef7bc3ef9c8e285cf0df3d0b72edb.
 [params]
 
 compress/mode=3
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

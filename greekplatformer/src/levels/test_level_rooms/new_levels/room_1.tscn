@@ -99,8 +99,9 @@ position = Vector2(3996, 347)
 connectedTo = [NodePath("../LogicalANDVrata")]
 
 [node name="PressurePlate2" parent="Objects" index="1" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_47vl2")]
+z_index = -1
 position = Vector2(-8578, 2395)
-scale = Vector2(1.5, 1)
+scale = Vector2(2.14004, 1)
 connectedTo = [NodePath("../LogicalANDVrata"), NodePath("../Path2D3/PathFollow2D/Lift")]
 
 [node name="BreakingPlatform" parent="Objects" index="2" instance=ExtResource("5_yeydy")]
@@ -375,6 +376,18 @@ loop = false
 z_index = -5
 speed = 200.0
 
+[node name="Lift2" parent="Objects/Path2D3/PathFollow2D" index="1" instance=ExtResource("2_71wco")]
+z_index = -5
+position = Vector2(60, -72)
+scale = Vector2(0.08, 1)
+speed = 200.0
+
+[node name="Lift3" parent="Objects/Path2D3/PathFollow2D" index="2" instance=ExtResource("2_71wco")]
+z_index = -5
+position = Vector2(-59, -72)
+scale = Vector2(0.08, 1)
+speed = 200.0
+
 [node name="Box2" type="Sprite2D" parent="Objects" index="78"]
 z_index = -10
 z_as_relative = false
@@ -428,7 +441,18 @@ rotates = false
 [node name="BirdPlatform" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
 speed = 0.065
 
-[node name="Path2D5" type="Path2D" parent="Objects" index="89"]
+[node name="Path2D9" type="Path2D" parent="Objects" index="89"]
+curve = SubResource("Curve2D_rqmel")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D9" index="0"]
+position = Vector2(973.809, -624.421)
+progress = 3174.59
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D9/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
+speed = 0.065
+
+[node name="Path2D5" type="Path2D" parent="Objects" index="90"]
 curve = SubResource("Curve2D_cwkjj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D5" index="0"]
@@ -438,7 +462,18 @@ rotates = false
 [node name="BirdPlatform" parent="Objects/Path2D5/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
 speed = 0.07
 
-[node name="Path2D6" type="Path2D" parent="Objects" index="90"]
+[node name="Path2D10" type="Path2D" parent="Objects" index="91"]
+curve = SubResource("Curve2D_cwkjj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D10" index="0"]
+position = Vector2(-5829.18, -2771.67)
+progress = 4072.02
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D10/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
+speed = 0.07
+
+[node name="Path2D6" type="Path2D" parent="Objects" index="92"]
 curve = SubResource("Curve2D_c1ont")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D6" index="0"]
@@ -450,12 +485,25 @@ rotates = false
 rotation = -0.248896
 speed = 0.065
 
-[node name="SuperSpring3" parent="Objects" index="91" instance=ExtResource("12_h75dy")]
+[node name="Path2D11" type="Path2D" parent="Objects" index="93"]
+curve = SubResource("Curve2D_c1ont")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D11" index="0"]
+position = Vector2(-230.107, -2446)
+rotation = 0.268331
+progress = 3580.25
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D11/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
+rotation = -0.248896
+speed = 0.065
+
+[node name="SuperSpring3" parent="Objects" index="94" instance=ExtResource("12_h75dy")]
 position = Vector2(-2725, -1981)
 max_force = 1800.0
 side_force = 1200.0
 
-[node name="Path2D7" type="Path2D" parent="Objects" index="92"]
+[node name="Path2D7" type="Path2D" parent="Objects" index="95"]
 curve = SubResource("Curve2D_ucemx")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D7" index="0"]
@@ -465,7 +513,7 @@ rotates = false
 [node name="BirdPlatform" parent="Objects/Path2D7/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
 speed = 0.05
 
-[node name="Path2D8" type="Path2D" parent="Objects" index="93"]
+[node name="Path2D8" type="Path2D" parent="Objects" index="96"]
 curve = SubResource("Curve2D_5mg5i")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D8" index="0"]
@@ -475,19 +523,30 @@ rotates = false
 [node name="BirdPlatform" parent="Objects/Path2D8/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
 speed = 0.1
 
-[node name="PressurePlate3" parent="Objects" index="94" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_47vl2")]
+[node name="Path2D12" type="Path2D" parent="Objects" index="97"]
+curve = SubResource("Curve2D_5mg5i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Objects/Path2D12" index="0"]
+position = Vector2(794.156, -3491.68)
+progress = 1834.9
+rotates = false
+
+[node name="BirdPlatform" parent="Objects/Path2D12/PathFollow2D" index="0" instance=ExtResource("17_7cpsq")]
+speed = 0.1
+
+[node name="PressurePlate3" parent="Objects" index="98" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_47vl2")]
 position = Vector2(3331, -3100)
 scale = Vector2(1.4, 1)
 connectedTo = [NodePath("../LogicalANDVrata")]
 
-[node name="Bird" type="Sprite2D" parent="Objects" index="95"]
+[node name="Bird" type="Sprite2D" parent="Objects" index="99"]
 z_index = -10
 z_as_relative = false
 position = Vector2(-8728, -786)
 rotation = 0.575335
 texture = ExtResource("18_jdluv")
 
-[node name="Bird2" type="Sprite2D" parent="Objects" index="96"]
+[node name="Bird2" type="Sprite2D" parent="Objects" index="100"]
 z_index = -10
 z_as_relative = false
 position = Vector2(-8534, -791)
@@ -496,7 +555,7 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("18_jdluv")
 flip_h = true
 
-[node name="Bird4" type="Sprite2D" parent="Objects" index="97"]
+[node name="Bird4" type="Sprite2D" parent="Objects" index="101"]
 z_index = -10
 z_as_relative = false
 position = Vector2(3262.11, -3482.18)
@@ -505,14 +564,14 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("18_jdluv")
 flip_h = true
 
-[node name="Bird5" type="Sprite2D" parent="Objects" index="98"]
+[node name="Bird5" type="Sprite2D" parent="Objects" index="102"]
 z_index = -10
 z_as_relative = false
 position = Vector2(3412.11, -3478.18)
 rotation = 0.575335
 texture = ExtResource("18_jdluv")
 
-[node name="Bird7" type="Sprite2D" parent="Objects" index="99"]
+[node name="Bird7" type="Sprite2D" parent="Objects" index="103"]
 z_index = -10
 z_as_relative = false
 position = Vector2(3760, -3478.18)
@@ -520,7 +579,7 @@ rotation = 0.575335
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("18_jdluv")
 
-[node name="Bird6" type="Sprite2D" parent="Objects" index="100"]
+[node name="Bird6" type="Sprite2D" parent="Objects" index="104"]
 z_index = -10
 z_as_relative = false
 position = Vector2(3606.11, -3483.18)
@@ -529,20 +588,20 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("18_jdluv")
 flip_h = true
 
-[node name="RigidBody2D2" parent="Objects" index="101" instance=ExtResource("13_ycj23")]
+[node name="RigidBody2D2" parent="Objects" index="105" instance=ExtResource("13_ycj23")]
 position = Vector2(1817, -2978)
 
-[node name="RigidBody2D3" parent="Objects" index="102" instance=ExtResource("13_ycj23")]
+[node name="RigidBody2D3" parent="Objects" index="106" instance=ExtResource("13_ycj23")]
 position = Vector2(1563, -2979)
 
-[node name="DeathPit3" parent="Objects" index="103" instance=ExtResource("8_w6xca")]
+[node name="DeathPit3" parent="Objects" index="107" instance=ExtResource("8_w6xca")]
 position = Vector2(-7824, -528)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit3" index="0"]
 position = Vector2(-419.25, -31)
 shape = SubResource("RectangleShape2D_exqkc")
 
-[node name="DeathPit4" parent="Objects" index="104" instance=ExtResource("8_w6xca")]
+[node name="DeathPit4" parent="Objects" index="108" instance=ExtResource("8_w6xca")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit4" index="0"]
 position = Vector2(-6650.24, -802.009)

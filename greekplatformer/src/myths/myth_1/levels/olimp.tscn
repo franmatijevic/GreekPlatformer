@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://pmy66x62unny"]
+[gd_scene load_steps=29 format=3 uid="uid://pmy66x62unny"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_8qchm"]
 [ext_resource type="PackedScene" uid="uid://dx6pbtihboj8g" path="res://src/myths/myth_1/rooms/roomsLevel2/platePlat1.tscn" id="2_pwrnr"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bfogytv5q02fn" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_2.tscn" id="22_wv1j8"]
 [ext_resource type="PackedScene" uid="uid://cuxjdcuj3e2bj" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_3.tscn" id="23_7pxbt"]
 [ext_resource type="PackedScene" uid="uid://cry7ue7lta84u" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_5.tscn" id="24_t7nrv"]
+[ext_resource type="PackedScene" uid="uid://y31mgcxqua17" path="res://src/levels/test_level_rooms/torch_room.tscn" id="25_g3f5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxxwt"]
 size = Vector2(1080, 626)
@@ -94,25 +95,39 @@ position = Vector2(9632, 2104)
 position = Vector2(156, -303)
 shape = SubResource("RectangleShape2D_oxxwt")
 
-[node name="Room" parent="." index="14" instance=ExtResource("11_xuug8")]
+[node name="Checkpoint2" parent="." index="14" instance=ExtResource("10_ptuuy")]
+position = Vector2(9632, 2104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" index="0"]
+position = Vector2(-10059, -248)
+shape = SubResource("RectangleShape2D_oxxwt")
+
+[node name="Room" parent="." index="15" instance=ExtResource("11_xuug8")]
 position = Vector2(20880, -2056)
 
-[node name="Checkpoint3" parent="." index="15" instance=ExtResource("10_ptuuy")]
+[node name="Checkpoint3" parent="." index="16" instance=ExtResource("10_ptuuy")]
 position = Vector2(30464, -3136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3" index="0"]
 position = Vector2(-124, -328)
 shape = SubResource("RectangleShape2D_cb41l")
 
-[node name="OlimpIntro" parent="." index="16" instance=ExtResource("12_beblk")]
-position = Vector2(-8816, 376)
+[node name="Checkpoint4" parent="." index="17" instance=ExtResource("10_ptuuy")]
+position = Vector2(44921, -11945)
 
-[node name="BackgroundMusic" type="Node" parent="." index="17"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4" index="0"]
+position = Vector2(-124, -328)
+shape = SubResource("RectangleShape2D_cb41l")
+
+[node name="OlimpIntro" parent="." index="18" instance=ExtResource("12_beblk")]
+position = Vector2(-28171, 3137)
+
+[node name="BackgroundMusic" type="Node" parent="." index="19"]
 script = ExtResource("13_mddcf")
 backgroundMusic = true
 chorus = true
 
-[node name="Atena" type="Sprite2D" parent="." index="18"]
+[node name="Atena" type="Sprite2D" parent="." index="20"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(11557, -369)
@@ -131,7 +146,7 @@ position = Vector2(21736, -1351.95)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Atena2" type="Sprite2D" parent="." index="19"]
+[node name="Atena2" type="Sprite2D" parent="." index="21"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(6012, -362)
@@ -150,7 +165,7 @@ position = Vector2(31710, 4694.08)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Zeus" type="Sprite2D" parent="." index="20"]
+[node name="Zeus" type="Sprite2D" parent="." index="22"]
 visible = false
 position = Vector2(-1277, -1728)
 rotation = 0.615819
@@ -166,16 +181,16 @@ screenShake = true
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialoguePlayer" parent="." index="21" instance=ExtResource("17_u1o2k")]
+[node name="DialoguePlayer" parent="." index="23" instance=ExtResource("17_u1o2k")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("18_l22ke")
 sceneTextFile = "res://src/dialogue/dialogues/lvl_3.json"
 speechBubbleScene = ExtResource("19_j1g7n")
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="22"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="24"]
 
-[node name="DialogueAreaZeus" parent="." index="23" instance=ExtResource("20_da8sd")]
+[node name="DialogueAreaZeus" parent="." index="25" instance=ExtResource("20_da8sd")]
 process_mode = 0
 position = Vector2(11048, -27)
 dialogueKey = "three_pressure_plate_help"
@@ -185,16 +200,19 @@ wait = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_fi8l7")
 
-[node name="Soba1" parent="." index="24" instance=ExtResource("21_jfpep")]
-position = Vector2(50866, -11902)
+[node name="Soba1" parent="." index="26" instance=ExtResource("21_jfpep")]
+position = Vector2(-26637, 2241)
 
-[node name="Soba2" parent="." index="25" instance=ExtResource("22_wv1j8")]
-position = Vector2(54872, -11455)
+[node name="Soba2" parent="." index="27" instance=ExtResource("22_wv1j8")]
+position = Vector2(-22631, 2688)
 
-[node name="Soba3" parent="." index="26" instance=ExtResource("23_7pxbt")]
-position = Vector2(60240, -12970)
+[node name="Soba3" parent="." index="28" instance=ExtResource("23_7pxbt")]
+position = Vector2(-17263, 1173)
 
-[node name="Soba5" parent="." index="27" instance=ExtResource("24_t7nrv")]
-position = Vector2(64717, -12741)
+[node name="Soba5" parent="." index="29" instance=ExtResource("24_t7nrv")]
+position = Vector2(-12786, 1402)
+
+[node name="TorchRoom" parent="." index="31" instance=ExtResource("25_g3f5t")]
+position = Vector2(53264, -12680)
 
 [editable path="DialogueAreaZeus"]

@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/nadlaktica.png-dec5e70f7105c5c9a1dbdf81b44661
 [params]
 
 compress/mode=3
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

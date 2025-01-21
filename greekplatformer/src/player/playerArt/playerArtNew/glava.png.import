@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/glava.png-1ee911f085927e946ae1fcc1291ec194.ct
 [params]
 
 compress/mode=3
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

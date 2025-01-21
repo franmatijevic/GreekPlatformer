@@ -187,10 +187,11 @@ delay = 1.0
 connectedTo = [NodePath("../Path2D3/PathFollow2D/BlockDoor")]
 
 [node name="EndLevel" parent="Objects" index="20" instance=ExtResource("14_xr5jw")]
-position = Vector2(1904, 840)
+position = Vector2(1867, 851)
 nextLevelPath = "res://src/myths/myth_1/levels/olimp.tscn"
 
 [node name="Box" type="Sprite2D" parent="Objects" index="21"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(-588.537, 858)
@@ -198,7 +199,8 @@ scale = Vector2(0.819149, 0.819149)
 texture = ExtResource("14_j6pc7")
 
 [node name="PressurePlate" parent="Objects" index="22" node_paths=PackedStringArray("connectedTo") instance=ExtResource("15_pds3o")]
-position = Vector2(-217, -857)
+position = Vector2(-231, -857)
+scale = Vector2(1.6, 1)
 connectedTo = [NodePath("../Path2D4/PathFollow2D/FinalDoor"), NodePath("../Delayer")]
 
 [node name="Skip" parent="." index="5"]
