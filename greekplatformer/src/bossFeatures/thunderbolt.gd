@@ -13,7 +13,6 @@ var hitGround:bool=false
 
 func _ready() -> void:
 	set_direction()
-	AudioController.play_sound($Sound, 1,0)
 
 func set_direction():
 	velocity=(target - global_position).normalized() * speed

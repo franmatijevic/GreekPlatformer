@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://il6uv46adl02"]
+[gd_scene load_steps=19 format=4 uid="uid://vvhpajxrnt36"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_7cwoi"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_tmijd"]
@@ -45,6 +45,7 @@ position = Vector2(-1688, 64)
 
 [node name="Zeus" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_tmijd")]
 position = Vector2(1960, -640)
+health = 2
 connectedTo = [NodePath("../Spike"), NodePath("../Delayer")]
 
 [node name="Wait" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]

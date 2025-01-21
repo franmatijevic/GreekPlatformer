@@ -51,6 +51,7 @@ position = Vector2(-768, 320)
 
 [node name="Zeus" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_0dm0t")]
 position = Vector2(4001.91, -890.58)
+health = 2
 connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]
 
 [node name="ShortWait" type="Node" parent="Objects/Zeus" index="0" node_paths=PackedStringArray("chillPosition")]
@@ -81,7 +82,7 @@ time = 20.0
 
 [node name="Odmor" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_mxu0l")
-time = 15.0
+time = 30.0
 chillPosition = NodePath("../../ChillingSpot")
 
 [node name="Swoop" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("path")]

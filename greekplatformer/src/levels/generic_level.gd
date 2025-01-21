@@ -151,7 +151,7 @@ func next_level():
 	
 	get_node("Camera").set_state("RoomTransition")
 
-##Camera shake - amount je izmedu 0 do 1, decayValue je brzina nestajanja shakea
+##Camera - amount je izmedu 0 do 1, decayValue je brzina nestajanja shakea
 func camShake(amount:float):#dosta kratki shake
 	$Camera.add_trauma(amount)
 

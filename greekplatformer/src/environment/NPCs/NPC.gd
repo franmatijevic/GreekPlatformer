@@ -63,5 +63,7 @@ func _on_perform_action(action: String, params: Dictionary, key: String):
 			fade_duration = params["duration"]
 			fade_timer = 0.0
 			fading = true
+		elif action == "shake":
+			get_parent().setCamShake(0.75)
 		elif action == "exit":
 			_on_npc_exit()

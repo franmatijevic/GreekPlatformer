@@ -118,6 +118,7 @@ func shoot_down():
 
 
 func shoot():
+	AudioController.play_thunder()
 	var thunder = Thunderbolt.new_thunderbolt(player.global_position)
 	thunder.global_position=global_position
 	get_parent().add_child(thunder)

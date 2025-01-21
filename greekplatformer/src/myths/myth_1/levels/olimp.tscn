@@ -37,7 +37,7 @@ size = Vector2(224, 303)
 
 [node name="Olimp" node_paths=PackedStringArray("current_room") instance=ExtResource("1_8qchm")]
 ChapterName = "Chapter 3: Mount Olympus"
-current_room = NodePath("OlimpIntro")
+current_room = NodePath("TorchRoom")
 lineLength = 4.0
 
 [node name="Control" parent="BlackScreen" index="0"]
@@ -65,7 +65,7 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_pxfoj")]
-position = Vector2(-28877, 5906)
+position = Vector2(50999, -12499)
 
 [node name="PlatePlatform" parent="." index="6" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)
@@ -149,24 +149,24 @@ scale = Vector2(1.5873, -1.5873)
 [node name="Atena2" type="Sprite2D" parent="." index="21"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
-position = Vector2(6012, -362)
+position = Vector2(52958, -12970)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_3au6m")
 flip_h = true
 flip_v = true
 script = ExtResource("15_p5c6w")
-entryPosition = Vector2(6087, -362)
-exitPosition = Vector2(6087, -362)
-currentKey = "atena_lever"
+entryPosition = Vector2(53142, -13087)
+exitPosition = Vector2(53142, -13087)
+currentKey = "atena_alert"
 
 [node name="Atena2DialogueMarker" type="Marker2D" parent="Atena2" index="0"]
-position = Vector2(31710, 4694.08)
+position = Vector2(104408, -26669.7)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
 [node name="Zeus" type="Sprite2D" parent="." index="22"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
@@ -175,11 +175,11 @@ script = ExtResource("15_p5c6w")
 entryPosition = Vector2(-1277, -1728)
 exitPosition = Vector2(-1277, -1728)
 speed = 1000.0
-currentKey = "lvl_1_1"
+currentKey = "zeus_fight"
 screenShake = true
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
-position = Vector2(2250.47, 779.472)
+position = Vector2(2233.51, 263.104)
 
 [node name="DialoguePlayer" parent="." index="23" instance=ExtResource("17_u1o2k")]
 z_index = 100
@@ -192,27 +192,46 @@ speechBubbleScene = ExtResource("19_j1g7n")
 
 [node name="DialogueAreaZeus" parent="." index="25" instance=ExtResource("20_da8sd")]
 process_mode = 0
-position = Vector2(11048, -27)
+position = Vector2(10814, -27)
 dialogueKey = "three_pressure_plate_help"
 oneTime = true
-wait = true
 
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_fi8l7")
 
-[node name="Soba1" parent="." index="26" instance=ExtResource("21_jfpep")]
+[node name="DialogueAreaZeus2" parent="." index="26" instance=ExtResource("20_da8sd")]
+process_mode = 0
+position = Vector2(52557, -12442)
+dialogueKey = "atena_alert"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaZeus2" index="0"]
+shape = SubResource("RectangleShape2D_fi8l7")
+
+[node name="DialogueAreaZeus3" parent="." index="27" instance=ExtResource("20_da8sd")]
+process_mode = 0
+position = Vector2(54406, -12449)
+dialogueKey = "zeus_fight"
+oneTime = true
+
+[node name="CollisionShape2D" parent="DialogueAreaZeus3" index="0"]
+shape = SubResource("RectangleShape2D_fi8l7")
+
+[node name="Soba1" parent="." index="28" instance=ExtResource("21_jfpep")]
 position = Vector2(-26736, 4984)
 
-[node name="Soba2" parent="." index="27" instance=ExtResource("22_wv1j8")]
+[node name="Soba2" parent="." index="29" instance=ExtResource("22_wv1j8")]
 position = Vector2(-22640, 5112)
 
-[node name="Soba3" parent="." index="28" instance=ExtResource("23_7pxbt")]
+[node name="Soba3" parent="." index="30" instance=ExtResource("23_7pxbt")]
 position = Vector2(-17264, 2808)
 
-[node name="Soba5" parent="." index="29" instance=ExtResource("24_t7nrv")]
+[node name="Soba5" parent="." index="31" instance=ExtResource("24_t7nrv")]
 position = Vector2(-12784, 1400)
 
-[node name="TorchRoom" parent="." index="31" instance=ExtResource("25_g3f5t")]
+[node name="TorchRoom" parent="." index="33" instance=ExtResource("25_g3f5t")]
 position = Vector2(53264, -12680)
 
 [editable path="DialogueAreaZeus"]
+[editable path="DialogueAreaZeus2"]
+[editable path="DialogueAreaZeus3"]

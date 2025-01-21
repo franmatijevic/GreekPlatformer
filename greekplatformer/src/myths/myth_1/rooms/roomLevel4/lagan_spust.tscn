@@ -23,7 +23,7 @@ size = Vector2(1568, 202)
 
 [sub_resource type="Curve2D" id="Curve2D_b0rxx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5000)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1849)
 }
 point_count = 2
 
@@ -112,12 +112,9 @@ position = Vector2(4048, 1664)
 position = Vector2(6360, 1840)
 
 [node name="cloudType4" parent="Objects" index="11" instance=ExtResource("2_nwfhl")]
-position = Vector2(7000, 1912)
+position = Vector2(7061, 1908)
 
-[node name="cloudType5" parent="Objects" index="12" instance=ExtResource("2_nwfhl")]
-position = Vector2(7672, 1840)
-
-[node name="Path2D" type="Path2D" parent="Objects" index="13"]
+[node name="Path2D" type="Path2D" parent="Objects" index="12"]
 position = Vector2(7424, 1320)
 curve = SubResource("Curve2D_b0rxx")
 
@@ -134,20 +131,20 @@ position = Vector2(0, -48)
 precision = 2.0
 connectedTo = [NodePath("../BlockDoor")]
 
-[node name="Lever" parent="Objects" index="14" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_wwkqd")]
+[node name="Lever" parent="Objects" index="13" node_paths=PackedStringArray("connectedTo") instance=ExtResource("9_wwkqd")]
 position = Vector2(7914, 1608)
 rotation = -1.5708
 use_time = 0.2
 connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]
 
-[node name="CameraOffset" parent="Objects" index="15" instance=ExtResource("13_jliy0")]
+[node name="CameraOffset" parent="Objects" index="14" instance=ExtResource("13_jliy0")]
 offset = -128.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/CameraOffset" index="0"]
 position = Vector2(1924, 204)
 shape = SubResource("RectangleShape2D_lmyrr")
 
-[node name="CameraOffset2" parent="Objects" index="16" instance=ExtResource("13_jliy0")]
+[node name="CameraOffset2" parent="Objects" index="15" instance=ExtResource("13_jliy0")]
 position = Vector2(6624, 1544)
 offset = -150.0
 
@@ -155,7 +152,7 @@ offset = -150.0
 position = Vector2(356, -292)
 shape = SubResource("RectangleShape2D_pcb2d")
 
-[node name="Path2D2" type="Path2D" parent="Objects" index="17"]
+[node name="Path2D2" type="Path2D" parent="Objects" index="16"]
 position = Vector2(8064, 2720)
 curve = SubResource("Curve2D_ttvck")
 
@@ -174,22 +171,34 @@ rotation = 3.14159
 position = Vector2(64, 440)
 rotation = 3.14159
 
-[node name="BreakingPlatform" parent="Objects" index="18" instance=ExtResource("14_j5tuu")]
+[node name="BreakingPlatform" parent="Objects" index="17" instance=ExtResource("14_j5tuu")]
 position = Vector2(7760, 3168)
 
-[node name="ZeusDeathPit2" parent="Objects" index="19" instance=ExtResource("6_7cvg6")]
+[node name="ZeusDeathPit2" parent="Objects" index="18" instance=ExtResource("6_7cvg6")]
 position = Vector2(3472, 2232)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/ZeusDeathPit2" index="0"]
 position = Vector2(-260, 299)
 shape = SubResource("RectangleShape2D_mtdbu")
 
-[node name="ZeusDeathPit3" parent="Objects" index="20" instance=ExtResource("6_7cvg6")]
+[node name="ZeusDeathPit3" parent="Objects" index="19" instance=ExtResource("6_7cvg6")]
 position = Vector2(7064, 3352)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/ZeusDeathPit3" index="0"]
 position = Vector2(-391.5, 200)
 shape = SubResource("RectangleShape2D_26mal")
+
+[node name="LongPlatform2" parent="Objects" index="20" instance=ExtResource("8_rugaw")]
+z_index = -1
+position = Vector2(7865, 1844)
+
+[node name="LongPlatform3" parent="Objects" index="21" instance=ExtResource("8_rugaw")]
+z_index = -1
+position = Vector2(7732, 1844)
+
+[node name="LongPlatform4" parent="Objects" index="22" instance=ExtResource("8_rugaw")]
+z_index = -1
+position = Vector2(7675, 1844)
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(8832, 3008)

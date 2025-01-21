@@ -1,8 +1,32 @@
 {
 	"three_pressure_plate_help": [
-		{"speaker": "Atena", "text": "Seems like these doors are hard shut", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena", "text": "Seems like these doors are hard shut.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
 		{"speaker": "Atena", "text": "But I've heard a rumour amongst the gods...", "action": "none"},
 		{"speaker": "Atena", "text": "To open the door you ought to find 3 pressure plates.", "action": "none"},
 		{"speaker": "Atena", "text": "One is above and one is below...", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	],
+	"atena_alert": [
+		{"speaker": "Atena2", "text": "Prometheus, halt!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena2", "text": "You've come a long way.", "action": "none"},
+		{"speaker": "Atena2", "text": "You're close to achieving your goal.", "action": "none"},
+		{"speaker": "Atena2", "text": "But be wary, for the hardest part of the journey awaits you.", "action": "none"},
+		{"speaker": "Atena2", "text": "Might you go on to defy Zeus, be prepared.", "action": "none"},
+		{"speaker": "Atena2", "text": "Be careful to avoid his lightning bolts!", "action": "none"},
+		{"speaker": "Atena2", "text": "Be ruthless, use your fire to fight back!", "action": "none"},
+		{"speaker": "Atena2", "text": "Good luck, Prometheus. Help your people.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	],
+	"zeus_fight": [
+		{"speaker": "Zeus", "text": "Well, well, well...", "action": "none"},
+		{"speaker": "Zeus", "text": "If it isn't Prometheus the Saviour.", "action": "none"},
+		{"speaker": "Zeus", "text": "Trying to help those puny little humans.", "action": "none"},
+		{"speaker": "Zeus", "text": "Those pests that don't even respect me.", "action": "none"},
+		{"speaker": "Zeus", "text": "But you're the worst of all Prometheus...", "action": "none"},
+		{"speaker": "Zeus", "text": "You're the one who stabbed me in the back and hurt my dignity.", "action": "none"},
+		{"speaker": "Zeus", "text": "Very well then. So be it.", "action": "none"},
+		{"speaker": "Zeus", "text": "And now Prometheus...", "action": "none"},
+		{"speaker": "Zeus", "text": "...for my name isn't Zeus...", "action": "none"},
+		{"speaker": "Zeus", "text": "FEEL", "action": "none"},
+		{"speaker": "Zeus", "text": "MY", "action": "none"},
+		{"speaker": "Zeus", "text": "WRATH!", "action": "shake"}
 	]
 }

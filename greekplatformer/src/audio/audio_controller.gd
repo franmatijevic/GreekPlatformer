@@ -57,6 +57,9 @@ func play_breaking_platform():
 func play_cloud():
 	play_sound_stackable($SFX/cloud.stream,1,0)
 
+func play_thunder():
+	play_sound_stackable($SFX/thunder.stream, 1, 0)
+
 func play_death():
 	match rng.randi_range(0, 1):
 		0:
