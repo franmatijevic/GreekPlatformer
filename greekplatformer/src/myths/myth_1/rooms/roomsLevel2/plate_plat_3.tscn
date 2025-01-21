@@ -40,7 +40,7 @@ connectedTo = [NodePath("../LogicalAND")]
 
 [node name="SuperSpring" parent="Objects" index="1" instance=ExtResource("2_13qxm")]
 position = Vector2(416, 448)
-max_force = 2800.0
+max_force = 3000.0
 
 [node name="PressurePlate3" parent="Objects" index="2" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_hc5ie")]
 position = Vector2(1727, 257)

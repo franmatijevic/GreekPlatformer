@@ -65,7 +65,7 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_pxfoj")]
-position = Vector2(-29041, 3137)
+position = Vector2(-28877, 5906)
 
 [node name="PlatePlatform" parent="." index="6" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)
@@ -120,7 +120,7 @@ position = Vector2(-124, -328)
 shape = SubResource("RectangleShape2D_cb41l")
 
 [node name="OlimpIntro" parent="." index="18" instance=ExtResource("12_beblk")]
-position = Vector2(-28171, 3137)
+position = Vector2(-28144, 5880)
 
 [node name="BackgroundMusic" type="Node" parent="." index="19"]
 script = ExtResource("13_mddcf")
@@ -201,16 +201,16 @@ wait = true
 shape = SubResource("RectangleShape2D_fi8l7")
 
 [node name="Soba1" parent="." index="26" instance=ExtResource("21_jfpep")]
-position = Vector2(-26637, 2241)
+position = Vector2(-26736, 4984)
 
 [node name="Soba2" parent="." index="27" instance=ExtResource("22_wv1j8")]
-position = Vector2(-22631, 2688)
+position = Vector2(-22640, 5112)
 
 [node name="Soba3" parent="." index="28" instance=ExtResource("23_7pxbt")]
-position = Vector2(-17263, 1173)
+position = Vector2(-17264, 2808)
 
 [node name="Soba5" parent="." index="29" instance=ExtResource("24_t7nrv")]
-position = Vector2(-12786, 1402)
+position = Vector2(-12784, 1400)
 
 [node name="TorchRoom" parent="." index="31" instance=ExtResource("25_g3f5t")]
 position = Vector2(53264, -12680)
