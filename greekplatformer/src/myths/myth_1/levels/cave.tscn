@@ -41,7 +41,7 @@ current_room = NodePath("CaveIntro")
 background = NodePath("CaveGradient")
 
 [node name="CaveGradient" parent="." index="0" instance=ExtResource("25_sefdb")]
-position = Vector2(440, -192)
+position = Vector2(16288, -192)
 scale = Vector2(1, 30)
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]

@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://eshh82r5pqsr"]
+
+[ext_resource type="Script" path="res://src/dialogue/humans/humanWaving.gd" id="1_7dak4"]
+[ext_resource type="Texture2D" uid="uid://chcsxae7xt3du" path="res://src/environment/NPCs/NPCArt/baseArt/lik-torso.png" id="1_p24ep"]
+[ext_resource type="Texture2D" uid="uid://cqxtq6kfn548i" path="res://src/environment/NPCs/NPCArt/baseArt/lik-glava.png" id="2_bksx4"]
+[ext_resource type="Texture2D" uid="uid://b7gpy018ahxph" path="res://src/environment/NPCs/NPCArt/baseArt/lik-nadlaktica.png" id="3_giunc"]
+[ext_resource type="Texture2D" uid="uid://cl2p2aquvdp1w" path="res://src/environment/NPCs/NPCArt/baseArt/lik-podlaktica.png" id="4_agjff"]
+[ext_resource type="Texture2D" uid="uid://cwc54ijsomugv" path="res://src/environment/NPCs/NPCArt/baseArt/lik-bedro.png" id="5_oe6k5"]
+[ext_resource type="Texture2D" uid="uid://qy7tfqvuhc7d" path="res://src/environment/NPCs/NPCArt/baseArt/lik-list.png" id="6_7lgwh"]
+[ext_resource type="Texture2D" uid="uid://bo5sssiwu62or" path="res://src/environment/NPCs/NPCArt/baseArt/lik-stopalo.png" id="7_13fqs"]
+
+[node name="Human" type="Node2D"]
+script = ExtResource("1_7dak4")
+
+[node name="Lik-torso" type="Sprite2D" parent="."]
+position = Vector2(-7.99994, -56)
+rotation = 0.523599
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_p24ep")
+flip_h = true
+
+[node name="Lik-glava" type="Sprite2D" parent="Lik-torso"]
+position = Vector2(30.6223, 510.184)
+rotation = -0.450295
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_bksx4")
+flip_h = true
+
+[node name="Nadlaktica" type="Sprite2D" parent="Lik-torso"]
+position = Vector2(-154.072, -381.084)
+rotation = -0.226893
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_giunc")
+offset = Vector2(-53.0942, 913.281)
+
+[node name="Lik-podlaktica2" type="Sprite2D" parent="Lik-torso/Nadlaktica"]
+position = Vector2(0, 2000)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("4_agjff")
+offset = Vector2(-313.478, -643.923)
+flip_v = true
+
+[node name="Nadlaktica2" type="Sprite2D" parent="Lik-torso"]
+position = Vector2(-154.072, -381.084)
+rotation = -0.226893
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_giunc")
+offset = Vector2(-53.0942, 913.281)
+
+[node name="Lik-podlaktica2" type="Sprite2D" parent="Lik-torso/Nadlaktica2"]
+position = Vector2(0, 2000)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("4_agjff")
+offset = Vector2(-313.478, -643.923)
+flip_v = true
+
+[node name="Bedro" type="Sprite2D" parent="Lik-torso"]
+position = Vector2(252.23, 449.031)
+rotation = 0.785398
+texture = ExtResource("5_oe6k5")
+offset = Vector2(387.266, 97.4753)
+flip_h = true
+
+[node name="List" type="Sprite2D" parent="Lik-torso/Bedro"]
+position = Vector2(748.642, 200.252)
+rotation = 1.22173
+scale = Vector2(1, 0.9)
+texture = ExtResource("6_7lgwh")
+offset = Vector2(307.583, -406.521)
+flip_v = true
+
+[node name="Stopalo" type="Sprite2D" parent="Lik-torso/Bedro/List"]
+position = Vector2(667.199, -840.741)
+rotation = -2.96706
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_13fqs")
+offset = Vector2(235.008, 994.865)
+flip_h = true
+
+[node name="Bedro2" type="Sprite2D" parent="Lik-torso"]
+position = Vector2(252.23, 449.031)
+rotation = 0.785398
+texture = ExtResource("5_oe6k5")
+offset = Vector2(387.266, 97.4753)
+flip_h = true
+
+[node name="List" type="Sprite2D" parent="Lik-torso/Bedro2"]
+position = Vector2(748.642, 200.252)
+rotation = 1.22173
+scale = Vector2(1, 0.9)
+texture = ExtResource("6_7lgwh")
+offset = Vector2(307.583, -406.521)
+flip_v = true
+
+[node name="Stopalo" type="Sprite2D" parent="Lik-torso/Bedro2/List"]
+position = Vector2(667.199, -840.741)
+rotation = -2.96706
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_13fqs")
+offset = Vector2(235.008, 994.865)
+flip_h = true

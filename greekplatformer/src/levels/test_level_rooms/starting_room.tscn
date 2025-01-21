@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bv6crjirceehq"]
+[gd_scene load_steps=16 format=4 uid="uid://bv6crjirceehq"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_v1w17"]
 [ext_resource type="PackedScene" uid="uid://dy25c23gvdom" path="res://src/environment/cloud_antonio/cloud_platform.tscn" id="2_ns463"]
@@ -10,11 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="8_ovq42"]
 [ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="9_sttrj"]
 [ext_resource type="PackedScene" uid="uid://d1iy44djkvw5j" path="res://src/player/playerDeathBodyParts/head.tscn" id="10_ccrkb"]
-[ext_resource type="PackedScene" uid="uid://dijfdscbpg476" path="res://src/bossFeatures/zeus_hand.tscn" id="11_0k4hc"]
-[ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="12_32y53"]
-[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/thunder.gd" id="13_8pfbo"]
-[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/waiting.gd" id="14_ggxjk"]
-[ext_resource type="Script" path="res://src/bossFeatures/zeusAttacks/swoop.gd" id="15_tm2kd"]
 [ext_resource type="PackedScene" uid="uid://bot5n4nm2bi8c" path="res://src/greekArtefacts/amphora.tscn" id="16_3nqip"]
 [ext_resource type="PackedScene" uid="uid://bql3ot7albj67" path="res://src/greekArtefacts/aspis.tscn" id="17_3sleb"]
 
@@ -45,57 +40,28 @@ shape = SubResource("RectangleShape2D_k0vdt")
 [node name="Respawn" parent="." index="3"]
 position = Vector2(-8656, -48)
 
-[node name="ZeusHand2" parent="Objects" index="0" instance=ExtResource("11_0k4hc")]
-
-[node name="ZeusHand" parent="Objects" index="1" instance=ExtResource("11_0k4hc")]
-shouldBeFlipped = true
-
-[node name="Zeus" parent="Objects" index="2" instance=ExtResource("12_32y53")]
-position = Vector2(-4720, -480)
-
-[node name="Node" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
-script = ExtResource("14_ggxjk")
-time = 10.0
-chillPosition = NodePath("../../Path2D2")
-
-[node name="Node2" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
-script = ExtResource("13_8pfbo")
-hand1 = NodePath("../../ZeusHand2")
-hand2 = NodePath("../../ZeusHand")
-time = 15.0
-
-[node name="Node4" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("chillPosition")]
-script = ExtResource("14_ggxjk")
-time = 4.0
-chillPosition = NodePath("../../Path2D2")
-
-[node name="Node3" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
-script = ExtResource("15_tm2kd")
-path = NodePath("../../Path2D2/PathFollow2D")
-speed = 0.1
-
-[node name="cloud_platform" parent="Objects" index="3" instance=ExtResource("2_ns463")]
+[node name="cloud_platform" parent="Objects" index="0" instance=ExtResource("2_ns463")]
 position = Vector2(232, 126)
 
-[node name="RigidBody2D" parent="Objects" index="4" instance=ExtResource("3_qnncy")]
+[node name="RigidBody2D" parent="Objects" index="1" instance=ExtResource("3_qnncy")]
 position = Vector2(-136, 48)
 picking_up_time = null
 
-[node name="Spike" parent="Objects" index="5" instance=ExtResource("4_aojxv")]
+[node name="Spike" parent="Objects" index="2" instance=ExtResource("4_aojxv")]
 position = Vector2(408, 104)
 distance = 500.0
 
-[node name="Lever" parent="Objects" index="6" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_0n8vm")]
+[node name="Lever" parent="Objects" index="3" node_paths=PackedStringArray("connectedTo") instance=ExtResource("5_0n8vm")]
 position = Vector2(-352, 232)
 connectedTo = [NodePath("../Spike"), NodePath("../Path2D/PathFollow2D/BlockDoor")]
 
-[node name="BreakingPlatform" parent="Objects" index="7" instance=ExtResource("6_j46f3")]
+[node name="BreakingPlatform" parent="Objects" index="4" instance=ExtResource("6_j46f3")]
 position = Vector2(915, -154)
 
-[node name="BreakingPlatform2" parent="Objects" index="8" instance=ExtResource("6_j46f3")]
+[node name="BreakingPlatform2" parent="Objects" index="5" instance=ExtResource("6_j46f3")]
 position = Vector2(337, -306)
 
-[node name="Path2D" type="Path2D" parent="Objects" index="9"]
+[node name="Path2D" type="Path2D" parent="Objects" index="6"]
 position = Vector2(-552, -320)
 curve = SubResource("Curve2D_ttxsu")
 
@@ -105,36 +71,36 @@ loop = false
 
 [node name="BlockDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("7_dlgkw")]
 
-[node name="Spring" parent="Objects" index="10" instance=ExtResource("8_ovq42")]
+[node name="Spring" parent="Objects" index="7" instance=ExtResource("8_ovq42")]
 position = Vector2(-2264, 80.0001)
 rotation = 0.785398
 
-[node name="Spring2" parent="Objects" index="11" instance=ExtResource("8_ovq42")]
+[node name="Spring2" parent="Objects" index="8" instance=ExtResource("8_ovq42")]
 position = Vector2(-1088, -192)
 rotation = -1.5708
 
-[node name="Spring3" parent="Objects" index="12" instance=ExtResource("8_ovq42")]
+[node name="Spring3" parent="Objects" index="9" instance=ExtResource("8_ovq42")]
 position = Vector2(-1224, 192)
 
-[node name="Spring4" parent="Objects" index="13" instance=ExtResource("8_ovq42")]
+[node name="Spring4" parent="Objects" index="10" instance=ExtResource("8_ovq42")]
 position = Vector2(-1472, -448)
 rotation = 1.5708
 
-[node name="Spring5" parent="Objects" index="14" instance=ExtResource("8_ovq42")]
+[node name="Spring5" parent="Objects" index="11" instance=ExtResource("8_ovq42")]
 position = Vector2(-1088, -704)
 rotation = -1.5708
 
-[node name="Spike2" parent="Objects" index="15" instance=ExtResource("4_aojxv")]
+[node name="Spike2" parent="Objects" index="12" instance=ExtResource("4_aojxv")]
 position = Vector2(-1472, -800)
 rotation = 1.5708
 
-[node name="Torch" parent="Objects" index="16" instance=ExtResource("9_sttrj")]
+[node name="Torch" parent="Objects" index="13" instance=ExtResource("9_sttrj")]
 position = Vector2(888, -280)
 
-[node name="Head" parent="Objects" index="17" instance=ExtResource("10_ccrkb")]
+[node name="Head" parent="Objects" index="14" instance=ExtResource("10_ccrkb")]
 position = Vector2(-8304, -360)
 
-[node name="Path2D2" type="Path2D" parent="Objects" index="18"]
+[node name="Path2D2" type="Path2D" parent="Objects" index="15"]
 position = Vector2(-4720, -480)
 curve = SubResource("Curve2D_3vpwc")
 
@@ -144,8 +110,8 @@ progress = 5128.05
 rotates = false
 loop = false
 
-[node name="GreekArtefact" parent="Objects" index="19" instance=ExtResource("16_3nqip")]
+[node name="GreekArtefact" parent="Objects" index="16" instance=ExtResource("16_3nqip")]
 position = Vector2(-8215, 133)
 
-[node name="GreekArtefact2" parent="Objects" index="20" instance=ExtResource("17_3sleb")]
+[node name="GreekArtefact2" parent="Objects" index="17" instance=ExtResource("17_3sleb")]
 position = Vector2(-7392, 129)

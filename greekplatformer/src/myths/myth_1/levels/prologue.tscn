@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=21 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_levd8"]
 [ext_resource type="Texture2D" uid="uid://cbn4vcflc2dsc" path="res://src/environment/environmentArt/background/planinaPozadina.png" id="3_ircm7"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dgyquxv3i73ux" path="res://src/environment/environmentArt/background/parallax.tscn" id="17_2jwx7"]
 [ext_resource type="Texture2D" uid="uid://b81uwkyvybrnm" path="res://src/environment/environmentArt/divokoza.png" id="17_8x475"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="17_rljx6"]
+[ext_resource type="PackedScene" uid="uid://ds2lqrpqmxgl2" path="res://src/backgrounds/test_background.tscn" id="18_kyugg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -27,6 +28,9 @@ size = Vector2(241.625, 188.5)
 [node name="level1" node_paths=PackedStringArray("current_room") instance=ExtResource("1_levd8")]
 ChapterName = "Chapter 1: Prologue"
 current_room = NodePath("Scene_0")
+
+[node name="TestBackground" parent="." index="0" instance=ExtResource("18_kyugg")]
+scale = Vector2(1, 10)
 
 [node name="Control" parent="BlackScreen" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -45,23 +49,20 @@ position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
 
-[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
-player = NodePath("../Player")
-
-[node name="Camera2D" parent="Camera" index="0"]
-zoom = Vector2(0.705, 0.705)
-
-[node name="PlaninaPozadina" type="Sprite2D" parent="." index="4"]
+[node name="PlaninaPozadina" type="Sprite2D" parent="." index="5"]
 z_index = -60
 z_as_relative = false
 position = Vector2(6665, -1836)
 scale = Vector2(5.36, 5.36)
 texture = ExtResource("3_ircm7")
 
-[node name="CanvasLayerPause" parent="." index="5"]
-layer = 2
+[node name="Camera" parent="." index="6" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
 
-[node name="DialogueAreaZeus" parent="." index="6" instance=ExtResource("4_sxvn3")]
+[node name="Camera2D" parent="Camera" index="0"]
+zoom = Vector2(0.705, 0.705)
+
+[node name="DialogueAreaZeus" parent="." index="7" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(858, 753)
 dialogueKey = "lvl_1_1"
@@ -70,7 +71,7 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialogueAreaAtena" parent="." index="7" instance=ExtResource("4_sxvn3")]
+[node name="DialogueAreaAtena" parent="." index="8" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(-6435, 733)
 dialogueKey = "atena_wasd"
@@ -79,7 +80,7 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialogueAreaAtena2" parent="." index="8" instance=ExtResource("4_sxvn3")]
+[node name="DialogueAreaAtena2" parent="." index="9" instance=ExtResource("4_sxvn3")]
 process_mode = 0
 position = Vector2(2745, 158)
 dialogueKey = "atena_skip"
@@ -88,21 +89,21 @@ oneTime = true
 [node name="CollisionShape2D" parent="DialogueAreaAtena2" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
 
-[node name="DialoguePlayer" parent="." index="9" instance=ExtResource("5_ymj42")]
+[node name="DialoguePlayer" parent="." index="10" instance=ExtResource("5_ymj42")]
 z_index = 100
 scale = Vector2(15.815, 15.815)
 script = ExtResource("6_dulq0")
 sceneTextFile = "res://src/dialogue/dialogues/lvl_1.json"
 speechBubbleScene = ExtResource("7_isa2h")
 
-[node name="Scene_0" parent="." index="10" instance=ExtResource("8_yt3am")]
+[node name="Scene_0" parent="." index="11" instance=ExtResource("8_yt3am")]
 light_mask = 1
 position = Vector2(96, 264)
 collision_layer = 0
 
-[node name="Scene_1" parent="." index="11" instance=ExtResource("9_s0i50")]
+[node name="Scene_1" parent="." index="12" instance=ExtResource("9_s0i50")]
 
-[node name="Atena" type="Sprite2D" parent="." index="12"]
+[node name="Atena" type="Sprite2D" parent="." index="13"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(-7616, -267)
@@ -119,7 +120,7 @@ position = Vector2(-5780.76, 675.549)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Atena2" type="Sprite2D" parent="." index="13"]
+[node name="Atena2" type="Sprite2D" parent="." index="14"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(3129, -693)
@@ -136,7 +137,7 @@ position = Vector2(2573, 1042.99)
 rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
-[node name="Zeus" type="Sprite2D" parent="." index="14"]
+[node name="Zeus" type="Sprite2D" parent="." index="15"]
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
@@ -151,63 +152,66 @@ screenShake = true
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
 position = Vector2(2250.47, 779.472)
 
-[node name="DialogueLayer" type="CanvasLayer" parent="." index="15"]
+[node name="DialogueLayer" type="CanvasLayer" parent="." index="16"]
 
-[node name="Player" parent="." index="16" instance=ExtResource("15_173jf")]
+[node name="Player" parent="." index="17" instance=ExtResource("15_173jf")]
 position = Vector2(-6687, 782)
 floor_max_angle = 0.785398
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
 position = Vector2(7643, 161)
 
-[node name="BackgroundMusicStart" type="Node" parent="." index="17"]
+[node name="BackgroundMusicStart" type="Node" parent="." index="18"]
 script = ExtResource("17_rljx6")
 backgroundMusic = true
 
-[node name="Objects" parent="." index="18" instance=ExtResource("17_2jwx7")]
+[node name="Objects" parent="." index="19" instance=ExtResource("17_2jwx7")]
 position = Vector2(1337, 2575)
 
-[node name="MountainClimb" parent="." index="19" instance=ExtResource("16_hu710")]
+[node name="MountainClimb" parent="." index="20" instance=ExtResource("16_hu710")]
 z_index = 0
 position = Vector2(4114, -35)
 
-[node name="Checkpoint" parent="." index="20" instance=ExtResource("16_ki5cx")]
+[node name="Checkpoint" parent="." index="21" instance=ExtResource("16_ki5cx")]
 position = Vector2(6270, -1033)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
 position = Vector2(-4, 97)
 shape = SubResource("RectangleShape2D_pd0o8")
 
-[node name="Checkpoint2" parent="." index="21" instance=ExtResource("16_ki5cx")]
+[node name="Checkpoint2" parent="." index="22" instance=ExtResource("16_ki5cx")]
 position = Vector2(4891, -215)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" index="0"]
 position = Vector2(71.1875, 68)
 shape = SubResource("RectangleShape2D_pd0o8")
 
-[node name="Divokoza" type="Sprite2D" parent="." index="22"]
+[node name="Divokoza" type="Sprite2D" parent="." index="23"]
 modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(7181, -1257)
 scale = Vector2(0.407936, 0.407936)
 texture = ExtResource("17_8x475")
 
-[node name="Divokoza2" type="Sprite2D" parent="." index="23"]
+[node name="Divokoza2" type="Sprite2D" parent="." index="24"]
 modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(3965, -452.25)
 scale = Vector2(0.224603, 0.224603)
 texture = ExtResource("17_8x475")
 
-[node name="Divokoza3" type="Sprite2D" parent="." index="24"]
+[node name="Divokoza3" type="Sprite2D" parent="." index="25"]
 modulate = Color(1, 1, 1, 0.792157)
 position = Vector2(6085, -2677)
 scale = Vector2(0.224603, 0.224603)
 texture = ExtResource("17_8x475")
 
-[node name="Divokoza4" type="Sprite2D" parent="." index="25"]
+[node name="Divokoza4" type="Sprite2D" parent="." index="26"]
 modulate = Color(1, 1, 1, 0.792157)
 position = Vector2(4986.95, -1659.13)
 scale = Vector2(0.167857, 0.167857)
 texture = ExtResource("17_8x475")
+
+[node name="CanvasLayerPause" parent="." index="27"]
+layer = 2
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]
