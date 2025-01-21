@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c38nk3o556hwj"
-path="res://.godot/imported/prometej-redo.png-0d0715eaab9b1ff16aa1c00a5e92eaaa.ctex"
+uid="uid://gapm3sy761pu"
+path="res://.godot/imported/glava.png-1ee911f085927e946ae1fcc1291ec194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/player/playerArt/playerArtNew/prometej-redo.png"
-dest_files=["res://.godot/imported/prometej-redo.png-0d0715eaab9b1ff16aa1c00a5e92eaaa.ctex"]
+source_file="res://src/player/playerArt/playerArtNew/glava.png"
+dest_files=["res://.godot/imported/glava.png-1ee911f085927e946ae1fcc1291ec194.ctex"]
 
 [params]
 

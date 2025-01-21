@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce7iufjblxsf5"
-path="res://.godot/imported/prometej-nogaRedo.png-a3f09c54974a1af11c45a4e768e7542f.ctex"
+uid="uid://cfko8mldy0yyd"
+path="res://.godot/imported/bedro.png-ec5c485a61ba383447b276601437618b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/player/playerArt/playerArtNew/prometej-nogaRedo.png"
-dest_files=["res://.godot/imported/prometej-nogaRedo.png-a3f09c54974a1af11c45a4e768e7542f.ctex"]
+source_file="res://src/player/playerArt/playerArtNew/bedro.png"
+dest_files=["res://.godot/imported/bedro.png-ec5c485a61ba383447b276601437618b.ctex"]
 
 [params]
 
