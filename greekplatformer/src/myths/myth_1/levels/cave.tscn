@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnkfkiq1ig3q5"]
+[gd_scene load_steps=26 format=3 uid="uid://bnkfkiq1ig3q5"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_1wbxc"]
 [ext_resource type="PackedScene" uid="uid://bwie2ji1u1evt" path="res://src/levels/test_level_rooms/lever_tutorial.tscn" id="2_3dbg0"]
@@ -14,13 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/vignette.gdshader" id="13_fu0ms"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="14_ode3w"]
-[ext_resource type="Texture2D" uid="uid://cqx8x5f6nvqpo" path="res://src/environment/NPCs/NPCArt/Atena/athensOutline.png" id="15_1qwe4"]
+[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="15_w6lpo"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="16_wsq05"]
 [ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="17_qw61e"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="18_ye8yl"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="19_825oa"]
 [ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="20_1fk0c"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="21_yuxoi"]
+[ext_resource type="PackedScene" uid="uid://c1gonqb4ub2b1" path="res://src/myths/myth_1/rooms/roomsLevel2/artefact_room_1.tscn" id="22_r3myl"]
+[ext_resource type="PackedScene" uid="uid://bb3fvipvlenbb" path="res://src/myths/myth_1/rooms/roomsLevel2/artefact_room_2.tscn" id="23_0tr7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sl3xa"]
 shader = ExtResource("13_fu0ms")
@@ -53,13 +55,13 @@ position = Vector2(696, 152)
 position = Vector2(3640, 408)
 
 [node name="SimpleCatch" parent="." index="8" instance=ExtResource("6_02sff")]
-position = Vector2(16824, -104)
+position = Vector2(19256, -104)
 
 [node name="CloudRock" parent="." index="9" instance=ExtResource("7_2p0fa")]
 position = Vector2(14776, -104)
 
 [node name="Soba4" parent="." index="10" instance=ExtResource("10_x75b3")]
-position = Vector2(18488, -1000)
+position = Vector2(20920, -1000)
 
 [node name="Train1" parent="." index="11" instance=ExtResource("11_viuj6")]
 position = Vector2(9144, -104)
@@ -68,13 +70,13 @@ position = Vector2(9144, -104)
 position = Vector2(-1608, -104)
 
 [node name="Room2" parent="." index="13" instance=ExtResource("11_rgv2d")]
-position = Vector2(26680, -2664)
+position = Vector2(31800, -2792)
 
 [node name="Player" parent="." index="14" instance=ExtResource("12_rh5en")]
-position = Vector2(-2953, 32)
+position = Vector2(-2951, 47)
 
 [node name="QuickThrow" parent="." index="15" instance=ExtResource("12_7iuwp")]
-position = Vector2(23992, -1128)
+position = Vector2(26424, -1128)
 
 [node name="VignetteEffect" type="CanvasLayer" parent="." index="16"]
 layer = 0
@@ -96,7 +98,7 @@ z_index = 100
 position = Vector2(1270, -3)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_1qwe4")
+texture = ExtResource("15_w6lpo")
 flip_h = true
 flip_v = true
 script = ExtResource("16_wsq05")
@@ -115,7 +117,7 @@ z_index = 100
 position = Vector2(6012, -362)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_1qwe4")
+texture = ExtResource("15_w6lpo")
 flip_h = true
 flip_v = true
 script = ExtResource("16_wsq05")
@@ -170,6 +172,12 @@ oneTime = true
 
 [node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
 shape = SubResource("RectangleShape2D_6h1y5")
+
+[node name="ArtefactRoom1" parent="." index="25" instance=ExtResource("22_r3myl")]
+position = Vector2(28344, -3048)
+
+[node name="ArtefactRoom2" parent="." index="26" instance=ExtResource("23_0tr7v")]
+position = Vector2(16056, -1000)
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]
