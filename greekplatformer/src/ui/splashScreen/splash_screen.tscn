@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdyfncv5pbndl"]
 
-[ext_resource type="Texture2D" uid="uid://cy3hxm0lbihox" path="res://src/ui/splashScreen/godotLogo.png" id="1_a7cbd"]
+[ext_resource type="Texture2D" uid="uid://d3t2tiar7h38y" path="res://src/ui/splashScreen/godotSplash.svg" id="2_e5jtj"]
 
 [node name="SplashScreen" type="Node2D"]
 
@@ -11,8 +11,7 @@ offset_right = 1568.0
 offset_bottom = 976.0
 color = Color(0, 0, 0, 1)
 
-[node name="GodotLogo" type="Sprite2D" parent="."]
-modulate = Color(0.827451, 0.317647, 0, 1)
-texture = ExtResource("1_a7cbd")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GodotSplash" type="Sprite2D" parent="."]
+texture = ExtResource("2_e5jtj")

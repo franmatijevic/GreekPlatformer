@@ -13,6 +13,7 @@ var hitGround:bool=false
 
 func _ready() -> void:
 	set_direction()
+	AudioController.play_sound($Sound, 1,0)
 
 func set_direction():
 	velocity=(target - global_position).normalized() * speed
@@ -32,7 +33,6 @@ func _on_body_entered(body: Node2D) -> void:
 		get_parent().get_parent().get_parent().camShake(0.15)
 	
 	get_node("AnimatedSprite2D").play()
-	AudioController.play_sound($Sound, 1,0)
 	
 	velocity=Vector2.ZERO
 	$CollisionShape2D.set_deferred("disabled", true)

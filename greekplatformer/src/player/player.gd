@@ -30,6 +30,8 @@ const GRAVITY = 980
 
 var cameraOffset:float=0
 
+var stompSound:bool=false
+
 func _ready():
 	for i in get_node("States").get_children():
 		states[i.name.to_lower()] = i
@@ -122,7 +124,7 @@ func flip_player_to_aim():
 		$ProceduralAnimation.flip(true)
 	
 func update_trajectory_with_mouse():
-	if holding_object == null or current_state.name == "InteractState":
+	if holding_object == null or current_state.name!="MoveState":
 		trajectory_line.hide()
 		return
 	
@@ -217,18 +219,20 @@ func set_state(state: String):
 
 func _on_detect_floor_body_entered(body: Node2D) -> void:
 	jumped = false
-	AudioController.playerHitGround()
 	
-	if(body is TileMapLayer):
-		var percentage=min(velocity.length(),1000)/1000
-		
-		$HitGroundParticles.amount=round(25*percentage)+1
-		$HitGroundParticles.initial_velocity_max=350*percentage
-		
-		if(!$HitGroundParticles.emitting):
-			$HitGroundParticles.emitting=true
-		else:
-			$HitGroundParticles.restart()
+	if stompSound:
+		AudioController.playerHitGround()
+		stompSound = false
+		if(body is TileMapLayer):
+			var percentage=min(velocity.length(),1000)/1000
+			
+			$HitGroundParticles.amount=round(25*percentage)+1
+			$HitGroundParticles.initial_velocity_max=350*percentage
+			
+			if(!$HitGroundParticles.emitting):
+				$HitGroundParticles.emitting=true
+			else:
+				$HitGroundParticles.restart()
 
 func _on_detect_floor_body_exited(_body: Node2D) -> void:
 	coyoteBuffer = coyoteBufferTime
@@ -237,3 +241,6 @@ func _on_detect_floor_body_exited(_body: Node2D) -> void:
 func _on_detect_pickup_body_entered(_body: Node2D) -> void:
 	if(pickUpBuffer>0):
 		pick_up()
+
+func _on_above_ground_body_exited(body: Node2D) -> void:
+	stompSound = true

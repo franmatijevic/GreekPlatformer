@@ -91,6 +91,7 @@ color = Color(0, 0, 0, 1)
 [node name="BackgroundMusicStart" type="Node" parent="." index="17"]
 script = ExtResource("14_ode3w")
 backgroundMusic = true
+reverb = true
 
 [node name="Atena" type="Sprite2D" parent="." index="18"]
 modulate = Color(1, 1, 1, 0)

@@ -3,7 +3,7 @@
 		{"speaker": "Atena", "text": "Let me help you.", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
 		{"speaker": "Atena", "text": "You can pick up rocks using the LEFT MOUSE button.", "action": "none"},
 		{"speaker": "Atena", "text": "You can also throw rocks with the LEFT MOUSE button.", "action": "none"},
-		{"speaker": "Atena", "text": "You can calmly drop rocks with S.", "action": "none"},
+		{"speaker": "Atena", "text": "You can calmly drop rocks with RIGHT MOUSE button.", "action": "none"},
 		{"speaker": "Atena", "text": "I bid you farewell!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	]
 }
