@@ -65,7 +65,7 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_pxfoj")]
-position = Vector2(-9677, 355)
+position = Vector2(-29041, 3137)
 
 [node name="PlatePlatform" parent="." index="6" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)
