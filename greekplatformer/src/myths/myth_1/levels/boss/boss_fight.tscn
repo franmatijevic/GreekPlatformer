@@ -4,15 +4,14 @@
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="4_m4tqd"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="5_b822x"]
-[ext_resource type="PackedScene" uid="uid://b1sllw7w6efgc" path="res://src/items/torch.tscn" id="6_aqgdi"]
 [ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="7_syvmk"]
 [ext_resource type="PackedScene" uid="uid://di513g1lk467e" path="res://src/myths/myth_1/rooms/roomLevel4/artillery.tscn" id="8_x8a4o"]
 [ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="9_4smky"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/boss/rain.gdshader" id="10_7qu0g"]
-[ext_resource type="PackedScene" uid="uid://2tuduabs8nyj" path="res://src/myths/myth_1/rooms/roomLevel4/boss_intro.tscn" id="11_opkjn"]
-[ext_resource type="PackedScene" uid="uid://il6uv46adl02" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="12_4gme7"]
-[ext_resource type="PackedScene" uid="uid://dmosolowjyfbo" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="12_cs36e"]
-[ext_resource type="PackedScene" uid="uid://rn3ihqx7v4nl" path="res://src/myths/myth_1/rooms/roomLevel4/last_atena_encounter.tscn" id="13_upo2k"]
+[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="12_4gme7"]
+[ext_resource type="PackedScene" uid="uid://dbyf6rudawpss" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="12_cs36e"]
+[ext_resource type="Shader" path="res://src/myths/myth_1/levels/boss/invert.gdshader" id="13_f2d6u"]
+[ext_resource type="PackedScene" path="res://src/myths/myth_1/rooms/roomLevel4/last_atena_encounter.tscn" id="13_upo2k"]
 [ext_resource type="AudioStream" uid="uid://dw58ijl0xcu0m" path="res://src/audio/SFX/rain.ogg" id="14_t778h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
@@ -29,11 +28,13 @@ shader_parameter/base_rain_speed = 0.75
 shader_parameter/additional_rain_speed = 0.9
 shader_parameter/slant = 0.2
 
-[node name="BossFight" node_paths=PackedStringArray("torch", "current_room") instance=ExtResource("1_vnnb8")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3jri"]
+shader = ExtResource("13_f2d6u")
+
+[node name="BossFight" node_paths=PackedStringArray("current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")
-torch = NodePath("Torch")
 ChapterName = "Chapter 4: Conflict"
-current_room = NodePath("BossIntro")
+current_room = NodePath("UmjerenSpust")
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
@@ -44,46 +45,51 @@ width = 3.0
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(-3408, 5168)
+position = Vector2(-525, 5526)
 
-[node name="Torch" parent="." index="6" instance=ExtResource("6_aqgdi")]
-position = Vector2(-3168, 5128)
-
-[node name="ZeusCombat" parent="." index="7" instance=ExtResource("5_b822x")]
+[node name="ZeusCombat" parent="." index="6" instance=ExtResource("5_b822x")]
 position = Vector2(45760, 12075)
 
-[node name="ZeusSwooping" parent="." index="8" instance=ExtResource("7_syvmk")]
+[node name="ZeusSwooping" parent="." index="7" instance=ExtResource("7_syvmk")]
 position = Vector2(30656, 9752)
 
-[node name="Artillery" parent="." index="9" instance=ExtResource("8_x8a4o")]
+[node name="Artillery" parent="." index="8" instance=ExtResource("8_x8a4o")]
 position = Vector2(36288, 10650.5)
 
-[node name="LaganSpust" parent="." index="10" instance=ExtResource("9_4smky")]
+[node name="LaganSpust" parent="." index="9" instance=ExtResource("9_4smky")]
 position = Vector2(19392, 7064)
 
-[node name="RainEffect" type="CanvasLayer" parent="." index="11"]
+[node name="RainEffect" type="CanvasLayer" parent="." index="10"]
+process_mode = 1
 layer = 0
 
 [node name="Rain" type="ColorRect" parent="RainEffect" index="0"]
+process_mode = 1
 material = SubResource("ShaderMaterial_gwvmd")
 offset_right = 2400.0
 offset_bottom = 1350.0
 color = Color(1, 1, 1, 0)
 
-[node name="BossIntro" parent="." index="12" instance=ExtResource("11_opkjn")]
-position = Vector2(-2624, 5528)
-
-[node name="UmjerenSpust" parent="." index="13" instance=ExtResource("12_cs36e")]
+[node name="UmjerenSpust" parent="." index="11" instance=ExtResource("12_cs36e")]
 position = Vector2(960, 5784)
 
-[node name="josJednaBorba" parent="." index="14" instance=ExtResource("12_4gme7")]
+[node name="josJednaBorba" parent="." index="12" instance=ExtResource("12_4gme7")]
 position = Vector2(14784, 6936)
 
-[node name="LastAtenaEncounter" parent="." index="15" instance=ExtResource("13_upo2k")]
+[node name="LastAtenaEncounter" parent="." index="13" instance=ExtResource("13_upo2k")]
 position = Vector2(52416, 12971)
 
-[node name="Rain" type="AudioStreamPlayer" parent="." index="16"]
+[node name="Rain" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource("14_t778h")
 volume_db = -1.0
 autoplay = true
 bus = &"SFX"
+
+[node name="InvertTelegraph" type="CanvasLayer" parent="." index="16"]
+layer = -1
+visible = false
+
+[node name="Invert" type="ColorRect" parent="InvertTelegraph" index="0"]
+material = SubResource("ShaderMaterial_x3jri")
+offset_right = 2490.0
+offset_bottom = 1395.0

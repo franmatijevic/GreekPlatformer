@@ -2,6 +2,7 @@ extends Node2D
 
 var player
 var camera
+var invert
 
 var t:float=10
 @export var offsetY:float=-55
@@ -9,7 +10,7 @@ var t:float=10
 
 @export var spaceBetweenHands:float=128*4
 
-var timeBetweenShoots:float=5
+var timeBetweenShoots:float=10
 
 @export var activeOnStart:bool=true
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 	
 	player = get_parent().get_parent().get_parent().get_node("Player")
 	camera = get_parent().get_parent().get_parent().get_node("Camera/Camera2D")
+	invert = get_parent().get_parent().get_parent().get_node("InvertTelegraph")
 	
 	if( shouldBeFlipped):
 		scale.x=-1
@@ -51,9 +53,8 @@ func direct(delta):
 	
 	global_position.x = move_toward(global_position.x, target, horizontalVelocity*delta)
 	
-	
 	if t>0:
-		t=t-delta
+		t=t-delta	
 	elif global_position.x == target:
 		shoot_down()
 		t=15
@@ -81,9 +82,20 @@ func agressive(delta:float):
 	
 	global_position.x += horizontalVelocity*delta
 	
+	if t > 1.33:
+		invert.visible = false
+	elif t > 1:
+		invert.visible = true
+	elif t > 0.67:
+		invert.visible = false
+	elif t > 0.33:
+		invert.visible = true
+	else:
+		invert.visible = false
 	
-	if t>0.99:
+	if t>1.99:
 		t=t-delta
+		invert.visible = false
 		hold(false)
 	elif t>0:
 		t=t-delta
@@ -91,6 +103,7 @@ func agressive(delta:float):
 	else:
 		shoot()
 		hold(false)
+		invert.visible = false
 		t=timeBetweenShoots
 	
 	
