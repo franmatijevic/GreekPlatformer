@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://b7hape40kll6y" path="res://src/myths/myth_1/rooms/roomLevel3/simpleBird.tscn" id="11_xuug8"]
 [ext_resource type="PackedScene" uid="uid://xo2tgl6vov72" path="res://src/myths/myth_1/rooms/roomLevel3/olimp_intro.tscn" id="12_beblk"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="13_mddcf"]
-[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="14_ldh58"]
+[ext_resource type="Texture2D" uid="uid://cqx8x5f6nvqpo" path="res://src/environment/NPCs/NPCArt/Atena/athensOutline.png" id="14_3au6m"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="15_p5c6w"]
-[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="16_4rs1x"]
+[ext_resource type="Texture2D" uid="uid://b0320txv1gx8e" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOutline.png" id="16_eum1j"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="17_u1o2k"]
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="18_l22ke"]
 [ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="19_j1g7n"]
@@ -124,7 +124,7 @@ z_index = 100
 position = Vector2(11557, -369)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_ldh58")
+texture = ExtResource("14_3au6m")
 flip_h = true
 flip_v = true
 script = ExtResource("15_p5c6w")
@@ -143,7 +143,7 @@ z_index = 100
 position = Vector2(6012, -362)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_ldh58")
+texture = ExtResource("14_3au6m")
 flip_h = true
 flip_v = true
 script = ExtResource("15_p5c6w")
@@ -161,7 +161,7 @@ visible = false
 position = Vector2(-1277, -1728)
 rotation = 0.615819
 scale = Vector2(1.38879, 1.38879)
-texture = ExtResource("16_4rs1x")
+texture = ExtResource("16_eum1j")
 script = ExtResource("15_p5c6w")
 entryPosition = Vector2(-1277, -1728)
 exitPosition = Vector2(-1277, -1728)

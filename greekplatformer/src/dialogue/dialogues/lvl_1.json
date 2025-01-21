@@ -18,7 +18,8 @@
 	],
 	"atena_wasd": [
 		{"speaker": "Atena", "text": "Prometheus, my dear!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
-		{"speaker": "Atena", "text": "Long time no see.", "action": "none"},
+		{"speaker": "Prometej", "text": "Athena!", "action": "none"},
+		{"speaker": "Prometej", "text": "Long time no see.", "action": "none"},
 		{"speaker": "Atena", "text": "What calls your spirit to action on this lovely day?", "action": "none"},
 		{"speaker": "Prometej", "text": "I want to bring fire to the people!", "action": "none"},
 		{"speaker": "Atena", "text": "And defy Zeus?", "action": "none"},

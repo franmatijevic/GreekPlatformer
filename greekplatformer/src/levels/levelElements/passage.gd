@@ -5,9 +5,11 @@ var player:Character
 
 var animationTime:float=0.8
 var timer:float=animationTime
+@onready var enter = $Enter
 
 func _ready() -> void:
 	set_physics_process(false)
+	enter.visible = false
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("up"):
@@ -31,6 +33,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	player=body
+	enter.visible = true
 
 func _on_body_exited(_body: Node2D) -> void:
 	player=null
+	enter.visible = false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg8n57qvp1hs8"]
 
 [ext_resource type="Script" path="res://src/bossFeatures/zeus.gd" id="1_sx8bc"]
-[ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="2_qsd86"]
+[ext_resource type="Texture2D" uid="uid://b0320txv1gx8e" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOutline.png" id="2_vapwu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_llmtk"]
 radius = 242.124
@@ -16,7 +16,7 @@ collision_mask = 5
 script = ExtResource("1_sx8bc")
 
 [node name="Head" type="Sprite2D" parent="."]
-texture = ExtResource("2_qsd86")
+texture = ExtResource("2_vapwu")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
