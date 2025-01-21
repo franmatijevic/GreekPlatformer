@@ -34,6 +34,12 @@ var game_paused: bool = false:
 		get_tree().paused = game_paused
 		emit_signal("toggle_paused", game_paused)
 
+@export var background:Node2D
+
+func _process(delta: float) -> void:
+	if background:
+		background.global_position.y = $Camera/Camera2D.get_screen_center_position().y
+
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("restart"):

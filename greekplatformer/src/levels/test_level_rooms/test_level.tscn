@@ -1,53 +1,67 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=15 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="2_6fl4e"]
 [ext_resource type="PackedScene" uid="uid://bv6crjirceehq" path="res://src/levels/test_level_rooms/starting_room.tscn" id="2_ceqgj"]
+[ext_resource type="PackedScene" uid="uid://bnxet8sju8nm6" path="res://src/backgrounds/cave_gradient.tscn" id="2_pnr0r"]
 [ext_resource type="PackedScene" uid="uid://517cssknstaj" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_swooping.tscn" id="6_wrwmt"]
 [ext_resource type="PackedScene" uid="uid://277rpjq6rbbp" path="res://src/myths/myth_1/rooms/roomLevel4/lagan_spust.tscn" id="7_h3x1g"]
 [ext_resource type="PackedScene" uid="uid://dmosolowjyfbo" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="8_ub76o"]
 [ext_resource type="PackedScene" uid="uid://il6uv46adl02" path="res://src/myths/myth_1/rooms/roomLevel4/jos_jedna_borba.tscn" id="9_0kfy8"]
 [ext_resource type="PackedScene" uid="uid://c5mnbtg4jx3fy" path="res://src/myths/myth_1/rooms/roomsLevel2/quick_throw.tscn" id="10_tw504"]
+[ext_resource type="PackedScene" uid="uid://ihf0fm4fvepw" path="res://src/myths/myth_1/rooms/roomsLevel2/soba_4.tscn" id="12_xoe63"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="13_pnq13"]
+[ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="13_qex5q"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
 radius = 240.0
 
-[node name="testLevel" node_paths=PackedStringArray("current_room") instance=ExtResource("1_6ssvi")]
+[node name="testLevel" node_paths=PackedStringArray("current_room", "background") instance=ExtResource("1_6ssvi")]
 ChapterName = "Chapter 0: wow gle tekst"
 current_room = NodePath("StartingRoom")
+background = NodePath("CaveGradient")
 
-[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
-player = NodePath("../Player")
+[node name="CaveGradient" parent="." index="0" instance=ExtResource("2_pnr0r")]
+scale = Vector2(1, 20)
 
-[node name="Player" parent="." index="4" instance=ExtResource("2_6fl4e")]
+[node name="Player" parent="." index="5" instance=ExtResource("2_6fl4e")]
 position = Vector2(760, -336)
 floor_max_angle = 0.785398
 
-[node name="StartingRoom" parent="." index="5" instance=ExtResource("2_ceqgj")]
+[node name="StartingRoom" parent="." index="6" instance=ExtResource("2_ceqgj")]
 position = Vector2(-79, 0)
 
-[node name="Checkpoint" parent="." index="7" instance=ExtResource("13_pnq13")]
+[node name="Camera" parent="." index="7" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
+
+[node name="Checkpoint" parent="." index="8" instance=ExtResource("13_pnq13")]
 position = Vector2(-1856, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
 shape = SubResource("CircleShape2D_a57mi")
 
-[node name="ZeusCombat" parent="." index="8" instance=ExtResource("20_nhpum")]
+[node name="ZeusCombat" parent="." index="9" instance=ExtResource("20_nhpum")]
 position = Vector2(9184, -10000)
 
-[node name="ZeusSwooping" parent="." index="9" instance=ExtResource("6_wrwmt")]
+[node name="ZeusSwooping" parent="." index="10" instance=ExtResource("6_wrwmt")]
 position = Vector2(1448, -6128)
 
-[node name="LaganSpust" parent="." index="10" instance=ExtResource("7_h3x1g")]
+[node name="LaganSpust" parent="." index="11" instance=ExtResource("7_h3x1g")]
 position = Vector2(-1712, 7192)
 
-[node name="UmjerenSpust" parent="." index="11" instance=ExtResource("8_ub76o")]
+[node name="UmjerenSpust" parent="." index="12" instance=ExtResource("8_ub76o")]
 position = Vector2(12008, -4656)
 
-[node name="josJednaBorba" parent="." index="12" instance=ExtResource("9_0kfy8")]
+[node name="josJednaBorba" parent="." index="13" instance=ExtResource("9_0kfy8")]
 position = Vector2(10144, 4824)
 
-[node name="QuickThrow" parent="." index="13" instance=ExtResource("10_tw504")]
-position = Vector2(2112, 152)
+[node name="QuickThrow" parent="." index="14" instance=ExtResource("10_tw504")]
+position = Vector2(-12488, 1304)
+
+[node name="Soba4" parent="." index="16" instance=ExtResource("12_xoe63")]
+position = Vector2(1120, -528)
+
+[node name="Node" type="Node" parent="." index="17"]
+script = ExtResource("13_qex5q")
+backgroundMusic = true

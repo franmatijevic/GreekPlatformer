@@ -11,9 +11,11 @@ func _process(delta: float) -> void:
 		interact.visible = false
 		artefact_information.visible = true
 		SignalBus.emit_on_interacted_artefact()
+		AudioServer.set_bus_effect_enabled(2, 0, true)
 	
 	elif (artefact_information.visible == true && Input.is_action_pressed("pause")):
 		artefact_information.visible = false
+		AudioServer.set_bus_effect_enabled(2, 0, false)
 		
 	elif (object_reached):
 		interact.visible = true

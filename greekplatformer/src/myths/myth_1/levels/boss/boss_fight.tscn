@@ -40,7 +40,7 @@ position = Vector2(325, 0)
 points = PackedVector2Array(0, 0, 650, 0)
 width = 3.0
 
-[node name="Camera" parent="." index="3" node_paths=PackedStringArray("player")]
+[node name="Camera" parent="." index="4" node_paths=PackedStringArray("player")]
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
