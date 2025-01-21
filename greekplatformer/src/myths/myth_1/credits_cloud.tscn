@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdujcrxyu462l"]
+
+[ext_resource type="Texture2D" uid="uid://sdmj0c8hff0e" path="res://src/environment/platformArt/oblak1.png" id="1_0omum"]
+[ext_resource type="Script" path="res://src/myths/myth_1/credits_cloud.gd" id="2_iq6gv"]
+
+[node name="CreditsCloud" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.8)
+texture = ExtResource("1_0omum")
+script = ExtResource("2_iq6gv")

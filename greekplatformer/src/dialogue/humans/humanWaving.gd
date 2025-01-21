@@ -23,10 +23,11 @@ var state = 0 #0 - chill, 1-handraising, 2 - completeLower, 3 -mini lower, 4 - m
 
 
 var hipTime=0
-var maxHipBend=PI/18
+var maxHipBend=PI/24
 
 func _ready() -> void:
 	randomize()
+	hipTime=randf_range(0, 2*PI)
 	wave()
 
 

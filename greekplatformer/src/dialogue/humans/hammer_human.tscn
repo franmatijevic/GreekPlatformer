@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://3d7oxf1f0sa6"]
+
+[ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="1_apog1"]
+[ext_resource type="Script" path="res://src/dialogue/humans/hammer_human.gd" id="2_jchbg"]
+[ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="3_8ih5n"]
+[ext_resource type="Texture2D" uid="uid://d31tgsw0ox2ij" path="res://src/environment/NPCs/greekHammer.png" id="3_bd70g"]
+
+[node name="HammerHuman" instance=ExtResource("1_apog1")]
+script = ExtResource("2_jchbg")
+
+[node name="Box" type="Sprite2D" parent="." index="0"]
+position = Vector2(120, 16)
+texture = ExtResource("3_8ih5n")
+
+[node name="Lik-torso" parent="." index="1"]
+rotation = 0.785398
+
+[node name="Nadlaktica" parent="Lik-torso" index="1"]
+rotation = -1.5708
+
+[node name="Lik-podlaktica2" parent="Lik-torso/Nadlaktica" index="0"]
+rotation = 2.87979
+
+[node name="GreekHammer" type="Sprite2D" parent="Lik-torso/Nadlaktica/Lik-podlaktica2" index="0"]
+z_index = -5
+position = Vector2(-431.523, -1104.31)
+rotation = 1.0472
+scale = Vector2(5, 6)
+texture = ExtResource("3_bd70g")
+
+[node name="Nadlaktica2" parent="Lik-torso" index="2"]
+rotation = 0.0872665
+
+[node name="Bedro" parent="Lik-torso" index="3"]
+rotation = -0.261799
+
+[node name="List" parent="Lik-torso/Bedro" index="0"]
+rotation = 2.0944
+
+[node name="Bedro2" parent="Lik-torso" index="4"]
+rotation = 0.846485
+
+[node name="List" parent="Lik-torso/Bedro2" index="0"]
+rotation = 1.3823
+
+[node name="Stopalo" parent="Lik-torso/Bedro2/List" index="0"]
+rotation = -3.28995

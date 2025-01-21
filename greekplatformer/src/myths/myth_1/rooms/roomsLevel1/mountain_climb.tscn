@@ -63,6 +63,7 @@ position = Vector2(1065, 128)
 shape = SubResource("RectangleShape2D_36cbe")
 
 [node name="Passage" parent="Objects" index="4" instance=ExtResource("7_7dyg8")]
+z_as_relative = false
 position = Vector2(4176, -2267)
 path = "res://src/myths/myth_1/levels/cave.tscn"
 

@@ -6,7 +6,7 @@ extends Node2D
 
 @export var nextScene:String
 
-@export var textSpeed = 100
+@export var textSpeed = 140
 
 @export var useFormalLoading:bool=false
 
