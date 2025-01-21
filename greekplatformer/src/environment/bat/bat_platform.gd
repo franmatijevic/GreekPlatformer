@@ -21,3 +21,7 @@ func _physics_process(delta):
 		get_node("BatSprite").scale.x = -abs(get_node("BatSprite").scale.x)
 	else:
 		get_node("BatSprite").scale.x = abs(get_node("BatSprite").scale.x)
+
+
+func _on_area_2d_body_entered(body):
+	AudioController.play_bat()

@@ -20,15 +20,14 @@ scale = Vector2(0.506494, 0.506493)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Interact" type="Label" parent="."]
-visible = false
-offset_left = -70.0
+offset_left = -25.0
 offset_top = -183.0
-offset_right = 73.0
+offset_right = 28.0
 offset_bottom = -129.0
 theme_override_colors/font_color = Color(0.147672, 0.147672, 0.147672, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_f456u")
-text = "Interact"
+text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 

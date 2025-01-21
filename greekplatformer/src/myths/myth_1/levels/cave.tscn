@@ -84,7 +84,7 @@ position = Vector2(-1608, -104)
 position = Vector2(31800, -2792)
 
 [node name="Player" parent="." index="15" instance=ExtResource("12_rh5en")]
-position = Vector2(-2869, 49)
+position = Vector2(-2880, 46)
 
 [node name="QuickThrow" parent="." index="16" instance=ExtResource("12_7iuwp")]
 position = Vector2(26424, -1128)

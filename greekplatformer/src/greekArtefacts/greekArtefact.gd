@@ -7,7 +7,7 @@ extends Node2D
 var object_reached = false
 
 func _process(delta: float) -> void:
-	if (object_reached && Input.is_action_pressed("pickThrow")):
+	if (object_reached && Input.is_action_pressed("interact")):
 		interact.visible = false
 		artefact_information.visible = true
 		SignalBus.emit_on_interacted_artefact()

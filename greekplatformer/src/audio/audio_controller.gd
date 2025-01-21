@@ -75,6 +75,9 @@ func stop_door_opening():
 
 func play_lever():
 	play_sound($SFX/lever,0,0)
+	
+func play_bat():
+	play_sound_stackable($SFX/bat.stream, 1, 0)
 
 func play_seagull():
 	match rng.randi_range(0, 5):

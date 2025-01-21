@@ -199,8 +199,8 @@ scale = Vector2(0.819149, 0.819149)
 texture = ExtResource("14_j6pc7")
 
 [node name="PressurePlate" parent="Objects" index="22" node_paths=PackedStringArray("connectedTo") instance=ExtResource("15_pds3o")]
-position = Vector2(-231, -857)
-scale = Vector2(1.6, 1)
+position = Vector2(-258, -857)
+scale = Vector2(1.32, 1)
 connectedTo = [NodePath("../Path2D4/PathFollow2D/FinalDoor"), NodePath("../Delayer")]
 
 [node name="Skip" parent="." index="5"]
