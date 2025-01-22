@@ -1,80 +1,66 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb7xy3oq8cx2q"]
+[gd_scene load_steps=12 format=3 uid="uid://cb7xy3oq8cx2q"]
 
 [ext_resource type="Script" path="res://src/environment/thunder/lightning_bolt.gd" id="1_o06gd"]
-[ext_resource type="Texture2D" uid="uid://4rnwcg58stk5" path="res://src/environment/environmentArt/firstSceneZeus/munjaSpriteSheet.png" id="1_skgxh"]
+[ext_resource type="Texture2D" uid="uid://cs15h17udtyv2" path="res://src/environment/thunder/munjaSpriteSheet.png" id="2_i0acy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_533e4"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(0, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_20cqc"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(0, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vh2so"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(398, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r62d2"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(216, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ai3r"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(796, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtopk"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(432, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfthc"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(1194, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ey8"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(648, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdo5l"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(1592, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt44j"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(864, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nii8n"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(1990, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw85s"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(1080, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bchf0"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(2388, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_adbqb"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(1296, 0, 216, 170)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dlj4"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(2786, 0, 398, 332)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqxmf"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(3184, 0, 398, 332)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k0mbb"]
-atlas = ExtResource("1_skgxh")
-region = Rect2(3582, 0, 398, 332)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssnqh"]
+atlas = ExtResource("2_i0acy")
+region = Rect2(1512, 0, 216, 170)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2h3eu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_533e4")
+"texture": SubResource("AtlasTexture_20cqc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vh2so")
+"texture": SubResource("AtlasTexture_r62d2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ai3r")
+"texture": SubResource("AtlasTexture_dtopk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lfthc")
+"texture": SubResource("AtlasTexture_t0ey8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cdo5l")
+"texture": SubResource("AtlasTexture_nt44j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nii8n")
+"texture": SubResource("AtlasTexture_bw85s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bchf0")
+"texture": SubResource("AtlasTexture_adbqb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dlj4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eqxmf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k0mbb")
+"texture": SubResource("AtlasTexture_ssnqh")
 }],
 "loop": false,
 "name": &"default",
@@ -86,6 +72,8 @@ script = ExtResource("1_o06gd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2h3eu")
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
