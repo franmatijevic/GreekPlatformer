@@ -24,7 +24,7 @@ position = Vector2(2688, -1020)
 shape = SubResource("RectangleShape2D_elv7n")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(94, 391)
+position = Vector2(136, 448)
 
 [node name="Spring" parent="Objects" index="0" instance=ExtResource("2_syldi")]
 position = Vector2(708, 319)
@@ -79,3 +79,6 @@ z_as_relative = false
 position = Vector2(4961, -1482)
 scale = Vector2(0.121, 0.121)
 texture = ExtResource("7_vry84")
+
+[node name="Skip" parent="." index="6"]
+position = Vector2(5120, -1472)

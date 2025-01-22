@@ -24,7 +24,7 @@ position = Vector2(2240, -419)
 shape = SubResource("RectangleShape2D_32ps1")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(121, 769)
+position = Vector2(256, 832)
 
 [node name="Spike" parent="Objects" index="0" instance=ExtResource("2_3g3ee")]
 position = Vector2(1474, 240)
@@ -72,3 +72,6 @@ position = Vector2(2475, 255)
 
 [node name="GreekArtefact" parent="Objects" index="12" instance=ExtResource("7_o7dbe")]
 position = Vector2(3925, -582)
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(4224, -576)
