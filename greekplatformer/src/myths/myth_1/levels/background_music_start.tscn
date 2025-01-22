@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciq8ikbkefiqi"]
+
+[ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="1_2ldyu"]
+
+[node name="BackgroundMusicStart" type="Node"]
+script = ExtResource("1_2ldyu")
+backgroundMusic = true

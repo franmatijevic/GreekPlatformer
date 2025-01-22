@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://ce5li6vdurv2g" path="res://src/myths/myth_1/rooms/roomsLevel1/scene_1.tscn" id="9_s0i50"]
 [ext_resource type="Texture2D" uid="uid://b0320txv1gx8e" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOutline.png" id="11_b6ttm"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="13_38hvr"]
+[ext_resource type="PackedScene" uid="uid://ciq8ikbkefiqi" path="res://src/myths/myth_1/levels/background_music_start.tscn" id="14_2kauh"]
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="15_173jf"]
 [ext_resource type="PackedScene" uid="uid://ds5ecp1rxynav" path="res://src/myths/myth_1/rooms/roomsLevel1/mountain_climb.tscn" id="16_hu710"]
 [ext_resource type="PackedScene" uid="uid://ctyo2ls2u78nv" path="res://src/levels/levelElements/checkpoint.tscn" id="16_ki5cx"]
 [ext_resource type="PackedScene" uid="uid://dgyquxv3i73ux" path="res://src/environment/environmentArt/background/parallax.tscn" id="17_2jwx7"]
 [ext_resource type="Texture2D" uid="uid://b81uwkyvybrnm" path="res://src/environment/environmentArt/divokoza.png" id="17_8x475"]
-[ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="17_rljx6"]
 [ext_resource type="PackedScene" uid="uid://3d7oxf1f0sa6" path="res://src/dialogue/humans/hammer_human.tscn" id="19_ccwn0"]
 [ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="20_u5qa8"]
 [ext_resource type="PackedScene" uid="uid://djbcp6hl82hsp" path="res://src/greekArtefacts/tripod.tscn" id="21_ca8lr"]
@@ -183,9 +183,7 @@ floor_max_angle = 0.785398
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
 position = Vector2(6064, 161)
 
-[node name="BackgroundMusicStart" type="Node" parent="." index="20"]
-script = ExtResource("17_rljx6")
-backgroundMusic = true
+[node name="BackgroundMusicStart" parent="." index="20" instance=ExtResource("14_2kauh")]
 
 [node name="Objects" parent="." index="21" instance=ExtResource("17_2jwx7")]
 position = Vector2(1337, 2575)

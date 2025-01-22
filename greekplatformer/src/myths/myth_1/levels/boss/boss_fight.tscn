@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=26 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://src/ui/dialoguePlayer.gd" id="19_s35bt"]
 [ext_resource type="PackedScene" uid="uid://dxhnuntu3ubud" path="res://src/dialogue/speechBubbleFlip.tscn" id="20_jc5a1"]
 [ext_resource type="PackedScene" uid="uid://dryw6f1ldmo8v" path="res://src/dialogue/dialogueArea.tscn" id="21_lr6qu"]
+[ext_resource type="PackedScene" uid="uid://ciq8ikbkefiqi" path="res://src/myths/myth_1/levels/background_music_start.tscn" id="22_4ob2y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
 shader = ExtResource("10_7qu0g")
@@ -95,7 +96,7 @@ position = Vector2(52416, 12971)
 
 [node name="Rain" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource("14_t778h")
-volume_db = -1.0
+volume_db = -12.0
 autoplay = true
 bus = &"SFX"
 
@@ -208,5 +209,9 @@ oneTime = true
 
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_sp82o")
+
+[node name="BackgroundMusicStart" parent="." index="26" instance=ExtResource("22_4ob2y")]
+backgroundMusic = false
+bossMusic = true
 
 [editable path="DialogueAreaZeus"]
