@@ -45,7 +45,7 @@ size = Vector2(224, 303)
 [node name="BossFight" node_paths=PackedStringArray("current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")
 ChapterName = "Chapter 4: Conflict"
-current_room = NodePath("LastAtenaEncounter")
+current_room = NodePath("UmjerenSpust")
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
@@ -56,7 +56,7 @@ width = 3.0
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(52889, 12974)
+position = Vector2(-608, 5560)
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="12"]
 position = Vector2(-53977, -12377)

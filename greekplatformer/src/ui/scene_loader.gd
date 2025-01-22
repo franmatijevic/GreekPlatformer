@@ -33,6 +33,9 @@ func load_scene(path):
 	scene_to_load_path = path
 
 func load_more_level(path):
+	if loading:
+		return
+	
 	#AudioServer.set_bus_effect_enabled(2, 0, true)
 	var current_scene = get_tree().current_scene
 	#AudioController.stop_menu_music()
