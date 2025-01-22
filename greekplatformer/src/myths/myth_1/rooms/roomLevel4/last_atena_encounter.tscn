@@ -1,15 +1,202 @@
-[gd_scene load_steps=3 format=4 uid="uid://rn3ihqx7v4nl"]
+[gd_scene load_steps=8 format=4 uid="uid://rn3ihqx7v4nl"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_a1df0"]
+[ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="2_p0jwe"]
+[ext_resource type="PackedScene" uid="uid://d1qu2sx35ruiu" path="res://src/dialogue/humans/human_male_1.tscn" id="3_as2ku"]
+[ext_resource type="PackedScene" uid="uid://2rpe182skfkb" path="res://src/dialogue/humans/human_male_2.tscn" id="4_8wqs5"]
+[ext_resource type="PackedScene" uid="uid://cl1wjqfig13js" path="res://src/dialogue/humans/human_female_1.tscn" id="5_k4435"]
+[ext_resource type="PackedScene" uid="uid://dpg8ee4egmtsj" path="res://src/dialogue/humans/human_female_2.tscn" id="6_c7ki4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_435ub"]
-size = Vector2(4096, 2542)
+size = Vector2(5248, 2542)
 
 [node name="LastAtenaEncounter" instance=ExtResource("1_a1df0")]
 
 [node name="TileMapLayer" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD5/wEACQAAAAIAAAD6/wEACQAAAAIAAAD7/wEACQAAAAIAAAD8/wEACQAAAAIAAAD9/wEACQAAAAIAAAD+/wEACQAAAAIAAAD//wEACQAAAAIAAAAAAAEACQAAAAIAAAABAAEACQAAAAIAAAACAAEACQAAAAIAAAADAAEACQAAAAIAAAAEAAEACQAAAAIAAAAFAAEACQAAAAIAAAAGAAEACQAAAAIAAAAHAAEACQAAAAIAAAD4/wEACQAAAAIAAAD3/wEACQAAAAIAAAD2/wEACQAAAAIAAAAIAAEACQAAAAIAAAAJAAEACQAAAAIAAAAKAAEACQAAAAIAAAALAAEACQAAAAIAAAAMAAEACQAAAAIAAAANAAEACQAAAAIAAAAOAAEACQAAAAIAAAAPAAEACQAAAAIAAAD2/wIACQABAAEAAAD3/wIACQABAAEAAAD4/wIACQABAAEAAAD5/wIACQABAAEAAAD6/wIACQABAAEAAAD7/wIACQABAAEAAAD8/wIACQABAAEAAAD9/wIACQABAAEAAAD+/wIACQABAAEAAAD//wIACQABAAEAAAAAAAIACQABAAEAAAABAAIACQABAAEAAAACAAIACQABAAEAAAADAAIACQABAAEAAAAEAAIACQABAAEAAAAFAAIACQABAAEAAAAGAAIACQABAAEAAAAHAAIACQABAAEAAAAIAAIACQABAAEAAAAJAAIACQABAAEAAAAKAAIACQABAAEAAAALAAIACQABAAEAAAAMAAIACQABAAEAAAANAAIACQABAAEAAAAOAAIACQABAAEAAAAPAAIACQABAAEAAAAQAAIACQABAAEAAAARAAIACQABAAEAAAASAAIACQABAAEAAAATAAIACQABAAEAAAAUAAIACQABAAEAAAAUAAMACQABAAEAAAATAAMACQABAAEAAAASAAMACQABAAEAAAARAAMACQABAAEAAAAQAAMACQABAAEAAAAPAAMACQABAAEAAAAOAAMACQABAAEAAAANAAMACQABAAEAAAAMAAMACQABAAEAAAALAAMACQABAAEAAAAKAAMACQABAAEAAAAJAAMACQABAAEAAAAIAAMACQABAAEAAAAHAAMACQABAAEAAAAGAAMACQABAAEAAAAFAAMACQABAAEAAAAEAAMACQABAAEAAAADAAMACQABAAEAAAACAAMACQABAAEAAAABAAMACQABAAEAAAAAAAMACQABAAEAAAD//wMACQABAAEAAAD+/wMACQABAAEAAAD9/wMACQABAAEAAAD8/wMACQABAAEAAAD7/wMACQABAAEAAAD6/wMACQABAAEAAAD5/wMACQABAAEAAAD4/wMACQABAAEAAAD3/wMACQABAAEAAAD2/wMACQABAAEAAAAVAAIACQABAAEAAAAVAAMACQABAAEAAAAQAAEACQAAAAIAAAARAAEACQAAAAIAAAASAAEACQAAAAIAAAATAAEACQAAAAIAAAAUAAEACQAAAAIAAAAVAAEACQAAAAIAAAD7/wAACQAAAAEAAAD7////CQAAAAAAAAABAAAACQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD5/wEACQAAAAIAAAD6/wEACQAAAAIAAAD7/wEACQAAAAIAAAD8/wEACQAAAAIAAAD9/wEACQAAAAIAAAD+/wEACQAAAAIAAAD//wEACQAAAAIAAAAAAAEACQAAAAIAAAABAAEACQAAAAIAAAACAAEACQAAAAIAAAADAAEACQAAAAIAAAAEAAEACQAAAAIAAAAFAAEACQAAAAIAAAAGAAEACQAAAAIAAAAHAAEACQAAAAIAAAD4/wEACQAAAAIAAAD3/wEACQAAAAIAAAD2/wEACQAAAAIAAAAIAAEACQAAAAIAAAAJAAEACQAAAAIAAAAKAAEACQAAAAIAAAALAAEACQAAAAIAAAAMAAEACQAAAAIAAAANAAEACQAAAAIAAAAOAAEACQAAAAIAAAAPAAEACQAAAAIAAAD2/wIACQABAAEAAAD3/wIACQABAAEAAAD4/wIACQABAAEAAAD5/wIACQABAAEAAAD6/wIACQABAAEAAAD7/wIACQABAAEAAAD8/wIACQABAAEAAAD9/wIACQABAAEAAAD+/wIACQABAAEAAAD//wIACQABAAEAAAAAAAIACQABAAEAAAABAAIACQABAAEAAAACAAIACQABAAEAAAADAAIACQABAAEAAAAEAAIACQABAAEAAAAFAAIACQABAAEAAAAGAAIACQABAAEAAAAHAAIACQABAAEAAAAIAAIACQABAAEAAAAJAAIACQABAAEAAAAKAAIACQABAAEAAAALAAIACQABAAEAAAAMAAIACQABAAEAAAANAAIACQABAAEAAAAOAAIACQABAAEAAAAPAAIACQABAAEAAAAQAAIACQABAAEAAAARAAIACQABAAEAAAASAAIACQABAAEAAAATAAIACQABAAEAAAAUAAIACQABAAEAAAAUAAMACQABAAEAAAATAAMACQABAAEAAAASAAMACQABAAEAAAARAAMACQABAAEAAAAQAAMACQABAAEAAAAPAAMACQABAAEAAAAOAAMACQABAAEAAAANAAMACQABAAEAAAAMAAMACQABAAEAAAALAAMACQABAAEAAAAKAAMACQABAAEAAAAJAAMACQABAAEAAAAIAAMACQABAAEAAAAHAAMACQABAAEAAAAGAAMACQABAAEAAAAFAAMACQABAAEAAAAEAAMACQABAAEAAAADAAMACQABAAEAAAACAAMACQABAAEAAAABAAMACQABAAEAAAAAAAMACQABAAEAAAD//wMACQABAAEAAAD+/wMACQABAAEAAAD9/wMACQABAAEAAAD8/wMACQABAAEAAAD7/wMACQABAAEAAAD6/wMACQABAAEAAAD5/wMACQABAAEAAAD4/wMACQABAAEAAAD3/wMACQABAAEAAAD2/wMACQABAAEAAAAVAAIACQABAAEAAAAVAAMACQABAAEAAAAQAAEACQAAAAIAAAARAAEACQAAAAIAAAASAAEACQAAAAIAAAATAAEACQAAAAIAAAAUAAEACQAAAAIAAAAVAAEACQAAAAIAAAD7/wAACQAAAAEAAAD7////CQAAAAAAAAABAAAACQAAAAEAAAAWAAEACQAAAAIAAAAXAAEACQAAAAIAAAAYAAEACQAAAAIAAAAZAAEACQAAAAIAAAAaAAEACQAAAAIAAAAbAAEACQAAAAIAAAAcAAEACQAAAAIAAAAdAAEACQAAAAIAAAAeAAEACQAAAAIAAAAWAAIACQABAAEAAAAWAAMACQABAAEAAAAXAAIACQABAAEAAAAYAAIACQABAAEAAAAZAAIACQABAAEAAAAaAAIACQABAAEAAAAbAAIACQABAAEAAAAcAAIACQABAAEAAAAdAAIACQABAAEAAAAeAAIACQABAAEAAAAdAAMACQABAAEAAAAcAAMACQABAAEAAAAbAAMACQABAAEAAAAYAAMACQABAAEAAAAXAAMACQABAAEAAAAZAAMACQABAAEAAAAaAAMACQABAAEAAAAeAAMACQABAAEAAAAYAAAACQAAAAEAAAAYAP//CQABAAAAAAAYAP7/CQAAAAAAAAA=")
 
 [node name="RoomSize" parent="." index="1"]
-position = Vector2(768, -792)
+position = Vector2(1344, -792)
 shape = SubResource("RectangleShape2D_435ub")
+
+[node name="HumanMale1" parent="Objects" index="0" instance=ExtResource("3_as2ku")]
+position = Vector2(3096, -328)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="Human" parent="Objects" index="1" instance=ExtResource("2_p0jwe")]
+position = Vector2(2472, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="Human2" parent="Objects" index="2" instance=ExtResource("2_p0jwe")]
+position = Vector2(3584, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="Human3" parent="Objects" index="3" instance=ExtResource("2_p0jwe")]
+position = Vector2(2984, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="Human4" parent="Objects" index="4" instance=ExtResource("2_p0jwe")]
+position = Vector2(3832, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="Human5" parent="Objects" index="5" instance=ExtResource("2_p0jwe")]
+position = Vector2(3304, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale2" parent="Objects" index="6" instance=ExtResource("3_as2ku")]
+position = Vector2(2576, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale3" parent="Objects" index="7" instance=ExtResource("3_as2ku")]
+position = Vector2(2872, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale4" parent="Objects" index="8" instance=ExtResource("3_as2ku")]
+position = Vector2(3952, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale5" parent="Objects" index="9" instance=ExtResource("3_as2ku")]
+position = Vector2(3424, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale6" parent="Objects" index="10" instance=ExtResource("4_8wqs5")]
+position = Vector2(2368, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale7" parent="Objects" index="11" instance=ExtResource("4_8wqs5")]
+position = Vector2(2752, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale8" parent="Objects" index="12" instance=ExtResource("4_8wqs5")]
+position = Vector2(3672, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale9" parent="Objects" index="13" instance=ExtResource("4_8wqs5")]
+position = Vector2(4096, 8)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanMale10" parent="Objects" index="14" instance=ExtResource("4_8wqs5")]
+position = Vector2(3224, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale1" parent="Objects" index="15" instance=ExtResource("5_k4435")]
+position = Vector2(3752, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale2" parent="Objects" index="16" instance=ExtResource("5_k4435")]
+position = Vector2(2304, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale3" parent="Objects" index="17" instance=ExtResource("5_k4435")]
+position = Vector2(2944, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale4" parent="Objects" index="18" instance=ExtResource("5_k4435")]
+position = Vector2(3904, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale5" parent="Objects" index="19" instance=ExtResource("5_k4435")]
+position = Vector2(3352, 48)
+scale = Vector2(-1, 1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale6" parent="Objects" index="20" instance=ExtResource("6_c7ki4")]
+position = Vector2(3040, 48)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale7" parent="Objects" index="21" instance=ExtResource("6_c7ki4")]
+position = Vector2(3496, 48)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale8" parent="Objects" index="22" instance=ExtResource("6_c7ki4")]
+position = Vector2(3792, 48)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[node name="HumanFemale9" parent="Objects" index="23" instance=ExtResource("6_c7ki4")]
+position = Vector2(4008, 16)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+
+[node name="HumanFemale10" parent="Objects" index="24" instance=ExtResource("6_c7ki4")]
+position = Vector2(2672, 48)
+rotation = 3.14159
+scale = Vector2(1, -1)
+highest = -3.142
+lowered = -2.74
+infiniteWave = true
+
+[editable path="Objects/Human"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://2rpe182skfkb"]
+
+[ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="1_knuo3"]
+[ext_resource type="Texture2D" uid="uid://cb2dmosocvlqv" path="res://src/environment/NPCs/NPCArt/baseArt/npcGlava4.png" id="2_vtqo7"]
+
+[node name="HumanMale2" instance=ExtResource("1_knuo3")]
+
+[node name="NpcGlava4" type="Sprite2D" parent="Lik-torso" index="0"]
+z_index = -1
+position = Vector2(-403.399, -898.704)
+rotation = -0.959931
+scale = Vector2(3, 3)
+texture = ExtResource("2_vtqo7")
+flip_h = true
+
+[node name="Lik-glava" parent="Lik-torso" index="1"]
+visible = false

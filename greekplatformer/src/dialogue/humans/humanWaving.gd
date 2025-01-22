@@ -15,9 +15,11 @@ var handRaising=0.4
 var wavingDuration=0.3
 
 ##kutovi
-var rest = -0.2268928028
-var highest = -1.8151424221
-var lowered = -1.4835298642
+@export var rest = -0.2268928028
+@export var highest = -1.8151424221
+@export var lowered = -1.4835298642
+
+@export var infiniteWave:bool=false
 
 var state = 0 #0 - chill, 1-handraising, 2 - completeLower, 3 -mini lower, 4 - mini raise
 
@@ -32,6 +34,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if infiniteWave:
+		nOfSwings = 15
+	
 	t=t+delta
 	if t>0:
 		wave()
@@ -49,6 +54,7 @@ func wave():
 		tw.tween_property(arm, "rotation", lowered, wavingDuration/2)
 		tw.tween_property(arm, "rotation", highest, wavingDuration/2)
 	tw.tween_property(arm, "rotation", rest, handRaising)
+	
 	
 	t = -randf_range(5, 7)
 	nOfSwings = randi_range(0,3)
