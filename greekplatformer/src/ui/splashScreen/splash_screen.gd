@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	var t = create_tween()
 	t.set_parallel(true)
 	#t.tween_property($GodotSplash, "modulate:a", 1, 1)
