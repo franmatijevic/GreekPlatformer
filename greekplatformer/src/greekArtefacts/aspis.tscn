@@ -18,8 +18,10 @@ position = Vector2(0.5, 60)
 shape = SubResource("RectangleShape2D_heubt")
 
 [node name="Interact" parent="." index="2"]
+offset_left = -67.0
 offset_top = -233.0
-offset_bottom = -179.0
+offset_right = 59.0
+offset_bottom = -186.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("3_ahphs")

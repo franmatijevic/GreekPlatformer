@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5sssiwu62or" path="res://src/environment/NPCs/NPCArt/baseArt/lik-stopalo.png" id="7_13fqs"]
 
 [node name="Human" type="Node2D"]
+process_mode = 1
 z_index = -90
 z_as_relative = false
 script = ExtResource("1_7dak4")

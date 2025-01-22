@@ -19,7 +19,9 @@ position = Vector2(8.5, 49)
 shape = SubResource("RectangleShape2D_qevuf")
 
 [node name="Interact" parent="." index="2"]
+offset_left = -62.0
 offset_top = -242.0
+offset_right = 60.0
 offset_bottom = -188.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]

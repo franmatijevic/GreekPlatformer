@@ -19,10 +19,10 @@ position = Vector2(60.5, 105)
 shape = SubResource("RectangleShape2D_g3dtu")
 
 [node name="Interact" parent="." index="2"]
-offset_left = -23.0
+offset_left = -31.0
 offset_top = -178.0
-offset_right = 120.0
-offset_bottom = -124.0
+offset_right = 75.0
+offset_bottom = -125.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("2_muc56")

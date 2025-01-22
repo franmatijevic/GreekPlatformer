@@ -19,5 +19,9 @@ texture = ExtResource("2_1r4lh")
 position = Vector2(-5.5, 33.5)
 shape = SubResource("RectangleShape2D_wodvq")
 
+[node name="Interact" parent="." index="2"]
+offset_left = -66.0
+offset_right = 56.0
+
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
 texture = ExtResource("3_3cntp")
