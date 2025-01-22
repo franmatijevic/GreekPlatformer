@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="9_wnv7d"]
 [ext_resource type="Texture2D" uid="uid://637ll5o48bkt" path="res://src/environment/background_items/background_items_art/Box2.png" id="10_d3cya"]
 [ext_resource type="Texture2D" uid="uid://b8ikjh3dbwa4r" path="res://src/environment/background_items/background_items_art/greekVase.png" id="11_1dw5k"]
-[ext_resource type="Texture2D" uid="uid://c7gjsqkrypma1" path="res://src/environment/background_items/background_items_art/Box.png" id="12_q25xs"]
 [ext_resource type="Texture2D" uid="uid://b3ec1gusuqogo" path="res://src/environment/environmentArt/floor/PatternFloorCave.png" id="12_w3rt4"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="13_kgnqk"]
+[ext_resource type="PackedScene" uid="uid://d1nx6b7ipb5cs" path="res://src/greekArtefacts/figurine.tscn" id="14_6u6qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_806s4"]
 size = Vector2(4480, 3667)
@@ -250,12 +250,8 @@ texture = ExtResource("12_w3rt4")
 position = Vector2(296, 896)
 connectedTo = [NodePath("../Path2D6/PathFollow2D/BlockDoor"), NodePath("../Path2D5/PathFollow2D/BlockDoor")]
 
+[node name="Figurine" parent="Objects" index="28" instance=ExtResource("14_6u6qu")]
+position = Vector2(3681, 697)
+
 [node name="Skip" parent="." index="5"]
 position = Vector2(4352, 64)
-
-[node name="Box" type="Sprite2D" parent="." index="6"]
-modulate = Color(1, 1, 1, 0.498039)
-z_index = -100
-z_as_relative = false
-position = Vector2(3712, 720)
-texture = ExtResource("12_q25xs")

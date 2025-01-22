@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://by1btwtslvdcq"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu.gd" id="1_eabs3"]
-[ext_resource type="Texture2D" uid="uid://biocakxmyk8r7" path="res://src/ui/mainMenuArt/Background.png" id="2_ao73r"]
+[ext_resource type="Texture2D" uid="uid://f6t2mmdoqbja" path="res://src/ui/mainMenuArt/MainMenu3.png" id="2_kr0io"]
 [ext_resource type="Texture2D" uid="uid://cifve0xbmfu3t" path="res://src/ui/mainMenuArt/Play button.png" id="3_rke07"]
 [ext_resource type="Texture2D" uid="uid://ccmoy00cud26p" path="res://src/ui/mainMenuArt/Settings button.png" id="4_8yer6"]
 [ext_resource type="Texture2D" uid="uid://cxk5lneqsbtgs" path="res://src/ui/mainMenuArt/Play button pressed.png" id="4_b3wlv"]
@@ -33,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ao73r")
+texture = ExtResource("2_kr0io")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

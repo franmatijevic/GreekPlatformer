@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1nx6b7ipb5cs"]
+
+[ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_ldydd"]
+[ext_resource type="Texture2D" uid="uid://c38wprl8nmxq4" path="res://src/greekArtefacts/artefacts_art/lilGuy.png" id="2_yye62"]
+[ext_resource type="Texture2D" uid="uid://fknocp4oxopb" path="res://src/greekArtefacts/all_artefacts/figurine_prompt.png" id="3_hq3ul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60k4g"]
+size = Vector2(193, 20)
+
+[node name="Figurine" instance=ExtResource("1_ldydd")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(22, 32.3928)
+rotation = 0.0964059
+scale = Vector2(0.303404, 0.303403)
+texture = ExtResource("2_yye62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(29.5, 70)
+shape = SubResource("RectangleShape2D_60k4g")
+
+[node name="Interact" parent="." index="2"]
+offset_top = -173.0
+offset_bottom = -119.0
+
+[node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
+texture = ExtResource("3_hq3ul")
