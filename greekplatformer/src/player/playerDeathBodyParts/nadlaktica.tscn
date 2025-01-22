@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dagl3fyg7hkn0"]
+[gd_scene load_steps=5 format=3 uid="uid://dagl3fyg7hkn0"]
 
 [ext_resource type="Texture2D" uid="uid://dp3nwvljvd8o3" path="res://src/player/playerArt/nadlaktica.png" id="1_icdxa"]
+[ext_resource type="Texture2D" uid="uid://lacbpcgiqrtf" path="res://src/player/playerArt/playerArtNew/nadlaktica.png" id="2_8l72k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tggll"]
 bounce = 0.5
@@ -16,8 +17,14 @@ collision_mask = 34
 physics_material_override = SubResource("PhysicsMaterial_tggll")
 
 [node name="Nadlaktica" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_icdxa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yhyqp")
+
+[node name="Nadlaktica2" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_8l72k")
