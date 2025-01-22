@@ -42,6 +42,7 @@ position = Vector2(308.5, -24)
 shape = SubResource("RectangleShape2D_qn28n")
 
 [node name="GreekVase" type="Sprite2D" parent="." index="5"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(-877, 73)
@@ -49,6 +50,7 @@ scale = Vector2(0.095, 0.095)
 texture = ExtResource("4_dhl4y")
 
 [node name="Box" type="Sprite2D" parent="." index="6"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(-768.178, 100.25)

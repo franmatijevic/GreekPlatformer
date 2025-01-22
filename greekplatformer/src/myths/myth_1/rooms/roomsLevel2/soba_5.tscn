@@ -109,6 +109,7 @@ position = Vector2(3846, -530)
 position = Vector2(4025, -604)
 
 [node name="PressurePlate" parent="Objects" index="11" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_wx8i1")]
+z_index = -1
 position = Vector2(4575, -891)
 connectedTo = [NodePath("../Path2D4/PathFollow2D/BlockDoor")]
 
