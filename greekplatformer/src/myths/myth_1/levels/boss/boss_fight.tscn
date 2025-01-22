@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cks6l7juxu7ko"]
+[gd_scene load_steps=17 format=3 uid="uid://cks6l7juxu7ko"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_vnnb8"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/boss/boss_level.gd" id="2_nqc5n"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dbyf6rudawpss" path="res://src/myths/myth_1/rooms/roomLevel4/umjeren_spust.tscn" id="12_cs36e"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/boss/invert.gdshader" id="13_f2d6u"]
 [ext_resource type="PackedScene" uid="uid://rn3ihqx7v4nl" path="res://src/myths/myth_1/rooms/roomLevel4/last_atena_encounter.tscn" id="13_upo2k"]
+[ext_resource type="PackedScene" uid="uid://bnxet8sju8nm6" path="res://src/backgrounds/cave_gradient.tscn" id="14_ix124"]
 [ext_resource type="AudioStream" uid="uid://dw58ijl0xcu0m" path="res://src/audio/SFX/rain.ogg" id="14_t778h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gwvmd"]
@@ -93,3 +94,7 @@ visible = false
 material = SubResource("ShaderMaterial_x3jri")
 offset_right = 2490.0
 offset_bottom = 1395.0
+
+[node name="CaveGradient" parent="." index="17" instance=ExtResource("14_ix124")]
+scale = Vector2(1, 30)
+transform = Transform2D(-3.61999e-06, 1, -30, -0.0001086, 0, 0)
