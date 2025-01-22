@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6f3wgkwtyu5o"]
+
+[ext_resource type="Script" path="res://src/environment/cloud_fran/simpler_cloud_machine.gd" id="1_u3lii"]
+
+[node name="SimplerCloudMachine" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_u3lii")

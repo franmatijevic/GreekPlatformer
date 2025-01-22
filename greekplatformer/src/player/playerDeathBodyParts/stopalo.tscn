@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx2y07i73buh8"]
+[gd_scene load_steps=5 format=3 uid="uid://dx2y07i73buh8"]
 
 [ext_resource type="Texture2D" uid="uid://yh23wmh71n7l" path="res://src/player/playerArt/stopalo.png" id="1_7lvwj"]
+[ext_resource type="Texture2D" uid="uid://ds6osp2lfa270" path="res://src/player/playerArt/playerArtNew/stopalo.png" id="2_7o33w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p78w5"]
 bounce = 0.8
@@ -16,6 +17,7 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_p78w5")
 
 [node name="Stopalo" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.035, 0.035)
 texture = ExtResource("1_7lvwj")
 
@@ -23,3 +25,8 @@ texture = ExtResource("1_7lvwj")
 position = Vector2(3, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2e21c")
+
+[node name="Stopalo2" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("2_7o33w")

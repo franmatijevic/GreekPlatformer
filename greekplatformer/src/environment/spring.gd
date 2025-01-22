@@ -10,7 +10,7 @@ var impact_velocity_y
 var total_force:Vector2=Vector2.DOWN
 var kept_force:Vector2=Vector2.DOWN
 
-@onready var animatedSprite = $AnimatedSprite2D
+@onready var animatedSprite = $AnimatedSprite2D2
 
 func _ready() -> void:
 	animatedSprite.play("default")

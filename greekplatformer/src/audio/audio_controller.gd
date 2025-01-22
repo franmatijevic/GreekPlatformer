@@ -179,3 +179,8 @@ func stop_boss_music():
 
 func playerHitGround():
 	play_sound($SFX/PlayerLand, 1, 0)
+
+func stop_all_music():
+	AudioController.stop_menu_music()
+	AudioController.stop_game_music()
+	AudioController.stop_boss_music()

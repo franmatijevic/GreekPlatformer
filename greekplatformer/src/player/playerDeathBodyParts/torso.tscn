@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6waxhn4n6dqj"]
+[gd_scene load_steps=5 format=3 uid="uid://c6waxhn4n6dqj"]
 
 [ext_resource type="Texture2D" uid="uid://cha7gjkdpj08q" path="res://src/player/playerArt/torso.png" id="1_u8roy"]
+[ext_resource type="Texture2D" uid="uid://byj5ym0t5vbgv" path="res://src/player/playerArt/playerArtNew/torso.png" id="2_07wt2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qgl07"]
 bounce = 0.5
@@ -17,9 +18,15 @@ collision_mask = 34
 physics_material_override = SubResource("PhysicsMaterial_qgl07")
 
 [node name="Torso" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_u8roy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_mvw5e")
+
+[node name="Torso2" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_07wt2")

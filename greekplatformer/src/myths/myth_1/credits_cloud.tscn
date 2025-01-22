@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://src/myths/myth_1/credits_cloud.gd" id="2_iq6gv"]
 
 [node name="CreditsCloud" type="Sprite2D"]
+process_mode = 1
 modulate = Color(1, 1, 1, 0.8)
 texture = ExtResource("1_0omum")
 script = ExtResource("2_iq6gv")

@@ -1,21 +1,39 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdyfncv5pbndl"]
 
 [ext_resource type="Script" path="res://src/ui/splashScreen/splash_screen.gd" id="1_twmyo"]
-[ext_resource type="Texture2D" uid="uid://d3t2tiar7h38y" path="res://src/ui/splashScreen/godotSplash.svg" id="2_e5jtj"]
+[ext_resource type="Texture2D" uid="uid://341172hxjttw" path="res://src/ui/splashScreen/finalniGodotLogo.svg" id="2_1nr4l"]
 
 [node name="SplashScreen" type="Node2D"]
 script = ExtResource("1_twmyo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+z_as_relative = false
 offset_left = -1208.0
 offset_top = -856.0
 offset_right = 1568.0
 offset_bottom = 976.0
 color = Color(0, 0, 0, 1)
 
+[node name="BeRemoved" type="ColorRect" parent="."]
+z_index = 1000
+z_as_relative = false
+offset_left = -1219.0
+offset_top = -865.0
+offset_right = 1569.0
+offset_bottom = 995.0
+color = Color(0, 0, 0, 1)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="GodotSplash" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_e5jtj")
+z_index = 50
+z_as_relative = false
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_1nr4l")
+
+[node name="Line2D" type="Line2D" parent="GodotSplash"]
+z_as_relative = false
+position = Vector2(-304, 3)
+points = PackedVector2Array(104, 0, 0, 0)
+width = 30.0
