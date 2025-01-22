@@ -10,6 +10,7 @@ size = Vector2(156, 45)
 [node name="GreekArtefact" instance=ExtResource("1_12kdi")]
 
 [node name="Sprite2D" parent="." index="0"]
+z_index = 0
 position = Vector2(-1, -1)
 scale = Vector2(0.118031, 0.122813)
 texture = ExtResource("2_40w06")

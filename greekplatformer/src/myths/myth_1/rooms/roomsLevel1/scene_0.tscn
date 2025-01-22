@@ -60,7 +60,7 @@ build_mode = 1
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="Respawn" type="Marker2D" parent="."]
-position = Vector2(-10164, -64)
+position = Vector2(-6575, 388)
 
 [node name="Objects" parent="." instance=ExtResource("3_ssqdm")]
 visible = false

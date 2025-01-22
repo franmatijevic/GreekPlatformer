@@ -141,7 +141,7 @@ speed = 0.15
 
 [node name="Spring" parent="Objects" index="26" instance=ExtResource("8_dgw05")]
 position = Vector2(1788, -82)
-max_force = 2000.0
+max_force = 1300.0
 extra_force_multiplier = 0.3
 
 [node name="Path2D4" type="Path2D" parent="Objects" index="27"]

@@ -61,6 +61,9 @@
 		{"speaker": "npc_man", "text": "Don't you tell me how to do my job!", "action": "none"},
 		{"speaker": "npc_man", "text": "My father was a carpenter, his father too, and his father before him!", "action": "none"},
 		{"speaker": "npc_man", "text": "And they've all done this the same way for generations!", "action": "none"},
+		{"speaker": "npc_man", "text": "Just take a look at the beautiful tripod behind me that I made.", "action": "none"},
+		{"speaker": "npc_man", "text": "That I totally didn't find somewhere on the road...", "action": "none"},
+		{"speaker": "npc_man", "text": "Hmmm who knows how many other items I can find around Greece that I can take home...", "action": "none"},
 		{"speaker": "Prometej", "text": "Whatever you say...", "action": "none"},
 		{"speaker": "Prometej", "text": "Good luck.", "action": "none"}
 	]

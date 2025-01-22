@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dy1pvoqi4xt8x"]
+[gd_scene load_steps=24 format=3 uid="uid://dy1pvoqi4xt8x"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_levd8"]
 [ext_resource type="Texture2D" uid="uid://cbn4vcflc2dsc" path="res://src/environment/environmentArt/background/planinaPozadina.png" id="3_ircm7"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bnxet8sju8nm6" path="res://src/backgrounds/cave_gradient.tscn" id="18_aul6j"]
 [ext_resource type="PackedScene" uid="uid://3d7oxf1f0sa6" path="res://src/dialogue/humans/hammer_human.tscn" id="19_ccwn0"]
 [ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="20_u5qa8"]
+[ext_resource type="PackedScene" uid="uid://djbcp6hl82hsp" path="res://src/greekArtefacts/tripod.tscn" id="21_ca8lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hqll"]
 size = Vector2(224, 303)
@@ -66,6 +67,7 @@ process_mode = 0
 position = Vector2(858, 753)
 dialogueKey = "lvl_1_1"
 oneTime = true
+playerFacingDirection = false
 
 [node name="CollisionShape2D" parent="DialogueAreaZeus" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
@@ -75,6 +77,7 @@ process_mode = 0
 position = Vector2(-2510, 710)
 dialogueKey = "atena_wasd"
 oneTime = true
+playerFacingDirection = false
 
 [node name="CollisionShape2D" parent="DialogueAreaAtena" index="0"]
 shape = SubResource("RectangleShape2D_8hqll")
@@ -172,7 +175,7 @@ position = Vector2(2250.47, 779.472)
 [node name="DialogueLayer" type="CanvasLayer" parent="." index="17"]
 
 [node name="Player" parent="." index="18" instance=ExtResource("15_173jf")]
-position = Vector2(-6689, 755)
+position = Vector2(-6493, 755)
 floor_max_angle = 0.785398
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="8"]
@@ -193,7 +196,7 @@ position = Vector2(4114, -35)
 position = Vector2(6270, -1033)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" index="0"]
-position = Vector2(-4, 97)
+position = Vector2(59, 41)
 shape = SubResource("RectangleShape2D_pd0o8")
 
 [node name="Checkpoint2" parent="." index="23" instance=ExtResource("16_ki5cx")]
@@ -269,6 +272,10 @@ currentKey = "npc_woman"
 position = Vector2(1310, 868)
 rotation = 3.14159
 scale = Vector2(1, -1)
+
+[node name="GreekArtefact" parent="." index="34" instance=ExtResource("21_ca8lr")]
+z_index = 10
+position = Vector2(-3302, 824)
 
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaAtena"]
