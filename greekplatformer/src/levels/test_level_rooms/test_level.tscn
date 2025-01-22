@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4hchhks4ohdk"]
+[gd_scene load_steps=20 format=3 uid="uid://c4hchhks4ohdk"]
 
 [ext_resource type="PackedScene" uid="uid://dj8amtyq3pmuk" path="res://src/levels/generic_level.tscn" id="1_6ssvi"]
 [ext_resource type="PackedScene" uid="uid://ds2lqrpqmxgl2" path="res://src/backgrounds/test_background.tscn" id="2_4b7gp"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="13_qex5q"]
 [ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="15_ooghc"]
 [ext_resource type="PackedScene" uid="uid://3d7oxf1f0sa6" path="res://src/dialogue/humans/hammer_human.tscn" id="16_uctx8"]
+[ext_resource type="PackedScene" uid="uid://msbx403o64vi" path="res://src/myths/myth_1/rooms/roomsLevel2/trickthrow.tscn" id="18_c1qii"]
 [ext_resource type="PackedScene" uid="uid://b8xa1v70gwas" path="res://src/myths/myth_1/rooms/roomLevel4/zeus_combat.tscn" id="20_nhpum"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a57mi"]
@@ -41,7 +42,7 @@ scale = Vector2(1, 20)
 transform = Transform2D(-3.61999e-06, 1, -20, -7.23998e-05, 0, 0)
 
 [node name="Player" parent="." index="8" instance=ExtResource("2_6fl4e")]
-position = Vector2(760, -336)
+position = Vector2(-408, -96)
 floor_max_angle = 0.785398
 
 [node name="StartingRoom" parent="." index="9" instance=ExtResource("2_ceqgj")]
@@ -75,7 +76,7 @@ position = Vector2(10144, 4824)
 position = Vector2(-12488, 1304)
 
 [node name="Soba4" parent="." index="19" instance=ExtResource("12_xoe63")]
-position = Vector2(1120, -528)
+position = Vector2(-8040, -5488)
 
 [node name="Node" type="Node" parent="." index="20"]
 script = ExtResource("13_qex5q")
@@ -90,3 +91,6 @@ position = Vector2(-7240, 184)
 
 [node name="HammerHuman" parent="." index="23" instance=ExtResource("16_uctx8")]
 position = Vector2(-7856, 192)
+
+[node name="Room" parent="." index="24" instance=ExtResource("18_c1qii")]
+position = Vector2(1872, -672)

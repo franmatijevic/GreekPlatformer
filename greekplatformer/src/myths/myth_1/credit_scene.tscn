@@ -140,7 +140,7 @@ Music:
 Antonio Šulenta
 Tomo Šulenta
 
-Voice Actors:
+Voice actors:
 Prometheus - Antonio Šulenta
 Athena - Antonio Šulenta
 Zeus - Antonio Šulenta
@@ -468,6 +468,25 @@ script = ExtResource("16_tqs80")
 stream = ExtResource("19_grma2")
 volume_db = -4.0
 bus = &"SFX"
+
+[node name="Blood" type="CPUParticles2D" parent="Path2D"]
+z_as_relative = false
+position = Vector2(3647, -715)
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+speed_scale = 1.4
+explosiveness = 1.0
+randomness = 0.13
+lifetime_randomness = 0.05
+direction = Vector2(0, -1)
+initial_velocity_max = 349.99
+angle_min = -360.0
+angle_max = 171.8
+scale_amount_min = 2.0
+scale_amount_max = 8.0
+color = Color(0.180392, 0.207843, 0.27451, 1)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(921, -895)

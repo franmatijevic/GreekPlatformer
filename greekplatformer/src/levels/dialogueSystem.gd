@@ -7,6 +7,8 @@ extends Area2D
 var areaActive = false
 var canClickNext = true
 
+@export var playerFacingDirection:bool=true
+
 func _ready():
 	SignalBus.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
 	SignalBus.connect("npc_exit", Callable(self, "_on_npc_exit"))
@@ -19,13 +21,14 @@ func _input(event):
 	elif areaActive and event.is_action_pressed("ui_accept") and !canClickNext:
 		SignalBus.emit_signal("display_full_text")
 
-func _on_area_entered(_area):
+func _on_area_entered(area):
 	if wait:
 		await get_tree().create_timer(2.0).timeout
 	areaActive = true
 	canClickNext = false
 	SignalBus.emit_signal("display_dialogue", dialogueKey)
 	AudioServer.set_bus_effect_enabled(2, 0, true)
+	area.get_parent().flip_player(playerFacingDirection)
 
 func _on_area_exited(_area):
 	areaActive = false

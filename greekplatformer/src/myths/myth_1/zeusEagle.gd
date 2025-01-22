@@ -11,6 +11,7 @@ func _ready() -> void:
 	tw.tween_callback(start)
 
 func start():
+	AudioController.stop_all_music()
 	set_process(true)
 
 func _process(delta: float) -> void:
@@ -35,6 +36,7 @@ func kljucAgain():
 
 func click():
 	AudioController.play_sound($Click, 1,0)
+	get_parent().get_parent().get_node("Blood").emitting=true
 
 func flying(delta):
 	

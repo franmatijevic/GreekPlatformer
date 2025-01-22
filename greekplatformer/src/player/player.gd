@@ -32,6 +32,11 @@ var cameraOffset:float=0
 
 var stompSound:bool=false
 
+
+var mouse_start
+var startingDistance=500
+var defaultAngle=Vector2(500, -250)
+
 func _ready():
 	for i in get_node("States").get_children():
 		states[i.name.to_lower()] = i
@@ -111,7 +116,10 @@ func flip_player(direction:bool):
 
 func flip_player_to_aim():
 	var mouse_pos = get_global_mouse_position()
-	facing_direction = mouse_pos.x > global_position.x
+	#facing_direction = mouse_pos.x > global_position.x
+	var camera = get_parent().get_node("Camera/Camera2D")
+	facing_direction = mouse_pos.x > camera.get_screen_center_position().x#mouse_start.x + startingDistance
+	
 	icon.flip_h = !facing_direction
 	
 	if facing_direction:
@@ -129,13 +137,32 @@ func update_trajectory_with_mouse():
 		return
 	
 	trajectory_line.show()
+	var camera = get_parent().get_node("Camera/Camera2D")
 	var mouse_pos = get_global_mouse_position()
-	var direction = (mouse_pos - global_position).normalized()
+	#var direction = (mouse_pos - global_position).normalized()
+	#var direction = (mouse_pos - mouse_start + Vector2(startingDistance,500)).normalized()
+	var direction = (mouse_pos - camera.get_screen_center_position()).normalized()
+	
 	trajectory_line.update_trajectory(direction, throw_force.length(), GRAVITY, get_physics_process_delta_time(), 50)
 
 func pick_up():
 	if holding_object != null:
 		return
+	
+	if facing_direction:
+		defaultAngle.x = 500
+	else:
+		defaultAngle.x = -500
+	
+	#var camera = get_parent().get_node("Camera/Camera2D")
+	var display:Vector2=DisplayServer.screen_get_size()
+	#display.x*=-1
+	#Input.warp_mouse(camera.get_screen_center_position() + display)
+	#camera.get_screen_center_position().y - DisplayServer.screen_get_size().y/2
+	#Input.warp_mouse(camera.get_screen_center_position() + display)
+	Input.warp_mouse(display/2 + defaultAngle)
+	#mouse_start = get_global_mouse_position()
+	
 	
 	
 	var bodies = get_node("DetectPickup").get_overlapping_bodies()
@@ -161,7 +188,11 @@ func throw(throwing_force: Vector2):
 	
 	get_node("ProceduralAnimation").set_arms("Throw")
 	
-	var force: Vector2 = (get_global_mouse_position() - global_position).normalized() * throwing_force.length()
+	#var force: Vector2 = (get_global_mouse_position() - global_position).normalized() * throwing_force.length()
+	
+	var camera = get_parent().get_node("Camera/Camera2D")
+	var force:Vector2 =  (get_global_mouse_position() - camera.get_screen_center_position()).normalized() * throwing_force.length()
+	
 	get_node("ProceduralAnimation").set_arms("Throw")
 	holding_object.be_thrown(force)
 	holding_object = null
