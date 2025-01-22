@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://djhrg1dr3rm7p" path="res://src/player/prometheus/prometheus.tscn" id="12_rh5en"]
 [ext_resource type="Shader" path="res://src/myths/myth_1/levels/vignette.gdshader" id="13_fu0ms"]
 [ext_resource type="Script" path="res://src/myths/myth_1/levels/background_music_start.gd" id="14_ode3w"]
-[ext_resource type="Texture2D" uid="uid://dyri18efnpqhv" path="res://src/environment/NPCs/NPCArt/Atena/athens.png" id="15_w6lpo"]
+[ext_resource type="Texture2D" uid="uid://cqx8x5f6nvqpo" path="res://src/environment/NPCs/NPCArt/Atena/athensOutline.png" id="16_fvhg3"]
 [ext_resource type="Script" path="res://src/environment/NPCs/NPC.gd" id="16_wsq05"]
 [ext_resource type="Texture2D" uid="uid://b1dpp00kfs5i2" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOblakMono.png" id="17_qw61e"]
 [ext_resource type="PackedScene" uid="uid://cgk8wq1kwrnb0" path="res://src/ui/dialogue_player.tscn" id="18_ye8yl"]
@@ -110,7 +110,7 @@ z_index = 100
 position = Vector2(1270, -3)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_w6lpo")
+texture = ExtResource("16_fvhg3")
 flip_h = true
 flip_v = true
 script = ExtResource("16_wsq05")
@@ -129,7 +129,7 @@ z_index = 100
 position = Vector2(6012, -362)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_w6lpo")
+texture = ExtResource("16_fvhg3")
 flip_h = true
 flip_v = true
 script = ExtResource("16_wsq05")
