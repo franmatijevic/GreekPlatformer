@@ -71,6 +71,7 @@ position = Vector2(370, -252)
 shape = SubResource("RectangleShape2D_vsabg")
 
 [node name="Box2" type="Sprite2D" parent="." index="5"]
+modulate = Color(1, 1, 1, 0.498039)
 z_index = -100
 z_as_relative = false
 position = Vector2(3606, 575)
