@@ -158,12 +158,15 @@ bus = &"SFX"
 
 [node name="bat" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("28_sf7lc")
+bus = &"SFX"
 
 [node name="zeus_grunt_1" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("29_vun4d")
+bus = &"SFX"
 
 [node name="zeus_grunt_2" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("30_up0gy")
+bus = &"SFX"
 
 [node name="Music" type="Node" parent="."]
 process_mode = 3

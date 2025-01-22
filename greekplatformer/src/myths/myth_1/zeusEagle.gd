@@ -1,28 +1,20 @@
 extends Sprite2D
 
-var state=0
-
 var canKljuc:bool=false
 
 func _ready() -> void:
 	set_process(false)
+	
 	var tw = create_tween()
+	tw.set_parallel(false)
 	tw.tween_interval(3)
 	tw.tween_callback(start)
-
 func start():
 	AudioController.stop_all_music()
 	set_process(true)
 
 func _process(delta: float) -> void:
-	match state:
-		0:
-			flying(delta)
-		1:
-			kljuc(delta)
-
-func kljuc(delta):
-	pass
+	flying(delta)
 
 func kljucAgain():
 	canKljuc=false
@@ -43,7 +35,6 @@ func flying(delta):
 	get_parent().progress_ratio+=delta*0.4
 	
 	if get_parent().progress_ratio==1:
-		state = 1
 		get_parent().rotation=0
 		kljucAgain()
 		set_process(false)
