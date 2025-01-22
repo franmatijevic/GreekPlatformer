@@ -20,6 +20,7 @@ scale = Vector2(0.506494, 0.506493)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Interact" type="Label" parent="."]
+visible = false
 offset_left = -34.0
 offset_top = -183.0
 offset_right = 88.0
