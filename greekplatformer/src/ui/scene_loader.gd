@@ -14,6 +14,7 @@ var room_name
 func load_scene(path):
 	AudioServer.set_bus_effect_enabled(2, 0, true)
 	AudioController.stop_menu_music()
+	AudioController.stop_walk()
 	
 	var current_scene = get_tree().current_scene
 	

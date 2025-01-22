@@ -11,6 +11,7 @@ extends Node2D
 @export var useFormalLoading:bool=false
 
 func _ready() -> void:
+	AudioController.stop_walk()
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	for i in get_children():
@@ -27,6 +28,8 @@ func _ready() -> void:
 	t.tween_callback(end_credits)
 
 func _physics_process(delta: float) -> void:
+	
+	AudioController.stop_walk()
 	
 	get_node("Text").global_position.y+=delta*textSpeed
 
