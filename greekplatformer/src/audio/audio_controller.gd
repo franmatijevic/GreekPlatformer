@@ -119,6 +119,13 @@ func play_jump():
 		3:
 			play_sound($SFX/jump4, 1.0,0)
 
+func play_zeus_grunt():
+	match rng.randi_range(0, 1):
+		0:
+			play_sound($SFX/zeus_grunt_1,1.0,0)
+		1:
+			play_sound($SFX/zeus_grunt_2,1.0,0)
+
 func play_dialogue(activeSpeaker: String):
 	match activeSpeaker:
 		"Prometej":

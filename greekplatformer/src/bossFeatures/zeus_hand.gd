@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 	
 	match state:
 		0: #hidden
+			invert.visible = false
 			targetPosition.y = move_toward(targetPosition.y, -300, 100*delta)
 		1: #agressive
 			agressive(delta)
@@ -116,6 +117,7 @@ func shoot_down():
 
 func shoot():
 	AudioController.play_thunder()
+	invert.visible = false
 	var thunder = Thunderbolt.new_thunderbolt(player.global_position)
 	thunder.global_position=global_position
 	get_parent().add_child(thunder)

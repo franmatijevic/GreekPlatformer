@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://vvhpajxrnt36"]
+[gd_scene load_steps=20 format=4 uid="uid://vvhpajxrnt36"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_7cwoi"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_tmijd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bahucl7180h7i" path="res://src/environment/spring.tscn" id="12_dx3h2"]
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="13_c0x1q"]
 [ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="14_api1m"]
+[ext_resource type="Texture2D" uid="uid://dfy8ffeulpnqf" path="res://src/environment/environmentArt/arrow.png" id="15_t0chb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7c7"]
 size = Vector2(4992, 2160)
@@ -60,7 +61,7 @@ hand1 = NodePath("../../ZeusHand")
 hand2 = NodePath("../../ZeusHand2")
 hand1Interval = 5.0
 hand2Interval = 6.0
-time = 20.0
+time = 10.0
 
 [node name="moreThunder" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
 script = ExtResource("4_1urhs")
@@ -291,3 +292,21 @@ shape = SubResource("RectangleShape2D_5bimf")
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(2912, 64)
+
+[node name="Arrow" type="Sprite2D" parent="." index="6"]
+position = Vector2(-1419, -300)
+rotation = -0.732117
+scale = Vector2(0.166279, 0.166279)
+texture = ExtResource("15_t0chb")
+
+[node name="Arrow2" type="Sprite2D" parent="." index="7"]
+position = Vector2(346, -727)
+rotation = 0.900087
+scale = Vector2(0.166279, 0.166279)
+texture = ExtResource("15_t0chb")
+
+[node name="Arrow3" type="Sprite2D" parent="." index="8"]
+position = Vector2(927, -340)
+rotation = -0.303166
+scale = Vector2(0.166279, 0.166279)
+texture = ExtResource("15_t0chb")

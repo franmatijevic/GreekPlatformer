@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://di513g1lk467e"]
+[gd_scene load_steps=20 format=4 uid="uid://di513g1lk467e"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_yi1jt"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_146kt"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="10_lkt7f"]
 [ext_resource type="PackedScene" uid="uid://cf6jq16e0lfcx" path="res://src/environment/cloud_irma/cloud_type_2.tscn" id="11_sptxp"]
 [ext_resource type="PackedScene" uid="uid://c6k1k7e6uk1ay" path="res://src/bossFeatures/zeus_death_pit.tscn" id="12_cyuvh"]
+[ext_resource type="PackedScene" uid="uid://ce650v5ediuon" path="res://src/environment/normalPlatforms/normalPlatform.tscn" id="12_fid1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j471v"]
 size = Vector2(9728, 4338.67)
@@ -55,7 +56,6 @@ position = Vector2(2104, -2520)
 
 [node name="Wait" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_4ces7")
-time = 0.1
 chillPosition = NodePath("../../Chilling")
 
 [node name="Artillery" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
@@ -63,14 +63,7 @@ script = ExtResource("4_22s7t")
 hand1 = NodePath("../../ZeusHand")
 hand2 = NodePath("../../ZeusHand2")
 hand2Interval = 3.0
-time = 15.0
-
-[node name="Artillery2" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
-script = ExtResource("4_22s7t")
-hand1 = NodePath("../../ZeusHand")
-hand2 = NodePath("../../ZeusHand2")
-hand1Interval = 3.0
-time = 15.0
+time = 12.0
 
 [node name="Chilling" type="Node2D" parent="Objects" index="1"]
 position = Vector2(2104, -2520)
@@ -102,7 +95,8 @@ position = Vector2(-32, -232)
 position = Vector2(32, -232)
 
 [node name="PressurePlate" parent="Objects" index="5" node_paths=PackedStringArray("connectedTo") instance=ExtResource("8_hereh")]
-position = Vector2(3832, 1024)
+position = Vector2(3839, 1023.69)
+scale = Vector2(2.40002, 1)
 connectedTo = [NodePath("../Path2D/PathFollow2D/BlockDoor")]
 
 [node name="CameraOffset" parent="Objects" index="6" instance=ExtResource("10_lkt7f")]
@@ -150,3 +144,7 @@ shape = SubResource("RectangleShape2D_i7p33")
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(8256, 1712.43)
+
+[node name="NormalPlatform" parent="." index="6" instance=ExtResource("12_fid1g")]
+z_index = -1
+position = Vector2(4992, 1161.44)

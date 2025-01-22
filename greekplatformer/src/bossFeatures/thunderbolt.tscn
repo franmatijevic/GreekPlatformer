@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://m00q5t6bv6vt" path="res://src/audio/SFX/thunder.wav" id="3_0annh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6obce"]
-size = Vector2(32, 232)
+size = Vector2(32, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rull2"]
 atlas = ExtResource("2_a3mkv")
@@ -92,7 +92,7 @@ collision_mask = 3
 script = ExtResource("1_gl6bh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 76)
+position = Vector2(0, 112)
 shape = SubResource("RectangleShape2D_6obce")
 
 [node name="Line2D" type="Line2D" parent="."]

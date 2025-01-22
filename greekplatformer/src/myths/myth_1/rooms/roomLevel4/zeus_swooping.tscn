@@ -49,34 +49,34 @@ position = Vector2(-1472, 320)
 
 [node name="Zeus" parent="Objects" index="0" node_paths=PackedStringArray("connectedTo") instance=ExtResource("2_5d7a1")]
 position = Vector2(-80, -2552)
-health = 2
 flip = true
 connectedTo = [NodePath("../Path2D2/PathFollow2D/BlockDoor")]
 
 [node name="Waiting" type="Node" parent="Objects/Zeus" index="4" node_paths=PackedStringArray("chillPosition")]
 script = ExtResource("3_vkwoi")
+time = 5.0
 chillPosition = NodePath("../../ChillPosition")
 
-[node name="Thunder" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("hand1", "hand2")]
+[node name="Swoop" type="Node" parent="Objects/Zeus" index="5" node_paths=PackedStringArray("path")]
+script = ExtResource("5_h6tqx")
+path = NodePath("../../Path2D/PathFollow2D")
+speed = 0.08
+
+[node name="Thunder" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
 script = ExtResource("4_5tvob")
 hand1 = NodePath("../../ZeusHand")
 hand2 = NodePath("../../ZeusHand2")
 hand1Interval = 4.0
 hand2Interval = 6.0
-time = 20.0
+time = 10.0
 
-[node name="Intense" type="Node" parent="Objects/Zeus" index="6" node_paths=PackedStringArray("hand1", "hand2")]
+[node name="Intense" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("hand1", "hand2")]
 script = ExtResource("4_5tvob")
 hand1 = NodePath("../../ZeusHand")
 hand2 = NodePath("../../ZeusHand2")
 hand1Interval = 2.1
 hand2Interval = 3.0
-time = 10.0
-
-[node name="Swoop" type="Node" parent="Objects/Zeus" index="7" node_paths=PackedStringArray("path")]
-script = ExtResource("5_h6tqx")
-path = NodePath("../../Path2D/PathFollow2D")
-speed = 0.1
+time = 7.0
 
 [node name="ChillPosition" type="Node2D" parent="Objects" index="1"]
 position = Vector2(-928, -2504)

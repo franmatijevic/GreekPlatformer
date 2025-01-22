@@ -61,6 +61,7 @@ func take_damage():
 		return
 	
 	health=health-1
+	AudioController.play_zeus_grunt()
 	if health==0:
 		do_action(true)
 		currentAttack=-1

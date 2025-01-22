@@ -72,8 +72,5 @@ func _on_perform_action(action: String, params: Dictionary, key: String):
 		elif action == "exit":
 			_on_npc_exit()
 		elif action == "load":
-			var control = get_parent().get_node("BlackScreen/Control")
-			create_tween().tween_property(control, "modulate:a", 1, 2.0)
 			AudioController.stop_dialogue("Atena2")
-			await get_tree().create_timer(4).timeout
-			SceneLoader.load_scene("res://src/myths/myth_1/credit_scene.tscn")
+			SceneLoader.load_more_level("res://src/myths/myth_1/credit_scene.tscn")
