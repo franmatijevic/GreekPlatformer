@@ -183,3 +183,4 @@ bus = &"Music"
 [node name="BossMusic" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("33_ple8y")
 volume_db = 10.0
+bus = &"Music"

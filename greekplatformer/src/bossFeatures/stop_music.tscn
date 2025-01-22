@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://difjaweycliqi"]
+
+[ext_resource type="Script" path="res://src/bossFeatures/stop_music.gd" id="1_aeru5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1n1r"]
+size = Vector2(178, 536)
+
+[node name="StopMusic" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_aeru5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, -116)
+shape = SubResource("RectangleShape2D_m1n1r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

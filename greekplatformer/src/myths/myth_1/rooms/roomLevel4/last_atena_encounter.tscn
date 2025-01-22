@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://rn3ihqx7v4nl"]
+[gd_scene load_steps=10 format=4 uid="uid://rn3ihqx7v4nl"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_a1df0"]
 [ext_resource type="PackedScene" uid="uid://eshh82r5pqsr" path="res://src/dialogue/humans/human.tscn" id="2_p0jwe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://2rpe182skfkb" path="res://src/dialogue/humans/human_male_2.tscn" id="4_8wqs5"]
 [ext_resource type="PackedScene" uid="uid://cl1wjqfig13js" path="res://src/dialogue/humans/human_female_1.tscn" id="5_k4435"]
 [ext_resource type="PackedScene" uid="uid://dpg8ee4egmtsj" path="res://src/dialogue/humans/human_female_2.tscn" id="6_c7ki4"]
+[ext_resource type="PackedScene" uid="uid://difjaweycliqi" path="res://src/bossFeatures/stop_music.tscn" id="8_lqy7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_435ub"]
 size = Vector2(5248, 2542)
@@ -206,5 +207,8 @@ scale = Vector2(1, -1)
 highest = -3.142
 lowered = -2.74
 infiniteWave = true
+
+[node name="StopMusic" parent="Objects" index="25" instance=ExtResource("8_lqy7c")]
+position = Vector2(-1248, -32)
 
 [editable path="Objects/Human"]

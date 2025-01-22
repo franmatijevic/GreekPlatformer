@@ -194,3 +194,22 @@ func stop_all_music():
 	AudioController.stop_menu_music()
 	AudioController.stop_game_music()
 	AudioController.stop_boss_music()
+
+func boss_music_fade():
+	if $Music/BossMusic.playing == false:
+		return
+	
+	AudioServer.set_bus_effect_enabled(2, 0, true)
+	
+	var tw = create_tween()
+	tw.set_parallel(false)
+	#tw.tween_interval(2)
+	
+	tw.tween_property($Music/BossMusic, "volume_db", -60, 12)
+	
+	tw.tween_callback(stop_boss_music)
+	tw.tween_callback(disable_audio_effect)
+
+func disable_audio_effect():
+	AudioServer.set_bus_effect_enabled(2, 0, false)
+	$Music/BossMusic.volume_db=10
