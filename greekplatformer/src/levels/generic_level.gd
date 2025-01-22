@@ -39,6 +39,7 @@ var game_paused: bool = false:
 func _process(delta: float) -> void:
 	if background:
 		background.global_position.y = $Camera/Camera2D.get_screen_center_position().y
+		
 
 
 func _input(_event: InputEvent) -> void:

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc5b8p1u2dym4"]
+
+[sub_resource type="Gradient" id="Gradient_mt6fg"]
+offsets = PackedFloat32Array(0, 0.292208, 0.798701)
+colors = PackedColorArray(0.792157, 0.698039, 0.556863, 1, 0.764706, 0.576471, 0.294118, 1, 0.580392, 0.388235, 0.278431, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nsuf2"]
+gradient = SubResource("Gradient_mt6fg")
+repeat = 1
+metadata/_snap_enabled = true
+
+[node name="PrologueGradient" type="CanvasLayer"]
+layer = -5
+rotation = -1.5708
+transform = Transform2D(-4.37114e-08, -1, 1, -4.37114e-08, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = -0.305
+anchor_right = -0.305
+offset_left = -336.4
+offset_top = -10639.0
+offset_right = 1686.6
+offset_bottom = 22386.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_nsuf2")
