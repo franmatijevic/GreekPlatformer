@@ -1,13 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg8n57qvp1hs8"]
+[gd_scene load_steps=11 format=3 uid="uid://dg8n57qvp1hs8"]
 
 [ext_resource type="Script" path="res://src/bossFeatures/zeus.gd" id="1_sx8bc"]
 [ext_resource type="Texture2D" uid="uid://b0320txv1gx8e" path="res://src/environment/NPCs/NPCArt/Zeus/zeusGlavaOutline.png" id="2_vapwu"]
+[ext_resource type="Texture2D" uid="uid://8jd66a7hggmf" path="res://src/environment/NPCs/NPCArt/Zeus/zeus_hit_anim.png" id="3_en3jd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_llmtk"]
 radius = 242.124
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibmbv"]
 size = Vector2(493.205, 287.969)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3uqc"]
+atlas = ExtResource("3_en3jd")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl35t"]
+atlas = ExtResource("3_en3jd")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeleq"]
+atlas = ExtResource("3_en3jd")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxrt2"]
+atlas = ExtResource("3_en3jd")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndn8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3uqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl35t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeleq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxrt2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Zeus" type="Area2D"]
 process_physics_priority = -1
@@ -29,5 +66,11 @@ rotation = -0.314159
 shape = SubResource("RectangleShape2D_ibmbv")
 
 [node name="Attacks" type="Node" parent="."]
+
+[node name="Woozy" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ndn8c")
+frame_progress = 0.712387
+flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

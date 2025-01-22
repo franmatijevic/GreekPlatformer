@@ -46,7 +46,7 @@ width = 3.0
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(-525, 5526)
+position = Vector2(-437, 5528)
 
 [node name="ZeusCombat" parent="." index="6" instance=ExtResource("5_b822x")]
 position = Vector2(45760, 12075)
