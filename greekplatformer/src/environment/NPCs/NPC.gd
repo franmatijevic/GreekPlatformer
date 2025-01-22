@@ -35,6 +35,7 @@ func move_toward_position(delta):
 	else:
 		position = targetPosition
 		moving = false
+		print(position)
 
 func _on_npc_enter():
 	targetPosition = entryPosition
@@ -56,6 +57,9 @@ func update_fade(delta):
 func _on_perform_action(action: String, params: Dictionary, key: String):
 	if currentKey == key:
 		if action == "move_to" and params.has("targetPosition"):
+			if currentKey == "atena_end":
+				get_parent().get_node("Atena").queue_free()
+				modulate.a = 1.0
 			targetPosition = Vector2(params["targetPosition"][0], params["targetPosition"][1])
 			moving = true
 		elif action == "fade" and params.has("targetAlpha") and params.has("duration"):
@@ -67,3 +71,9 @@ func _on_perform_action(action: String, params: Dictionary, key: String):
 			get_parent().setCamShake(0.75)
 		elif action == "exit":
 			_on_npc_exit()
+		elif action == "load":
+			var control = get_parent().get_node("BlackScreen/Control")
+			create_tween().tween_property(control, "modulate:a", 1, 2.0)
+			AudioController.stop_dialogue("Atena2")
+			await get_tree().create_timer(4).timeout
+			SceneLoader.load_scene("res://src/myths/myth_1/credit_scene.tscn")

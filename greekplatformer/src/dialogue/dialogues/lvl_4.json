@@ -1,0 +1,26 @@
+{
+	"atena_end": [
+		{"speaker": "Atena", "text": "Congratulations Prometheus!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 1.0}},
+		{"speaker": "Atena", "text": "You actually made it.", "action": "none"},
+		{"speaker": "Atena", "text": "You've brought fire to the people.", "action": "none"},
+		{"speaker": "Atena", "text": "You've brought them knowledge.", "action": "none"},
+		{"speaker": "Atena", "text": "You've brought them prosperity.", "action": "none"},
+		{"speaker": "npc_woman", "text": "I learnt how to read!", "action": "none"},
+		{"speaker": "npc_man", "text": "And I can finally tie my shoes!", "action": "none"},
+		{"speaker": "Atena", "text": "Your people will forever cherish what you've done for them.", "action": "none"},
+		{"speaker": "Atena", "text": "But I can not save you from Zeus.", "action": "none"},
+		{"speaker": "Atena", "text": "You're a brave one, Prometheus", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}},
+		{"speaker": "Zeus", "text": "PROMETHEUS!!!", "action": "shake"},
+		{"speaker": "Zeus", "text": "You little backstabing rapscallion!", "action": "move_to", "parameters": {"targetPosition": [54853, 12386]}},
+		{"speaker": "Zeus", "text": "I see you're happy to help those rats...", "action": "none"},
+		{"speaker": "Zeus", "text": "Well I'M not!", "action": "shake"},
+		{"speaker": "Zeus", "text": "You will be punished, Prometheus.", "action": "none"},
+		{"speaker": "Zeus", "text": "I didn't want it to come to this...", "action": "none"},
+		{"speaker": "Zeus", "text": "...but you did it to yourself.", "action": "none"},
+		{"speaker": "Zeus", "text": "So say goodbye to your little friends.", "action": "none"},
+		{"speaker": "Zeus", "text": "And say goodbye to your life.", "action": "none"},
+		{"speaker": "Zeus", "text": "You're coming with me.", "action": "exit"},
+		{"speaker": "Prometej", "text": "Goodbye...", "action": "none"},
+		{"speaker": "Atena2", "text": "", "action": "load"}
+	]
+}

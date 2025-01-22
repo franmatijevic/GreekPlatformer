@@ -45,7 +45,7 @@ size = Vector2(224, 303)
 [node name="BossFight" node_paths=PackedStringArray("current_room") instance=ExtResource("1_vnnb8")]
 script = ExtResource("2_nqc5n")
 ChapterName = "Chapter 4: Conflict"
-current_room = NodePath("UmjerenSpust")
+current_room = NodePath("LastAtenaEncounter")
 
 [node name="Line2D" type="Line2D" parent="BlackScreen/Text/Node2D" index="0"]
 position = Vector2(325, 0)
@@ -56,10 +56,10 @@ width = 3.0
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_m4tqd")]
-position = Vector2(-466, 5477)
+position = Vector2(51338, 12961)
 
 [node name="PlayerDialogueMarker" type="Marker2D" parent="Player" index="12"]
-position = Vector2(-53977, -12377)
+position = Vector2(-53325, -12305)
 
 [node name="ZeusCombat" parent="." index="6" instance=ExtResource("5_b822x")]
 position = Vector2(45760, 12075)
@@ -152,20 +152,19 @@ rotation = 3.14159
 scale = Vector2(1.5873, -1.5873)
 
 [node name="Zeus" type="Sprite2D" parent="." index="20"]
-position = Vector2(57191, 10111)
-rotation = -0.339716
+position = Vector2(52171, 9990)
+rotation = 0.430503
 scale = Vector2(0.76634, 0.76634)
 texture = ExtResource("17_danqy")
-flip_h = true
 script = ExtResource("16_7p6jt")
-entryPosition = Vector2(57191, 10111)
-exitPosition = Vector2(57191, 10111)
+entryPosition = Vector2(52171, 9990)
+exitPosition = Vector2(52171, 9990)
 speed = 1000.0
 currentKey = "atena_end"
 screenShake = true
 
 [node name="ZeusDialogueMarker" type="Marker2D" parent="Zeus" index="0"]
-position = Vector2(-65431.8, -36692.1)
+position = Vector2(-66095.4, 16750.5)
 
 [node name="DialoguePlayer" parent="." index="21" instance=ExtResource("18_8yb88")]
 z_index = 100
