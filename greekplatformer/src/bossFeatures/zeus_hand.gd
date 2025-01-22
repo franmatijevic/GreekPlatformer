@@ -82,11 +82,8 @@ func agressive(delta:float):
 	
 	global_position.x += horizontalVelocity*delta
 	
-	if t > 1.33:
-		invert.visible = false
-	elif t > 1:
-		invert.visible = true
-	elif t > 0.67:
+
+	if t > 0.67:
 		invert.visible = false
 	elif t > 0.33:
 		invert.visible = true
