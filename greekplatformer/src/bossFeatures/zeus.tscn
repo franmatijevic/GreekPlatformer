@@ -70,7 +70,6 @@ shape = SubResource("RectangleShape2D_ibmbv")
 [node name="Woozy" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ndn8c")
-frame_progress = 0.712387
 flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

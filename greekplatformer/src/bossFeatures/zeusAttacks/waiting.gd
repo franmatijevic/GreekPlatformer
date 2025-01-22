@@ -15,6 +15,10 @@ func enter():
 	
 	var t = create_tween()
 	t.tween_property(player(), "global_position", chillPosition.global_position, 3)
+	
+	player().get_node("Head").visible=false
+	player().get_node("Woozy").visible=true
+	player().get_node("Woozy").play()
 
 func update_physics_process(delta:float):
 	t=t+delta
@@ -29,3 +33,6 @@ func update_physics_process(delta:float):
 
 func exit():
 	t=0
+	player().get_node("Head").visible=true
+	player().get_node("Woozy").visible=false
+	player().get_node("Woozy").pause()

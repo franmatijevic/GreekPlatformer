@@ -65,7 +65,7 @@ func take_damage():
 		do_action(true)
 		currentAttack=-1
 		var t = create_tween()
-		t.tween_property($Head, "modulate:a", 0, 2)
+		t.tween_property(self, "modulate:a", 0, 2)
 		
 	else:
 		get_parent().get_parent().get_parent().camShake(0.25)
@@ -73,11 +73,11 @@ func take_damage():
 		var t = create_tween()
 		t.set_parallel(false)
 		for i in range(5):
-			t.tween_property($Head, "modulate:a", 0.7, 0.2)
-			t.tween_property($Head, "modulate:a", 1, 0.2)
+			t.tween_property(self, "modulate:a", 0.7, 0.2)
+			t.tween_property(self, "modulate:a", 1, 0.2)
 		t.tween_callback(end_taking_damage)
-		t.tween_property($Head, "modulate:a", 0.7, 0.2)
-		t.tween_property($Head, "modulate:a", 1, 0.2)
+		t.tween_property(self, "modulate:a", 0.7, 0.2)
+		t.tween_property(self, "modulate:a", 1, 0.2)
 
 func end_taking_damage():
 	immunity=false
