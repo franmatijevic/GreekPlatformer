@@ -27,3 +27,4 @@ z_index = -100
 position = Vector2(-1271, 70)
 scale = Vector2(0.356481, 0.356481)
 texture = ExtResource("2_4gt6i")
+flip_h = true
