@@ -3,9 +3,9 @@
 [ext_resource type="TileSet" uid="uid://c8ru2teb6u7t2" path="res://src/levels/tilesets/generic_level.tres" id="1_4f4mi"]
 [ext_resource type="Script" path="res://src/myths/myth_1/credit_scene.gd" id="1_ghiqn"]
 [ext_resource type="PackedScene" uid="uid://bdujcrxyu462l" path="res://src/myths/myth_1/credits_cloud.tscn" id="2_kqoef"]
-[ext_resource type="FontFile" uid="uid://b1p1qqxtp1dhr" path="res://src/dialogue/fonts/BELL.TTF" id="3_hgkql"]
 [ext_resource type="AudioStream" uid="uid://dabdgj4nr4r85" path="res://src/audio/SFX/wind1.wav" id="4_s8reg"]
 [ext_resource type="Texture2D" uid="uid://ds6osp2lfa270" path="res://src/player/playerArt/playerArtNew/stopalo.png" id="5_7e8d3"]
+[ext_resource type="FontFile" uid="uid://5hcneg3ba37k" path="res://src/dialogue/fonts/TIMES.TTF" id="5_bmxdp"]
 [ext_resource type="Texture2D" uid="uid://byj5ym0t5vbgv" path="res://src/player/playerArt/playerArtNew/torso.png" id="6_qygrb"]
 [ext_resource type="Texture2D" uid="uid://cfko8mldy0yyd" path="res://src/player/playerArt/playerArtNew/bedro.png" id="7_3spp1"]
 [ext_resource type="Texture2D" uid="uid://gapm3sy761pu" path="res://src/player/playerArt/playerArtNew/glava.png" id="8_8s5aq"]
@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://6oesalnw4egj" path="res://src/audio/SFX/ui/switch3.wav" id="19_grma2"]
 
 [sub_resource type="Theme" id="Theme_j7f8f"]
-default_font = ExtResource("3_hgkql")
+default_font = ExtResource("5_bmxdp")
 
 [sub_resource type="Gradient" id="Gradient_u5g0u"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -486,6 +486,3 @@ angle_max = 171.8
 scale_amount_min = 2.0
 scale_amount_max = 8.0
 color = Color(0.180392, 0.207843, 0.27451, 1)
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(921, -895)
