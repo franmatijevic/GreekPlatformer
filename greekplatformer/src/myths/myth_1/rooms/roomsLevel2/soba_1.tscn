@@ -30,7 +30,7 @@ position = Vector2(2048, 260)
 shape = SubResource("RectangleShape2D_tki28")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(118, 871)
+position = Vector2(192, 960)
 
 [node name="Path2D" type="Path2D" parent="Objects" index="0"]
 curve = SubResource("Curve2D_w0ypn")
@@ -77,3 +77,6 @@ z_as_relative = false
 position = Vector2(3606, 575)
 scale = Vector2(1.27333, 1.27333)
 texture = ExtResource("7_4ex5w")
+
+[node name="Skip" parent="." index="6"]
+position = Vector2(3776, 576)

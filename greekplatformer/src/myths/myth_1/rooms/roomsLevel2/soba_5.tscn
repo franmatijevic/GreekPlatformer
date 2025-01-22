@@ -50,7 +50,7 @@ position = Vector2(2688, -832.25)
 shape = SubResource("RectangleShape2D_6yksl")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(116, 680)
+position = Vector2(192, 832)
 
 [node name="SuperSpring" parent="Objects" index="0" instance=ExtResource("2_8c6dk")]
 position = Vector2(445, 835)
@@ -124,9 +124,14 @@ loop = false
 [node name="BlockDoor" parent="Objects/Path2D4/PathFollow2D" index="0" instance=ExtResource("7_jexui")]
 scale = Vector2(1, 5)
 speed = 70.0
+shakeWhileActive = true
+shakeAmount = 0.15
 
 [node name="DeathPit" parent="Objects" index="13" instance=ExtResource("9_6kxcg")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
 position = Vector2(2648.5, 1112)
 shape = SubResource("RectangleShape2D_76g4g")
+
+[node name="Skip" parent="." index="5"]
+position = Vector2(4800, -960)

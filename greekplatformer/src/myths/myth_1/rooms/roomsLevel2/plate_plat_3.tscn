@@ -63,7 +63,7 @@ position = Vector2(-456, -24)
 speed = 180.0
 
 [node name="PressurePlateALT" parent="Objects/PlatePlatform/PathFollow2D" index="1"]
-precision = 2.0
+precision = 3.0
 
 [node name="PlatePlatform2" parent="Objects" index="7" instance=ExtResource("6_yejyb")]
 position = Vector2(832, -760)
@@ -74,6 +74,7 @@ speed = 200.0
 
 [node name="PressurePlateALT" parent="Objects/PlatePlatform2/PathFollow2D" index="1"]
 scale = Vector2(1.5, 1)
+precision = 3.0
 
 [node name="RigidBody2D3" parent="Objects" index="8" instance=ExtResource("5_2bxb1")]
 position = Vector2(768, -968)

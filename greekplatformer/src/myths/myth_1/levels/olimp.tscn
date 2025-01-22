@@ -106,10 +106,10 @@ position = Vector2(-124, -328)
 shape = SubResource("RectangleShape2D_cb41l")
 
 [node name="Checkpoint4" parent="." index="16" instance=ExtResource("10_ptuuy")]
-position = Vector2(44921, -11945)
+position = Vector2(44928, -12096)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4" index="0"]
-position = Vector2(-124, -328)
+position = Vector2(-80, -256)
 shape = SubResource("RectangleShape2D_cb41l")
 
 [node name="OlimpIntro" parent="." index="17" instance=ExtResource("12_beblk")]

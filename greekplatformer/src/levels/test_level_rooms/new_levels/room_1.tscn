@@ -213,6 +213,8 @@ rotates = false
 loop = false
 
 [node name="BigDoor" parent="Objects/Path2D/PathFollow2D" index="0" instance=ExtResource("2_71wco")]
+shakeWhileActive = true
+shakeAmount = 0.2
 
 [node name="LogicalANDVrata" parent="Objects" index="35" node_paths=PackedStringArray("connectedTo") instance=ExtResource("3_qn575")]
 count = 3

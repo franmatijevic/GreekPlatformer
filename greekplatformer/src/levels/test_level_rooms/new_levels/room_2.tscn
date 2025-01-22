@@ -32,7 +32,7 @@ position = Vector2(3263.75, -3431.5)
 shape = SubResource("RectangleShape2D_s16yk")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(-1792, 1728)
+position = Vector2(-2368, 1728)
 
 [node name="LongPlatform" parent="Objects" index="0" instance=ExtResource("2_1upnj")]
 position = Vector2(186, 1641)
