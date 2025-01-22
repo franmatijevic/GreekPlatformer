@@ -44,16 +44,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r62d2")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": SubResource("AtlasTexture_dtopk")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t0ey8")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": SubResource("AtlasTexture_nt44j")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": SubResource("AtlasTexture_bw85s")
 }, {
 "duration": 1.0,
@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [node name="Area2D" type="Area2D"]
