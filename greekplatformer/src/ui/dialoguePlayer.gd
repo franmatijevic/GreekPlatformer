@@ -30,6 +30,8 @@ func _ready():
 	speakerMarkers["Prometej"] = $"../Player/PlayerDialogueMarker"
 	speakerMarkers["Atena"] = $"../Atena/AtenaDialogueMarker"
 	speakerMarkers["Atena2"] = $"../Atena2/Atena2DialogueMarker"
+	speakerMarkers["npc_man"] = $"../npc_man"
+	speakerMarkers["npc_woman"]= $"../npc_woman"
 
 func load_scene_text():
 	if FileAccess.file_exists(sceneTextFile):

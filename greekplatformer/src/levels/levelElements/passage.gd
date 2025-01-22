@@ -14,7 +14,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("up"):
 		if(player==null):
-			print("nista")
 			return
 		player.velocity.y=0
 		player.process_mode=Node.PROCESS_MODE_DISABLED

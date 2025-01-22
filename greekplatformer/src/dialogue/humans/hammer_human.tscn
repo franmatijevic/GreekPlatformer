@@ -9,6 +9,7 @@
 script = ExtResource("2_jchbg")
 
 [node name="Box" type="Sprite2D" parent="." index="0"]
+z_index = -10
 position = Vector2(120, 16)
 texture = ExtResource("3_8ih5n")
 

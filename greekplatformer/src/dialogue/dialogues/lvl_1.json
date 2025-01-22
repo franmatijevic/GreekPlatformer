@@ -7,7 +7,7 @@
 		{"speaker": "Prometej", "text": "Zeus, let me bring fire to the people!", "action": "none"},
 		{"speaker": "Prometej", "text": "They're freezing without its warmth.", "action": "none"},
 		{"speaker": "Prometej", "text": "I can't allow for my people to suffer-", "action": "none"},
-		{"speaker": "Zeus", "text": "IT IS OUT OF THE QUESTION!!!", "action": "none"},
+		{"speaker": "Zeus", "text": "IT IS OUT OF THE QUESTION!!!", "action": "shake"},
 		{"speaker": "Zeus", "text": "You know they've swindled me.", "action": "none"},
 		{"speaker": "Zeus", "text": "And now they have to pay!", "action": "none"},
 		{"speaker": "Zeus", "text": "Don't even think of asking me something preposterous like that ever again!", "action": "none"},
@@ -42,5 +42,26 @@
 		{"speaker": "Atena2", "text": "But I will help you only if you really struggle and die 7 times.", "action": "none"},
 		{"speaker": "Atena2", "text": "You're a hero, I believe you can do this on your own.", "action": "none"},
 		{"speaker": "Atena2", "text": "Stay safe!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
+	],
+	"npc_woman": [
+		{"speaker": "npc_woman", "text": "Hi! Hello!!!", "action": "none"},
+		{"speaker": "Prometej", "text": "Hello?", "action": "none"},
+		{"speaker": "Prometej", "text": "What are you doing here today?", "action": "none"},
+		{"speaker": "npc_woman", "text": "Waiting.", "action": "none"},
+		{"speaker": "Prometej", "text": "Waiting for whom?", "action": "none"},
+		{"speaker": "npc_woman", "text": "I don't know.", "action": "none"},
+		{"speaker": "Prometej", "text": "Oh...", "action": "none"},
+		{"speaker": "Prometej", "text": "Well have a nice day then.", "action": "none"}
+	],
+	"npc_man": [
+		{"speaker": "Prometej", "text": "What are you doing sir?", "action": "none"},
+		{"speaker": "npc_man", "text": "Isn't it obvious?", "action": "none"},
+		{"speaker": "npc_man", "text": "I'm hammering this box.", "action": "none"},
+		{"speaker": "Prometej", "text": "Well you're holding the hammer upside down.", "action": "none"},
+		{"speaker": "npc_man", "text": "Don't you tell me how to do my job!", "action": "none"},
+		{"speaker": "npc_man", "text": "My father was a carpenter, his father too, and his father before him!", "action": "none"},
+		{"speaker": "npc_man", "text": "And they've all done this the same way for generations!", "action": "none"},
+		{"speaker": "Prometej", "text": "Whatever you say...", "action": "none"},
+		{"speaker": "Prometej", "text": "Good luck.", "action": "none"}
 	]
 }

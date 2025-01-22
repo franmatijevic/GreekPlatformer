@@ -232,6 +232,32 @@ position = Vector2(-12784, 1400)
 [node name="TorchRoom" parent="." index="33" instance=ExtResource("25_g3f5t")]
 position = Vector2(53264, -12680)
 
+[node name="npc_man" type="Sprite2D" parent="." index="34"]
+visible = false
+position = Vector2(1695, 868)
+script = ExtResource("15_p5c6w")
+entryPosition = Vector2(1232, 970)
+exitPosition = Vector2(1232, 970)
+currentKey = "npc_man"
+
+[node name="ManDialogueMarker" type="Marker2D" parent="npc_man" index="0"]
+position = Vector2(544, 3936)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="npc_woman" type="Sprite2D" parent="." index="35"]
+visible = false
+position = Vector2(1699, 879)
+script = ExtResource("15_p5c6w")
+entryPosition = Vector2(1232, 970)
+exitPosition = Vector2(1232, 970)
+currentKey = "npc_woman"
+
+[node name="WomanDialogueMarker" type="Marker2D" parent="npc_woman" index="0"]
+position = Vector2(1310, 868)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
 [editable path="DialogueAreaZeus"]
 [editable path="DialogueAreaZeus2"]
 [editable path="DialogueAreaZeus3"]
