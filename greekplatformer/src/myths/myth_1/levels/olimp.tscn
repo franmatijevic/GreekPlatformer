@@ -38,7 +38,7 @@ size = Vector2(224, 303)
 
 [node name="Olimp" node_paths=PackedStringArray("current_room", "background") instance=ExtResource("1_8qchm")]
 ChapterName = "Chapter 3: Mount Olympus"
-current_room = NodePath("TorchRoom")
+current_room = NodePath("OlimpIntro")
 lineLength = 4.0
 background = NodePath("OlimpGradient")
 
