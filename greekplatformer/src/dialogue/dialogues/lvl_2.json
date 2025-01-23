@@ -4,6 +4,7 @@
 		{"speaker": "Atena", "text": "You can pick up rocks using the \"LEFT MOUSE\" button.", "action": "none"},
 		{"speaker": "Atena", "text": "You can also throw rocks with the \"LEFT MOUSE\" button.", "action": "none"},
 		{"speaker": "Atena", "text": "You can calmly drop rocks with the \"RIGHT MOUSE\" button.", "action": "none"},
+		{"speaker": "Atena", "text": "You can not jump while holding something, I don't want you to break your back.", "action": "none"},
 		{"speaker": "Atena", "text": "I bid you farewell!", "action": "fade", "parameters": {"duration": 2, "targetAlpha": 0.0}}
 	],
 	"atena_lever": [
