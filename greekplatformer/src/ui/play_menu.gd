@@ -21,7 +21,7 @@ func _ready() -> void:
 	set_process(false)
 	
 func on_new_game_pressed():
-	SceneLoader.load_scene(new_game_path)
+	SceneLoader.load_more_level(new_game_path)
 	get_parent().get_node("Press").play()
 
 func on_continue_game_pressed():

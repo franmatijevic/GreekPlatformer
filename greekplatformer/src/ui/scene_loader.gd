@@ -50,7 +50,7 @@ func load_more_level(path):
 	
 	current_scene.queue_free()
 	loading = true
-	minTime = 0
+	minTime = 1
 	scene_to_load_path = path
 
 
