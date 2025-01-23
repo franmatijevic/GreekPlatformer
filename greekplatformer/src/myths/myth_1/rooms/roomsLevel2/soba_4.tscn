@@ -65,12 +65,12 @@ position = Vector2(2240, -681.5)
 shape = SubResource("RectangleShape2D_806s4")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(123, 671)
+position = Vector2(118, 614)
 
 [node name="DeathPit" parent="Objects" index="0" instance=ExtResource("2_4tg62")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/DeathPit" index="0"]
-position = Vector2(1856.5, 1072.75)
+position = Vector2(1857, 1230)
 shape = SubResource("RectangleShape2D_a4poj")
 
 [node name="LongPlatform" parent="Objects" index="1" instance=ExtResource("4_00yhj")]
