@@ -198,12 +198,14 @@ z_index = -1
 position = Vector2(-256, 138)
 
 [node name="Arrow" type="Sprite2D" parent="." index="7"]
+z_index = -10
 position = Vector2(3244, -429)
 rotation = 2.38444
 scale = Vector2(0.181068, 0.181068)
 texture = ExtResource("13_3hhh7")
 
 [node name="Arrow2" type="Sprite2D" parent="." index="8"]
+z_index = -10
 position = Vector2(-122, -79)
 rotation = -0.652936
 scale = Vector2(0.181068, 0.181068)

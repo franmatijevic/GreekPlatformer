@@ -9,6 +9,7 @@ size = Vector2(236, 14.5)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("1_wa2et")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

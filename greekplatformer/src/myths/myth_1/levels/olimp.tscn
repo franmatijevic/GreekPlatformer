@@ -38,7 +38,7 @@ size = Vector2(224, 303)
 
 [node name="Olimp" node_paths=PackedStringArray("current_room", "background") instance=ExtResource("1_8qchm")]
 ChapterName = "Chapter 3: Mount Olympus"
-current_room = NodePath("OlimpIntro")
+current_room = NodePath("TorchRoom")
 lineLength = 4.0
 background = NodePath("OlimpGradient")
 
@@ -70,7 +70,7 @@ points = PackedVector2Array(-650, 0, 650, 0)
 player = NodePath("../Player")
 
 [node name="Player" parent="." index="6" instance=ExtResource("2_pxfoj")]
-position = Vector2(-28764, 5902)
+position = Vector2(50991, -12426)
 
 [node name="PlatePlatform" parent="." index="7" instance=ExtResource("2_pwrnr")]
 position = Vector2(-6384, 376)

@@ -294,18 +294,21 @@ shape = SubResource("RectangleShape2D_5bimf")
 position = Vector2(2912, 64)
 
 [node name="Arrow" type="Sprite2D" parent="." index="6"]
+z_index = -10
 position = Vector2(-1419, -300)
 rotation = -0.732117
 scale = Vector2(0.166279, 0.166279)
 texture = ExtResource("15_t0chb")
 
 [node name="Arrow2" type="Sprite2D" parent="." index="7"]
+z_index = -10
 position = Vector2(346, -727)
 rotation = 0.900087
 scale = Vector2(0.166279, 0.166279)
 texture = ExtResource("15_t0chb")
 
 [node name="Arrow3" type="Sprite2D" parent="." index="8"]
+z_index = -10
 position = Vector2(927, -340)
 rotation = -0.303166
 scale = Vector2(0.166279, 0.166279)

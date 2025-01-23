@@ -65,7 +65,7 @@ position = Vector2(2240, -681.5)
 shape = SubResource("RectangleShape2D_806s4")
 
 [node name="Respawn" parent="." index="3"]
-position = Vector2(128, 832)
+position = Vector2(123, 671)
 
 [node name="DeathPit" parent="Objects" index="0" instance=ExtResource("2_4tg62")]
 

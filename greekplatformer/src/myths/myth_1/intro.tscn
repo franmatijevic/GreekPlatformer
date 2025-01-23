@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxveqeb8dejnp"]
+[gd_scene load_steps=5 format=3 uid="uid://cxveqeb8dejnp"]
 
 [ext_resource type="Script" path="res://src/myths/myth_1/credit_scene.gd" id="1_tx2e7"]
 [ext_resource type="FontFile" uid="uid://dbheckwybavgo" path="res://src/dialogue/fonts/GRECOromanLubedWrestling.ttf" id="2_ri7sx"]
+[ext_resource type="PackedScene" uid="uid://ciq8ikbkefiqi" path="res://src/myths/myth_1/levels/background_music_start.tscn" id="3_k6jsm"]
 
 [sub_resource type="Theme" id="Theme_4j1vh"]
 default_font = ExtResource("2_ri7sx")
@@ -73,3 +74,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackgroundMusicStart" parent="." instance=ExtResource("3_k6jsm")]
+menuMusic = true
+backgroundMusic = false
