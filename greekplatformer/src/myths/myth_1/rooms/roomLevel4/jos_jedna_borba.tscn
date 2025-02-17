@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://vvhpajxrnt36"]
+[gd_scene load_steps=21 format=4 uid="uid://vvhpajxrnt36"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_7cwoi"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_tmijd"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b8fd8l4kaoaqx" path="res://src/environment/pressurePlate/pressure_plate.tscn" id="13_c0x1q"]
 [ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="14_api1m"]
 [ext_resource type="Texture2D" uid="uid://dfy8ffeulpnqf" path="res://src/environment/environmentArt/arrow.png" id="15_t0chb"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="16_j78ky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8p7c7"]
 size = Vector2(4992, 2160)
@@ -316,3 +317,8 @@ position = Vector2(927, -340)
 rotation = -0.303166
 scale = Vector2(0.166279, 0.166279)
 texture = ExtResource("15_t0chb")
+
+[node name="CorrectPixel" type="Sprite2D" parent="." index="9"]
+position = Vector2(572, 2607)
+scale = Vector2(5000, 2642)
+texture = ExtResource("16_j78ky")

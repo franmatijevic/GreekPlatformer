@@ -10,6 +10,10 @@ extends Node2D
 
 @export var useFormalLoading:bool=false
 
+@export var skippable:bool=false
+
+var t
+
 func _ready() -> void:
 	AudioController.stop_walk()
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
@@ -18,7 +22,8 @@ func _ready() -> void:
 		if i is AudioStreamPlayer:
 			i.play()
 	
-	var t  = create_tween()
+	#var 
+	t  = create_tween()
 	t.set_parallel(false)
 	t.tween_interval(1)
 	t.tween_property(get_node("Control"), "modulate:a", 0, allBlackEffect)
@@ -32,6 +37,16 @@ func _physics_process(delta: float) -> void:
 	AudioController.stop_walk()
 	
 	get_node("Text").global_position.y+=delta*textSpeed
+
+
+func _process(delta: float) -> void:
+	if (Input.is_action_just_pressed("space") or Input.is_action_just_pressed("pickThrow")) and skippable==true:
+		skippable = false
+		t.kill()
+		t = create_tween().set_parallel(false)
+		t.tween_property(get_node("Text"), "modulate:a", 0, 1)
+		t.tween_interval(0.7)
+		t.tween_callback(end_credits)
 
 func end_credits():
 	if useFormalLoading:

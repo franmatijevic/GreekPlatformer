@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://517cssknstaj"]
+[gd_scene load_steps=19 format=4 uid="uid://517cssknstaj"]
 
 [ext_resource type="PackedScene" uid="uid://61v4j5x18v7w" path="res://src/levels/levelElements/room.tscn" id="1_0s3ys"]
 [ext_resource type="PackedScene" uid="uid://dg8n57qvp1hs8" path="res://src/bossFeatures/zeus.tscn" id="2_5d7a1"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6k1k7e6uk1ay" path="res://src/bossFeatures/zeus_death_pit.tscn" id="8_dpwiw"]
 [ext_resource type="PackedScene" uid="uid://cg3wqym3cnvx8" path="res://src/bossFeatures/camera_offset.tscn" id="11_5s8nc"]
 [ext_resource type="PackedScene" uid="uid://cf6jq16e0lfcx" path="res://src/environment/cloud_irma/cloud_type_2.tscn" id="12_7m1ke"]
+[ext_resource type="Texture2D" uid="uid://cmaaqkf4e6qv4" path="res://src/correctPixel.png" id="13_v2jq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oehrn"]
 size = Vector2(6016, 1963)
@@ -161,3 +162,8 @@ rotation = 0.961676
 
 [node name="Skip" parent="." index="5"]
 position = Vector2(4080, 576)
+
+[node name="CorrectPixel" type="Sprite2D" parent="." index="6"]
+position = Vector2(1352, 1834)
+scale = Vector2(6000, 1460)
+texture = ExtResource("13_v2jq6")

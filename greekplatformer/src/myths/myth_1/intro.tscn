@@ -14,6 +14,7 @@ allBlackEffect = 0.0
 nextScene = "res://src/myths/myth_1/levels/prologue.tscn"
 textSpeed = -60
 useFormalLoading = true
+skippable = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1504.0
