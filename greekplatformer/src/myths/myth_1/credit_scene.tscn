@@ -91,18 +91,39 @@ z_index = -2999
 z_as_relative = false
 position = Vector2(-219, -528)
 
+[node name="LabelCredits1" type="Label" parent="Text"]
+z_as_relative = false
+offset_left = -2368.0
+offset_top = 2189.0
+offset_right = -51.0
+offset_bottom = 4965.0
+theme = SubResource("Theme_j7f8f")
+theme_override_font_sizes/font_size = 180
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelCredits2" type="Label" parent="Text"]
+z_as_relative = false
+offset_left = -2368.0
+offset_top = 2557.0
+offset_right = -51.0
+offset_bottom = 5333.0
+theme = SubResource("Theme_j7f8f")
+theme_override_font_sizes/font_size = 120
+text = "
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Label" type="Label" parent="Text"]
 z_as_relative = false
 offset_left = -2368.0
-offset_top = 2100.0
+offset_top = 2989.0
 offset_right = -51.0
-offset_bottom = 4876.0
+offset_bottom = 12121.0
 theme = SubResource("Theme_j7f8f")
 theme_override_font_sizes/font_size = 180
-text = "Thank you for playing!
-
-
-Main developers:
+text = "Main developers:
 Jan Badel
 Fran Matijević
 Antonio Šulenta

@@ -1,5 +1,7 @@
 extends Node2D
 
+const GAME_SAVE : String = "user://GameSave.json"
+
 @export var duration:float=10
 
 @export var allBlackEffect:float = 3
@@ -11,10 +13,24 @@ extends Node2D
 @export var useFormalLoading:bool=false
 
 @export var skippable:bool=false
+@onready var label_credits_1: Label = $Text/LabelCredits1
+@onready var label_credits_2: Label = $Text/LabelCredits2
+
+var artefactCounter : int
 
 var t
 
 func _ready() -> void:
+	get_artefact_count()
+	if (get_tree().current_scene.name == "CreditScene"):
+		label_credits_1.text = "Thank you for playing!
+		
+		"
+		label_credits_2.text = "Artefacts found:
+			" + str(artefactCounter) + "/9
+			
+			"
+	
 	AudioController.stop_walk()
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
@@ -53,3 +69,12 @@ func end_credits():
 		SceneLoader.load_scene(nextScene)
 	else:
 		SceneLoader.load_more_level(nextScene)
+
+func get_artefact_count():
+	if (FileAccess.file_exists(GAME_SAVE)):
+		var file = FileAccess.open(GAME_SAVE, FileAccess.READ)
+		var json = file.get_as_text()
+		var saved_data = JSON.parse_string(json)
+		
+		artefactCounter = saved_data["artefact_counter"]
+		file.close()
