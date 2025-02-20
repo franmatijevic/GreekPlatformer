@@ -10,6 +10,8 @@ signal npc_exit
 signal perform_action(action, params)
 
 signal on_interacted_artefact
+signal on_show_found_item_counter
+signal on_artefact_found(artefact : int, flag : bool)
 
 signal on_death
 
@@ -28,18 +30,24 @@ func emit_show_skip_level():
 func emit_hide_skip_level():
 	on_hide_skip_level.emit()
 
+func emit_on_show_found_item_counter():
+	on_show_found_item_counter.emit()
+
+func emit_on_artefact_found(artefact : int, flag : bool):
+	on_artefact_found.emit(artefact, flag)
+
 
 # Settings
 
-signal on_changed_room(path : String, room : String)
-signal on_quit_pressed(path : String, room : String)
+signal on_changed_room(path : String, room : String, artefact : int, flag : bool)
+signal on_quit_pressed(path : String, room : String, artefact : int, flag : bool)
 signal on_new_game_pressed()
 
 func emit_on_new_game_pressed():
 	on_new_game_pressed.emit()
 
-func emit_on_changed_room(path : String, room : String):
-	on_changed_room.emit(path, room)
+func emit_on_changed_room(path : String, room : String, artefact : int, flag : bool):
+	on_changed_room.emit(path, room, artefact, flag)
 	
-func emit_on_quit_pressed(path: String, room : String):
-	on_quit_pressed.emit(path, room)
+func emit_on_quit_pressed(path: String, room : String, artefact : int, flag : bool):
+	on_quit_pressed.emit(path, room, artefact, flag)

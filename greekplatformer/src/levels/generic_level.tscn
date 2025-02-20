@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dj8amtyq3pmuk"]
+[gd_scene load_steps=22 format=3 uid="uid://dj8amtyq3pmuk"]
 
 [ext_resource type="Script" path="res://src/levels/generic_level.gd" id="1_qp3oh"]
 [ext_resource type="Texture2D" uid="uid://dfe6s34tiobkl" path="res://icon.svg" id="1_w8uqh"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cv001k4gc8bu8" path="res://src/ui/pause_menu.tscn" id="7_5ljx5"]
 [ext_resource type="Script" path="res://src/player/playerStates/state.gd" id="7_cx0o8"]
 [ext_resource type="Script" path="res://src/levels/levelElements/cameraStates/room_transition.gd" id="8_qapjt"]
+[ext_resource type="FontFile" uid="uid://dbheckwybavgo" path="res://src/dialogue/fonts/GRECOromanLubedWrestling.ttf" id="11_6yxwe"]
+[ext_resource type="Texture2D" uid="uid://ds76m0cvbrq5e" path="res://src/greekArtefacts/artefacts_art/amfora.png" id="12_mwpw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkpql"]
 resource_name = "Wide"
@@ -795,5 +797,60 @@ visible = false
 
 [node name="PauseMenu" parent="CanvasLayerPause" instance=ExtResource("7_5ljx5")]
 
+[node name="ItemsFoundCounter" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ItemFoundCounterUI" type="Control" parent="ItemsFoundCounter"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArtefactIcon" type="TextureRect" parent="ItemsFoundCounter/ItemFoundCounterUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -354.0
+offset_top = 141.0
+offset_right = 646.0
+offset_bottom = 805.0
+grow_horizontal = 0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_mwpw8")
+
+[node name="ItemsFoundCounterLabel" type="Label" parent="ItemsFoundCounter/ItemFoundCounterUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -272.0
+offset_top = 134.0
+offset_right = -115.0
+offset_bottom = 224.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_6yxwe")
+theme_override_font_sizes/font_size = 70
+text = "x 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemsFoundTimer" type="Timer" parent="ItemsFoundCounter/ItemFoundCounterUI"]
+process_mode = 1
+process_callback = 0
+wait_time = 1.5
+one_shot = true
+
+[node name="ItemsFoundTimerIncrement" type="Timer" parent="ItemsFoundCounter/ItemFoundCounterUI"]
+process_mode = 1
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="end_transition" from="Camera/States/RoomTransition" to="." method="_on_room_transition_end_transition"]
+[connection signal="timeout" from="ItemsFoundCounter/ItemFoundCounterUI/ItemsFoundTimer" to="." method="_on_items_found_timer_timeout"]
+[connection signal="timeout" from="ItemsFoundCounter/ItemFoundCounterUI/ItemsFoundTimerIncrement" to="." method="_on_items_found_timer_increment_timeout"]

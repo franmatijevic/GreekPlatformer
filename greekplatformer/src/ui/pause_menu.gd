@@ -8,6 +8,8 @@ extends Control
 
 var current_path : String
 var current_room : String
+var current_artefact : int
+var current_flag : bool
 
 func _ready() -> void:
 	SignalBus.on_changed_room.connect(on_changed_room)
@@ -29,7 +31,7 @@ func _on_resume_pressed() -> void:
 	generic_level_script.game_paused = false
 
 func _on_quit_pressed() -> void:
-	SignalBus.emit_on_quit_pressed(current_path, current_room)
+	SignalBus.emit_on_quit_pressed(current_path, current_room, current_artefact, current_flag)
 	get_tree().quit()
 
 func _on_restart_pressed() -> void:
@@ -41,9 +43,11 @@ func _on_settings_pressed() -> void:
 	settings_pause_menu.visible = true
 	v_box_container.visible = false
 
-func on_changed_room(path : String, room : String):
+func on_changed_room(path : String, room : String, artefact : int, flag : bool):
 	current_path = path
 	current_room = room
+	current_artefact = artefact
+	current_flag = flag
 
 func show_skip_level():
 	skip.visible = true

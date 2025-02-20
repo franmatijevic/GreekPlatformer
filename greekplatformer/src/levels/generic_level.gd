@@ -2,12 +2,18 @@ extends Node2D
 
 class_name Level
 
+const GAME_SAVE : String = "user://GameSave.json"
+
 @export var ChapterName:String
 @export var current_room:Area2D
 @onready var canvas_layer_pause: CanvasLayer = $CanvasLayerPause
 @onready var dialogue_player: Node2D = $DialoguePlayer
 
+@onready var items_found_counter: CanvasLayer = $ItemsFoundCounter
 @onready var pause_menu: Control = $CanvasLayerPause/PauseMenu/Panel/SettingsPauseMenu
+@onready var items_found_timer: Timer = $ItemsFoundCounter/ItemFoundCounterUI/ItemsFoundTimer
+@onready var items_found_timer_increment: Timer = $ItemsFoundCounter/ItemFoundCounterUI/ItemsFoundTimerIncrement
+@onready var items_found_counter_label: Label = $ItemsFoundCounter/ItemFoundCounterUI/ItemsFoundCounterLabel
 
 @export var lineLength:float=650
 
@@ -25,6 +31,8 @@ var current_room_position
 var holding_object:Throwable=null
 
 var interactWithArtefact = false
+var artefactFoundFlag : bool
+var artefactCounter : int
 
 var game_paused: bool = false:
 	get:
@@ -104,11 +112,12 @@ func teleport(spot):
 	create_tween().tween_property(get_node("BlackScreen/Control"), "modulate:a", 0, 0.6)
 
 func _ready() -> void:
-	
+	loadArtefactData()
 	get_node("BlackScreen/Text/Line2D").points.set(0, Vector2(-lineLength,0))
 	get_node("BlackScreen/Text/Line2D").points.set(1, Vector2(lineLength,0))
 	
 	SignalBus.on_interacted_artefact.connect(on_interacted_artefact)
+	SignalBus.on_show_found_item_counter.connect(on_show_found_item_counter)
 	SignalBus.on_death.connect(show_skip_level)
 	get_node("BlackScreen/Text/Label").text=ChapterName
 	var t = create_tween()
@@ -124,11 +133,15 @@ func _ready() -> void:
 	current_room_position= current_room.global_position
 	respawnLocation=current_room.get_node("Respawn").global_position
 	
-	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0])
+	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0], artefactCounter, artefactFoundFlag)
 	
 	current_room.pause_all_objects(false)
 
 func next_level():
+	if (prev_room != null):
+		artefactFoundFlag = true
+	else:
+		loadArtefactData()
 	prev_room = current_room
 	AudioController.stop_door_opening()
 	
@@ -147,7 +160,7 @@ func next_level():
 	
 	current_room_file = load(current_room.scene_file_path)
 	
-	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0])
+	room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0], artefactCounter, artefactFoundFlag)
 	hide_skip_level()
 	
 	get_node("Camera").set_state("RoomTransition")
@@ -179,12 +192,25 @@ func _on_room_transition_end_transition() -> void:
 func _on_timer_timeout() -> void:
 	current_room.pause_all_objects(false)
 
-func room_changed(path: String, room : String):
-	SignalBus.emit_on_changed_room(path, room)
+func room_changed(path: String, room : String, artefact : int, flag : bool):
+	SignalBus.emit_on_changed_room(path, room, artefact, flag)
+
+func artefact_found(artefact : int, flag : bool):
+	SignalBus.emit_on_artefact_found(artefact, flag)
 
 func on_interacted_artefact():
 	interactWithArtefact = true
 	get_tree().paused = true
+
+func on_show_found_item_counter():
+	if (artefactFoundFlag):
+		artefactFoundFlag = false
+		items_found_counter.show()
+		items_found_counter_label.text = "x " + str(artefactCounter)
+		artefactCounter = artefactCounter + 1
+		artefact_found(artefactCounter, artefactFoundFlag)
+		room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0], artefactCounter, artefactFoundFlag)
+		items_found_timer.start()
 
 func show_skip_level():
 	cnt_spawn_skip_level = cnt_spawn_skip_level + 1
@@ -195,3 +221,20 @@ func show_skip_level():
 func hide_skip_level():
 	cnt_spawn_skip_level = 0
 	SignalBus.emit_hide_skip_level()
+
+func _on_items_found_timer_timeout() -> void:
+	items_found_counter_label.text = "x " + str(artefactCounter)
+	items_found_timer_increment.start()
+
+func _on_items_found_timer_increment_timeout() -> void:
+	items_found_counter.hide()
+	
+func loadArtefactData():
+	if (FileAccess.file_exists(GAME_SAVE)):
+		var file = FileAccess.open(GAME_SAVE, FileAccess.READ)
+		var json = file.get_as_text()
+		var saved_data = JSON.parse_string(json)
+		
+		artefactCounter = saved_data["artefact_counter"]
+		artefactFoundFlag = saved_data["flag"]
+		file.close()
