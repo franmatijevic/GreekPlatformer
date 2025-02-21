@@ -206,7 +206,7 @@ func on_show_found_item_counter():
 	if (artefactFoundFlag):
 		artefactFoundFlag = false
 		items_found_counter.show()
-		items_found_counter_label.text = "x " + str(artefactCounter)
+		items_found_counter_label.text = str(artefactCounter)
 		artefactCounter = artefactCounter + 1
 		artefact_found(artefactCounter, artefactFoundFlag)
 		room_changed(get_tree().current_scene.scene_file_path, current_room.to_string().split(":")[0], artefactCounter, artefactFoundFlag)
@@ -223,7 +223,7 @@ func hide_skip_level():
 	SignalBus.emit_hide_skip_level()
 
 func _on_items_found_timer_timeout() -> void:
-	items_found_counter_label.text = "x " + str(artefactCounter)
+	items_found_counter_label.text = str(artefactCounter)
 	items_found_timer_increment.start()
 
 func _on_items_found_timer_increment_timeout() -> void:
