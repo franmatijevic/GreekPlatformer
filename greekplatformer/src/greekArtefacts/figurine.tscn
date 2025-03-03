@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://wtel6idotxma" path="res://src/greekArtefacts/greek_artefact.tscn" id="1_ldydd"]
 [ext_resource type="Texture2D" uid="uid://c38wprl8nmxq4" path="res://src/greekArtefacts/artefacts_art/lilGuy.png" id="2_yye62"]
-[ext_resource type="Texture2D" uid="uid://fknocp4oxopb" path="res://src/greekArtefacts/all_artefacts/figurine_prompt.png" id="3_hq3ul"]
+[ext_resource type="Texture2D" uid="uid://cbrhvg5o6yhhg" path="res://src/greekArtefacts/all_artefacts/just_a_guy.png" id="3_fldtr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60k4g"]
 size = Vector2(193, 20)
@@ -24,4 +24,4 @@ offset_top = -173.0
 offset_bottom = -119.0
 
 [node name="ArtefactInformationTexture" parent="ArtefactInformation" index="0"]
-texture = ExtResource("3_hq3ul")
+texture = ExtResource("3_fldtr")
